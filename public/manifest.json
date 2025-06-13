@@ -1,0 +1,27 @@
+{
+  "name": "TechStep",
+  "short_name": "TechStep",
+  "description": "Technology made simple, one step at a time - empowering seniors with step-by-step tech guidance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007aff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "utilities", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
