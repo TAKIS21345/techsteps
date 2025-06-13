@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "features": "Características",
+    "reviews": "Reseñas",
+    "signIn": "Iniciar Sesión",
+    "getStarted": "Comenzar"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Confiado por adultos mayores en todo el mundo",
+      "title": "Tecnología hecha",
+      "titleHighlight": "simple y clara",
+      "subtitle": "Domina la tecnología con confianza a través de orientación personalizada paso a paso que se siente como tener un amigo paciente a tu lado."
+    }
+  },
+  "dashboard": {
+    "welcome": "Bienvenido a TechStep",
+    "welcomeUser": "¡Bienvenido de vuelta, {{name}}!",
+    "ready": "¿Listo para aprender algo nuevo?",
+    "getHelp": "Obtener Ayuda Instantánea",
+    "askQuestion": "Haz cualquier pregunta técnica y obtén orientación paso a paso",
+    "placeholder": "¿Con qué te gustaría que te ayude hoy?",
+    "getSteps": "Obtener Ayuda Paso a Paso",
+    "gettingSteps": "Obteniendo tus pasos...",
+    "craftingSteps": "Creando tus pasos personalizados...",
+    "takesAMoment": "Esto puede tomar un momento",
+    "quickTips": "Consejos Rápidos para Ti",
+    "popularQuestions": "Preguntas Populares Hoy",
+    "quickActions": "Acciones Rápidas",
+    "recentActivity": "Actividad Reciente",
+    "yourProgress": "Tu Progreso",
+    "needHelp": "¿Necesitas Ayuda?",
+    "helpingHand": "Estamos aquí para ayudarte a tener éxito",
+    "chatHuman": "Chatear con un Humano",
+    "browseGuides": "Explorar Guías de Video",
+    "browseTips": "Explorar Consejos",
+    "commonSolutions": "Encuentra soluciones comunes",
+    "stepsCompleted": "{{count}} pasos completados",
+    "needMoreInfo": "Necesito un poco más de información para ayudarte mejor"
+  },
+  "aiTools": {
+    "title": "Herramientas de IA",
+    "description": "Explicador de fotos y traductor técnico"
+  },
+  "learning": {
+    "title": "Centro de Aprendizaje",
+    "structuredCourses": "Cursos estructurados y tutoriales"
+  },
+  "settings": {
+    "customizePrefs": "Personaliza tus preferencias"
+  },
+  "common": {
+    "settings": "Configuración",
+    "signOut": "Cerrar Sesión",
+    "close": "Cerrar"
+  },
+  "tips": {
+    "connectWifi": "Conectar a Wi-Fi",
+    "connectWifiDesc": "Conéctate en línea de forma segura y fácil",
+    "videoCall": "Hacer una Videollamada",
+    "videoCallDesc": "Conecta con la familia cara a cara",
+    "screenshot": "Tomar una Captura de Pantalla",
+    "screenshotDesc": "Captura lo que está en tu pantalla",
+    "updateApps": "Actualizar tus Aplicaciones",
+    "updateAppsDesc": "Mantén tus aplicaciones actuales y seguras"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Comunicación",
+    "basicSkills": "Habilidades Básicas",
+    "maintenance": "Mantenimiento"
+  },
+  "questions": {
+    "makeTextBigger": "¿Cómo hago el texto más grande?",
+    "connectWifi": "¿Cómo me conecto a Wi-Fi?",
+    "takeScreenshot": "¿Cómo tomo una captura de pantalla?",
+    "makeVideoCall": "¿Cómo hago una videollamada?",
+    "backupPhotos": "¿Cómo hago respaldo de mis fotos?",
+    "updateApps": "¿Cómo actualizo mis aplicaciones?",
+    "onlineBanking": "¿Cómo uso la banca en línea de forma segura?",
+    "joinZoom": "¿Cómo me uno a una reunión de Zoom?"
+  },
+  "achievements": {
+    "gettingStarted": "Comenzando",
+    "gettingStartedDesc": "Hiciste tu primera pregunta",
+    "questionExplorer": "Explorador de Preguntas",
+    "questionExplorerDesc": "Hiciste 5 preguntas",
+    "stepMaster": "Maestro de Pasos",
+    "stepMasterDesc": "Completaste 25 pasos"
+  },
+  "stats": {
+    "seniorsHelped": "Adultos Mayores Ayudados",
+    "questionsAnswered": "Preguntas Respondidas",
+    "successRate": "Tasa de Éxito",
+    "alwaysAvailable": "Siempre Disponible"
+  },
+  "time": {
+    "now": "Ahora mismo",
+    "hourAgo": "Hace 1 hora",
+    "hoursAgo": "Hace {{count}} horas",
+    "dayAgo": "Hace 1 día",
+    "daysAgo": "Hace {{count}} días"
+  },
+  "voice": {
+    "startInput": "Iniciar entrada de voz",
+    "stopRecording": "Detener grabación",
+    "processing": "Procesando...",
+    "recognized": "Voz reconocida",
+    "failed": "Entrada de voz falló"
+  },
+  "language": {
+    "select": "Seleccionar Idioma",
+    "translate": "Traducir",
+    "translating": "Traduciendo...",
+    "detecting": "Detectando idioma...",
+    "error": "Traducción falló"
+  },
+  "auth": {
+    "backToHome": "Volver al Inicio",
+    "createAccount": "Crear Cuenta",
+    "welcomeBack": "Bienvenido de Vuelta",
+    "joinFamily": "Únete a nuestra familia de adultos mayores empoderados",
+    "welcomeBackDesc": "Inicia sesión para continuar tu viaje tecnológico",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "Ingresa tu correo",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "confirmPasswordPlaceholder": "Confirma tu contraseña",
+    "passwordsNoMatch": "Las contraseñas no coinciden",
+    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+    "creatingAccount": "Creando cuenta...",
+    "signingIn": "Iniciando sesión...",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión",
+    "dontHaveAccount": "¿No tienes una cuenta? Regístrate"
+  },
+  "error": {
+    "askQuestionFirst": "Por favor haz una pregunta primero",
+    "couldntGetAnswer": "Lo siento, no pude obtener una respuesta ahora. Por favor intenta de nuevo."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "reviews": "Avis",
+    "signIn": "Se Connecter",
+    "getStarted": "Commencer"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Approuvé par les seniors du monde entier",
+      "title": "Technologie rendue",
+      "titleHighlight": "simple et claire",
+      "subtitle": "Maîtrisez la technologie avec confiance grâce à des conseils personnalisés étape par étape qui donnent l'impression d'avoir un ami patient à vos côtés."
+    }
+  },
+  "dashboard": {
+    "welcome": "Bienvenue sur TechStep",
+    "welcomeUser": "Bon retour, {{name}} !",
+    "ready": "Prêt à apprendre quelque chose de nouveau ?",
+    "getHelp": "Obtenir de l'Aide Instantanée",
+    "askQuestion": "Posez n'importe quelle question technique et obtenez des conseils étape par étape",
+    "placeholder": "Avec quoi aimeriez-vous de l'aide aujourd'hui ?",
+    "getSteps": "Obtenir de l'Aide Étape par Étape",
+    "gettingSteps": "Obtention de vos étapes...",
+    "craftingSteps": "Création de vos étapes personnalisées...",
+    "takesAMoment": "Cela peut prendre un moment",
+    "quickTips": "Conseils Rapides pour Vous",
+    "popularQuestions": "Questions Populaires Aujourd'hui",
+    "quickActions": "Actions Rapides",
+    "recentActivity": "Activité Récente",
+    "yourProgress": "Votre Progrès",
+    "needHelp": "Besoin d'Aide ?",
+    "helpingHand": "Nous sommes là pour vous aider à réussir",
+    "chatHuman": "Discuter avec un Humain",
+    "browseGuides": "Parcourir les Guides Vidéo",
+    "browseTips": "Parcourir les Conseils",
+    "commonSolutions": "Trouvez des solutions communes",
+    "stepsCompleted": "{{count}} étapes terminées",
+    "needMoreInfo": "J'ai besoin d'un peu plus d'informations pour mieux vous aider"
+  },
+  "aiTools": {
+    "title": "Outils IA",
+    "description": "Explicateur de photos et traducteur technique"
+  },
+  "learning": {
+    "title": "Centre d'Apprentissage",
+    "structuredCourses": "Cours structurés et tutoriels"
+  },
+  "settings": {
+    "customizePrefs": "Personnalisez vos préférences"
+  },
+  "common": {
+    "settings": "Paramètres",
+    "signOut": "Se Déconnecter",
+    "close": "Fermer"
+  },
+  "tips": {
+    "connectWifi": "Se Connecter au Wi-Fi",
+    "connectWifiDesc": "Connectez-vous en ligne en toute sécurité et facilement",
+    "videoCall": "Faire un Appel Vidéo",
+    "videoCallDesc": "Connectez-vous avec la famille face à face",
+    "screenshot": "Prendre une Capture d'Écran",
+    "screenshotDesc": "Capturez ce qui est sur votre écran",
+    "updateApps": "Mettre à Jour vos Applications",
+    "updateAppsDesc": "Gardez vos applications à jour et sécurisées"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Communication",
+    "basicSkills": "Compétences de Base",
+    "maintenance": "Maintenance"
+  },
+  "questions": {
+    "makeTextBigger": "Comment agrandir le texte ?",
+    "connectWifi": "Comment me connecter au Wi-Fi ?",
+    "takeScreenshot": "Comment prendre une capture d'écran ?",
+    "makeVideoCall": "Comment faire un appel vidéo ?",
+    "backupPhotos": "Comment sauvegarder mes photos ?",
+    "updateApps": "Comment mettre à jour mes applications ?",
+    "onlineBanking": "Comment utiliser la banque en ligne en toute sécurité ?",
+    "joinZoom": "Comment rejoindre une réunion Zoom ?"
+  },
+  "achievements": {
+    "gettingStarted": "Commencer",
+    "gettingStartedDesc": "Vous avez posé votre première question",
+    "questionExplorer": "Explorateur de Questions",
+    "questionExplorerDesc": "Vous avez posé 5 questions",
+    "stepMaster": "Maître des Étapes",
+    "stepMasterDesc": "Vous avez terminé 25 étapes"
+  },
+  "stats": {
+    "seniorsHelped": "Seniors Aidés",
+    "questionsAnswered": "Questions Répondues",
+    "successRate": "Taux de Réussite",
+    "alwaysAvailable": "Toujours Disponible"
+  },
+  "time": {
+    "now": "À l'instant",
+    "hourAgo": "Il y a 1 heure",
+    "hoursAgo": "Il y a {{count}} heures",
+    "dayAgo": "Il y a 1 jour",
+    "daysAgo": "Il y a {{count}} jours"
+  },
+  "voice": {
+    "startInput": "Démarrer l'entrée vocale",
+    "stopRecording": "Arrêter l'enregistrement",
+    "processing": "Traitement...",
+    "recognized": "Voix reconnue",
+    "failed": "Entrée vocale échouée"
+  },
+  "language": {
+    "select": "Sélectionner la Langue",
+    "translate": "Traduire",
+    "translating": "Traduction...",
+    "detecting": "Détection de la langue...",
+    "error": "Traduction échouée"
+  },
+  "auth": {
+    "backToHome": "Retour à l'Accueil",
+    "createAccount": "Créer un Compte",
+    "welcomeBack": "Bon Retour",
+    "joinFamily": "Rejoignez notre famille de seniors autonomes",
+    "welcomeBackDesc": "Connectez-vous pour continuer votre parcours technologique",
+    "email": "Adresse E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "password": "Mot de Passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "passwordsNoMatch": "Les mots de passe ne correspondent pas",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+    "creatingAccount": "Création du compte...",
+    "signingIn": "Connexion...",
+    "alreadyHaveAccount": "Vous avez déjà un compte ? Connectez-vous",
+    "dontHaveAccount": "Vous n'avez pas de compte ? Inscrivez-vous"
+  },
+  "error": {
+    "askQuestionFirst": "Veuillez d'abord poser une question",
+    "couldntGetAnswer": "Désolé, je n'ai pas pu obtenir de réponse maintenant. Veuillez réessayer."
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { LanguageProvider } from './contexts/LanguageContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { UserProvider } from './contexts/UserContext';
 import LandingPage from './pages/LandingPage';
@@ -39,61 +38,59 @@ function App() {
   }, []);
 
   return (
-    <LanguageProvider>
-      <AuthProvider>
-        <UserProvider>
-          <Router>
-            <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
-              <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route 
-                  path="/auth" 
-                  element={
-                    <PublicRoute>
-                      <AuthPage />
-                    </PublicRoute>
-                  } 
-                />
-                <Route 
-                  path="/onboarding" 
-                  element={
-                    <ProtectedRoute requiresOnboarding={false}>
-                      <OnboardingPage />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/dashboard" 
-                  element={
-                    <ProtectedRoute>
-                      <DashboardPage />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/settings" 
-                  element={
-                    <ProtectedRoute>
-                      <SettingsPage />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route 
-                  path="/learning" 
-                  element={
-                    <ProtectedRoute>
-                      <LearningCenterPage />
-                    </ProtectedRoute>
-                  } 
-                />
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
-              </Routes>
-            </div>
-          </Router>
-        </UserProvider>
-      </AuthProvider>
-    </LanguageProvider>
+    <AuthProvider>
+      <UserProvider>
+        <Router>
+          <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route 
+                path="/auth" 
+                element={
+                  <PublicRoute>
+                    <AuthPage />
+                  </PublicRoute>
+                } 
+              />
+              <Route 
+                path="/onboarding" 
+                element={
+                  <ProtectedRoute requiresOnboarding={false}>
+                    <OnboardingPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <DashboardPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/settings" 
+                element={
+                  <ProtectedRoute>
+                    <SettingsPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/learning" 
+                element={
+                  <ProtectedRoute>
+                    <LearningCenterPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
+        </Router>
+      </UserProvider>
+    </AuthProvider>
   );
 }
 

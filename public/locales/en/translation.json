@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "features": "Features",
+    "reviews": "Reviews",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Trusted by seniors worldwide",
+      "title": "Technology made",
+      "titleHighlight": "simple & clear",
+      "subtitle": "Master technology with confidence through personalized, step-by-step guidance that feels like having a patient friend by your side."
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome to TechStep",
+    "welcomeUser": "Welcome back, {{name}}!",
+    "ready": "Ready to learn something new?",
+    "getHelp": "Get Instant Help",
+    "askQuestion": "Ask any tech question and get step-by-step guidance",
+    "placeholder": "What would you like help with today?",
+    "getSteps": "Get Step-by-Step Help",
+    "gettingSteps": "Getting your steps...",
+    "craftingSteps": "Crafting your personalized steps...",
+    "takesAMoment": "This may take a moment",
+    "quickTips": "Quick Tips for You",
+    "popularQuestions": "Popular Questions Today",
+    "quickActions": "Quick Actions",
+    "recentActivity": "Recent Activity",
+    "yourProgress": "Your Progress",
+    "needHelp": "Need Help?",
+    "helpingHand": "We're here to help you succeed",
+    "chatHuman": "Chat with a Human",
+    "browseGuides": "Browse Video Guides",
+    "browseTips": "Browse Tips",
+    "commonSolutions": "Find common solutions",
+    "stepsCompleted": "{{count}} steps completed",
+    "needMoreInfo": "I need a bit more information to help you better"
+  },
+  "aiTools": {
+    "title": "AI Helper Tools",
+    "description": "Photo explainer & tech translator"
+  },
+  "learning": {
+    "title": "Learning Center",
+    "structuredCourses": "Structured courses and tutorials"
+  },
+  "settings": {
+    "customizePrefs": "Customize your preferences"
+  },
+  "common": {
+    "settings": "Settings",
+    "signOut": "Sign Out",
+    "close": "Close"
+  },
+  "tips": {
+    "connectWifi": "Connect to Wi-Fi",
+    "connectWifiDesc": "Get online safely and easily",
+    "videoCall": "Make a Video Call",
+    "videoCallDesc": "Connect with family face-to-face",
+    "screenshot": "Take a Screenshot",
+    "screenshotDesc": "Capture what's on your screen",
+    "updateApps": "Update Your Apps",
+    "updateAppsDesc": "Keep your apps current and secure"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Communication",
+    "basicSkills": "Basic Skills",
+    "maintenance": "Maintenance"
+  },
+  "questions": {
+    "makeTextBigger": "How do I make text bigger?",
+    "connectWifi": "How do I connect to Wi-Fi?",
+    "takeScreenshot": "How do I take a screenshot?",
+    "makeVideoCall": "How do I make a video call?",
+    "backupPhotos": "How do I backup my photos?",
+    "updateApps": "How do I update my apps?",
+    "onlineBanking": "How do I use online banking safely?",
+    "joinZoom": "How do I join a Zoom meeting?"
+  },
+  "achievements": {
+    "gettingStarted": "Getting Started",
+    "gettingStartedDesc": "Asked your first question",
+    "questionExplorer": "Question Explorer",
+    "questionExplorerDesc": "Asked 5 questions",
+    "stepMaster": "Step Master",
+    "stepMasterDesc": "Completed 25 steps"
+  },
+  "stats": {
+    "seniorsHelped": "Seniors Helped",
+    "questionsAnswered": "Questions Answered",
+    "successRate": "Success Rate",
+    "alwaysAvailable": "Always Available"
+  },
+  "time": {
+    "now": "Just now",
+    "hourAgo": "1 hour ago",
+    "hoursAgo": "{{count}} hours ago",
+    "dayAgo": "1 day ago",
+    "daysAgo": "{{count}} days ago"
+  },
+  "voice": {
+    "startInput": "Start voice input",
+    "stopRecording": "Stop recording",
+    "processing": "Processing...",
+    "recognized": "Voice recognized",
+    "failed": "Voice input failed"
+  },
+  "language": {
+    "select": "Select Language",
+    "translate": "Translate",
+    "translating": "Translating...",
+    "detecting": "Detecting language...",
+    "error": "Translation failed"
+  },
+  "auth": {
+    "backToHome": "Back to Home",
+    "createAccount": "Create Account",
+    "welcomeBack": "Welcome Back",
+    "joinFamily": "Join our family of empowered seniors",
+    "welcomeBackDesc": "Sign in to continue your tech journey",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "passwordsNoMatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "creatingAccount": "Creating account...",
+    "signingIn": "Signing in...",
+    "alreadyHaveAccount": "Already have an account? Sign in",
+    "dontHaveAccount": "Don't have an account? Sign up"
+  },
+  "error": {
+    "askQuestionFirst": "Please ask a question first",
+    "couldntGetAnswer": "Sorry, I couldn't get an answer right now. Please try again."
+  }
+}
