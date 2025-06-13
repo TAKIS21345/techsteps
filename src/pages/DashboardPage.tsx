@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useUser } from '../contexts/UserContext';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../contexts/LanguageContext';
 import Logo from '../components/Logo';
 import AIToolsModal from '../components/AIToolsModal';
 import StepsView from '../components/StepsView';
@@ -52,7 +52,7 @@ const DashboardPage: React.FC = () => {
 
   const { logout } = useAuth();
   const { userData, addQuestionToHistory, markQuestionCompleted, updateUserStats } = useUser();
-  const { t } = useTranslation();
+  const { t, translateDynamicContent, language } = useLanguage();
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
@@ -740,4 +740,139 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                   className="block w-full p-4 text-left rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200">
+                      <Settings className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-800">{t('common.settings')}</h4>
+                      <p className="text-sm text-gray-600">{t('settings.customizePrefs')}</p>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link 
+                  to="/learning"
+                  className="block w-full p-4 text-left rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200">
+                      <BookOpen className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-800">{t('learning.title')}</h4>
+                      <p className="text-sm text-gray-600">{t('learning.structuredCourses')}</p>
+                    </div>
+                  </div>
+                </Link>
+
+                <button
+                  onClick={() => {
+                    // Show popular questions in the main interface
+                    const randomTip = quickTips[Math.floor(Math.random() * quickTips.length)];
+                    setQuestion(randomTip.title);
+                  }}
+                  className="w-full p-4 text-left rounded-xl border border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200">
+                      <Lightbulb className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-800">{t('dashboard.browseTips')}</h4>
+                      <p className="text-sm text-gray-600">{t('dashboard.commonSolutions')}</p>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            {/* Recent Activity */}
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.recentActivity')}</h3>
+                <Clock className="w-5 h-5 text-gray-400" />
+              </div>
+              <div className="space-y-3">
+                {recentActivity.map((activity, index) => (
+                  <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-sm font-medium text-gray-800 mb-1">{activity.question}</p>
+                    <div className="flex items-center justify-between text-xs text-gray-500">
+                      <span>{activity.time}</span>
+                      <span>{t('dashboard.stepsCompleted', { count: activity.steps.toString() })}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Achievements */}
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.yourProgress')}</h3>
+                <TrendingUp className="w-5 h-5 text-green-500" />
+              </div>
+              <div className="space-y-3">
+                {achievements.map((achievement, index) => (
+                  <div 
+                    key={index} 
+                    className={`p-3 rounded-lg ${achievement.unlocked ? 'bg-green-50 border border-green-200' : 'bg-gray-50 border border-gray-200'}`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${achievement.unlocked ? 'bg-green-500' : 'bg-gray-400'}`}>
+                        <achievement.icon className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <p className={`text-sm font-medium ${achievement.unlocked ? 'text-green-800' : 'text-gray-600'}`}>
+                          {achievement.title}
+                        </p>
+                        <p className={`text-xs ${achievement.unlocked ? 'text-green-600' : 'text-gray-500'}`}>
+                          {achievement.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Help & Support */}
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.needHelp')}</h3>
+                <HelpCircle className="w-5 h-5 text-blue-500" />
+              </div>
+              <div className="space-y-3 text-sm">
+                <p className="text-gray-600">
+                  {t('dashboard.helpingHand')}
+                </p>
+                <button className="w-full p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors">{t('dashboard.chatHuman')}</button>
+                <button className="w-full p-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">{t('dashboard.browseGuides')}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <AIToolsModal 
+        isOpen={showAITools} 
+        onClose={() => setShowAITools(false)} 
+      />
+      
+      <ClarificationModal
+        isOpen={showClarification}
+        onClose={() => {
+          setShowClarification(false);
+          setNeedsClarification(false);
+        }}
+        question={question}
+        clarificationQuestions={clarificationQuestions}
+        onSubmitClarification={handleClarificationSubmit}
+        loading={loading}
+      />
+    </div>
+  );
+};
+
+export default DashboardPage;
+
+export default DashboardPage
