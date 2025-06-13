@@ -23,9 +23,9 @@ import {
   Laptop,
   AlertCircle
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../contexts/AuthContext';
 import { useUser } from '../contexts/UserContext';
-import { useLanguage } from '../contexts/LanguageContext';
 import Logo from '../components/Logo';
 import AIToolsModal from '../components/AIToolsModal';
 import StepsView from '../components/StepsView';
@@ -51,8 +51,8 @@ const DashboardPage: React.FC = () => {
   const [originalQuestion, setOriginalQuestion] = useState('');
 
   const { logout } = useAuth();
-  const { userData, addQuestionToHistory, markQuestionCompleted, updateUserStats } = useUser();
-  const { t, translateDynamicContent, language } = useLanguage();
+  const { userData, addQuestionToHistory, markQuestionCompleted, updateUserData } = useUser();
+  const { t } = useTranslation();
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
@@ -437,6 +437,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
     const generalQuestion = `${question}\n\nNote: Provide general instructions that work for multiple devices/scenarios since the user skipped providing specific details. Make intelligent inferences based on their profile and provide the most helpful general guidance.`;
     await generateSteps(generalQuestion);
   };
+  
   const handleResourceClick = (resource: any) => {
     // Save interaction to cookies for analytics
     const interactions = JSON.parse(Cookies.get('resourceInteractions') || '[]');
