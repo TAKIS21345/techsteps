@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { ChevronLeft, ChevronRight, Search, Globe, Check, AlertTriangle } from 'lucide-react';
 import Logo from '../components/Logo';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import Cookies from 'js-cookie';
 
 const OnboardingPage: React.FC = () => {
