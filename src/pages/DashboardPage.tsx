@@ -874,5 +874,3 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
 };
 
 export default DashboardPage;
-
-export default DashboardPage
