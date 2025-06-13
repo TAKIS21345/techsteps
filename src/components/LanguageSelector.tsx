@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Globe, ChevronDown, Check } from 'lucide-react';
-import { useLanguage, Language } from '../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 interface LanguageSelectorProps {
   className?: string;
@@ -11,55 +11,27 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   className = '', 
   showLabel = true 
 }) => {
-  const { language, setLanguage, t, getSupportedLanguages } = useLanguage();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   
-  const supportedLanguages = getSupportedLanguages();
-  const currentLanguage = supportedLanguages.find(lang => lang.code === language);
+  const supportedLanguages = [
+    { code: 'en', name: 'English', nativeName: 'English' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español' },
+    { code: 'fr', name: 'French', nativeName: 'Français' }
+  ];
+  
+  const currentLanguage = supportedLanguages.find(lang => lang.code === i18n.language);
 
   // Enhanced language data with flags and regions
-  const languageFlags: Record<Language, string> = {
+  const languageFlags: Record<string, string> = {
     en: '🇺🇸',
     es: '🇪🇸', 
-    fr: '🇫🇷',
-    de: '🇩🇪',
-    it: '🇮🇹',
-    pt: '🇧🇷',
-    zh: '🇨🇳',
-    ja: '🇯🇵',
-    ko: '🇰🇷',
-    ar: '🇸🇦',
-    ru: '🇷🇺',
-    hi: '🇮🇳',
-    nl: '🇳🇱',
-    sv: '🇸🇪',
-    no: '🇳🇴',
-    da: '🇩🇰',
-    fi: '🇫🇮',
-    pl: '🇵🇱',
-    tr: '🇹🇷',
-    he: '🇮🇱',
-    th: '🇹🇭',
-    vi: '🇻🇳',
-    uk: '🇺🇦',
-    cs: '🇨🇿',
-    hu: '🇭🇺',
-    ro: '🇷🇴',
-    bg: '🇧🇬',
-    hr: '🇭🇷',
-    sk: '🇸🇰',
-    sl: '🇸🇮',
-    et: '🇪🇪',
-    lv: '🇱🇻',
-    lt: '🇱🇹'
+    fr: '🇫🇷'
   };
 
-  const handleLanguageChange = (newLanguage: Language) => {
-    setLanguage(newLanguage);
+  const handleLanguageChange = (newLanguage: string) => {
+    i18n.changeLanguage(newLanguage);
     setIsOpen(false);
-    
-    // Save preference immediately
-    localStorage.setItem('preferredLanguage', newLanguage);
     
     // Announce language change for screen readers
     const announcement = `Language changed to ${supportedLanguages.find(l => l.code === newLanguage)?.name}`;
@@ -109,7 +81,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         type="button"
       >
         <span className="text-lg" role="img" aria-label="flag">
-          {languageFlags[language] || '🌐'}
+          {languageFlags[i18n.language] || '🌐'}
         </span>
         <Globe className="w-4 h-4" />
         {showLabel && (
@@ -156,10 +128,10 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
                   className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors flex items-center justify-between group focus:outline-none focus:bg-blue-50 ${
-                    language === lang.code ? 'bg-blue-50 text-blue-700 border-r-4 border-blue-500' : 'text-gray-700'
+                    i18n.language === lang.code ? 'bg-blue-50 text-blue-700 border-r-4 border-blue-500' : 'text-gray-700'
                   }`}
                   role="option"
-                  aria-selected={language === lang.code}
+                  aria-selected={i18n.language === lang.code}
                   tabIndex={0}
                 >
                   <div className="flex items-center space-x-3">
@@ -167,15 +139,15 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                       {languageFlags[lang.code] || '🌐'}
                     </span>
                     <div>
-                      <div className={`font-medium ${language === lang.code ? 'text-blue-800' : 'text-gray-800'}`}>
+                      <div className={`font-medium ${i18n.language === lang.code ? 'text-blue-800' : 'text-gray-800'}`}>
                         {lang.nativeName}
                       </div>
-                      <div className={`text-xs ${language === lang.code ? 'text-blue-600' : 'text-gray-500'}`}>
+                      <div className={`text-xs ${i18n.language === lang.code ? 'text-blue-600' : 'text-gray-500'}`}>
                         {lang.name} • {lang.code.toUpperCase()}
                       </div>
                     </div>
                   </div>
-                  {language === lang.code && (
+                  {i18n.language === lang.code && (
                     <Check className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   )}
                 </button>
