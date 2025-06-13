@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, User, Smartphone, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle } from 'lucide-react';
 import { useUser } from '../contexts/UserContext';
 import { useAuth } from '../contexts/AuthContext';
-import { useLanguage, Language } from '../contexts/LanguageContext';
 import Logo from '../components/Logo';
 
 const SettingsPage: React.FC = () => {
