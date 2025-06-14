@@ -15,7 +15,7 @@ const AuthPage: React.FC = () => {
   const [error, setError] = useState('');
 
   const { signIn, signUp } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
