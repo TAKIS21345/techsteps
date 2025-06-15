@@ -314,8 +314,9 @@ Don't save routine/simple interactions.
           }
         };
 
-        // Save to user's chat memory
-        await this.saveMemoryToDatabase(userId, memory, updateUserData);
+        // Save to user's chat memory using current chat memory from user profile
+        const currentChatMemory = interaction.userProfile?.chatMemory || [];
+        await this.saveMemoryToDatabase(userId, memory, updateUserData, currentChatMemory);
       }
     } catch (error) {
       console.error('Error analyzing chat memory:', error);
@@ -325,12 +326,12 @@ Don't save routine/simple interactions.
   private async saveMemoryToDatabase(
     userId: string,
     memory: ChatMemory,
-    updateUserData: (data: any) => Promise<void>
+    updateUserData: (data: any) => Promise<void>,
+    currentChatMemory: ChatMemory[] = []
   ): Promise<void> {
     try {
-      // Get existing memories and add new one
-      const existingMemories = await this.getChatMemories(userId);
-      const updatedMemories = [...existingMemories, memory];
+      // Add new memory to existing memories
+      const updatedMemories = [...currentChatMemory, memory];
 
       // Keep only last 50 memories to prevent bloat
       const trimmedMemories = updatedMemories.slice(-50);
@@ -346,12 +347,6 @@ Don't save routine/simple interactions.
     }
   }
 
-  async getChatMemories(userId: string): Promise<ChatMemory[]> {
-    // This would typically fetch from the database
-    // For now, return empty array as placeholder
-    return [];
-  }
-
   async getRelevantMemories(
     userId: string,
     currentQuestion: string,
@@ -362,7 +357,8 @@ Don't save routine/simple interactions.
         return [];
       }
 
-      const memories = await this.getChatMemories(userId);
+      // Use chat memory directly from user profile instead of placeholder function
+      const memories = userProfile?.chatMemory || [];
       if (memories.length === 0) return [];
 
       // Use AI to find relevant memories
@@ -371,7 +367,7 @@ Current question: "${currentQuestion}"
 User device: ${userProfile?.os || 'Unknown'}
 
 Previous memories:
-${memories.map((m, i) => `${i + 1}. ${m.content} (${m.type}, ${m.metadata?.tags?.join(', ') || 'no tags'})`).join('\n')}
+${memories.map((m: ChatMemory, i: number) => `${i + 1}. ${m.content} (${m.type}, ${m.metadata?.tags?.join(', ') || 'no tags'})`).join('\n')}
 
 Return JSON array of memory indices (1-based) that are relevant to the current question:
 {

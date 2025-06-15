@@ -124,16 +124,53 @@ const DashboardPage: React.FC = () => {
     }
   ];
 
-  function formatTimeAgo(timestamp: Date | string): string {
-    const date = typeof timestamp === 'string' ? new Date(timestamp) : timestamp;
-    const now = new Date();
-    const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
-    
-    if (diffInHours < 1) return t('time.now');
-    if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours.toString() });
-    const diffInDays = Math.floor(diffInHours / 24);
-    if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays.toString() });
-    return date.toLocaleDateString();
+  function formatTimeAgo(timestamp: any): string {
+    try {
+      let date: Date;
+      
+      // Handle different timestamp formats
+      if (!timestamp) {
+        return t('time.now');
+      }
+      
+      // Check if it's a Firestore Timestamp (has toDate method)
+      if (timestamp && typeof timestamp.toDate === 'function') {
+        date = timestamp.toDate();
+      }
+      // Check if it's already a Date object
+      else if (timestamp instanceof Date) {
+        date = timestamp;
+      }
+      // Check if it's a string
+      else if (typeof timestamp === 'string') {
+        date = new Date(timestamp);
+      }
+      // Check if it's a number (Unix timestamp)
+      else if (typeof timestamp === 'number') {
+        date = new Date(timestamp);
+      }
+      // Fallback
+      else {
+        return t('time.now');
+      }
+      
+      // Validate the date
+      if (isNaN(date.getTime())) {
+        return t('time.now');
+      }
+      
+      const now = new Date();
+      const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
+      
+      if (diffInHours < 1) return t('time.now');
+      if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours.toString() });
+      const diffInDays = Math.floor(diffInHours / 24);
+      if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays.toString() });
+      return date.toLocaleDateString();
+    } catch (error) {
+      console.error('Error formatting time:', error);
+      return t('time.now');
+    }
   }
 
   const handleAskQuestion = async () => {
@@ -337,6 +374,18 @@ User's question: "${userQuestion}"`
           
           // Track the question in user history
           await addQuestionToHistory(userQuestion, parsed.steps.length);
+          
+          // Analyze and save chat memory
+          await chatMemoryService.analyzeAndSaveMemory(
+            userData?.uid || 'anonymous',
+            {
+              question: userQuestion,
+              response: parsed.steps,
+              userProfile: userData,
+              successful: true
+            },
+            updateUserData
+          );
           
           // Generate resource recommendations if user wants them
           if (userData?.preferences?.videoRecommendations) {
