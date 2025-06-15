@@ -52,7 +52,7 @@ const DashboardPage: React.FC = () => {
 
   const { logout } = useAuth();
   const { userData, addQuestionToHistory, markQuestionCompleted, updateUserData } = useUser();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
@@ -168,8 +168,9 @@ User Profile:
 - Primary concerns: ${userData.primaryConcerns?.join(', ') || 'None specified'}
 - Assistive needs: ${userData.assistiveNeeds?.join(', ') || 'None'}
 - Previous questions: ${userData.stats?.questionHistory?.slice(0, 3).map(q => q.question).join('; ') || 'None'}
+- Preferred language: ${i18n.language}
 ${memoryContext}
-` : 'User is a senior citizen with basic information available.';
+` : `User is a senior citizen with basic information available. Preferred language: ${i18n.language}`;
 
       // Smart clarification check that considers user context
       const clarificationResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
@@ -185,6 +186,8 @@ ${memoryContext}
 ${userContext}
 
 User's question: "${question}"
+
+IMPORTANT: Respond in ${i18n.language} language.
 
 DECISION CRITERIA:
 1. PRIORITIZE using the user's profile information to make intelligent inferences
@@ -267,8 +270,9 @@ User Profile:
 - Assistive needs: ${userData.assistiveNeeds?.join(', ') || 'None'}
 - Previous questions: ${userData.stats?.questionHistory?.slice(0, 5).map(q => q.question).join('; ') || 'None'}
 - Prefers video recommendations: ${userData.preferences?.videoRecommendations ? 'Yes' : 'No'}
+- Preferred language: ${i18n.language}
 ${memoryContext}
-` : 'User is a senior citizen with basic information available.';
+` : `User is a senior citizen with basic information available. Preferred language: ${i18n.language}`;
 
       // Check if this is a generalized answer (when user skipped clarification)
       const isGeneralizedAnswer = userQuestion.includes('Note: Provide general instructions');
@@ -284,6 +288,8 @@ ${memoryContext}
               text: `You are an AI assistant specialized in helping seniors with technology.
 
 ${userContext}
+
+CRITICAL: Respond entirely in ${i18n.language} language. All instructions, explanations, and text must be in ${i18n.language}.
 
 INSTRUCTIONS:
 ${isGeneralizedAnswer ? `
@@ -372,14 +378,16 @@ Focus on these trusted sources:
 - Articles: AARP.org, SeniorPlanet.org, TechBoomers.com, major tech company support pages
 - Only suggest resources with realistic, working URLs
 
+IMPORTANT: Provide titles and descriptions in ${i18n.language} language.
+
 Respond in JSON format:
 {
   "resources": [
     {
       "type": "video" or "article",
-      "title": "Resource title",
+      "title": "Resource title in ${i18n.language}",
       "url": "https://realistic-url.com",
-      "description": "Brief description",
+      "description": "Brief description in ${i18n.language}",
       "source": "YouTube/AARP/etc",
       "duration": "5 min" (for videos),
       "rating": 4.5 (optional)

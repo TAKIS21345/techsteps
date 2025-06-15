@@ -10,6 +10,7 @@ const OnboardingPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [languageSearch, setLanguageSearch] = useState('');
   const [showLanguageWarning, setShowLanguageWarning] = useState(false);
+  const { t, i18n } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,7 +20,7 @@ const OnboardingPage: React.FC = () => {
     primaryConcerns: [] as string[],
     assistiveNeeds: [] as string[],
     communicationStyle: 'simple' as const,
-    selectedLanguages: ['en'] as string[],
+    selectedLanguages: [i18n.language] as string[],
     preferences: {
       textToSpeech: true,
       voiceInput: true,
@@ -27,13 +28,12 @@ const OnboardingPage: React.FC = () => {
       fontSize: 'normal' as const,
       highContrast: false,
       videoRecommendations: true,
-      speechLanguages: ['en'] as string[]
+      speechLanguages: [i18n.language] as string[]
     }
   });
   const [loading, setLoading] = useState(false);
 
   const { updateUserData } = useUser();
-  const { getSupportedLanguages } = useLanguage();
   const navigate = useNavigate();
 
   // Comprehensive language list with native names
@@ -123,49 +123,50 @@ const OnboardingPage: React.FC = () => {
   const handleDeselectAllLanguages = () => {
     setFormData(prev => ({
       ...prev,
-      selectedLanguages: ['en'], // Always keep English as minimum
+      selectedLanguages: [i18n.language], // Always keep current language as minimum
       preferences: {
         ...prev.preferences,
-        speechLanguages: ['en']
+        speechLanguages: [i18n.language]
       }
     }));
   };
+
   const steps = [
     {
-      title: "Let's get to know you",
-      subtitle: "Help me personalize your experience",
+      title: t('onboarding.step1.title'),
+      subtitle: t('onboarding.step1.subtitle'),
       content: (
         <div className="space-y-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-              First Name
+              {t('onboarding.step1.firstName')}
             </label>
             <input
               type="text"
               id="firstName"
               value={formData.firstName}
               onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-              placeholder="Your first name"
+              placeholder={t('onboarding.step1.firstNamePlaceholder')}
               className="input-field text-lg"
               autoFocus
             />
           </div>
           <div>
             <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-              Last Name
+              {t('onboarding.step1.lastName')}
             </label>
             <input
               type="text"
               id="lastName"
               value={formData.lastName}
               onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-              placeholder="Your last name"
+              placeholder={t('onboarding.step1.lastNamePlaceholder')}
               className="input-field text-lg"
             />
           </div>
           <div>
             <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
-              Age (helps me adjust my explanations)
+              {t('onboarding.step1.age')}
             </label>
             <input
               type="number"
@@ -181,22 +182,22 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: "Choose your preferred languages",
-      subtitle: "Select the languages you'd like to use for communication and voice input",
+      title: t('onboarding.step2.title'),
+      subtitle: t('onboarding.step2.subtitle'),
       content: (
         <div className="space-y-6">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
             <div className="flex items-start space-x-3">
               <Globe className="w-5 h-5 text-blue-600 mt-0.5" />
               <div>
-                <h4 className="font-medium text-blue-800 mb-1">Language Selection</h4>
+                <h4 className="font-medium text-blue-800 mb-1">{t('onboarding.step2.languageSelection')}</h4>
                 <p className="text-sm text-blue-700">
-                  Choose the languages you're comfortable with. This will:
+                  {t('onboarding.step2.languageDescription')}
                 </p>
                 <ul className="text-sm text-blue-700 mt-2 space-y-1">
-                  <li>• Configure speech-to-text to understand your voice in these languages</li>
-                  <li>• Enable text interactions in your chosen languages</li>
-                  <li>• Customize interface options for better accessibility</li>
+                  <li>• {t('onboarding.step2.speechToText')}</li>
+                  <li>• {t('onboarding.step2.textInteractions')}</li>
+                  <li>• {t('onboarding.step2.interfaceOptions')}</li>
                 </ul>
               </div>
             </div>
@@ -210,7 +211,7 @@ const OnboardingPage: React.FC = () => {
                 type="text"
                 value={languageSearch}
                 onChange={(e) => setLanguageSearch(e.target.value)}
-                placeholder="Search languages..."
+                placeholder={t('onboarding.step2.searchLanguages')}
                 className="input-field pl-10"
               />
             </div>
@@ -221,19 +222,19 @@ const OnboardingPage: React.FC = () => {
                 onClick={handleSelectAllLanguages}
                 className="btn-secondary text-sm px-4 py-2"
               >
-                Select All
+                {t('onboarding.step2.selectAll')}
               </button>
               <button
                 type="button"
                 onClick={handleDeselectAllLanguages}
                 className="btn-secondary text-sm px-4 py-2"
               >
-                Deselect All
+                {t('onboarding.step2.deselectAll')}
               </button>
             </div>
 
             <div className="text-sm text-gray-600">
-              Selected: {formData.selectedLanguages.length} language{formData.selectedLanguages.length !== 1 ? 's' : ''}
+              {t('onboarding.step2.selected', { count: formData.selectedLanguages.length })}
             </div>
           </div>
 
@@ -277,7 +278,7 @@ const OnboardingPage: React.FC = () => {
           {filteredLanguages.length === 0 && (
             <div className="text-center py-8 text-gray-500">
               <Globe className="w-8 h-8 mx-auto mb-2 text-gray-300" />
-              <p>No languages found matching "{languageSearch}"</p>
+              <p>{t('onboarding.step2.noLanguagesFound', { search: languageSearch })}</p>
             </div>
           )}
 
@@ -286,9 +287,9 @@ const OnboardingPage: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5" />
                 <div>
-                  <h4 className="font-medium text-amber-800 mb-1">Language Selection Required</h4>
+                  <h4 className="font-medium text-amber-800 mb-1">{t('onboarding.step2.languageRequired')}</h4>
                   <p className="text-sm text-amber-700">
-                    Please select at least one language to continue. This ensures the best experience for voice input and text interactions.
+                    {t('onboarding.step2.languageRequiredDesc')}
                   </p>
                 </div>
               </div>
@@ -298,8 +299,8 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: "What device do you use most?",
-      subtitle: "This helps me give you better instructions",
+      title: t('onboarding.step3.title'),
+      subtitle: t('onboarding.step3.subtitle'),
       content: (
         <div className="space-y-3">
           {[
@@ -321,21 +322,21 @@ const OnboardingPage: React.FC = () => {
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              {device}
+              {t(`onboarding.step3.devices.${device.toLowerCase().replace(/[^a-z]/g, '')}`)}
             </button>
           ))}
         </div>
       )
     },
     {
-      title: "How comfortable are you with technology?",
-      subtitle: "Be honest - this helps me explain things at the right level",
+      title: t('onboarding.step4.title'),
+      subtitle: t('onboarding.step4.subtitle'),
       content: (
         <div className="space-y-3">
           {[
-            { value: 'beginner', label: 'Beginner', desc: 'I need step-by-step help with most things' },
-            { value: 'some', label: 'Some Experience', desc: 'I can do basic tasks but need help with new things' },
-            { value: 'comfortable', label: 'Comfortable', desc: 'I can figure out most things but sometimes need guidance' }
+            { value: 'beginner', label: t('onboarding.step4.beginner'), desc: t('onboarding.step4.beginnerDesc') },
+            { value: 'some', label: t('onboarding.step4.some'), desc: t('onboarding.step4.someDesc') },
+            { value: 'comfortable', label: t('onboarding.step4.comfortable'), desc: t('onboarding.step4.comfortableDesc') }
           ].map((level) => (
             <button
               key={level.value}
@@ -354,84 +355,85 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: "What tech topics worry you most?",
-      subtitle: "Select all that apply - I'll prioritize help in these areas",
+      title: t('onboarding.step5.title'),
+      subtitle: t('onboarding.step5.subtitle'),
       content: (
         <div className="grid grid-cols-1 gap-3">
           {[
-            'Online Safety & Scams',
-            'Password Management',
-            'Video Calling Family',
-            'Social Media',
-            'Online Banking',
-            'Email & Messaging',
-            'Photo Storage & Sharing',
-            'App Downloads & Updates',
-            'Wi-Fi & Internet Issues',
-            'Device Settings',
-            'Online Shopping',
-            'Health Apps & Portals'
+            'onlineSafety',
+            'passwordManagement',
+            'videoCalling',
+            'socialMedia',
+            'onlineBanking',
+            'emailMessaging',
+            'photoStorage',
+            'appDownloads',
+            'wifiInternet',
+            'deviceSettings',
+            'onlineShopping',
+            'healthApps'
           ].map((concern) => (
             <button
               key={concern}
               onClick={() => {
                 setFormData(prev => ({
                   ...prev,
-                  primaryConcerns: prev.primaryConcerns.includes(concern)
-                    ? prev.primaryConcerns.filter(c => c !== concern)
-                    : [...prev.primaryConcerns, concern]
+                  primaryConcerns: prev.primaryConcerns.includes(t(`onboarding.step5.concerns.${concern}`))
+                    ? prev.primaryConcerns.filter(c => c !== t(`onboarding.step5.concerns.${concern}`))
+                    : [...prev.primaryConcerns, t(`onboarding.step5.concerns.${concern}`)]
                 }));
               }}
               className={`w-full p-3 rounded-xl border-2 transition-all text-left ${
-                formData.primaryConcerns.includes(concern)
+                formData.primaryConcerns.includes(t(`onboarding.step5.concerns.${concern}`))
                   ? 'border-blue-500 bg-blue-50 text-blue-700' 
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              {concern}
+              {t(`onboarding.step5.concerns.${concern}`)}
             </button>
           ))}
         </div>
       )
     },
     {
-      title: "Do you need any accessibility features?",
-      subtitle: "I want to make sure you can use this comfortably",
+      title: t('onboarding.step6.title'),
+      subtitle: t('onboarding.step6.subtitle'),
       content: (
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-3">
             {[
-              'Larger text and buttons',
-              'High contrast colors',
-              'Voice commands',
-              'Screen reader support',
-              'Slower explanations',
-              'Visual step indicators',
-              'None needed'
+              'largerText',
+              'highContrast',
+              'voiceCommands',
+              'screenReader',
+              'slowerExplanations',
+              'visualSteps',
+              'noneNeeded'
             ].map((need) => (
               <button
                 key={need}
                 onClick={() => {
-                  if (need === 'None needed') {
-                    setFormData(prev => ({ ...prev, assistiveNeeds: ['None needed'] }));
+                  const needText = t(`onboarding.step6.needs.${need}`);
+                  if (need === 'noneNeeded') {
+                    setFormData(prev => ({ ...prev, assistiveNeeds: [needText] }));
                   } else {
                     setFormData(prev => ({
                       ...prev,
-                      assistiveNeeds: prev.assistiveNeeds.includes('None needed')
-                        ? [need]
-                        : prev.assistiveNeeds.includes(need)
-                          ? prev.assistiveNeeds.filter(n => n !== need)
-                          : [...prev.assistiveNeeds.filter(n => n !== 'None needed'), need]
+                      assistiveNeeds: prev.assistiveNeeds.includes(needText)
+                        ? prev.assistiveNeeds.filter(n => n !== needText)
+                        : prev.assistiveNeeds.includes(t('onboarding.step6.needs.noneNeeded'))
+                          ? [needText]
+                          : [...prev.assistiveNeeds.filter(n => n !== t('onboarding.step6.needs.noneNeeded')), needText]
                     }));
                   }
                 }}
                 className={`w-full p-3 rounded-xl border-2 transition-all text-left ${
-                  formData.assistiveNeeds.includes(need)
+                  formData.assistiveNeeds.includes(t(`onboarding.step6.needs.${need}`))
                     ? 'border-blue-500 bg-blue-50 text-blue-700' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
-                {need}
+                {t(`onboarding.step6.needs.${need}`)}
               </button>
             ))}
           </div>
@@ -439,14 +441,14 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: "How do you prefer to learn?",
-      subtitle: "I'll adjust my teaching style to match your preference",
+      title: t('onboarding.step7.title'),
+      subtitle: t('onboarding.step7.subtitle'),
       content: (
         <div className="space-y-3">
           {[
-            { value: 'simple', label: 'Simple & Quick', desc: 'Just tell me what to do, step by step' },
-            { value: 'detailed', label: 'Detailed Explanations', desc: 'Explain why I\'m doing each step' },
-            { value: 'visual', label: 'Visual Learning', desc: 'Show me pictures and videos when possible' }
+            { value: 'simple', label: t('onboarding.step7.simple'), desc: t('onboarding.step7.simpleDesc') },
+            { value: 'detailed', label: t('onboarding.step7.detailed'), desc: t('onboarding.step7.detailedDesc') },
+            { value: 'visual', label: t('onboarding.step7.visual'), desc: t('onboarding.step7.visualDesc') }
           ].map((style) => (
             <button
               key={style.value}
@@ -465,14 +467,14 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: "Final touches",
-      subtitle: "Set up your perfect learning environment",
+      title: t('onboarding.step8.title'),
+      subtitle: t('onboarding.step8.subtitle'),
       content: (
         <div className="space-y-6">
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">Text-to-Speech</h4>
-              <p className="text-sm text-gray-600">Have answers read aloud</p>
+              <h4 className="font-medium">{t('onboarding.step8.textToSpeech')}</h4>
+              <p className="text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -491,8 +493,8 @@ const OnboardingPage: React.FC = () => {
 
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">Voice Input</h4>
-              <p className="text-sm text-gray-600">Ask questions by speaking</p>
+              <h4 className="font-medium">{t('onboarding.step8.voiceInput')}</h4>
+              <p className="text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -511,8 +513,8 @@ const OnboardingPage: React.FC = () => {
 
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">Video Recommendations</h4>
-              <p className="text-sm text-gray-600">Show helpful videos and articles</p>
+              <h4 className="font-medium">{t('onboarding.step8.videoRecommendations')}</h4>
+              <p className="text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -531,7 +533,7 @@ const OnboardingPage: React.FC = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Text Size Preference
+              {t('onboarding.step8.textSize')}
             </label>
             <select
               value={formData.preferences.fontSize}
@@ -541,9 +543,9 @@ const OnboardingPage: React.FC = () => {
               }))}
               className="input-field"
             >
-              <option value="normal">Normal</option>
-              <option value="large">Large</option>
-              <option value="extra-large">Extra Large</option>
+              <option value="normal">{t('onboarding.step8.textSizeNormal')}</option>
+              <option value="large">{t('onboarding.step8.textSizeLarge')}</option>
+              <option value="extra-large">{t('onboarding.step8.textSizeExtraLarge')}</option>
             </select>
           </div>
         </div>
@@ -603,7 +605,7 @@ const OnboardingPage: React.FC = () => {
       navigate('/dashboard');
     } catch (error) {
       console.error('Error saving onboarding data:', error);
-      alert('Could not save your preferences. Please try again.');
+      alert(t('onboarding.errorSaving'));
     } finally {
       setLoading(false);
     }
@@ -653,7 +655,7 @@ const OnboardingPage: React.FC = () => {
                 disabled={loading}
               >
                 <ChevronLeft className="w-4 h-4 mr-2" />
-                Back
+                {t('onboarding.back')}
               </button>
             )}
             <button
@@ -664,13 +666,13 @@ const OnboardingPage: React.FC = () => {
               {loading ? (
                 <div className="flex items-center justify-center">
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                  Setting up...
+                  {t('onboarding.settingUp')}
                 </div>
               ) : currentStep === steps.length - 1 ? (
-                'Complete Setup'
+                t('onboarding.completeSetup')
               ) : (
                 <>
-                  Next
+                  {t('onboarding.next')}
                   <ChevronRight className="w-4 h-4 ml-2" />
                 </>
               )}

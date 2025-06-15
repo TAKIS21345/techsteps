@@ -44,10 +44,261 @@
   },
   "learning": {
     "title": "Centro de Aprendizaje",
-    "structuredCourses": "Cursos estructurados y tutoriales"
+    "structuredCourses": "Cursos estructurados y tutoriales",
+    "skillsAssessment": "Evaluación de Habilidades",
+    "questionNumber": "Pregunta {{current}} de {{total}}",
+    "resetAnimation": "Reiniciar",
+    "showAnimation": "Mostrar Animación",
+    "courses": {
+      "beginner": {
+        "title": "Comenzando con la Tecnología",
+        "description": "Perfecto para principiantes completos. Aprende lo básico paso a paso.",
+        "estimatedTime": "2-3 horas",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Conceptos Básicos del Dispositivo",
+            "description": "Aprende cómo encender y apagar tu dispositivo de forma segura",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Encender y Apagar tu Dispositivo</h3><p>Cada dispositivo tiene un botón de encendido. Aprendamos a usarlo de forma segura.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Para Computadoras:</h4><ul class=\"space-y-2\"><li>• Busca un botón redondo con símbolo de encendido (⏻)</li><li>• Presiónalo una vez para encender</li><li>• Para apagar: Usa el menú Inicio, luego \"Apagar\"</li><li>• ¡Nunca solo presiones el botón de encendido para apagar!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Para Teléfonos/Tabletas:</h4><ul class=\"space-y-2\"><li>• El botón de encendido usualmente está en el lado</li><li>• Mantén presionado por 2-3 segundos para encender</li><li>• Para apagar: Mantén presionado, luego desliza para apagar</li></ul></div></div>",
+            "keyPoints": [
+              "Siempre usa procedimientos de apagado apropiados",
+              "La ubicación del botón de encendido varía por dispositivo",
+              "Nunca fuerces el apagado a menos que sea absolutamente necesario"
+            ],
+            "practiceExercise": "Practica encender y apagar tu dispositivo 3 veces usando el método apropiado.",
+            "animationDesc": "Mira cómo presionar correctamente el botón de encendido"
+          },
+          "mouseKeyboard": {
+            "title": "Usando Ratón y Teclado",
+            "description": "Domina los conceptos básicos de los dispositivos de entrada de computadora",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Conceptos Básicos de Ratón y Teclado</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Conceptos Básicos del Ratón:</h4><ul class=\"space-y-2\"><li>• Clic izquierdo: Seleccionar elementos, abrir programas</li><li>• Clic derecho: Abrir menús con más opciones</li><li>• Doble clic: Abrir archivos y programas</li><li>• Rueda de desplazamiento: Moverse arriba y abajo en páginas</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Elementos Esenciales del Teclado:</h4><ul class=\"space-y-2\"><li>• Barra espaciadora: Agregar espacios entre palabras</li><li>• Enter: Comenzar nueva línea o confirmar</li><li>• Retroceso: Borrar la letra antes del cursor</li><li>• Shift: Hacer letras mayúsculas</li></ul></div></div>",
+            "keyPoints": [
+              "El clic izquierdo es tu herramienta principal",
+              "El clic derecho abre menús útiles",
+              "La práctica hace la perfección"
+            ],
+            "practiceExercise": "Abre un programa de texto simple y escribe tu nombre, luego bórralo usando retroceso.",
+            "animationDesc": "Ve cómo hacer clic, doble clic y clic derecho"
+          },
+          "internetSafety": {
+            "title": "Fundamentos de Seguridad en Internet",
+            "description": "Mantente seguro en línea con estos consejos esenciales",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Manteniéndote Seguro en Línea</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Señales de Advertencia de Estafas:</h4><ul class=\"space-y-2 text-red-700\"><li>• Mensajes urgentes pidiendo dinero</li><li>• Solicitudes de contraseñas o información personal</li><li>• Mensajes de \"Has ganado\" que no ingresaste</li><li>• Enlaces o archivos adjuntos sospechosos</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Consejos de Navegación Segura:</h4><ul class=\"space-y-2\"><li>• Busca \"https://\" en direcciones web</li><li>• Solo descarga de tiendas de aplicaciones oficiales</li><li>• Mantén tu software actualizado</li><li>• Usa contraseñas fuertes y únicas</li></ul></div></div>",
+            "keyPoints": [
+              "Nunca des información personal a extraños",
+              "Cuando tengas dudas, pregunta a una persona de confianza",
+              "Las empresas legítimas no pedirán contraseñas por correo"
+            ],
+            "practiceExercise": "Identifica 3 señales de advertencia de estafas en línea de la lección."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Conectando con Familia y Amigos",
+        "description": "Aprende a usar redes sociales, videollamadas y mensajería de forma segura.",
+        "estimatedTime": "3-4 horas",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videollamadas con Familia",
+            "description": "Conecta cara a cara con seres queridos en cualquier lugar",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Haciendo Videollamadas</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Aplicaciones Populares de Videollamadas:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Integrado, muy fácil</li><li>• <strong>WhatsApp</strong>: Funciona en todos los teléfonos</li><li>• <strong>Zoom</strong>: Excelente para llamadas grupales</li><li>• <strong>Skype</strong>: Funciona en computadoras y teléfonos</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Antes de tu Llamada:</h4><ul class=\"space-y-2\"><li>• Verifica tu conexión a internet</li><li>• Encuentra buena iluminación (frente a una ventana)</li><li>• Prueba tu cámara y micrófono</li><li>• Ten listo el contacto de la persona</li></ul></div></div>",
+            "keyPoints": [
+              "La buena iluminación hace una gran diferencia",
+              "Prueba tu configuración antes de llamadas importantes",
+              "La mayoría de las aplicaciones funcionan de manera similar una vez que aprendes una"
+            ],
+            "practiceExercise": "Haz una videollamada de prueba a un familiar o amigo."
+          },
+          "socialMedia": {
+            "title": "Conceptos Básicos de Redes Sociales",
+            "description": "Conecta con amigos y familia en Facebook y otras plataformas",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Comenzando con Redes Sociales</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Conceptos Básicos de Facebook:</h4><ul class=\"space-y-2\"><li>• Crea un perfil con tu nombre real</li><li>• Agrega una foto de perfil bonita</li><li>• Envía solicitudes de amistad a personas que conoces</li><li>• Comparte actualizaciones, fotos y recuerdos</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Configuración de Privacidad:</h4><ul class=\"space-y-2\"><li>• Solo acepta amigos que realmente conoces</li><li>• Configura publicaciones a \"Solo amigos\"</li><li>• No compartas información personal públicamente</li><li>• Revisa qué pueden ver otros sobre ti</li></ul></div></div>",
+            "keyPoints": [
+              "La configuración de privacidad es muy importante",
+              "Solo conecta con personas que conoces",
+              "Piensa antes de publicar - permanece en línea"
+            ],
+            "practiceExercise": "Configura tu configuración de privacidad a \"Solo amigos\" para publicaciones."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Dominio de la Vida Digital",
+        "description": "Habilidades avanzadas para una vida digital confiada.",
+        "estimatedTime": "4-5 horas",
+        "lessons": {
+          "smartHome": {
+            "title": "Dispositivos de Casa Inteligente",
+            "description": "Controla tu hogar con comandos de voz y aplicaciones",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Conceptos Básicos de Casa Inteligente</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Dispositivos Inteligentes Populares:</h4><ul class=\"space-y-2\"><li>• <strong>Altavoces Inteligentes</strong>: Alexa, Google Home</li><li>• <strong>Termostatos Inteligentes</strong>: Controla temperatura remotamente</li><li>• <strong>Luces Inteligentes</strong>: Atenúa, cambia colores, programa horarios</li><li>• <strong>Timbres Inteligentes</strong>: Ve quién está en la puerta</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Comenzando:</h4><ul class=\"space-y-2\"><li>• Comienza con un dispositivo para aprender</li><li>• Descarga la aplicación del dispositivo</li><li>• Sigue las instrucciones de configuración paso a paso</li><li>• Practica comandos de voz básicos</li></ul></div></div>",
+            "keyPoints": [
+              "Comienza simple con un dispositivo",
+              "Los comandos de voz hacen la vida más fácil",
+              "La mayoría de dispositivos tienen aplicaciones útiles"
+            ],
+            "practiceExercise": "Si tienes un dispositivo inteligente, practica 3 comandos de voz diferentes."
+          },
+          "onlineBanking": {
+            "title": "Seguridad en Banca en Línea",
+            "description": "Administra tus finanzas de forma segura en línea",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Banca en Línea Segura</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Elementos Esenciales de Seguridad:</h4><ul class=\"space-y-2 text-red-700\"><li>• Siempre escribe la dirección web de tu banco directamente</li><li>• Busca el ícono de candado en tu navegador</li><li>• Nunca uses banca en Wi-Fi público</li><li>• Cierra sesión completamente cuando termines</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Qué Puedes Hacer en Línea:</h4><ul class=\"space-y-2\"><li>• Verificar saldos de cuentas</li><li>• Ver historial de transacciones</li><li>• Transferir dinero entre cuentas</li><li>• Pagar facturas electrónicamente</li></ul></div></div>",
+            "keyPoints": [
+              "La seguridad es la máxima prioridad",
+              "Tu banco nunca pedirá contraseñas por correo",
+              "La banca en línea es muy conveniente cuando se hace de forma segura"
+            ],
+            "practiceExercise": "Visita el sitio web de tu banco y practica iniciar sesión (no hagas transacciones aún)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "¿Qué tan cómodo te sientes encendiendo y apagando una computadora o teléfono?",
+          "options": {
+            "0": "Nunca lo he hecho",
+            "1": "Necesito ayuda cada vez",
+            "2": "Puedo hacerlo a veces",
+            "3": "Muy cómodo"
+          }
+        },
+        "1": {
+          "question": "¿Con qué frecuencia usas internet?",
+          "options": {
+            "0": "Nunca",
+            "1": "Raramente",
+            "2": "A veces",
+            "3": "Diariamente"
+          }
+        },
+        "2": {
+          "question": "¿Alguna vez has enviado un correo electrónico?",
+          "options": {
+            "0": "Nunca",
+            "1": "Con mucha ayuda",
+            "2": "Algunas veces",
+            "3": "Regularmente"
+          }
+        },
+        "3": {
+          "question": "¿Qué tan cómodo te sientes descargando aplicaciones?",
+          "options": {
+            "0": "Nunca lo he intentado",
+            "1": "Muy nervioso",
+            "2": "Con ayuda",
+            "3": "Confiado"
+          }
+        },
+        "4": {
+          "question": "¿Usas videollamadas (FaceTime, Zoom, etc.)?",
+          "options": {
+            "0": "Nunca",
+            "1": "Lo intenté una vez",
+            "2": "A veces",
+            "3": "Regularmente"
+          }
+        },
+        "5": {
+          "question": "¿Cómo te sientes sobre las compras en línea?",
+          "options": {
+            "0": "Muy aterrador",
+            "1": "Muy nervioso",
+            "2": "Dispuesto a intentar",
+            "3": "Compro en línea a menudo"
+          }
+        },
+        "6": {
+          "question": "¿Has usado redes sociales (Facebook, etc.)?",
+          "options": {
+            "0": "Nunca",
+            "1": "Lo he visto",
+            "2": "Tengo una cuenta",
+            "3": "Lo uso regularmente"
+          }
+        },
+        "7": {
+          "question": "¿Qué tan cómodo te sientes con las contraseñas?",
+          "options": {
+            "0": "Muy confundido",
+            "1": "Necesito ayuda",
+            "2": "Entiendo lo básico",
+            "3": "Las manejo bien"
+          }
+        },
+        "8": {
+          "question": "¿Haces respaldo de tus fotos y archivos?",
+          "options": {
+            "0": "No sé cómo",
+            "1": "Alguien me ayuda",
+            "2": "A veces",
+            "3": "Regularmente"
+          }
+        },
+        "9": {
+          "question": "¿Cómo aprendes nueva tecnología?",
+          "options": {
+            "0": "La evito",
+            "1": "Pido ayuda",
+            "2": "Lo intento con cuidado",
+            "3": "Exploro con confianza"
+          }
+        }
+      }
+    }
   },
   "settings": {
-    "customizePrefs": "Personaliza tus preferencias"
+    "customizePrefs": "Personaliza tus preferencias",
+    "personalInfo": "Información Personal",
+    "firstName": "Nombre",
+    "firstNamePlaceholder": "Tu nombre",
+    "primaryDevice": "Dispositivo Principal",
+    "devices": {
+      "windowsComputer": "Computadora Windows",
+      "macComputer": "Mac (Computadora Apple)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Teléfono o Tableta Android"
+    },
+    "accessibility": "Accesibilidad",
+    "textToSpeech": "Texto a Voz",
+    "textToSpeechDesc": "Que las respuestas se lean en voz alta",
+    "voiceInput": "Entrada de Voz",
+    "voiceInputDesc": "Haz preguntas hablando",
+    "languagePreferences": "Preferencias de Idioma",
+    "hideLanguages": "Ocultar",
+    "modifyLanguages": "Modificar Idiomas",
+    "defaultLanguage": "Idioma Predeterminado (todo el sitio web usará este idioma)",
+    "defaultLanguageDesc": "Este será el idioma principal para todos los elementos de interfaz e interacciones.",
+    "otherLanguages": "Otros idiomas que te gustaría usar:",
+    "default": "Predeterminado",
+    "languageConfiguration": "Configuración de Idioma",
+    "languageConfigurationDesc": "Tus idiomas seleccionados se usarán para:",
+    "speechToText": "Reconocimiento y procesamiento de voz a texto",
+    "multilingualText": "Interacciones y respuestas de texto multilingües",
+    "interfaceLanguage": "Opciones de idioma de interfaz y accesibilidad",
+    "searchLanguages": "Buscar idiomas...",
+    "selectAll": "Seleccionar Todo",
+    "deselectAll": "Deseleccionar Todo",
+    "selectedLanguages": "Seleccionados: {{count}} idioma",
+    "selectedLanguages_plural": "Seleccionados: {{count}} idiomas",
+    "noLanguagesFound": "No se encontraron idiomas que coincidan con \"{{search}}\"",
+    "languageRequired": "Se Requiere Al Menos Un Idioma",
+    "languageRequiredDesc": "Por favor selecciona al menos un idioma para asegurar el funcionamiento adecuado de la entrada de voz e interacciones de texto.",
+    "account": "Cuenta",
+    "signOut": "Cerrar Sesión",
+    "signOutDesc": "Cerrar sesión de tu cuenta",
+    "cancel": "Cancelar",
+    "saving": "Guardando...",
+    "saved": "¡Guardado!",
+    "saveChanges": "Guardar Cambios",
+    "errorSaving": "No se pudieron guardar las configuraciones. Por favor intenta de nuevo."
   },
   "common": {
     "settings": "Configuración",
@@ -133,6 +384,117 @@
     "signingIn": "Iniciando sesión...",
     "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión",
     "dontHaveAccount": "¿No tienes una cuenta? Regístrate"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Conozcámonos",
+      "subtitle": "Ayúdame a personalizar tu experiencia",
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Tu nombre",
+      "lastName": "Apellido",
+      "lastNamePlaceholder": "Tu apellido",
+      "age": "Edad (me ayuda a ajustar mis explicaciones)"
+    },
+    "step2": {
+      "title": "Elige tus idiomas preferidos",
+      "subtitle": "Selecciona los idiomas que te gustaría usar para comunicación y entrada de voz",
+      "languageSelection": "Selección de Idioma",
+      "languageDescription": "Elige los idiomas con los que te sientes cómodo. Esto:",
+      "speechToText": "Configurará el reconocimiento de voz para entender tu voz en estos idiomas",
+      "textInteractions": "Habilitará interacciones de texto en tus idiomas elegidos",
+      "interfaceOptions": "Personalizará opciones de interfaz para mejor accesibilidad",
+      "searchLanguages": "Buscar idiomas...",
+      "selectAll": "Seleccionar Todo",
+      "deselectAll": "Deseleccionar Todo",
+      "selected": "Seleccionados: {{count}} idioma",
+      "selected_plural": "Seleccionados: {{count}} idiomas",
+      "noLanguagesFound": "No se encontraron idiomas que coincidan con \"{{search}}\"",
+      "languageRequired": "Selección de Idioma Requerida",
+      "languageRequiredDesc": "Por favor selecciona al menos un idioma para continuar. Esto asegura la mejor experiencia para entrada de voz e interacciones de texto."
+    },
+    "step3": {
+      "title": "¿Qué dispositivo usas más?",
+      "subtitle": "Esto me ayuda a darte mejores instrucciones",
+      "devices": {
+        "windowscomputer": "Computadora Windows",
+        "macapplecomputer": "Mac (Computadora Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Teléfono o Tableta Android",
+        "smarttv": "Smart TV",
+        "multipledevices": "Múltiples dispositivos"
+      }
+    },
+    "step4": {
+      "title": "¿Qué tan cómodo te sientes con la tecnología?",
+      "subtitle": "Sé honesto - esto me ayuda a explicar las cosas al nivel correcto",
+      "beginner": "Principiante",
+      "beginnerDesc": "Necesito ayuda paso a paso con la mayoría de las cosas",
+      "some": "Algo de Experiencia",
+      "someDesc": "Puedo hacer tareas básicas pero necesito ayuda con cosas nuevas",
+      "comfortable": "Cómodo",
+      "comfortableDesc": "Puedo resolver la mayoría de las cosas pero a veces necesito orientación"
+    },
+    "step5": {
+      "title": "¿Qué temas tecnológicos te preocupan más?",
+      "subtitle": "Selecciona todos los que apliquen - priorizaré ayuda en estas áreas",
+      "concerns": {
+        "onlineSafety": "Seguridad en Línea y Estafas",
+        "passwordManagement": "Gestión de Contraseñas",
+        "videoCalling": "Videollamadas con Familia",
+        "socialMedia": "Redes Sociales",
+        "onlineBanking": "Banca en Línea",
+        "emailMessaging": "Correo y Mensajería",
+        "photoStorage": "Almacenamiento y Compartir Fotos",
+        "appDownloads": "Descargas y Actualizaciones de Apps",
+        "wifiInternet": "Problemas de Wi-Fi e Internet",
+        "deviceSettings": "Configuraciones del Dispositivo",
+        "onlineShopping": "Compras en Línea",
+        "healthApps": "Apps y Portales de Salud"
+      }
+    },
+    "step6": {
+      "title": "¿Necesitas alguna característica de accesibilidad?",
+      "subtitle": "Quiero asegurarme de que puedas usar esto cómodamente",
+      "needs": {
+        "largerText": "Texto y botones más grandes",
+        "highContrast": "Colores de alto contraste",
+        "voiceCommands": "Comandos de voz",
+        "screenReader": "Soporte de lector de pantalla",
+        "slowerExplanations": "Explicaciones más lentas",
+        "visualSteps": "Indicadores visuales de pasos",
+        "noneNeeded": "Ninguno necesario"
+      }
+    },
+    "step7": {
+      "title": "¿Cómo prefieres aprender?",
+      "subtitle": "Ajustaré mi estilo de enseñanza para que coincida con tu preferencia",
+      "simple": "Simple y Rápido",
+      "simpleDesc": "Solo dime qué hacer, paso a paso",
+      "detailed": "Explicaciones Detalladas",
+      "detailedDesc": "Explica por qué estoy haciendo cada paso",
+      "visual": "Aprendizaje Visual",
+      "visualDesc": "Muéstrame imágenes y videos cuando sea posible"
+    },
+    "step8": {
+      "title": "Toques finales",
+      "subtitle": "Configura tu entorno de aprendizaje perfecto",
+      "textToSpeech": "Texto a Voz",
+      "textToSpeechDesc": "Que las respuestas se lean en voz alta",
+      "voiceInput": "Entrada de Voz",
+      "voiceInputDesc": "Haz preguntas hablando",
+      "videoRecommendations": "Recomendaciones de Video",
+      "videoRecommendationsDesc": "Mostrar videos y artículos útiles",
+      "textSize": "Preferencia de Tamaño de Texto",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Grande",
+      "textSizeExtraLarge": "Extra Grande"
+    },
+    "back": "Atrás",
+    "next": "Siguiente",
+    "settingUp": "Configurando...",
+    "completeSetup": "Completar Configuración",
+    "errorSaving": "No se pudieron guardar tus preferencias. Por favor intenta de nuevo."
   },
   "error": {
     "askQuestionFirst": "Por favor haz una pregunta primero",

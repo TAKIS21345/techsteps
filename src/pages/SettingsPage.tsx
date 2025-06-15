@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, User, Smartphone, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle } from 'lucide-react';
 import { useUser } from '../contexts/UserContext';
 import { useAuth } from '../contexts/AuthContext';
+import { useTranslation } from 'react-i18next';
 import Logo from '../components/Logo';
 
 const SettingsPage: React.FC = () => {
   const { userData, updateUserData } = useUser();
   const { logout } = useAuth();
-  const { getSupportedLanguages, defaultLanguage, setDefaultLanguage } = useLanguage();
+  const { t, i18n } = useTranslation();
   
   const [languageSearch, setLanguageSearch] = useState('');
   const [showLanguageSection, setShowLanguageSection] = useState(false);
   const [formData, setFormData] = useState({
     firstName: userData?.firstName || '',
     os: userData?.os || 'Windows Computer',
-    selectedLanguages: userData?.selectedLanguages || ['en'],
-    defaultLanguage: defaultLanguage,
+    selectedLanguages: userData?.selectedLanguages || [i18n.language],
+    defaultLanguage: i18n.language,
     preferences: {
       textToSpeech: userData?.preferences?.textToSpeech ?? true,
       voiceInput: userData?.preferences?.voiceInput ?? true,
       theme: userData?.preferences?.theme || 'light',
-      speechLanguages: userData?.preferences?.speechLanguages || ['en']
+      speechLanguages: userData?.preferences?.speechLanguages || [i18n.language]
     }
   });
   
@@ -113,10 +114,10 @@ const SettingsPage: React.FC = () => {
   const handleDeselectAllLanguages = () => {
     setFormData(prev => ({
       ...prev,
-      selectedLanguages: ['en'], // Always keep English as minimum
+      selectedLanguages: [i18n.language], // Always keep current language as minimum
       preferences: {
         ...prev.preferences,
-        speechLanguages: ['en']
+        speechLanguages: [i18n.language]
       }
     }));
   };
@@ -127,8 +128,8 @@ const SettingsPage: React.FC = () => {
 
     try {
       // Update default language if changed
-      if (formData.defaultLanguage !== defaultLanguage) {
-        setDefaultLanguage(formData.defaultLanguage);
+      if (formData.defaultLanguage !== i18n.language) {
+        await i18n.changeLanguage(formData.defaultLanguage);
       }
 
       await updateUserData(formData);
@@ -136,7 +137,7 @@ const SettingsPage: React.FC = () => {
       setTimeout(() => setSaved(false), 3000);
     } catch (error) {
       console.error('Error saving settings:', error);
-      alert('Could not save settings. Please try again.');
+      alert(t('settings.errorSaving'));
     } finally {
       setLoading(false);
     }
@@ -166,7 +167,7 @@ const SettingsPage: React.FC = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Link>
               <Logo size="sm" />
-              <h1 className="text-xl font-semibold text-gray-800">Settings</h1>
+              <h1 className="text-xl font-semibold text-gray-800">{t('common.settings')}</h1>
             </div>
           </div>
         </div>
@@ -180,13 +181,13 @@ const SettingsPage: React.FC = () => {
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                 <User className="w-5 h-5 text-blue-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Personal Information</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{t('settings.personalInfo')}</h2>
             </div>
 
             <div className="space-y-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                  First Name
+                  {t('settings.firstName')}
                 </label>
                 <input
                   id="firstName"
@@ -194,13 +195,13 @@ const SettingsPage: React.FC = () => {
                   value={formData.firstName}
                   onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
                   className="input-field"
-                  placeholder="Your first name"
+                  placeholder={t('settings.firstNamePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="os" className="block text-sm font-medium text-gray-700 mb-2">
-                  Primary Device
+                  {t('settings.primaryDevice')}
                 </label>
                 <select
                   id="os"
@@ -208,11 +209,11 @@ const SettingsPage: React.FC = () => {
                   onChange={(e) => setFormData(prev => ({ ...prev, os: e.target.value }))}
                   className="input-field"
                 >
-                  <option>Windows Computer</option>
-                  <option>Mac (Apple Computer)</option>
-                  <option>iPhone</option>
-                  <option>iPad</option>
-                  <option>Android Phone or Tablet</option>
+                  <option>{t('settings.devices.windowsComputer')}</option>
+                  <option>{t('settings.devices.macComputer')}</option>
+                  <option>{t('settings.devices.iphone')}</option>
+                  <option>{t('settings.devices.ipad')}</option>
+                  <option>{t('settings.devices.androidDevice')}</option>
                 </select>
               </div>
             </div>
@@ -224,7 +225,7 @@ const SettingsPage: React.FC = () => {
               <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                 <Volume2 className="w-5 h-5 text-green-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Accessibility</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{t('settings.accessibility')}</h2>
             </div>
 
             <div className="space-y-6">
@@ -232,8 +233,8 @@ const SettingsPage: React.FC = () => {
                 <div className="flex items-center">
                   <Volume2 className="w-5 h-5 text-gray-600 mr-3" />
                   <div>
-                    <h4 className="font-medium">Text-to-Speech</h4>
-                    <p className="text-sm text-gray-600">Have answers read aloud to you</p>
+                    <h4 className="font-medium">{t('settings.textToSpeech')}</h4>
+                    <p className="text-sm text-gray-600">{t('settings.textToSpeechDesc')}</p>
                   </div>
                 </div>
                 <button
@@ -252,8 +253,8 @@ const SettingsPage: React.FC = () => {
                 <div className="flex items-center">
                   <Mic className="w-5 h-5 text-gray-600 mr-3" />
                   <div>
-                    <h4 className="font-medium">Voice Input</h4>
-                    <p className="text-sm text-gray-600">Ask questions by speaking</p>
+                    <h4 className="font-medium">{t('settings.voiceInput')}</h4>
+                    <p className="text-sm text-gray-600">{t('settings.voiceInputDesc')}</p>
                   </div>
                 </div>
                 <button
@@ -277,25 +278,25 @@ const SettingsPage: React.FC = () => {
                 <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
                   <Globe className="w-5 h-5 text-purple-600" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Language Preferences</h2>
+                <h2 className="text-2xl font-bold text-gray-800">{t('settings.languagePreferences')}</h2>
               </div>
               <button
                 onClick={() => setShowLanguageSection(!showLanguageSection)}
                 className="btn-secondary text-sm"
               >
-                {showLanguageSection ? 'Hide' : 'Modify Languages'}
+                {showLanguageSection ? t('settings.hideLanguages') : t('settings.modifyLanguages')}
               </button>
             </div>
 
             {/* Default Language Selection */}
             <div className="mb-6">
               <label htmlFor="defaultLanguage" className="block text-sm font-medium text-gray-700 mb-2">
-                Default Language (entire website will use this language)
+                {t('settings.defaultLanguage')}
               </label>
               <select
                 id="defaultLanguage"
                 value={formData.defaultLanguage}
-                onChange={(e) => setFormData(prev => ({ ...prev, defaultLanguage: e.target.value as Language }))}
+                onChange={(e) => setFormData(prev => ({ ...prev, defaultLanguage: e.target.value }))}
                 className="input-field max-w-md"
               >
                 {allLanguages.map((lang) => (
@@ -305,13 +306,13 @@ const SettingsPage: React.FC = () => {
                 ))}
               </select>
               <p className="text-sm text-gray-500 mt-1">
-                This will be the primary language for all interface elements and interactions.
+                {t('settings.defaultLanguageDesc')}
               </p>
             </div>
 
             <div className="mb-4">
               <p className="text-gray-600 mb-3">
-                Other languages you'd like to use:
+                {t('settings.otherLanguages')}
               </p>
               <div className="flex flex-wrap gap-2">
                 {formData.selectedLanguages.map(code => {
@@ -326,7 +327,7 @@ const SettingsPage: React.FC = () => {
                       }`}
                     >
                       {lang.nativeName} ({lang.name})
-                      {code === formData.defaultLanguage && <span className="ml-1 text-xs">• Default</span>}
+                      {code === formData.defaultLanguage && <span className="ml-1 text-xs">• {t('settings.default')}</span>}
                     </span>
                   ) : null;
                 })}
@@ -339,14 +340,14 @@ const SettingsPage: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <Globe className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div>
-                      <h4 className="font-medium text-blue-800 mb-1">Language Configuration</h4>
+                      <h4 className="font-medium text-blue-800 mb-1">{t('settings.languageConfiguration')}</h4>
                       <p className="text-sm text-blue-700">
-                        Your selected languages will be used for:
+                        {t('settings.languageConfigurationDesc')}
                       </p>
                       <ul className="text-sm text-blue-700 mt-2 space-y-1">
-                        <li>• Speech-to-text recognition and processing</li>
-                        <li>• Multilingual text interactions and responses</li>
-                        <li>• Interface language options and accessibility</li>
+                        <li>• {t('settings.speechToText')}</li>
+                        <li>• {t('settings.multilingualText')}</li>
+                        <li>• {t('settings.interfaceLanguage')}</li>
                       </ul>
                     </div>
                   </div>
@@ -360,7 +361,7 @@ const SettingsPage: React.FC = () => {
                       type="text"
                       value={languageSearch}
                       onChange={(e) => setLanguageSearch(e.target.value)}
-                      placeholder="Search languages..."
+                      placeholder={t('settings.searchLanguages')}
                       className="input-field pl-10"
                     />
                   </div>
@@ -371,19 +372,19 @@ const SettingsPage: React.FC = () => {
                       onClick={handleSelectAllLanguages}
                       className="btn-secondary text-sm px-4 py-2"
                     >
-                      Select All
+                      {t('settings.selectAll')}
                     </button>
                     <button
                       type="button"
                       onClick={handleDeselectAllLanguages}
                       className="btn-secondary text-sm px-4 py-2"
                     >
-                      Deselect All
+                      {t('settings.deselectAll')}
                     </button>
                   </div>
 
                   <div className="text-sm text-gray-600">
-                    Selected: {formData.selectedLanguages.length} language{formData.selectedLanguages.length !== 1 ? 's' : ''}
+                    {t('settings.selectedLanguages', { count: formData.selectedLanguages.length })}
                   </div>
                 </div>
 
@@ -427,7 +428,7 @@ const SettingsPage: React.FC = () => {
                 {filteredLanguages.length === 0 && (
                   <div className="text-center py-8 text-gray-500">
                     <Globe className="w-8 h-8 mx-auto mb-2 text-gray-300" />
-                    <p>No languages found matching "{languageSearch}"</p>
+                    <p>{t('settings.noLanguagesFound', { search: languageSearch })}</p>
                   </div>
                 )}
 
@@ -436,9 +437,9 @@ const SettingsPage: React.FC = () => {
                     <div className="flex items-start space-x-3">
                       <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-amber-800 mb-1">At Least One Language Required</h4>
+                        <h4 className="font-medium text-amber-800 mb-1">{t('settings.languageRequired')}</h4>
                         <p className="text-sm text-amber-700">
-                          Please select at least one language to ensure proper functionality of voice input and text interactions.
+                          {t('settings.languageRequiredDesc')}
                         </p>
                       </div>
                     </div>
@@ -454,7 +455,7 @@ const SettingsPage: React.FC = () => {
               <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                 <User className="w-5 h-5 text-red-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Account</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{t('settings.account')}</h2>
             </div>
 
             <div className="space-y-4">
@@ -462,8 +463,8 @@ const SettingsPage: React.FC = () => {
                 onClick={logout}
                 className="w-full p-4 text-left text-red-600 hover:bg-red-50 rounded-xl transition-colors border border-red-200"
               >
-                <div className="font-medium">Sign Out</div>
-                <div className="text-sm text-red-500">Sign out of your account</div>
+                <div className="font-medium">{t('settings.signOut')}</div>
+                <div className="text-sm text-red-500">{t('settings.signOutDesc')}</div>
               </button>
             </div>
           </div>
@@ -471,7 +472,7 @@ const SettingsPage: React.FC = () => {
           {/* Save Button */}
           <div className="flex justify-end space-x-4">
             <Link to="/dashboard" className="btn-secondary">
-              Cancel
+              {t('settings.cancel')}
             </Link>
             <button
               onClick={handleSave}
@@ -483,17 +484,17 @@ const SettingsPage: React.FC = () => {
               {loading ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                  Saving...
+                  {t('settings.saving')}
                 </>
               ) : saved ? (
                 <>
                   <Save className="w-4 h-4 mr-2" />
-                  Saved!
+                  {t('settings.saved')}
                 </>
               ) : (
                 <>
                   <Save className="w-4 h-4 mr-2" />
-                  Save Changes
+                  {t('settings.saveChanges')}
                 </>
               )}
             </button>

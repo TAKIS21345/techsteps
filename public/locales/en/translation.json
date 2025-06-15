@@ -44,10 +44,261 @@
   },
   "learning": {
     "title": "Learning Center",
-    "structuredCourses": "Structured courses and tutorials"
+    "structuredCourses": "Structured courses and tutorials",
+    "skillsAssessment": "Skills Assessment",
+    "questionNumber": "Question {{current}} of {{total}}",
+    "resetAnimation": "Reset",
+    "showAnimation": "Show Animation",
+    "courses": {
+      "beginner": {
+        "title": "Getting Started with Technology",
+        "description": "Perfect for complete beginners. Learn the basics step by step.",
+        "estimatedTime": "2-3 hours",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Device Basics",
+            "description": "Learn how to turn your device on and off safely",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Turning Your Device On and Off</h3><p>Every device has a power button. Let's learn how to use it safely.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">For Computers:</h4><ul class=\"space-y-2\"><li>• Look for a round button with a power symbol (⏻)</li><li>• Press it once to turn on</li><li>• To turn off: Use the Start menu, then \"Shut down\"</li><li>• Never just press the power button to turn off!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">For Phones/Tablets:</h4><ul class=\"space-y-2\"><li>• Power button is usually on the side</li><li>• Press and hold for 2-3 seconds to turn on</li><li>• To turn off: Press and hold, then slide to power off</li></ul></div></div>",
+            "keyPoints": [
+              "Always use proper shutdown procedures",
+              "Power button location varies by device",
+              "Never force power off unless absolutely necessary"
+            ],
+            "practiceExercise": "Practice turning your device on and off 3 times using the proper method.",
+            "animationDesc": "Watch how to properly press the power button"
+          },
+          "mouseKeyboard": {
+            "title": "Using Mouse and Keyboard",
+            "description": "Master the basics of computer input devices",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Mouse and Keyboard Basics</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mouse Basics:</h4><ul class=\"space-y-2\"><li>• Left click: Select items, open programs</li><li>• Right click: Open menus with more options</li><li>• Double click: Open files and programs</li><li>• Scroll wheel: Move up and down on pages</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Keyboard Essentials:</h4><ul class=\"space-y-2\"><li>• Space bar: Add spaces between words</li><li>• Enter: Start a new line or confirm</li><li>• Backspace: Delete the letter before cursor</li><li>• Shift: Make capital letters</li></ul></div></div>",
+            "keyPoints": [
+              "Left click is your main tool",
+              "Right click opens helpful menus",
+              "Practice makes perfect"
+            ],
+            "practiceExercise": "Open a simple text program and type your name, then delete it using backspace.",
+            "animationDesc": "See how to click, double-click, and right-click"
+          },
+          "internetSafety": {
+            "title": "Internet Safety Fundamentals",
+            "description": "Stay safe online with these essential tips",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Staying Safe Online</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Warning Signs of Scams:</h4><ul class=\"space-y-2 text-red-700\"><li>• Urgent messages asking for money</li><li>• Requests for passwords or personal info</li><li>• \"You've won\" messages you didn't enter</li><li>• Suspicious links or attachments</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Safe Browsing Tips:</h4><ul class=\"space-y-2\"><li>• Look for \"https://\" in web addresses</li><li>• Only download from official app stores</li><li>• Keep your software updated</li><li>• Use strong, unique passwords</li></ul></div></div>",
+            "keyPoints": [
+              "Never give personal information to strangers",
+              "When in doubt, ask a trusted person",
+              "Legitimate companies won't ask for passwords via email"
+            ],
+            "practiceExercise": "Identify 3 warning signs of online scams from the lesson."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Connecting with Family & Friends",
+        "description": "Learn to use social media, video calls, and messaging safely.",
+        "estimatedTime": "3-4 hours",
+        "lessons": {
+          "videoCalls": {
+            "title": "Video Calls with Family",
+            "description": "Connect face-to-face with loved ones anywhere",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Making Video Calls</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Popular Video Call Apps:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Built-in, very easy</li><li>• <strong>WhatsApp</strong>: Works on all phones</li><li>• <strong>Zoom</strong>: Great for group calls</li><li>• <strong>Skype</strong>: Works on computers and phones</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Before Your Call:</h4><ul class=\"space-y-2\"><li>• Check your internet connection</li><li>• Find good lighting (face a window)</li><li>• Test your camera and microphone</li><li>• Have the person's contact ready</li></ul></div></div>",
+            "keyPoints": [
+              "Good lighting makes a big difference",
+              "Test your setup before important calls",
+              "Most apps work similarly once you learn one"
+            ],
+            "practiceExercise": "Make a test video call to a family member or friend."
+          },
+          "socialMedia": {
+            "title": "Social Media Basics",
+            "description": "Connect with friends and family on Facebook and other platforms",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Getting Started with Social Media</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Facebook Basics:</h4><ul class=\"space-y-2\"><li>• Create a profile with your real name</li><li>• Add a nice profile picture</li><li>• Send friend requests to people you know</li><li>• Share updates, photos, and memories</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Privacy Settings:</h4><ul class=\"space-y-2\"><li>• Only accept friends you actually know</li><li>• Set posts to \"Friends only\"</li><li>• Don't share personal information publicly</li><li>• Review what others can see about you</li></ul></div></div>",
+            "keyPoints": [
+              "Privacy settings are very important",
+              "Only connect with people you know",
+              "Think before you post - it stays online"
+            ],
+            "practiceExercise": "Set up your privacy settings to \"Friends only\" for posts."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Digital Life Mastery",
+        "description": "Advanced skills for confident digital living.",
+        "estimatedTime": "4-5 hours",
+        "lessons": {
+          "smartHome": {
+            "title": "Smart Home Devices",
+            "description": "Control your home with voice commands and apps",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Smart Home Basics</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Popular Smart Devices:</h4><ul class=\"space-y-2\"><li>• <strong>Smart Speakers</strong>: Alexa, Google Home</li><li>• <strong>Smart Thermostats</strong>: Control temperature remotely</li><li>• <strong>Smart Lights</strong>: Dim, change colors, set schedules</li><li>• <strong>Smart Doorbells</strong>: See who's at the door</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Getting Started:</h4><ul class=\"space-y-2\"><li>• Start with one device to learn</li><li>• Download the device's app</li><li>• Follow setup instructions step by step</li><li>• Practice basic voice commands</li></ul></div></div>",
+            "keyPoints": [
+              "Start simple with one device",
+              "Voice commands make life easier",
+              "Most devices have helpful apps"
+            ],
+            "practiceExercise": "If you have a smart device, practice 3 different voice commands."
+          },
+          "onlineBanking": {
+            "title": "Online Banking Security",
+            "description": "Manage your finances safely online",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Safe Online Banking</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Security Essentials:</h4><ul class=\"space-y-2 text-red-700\"><li>• Always type your bank's web address directly</li><li>• Look for the lock icon in your browser</li><li>• Never bank on public Wi-Fi</li><li>• Log out completely when finished</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">What You Can Do Online:</h4><ul class=\"space-y-2\"><li>• Check account balances</li><li>• View transaction history</li><li>• Transfer money between accounts</li><li>• Pay bills electronically</li></ul></div></div>",
+            "keyPoints": [
+              "Security is the top priority",
+              "Your bank will never ask for passwords via email",
+              "Online banking is very convenient when done safely"
+            ],
+            "practiceExercise": "Visit your bank's website and practice logging in (don't do any transactions yet)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "How comfortable are you with turning a computer or phone on and off?",
+          "options": {
+            "0": "Never done it",
+            "1": "Need help every time",
+            "2": "Can do it sometimes",
+            "3": "Very comfortable"
+          }
+        },
+        "1": {
+          "question": "How often do you use the internet?",
+          "options": {
+            "0": "Never",
+            "1": "Rarely",
+            "2": "Sometimes",
+            "3": "Daily"
+          }
+        },
+        "2": {
+          "question": "Have you ever sent an email?",
+          "options": {
+            "0": "Never",
+            "1": "With lots of help",
+            "2": "A few times",
+            "3": "Regularly"
+          }
+        },
+        "3": {
+          "question": "How comfortable are you with downloading apps?",
+          "options": {
+            "0": "Never tried",
+            "1": "Very nervous",
+            "2": "With help",
+            "3": "Confident"
+          }
+        },
+        "4": {
+          "question": "Do you use video calling (FaceTime, Zoom, etc.)?",
+          "options": {
+            "0": "Never",
+            "1": "Tried once",
+            "2": "Sometimes",
+            "3": "Regularly"
+          }
+        },
+        "5": {
+          "question": "How do you feel about online shopping?",
+          "options": {
+            "0": "Too scary",
+            "1": "Very nervous",
+            "2": "Willing to try",
+            "3": "Shop online often"
+          }
+        },
+        "6": {
+          "question": "Have you used social media (Facebook, etc.)?",
+          "options": {
+            "0": "Never",
+            "1": "Looked at it",
+            "2": "Have an account",
+            "3": "Use it regularly"
+          }
+        },
+        "7": {
+          "question": "How comfortable are you with passwords?",
+          "options": {
+            "0": "Very confused",
+            "1": "Need help",
+            "2": "Understand basics",
+            "3": "Manage them well"
+          }
+        },
+        "8": {
+          "question": "Do you back up your photos and files?",
+          "options": {
+            "0": "Don't know how",
+            "1": "Someone helps me",
+            "2": "Sometimes",
+            "3": "Regularly"
+          }
+        },
+        "9": {
+          "question": "How do you learn new technology?",
+          "options": {
+            "0": "Avoid it",
+            "1": "Ask for help",
+            "2": "Try carefully",
+            "3": "Explore confidently"
+          }
+        }
+      }
+    }
   },
   "settings": {
-    "customizePrefs": "Customize your preferences"
+    "customizePrefs": "Customize your preferences",
+    "personalInfo": "Personal Information",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Your first name",
+    "primaryDevice": "Primary Device",
+    "devices": {
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac (Apple Computer)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android Phone or Tablet"
+    },
+    "accessibility": "Accessibility",
+    "textToSpeech": "Text-to-Speech",
+    "textToSpeechDesc": "Have answers read aloud to you",
+    "voiceInput": "Voice Input",
+    "voiceInputDesc": "Ask questions by speaking",
+    "languagePreferences": "Language Preferences",
+    "hideLanguages": "Hide",
+    "modifyLanguages": "Modify Languages",
+    "defaultLanguage": "Default Language (entire website will use this language)",
+    "defaultLanguageDesc": "This will be the primary language for all interface elements and interactions.",
+    "otherLanguages": "Other languages you'd like to use:",
+    "default": "Default",
+    "languageConfiguration": "Language Configuration",
+    "languageConfigurationDesc": "Your selected languages will be used for:",
+    "speechToText": "Speech-to-text recognition and processing",
+    "multilingualText": "Multilingual text interactions and responses",
+    "interfaceLanguage": "Interface language options and accessibility",
+    "searchLanguages": "Search languages...",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "selectedLanguages": "Selected: {{count}} language",
+    "selectedLanguages_plural": "Selected: {{count}} languages",
+    "noLanguagesFound": "No languages found matching \"{{search}}\"",
+    "languageRequired": "At Least One Language Required",
+    "languageRequiredDesc": "Please select at least one language to ensure proper functionality of voice input and text interactions.",
+    "account": "Account",
+    "signOut": "Sign Out",
+    "signOutDesc": "Sign out of your account",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saved": "Saved!",
+    "saveChanges": "Save Changes",
+    "errorSaving": "Could not save settings. Please try again."
   },
   "common": {
     "settings": "Settings",
@@ -133,6 +384,117 @@
     "signingIn": "Signing in...",
     "alreadyHaveAccount": "Already have an account? Sign in",
     "dontHaveAccount": "Don't have an account? Sign up"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Let's get to know you",
+      "subtitle": "Help me personalize your experience",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Your last name",
+      "age": "Age (helps me adjust my explanations)"
+    },
+    "step2": {
+      "title": "Choose your preferred languages",
+      "subtitle": "Select the languages you'd like to use for communication and voice input",
+      "languageSelection": "Language Selection",
+      "languageDescription": "Choose the languages you're comfortable with. This will:",
+      "speechToText": "Configure speech-to-text to understand your voice in these languages",
+      "textInteractions": "Enable text interactions in your chosen languages",
+      "interfaceOptions": "Customize interface options for better accessibility",
+      "searchLanguages": "Search languages...",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "selected": "Selected: {{count}} language",
+      "selected_plural": "Selected: {{count}} languages",
+      "noLanguagesFound": "No languages found matching \"{{search}}\"",
+      "languageRequired": "Language Selection Required",
+      "languageRequiredDesc": "Please select at least one language to continue. This ensures the best experience for voice input and text interactions."
+    },
+    "step3": {
+      "title": "What device do you use most?",
+      "subtitle": "This helps me give you better instructions",
+      "devices": {
+        "windowscomputer": "Windows Computer",
+        "macapplecomputer": "Mac (Apple Computer)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android Phone or Tablet",
+        "smarttv": "Smart TV",
+        "multipledevices": "Multiple devices"
+      }
+    },
+    "step4": {
+      "title": "How comfortable are you with technology?",
+      "subtitle": "Be honest - this helps me explain things at the right level",
+      "beginner": "Beginner",
+      "beginnerDesc": "I need step-by-step help with most things",
+      "some": "Some Experience",
+      "someDesc": "I can do basic tasks but need help with new things",
+      "comfortable": "Comfortable",
+      "comfortableDesc": "I can figure out most things but sometimes need guidance"
+    },
+    "step5": {
+      "title": "What tech topics worry you most?",
+      "subtitle": "Select all that apply - I'll prioritize help in these areas",
+      "concerns": {
+        "onlineSafety": "Online Safety & Scams",
+        "passwordManagement": "Password Management",
+        "videoCalling": "Video Calling Family",
+        "socialMedia": "Social Media",
+        "onlineBanking": "Online Banking",
+        "emailMessaging": "Email & Messaging",
+        "photoStorage": "Photo Storage & Sharing",
+        "appDownloads": "App Downloads & Updates",
+        "wifiInternet": "Wi-Fi & Internet Issues",
+        "deviceSettings": "Device Settings",
+        "onlineShopping": "Online Shopping",
+        "healthApps": "Health Apps & Portals"
+      }
+    },
+    "step6": {
+      "title": "Do you need any accessibility features?",
+      "subtitle": "I want to make sure you can use this comfortably",
+      "needs": {
+        "largerText": "Larger text and buttons",
+        "highContrast": "High contrast colors",
+        "voiceCommands": "Voice commands",
+        "screenReader": "Screen reader support",
+        "slowerExplanations": "Slower explanations",
+        "visualSteps": "Visual step indicators",
+        "noneNeeded": "None needed"
+      }
+    },
+    "step7": {
+      "title": "How do you prefer to learn?",
+      "subtitle": "I'll adjust my teaching style to match your preference",
+      "simple": "Simple & Quick",
+      "simpleDesc": "Just tell me what to do, step by step",
+      "detailed": "Detailed Explanations",
+      "detailedDesc": "Explain why I'm doing each step",
+      "visual": "Visual Learning",
+      "visualDesc": "Show me pictures and videos when possible"
+    },
+    "step8": {
+      "title": "Final touches",
+      "subtitle": "Set up your perfect learning environment",
+      "textToSpeech": "Text-to-Speech",
+      "textToSpeechDesc": "Have answers read aloud",
+      "voiceInput": "Voice Input",
+      "voiceInputDesc": "Ask questions by speaking",
+      "videoRecommendations": "Video Recommendations",
+      "videoRecommendationsDesc": "Show helpful videos and articles",
+      "textSize": "Text Size Preference",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large"
+    },
+    "back": "Back",
+    "next": "Next",
+    "settingUp": "Setting up...",
+    "completeSetup": "Complete Setup",
+    "errorSaving": "Could not save your preferences. Please try again."
   },
   "error": {
     "askQuestionFirst": "Please ask a question first",
