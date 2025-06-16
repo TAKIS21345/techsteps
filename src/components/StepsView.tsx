@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, Home, MessageCircle } from 'lucide-react';
 import ResourceRecommendations from './ResourceRecommendations';
-import SupportChatModal from './SupportChatModal';
+import { useTawkToSupport } from './TawkToSupport';
 import { ttsService } from '../utils/ttsService';
 import { chatMemoryService } from '../utils/cometChatService';
 
@@ -29,8 +29,8 @@ const StepsView: React.FC<StepsViewProps> = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playingStep, setPlayingStep] = useState<number | null>(null);
-  const [showSupportChat, setShowSupportChat] = useState(false);
   const [hasCompletedSteps, setHasCompletedSteps] = useState(false);
+  const { openTawkToChat } = useTawkToSupport();
 
   useEffect(() => {
     // Auto-advance to main view after completing all steps
@@ -138,8 +138,15 @@ const StepsView: React.FC<StepsViewProps> = ({
       );
     }
     
-    setShowSupportChat(true);
+    // Open Tawk.to chat with context
+    openTawkToChat({
+      question: originalQuestion,
+      steps: steps,
+      userProfile: userProfile,
+      chatMemory: userProfile?.chatMemory || []
+    });
   };
+
   if (steps.length === 0) {
     return null;
   }
@@ -291,18 +298,6 @@ const StepsView: React.FC<StepsViewProps> = ({
           )}
         </div>
       </div>
-      
-      {/* Support Chat Modal */}
-      <SupportChatModal
-        isOpen={showSupportChat}
-        onClose={() => setShowSupportChat(false)}
-        context={{
-          question: originalQuestion,
-          steps: steps,
-          userProfile: userProfile,
-          chatMemory: userProfile?.chatMemory || []
-        }}
-      />
     </div>
   );
 };
