@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, Volume2, Home, MessageCircle } from 'lucide-
 import ResourceRecommendations from './ResourceRecommendations';
 import { crispService } from '../utils/crispService';
 import { ttsService } from '../utils/ttsService';
-import { chatMemoryService } from '../utils/cometChatService';
 
 interface StepsViewProps {
   steps: string[];
