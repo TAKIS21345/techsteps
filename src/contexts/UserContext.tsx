@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
 import { useAuth } from './AuthContext';
-import { cometChatService } from '../utils/cometChatService';
 import Cookies from 'js-cookie';
 
 interface QuestionHistory {
