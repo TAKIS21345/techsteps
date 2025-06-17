@@ -109,7 +109,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       (docSnap) => {
         if (docSnap.exists()) {
           const data = docSnap.data() as UserData;
-          setUserData({ ...data, uid: user.uid }); // Add uid for CometChat
+          setUserData({ ...data, uid: user.uid });
         } else {
           setUserData(null);
         }
@@ -124,24 +124,6 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     return () => unsubscribe();
   }, [user]);
-
-  // Initialize CometChat when user data is available
-  useEffect(() => {
-    if (userData && user) {
-      const initializeCometChat = async () => {
-        try {
-          await cometChatService.loginUser(
-            user.uid,
-            userData.firstName || 'User'
-          );
-        } catch (error) {
-          console.error('Failed to initialize CometChat:', error);
-        }
-      };
-      
-      initializeCometChat();
-    }
-  }, [userData, user]);
 
   const updateUserData = async (data: Partial<UserData>) => {
     if (!user) throw new Error('No authenticated user');
@@ -222,6 +204,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       stepsCompleted: userData.stats.stepsCompleted + stepsToAdd
     });
   };
+  
   const hasCompletedOnboarding = userData !== null;
 
   const value = {
