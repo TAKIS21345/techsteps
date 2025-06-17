@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   MessageSquare, 
@@ -34,6 +34,7 @@ import ResourceRecommendations from '../components/ResourceRecommendations';
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
 import { chatMemoryService } from '../utils/cometChatService';
 import { speechService } from '../utils/speechService';
+import { crispService } from '../utils/crispService';
 import Cookies from 'js-cookie';
 
 const DashboardPage: React.FC = () => {
@@ -55,6 +56,20 @@ const DashboardPage: React.FC = () => {
   const { t, i18n } = useTranslation();
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+  // Initialize Crisp when component mounts
+  useEffect(() => {
+    crispService.initialize();
+    
+    // Set user info if available
+    if (userData) {
+      crispService.setUserInfo({
+        email: userData.email,
+        nickname: userData.firstName,
+        userId: userData.uid
+      });
+    }
+  }, [userData]);
 
   const quickTips = [
     {
@@ -570,6 +585,14 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
     }
   };
 
+  const handleNeedHelp = () => {
+    crispService.openChat({
+      question: originalQuestion || question,
+      steps: steps,
+      userProfile: userData
+    });
+  };
+
   if (currentView === 'loading') {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
@@ -903,7 +926,12 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                 <p className="text-gray-600">
                   {t('dashboard.helpingHand')}
                 </p>
-                <button className="w-full p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors">{t('dashboard.chatHuman')}</button>
+                <button 
+                  onClick={handleNeedHelp}
+                  className="w-full p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors"
+                >
+                  {t('dashboard.chatHuman')}
+                </button>
                 <button className="w-full p-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">{t('dashboard.browseGuides')}</button>
               </div>
             </div>

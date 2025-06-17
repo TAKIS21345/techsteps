@@ -17,7 +17,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   const supportedLanguages = [
     { code: 'en', name: 'English', nativeName: 'English' },
     { code: 'es', name: 'Spanish', nativeName: 'Español' },
-    { code: 'fr', name: 'French', nativeName: 'Français' }
+    { code: 'fr', name: 'French', nativeName: 'Français' },
+    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' }
   ];
   
   const currentLanguage = supportedLanguages.find(lang => lang.code === i18n.language);
@@ -26,7 +27,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   const languageFlags: Record<string, string> = {
     en: '🇺🇸',
     es: '🇪🇸', 
-    fr: '🇫🇷'
+    fr: '🇫🇷',
+    hi: '🇮🇳'
   };
 
   const handleLanguageChange = (newLanguage: string) => {

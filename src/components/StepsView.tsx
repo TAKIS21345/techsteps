@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, Home, MessageCircle } from 'lucide-react';
 import ResourceRecommendations from './ResourceRecommendations';
-import { useTawkToSupport } from './TawkToSupport';
+import { crispService } from '../utils/crispService';
 import { ttsService } from '../utils/ttsService';
 import { chatMemoryService } from '../utils/cometChatService';
 
@@ -30,7 +30,6 @@ const StepsView: React.FC<StepsViewProps> = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [playingStep, setPlayingStep] = useState<number | null>(null);
   const [hasCompletedSteps, setHasCompletedSteps] = useState(false);
-  const { openTawkToChat } = useTawkToSupport();
 
   useEffect(() => {
     // Auto-advance to main view after completing all steps
@@ -138,12 +137,11 @@ const StepsView: React.FC<StepsViewProps> = ({
       );
     }
     
-    // Open Tawk.to chat with context
-    openTawkToChat({
+    // Open Crisp chat with context
+    crispService.openChat({
       question: originalQuestion,
       steps: steps,
-      userProfile: userProfile,
-      chatMemory: userProfile?.chatMemory || []
+      userProfile: userProfile
     });
   };
 

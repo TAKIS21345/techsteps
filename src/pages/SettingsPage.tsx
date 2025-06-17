@@ -29,11 +29,12 @@ const SettingsPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [saved, setSaved] = useState(false);
 
-  // Comprehensive language list
+  // Comprehensive language list including Hindi
   const allLanguages = [
     { code: 'en', name: 'English', nativeName: 'English', region: 'Global' },
     { code: 'es', name: 'Spanish', nativeName: 'Español', region: 'Spain/Latin America' },
     { code: 'fr', name: 'French', nativeName: 'Français', region: 'France/Canada' },
+    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', region: 'India' },
     { code: 'de', name: 'German', nativeName: 'Deutsch', region: 'Germany/Austria' },
     { code: 'it', name: 'Italian', nativeName: 'Italiano', region: 'Italy' },
     { code: 'pt', name: 'Portuguese', nativeName: 'Português', region: 'Brazil/Portugal' },
@@ -42,7 +43,6 @@ const SettingsPage: React.FC = () => {
     { code: 'ko', name: 'Korean', nativeName: '한국어', region: 'Korea' },
     { code: 'ar', name: 'Arabic', nativeName: 'العربية', region: 'Middle East/North Africa' },
     { code: 'ru', name: 'Russian', nativeName: 'Русский', region: 'Russia/Eastern Europe' },
-    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', region: 'India' },
     { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', region: 'Netherlands/Belgium' },
     { code: 'sv', name: 'Swedish', nativeName: 'Svenska', region: 'Sweden' },
     { code: 'no', name: 'Norwegian', nativeName: 'Norsk', region: 'Norway' },

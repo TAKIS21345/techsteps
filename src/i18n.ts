@@ -14,7 +14,7 @@ i18n
     // The default language
     fallbackLng: 'en',
     // Supported languages
-    supportedLngs: ['en', 'es', 'fr'],
+    supportedLngs: ['en', 'es', 'fr', 'hi'],
     debug: false, // Turn off in production
     interpolation: {
       escapeValue: false, // React already safes from xss
