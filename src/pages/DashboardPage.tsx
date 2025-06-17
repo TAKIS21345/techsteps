@@ -32,7 +32,6 @@ import StepsView from '../components/StepsView';
 import ClarificationModal from '../components/ClarificationModal';
 import ResourceRecommendations from '../components/ResourceRecommendations';
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
-import { chatMemoryService } from '../utils/cometChatService';
 import { speechService } from '../utils/speechService';
 import { crispService } from '../utils/crispService';
 import Cookies from 'js-cookie';
