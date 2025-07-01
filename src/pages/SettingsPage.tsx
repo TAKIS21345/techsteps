@@ -233,7 +233,7 @@ const SettingsPage: React.FC = () => {
                 <div className="flex items-center">
                   <Volume2 className="w-5 h-5 text-gray-600 mr-3" />
                   <div>
-                    <h4 className="font-medium">{t('settings.textToSpeech')}</h4>
+                    <h3 className="font-medium text-lg">{t('settings.textToSpeech')}</h3>
                     <p className="text-sm text-gray-600">{t('settings.textToSpeechDesc')}</p>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ const SettingsPage: React.FC = () => {
                 <div className="flex items-center">
                   <Mic className="w-5 h-5 text-gray-600 mr-3" />
                   <div>
-                    <h4 className="font-medium">{t('settings.voiceInput')}</h4>
+                    <h3 className="font-medium text-lg">{t('settings.voiceInput')}</h3>
                     <p className="text-sm text-gray-600">{t('settings.voiceInputDesc')}</p>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ const SettingsPage: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <Globe className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div>
-                      <h4 className="font-medium text-blue-800 mb-1">{t('settings.languageConfiguration')}</h4>
+                      <h3 className="font-medium text-blue-800 mb-1 text-lg">{t('settings.languageConfiguration')}</h3>
                       <p className="text-sm text-blue-700">
                         {t('settings.languageConfigurationDesc')}
                       </p>

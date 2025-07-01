@@ -190,7 +190,7 @@ const OnboardingPage: React.FC = () => {
             <div className="flex items-start space-x-3">
               <Globe className="w-5 h-5 text-blue-600 mt-0.5" />
               <div>
-                <h4 className="font-medium text-blue-800 mb-1">{t('onboarding.step2.languageSelection')}</h4>
+                <h2 className="font-medium text-blue-800 mb-1">{t('onboarding.step2.languageSelection')}</h2>
                 <p className="text-sm text-blue-700">
                   {t('onboarding.step2.languageDescription')}
                 </p>
@@ -473,7 +473,7 @@ const OnboardingPage: React.FC = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">{t('onboarding.step8.textToSpeech')}</h4>
+              <h2 className="font-medium text-lg">{t('onboarding.step8.textToSpeech')}</h2>
               <p className="text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
             </div>
             <button
@@ -493,7 +493,7 @@ const OnboardingPage: React.FC = () => {
 
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">{t('onboarding.step8.voiceInput')}</h4>
+              <h2 className="font-medium text-lg">{t('onboarding.step8.voiceInput')}</h2>
               <p className="text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
             </div>
             <button
@@ -513,7 +513,7 @@ const OnboardingPage: React.FC = () => {
 
           <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
             <div>
-              <h4 className="font-medium">{t('onboarding.step8.videoRecommendations')}</h4>
+              <h2 className="font-medium text-lg">{t('onboarding.step8.videoRecommendations')}</h2>
               <p className="text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
             </div>
             <button

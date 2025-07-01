@@ -145,24 +145,24 @@ const LandingPage: React.FC = () => {
               to="/auth" 
               className="btn-primary text-xl px-10 py-5 inline-flex items-center shadow-2xl hover:shadow-3xl transform hover:scale-105"
             >
-              Start Learning Free
+              {t('landing.hero.startLearningButton')}
               <ArrowRight className="ml-3 w-6 h-6" />
             </Link>
             <button className="btn-secondary text-xl px-10 py-5 inline-flex items-center group">
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Watch Demo
+              {t('landing.hero.watchDemoButton')}
             </button>
           </div>
 
           <div className="flex items-center justify-center space-x-2 text-sm text-gray-500 mb-12">
             <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>Free forever</span>
+            <span>{t('landing.hero.freeForever')}</span>
             <span className="mx-2">•</span>
             <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>No credit card required</span>
+            <span>{t('landing.hero.noCreditCard')}</span>
             <span className="mx-2">•</span>
             <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>Available 24/7</span>
+            <span>{t('landing.hero.available247')}</span>
           </div>
 
           {/* Stats */}
@@ -185,70 +185,35 @@ const LandingPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-bold text-gray-800 mb-6">
-              Features
+              {t('landing.featuresSection.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These are just a few of the features offered to help you grow!
+              {t('landing.featuresSection.subtitle')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: MessageSquare,
-                title: "Step-by-Step Guidance",
-                description: "Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues.",
-                color: "blue",
-                delay: "0s"
-              },
-              {
-                icon: Headphones,
-                title: "Voice Support",
-                description: "Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most.",
-                color: "green",
-                delay: "0.1s"
-              },
-              {
-                icon: Camera,
-                title: "Photo Explainer",
-                description: "Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it.",
-                color: "purple",
-                delay: "0.2s"
-              },
-              {
-                icon: Users,
-                title: "Senior-Friendly Design",
-                description: "Large text, intuitive interface, and patient explanations designed specifically with seniors in mind.",
-                color: "orange",
-                delay: "0.3s"
-              },
-              {
-                icon: Shield,
-                title: "Safe & Secure",
-                description: "Your personal information is protected with enterprise-grade security. No data shared with third parties.",
-                color: "red",
-                delay: "0.4s"
-              },
-              {
-                icon: Zap,
-                title: "Instant Answers",
-                description: "Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers.",
-                color: "yellow",
-                delay: "0.5s"
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index}
-                className="card p-8 text-center hover:shadow-2xl transition-all duration-500 animate-slide-up group hover:-translate-y-2"
-                style={{ animationDelay: feature.delay }}
-              >
-                <div className={`w-16 h-16 bg-${feature.color}-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className={`w-8 h-8 text-${feature.color}-600`} />
+            {(t('landing.featuresSection.items', { returnObjects: true }) as {title: string, description: string}[]).map((feature, index) => {
+              const icons = [MessageSquare, Headphones, Camera, Users, Shield, Zap];
+              const colors = ["blue", "green", "purple", "orange", "red", "yellow"];
+              const IconComponent = icons[index % icons.length];
+              const color = colors[index % colors.length];
+              const delay = `${index * 0.1}s`;
+
+              return (
+                <div
+                  key={index}
+                  className="card p-8 text-center hover:shadow-2xl transition-all duration-500 animate-slide-up group hover:-translate-y-2"
+                  style={{ animationDelay: delay }}
+                >
+                  <div className={`w-16 h-16 bg-${color}-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`w-8 h-8 text-${color}-600`} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -258,10 +223,10 @@ const LandingPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Popular Questions We Help With
+              {t('landing.popularQuestionsSection.title')}
             </h2>
             <p className="text-xl text-gray-600">
-              See what other seniors are asking about
+              {t('landing.popularQuestionsSection.subtitle')}
             </p>
           </div>
 
@@ -286,7 +251,7 @@ const LandingPage: React.FC = () => {
               to="/auth" 
               className="btn-primary text-lg px-8 py-4"
             >
-              Ask Your Question Now
+              {t('landing.popularQuestionsSection.askYourQuestionButton')}
             </Link>
           </div>
         </div>
@@ -297,14 +262,18 @@ const LandingPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              What Our Community Says
+              {t('landing.testimonialsSection.title')}
             </h2>
             <p className="text-xl text-gray-600">
-              Join thousands of seniors who've found tech help made simple
+              {t('landing.testimonialsSection.subtitle')}
             </p>
           </div>
 
           {/* Featured Testimonial */}
+          {/* Testimonial data is mapped from `testimonials` array, which uses `t()` for its content if translated. */}
+          {/* The structure below uses `testimonials[activeTestimonial]` which should be fine if that data is translated. */}
+          {/* For this iteration, I've added example testimonial content to the JSON. */}
+          {/* A more robust solution might involve fetching testimonials if they are fully dynamic, or ensuring the array is populated from i18n. */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="card p-12 text-center relative overflow-hidden">
               <div className="absolute top-6 left-6">
@@ -316,18 +285,19 @@ const LandingPage: React.FC = () => {
               </div>
               
               <div className={`w-20 h-20 ${testimonials[activeTestimonial].color} rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6`}>
-                {testimonials[activeTestimonial].avatar}
+                {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.avatar`, testimonials[activeTestimonial].avatar)}
               </div>
               
               <blockquote className="text-2xl text-gray-700 italic mb-6 leading-relaxed">
-                "{testimonials[activeTestimonial].content}"
+                "{t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.content`, testimonials[activeTestimonial].content)}"
               </blockquote>
               
               <div className="text-lg font-semibold text-gray-800">
-                {testimonials[activeTestimonial].name}
+                {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.name`, testimonials[activeTestimonial].name)}
               </div>
               <div className="text-gray-600">
-                Age {testimonials[activeTestimonial].age} • {testimonials[activeTestimonial].location}
+                {/* TODO: Consider how to best translate "Age X • Location Y" if needed, currently uses direct data */}
+                Age {testimonials[activeTestimonial].age} • {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.location`, testimonials[activeTestimonial].location)}
               </div>
 
               {/* Testimonial Navigation */}
@@ -347,10 +317,11 @@ const LandingPage: React.FC = () => {
 
           {/* Grid of Additional Testimonials */}
           <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
+            {(t('landing.testimonialsSection.testimonialContent', { returnObjects: true }) as any[]).slice(0, 3).map((testimonial, index) => (
               <div key={index} className="card p-6">
                 <div className="flex items-center mb-4">
-                  <div className={`w-12 h-12 ${testimonial.color} rounded-full flex items-center justify-center text-white font-bold mr-4`}>
+                  {/* Assuming colors are not part of i18n but design, kept local testimonial array for colors for now or define them statically */}
+                  <div className={`w-12 h-12 ${testimonials[index % testimonials.length].color} rounded-full flex items-center justify-center text-white font-bold mr-4`}>
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -376,11 +347,10 @@ const LandingPage: React.FC = () => {
         <div className="container mx-auto px-6 text-center relative z-10">
           <Heart className="w-16 h-16 text-white/80 mx-auto mb-6" />
           <h2 className="text-5xl font-bold text-white mb-6">
-            Ready to Master Technology?
+            {t('landing.ctaSection.title')}
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join our community of empowered seniors who've made technology simple and approachable. 
-            Start getting clear, helpful answers today - completely free!
+            {t('landing.ctaSection.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -388,7 +358,7 @@ const LandingPage: React.FC = () => {
               to="/auth" 
               className="inline-flex items-center bg-white text-blue-600 font-bold px-10 py-5 rounded-xl text-xl hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
             >
-              Get Started Free Today
+              {t('landing.ctaSection.getStartedButton')}
               <ArrowRight className="ml-3 w-6 h-6" />
             </Link>
           </div>
@@ -396,15 +366,15 @@ const LandingPage: React.FC = () => {
           <div className="flex items-center justify-center space-x-6 text-blue-100">
             <div className="flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
-              <span>No credit card required</span>
+              <span>{t('landing.hero.noCreditCard')}</span> {/* Reusing key */}
             </div>
             <div className="flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
-              <span>Free forever</span>
+              <span>{t('landing.hero.freeForever')}</span> {/* Reusing key */}
             </div>
             <div className="flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
-              <span>Setup in 2 minutes</span>
+              <span>{t('landing.ctaSection.setupInMinutes')}</span>
             </div>
           </div>
         </div>
@@ -417,52 +387,53 @@ const LandingPage: React.FC = () => {
             <div className="col-span-2 md:col-span-1">
               <Logo size="sm" />
               <p className="text-gray-400 mt-4 leading-relaxed">
-                Making technology accessible and understandable for seniors everywhere.
+                {t('landing.footer.description')}
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Features</h4>
+              <h4 className="font-semibold mb-4">{t('landing.footer.featuresTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Step-by-Step Help</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Voice Support</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Photo Explainer</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">24/7 Availability</a></li>
+                {(t('landing.footer.featuresItems', { returnObjects: true }) as string[]).map((item, index) => (
+                  <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+                ))}
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
+              <h4 className="font-semibold mb-4">{t('landing.footer.supportTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Getting Started</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                {(t('landing.footer.supportItems', { returnObjects: true }) as string[]).map((item, index) => (
+                  <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+                ))}
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">{t('landing.footer.companyTitle')}</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
+                {(t('landing.footer.companyItems', { returnObjects: true }) as string[]).map((item, index) => {
+                  if (item === "Privacy Policy") {
+                    return <li key={index}><Link to="/privacy-policy" className="hover:text-white transition-colors">{item}</Link></li>;
+                  }
+                  // Add similar condition for Terms of Service if that page existed and was linked
+                  return <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>;
+                })}
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">© 2025 TechStep. Made with ❤️ for seniors everywhere.</p>
+              <p className="text-gray-400 mb-4 md:mb-0">{t('landing.footer.copyright')}</p>
               <div className="flex items-center space-x-4">
-                <span className="text-gray-400">Trusted by</span>
+                <span className="text-gray-400">{t('landing.footer.trustedBy')}</span>
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-400">50,000+ seniors</span>
+                <span className="text-gray-400">{t('landing.footer.trustedByCount')}</span>
               </div>
             </div>
           </div>

@@ -10,7 +10,114 @@
       "tagline": "Confiado por adultos mayores en todo el mundo",
       "title": "Tecnología hecha",
       "titleHighlight": "simple y clara",
-      "subtitle": "Domina la tecnología con confianza a través de orientación personalizada paso a paso que se siente como tener un amigo paciente a tu lado."
+      "subtitle": "Domina la tecnología con confianza a través de orientación personalizada paso a paso que se siente como tener un amigo paciente a tu lado.",
+      "startLearningButton": "[es] Start Learning Free",
+      "watchDemoButton": "[es] Watch Demo",
+      "freeForever": "[es] Free forever",
+      "noCreditCard": "[es] No credit card required",
+      "available247": "[es] Available 24/7"
+    },
+    "featuresSection": {
+      "title": "[es] Features",
+      "subtitle": "[es] These are just a few of the features offered to help you grow!",
+      "items": [
+        {
+          "title": "[es] Step-by-Step Guidance",
+          "description": "[es] Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues."
+        },
+        {
+          "title": "[es] Voice Support",
+          "description": "[es] Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most."
+        },
+        {
+          "title": "[es] Photo Explainer",
+          "description": "[es] Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it."
+        },
+        {
+          "title": "[es] Senior-Friendly Design",
+          "description": "[es] Large text, intuitive interface, and patient explanations designed specifically with seniors in mind."
+        },
+        {
+          "title": "[es] Safe & Secure",
+          "description": "[es] Your personal information is protected with enterprise-grade security. No data shared with third parties."
+        },
+        {
+          "title": "[es] Instant Answers",
+          "description": "[es] Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "[es] Popular Questions We Help With",
+      "subtitle": "[es] See what other seniors are asking about",
+      "askYourQuestionButton": "[es] Ask Your Question Now"
+    },
+    "testimonialsSection": {
+      "title": "[es] What Our Community Says",
+      "subtitle": "[es] Join thousands of seniors who've found tech help made simple",
+      "testimonialContent": [
+        {
+          "name": "[es] Margaret K.",
+          "age": 72,
+          "location": "[es] Austin, TX",
+          "content": "[es] Finally, someone who explains technology in a way I can understand! The step-by-step instructions helped me set up my new phone perfectly. I feel so much more confident now!",
+          "avatar": "M"
+        },
+        {
+          "name": "[es] Robert H.",
+          "age": 68,
+          "location": "[es] Seattle, WA",
+          "content": "[es] The voice feature is amazing! I can just ask my questions out loud and get clear answers. It's like having a tech-savvy grandchild available 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "[es] Dorothy S.",
+          "age": 75,
+          "location": "[es] Miami, FL",
+          "content": "[es] I love the photo feature! I took a picture of a confusing cable and instantly knew what it was for. This app has made me much more confident with technology.",
+          "avatar": "D"
+        },
+        {
+          "name": "[es] Frank M.",
+          "age": 70,
+          "location": "[es] Denver, CO",
+          "content": "[es] I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
+          "avatar": "F"
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": "[es] Ready to Master Technology?",
+      "subtitle": "[es] Join our community of empowered seniors who've made technology simple and approachable. Start getting clear, helpful answers today - completely free!",
+      "getStartedButton": "[es] Get Started Free Today",
+      "setupInMinutes": "[es] Setup in 2 minutes"
+    },
+    "footer": {
+      "description": "[es] Making technology accessible and understandable for seniors everywhere.",
+      "featuresTitle": "[es] Features",
+      "featuresItems": [
+        "[es] Step-by-Step Help",
+        "[es] Voice Support",
+        "[es] Photo Explainer",
+        "[es] 24/7 Availability"
+      ],
+      "supportTitle": "[es] Support",
+      "supportItems": [
+        "[es] Help Center",
+        "[es] Getting Started",
+        "[es] Community",
+        "[es] Contact Us"
+      ],
+      "companyTitle": "[es] Company",
+      "companyItems": [
+        "[es] About Us",
+        "[es] Privacy Policy",
+        "[es] Terms of Service",
+        "[es] Accessibility"
+      ],
+      "copyright": "[es] © 2025 TechStep. Made with ❤️ for seniors everywhere.",
+      "trustedBy": "[es] Trusted by",
+      "trustedByCount": "[es] 50,000+ seniors"
     }
   },
   "dashboard": {
@@ -41,6 +148,54 @@
   "aiTools": {
     "title": "Herramientas de IA",
     "description": "Explicador de fotos y traductor técnico"
+  },
+  "aiToolsModal": {
+    "header": "[es] AI Helper Tools",
+    "tabs": {
+      "photoExplainer": "[es] Photo Explainer",
+      "techWordBuster": "[es] Tech Word Buster"
+    },
+    "photoExplainer": {
+      "title": "[es] Photo Explainer",
+      "description": "[es] Upload a photo of any cable, button, or device and get an instant explanation.",
+      "uploadButton": "[es] Upload Image",
+      "questionLabel": "[es] Ask a question about the photo (optional)",
+      "questionPlaceholder": "[es] What is this cable for?",
+      "explainButton": "[es] Explain Photo",
+      "analyzingButton": "[es] Analyzing...",
+      "alertNoPhoto": "[es] Please upload a photo first or check API configuration.",
+      "errorResponse": "[es] <p class=\"text-red-600\">Sorry, I couldn't analyze the image. Please try again.</p>",
+      "readResponseButton": "[es] 🔊 Read Response Aloud",
+      "previewAlt": "[es] Preview"
+    },
+    "techWordBuster": {
+      "title": "[es] Tech Word Buster",
+      "description": "[es] Confused by a tech term? Get a simple, easy-to-understand explanation with real-world analogies.",
+      "inputLabel": "[es] Enter a tech word or phrase",
+      "inputPlaceholder": "[es] e.g., Cloud Storage, WiFi, Bluetooth",
+      "explainButton": "[es] Make This Clear",
+      "explainingButton": "[es] Explaining...",
+      "alertNoTerm": "[es] Please enter a tech term first or check API configuration.",
+      "errorResponse": "[es] <p class=\"text-red-600\">Sorry, I couldn't explain that term. Please try again.</p>",
+      "readExplanationButton": "[es] 🔊 Read Explanation Aloud"
+    },
+    "apiErrorNoExplanation": "[es] No explanation received"
+  },
+  "clarificationModal": {
+    "headerTitle": "[es] I need a bit more info",
+    "yourQuestionLabel": "[es] Your question:",
+    "tellMeMorePrompt": "[es] To give you the best help, could you tell me a bit more?",
+    "forExampleLabel": "[es] For example:",
+    "textareaPlaceholder": "[es] Please provide more details...",
+    "textareaSrLabel": "[es] Provide more details for your question",
+    "skipButton": "[es] Skip for now",
+    "submitButton": "[es] Get Better Help",
+    "loadingButton": "[es] Getting help..."
+  },
+  "languageNotificationBanner": {
+    "title": "[es] Complete Your Language Setup",
+    "description": "[es] Configure your preferred languages for better voice input and text interactions.",
+    "buttonText": "[es] Complete Setup"
   },
   "learning": {
     "title": "Centro de Aprendizaje",
@@ -499,5 +654,164 @@
   "error": {
     "askQuestionFirst": "Por favor haz una pregunta primero",
     "couldntGetAnswer": "Lo siento, no pude obtener una respuesta ahora. Por favor intenta de nuevo."
+  },
+  "learningPage": {
+    "headerTitle": "[es] Learning Center",
+    "heroTitle": "[es] Tech Skills for Seniors",
+    "heroSubtitle": "[es] Learn technology at your own pace with step-by-step lessons, interactive demos, and personalized guidance.",
+    "takeSkillsAssessment": "[es] Take Skills Assessment",
+    "orSeparator": "[es] or",
+    "iAmBeginner": "[es] I'm a Beginner",
+    "iAmIntermediate": "[es] I'm Intermediate",
+    "iAmAdvanced": "[es] I'm Advanced",
+    "yourLevel": "[es] Your Level: {{level}}",
+    "levelDescription": "[es] Courses are personalized for your skill level",
+    "retakeAssessment": "[es] Retake Assessment",
+    "progressLabel": "[es] Progress",
+    "lessonsLabel": "[es] lessons",
+    "completedOutOfTotal": "[es] {{completed}} of {{total}} completed",
+    "featureInteractiveDemos": "[es] Interactive Demos",
+    "featureInteractiveDemosDesc": "[es] See exactly how to perform each action",
+    "featureAudioSupport": "[es] Audio Support",
+    "featureAudioSupportDesc": "[es] Have lessons read aloud to you",
+    "featurePrintableGuides": "[es] Printable Guides",
+    "featurePrintableGuidesDesc": "[es] Take summaries with you offline",
+    "featureCertificates": "[es] Certificates",
+    "featureCertificatesDesc": "[es] Earn certificates as you complete courses",
+    "animationShow": "[es] Show Animation",
+    "animationReset": "[es] Reset",
+    "featuresGridTitle": "[es] Explore Our Features"
+  },
+  "assessmentView": {
+    "headerTitle": "[es] Skills Assessment",
+    "questionProgress": "[es] Question {{current}} of {{total}}",
+    "chooseBestOption": "[es] Choose the option that best describes you",
+    "skipAssessment": "[es] Skip Assessment"
+  },
+  "courseView": {
+    "lessonsHeader": "[es] Lessons",
+    "interactiveDemoLabel": "[es] Interactive demo",
+    "startLesson": "[es] Start Lesson",
+    "reviewLesson": "[es] Review",
+    "congratulations": "[es] Congratulations!",
+    "courseComplete": "[es] You've completed the {{courseTitle}} course!",
+    "downloadCertificate": "[es] Download Certificate"
+  },
+  "lessonView": {
+    "readAloud": "[es] Read lesson aloud",
+    "interactiveDemoHeader": "[es] Interactive Demo",
+    "practiceExerciseHeader": "[es] Practice Exercise",
+    "markAsComplete": "[es] Mark as Complete",
+    "repeatLesson": "[es] Repeat Lesson",
+    "keyPointsHeader": "[es] Key Points",
+    "takeItWithYouHeader": "[es] Take it with you",
+    "downloadSummaryButton": "[es] Download Summary",
+    "downloadSummaryDescription": "[es] Get a printable summary of this lesson",
+    "needHelpHeader": "[es] Need Help?",
+    "askAQuestionButton": "[es] Ask a Question",
+    "chatWithHelperButton": "[es] Chat with Helper"
+  },
+  "privacyPolicy": {
+    "headerTitle": "[es] Privacy Policy",
+    "pageTitle": "[es] Privacy Policy",
+    "lastUpdated": "[es] Last updated: {{date}}",
+    "ourPromise": {
+      "title": "[es] Our Promise to You",
+      "text": "[es] At Senior Tech Helper, we understand that your privacy is precious. We're committed to protecting your personal information and being completely transparent about how we use it. This policy explains everything in simple, clear language."
+    },
+    "cookies": {
+      "title": "[es] How We Use Cookies",
+      "whatAreCookiesTitle": "[es] What are cookies?",
+      "whatAreCookiesText": "[es] Cookies are small text files that help us remember your preferences and make your experience better. Think of them like bookmarks that help us remember where you left off.",
+      "weUseCookiesForTitle": "[es] We use cookies ONLY to help you:",
+      "uses": [
+        "[es] Remember your preferences: Text size, voice settings, and accessibility options you've chosen",
+        "[es] Keep you signed in: So you don't have to enter your password every time",
+        "[es] Improve our help: Understanding which features are most helpful to seniors like you"
+      ],
+      "whatWeDontDoTitle": "[es] What we DON'T do with cookies:",
+      "donts": [
+        "[es] Track you across other websites",
+        "[es] Sell your information to anyone",
+        "[es] Share your data with advertisers",
+        "[es] Use them for marketing purposes"
+      ]
+    },
+    "informationCollected": {
+      "title": "[es] What Information We Collect",
+      "youGiveUsTitle": "[es] Information you give us:",
+      "youGiveUsList": [
+        "[es] Your name and email address",
+        "[es] Your device type (iPhone, Windows, etc.)",
+        "[es] Your tech experience level",
+        "[es] Your accessibility preferences",
+        "[es] Questions you ask our AI helper"
+      ],
+      "weCollectTitle": "[es] Information we automatically collect:",
+      "weCollectList": [
+        "[es] How you use our app (which features help most)",
+        "[es] Technical information (browser type, device)",
+        "[es] Error reports (to fix problems quickly)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "[es] How We Protect Your Information",
+      "protections": [
+        "[es] Encryption: All your data is encrypted (scrambled) so only we can read it",
+        "[es] Secure servers: Your information is stored on protected, professional-grade servers",
+        "[es] Limited access: Only our essential team members can access your data",
+        "[es] Regular security checks: We constantly monitor for any security threats"
+      ]
+    },
+    "sharingInformation": {
+      "title": "[es] Sharing Your Information",
+      "neverSell": "[es] We will NEVER sell or rent your personal information.",
+      "onlyShareInSituations": "[es] We only share your information in these very limited situations:",
+      "sharingSituations": [
+        "[es] With your permission: If you specifically ask us to share something",
+        "[es] For technical support: With trusted service providers who help us run the app (they're bound by strict privacy agreements)",
+        "[es] If required by law: Only if we're legally required to do so"
+      ]
+    },
+    "yourRights": {
+      "title": "[es] Your Rights and Choices",
+      "youCanAlwaysTitle": "[es] You can always:",
+      "rightsList": [
+        "[es] See what information we have about you",
+        "[es] Ask us to correct any wrong information",
+        "[es] Request that we delete your account and data",
+        "[es] Turn off cookies in your browser settings",
+        "[es] Contact us with any privacy questions"
+      ],
+      "noteDeletingCookiesTitle": "[es] Note about deleting cookies:",
+      "noteDeletingCookiesText": "[es] If you delete our cookies, you'll need to set up your preferences again, and some features might not work as well."
+    },
+    "thirdPartyServices": {
+      "title": "[es] Third-Party Services",
+      "weUseTrustedServices": "[es] We use some trusted third-party services to help provide our features:",
+      "servicesList": [
+        "[es] Google AI (Gemini): Powers our AI assistant that answers your questions",
+        "[es] Firebase: Securely stores your account information",
+        "[es] YouTube/Educational Sites: We may recommend helpful videos and articles"
+      ],
+      "servicesOwnPolicies": "[es] These services have their own privacy policies, and we only share the minimum information needed for them to work."
+    },
+    "changesToPolicy": {
+      "title": "[es] Changes to This Policy",
+      "text": "[es] If we need to update this privacy policy, we'll notify you by email and show a notice in the app. We'll always explain what's changing and why in simple, clear language."
+    },
+    "contactUs": {
+      "title": "[es] Contact Us",
+      "questions": "[es] Have questions about your privacy or this policy? The TechStep team is here to help!",
+      "email": "[es] Email: privacy@techstep.com",
+      "phone": "[es] Phone: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "[es] Mail: TechStep Privacy Team",
+      "mailLine2": "[es] 123 Tech Support Lane",
+      "mailLine3": "[es] Helpful City, HC 12345"
+    },
+    "footer": {
+      "thankYou": "[es] Thank you for trusting TechStep with your information. We're committed to keeping it safe and using it only to help you succeed with technology.",
+      "backToHome": "[es] Back to Home"
+    }
   }
 }

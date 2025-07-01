@@ -3,8 +3,10 @@ import { X, Globe, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import Cookies from 'js-cookie';
+import { useTranslation } from 'react-i18next';
 
 const LanguageNotificationBanner: React.FC = () => {
+  const { t } = useTranslation();
   const { userData } = useUser();
   const [showBanner, setShowBanner] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -38,9 +40,9 @@ const LanguageNotificationBanner: React.FC = () => {
               <Globe className="w-4 h-4 text-amber-600" />
             </div>
             <div>
-              <h4 className="font-medium text-amber-800">Complete Your Language Setup</h4>
+              <h4 className="font-medium text-amber-800">{t('languageNotificationBanner.title')}</h4>
               <p className="text-sm text-amber-700">
-                Configure your preferred languages for better voice input and text interactions.
+                {t('languageNotificationBanner.description')}
               </p>
             </div>
           </div>
@@ -51,7 +53,7 @@ const LanguageNotificationBanner: React.FC = () => {
               className="inline-flex items-center px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-lg hover:bg-amber-700 transition-colors"
             >
               <Settings className="w-4 h-4 mr-2" />
-              Complete Setup
+              {t('languageNotificationBanner.buttonText')}
             </Link>
             <button
               onClick={handleDismiss}

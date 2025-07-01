@@ -742,7 +742,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             {/* Quick Tips */}
             <div className="card p-8">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h3>
+                <h2 className="text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
                 <Lightbulb className="w-6 h-6 text-yellow-500" />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
@@ -760,7 +760,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                         <tip.icon className="w-5 h-5 text-blue-600" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-800 group-hover:text-blue-800">{tip.title}</h4>
+                        <h3 className="font-medium text-gray-800 group-hover:text-blue-800">{tip.title}</h3>
                         <p className="text-sm text-gray-600 mt-1">{tip.description}</p>
                         <span className="text-xs text-blue-600 mt-2 inline-block">{tip.category}</span>
                       </div>
@@ -773,7 +773,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
 
             {/* Popular Questions */}
             <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">{t('dashboard.popularQuestions')}</h3>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('dashboard.popularQuestions')}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {popularQuestions.map((q, index) => (
                   <button
