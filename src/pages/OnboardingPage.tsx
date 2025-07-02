@@ -186,15 +186,15 @@ const OnboardingPage: React.FC = () => {
       subtitle: t('onboarding.step2.subtitle'),
       content: (
         <div className="space-y-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-            <div className="flex items-start space-x-3">
-              <Globe className="w-5 h-5 text-blue-600 mt-0.5" />
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4">
+            <div className="flex items-start space-x-2 sm:space-x-3">
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mt-0.5" />
               <div>
-                <h2 className="font-medium text-blue-800 mb-1">{t('onboarding.step2.languageSelection')}</h2>
-                <p className="text-sm text-blue-700">
+                <h2 className="font-medium text-blue-800 mb-1 text-base sm:text-lg">{t('onboarding.step2.languageSelection')}</h2>
+                <p className="text-xs sm:text-sm text-blue-700">
                   {t('onboarding.step2.languageDescription')}
                 </p>
-                <ul className="text-sm text-blue-700 mt-2 space-y-1">
+                <ul className="text-xs sm:text-sm text-blue-700 mt-1 sm:mt-2 space-y-0.5 sm:space-y-1">
                   <li>• {t('onboarding.step2.speechToText')}</li>
                   <li>• {t('onboarding.step2.textInteractions')}</li>
                   <li>• {t('onboarding.step2.interfaceOptions')}</li>
@@ -204,7 +204,7 @@ const OnboardingPage: React.FC = () => {
           </div>
 
           {/* Search and Controls */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
@@ -212,41 +212,41 @@ const OnboardingPage: React.FC = () => {
                 value={languageSearch}
                 onChange={(e) => setLanguageSearch(e.target.value)}
                 placeholder={t('onboarding.step2.searchLanguages')}
-                className="input-field pl-10"
+                className="input-field pl-10 text-sm sm:text-base"
               />
             </div>
 
-            <div className="flex space-x-3">
+            <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
               <button
                 type="button"
                 onClick={handleSelectAllLanguages}
-                className="btn-secondary text-sm px-4 py-2"
+                className="btn-secondary text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 w-full sm:w-auto"
               >
                 {t('onboarding.step2.selectAll')}
               </button>
               <button
                 type="button"
                 onClick={handleDeselectAllLanguages}
-                className="btn-secondary text-sm px-4 py-2"
+                className="btn-secondary text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 w-full sm:w-auto"
               >
                 {t('onboarding.step2.deselectAll')}
               </button>
             </div>
 
-            <div className="text-sm text-gray-600">
+            <div className="text-xs sm:text-sm text-gray-600">
               {t('onboarding.step2.selected', { count: formData.selectedLanguages.length })}
             </div>
           </div>
 
           {/* Language Grid */}
-          <div className="max-h-64 overflow-y-auto border border-gray-200 rounded-xl">
+          <div className="max-h-52 sm:max-h-64 overflow-y-auto border border-gray-200 rounded-xl">
             <div className="grid grid-cols-1 gap-0">
               {filteredLanguages.map((lang) => (
                 <button
                   key={lang.code}
                   type="button"
                   onClick={() => handleLanguageToggle(lang.code)}
-                  className={`p-4 text-left border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors ${
+                  className={`p-3 sm:p-4 text-left border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors ${
                     formData.selectedLanguages.includes(lang.code)
                       ? 'bg-blue-50 border-l-4 border-l-blue-500'
                       : ''
@@ -254,20 +254,20 @@ const OnboardingPage: React.FC = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3">
-                        <div className="font-medium text-gray-800">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-2 md:space-x-3">
+                        <div className="font-medium text-gray-800 text-sm sm:text-base">
                           {lang.nativeName}
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-xs sm:text-sm text-gray-500">
                           {lang.name}
                         </div>
                       </div>
-                      <div className="text-xs text-gray-400 mt-1">
+                      <div className="text-xs text-gray-400 mt-0.5 sm:mt-1">
                         {lang.region}
                       </div>
                     </div>
                     {formData.selectedLanguages.includes(lang.code) && (
-                      <Check className="w-5 h-5 text-blue-600" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                     )}
                   </div>
                 </button>
@@ -276,19 +276,19 @@ const OnboardingPage: React.FC = () => {
           </div>
 
           {filteredLanguages.length === 0 && (
-            <div className="text-center py-8 text-gray-500">
-              <Globe className="w-8 h-8 mx-auto mb-2 text-gray-300" />
-              <p>{t('onboarding.step2.noLanguagesFound', { search: languageSearch })}</p>
+            <div className="text-center py-6 sm:py-8 text-gray-500">
+              <Globe className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 text-gray-300" />
+              <p className="text-sm sm:text-base">{t('onboarding.step2.noLanguagesFound', { search: languageSearch })}</p>
             </div>
           )}
 
           {showLanguageWarning && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-              <div className="flex items-start space-x-3">
-                <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5" />
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4">
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5" />
                 <div>
-                  <h4 className="font-medium text-amber-800 mb-1">{t('onboarding.step2.languageRequired')}</h4>
-                  <p className="text-sm text-amber-700">
+                  <h4 className="font-medium text-amber-800 mb-1 text-sm sm:text-base">{t('onboarding.step2.languageRequired')}</h4>
+                  <p className="text-xs sm:text-sm text-amber-700">
                     {t('onboarding.step2.languageRequiredDesc')}
                   </p>
                 </div>
@@ -383,7 +383,7 @@ const OnboardingPage: React.FC = () => {
                     : [...prev.primaryConcerns, t(`onboarding.step5.concerns.${concern}`)]
                 }));
               }}
-              className={`w-full p-3 rounded-xl border-2 transition-all text-left ${
+              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
                 formData.primaryConcerns.includes(t(`onboarding.step5.concerns.${concern}`))
                   ? 'border-blue-500 bg-blue-50 text-blue-700' 
                   : 'border-gray-200 hover:border-gray-300'
@@ -399,7 +399,7 @@ const OnboardingPage: React.FC = () => {
       title: t('onboarding.step6.title'),
       subtitle: t('onboarding.step6.subtitle'),
       content: (
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <div className="grid grid-cols-1 gap-3">
             {[
               'largerText',
@@ -427,7 +427,7 @@ const OnboardingPage: React.FC = () => {
                     }));
                   }
                 }}
-                className={`w-full p-3 rounded-xl border-2 transition-all text-left ${
+                className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
                   formData.assistiveNeeds.includes(t(`onboarding.step6.needs.${need}`))
                     ? 'border-blue-500 bg-blue-50 text-blue-700' 
                     : 'border-gray-200 hover:border-gray-300'
@@ -453,14 +453,14 @@ const OnboardingPage: React.FC = () => {
             <button
               key={style.value}
               onClick={() => setFormData(prev => ({ ...prev, communicationStyle: style.value as any }))}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
+              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left ${
                 formData.communicationStyle === style.value 
                   ? 'border-blue-500 bg-blue-50 text-blue-700' 
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              <div className="font-medium">{style.label}</div>
-              <div className="text-sm text-gray-600 mt-1">{style.desc}</div>
+              <div className="font-medium text-sm sm:text-base">{style.label}</div>
+              <div className="text-xs sm:text-sm text-gray-600 mt-1">{style.desc}</div>
             </button>
           ))}
         </div>
@@ -470,11 +470,11 @@ const OnboardingPage: React.FC = () => {
       title: t('onboarding.step8.title'),
       subtitle: t('onboarding.step8.subtitle'),
       content: (
-        <div className="space-y-6">
-          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+        <div className="space-y-4 sm:space-y-6">
+          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
             <div>
-              <h2 className="font-medium text-lg">{t('onboarding.step8.textToSpeech')}</h2>
-              <p className="text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
+              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.textToSpeech')}</h2>
+              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -491,10 +491,10 @@ const OnboardingPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
             <div>
-              <h2 className="font-medium text-lg">{t('onboarding.step8.voiceInput')}</h2>
-              <p className="text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
+              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.voiceInput')}</h2>
+              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -511,10 +511,10 @@ const OnboardingPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
             <div>
-              <h2 className="font-medium text-lg">{t('onboarding.step8.videoRecommendations')}</h2>
-              <p className="text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
+              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.videoRecommendations')}</h2>
+              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
             </div>
             <button
               onClick={() => setFormData(prev => ({ 
@@ -612,22 +612,22 @@ const OnboardingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen flex items-center justify-center py-8 sm:py-12 px-4">
       <div className="w-full max-w-2xl">
-        <div className="card p-8 animate-slide-up">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-6">
-              <Logo size="lg" showText={false} />
+        <div className="card p-6 sm:p-8 animate-slide-up">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <Logo size="lg" showText={false} /> {/* Logo size might need responsive variants if it's too big */}
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
               {steps[currentStep].title}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               {steps[currentStep].subtitle}
             </p>
           </div>
 
-          <div className="mb-8 max-h-96 overflow-y-auto">
+          <div className="mb-6 sm:mb-8 max-h-[60vh] sm:max-h-96 overflow-y-auto pr-2"> {/* Added pr-2 for scrollbar space */}
             {steps[currentStep].content}
           </div>
 

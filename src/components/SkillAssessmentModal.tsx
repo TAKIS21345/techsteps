@@ -92,14 +92,14 @@ const SkillAssessmentModal: React.FC<SkillAssessmentModalProps> = ({ isOpen, onC
           </button>
         </div>
 
-        <div className="p-8">
-          <p className="text-center text-gray-600 mb-2">{t('skillAssessmentModal.introduction')}</p>
-          <p className="text-center text-sm text-blue-600 font-medium mb-6">
+        <div className="p-6 sm:p-8">
+          <p className="text-center text-gray-600 mb-2 text-sm sm:text-base">{t('skillAssessmentModal.introduction')}</p>
+          <p className="text-center text-xs sm:text-sm text-blue-600 font-medium mb-4 sm:mb-6">
             {t('skillAssessmentModal.questionProgress', { current: currentQuestionIndex + 1, total: questions.length })}
           </p>
 
-          <div className="min-h-[150px]"> {/* Fixed height to prevent layout shifts */}
-            <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
+          <div className="min-h-[120px] sm:min-h-[150px]"> {/* Fixed height to prevent layout shifts */}
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 sm:mb-8 text-center">
               {t(currentQuestion.textKey)}
             </h3>
             <div className="space-y-3">
@@ -107,7 +107,7 @@ const SkillAssessmentModal: React.FC<SkillAssessmentModalProps> = ({ isOpen, onC
                 <button
                   key={option.value}
                   onClick={() => handleOptionSelect(currentQuestion.answerKey as keyof SkillAssessmentResult, option.value)}
-                  className={`w-full p-4 text-lg rounded-xl border-2 transition-all duration-200 ease-in-out transform hover:scale-[1.02]
+                  className={`w-full p-3 text-base sm:text-lg sm:p-4 rounded-xl border-2 transition-all duration-200 ease-in-out transform hover:scale-[1.02]
                     ${answers[currentQuestion.answerKey as keyof SkillAssessmentResult] === (currentQuestion.answerKey === 'q1ComfortLevel' ? option.value : option.value === 'yes')
                       ? 'border-blue-500 bg-blue-100 text-blue-700 shadow-lg scale-[1.02]'
                       : 'border-gray-300 bg-white hover:border-blue-400 hover:bg-blue-50'

@@ -626,18 +626,18 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
       
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <Logo size="sm" />
               <div>
-                <h1 className="text-xl font-semibold text-gray-800">
+                <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
                   {userData ? t('dashboard.welcomeUser', { name: userData.firstName }) : t('dashboard.welcome')}
                 </h1>
-                <p className="text-sm text-gray-600">{t('dashboard.ready')}</p>
+                <p className="text-xs sm:text-sm text-gray-600">{t('dashboard.ready')}</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <Link 
                 to="/settings" 
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
@@ -657,28 +657,28 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gap */}
           {/* Main Column */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 md:space-y-8"> {/* Adjusted space-y */}
             {/* Main Interface */}
-            <div className="card p-8 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <MessageSquare className="w-10 h-10 text-white" />
+            <div className="card p-6 sm:p-8 text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <MessageSquare className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
                 {t('dashboard.getHelp')}
               </h2>
-              <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto">
                 {t('dashboard.askQuestion')}
               </p>
               
-              <div className="relative mb-6">
+              <div className="relative mb-4 sm:mb-6">
                 <textarea
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                   placeholder={t('dashboard.placeholder')}
-                  className="input-field text-lg p-6 text-center resize-none min-h-[120px] w-full"
+                  className="input-field text-base sm:text-lg p-4 sm:p-6 text-center resize-none min-h-[100px] sm:min-h-[120px] w-full"
                   rows={3}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -691,7 +691,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                   <button
                     onClick={handleVoiceInput}
                     disabled={speechStatus === 'processing'}
-                    className={`absolute right-4 bottom-4 p-3 rounded-full transition-all duration-200 ${
+                    className={`absolute right-2 bottom-2 sm:right-4 sm:bottom-4 p-2 sm:p-3 rounded-full transition-all duration-200 ${
                       speechStatus === 'recording'
                         ? 'bg-red-100 text-red-600 animate-pulse' 
                         : speechStatus === 'processing'
@@ -711,11 +711,11 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                     }
                   >
                     {speechStatus === 'recording' ? (
-                      <MicOff className="w-6 h-6" />
+                      <MicOff className="w-5 h-5 sm:w-6 sm:h-6" />
                     ) : speechStatus === 'processing' ? (
-                      <div className="w-6 h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
                     ) : (
-                      <Mic className="w-6 h-6" />
+                      <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
                     )}
                   </button>
                 )}
@@ -724,7 +724,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
               <button
                 onClick={handleAskQuestion}
                 disabled={loading || !question.trim()}
-                className="btn-primary text-xl px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary text-base px-6 py-3 sm:text-lg sm:px-8 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? t('dashboard.gettingSteps') : t('dashboard.getSteps')}
               </button>
@@ -740,10 +740,10 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Quick Tips */}
-            <div className="card p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
-                <Lightbulb className="w-6 h-6 text-yellow-500" />
+            <div className="card p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
+                <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {quickTips.map((tip, index) => (
@@ -772,8 +772,8 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Popular Questions */}
-            <div className="card p-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('dashboard.popularQuestions')}</h2>
+            <div className="card p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">{t('dashboard.popularQuestions')}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {popularQuestions.map((q, index) => (
                   <button

@@ -12,9 +12,9 @@ const PrivacyPolicyPage: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <Link
                 to="/"
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
@@ -22,23 +22,23 @@ const PrivacyPolicyPage: React.FC = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Link>
               <Logo size="sm" />
-              <h2 className="text-xl font-semibold text-gray-800">{t('privacyPolicy.headerTitle')}</h2>
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-800">{t('privacyPolicy.headerTitle')}</h2>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-12 max-w-4xl">
-        <div className="card p-8">
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-blue-600" />
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
+        <div className="card p-6 sm:p-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">{t('privacyPolicy.pageTitle')}</h1>
-            <p className="text-gray-600">{t('privacyPolicy.lastUpdated', { date: currentDate })}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">{t('privacyPolicy.pageTitle')}</h1>
+            <p className="text-sm sm:text-base text-gray-600">{t('privacyPolicy.lastUpdated', { date: currentDate })}</p>
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose prose-sm sm:prose-base max-w-none"> {/* Adjusted prose size */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
               <h2 className="text-xl font-semibold text-blue-800 mb-3 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
