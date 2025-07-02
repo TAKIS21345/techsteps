@@ -35,7 +35,7 @@ import {
   // For now, let's use specific imports as they are known for paths/badges.
   // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
 } from 'lucide-react';
-+import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
+import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
 
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
