@@ -26,11 +26,23 @@ import {
   Home as HomeIcon,
   Heart,
   Cloud,
-  MessageSquare
-} from 'lucide-react';
+  MessageSquare,
+  // Import all lucide icons for dynamic use, or ensure specific ones used are imported
+  // For now, assuming specific ones like Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle are imported
++  // If more are needed for badges/paths, they should be added here.
++  // Alternatively, a more dynamic approach: import * as LucideIcons from 'lucide-react';
++  // Then use <LucideIcons[IconName] />
++  // For now, let's use specific imports as they are known for paths/badges.
++  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
++} from 'lucide-react';
++import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
+
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
 import { ttsService } from '../utils/ttsService';
+import SkillAssessmentModal from '../components/SkillAssessmentModal';
+import { SkillAssessmentResult, LearningPath, Module, Badge } from '../types/learning'; // Added LearningPath, Module, Badge
+import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
 
 interface Course {
   id: string;
@@ -68,19 +80,42 @@ interface UserProgress {
 }
 
 const LearningCenterPage: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'overview' | 'assessment' | 'course' | 'lesson'>('overview');
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
-  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null);
-  const [assessmentStep, setAssessmentStep] = useState(0);
+  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment'>('overview');
+  // SelectedCourse and selectedLesson will be replaced by selectedPath and selectedModule
+  // const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  // const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
+  const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
+  const [selectedModule, setSelectedModule] = useState<Module | null>(null);
+
+  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
+  const [assessmentStep, setAssessmentStep] = useState(0); // For the old assessment, might remove or adapt
   const [assessmentAnswers, setAssessmentAnswers] = useState<number[]>([]);
   const [userProgress, setUserProgress] = useState<UserProgress[]>([]);
   const [showAnimation, setShowAnimation] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showAssessmentModal, setShowAssessmentModal] = useState(false);
   const { t } = useTranslation();
+  const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]);
+  const [isLoadingPaths, setIsLoadingPaths] = useState(true);
 
-  const { userData, updateUserData } = useUser();
+  const { userData, updateUserData, loading: userLoading } = useUser(); // Added userLoading
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPaths = async () => {
+      setIsLoadingPaths(true);
+      try {
+        const paths = await learningService.getLearningPaths();
+        setLearningPaths(paths);
+      } catch (error) {
+        console.error("Error fetching learning paths:", error);
+        // Handle error appropriately, e.g., show error message
+      } finally {
+        setIsLoadingPaths(false);
+      }
+    };
+    fetchPaths();
+  }, []);
 
   // Course definitions - these are already largely translated via `learning.courses` in JSON
   // We will fetch titles, descriptions, etc., from `t` function when rendering.
@@ -169,7 +204,45 @@ const LearningCenterPage: React.FC = () => {
     if (userData?.skillLevel) {
       setUserLevel(userData.skillLevel);
     }
-  }, [userData]);
+    // Show assessment modal if not completed and user data is loaded
+    if (!userLoading && userData && !userData.skillAssessmentResult && currentView === 'overview') {
+      // Check if onboarding was just completed to avoid immediate modal popup
+      const onboardingJustCompleted = sessionStorage.getItem('onboardingJustCompleted');
+      if (!onboardingJustCompleted) {
+        setShowAssessmentModal(true);
+      } else {
+        sessionStorage.removeItem('onboardingJustCompleted'); // Clear flag
+      }
+    }
+  }, [userData, userLoading, currentView]);
+
+  const handleSubmitAssessment = async (answers: SkillAssessmentResult) => {
+    let recommendedPathId = 'fundamentals'; // Default
+    let determinedSkillLevel: 'Beginner' | 'Intermediate' | 'Advanced' = 'Beginner';
+
+    if (answers.q1ComfortLevel === 'confident' && answers.q2EmailSent && answers.q3SmartphoneUsed) {
+      recommendedPathId = 'digitalLife'; // Or 'advancedSkills'
+      determinedSkillLevel = 'Advanced';
+    } else if (answers.q1ComfortLevel === 'basics' && answers.q2EmailSent) {
+      recommendedPathId = 'onlineWorld';
+      determinedSkillLevel = 'Intermediate';
+    }
+    // Default is 'fundamentals' and 'Beginner'
+
+    try {
+      await updateUserData({
+        skillAssessmentResult: answers,
+        recommendedStartingPathId: recommendedPathId,
+        skillLevel: determinedSkillLevel // Also update skillLevel for consistency with old system
+      });
+      setUserLevel(determinedSkillLevel); // Update local state
+      // Potentially auto-scroll or highlight the recommended path later
+    } catch (error) {
+      console.error("Error saving assessment results:", error);
+      // Handle error appropriately
+    }
+    setShowAssessmentModal(false);
+  };
 
   // Save progress
   const saveProgress = async (courseId: string, lessonId: string, completed: boolean = false) => {
@@ -658,11 +731,28 @@ const LearningCenterPage: React.FC = () => {
   }
 
   // Main overview
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+  if (currentView === 'overview') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {showAssessmentModal && !userLoading && ( // Ensure user data is loaded before deciding on modal
+          <SkillAssessmentModal
+            isOpen={showAssessmentModal}
+            onClose={() => {
+              setShowAssessmentModal(false);
+              if (!userData?.skillAssessmentResult && updateUserData) { // Check if updateUserData is defined
+                updateUserData({
+                  skillAssessmentResult: { q1ComfortLevel: 'basics', q2EmailSent: false, q3SmartphoneUsed: false },
+                  recommendedStartingPathId: 'fundamentals',
+                  skillLevel: 'Beginner' // Keep skillLevel for now
+                }).catch(err => console.error("Failed to set default assessment", err));
+              }
+            }}
+            onSubmit={handleSubmitAssessment}
+          />
+        )}
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link 
                 to="/dashboard" 
@@ -690,168 +780,175 @@ const LearningCenterPage: React.FC = () => {
             {t('learningPage.heroSubtitle')}
           </p>
           
-          {!userLevel && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setCurrentView('assessment')}
-                className="btn-primary text-lg px-8 py-4"
-              >
-                {t('learningPage.takeSkillsAssessment')}
-              </button>
-              <div className="text-gray-500">{t('learningPage.orSeparator')}</div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => chooseLevel('Beginner')}
-                  className="btn-secondary"
-                >
-                  {t('learningPage.iAmBeginner')}
-                </button>
-                <button
-                  onClick={() => chooseLevel('Intermediate')}
-                  className="btn-secondary"
-                >
-                  {t('learningPage.iAmIntermediate')}
-                </button>
-                <button
-                  onClick={() => chooseLevel('Advanced')}
-                  className="btn-secondary"
-                >
-                  {t('learningPage.iAmAdvanced')}
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* User Level Display */}
-        {userLevel && (
-          <div className="card p-6 mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Star className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">{t('learningPage.yourLevel', { level: userLevel })}</h3>
-                  <p className="text-gray-600">{t('learningPage.levelDescription')}</p>
-                </div>
-              </div>
-              <button
-                onClick={() => setCurrentView('assessment')}
-                className="btn-secondary text-sm"
+          {/* Button to retake/trigger assessment if needed - or could be in a user profile/settings area */}
+          {userData && userData.skillAssessmentResult && (
+             <button
+                onClick={() => setShowAssessmentModal(true)} // Allow re-taking assessment
+                className="btn-secondary text-sm mb-8"
               >
                 {t('learningPage.retakeAssessment')}
               </button>
-            </div>
+          )}
+        </div>
+
+        {/* Learning Paths Grid */}
+        {isLoadingPaths && (
+          <div className="text-center py-10">
+            <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p className="mt-4 text-gray-600">{t('learningPage.loadingPaths')}</p>
           </div>
         )}
 
-        {/* Courses Grid */}
+        {!isLoadingPaths && learningPaths.length === 0 && (
+          <div className="text-center py-10">
+            <p className="text-gray-600 text-xl">{t('learningPage.noPathsAvailable')}</p>
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {getRecommendedCourses().map((course) => {
-            const courseProgress = userProgress.filter(p => p.courseId === course.id);
-            const completedLessons = courseProgress.filter(p => p.completed).length;
-            const progressPercentage = (completedLessons / course.lessons.length) * 100;
+          {learningPaths.map((path) => {
+            const totalModulesInPath = path.modules.length;
+            const completedModulesForPath = path.modules.filter(
+              module => userData?.userLearningProgress?.completedModules?.[module.id]
+            ).length;
+            const progressPercent = totalModulesInPath > 0 ? (completedModulesForPath / totalModulesInPath) * 100 : 0;
             
+            const IconComponent = LucideIcons[path.iconName as keyof typeof LucideIcons] || Target;
+            const isPathBadgeEarned = userData?.userLearningProgress?.earnedBadges?.[path.badgeIdOnCompletion] || false;
+
             return (
               <div 
-                key={course.id}
+                key={path.id}
                 className="card p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-2"
                 onClick={() => {
-                  setSelectedCourse(course);
-                  setCurrentView('course');
+                  setSelectedPath(path);
+                  setCurrentView('pathDetail');
                 }}
               >
-                <div className={`w-16 h-16 bg-${course.color}-100 rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  <course.icon className={`w-8 h-8 text-${course.color}-600`} />
+                <div className={`w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6`}> {/* Generic color for now */}
+                  <IconComponent className={`w-8 h-8 text-blue-600`} />
                 </div>
                 
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
-                  course.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
-                  course.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-red-100 text-red-800'
-                }`}>
-                  {course.difficulty}
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{t(path.titleKey)}</h3>
+                <p className="text-gray-600 mb-4 text-sm text-center">{t(path.descriptionKey)}</p>
+                
+                <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                  <div
+                    className="bg-blue-600 h-2.5 rounded-full"
+                    style={{ width: `${progressPercent}%` }}
+                  ></div>
                 </div>
-                
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{course.title}</h3>
-                <p className="text-gray-600 mb-4">{course.description}</p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{course.estimatedTime}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <BookOpen className="w-4 h-4" />
-                    <span>{course.lessons.length} {t('learningPage.lessonsLabel')}</span>
-                  </div>
+                <div className="flex justify-between items-center">
+                  <p className="text-xs text-gray-500">{t('learningPage.progressComplete', { value: Math.round(progressPercent) })}</p>
+                  {isPathBadgeEarned && (
+                    <div title={t(getBadgeById(path.badgeIdOnCompletion)?.nameKey || '')} className="text-yellow-500">
+                      <Award className="w-4 h-4" />
+                    </div>
+                  )}
                 </div>
 
-                {/* Progress Bar */}
-                {progressPercentage > 0 && (
-                  <div className="mb-4">
-                    <div className="flex justify-between text-xs text-gray-500 mb-1">
-                      <span>{t('learningPage.progressLabel')}</span>
-                      <span>{Math.round(progressPercentage)}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className={`bg-${course.color}-500 h-2 rounded-full transition-all duration-300`}
-                        style={{ width: `${progressPercentage}%` }}
-                      ></div>
-                    </div>
+                {/* Indication if path is recommended */}
+                {userData?.recommendedStartingPathId === path.id && !isPathBadgeEarned && ( // Show recommendation only if badge not yet earned for this path
+                  <div className="mt-3 text-center">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                      <Star className="w-4 h-4 mr-1.5" />
+                      {t('learningPage.recommendedStart')}
+                    </span>
                   </div>
                 )}
-
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">
-                    {t('learningPage.completedOutOfTotal', {completed: completedLessons, total: course.lessons.length })}
-                  </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400" />
-                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Features */}
-        <div className="text-center mb-12"> {/* Added text-center and margin for the new heading */}
+        {/* Features Section - can remain as is or be integrated differently if desired */}
+        {/* Ensure LucideIcons and getBadgeById are imported if not already */}
+        {/* import * as LucideIcons from 'lucide-react'; */}
+        {/* import { getBadgeById } from '../services/learningService'; */}
+        <div className="text-center mb-12 pt-12 border-t border-gray-200">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('learningPage.featuresGridTitle')}</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            {
-              icon: Play,
-              titleKey: "learningPage.featureInteractiveDemos",
-              descriptionKey: "learningPage.featureInteractiveDemosDesc"
-            },
-            {
-              icon: Volume2,
-              titleKey: "learningPage.featureAudioSupport",
-              descriptionKey: "learningPage.featureAudioSupportDesc"
-            },
-            {
-              icon: Download,
-              titleKey: "learningPage.featurePrintableGuides",
-              descriptionKey: "learningPage.featurePrintableGuidesDesc"
-            },
-            {
-              icon: Award,
-              titleKey: "learningPage.featureCertificates",
-              descriptionKey: "learningPage.featureCertificatesDesc"
-            }
-          ].map((feature, index) => (
-            <div key={index} className="text-center p-6">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-6 h-6 text-blue-600" />
+            { iconName: 'Play', titleKey: "learningPage.featureInteractiveDemos", descriptionKey: "learningPage.featureInteractiveDemosDesc"},
+            { iconName: 'Volume2', titleKey: "learningPage.featureAudioSupport", descriptionKey: "learningPage.featureAudioSupportDesc"},
+            { iconName: 'Download', titleKey: "learningPage.featurePrintableGuides", descriptionKey: "learningPage.featurePrintableGuidesDesc"},
+            { iconName: 'Award', titleKey: "learningPage.featureCertificates", descriptionKey: "learningPage.featureCertificatesDesc"}
+          ].map((feature, index) => {
+            const FeatureIcon = LucideIcons[feature.iconName as keyof typeof LucideIcons] || HelpCircle;
+            return (
+              <div key={index} className="text-center p-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <FeatureIcon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">{t(feature.titleKey)}</h3>
+                <p className="text-sm text-gray-600">{t(feature.descriptionKey)}</p>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">{t(feature.titleKey)}</h3>
-              <p className="text-sm text-gray-600">{t(feature.descriptionKey)}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
+    </div>
+    );
+  } // End of 'overview' view
+
+  // Placeholder for pathDetail and moduleContent views
+  // These will be built out in subsequent steps/commits
+  if (currentView === 'pathDetail' && selectedPath) {
+    // Basic display for now
+    return (
+      <div>
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-6 py-4 flex items-center space-x-4">
+            <button onClick={() => setCurrentView('overview')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <Logo size="sm" />
+            <h1 className="text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
+          </div>
+        </header>
+        <div className="container mx-auto px-6 py-8">
+          <h2 className="text-2xl font-bold mb-4">{t(selectedPath.descriptionKey)}</h2>
+          <p className="mb-6">{t('learningPage.moduleListTitle', { pathTitle: t(selectedPath.titleKey) })}</p>
+          <div className="space-y-4">
+            {selectedPath.modules.map(module => (
+              <div key={module.id} className="card p-4">
+                <h3 className="text-lg font-semibold">{t(module.titleKey)}</h3>
+                <p className="text-sm text-gray-600">{t(module.descriptionKey)}</p>
+                <p className="text-xs text-gray-500 mt-1">{t('learningPage.moduleTimeLabel')}{module.estimatedTime}</p>
+                 {/* TODO: Add click handler to go to module content */}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentView === 'moduleContent' && selectedModule) {
+     return (
+      <div>
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-6 py-4 flex items-center space-x-4">
+            <button onClick={() => setCurrentView('pathDetail')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <Logo size="sm" />
+            <h1 className="text-xl font-semibold text-gray-800">{t(selectedModule.titleKey)}</h1>
+          </div>
+        </header>
+        <div className="container mx-auto px-6 py-8">
+            {t('learningPage.moduleContentTitle', { moduleTitle: t(selectedModule.titleKey) })}
+            {/* This is where the old 'lesson' view logic might be adapted */}
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback or loading state for other views if any
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+        <p>{t('learningPage.loadingCenter')}</p>
     </div>
   );
 };

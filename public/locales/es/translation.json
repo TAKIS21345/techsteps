@@ -197,6 +197,85 @@
     "description": "[es] Configure your preferred languages for better voice input and text interactions.",
     "buttonText": "[es] Complete Setup"
   },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "[es] Computer & Device Fundamentals",
+      "description": "[es] The very basics to get you started with technology.",
+      "modules": {
+        "turnOnDevice": { "title": "[es] Turning on a Device", "description": "[es] Learn to power up computers and smartphones." },
+        "mouseTouchscreen": { "title": "[es] Using a Mouse/Touchscreen", "description": "[es] Master pointing, clicking, and tapping." },
+        "keyboardTyping": { "title": "[es] Keyboard/Typing Basics", "description": "[es] Get comfortable with typing essentials." },
+        "filesFolders": { "title": "[es] Understanding Files & Folders", "description": "[es] Learn how digital information is organized." }
+      }
+    },
+    "onlineWorld": {
+      "title": "[es] The Online World",
+      "description": "[es] Getting connected and exploring the internet safely.",
+      "modules": {
+        "webBrowsers": { "title": "[es] Understanding Web Browsers", "description": "[es] Navigate the internet with Chrome, Edge, or Safari." },
+        "searchEffectively": { "title": "[es] How to Search Effectively", "description": "[es] Find what you need online using search engines." },
+        "introEmail": { "title": "[es] Introduction to Email", "description": "[es] Learn to send and receive electronic mail." },
+        "virusSafety": { "title": "[es] Staying Safe from Viruses", "description": "[es] Protect your device from harmful software." }
+      }
+    },
+    "digitalLife": {
+      "title": "[es] Everyday Digital Life",
+      "description": "[es] Communicate, share, and manage your digital presence.",
+      "modules": {
+        "masteringEmail": { "title": "[es] Mastering Email", "description": "[es] Attachments, folders, and email etiquette." },
+        "videoCalling": { "title": "[es] Video Calling Family & Friends", "description": "[es] Connect face-to-face with loved ones." },
+        "introSocialMedia": { "title": "[es] Introduction to Social Media", "description": "[es] Understanding platforms like Facebook." },
+        "sharingPhotos": { "title": "[es] Sharing Photos Safely", "description": "[es] Share your memories without compromising privacy." }
+      }
+    },
+    "advancedSkills": {
+      "title": "[es] Advanced & Creative Skills",
+      "description": "[es] Beyond the basics: explore more of what technology offers.",
+      "modules": {
+        "onlineShopping": { "title": "[es] Introduction to Online Shopping", "description": "[es] Shop safely and conveniently online." },
+        "onlineMaps": { "title": "[es] Using Online Maps & Navigation", "description": "[es] Find your way with digital maps." },
+        "photoEditing": { "title": "[es] Basic Photo Editing", "description": "[es] Enhance your digital photos." },
+        "productivityTools": { "title": "[es] Intro to Productivity Tools", "description": "[es] Using tools like Google Docs or Microsoft Word basics." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "[es] Tech Starter", "description": "[es] Completed Computer & Device Fundamentals." },
+    "onlineWorld": { "name": "[es] Online Explorer", "description": "[es] Completed The Online World path." },
+    "digitalLife": { "name": "[es] Digital Communicator", "description": "[es] Completed Everyday Digital Life path." },
+    "advancedSkills": { "name": "[es] Tech Virtuoso", "description": "[es] Completed Advanced & Creative Skills path." }
+  },
+  "skillAssessmentModal": {
+    "title": "[es] Quick Skill Check",
+    "introduction": "[es] Let's find the best place for you to start!",
+    "nextButton": "[es] Next",
+    "finishButton": "[es] Show My Starting Point",
+    "questionProgress": "[es] Question {{current}} of {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "[es] How comfortable are you with computers?",
+      "options": {
+        "new": "[es] Brand New",
+        "basics": "[es] I know some basics",
+        "confident": "[es] I'm pretty confident"
+      }
+    },
+    "q2": {
+      "text": "[es] Have you sent an email before?",
+      "options": {
+        "yes": "[es] Yes",
+        "no": "[es] No"
+      }
+    },
+    "q3": {
+      "text": "[es] Have you used a smartphone for more than just calls?",
+      "options": {
+        "yes": "[es] Yes",
+        "no": "[es] No"
+      }
+    }
+  },
   "learning": {
     "title": "Centro de Aprendizaje",
     "structuredCourses": "Cursos estructurados y tutoriales",
@@ -680,7 +759,15 @@
     "featureCertificatesDesc": "[es] Earn certificates as you complete courses",
     "animationShow": "[es] Show Animation",
     "animationReset": "[es] Reset",
-    "featuresGridTitle": "[es] Explore Our Features"
+    "featuresGridTitle": "[es] Explore Our Features",
+    "loadingPaths": "[es] Loading learning paths...",
+    "noPathsAvailable": "[es] No learning paths available at the moment. Please check back later.",
+    "progressComplete": "[es] {{value}}% complete",
+    "recommendedStart": "[es] Recommended Starting Point",
+    "moduleListTitle": "[es] Modules for path: {{pathTitle}}",
+    "moduleContentTitle": "[es] Content for module: {{moduleTitle}} will go here.",
+    "loadingCenter": "[es] Loading Learning Center...",
+    "moduleTimeLabel": "[es] Time: "
   },
   "assessmentView": {
     "headerTitle": "[es] Skills Assessment",

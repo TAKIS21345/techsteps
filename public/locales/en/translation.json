@@ -197,6 +197,85 @@
     "description": "Configure your preferred languages for better voice input and text interactions.",
     "buttonText": "Complete Setup"
   },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Computer & Device Fundamentals",
+      "description": "The very basics to get you started with technology.",
+      "modules": {
+        "turnOnDevice": { "title": "Turning on a Device", "description": "Learn to power up computers and smartphones." },
+        "mouseTouchscreen": { "title": "Using a Mouse/Touchscreen", "description": "Master pointing, clicking, and tapping." },
+        "keyboardTyping": { "title": "Keyboard/Typing Basics", "description": "Get comfortable with typing essentials." },
+        "filesFolders": { "title": "Understanding Files & Folders", "description": "Learn how digital information is organized." }
+      }
+    },
+    "onlineWorld": {
+      "title": "The Online World",
+      "description": "Getting connected and exploring the internet safely.",
+      "modules": {
+        "webBrowsers": { "title": "Understanding Web Browsers", "description": "Navigate the internet with Chrome, Edge, or Safari." },
+        "searchEffectively": { "title": "How to Search Effectively", "description": "Find what you need online using search engines." },
+        "introEmail": { "title": "Introduction to Email", "description": "Learn to send and receive electronic mail." },
+        "virusSafety": { "title": "Staying Safe from Viruses", "description": "Protect your device from harmful software." }
+      }
+    },
+    "digitalLife": {
+      "title": "Everyday Digital Life",
+      "description": "Communicate, share, and manage your digital presence.",
+      "modules": {
+        "masteringEmail": { "title": "Mastering Email", "description": "Attachments, folders, and email etiquette." },
+        "videoCalling": { "title": "Video Calling Family & Friends", "description": "Connect face-to-face with loved ones." },
+        "introSocialMedia": { "title": "Introduction to Social Media", "description": "Understanding platforms like Facebook." },
+        "sharingPhotos": { "title": "Sharing Photos Safely", "description": "Share your memories without compromising privacy." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Advanced & Creative Skills",
+      "description": "Beyond the basics: explore more of what technology offers.",
+      "modules": {
+        "onlineShopping": { "title": "Introduction to Online Shopping", "description": "Shop safely and conveniently online." },
+        "onlineMaps": { "title": "Using Online Maps & Navigation", "description": "Find your way with digital maps." },
+        "photoEditing": { "title": "Basic Photo Editing", "description": "Enhance your digital photos." },
+        "productivityTools": { "title": "Intro to Productivity Tools", "description": "Using tools like Google Docs or Microsoft Word basics." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Tech Starter", "description": "Completed Computer & Device Fundamentals." },
+    "onlineWorld": { "name": "Online Explorer", "description": "Completed The Online World path." },
+    "digitalLife": { "name": "Digital Communicator", "description": "Completed Everyday Digital Life path." },
+    "advancedSkills": { "name": "Tech Virtuoso", "description": "Completed Advanced & Creative Skills path." }
+  },
+  "skillAssessmentModal": {
+    "title": "Quick Skill Check",
+    "introduction": "Let's find the best place for you to start!",
+    "nextButton": "Next",
+    "finishButton": "Show My Starting Point",
+    "questionProgress": "Question {{current}} of {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "How comfortable are you with computers?",
+      "options": {
+        "new": "Brand New",
+        "basics": "I know some basics",
+        "confident": "I'm pretty confident"
+      }
+    },
+    "q2": {
+      "text": "Have you sent an email before?",
+      "options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "q3": {
+      "text": "Have you used a smartphone for more than just calls?",
+      "options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    }
+  },
   "learning": {
     "title": "Learning Center",
     "structuredCourses": "Structured courses and tutorials",
@@ -680,7 +759,15 @@
     "featureCertificatesDesc": "Earn certificates as you complete courses",
     "animationShow": "Show Animation",
     "animationReset": "Reset",
-    "featuresGridTitle": "Explore Our Features"
+    "featuresGridTitle": "Explore Our Features",
+    "loadingPaths": "Loading learning paths...",
+    "noPathsAvailable": "No learning paths available at the moment. Please check back later.",
+    "progressComplete": "{{value}}% complete",
+    "recommendedStart": "Recommended Starting Point",
+    "moduleListTitle": "Modules for path: {{pathTitle}}",
+    "moduleContentTitle": "Content for module: {{moduleTitle}} will go here.",
+    "loadingCenter": "Loading Learning Center...",
+    "moduleTimeLabel": "Time: "
   },
   "assessmentView": {
     "headerTitle": "Skills Assessment",

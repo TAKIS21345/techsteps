@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
 import { useAuth } from './AuthContext';
 import Cookies from 'js-cookie';
+import { SkillAssessmentResult, UserLearningProgress as NewUserLearningProgress } from '../types/learning'; // Renamed to avoid conflict
 
 interface QuestionHistory {
   question: string;
@@ -46,8 +47,13 @@ interface UserData {
   selectedLanguages?: string[];
   stats?: UserStats;
   chatMemory?: ChatMemory[];
-  learningProgress?: UserProgress[];
-  skillLevel?: 'Beginner' | 'Intermediate' | 'Advanced';
+  learningProgress?: UserProgress[]; // Old V1 progress
+  skillLevel?: 'Beginner' | 'Intermediate' | 'Advanced'; // Potentially superseded by new assessment
+  // New V2 Learning Center fields
+  skillAssessmentResult?: SkillAssessmentResult;
+  recommendedStartingPathId?: string;
+  userLearningProgress?: NewUserLearningProgress; // V2 progress
+  earnedBadges?: string[]; // Array of badge IDs
   preferences?: {
     theme: 'light' | 'dark';
     textToSpeech: boolean;
@@ -77,7 +83,14 @@ interface UserContextType {
   addQuestionToHistory: (question: string, totalSteps: number) => Promise<void>;
   markQuestionCompleted: (question: string) => Promise<void>;
   hasCompletedOnboarding: boolean;
+  markModuleAsComplete: (moduleId: string, pathId: string, learningPaths: NewLearningPath[]) => Promise<void>; // Added NewLearningPath type
 }
+
+// Forward declaration for LearningPath from types/learning, actual import might cause circular dependency if UserContext is imported there.
+// Best practice would be to ensure types are self-contained or use a central types file not importing contexts.
+interface ModuleStub { id: string; }
+interface NewLearningPath { id: string; modules: ModuleStub[]; badgeIdOnCompletion: string; }
+
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
@@ -207,6 +220,61 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   
   const hasCompletedOnboarding = userData !== null;
 
+  const markModuleAsComplete = async (moduleId: string, pathId: string, allLearningPaths: NewLearningPath[]) => {
+    if (!user || !userData) return;
+
+    const currentLearningProgress = userData.userLearningProgress || {
+      completedModules: {},
+      earnedBadges: {},
+      pathProgress: {} // This will be recalculated
+    };
+
+    const updatedCompletedModules = {
+      ...currentLearningProgress.completedModules,
+      [moduleId]: true
+    };
+
+    // Check for badge completion
+    const path = allLearningPaths.find(p => p.id === pathId);
+    let updatedEarnedBadges = { ...currentLearningProgress.earnedBadges };
+
+    if (path) {
+      const allModulesInPathComplete = path.modules.every(
+        module => updatedCompletedModules[module.id]
+      );
+      if (allModulesInPathComplete && path.badgeIdOnCompletion) {
+        updatedEarnedBadges = {
+          ...updatedEarnedBadges,
+          [path.badgeIdOnCompletion]: true
+        };
+      }
+    }
+
+    // Recalculate progress for all paths (or just the affected one)
+    const updatedPathProgress: Record<string, { completedCount: number, totalCount: number, progressPercent: number }> = {};
+    allLearningPaths.forEach(p => {
+      const totalModules = p.modules.length;
+      const completedCount = p.modules.filter(m => updatedCompletedModules[m.id]).length;
+      updatedPathProgress[p.id] = {
+        completedCount,
+        totalCount: totalModules,
+        progressPercent: totalModules > 0 ? (completedCount / totalModules) * 100 : 0,
+      };
+    });
+
+
+    const newLearningProgress: NewUserLearningProgress = {
+      completedModules: updatedCompletedModules,
+      earnedBadges: updatedEarnedBadges,
+      pathProgress: updatedPathProgress
+    };
+
+    // Store the string array of badge IDs in UserData as defined
+    const earnedBadgesArray = Object.keys(updatedEarnedBadges).filter(badgeId => updatedEarnedBadges[badgeId]);
+
+    await updateUserData({ userLearningProgress: newLearningProgress, earnedBadges: earnedBadgesArray });
+  };
+
   const value = {
     userData,
     loading,
@@ -214,7 +282,8 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
     updateUserStats,
     addQuestionToHistory,
     markQuestionCompleted,
-    hasCompletedOnboarding
+    hasCompletedOnboarding,
+    markModuleAsComplete
   };
 
   return (
