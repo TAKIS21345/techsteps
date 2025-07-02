@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { 
   ArrowLeft, 
@@ -8,7 +8,6 @@ import {
   CheckCircle, 
   Star, 
   Clock, 
-  Users, 
   Award,
   Download,
   HelpCircle,
@@ -17,31 +16,15 @@ import {
   RotateCcw,
   ChevronRight,
   Target,
-  Brain,
-  Smartphone,
-  Wifi,
-  Shield,
-  Camera,
-  CreditCard,
-  Home as HomeIcon,
-  Heart,
-  Cloud,
-  MessageSquare,
-  // Import all lucide icons for dynamic use, or ensure specific ones used are imported
-  // For now, assuming specific ones like Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle are imported
-  // If more are needed for badges/paths, they should be added here.
-  // Alternatively, a more dynamic approach: import * as LucideIcons from 'lucide-react';
-  // Then use <LucideIcons[IconName] />
-  // For now, let's use specific imports as they are known for paths/badges.
-  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
+  MessageSquare // Fix MessageSquare import (ensure it's imported from lucide-react)
 } from 'lucide-react';
-+import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
+import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
 
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
 import { ttsService } from '../utils/ttsService';
 import SkillAssessmentModal from '../components/SkillAssessmentModal';
-import { SkillAssessmentResult, LearningPath, Module, Badge } from '../types/learning'; // Added LearningPath, Module, Badge
+import { SkillAssessmentResult, LearningPath, Module } from '../types/learning'; // Removed unused Badge import
 import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
 
 interface Course {
@@ -80,14 +63,13 @@ interface UserProgress {
 }
 
 const LearningCenterPage: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment'>('overview');
-  // SelectedCourse and selectedLesson will be replaced by selectedPath and selectedModule
-  // const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  // const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
+  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment' | 'lesson' | 'course'>('overview');
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
-  const [selectedModule, setSelectedModule] = useState<Module | null>(null);
+  const [selectedModule] = useState<Module | null>(null); // Remove setSelectedModule since it's never used
 
-  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
+  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | undefined>(undefined); // Use undefined instead of null
   const [assessmentStep, setAssessmentStep] = useState(0); // For the old assessment, might remove or adapt
   const [assessmentAnswers, setAssessmentAnswers] = useState<number[]>([]);
   const [userProgress, setUserProgress] = useState<UserProgress[]>([]);
@@ -99,7 +81,6 @@ const LearningCenterPage: React.FC = () => {
   const [isLoadingPaths, setIsLoadingPaths] = useState(true);
 
   const { userData, updateUserData, loading: userLoading } = useUser(); // Added userLoading
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPaths = async () => {
@@ -116,66 +97,6 @@ const LearningCenterPage: React.FC = () => {
     };
     fetchPaths();
   }, []);
-
-  // Course definitions - these are already largely translated via `learning.courses` in JSON
-  // We will fetch titles, descriptions, etc., from `t` function when rendering.
-  // The structure here will remain, but the text values will be replaced by keys or fetched dynamically.
-  const coursesDataStructure = [
-    {
-      id: 'beginner',
-      icon: Target,
-      difficulty: 'Beginner', // This could be translated too, e.g. t('learningPage.difficulty.beginner')
-      color: 'green',
-      lessons: [
-        { id: 'device-basics', animationType: 'power-button' },
-        { id: 'mouse-keyboard', animationType: 'mouse-click' },
-        { id: 'internet-safety' }
-      ]
-    },
-    {
-      id: 'intermediate',
-      icon: MessageSquare,
-      difficulty: 'Intermediate', // t('learningPage.difficulty.intermediate')
-      color: 'blue',
-      lessons: [
-        { id: 'video-calls' },
-        { id: 'social-media' }
-      ]
-    },
-    {
-      id: 'advanced',
-      icon: Brain,
-      difficulty: 'Advanced', // t('learningPage.difficulty.advanced')
-      color: 'purple',
-      lessons: [
-        { id: 'smart-home' },
-        { id: 'online-banking' }
-      ]
-    }
-  ];
-
-  const courses: Course[] = coursesDataStructure.map(courseStruct => ({
-    id: courseStruct.id,
-    title: t(`learning.courses.${courseStruct.id}.title`),
-    description: t(`learning.courses.${courseStruct.id}.description`),
-    icon: courseStruct.icon,
-    difficulty: courseStruct.difficulty as 'Beginner' | 'Intermediate' | 'Advanced', // Assuming difficulty is not translated for now, or handled elsewhere
-    estimatedTime: t(`learning.courses.${courseStruct.id}.estimatedTime`),
-    color: courseStruct.color,
-    lessons: courseStruct.lessons.map(lessonStruct => ({
-      id: lessonStruct.id,
-      title: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.title`),
-      description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.description`),
-      duration: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.duration`),
-      content: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.content`),
-      keyPoints: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.keyPoints`, { returnObjects: true }) as string[],
-      practiceExercise: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.practiceExercise`),
-      animation: lessonStruct.animationType ? {
-        type: lessonStruct.animationType as any,
-        description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.animationDesc`)
-      } : undefined
-    }))
-  }));
 
   // Assessment questions - also translated via `learning.assessment.questions`
   const assessmentQuestions = Array.from({ length: 10 }).map((_, i) => ({
@@ -261,7 +182,7 @@ const LearningCenterPage: React.FC = () => {
     if (updateUserData) {
       await updateUserData({
         learningProgress: updatedProgress,
-        skillLevel: userLevel
+        skillLevel: userLevel === null ? undefined : userLevel
       });
     }
   };
@@ -287,25 +208,6 @@ const LearningCenterPage: React.FC = () => {
   // Skip assessment
   const skipAssessment = () => {
     setCurrentView('overview');
-  };
-
-  // Choose level manually
-  const chooseLevel = (level: 'Beginner' | 'Intermediate' | 'Advanced') => {
-    setUserLevel(level);
-    if (updateUserData) {
-      updateUserData({ skillLevel: level });
-    }
-    setCurrentView('overview');
-  };
-
-  // Get recommended courses based on level
-  const getRecommendedCourses = () => {
-    if (!userLevel) return courses;
-    
-    const levelOrder = { 'Beginner': 0, 'Intermediate': 1, 'Advanced': 2 };
-    const userLevelIndex = levelOrder[userLevel];
-    
-    return courses.filter((course, index) => index <= userLevelIndex);
   };
 
   // Animation component
@@ -599,7 +501,7 @@ const LearningCenterPage: React.FC = () => {
           <div className="card p-8 mb-8">
             <div className="flex items-start space-x-6">
               <div className={`w-16 h-16 bg-${selectedCourse.color}-100 rounded-2xl flex items-center justify-center`}>
-                <selectedCourse.icon className={`w-8 h-8 text-${selectedCourse.color}-600`} />
+                {selectedCourse.icon && <selectedCourse.icon className={`w-8 h-8 text-${selectedCourse.color}-600`} />}
               </div>
               <div className="flex-1">
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedCourse.title}</h2>
@@ -698,6 +600,7 @@ const LearningCenterPage: React.FC = () => {
                       <button
                         onClick={() => {
                           setSelectedLesson(lesson);
+                          setSelectedCourse(selectedCourse); // Ensure selectedCourse is set
                           setCurrentView('lesson');
                           saveProgress(selectedCourse.id, lesson.id);
                         }}
@@ -813,7 +716,7 @@ const LearningCenterPage: React.FC = () => {
             ).length;
             const progressPercent = totalModulesInPath > 0 ? (completedModulesForPath / totalModulesInPath) * 100 : 0;
             
-            const IconComponent = LucideIcons[path.iconName as keyof typeof LucideIcons] || Target;
+            const IconComponent = (LucideIcons as any)[path.iconName] || Target;
             const isPathBadgeEarned = userData?.userLearningProgress?.earnedBadges?.[path.badgeIdOnCompletion] || false;
 
             return (
@@ -826,7 +729,7 @@ const LearningCenterPage: React.FC = () => {
                 }}
               >
                 <div className={`w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6`}> {/* Generic color for now */}
-                  <IconComponent className={`w-8 h-8 text-blue-600`} />
+                  {IconComponent && <IconComponent className={`w-8 h-8 text-blue-600`} />}
                 </div>
                 
                 <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{t(path.titleKey)}</h3>
@@ -875,11 +778,11 @@ const LearningCenterPage: React.FC = () => {
             { iconName: 'Download', titleKey: "learningPage.featurePrintableGuides", descriptionKey: "learningPage.featurePrintableGuidesDesc"},
             { iconName: 'Award', titleKey: "learningPage.featureCertificates", descriptionKey: "learningPage.featureCertificatesDesc"}
           ].map((feature, index) => {
-            const FeatureIcon = LucideIcons[feature.iconName as keyof typeof LucideIcons] || HelpCircle;
+            const FeatureIcon = (LucideIcons as any)[feature.iconName] || HelpCircle;
             return (
               <div key={index} className="text-center p-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <FeatureIcon className="w-6 h-6 text-blue-600" />
+                  {FeatureIcon && <FeatureIcon className="w-6 h-6 text-blue-600" />}
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">{t(feature.titleKey)}</h3>
                 <p className="text-sm text-gray-600">{t(feature.descriptionKey)}</p>
