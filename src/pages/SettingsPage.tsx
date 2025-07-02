@@ -15,13 +15,22 @@ const SettingsPage: React.FC = () => {
   const [showLanguageSection, setShowLanguageSection] = useState(false);
   const [formData, setFormData] = useState({
     firstName: userData?.firstName || '',
+    lastName: userData?.lastName || '', // Added
+    age: userData?.age || 65, // Added
     os: userData?.os || 'Windows Computer',
+    techExperience: userData?.techExperience || 'beginner', // Added
+    primaryConcerns: userData?.primaryConcerns || [], // Added
+    assistiveNeeds: userData?.assistiveNeeds || [], // Added
+    communicationStyle: userData?.communicationStyle || 'simple', // Added
     selectedLanguages: userData?.selectedLanguages || [i18n.language],
-    defaultLanguage: i18n.language,
+    defaultLanguage: i18n.language, // This should ideally come from userData if saved, or i18n.language
     preferences: {
       textToSpeech: userData?.preferences?.textToSpeech ?? true,
       voiceInput: userData?.preferences?.voiceInput ?? true,
       theme: userData?.preferences?.theme || 'light',
+      fontSize: userData?.preferences?.fontSize || 'normal', // Added
+      highContrast: userData?.preferences?.highContrast ?? false, // Added
+      videoRecommendations: userData?.preferences?.videoRecommendations ?? true, // Added
       speechLanguages: userData?.preferences?.speechLanguages || [i18n.language]
     }
   });
@@ -198,7 +207,33 @@ const SettingsPage: React.FC = () => {
                   placeholder={t('settings.firstNamePlaceholder')}
                 />
               </div>
-
+              <div>
+                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('settings.lastName')}
+                </label>
+                <input
+                  id="lastName"
+                  type="text"
+                  value={formData.lastName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                  className="input-field"
+                  placeholder={t('settings.lastNamePlaceholder')}
+                />
+              </div>
+              <div>
+                <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('settings.age')}
+                </label>
+                <input
+                  id="age"
+                  type="number"
+                  min="18"
+                  max="120"
+                  value={formData.age}
+                  onChange={(e) => setFormData(prev => ({ ...prev, age: parseInt(e.target.value) || 0 }))}
+                  className="input-field"
+                />
+              </div>
               <div>
                 <label htmlFor="os" className="block text-sm font-medium text-gray-700 mb-2">
                   {t('settings.primaryDevice')}
@@ -219,52 +254,232 @@ const SettingsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Accessibility Preferences */}
+          {/* Learning & Content Preferences */}
+          <div className="card p-6 sm:p-8">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4">
+                <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" /> {/* Changed icon */}
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('settings.learningPreferences')}</h2>
+            </div>
+            <div className="space-y-4 sm:space-y-6">
+              <div>
+                <label htmlFor="techExperience" className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  {t('settings.techExperience')}
+                </label>
+                <select
+                  id="techExperience"
+                  value={formData.techExperience}
+                  onChange={(e) => setFormData(prev => ({ ...prev, techExperience: e.target.value as UserData['techExperience'] }))}
+                  className="input-field"
+                >
+                  <option value="beginner">{t('settings.techExperienceOptions.beginner')}</option>
+                  <option value="some">{t('settings.techExperienceOptions.some')}</option>
+                  <option value="comfortable">{t('settings.techExperienceOptions.comfortable')}</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="communicationStyle" className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  {t('settings.communicationStyle')}
+                </label>
+                <select
+                  id="communicationStyle"
+                  value={formData.communicationStyle}
+                  onChange={(e) => setFormData(prev => ({ ...prev, communicationStyle: e.target.value as UserData['communicationStyle'] }))}
+                  className="input-field"
+                >
+                  <option value="simple">{t('settings.communicationStyleOptions.simple')}</option>
+                  <option value="detailed">{t('settings.communicationStyleOptions.detailed')}</option>
+                  <option value="visual">{t('settings.communicationStyleOptions.visual')}</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('settings.primaryConcerns')}
+                </label>
+                <div className="space-y-2">
+                  {(Object.keys(t('onboarding.step5.concerns', { returnObjects: true })) as Array<keyof typeof onboardingStep5Concerns>).map((key) => (
+                    <label key={key} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.primaryConcerns.includes(t(`onboarding.step5.concerns.${key}`))}
+                        onChange={() => {
+                          const value = t(`onboarding.step5.concerns.${key}`);
+                          setFormData(prev => ({
+                            ...prev,
+                            primaryConcerns: prev.primaryConcerns.includes(value)
+                              ? prev.primaryConcerns.filter(c => c !== value)
+                              : [...prev.primaryConcerns, value]
+                          }));
+                        }}
+                        className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">{t(`onboarding.step5.concerns.${key}`)}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('settings.assistiveNeeds')}
+                </label>
+                <div className="space-y-2">
+                  {(Object.keys(t('onboarding.step6.needs', { returnObjects: true })) as Array<keyof typeof onboardingStep6Needs>).map((key) => (
+                    <label key={key} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.assistiveNeeds.includes(t(`onboarding.step6.needs.${key}`))}
+                        onChange={() => {
+                          const value = t(`onboarding.step6.needs.${key}`);
+                          const noneNeededValue = t('onboarding.step6.needs.noneNeeded');
+                          setFormData(prev => {
+                            let newNeeds = [...prev.assistiveNeeds];
+                            if (value === noneNeededValue) {
+                              newNeeds = newNeeds.includes(value) ? [] : [value];
+                            } else {
+                              if (newNeeds.includes(value)) {
+                                newNeeds = newNeeds.filter(n => n !== value);
+                              } else {
+                                newNeeds = [...newNeeds.filter(n => n !== noneNeededValue), value];
+                              }
+                            }
+                            return { ...prev, assistiveNeeds: newNeeds };
+                          });
+                        }}
+                        className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">{t(`onboarding.step6.needs.${key}`)}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          {/* Accessibility & Display Preferences */}
           <div className="card p-6 sm:p-8">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4">
-                <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                <Palette className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" /> {/* Changed icon */}
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('settings.accessibility')}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('settings.displayPreferences')}</h2>
             </div>
 
             <div className="space-y-4 sm:space-y-6">
+              {/* Text to Speech */}
               <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
                 <div className="flex items-center">
-                  <Volume2 className="w-5 h-5 text-gray-600 mr-2 sm:mr-3" />
+                  <Volume2 className="w-5 h-5 text-gray-600 mr-2 sm:mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-medium text-base sm:text-lg">{t('settings.textToSpeech')}</h3>
-                    <p className="text-sm text-gray-600">{t('settings.textToSpeechDesc')}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('settings.textToSpeechDesc')}</p>
                   </div>
                 </div>
                 <button
                   onClick={() => togglePreference('textToSpeech')}
-                  className={`w-12 h-6 rounded-full transition-colors ${
+                  className={`relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                     formData.preferences.textToSpeech ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
                 >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    formData.preferences.textToSpeech ? 'translate-x-7' : 'translate-x-0.5'
+                  <span className={`inline-block w-5 h-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200 ${
+                    formData.preferences.textToSpeech ? 'translate-x-5' : 'translate-x-0'
                   }`} />
                 </button>
               </div>
 
+              {/* Voice Input */}
               <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
                 <div className="flex items-center">
-                  <Mic className="w-5 h-5 text-gray-600 mr-2 sm:mr-3" />
+                  <Mic className="w-5 h-5 text-gray-600 mr-2 sm:mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-medium text-base sm:text-lg">{t('settings.voiceInput')}</h3>
-                    <p className="text-sm text-gray-600">{t('settings.voiceInputDesc')}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('settings.voiceInputDesc')}</p>
                   </div>
                 </div>
                 <button
                   onClick={() => togglePreference('voiceInput')}
-                  className={`w-12 h-6 rounded-full transition-colors ${
+                  className={`relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                     formData.preferences.voiceInput ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
                 >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    formData.preferences.voiceInput ? 'translate-x-7' : 'translate-x-0.5'
+                  <span className={`inline-block w-5 h-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200 ${
+                    formData.preferences.voiceInput ? 'translate-x-5' : 'translate-x-0'
+                  }`} />
+                </button>
+              </div>
+
+              {/* Video Recommendations */}
+              <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
+                <div className="flex items-center">
+                  <Play className="w-5 h-5 text-gray-600 mr-2 sm:mr-3 flex-shrink-0" /> {/* Assuming Play icon for video */}
+                  <div>
+                    <h3 className="font-medium text-base sm:text-lg">{t('settings.videoRecommendations')}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('settings.videoRecommendationsDesc')}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => togglePreference('videoRecommendations')}
+                  className={`relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    formData.preferences.videoRecommendations ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
+                >
+                  <span className={`inline-block w-5 h-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200 ${
+                    formData.preferences.videoRecommendations ? 'translate-x-5' : 'translate-x-0'
+                  }`} />
+                </button>
+              </div>
+
+              {/* Font Size */}
+              <div>
+                <label htmlFor="fontSize" className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  {t('settings.fontSize')}
+                </label>
+                <select
+                  id="fontSize"
+                  value={formData.preferences.fontSize}
+                  onChange={(e) => setFormData(prev => ({ ...prev, preferences: { ...prev.preferences, fontSize: e.target.value as UserData['preferences']['fontSize'] } }))}
+                  className="input-field"
+                >
+                  <option value="normal">{t('settings.fontSizeOptions.normal')}</option>
+                  <option value="large">{t('settings.fontSizeOptions.large')}</option>
+                  <option value="extra-large">{t('settings.fontSizeOptions.extraLarge')}</option>
+                </select>
+              </div>
+
+              {/* Theme - Simple Light/Dark for now */}
+              <div>
+                <label htmlFor="theme" className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  {t('settings.theme')}
+                </label>
+                <select
+                  id="theme"
+                  value={formData.preferences.theme}
+                  onChange={(e) => setFormData(prev => ({ ...prev, preferences: { ...prev.preferences, theme: e.target.value as UserData['preferences']['theme'] } }))}
+                  className="input-field"
+                >
+                  <option value="light">{t('settings.themeOptions.light')}</option>
+                  <option value="dark">{t('settings.themeOptions.dark')}</option>
+                </select>
+              </div>
+
+              {/* High Contrast */}
+              <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
+                 <div className="flex items-center">
+                  <Contrast className="w-5 h-5 text-gray-600 mr-2 sm:mr-3 flex-shrink-0" /> {/* Added Contrast Icon */}
+                  <div>
+                    <h3 className="font-medium text-base sm:text-lg">{t('settings.highContrast')}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('settings.highContrastDesc')}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => togglePreference('highContrast')}
+                  className={`relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                    formData.preferences.highContrast ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
+                >
+                  <span className={`inline-block w-5 h-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200 ${
+                    formData.preferences.highContrast ? 'translate-x-5' : 'translate-x-0'
                   }`} />
                 </button>
               </div>

@@ -532,7 +532,41 @@
     "saving": "Guardando...",
     "saved": "¡Guardado!",
     "saveChanges": "Guardar Cambios",
-    "errorSaving": "No se pudieron guardar las configuraciones. Por favor intenta de nuevo."
+    "errorSaving": "No se pudieron guardar las configuraciones. Por favor intenta de nuevo.",
+    "lastName": "[es] Last Name",
+    "lastNamePlaceholder": "[es] Your last name",
+    "age": "[es] Age",
+    "techExperience": "[es] Technology Experience Level",
+    "techExperienceOptions": {
+      "beginner": "[es] Beginner (I need step-by-step help with most things)",
+      "some": "[es] Some Experience (I can do basic tasks but need help with new things)",
+      "comfortable": "[es] Comfortable (I can figure out most things but sometimes need guidance)"
+    },
+    "primaryConcerns": "[es] Primary Tech Topics of Interest/Concern",
+    "assistiveNeeds": "[es] Accessibility Needs",
+    "communicationStyle": "[es] Preferred Explanation Style",
+    "communicationStyleOptions": {
+      "simple": "[es] Simple & Quick (Just the steps)",
+      "detailed": "[es] Detailed (Explain the 'why')",
+      "visual": "[es] Visual (Show pictures/videos when possible)"
+    },
+    "videoRecommendations": "[es] Video Recommendations",
+    "videoRecommendationsDesc": "[es] Show helpful videos and articles alongside steps",
+    "fontSize": "[es] Preferred Text Size",
+    "fontSizeOptions": {
+      "normal": "[es] Normal",
+      "large": "[es] Large",
+      "extraLarge": "[es] Extra Large"
+    },
+    "displayPreferences": "[es] Display & Theme",
+    "theme": "[es] Color Theme",
+    "themeOptions": {
+      "light": "[es] Light",
+      "dark": "[es] Dark"
+    },
+    "highContrast": "[es] High Contrast Mode",
+    "highContrastDesc": "[es] Increase text and element contrast for better visibility",
+    "learningPreferences": "[es] Learning & Content Preferences"
   },
   "common": {
     "settings": "Configuración",

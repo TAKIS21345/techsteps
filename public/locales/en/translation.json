@@ -532,7 +532,41 @@
     "saving": "Saving...",
     "saved": "Saved!",
     "saveChanges": "Save Changes",
-    "errorSaving": "Could not save settings. Please try again."
+    "errorSaving": "Could not save settings. Please try again.",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Your last name",
+    "age": "Age",
+    "techExperience": "Technology Experience Level",
+    "techExperienceOptions": {
+      "beginner": "Beginner (I need step-by-step help with most things)",
+      "some": "Some Experience (I can do basic tasks but need help with new things)",
+      "comfortable": "Comfortable (I can figure out most things but sometimes need guidance)"
+    },
+    "primaryConcerns": "Primary Tech Topics of Interest/Concern",
+    "assistiveNeeds": "Accessibility Needs",
+    "communicationStyle": "Preferred Explanation Style",
+    "communicationStyleOptions": {
+      "simple": "Simple & Quick (Just the steps)",
+      "detailed": "Detailed (Explain the 'why')",
+      "visual": "Visual (Show pictures/videos when possible)"
+    },
+    "videoRecommendations": "Video Recommendations",
+    "videoRecommendationsDesc": "Show helpful videos and articles alongside steps",
+    "fontSize": "Preferred Text Size",
+    "fontSizeOptions": {
+      "normal": "Normal",
+      "large": "Large",
+      "extraLarge": "Extra Large"
+    },
+    "displayPreferences": "Display & Theme",
+    "theme": "Color Theme",
+    "themeOptions": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "highContrast": "High Contrast Mode",
+    "highContrastDesc": "Increase text and element contrast for better visibility",
+    "learningPreferences": "Learning & Content Preferences"
   },
   "common": {
     "settings": "Settings",
