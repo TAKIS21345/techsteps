@@ -32,9 +32,9 @@ import {
   // If more are needed for badges/paths, they should be added here.
   // Alternatively, a more dynamic approach: import * as LucideIcons from 'lucide-react';
   // Then use <LucideIcons[IconName] />
-+  // For now, let's use specific imports as they are known for paths/badges.
-+  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
-+} from 'lucide-react';
+  // For now, let's use specific imports as they are known for paths/badges.
+  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
+} from 'lucide-react';
 +import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
 
 import { useUser } from '../contexts/UserContext';
