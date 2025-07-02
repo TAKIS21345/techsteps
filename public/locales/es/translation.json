@@ -84,7 +84,8 @@
           "content": "[es] I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
           "avatar": "F"
         }
-      ]
+      ],
+      "ageLabel": "[es] Age {{age}}"
     },
     "ctaSection": {
       "title": "[es] Ready to Master Technology?",

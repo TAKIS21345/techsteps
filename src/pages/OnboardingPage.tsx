@@ -601,7 +601,12 @@ const OnboardingPage: React.FC = () => {
       Cookies.set('userPreferences', JSON.stringify(formData.preferences), { expires: 365 });
       Cookies.set('userName', formData.firstName, { expires: 365 });
       
-      await updateUserData(formData);
+      const finalData = {
+        ...formData,
+        onboardingCompleted: true // Set the flag
+      };
+      await updateUserData(finalData);
+      sessionStorage.setItem('onboardingJustCompleted', 'true'); // Keep this to prevent immediate assessment modal
       navigate('/dashboard');
     } catch (error) {
       console.error('Error saving onboarding data:', error);

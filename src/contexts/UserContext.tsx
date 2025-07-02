@@ -54,6 +54,7 @@ interface UserData {
   recommendedStartingPathId?: string;
   userLearningProgress?: NewUserLearningProgress; // V2 progress
   earnedBadges?: string[]; // Array of badge IDs
+  onboardingCompleted?: boolean; // Added for robust onboarding check
   preferences?: {
     theme: 'light' | 'dark';
     textToSpeech: boolean;
@@ -218,7 +219,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
   
-  const hasCompletedOnboarding = userData !== null;
+  const hasCompletedOnboarding = !!userData?.onboardingCompleted;
 
   const markModuleAsComplete = async (moduleId: string, pathId: string, allLearningPaths: NewLearningPath[]) => {
     if (!user || !userData) return;

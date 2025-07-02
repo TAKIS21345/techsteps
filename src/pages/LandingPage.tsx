@@ -299,8 +299,7 @@ const LandingPage: React.FC = () => {
                 {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.name`, testimonials[activeTestimonial].name)}
               </div>
               <div className="text-sm sm:text-base text-gray-600">
-                {/* TODO: Consider how to best translate "Age X • Location Y" if needed, currently uses direct data */}
-                Age {testimonials[activeTestimonial].age} • {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.location`, testimonials[activeTestimonial].location)}
+                {t('landing.testimonialsSection.ageLabel', { age: testimonials[activeTestimonial].age })} • {t(`landing.testimonialsSection.testimonialContent.${activeTestimonial}.location`, testimonials[activeTestimonial].location)}
               </div>
 
               {/* Testimonial Navigation */}
