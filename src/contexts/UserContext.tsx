@@ -115,6 +115,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return;
     }
 
+    setLoading(true); // Ensure loading is true while fetching new user's data
     const db = getFirestore();
     const userDocRef = doc(db, 'users', user.uid);
 

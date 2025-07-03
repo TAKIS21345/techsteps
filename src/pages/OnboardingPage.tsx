@@ -376,20 +376,23 @@ const OnboardingPage: React.FC = () => {
             <button
               key={concern}
               onClick={() => {
-                setFormData(prev => ({
-                  ...prev,
-                  primaryConcerns: prev.primaryConcerns.includes(t(`onboarding.step5.concerns.${concern}`))
-                    ? prev.primaryConcerns.filter(c => c !== t(`onboarding.step5.concerns.${concern}`))
-                    : [...prev.primaryConcerns, t(`onboarding.step5.concerns.${concern}`)]
-                }));
+                setFormData(prev => {
+                  const concernKey = `onboarding.step5.concerns.${concern}`; // Store the key
+                  return {
+                    ...prev,
+                    primaryConcerns: prev.primaryConcerns.includes(concernKey)
+                      ? prev.primaryConcerns.filter(c => c !== concernKey)
+                      : [...prev.primaryConcerns, concernKey]
+                  };
+                });
               }}
               className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
-                formData.primaryConcerns.includes(t(`onboarding.step5.concerns.${concern}`))
+                formData.primaryConcerns.includes(`onboarding.step5.concerns.${concern}`) // Check against the key
                   ? 'border-blue-500 bg-blue-50 text-blue-700' 
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              {t(`onboarding.step5.concerns.${concern}`)}
+              {t(`onboarding.step5.concerns.${concern}`)} {/* Display translated text */}
             </button>
           ))}
         </div>
@@ -413,27 +416,29 @@ const OnboardingPage: React.FC = () => {
               <button
                 key={need}
                 onClick={() => {
-                  const needText = t(`onboarding.step6.needs.${need}`);
-                  if (need === 'noneNeeded') {
-                    setFormData(prev => ({ ...prev, assistiveNeeds: [needText] }));
-                  } else {
-                    setFormData(prev => ({
-                      ...prev,
-                      assistiveNeeds: prev.assistiveNeeds.includes(needText)
-                        ? prev.assistiveNeeds.filter(n => n !== needText)
-                        : prev.assistiveNeeds.includes(t('onboarding.step6.needs.noneNeeded'))
-                          ? [needText]
-                          : [...prev.assistiveNeeds.filter(n => n !== t('onboarding.step6.needs.noneNeeded')), needText]
-                    }));
-                  }
+                  const needKey = `onboarding.step6.needs.${need}`; // Store the key
+                  const noneNeededKey = `onboarding.step6.needs.noneNeeded`;
+                  setFormData(prev => {
+                    let newNeeds = [...prev.assistiveNeeds];
+                    if (needKey === noneNeededKey) {
+                      newNeeds = newNeeds.includes(needKey) ? [] : [needKey];
+                    } else {
+                      if (newNeeds.includes(needKey)) {
+                        newNeeds = newNeeds.filter(n => n !== needKey);
+                      } else {
+                        newNeeds = [...newNeeds.filter(n => n !== noneNeededKey), needKey];
+                      }
+                    }
+                    return { ...prev, assistiveNeeds: newNeeds };
+                  });
                 }}
                 className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
-                  formData.assistiveNeeds.includes(t(`onboarding.step6.needs.${need}`))
+                  formData.assistiveNeeds.includes(`onboarding.step6.needs.${need}`) // Check against the key
                     ? 'border-blue-500 bg-blue-50 text-blue-700' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
-                {t(`onboarding.step6.needs.${need}`)}
+                {t(`onboarding.step6.needs.${need}`)} {/* Display translated text */}
               </button>
             ))}
           </div>

@@ -804,6 +804,10 @@
     "loadingCenter": "Loading Learning Center...",
     "moduleTimeLabel": "Time: "
   },
+  "languageSelector": {
+    "choosePrompt": "Choose your preferred language for the interface",
+    "moreComingSoon": "🌍 More languages coming soon"
+  },
   "assessmentView": {
     "headerTitle": "Skills Assessment",
     "questionProgress": "Question {{current}} of {{total}}",

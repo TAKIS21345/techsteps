@@ -19,10 +19,14 @@ const Loading = () => (
   </div>
 );
 
+import { TranslationAnimationProvider } from './contexts/TranslationAnimationContext';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={<Loading />}>
-      <App />
+      <TranslationAnimationProvider>
+        <App />
+      </TranslationAnimationProvider>
     </Suspense>
   </StrictMode>
 );

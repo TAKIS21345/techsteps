@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useTranslationAnimation } from '../contexts/TranslationAnimationContext'; // Import the hook
 
 interface LanguageSelectorProps {
   className?: string;
@@ -12,6 +13,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   showLabel = true 
 }) => {
   const { i18n, t } = useTranslation();
+  const { triggerTranslationAnimation } = useTranslationAnimation(); // Use the hook
   const [isOpen, setIsOpen] = useState(false);
   
   const supportedLanguages = [
@@ -31,11 +33,17 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     hi: '🇮🇳'
   };
 
-  const handleLanguageChange = (newLanguage: string) => {
-    i18n.changeLanguage(newLanguage);
+  const handleLanguageChange = async (newLanguage: string) => {
+    await triggerTranslationAnimation(async () => {
+      await i18n.changeLanguage(newLanguage);
+    });
     setIsOpen(false);
     
     // Announce language change for screen readers
+    // This should ideally happen AFTER the language has actually changed and content is updated.
+    // The i18next 'languageChanged' event listener in App.tsx is a better place for global announcements,
+    // or this announcement needs to be delayed until after the change is fully processed.
+    // For now, keeping it here, but it might announce in the old language.
     const announcement = `Language changed to ${supportedLanguages.find(l => l.code === newLanguage)?.name}`;
     const ariaLive = document.createElement('div');
     ariaLive.setAttribute('aria-live', 'polite');
@@ -120,7 +128,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 {t('language.select')}
               </h3>
               <p className="text-xs text-gray-600 mt-1">
-                Choose your preferred language for the interface
+                {t('languageSelector.choosePrompt')}
               </p>
             </div>
             
@@ -158,7 +166,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
             <div className="p-3 border-t border-gray-100 bg-gray-50">
               <p className="text-xs text-gray-500 text-center">
-                🌍 More languages coming soon
+                {t('languageSelector.moreComingSoon')}
               </p>
             </div>
           </div>
