@@ -58,15 +58,15 @@ const AuthPage: React.FC = () => {
           {t('auth.backToHome')}
         </Link>
 
-        <div className="card p-8 animate-slide-up">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-6">
+        <div className="card p-6 sm:p-8 animate-slide-up">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex justify-center mb-4 sm:mb-6">
               <Logo size="lg" showText={false} />
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
               {isSignUp ? t('auth.createAccount') : t('auth.welcomeBack')}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               {isSignUp 
                 ? t('auth.joinFamily')
                 : t('auth.welcomeBackDesc')

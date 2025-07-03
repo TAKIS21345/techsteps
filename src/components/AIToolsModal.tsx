@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { X, Upload, Camera, Brain, Loader2 } from 'lucide-react';
 import { ttsService } from '../utils/ttsService';
+import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 
 interface AIToolsModalProps {
   isOpen: boolean;
@@ -8,6 +10,7 @@ interface AIToolsModalProps {
 }
 
 const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'photo' | 'jargon'>('photo');
   const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [photoPreviewUrl, setPhotoPreviewUrl] = useState<string>('');
@@ -45,7 +48,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
 
   const explainPhoto = async () => {
     if (!photoFile || !GEMINI_API_KEY) {
-      alert('Please upload a photo first or check API configuration.');
+      alert(t('aiToolsModal.photoExplainer.alertNoPhoto'));
       return;
     }
 
@@ -57,7 +60,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
       const base64Content = base64Data.split(',')[1];
       const mimeType = photoFile.type;
 
-      const userQuestion = photoQuestion.trim() || 'What is this item in the photo and what is it used for?';
+      const userQuestion = photoQuestion.trim() || t('aiToolsModal.photoExplainer.questionPlaceholder'); // Default question if none provided
 
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
@@ -68,6 +71,8 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
           contents: [{
             parts: [
               {
+                // The prompt itself should ideally be configurable or managed carefully if it needs translation.
+                // For now, keeping the core instruction in English but using the translated userQuestion.
                 text: `You are a friendly tech helper for seniors. Examine the provided image carefully. ${userQuestion}. Explain in simple, easy-to-understand terms using basic HTML formatting like <p> and <strong>.`
               },
               {
@@ -91,11 +96,11 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
       if (explanation) {
         setPhotoResponse(explanation);
       } else {
-        throw new Error('No explanation received');
+        throw new Error(t('aiToolsModal.apiErrorNoExplanation'));
       }
     } catch (error) {
       console.error('Error explaining photo:', error);
-      setPhotoResponse('<p class="text-red-600">Sorry, I couldn\'t analyze the image. Please try again.</p>');
+      setPhotoResponse(t('aiToolsModal.photoExplainer.errorResponse'));
     } finally {
       setPhotoLoading(false);
     }
@@ -103,7 +108,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
 
   const explainJargon = async () => {
     if (!jargonTerm.trim() || !GEMINI_API_KEY) {
-      alert('Please enter a tech term first or check API configuration.');
+      alert(t('aiToolsModal.techWordBuster.alertNoTerm'));
       return;
     }
 
@@ -119,6 +124,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
         body: JSON.stringify({
           contents: [{
             parts: [{
+              // Similar to above, core prompt instruction remains, dynamic term is used.
               text: `Explain the tech term "${jargonTerm}" to a senior citizen who is not tech-savvy. Use very simple language and a real-world analogy to make it easy to understand. Format your response using basic HTML tags like <p> and <strong>.`
             }]
           }],
@@ -135,11 +141,11 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
       if (explanation) {
         setJargonResponse(explanation);
       } else {
-        throw new Error('No explanation received');
+        throw new Error(t('aiToolsModal.apiErrorNoExplanation'));
       }
     } catch (error) {
       console.error('Error explaining jargon:', error);
-      setJargonResponse('<p class="text-red-600">Sorry, I couldn\'t explain that term. Please try again.</p>');
+      setJargonResponse(t('aiToolsModal.techWordBuster.errorResponse'));
     } finally {
       setJargonLoading(false);
     }
@@ -169,7 +175,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden animate-slide-up">
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-800">AI Helper Tools</h2>
+          <h2 className="text-2xl font-bold text-gray-800">{t('aiToolsModal.header')}</h2>
           <button
             onClick={handleClose}
             className="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors"
@@ -189,7 +195,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
             }`}
           >
             <Camera className="w-5 h-5 inline mr-2" />
-            Photo Explainer
+            {t('aiToolsModal.tabs.photoExplainer')}
           </button>
           <button
             onClick={() => setActiveTab('jargon')}
@@ -200,7 +206,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
             }`}
           >
             <Brain className="w-5 h-5 inline mr-2" />
-            Tech Word Buster
+            {t('aiToolsModal.tabs.techWordBuster')}
           </button>
         </div>
 
@@ -209,9 +215,9 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
           {activeTab === 'photo' ? (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-2">Photo Explainer</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('aiToolsModal.photoExplainer.title')}</h3>
                 <p className="text-gray-600 mb-4">
-                  Upload a photo of any cable, button, or device and get an instant explanation.
+                  {t('aiToolsModal.photoExplainer.description')}
                 </p>
               </div>
 
@@ -228,7 +234,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                   className="btn-secondary w-full cursor-pointer inline-flex items-center justify-center"
                 >
                   <Upload className="w-5 h-5 mr-2" />
-                  Upload Image
+                  {t('aiToolsModal.photoExplainer.uploadButton')}
                 </label>
               </div>
 
@@ -236,7 +242,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                 <div className="text-center">
                   <img
                     src={photoPreviewUrl}
-                    alt="Preview"
+                    alt={t('aiToolsModal.photoExplainer.previewAlt')}
                     className="max-h-48 mx-auto rounded-lg border border-gray-300"
                   />
                 </div>
@@ -244,7 +250,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
 
               <div>
                 <label htmlFor="photo-question" className="block text-sm font-medium text-gray-700 mb-2">
-                  Ask a question about the photo (optional)
+                  {t('aiToolsModal.photoExplainer.questionLabel')}
                 </label>
                 <input
                   type="text"
@@ -252,7 +258,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                   value={photoQuestion}
                   onChange={(e) => setPhotoQuestion(e.target.value)}
                   className="input-field"
-                  placeholder="What is this cable for?"
+                  placeholder={t('aiToolsModal.photoExplainer.questionPlaceholder')}
                 />
               </div>
 
@@ -264,17 +270,17 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                 {photoLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                    Analyzing...
+                    {t('aiToolsModal.photoExplainer.analyzingButton')}
                   </>
                 ) : (
-                  'Explain Photo'
+                  t('aiToolsModal.photoExplainer.explainButton')
                 )}
               </button>
 
               {photoResponse && (
                 <div 
                   className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200"
-                  dangerouslySetInnerHTML={{ __html: photoResponse }}
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(photoResponse) }}
                 />
               )}
               
@@ -288,22 +294,22 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                   }}
                   className="mt-2 btn-secondary text-sm"
                 >
-                  🔊 Read Response Aloud
+                  {t('aiToolsModal.photoExplainer.readResponseButton')}
                 </button>
               )}
             </div>
           ) : (
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-2">Tech Word Buster</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('aiToolsModal.techWordBuster.title')}</h3>
                 <p className="text-gray-600 mb-4">
-                  Confused by a tech term? Get a simple, easy-to-understand explanation with real-world analogies.
+                  {t('aiToolsModal.techWordBuster.description')}
                 </p>
               </div>
 
               <div>
                 <label htmlFor="jargon-input" className="block text-sm font-medium text-gray-700 mb-2">
-                  Enter a tech word or phrase
+                  {t('aiToolsModal.techWordBuster.inputLabel')}
                 </label>
                 <input
                   type="text"
@@ -311,7 +317,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                   value={jargonTerm}
                   onChange={(e) => setJargonTerm(e.target.value)}
                   className="input-field"
-                  placeholder="e.g., Cloud Storage, WiFi, Bluetooth"
+                  placeholder={t('aiToolsModal.techWordBuster.inputPlaceholder')}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !jargonLoading) {
                       explainJargon();
@@ -328,17 +334,17 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                 {jargonLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                    Translating...
+                    {t('aiToolsModal.techWordBuster.explainingButton')}
                   </>
                 ) : (
-                  'Make This Clear'
+                  t('aiToolsModal.techWordBuster.explainButton')
                 )}
               </button>
 
               {jargonResponse && (
                 <div 
                   className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200"
-                  dangerouslySetInnerHTML={{ __html: jargonResponse }}
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(jargonResponse) }}
                 />
               )}
               
@@ -352,7 +358,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                   }}
                   className="mt-2 btn-secondary text-sm"
                 >
-                  🔊 Read Explanation Aloud
+                  {t('aiToolsModal.techWordBuster.readExplanationButton')}
                 </button>
               )}
             </div>

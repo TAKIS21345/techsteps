@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { 
   ArrowLeft, 
   BookOpen, 
@@ -7,7 +8,7 @@ import {
   CheckCircle, 
   Star, 
   Clock, 
-  Users, 
+  Users,
   Award,
   Download,
   HelpCircle,
@@ -25,11 +26,23 @@ import {
   Home as HomeIcon,
   Heart,
   Cloud,
-  MessageSquare
+  MessageSquare,
+  // Import all lucide icons for dynamic use, or ensure specific ones used are imported
+  // For now, assuming specific ones like Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle are imported
+  // If more are needed for badges/paths, they should be added here.
+  // Alternatively, a more dynamic approach: import * as LucideIcons from 'lucide-react';
+  // Then use <LucideIcons[IconName] />
+  // For now, let's use specific imports as they are known for paths/badges.
+  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
 } from 'lucide-react';
+import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
+
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
 import { ttsService } from '../utils/ttsService';
+import SkillAssessmentModal from '../components/SkillAssessmentModal';
+import { SkillAssessmentResult, LearningPath, Module, Badge } from '../types/learning'; // Added LearningPath, Module, Badge
+import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
 
 interface Course {
   id: string;
@@ -67,376 +80,111 @@ interface UserProgress {
 }
 
 const LearningCenterPage: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'overview' | 'assessment' | 'course' | 'lesson'>('overview');
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
-  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null);
-  const [assessmentStep, setAssessmentStep] = useState(0);
+  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment'>('overview');
+  // SelectedCourse and selectedLesson will be replaced by selectedPath and selectedModule
+  // const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  // const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
+  const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
+  const [selectedModule, setSelectedModule] = useState<Module | null>(null);
+
+  const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
+  const [assessmentStep, setAssessmentStep] = useState(0); // For the old assessment, might remove or adapt
   const [assessmentAnswers, setAssessmentAnswers] = useState<number[]>([]);
   const [userProgress, setUserProgress] = useState<UserProgress[]>([]);
   const [showAnimation, setShowAnimation] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showAssessmentModal, setShowAssessmentModal] = useState(false);
+  const { t } = useTranslation();
+  const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]);
+  const [isLoadingPaths, setIsLoadingPaths] = useState(true);
 
-  const { userData, updateUserData } = useUser();
+  const { userData, updateUserData, loading: userLoading } = useUser(); // Added userLoading
   const navigate = useNavigate();
 
-  // Course definitions
-  const courses: Course[] = [
+  useEffect(() => {
+    const fetchPaths = async () => {
+      setIsLoadingPaths(true);
+      try {
+        const paths = await learningService.getLearningPaths();
+        setLearningPaths(paths);
+      } catch (error) {
+        console.error("Error fetching learning paths:", error);
+        // Handle error appropriately, e.g., show error message
+      } finally {
+        setIsLoadingPaths(false);
+      }
+    };
+    fetchPaths();
+  }, []);
+
+  // Course definitions - these are already largely translated via `learning.courses` in JSON
+  // We will fetch titles, descriptions, etc., from `t` function when rendering.
+  // The structure here will remain, but the text values will be replaced by keys or fetched dynamically.
+  const coursesDataStructure = [
     {
       id: 'beginner',
-      title: 'Getting Started with Technology',
-      description: 'Perfect for complete beginners. Learn the basics step by step.',
       icon: Target,
-      difficulty: 'Beginner',
-      estimatedTime: '2-3 hours',
+      difficulty: 'Beginner', // This could be translated too, e.g. t('learningPage.difficulty.beginner')
       color: 'green',
       lessons: [
-        {
-          id: 'device-basics',
-          title: 'Device Basics',
-          description: 'Learn how to turn your device on and off safely',
-          duration: '15 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Turning Your Device On and Off</h3>
-              <p>Every device has a power button. Let's learn how to use it safely.</p>
-              
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">For Computers:</h4>
-                <ul class="space-y-2">
-                  <li>• Look for a round button with a power symbol (⏻)</li>
-                  <li>• Press it once to turn on</li>
-                  <li>• To turn off: Use the Start menu, then "Shut down"</li>
-                  <li>• Never just press the power button to turn off!</li>
-                </ul>
-              </div>
-
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">For Phones/Tablets:</h4>
-                <ul class="space-y-2">
-                  <li>• Power button is usually on the side</li>
-                  <li>• Press and hold for 2-3 seconds to turn on</li>
-                  <li>• To turn off: Press and hold, then slide to power off</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Always use proper shutdown procedures',
-            'Power button location varies by device',
-            'Never force power off unless absolutely necessary'
-          ],
-          practiceExercise: 'Practice turning your device on and off 3 times using the proper method.',
-          animation: {
-            type: 'power-button',
-            description: 'Watch how to properly press the power button'
-          }
-        },
-        {
-          id: 'mouse-keyboard',
-          title: 'Using Mouse and Keyboard',
-          description: 'Master the basics of computer input devices',
-          duration: '20 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Mouse and Keyboard Basics</h3>
-              
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Mouse Basics:</h4>
-                <ul class="space-y-2">
-                  <li>• Left click: Select items, open programs</li>
-                  <li>• Right click: Open menus with more options</li>
-                  <li>• Double click: Open files and programs</li>
-                  <li>• Scroll wheel: Move up and down on pages</li>
-                </ul>
-              </div>
-
-              <div class="bg-orange-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Keyboard Essentials:</h4>
-                <ul class="space-y-2">
-                  <li>• Space bar: Add spaces between words</li>
-                  <li>• Enter: Start a new line or confirm</li>
-                  <li>• Backspace: Delete the letter before cursor</li>
-                  <li>• Shift: Make capital letters</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Left click is your main tool',
-            'Right click opens helpful menus',
-            'Practice makes perfect'
-          ],
-          practiceExercise: 'Open a simple text program and type your name, then delete it using backspace.',
-          animation: {
-            type: 'mouse-click',
-            description: 'See how to click, double-click, and right-click'
-          }
-        },
-        {
-          id: 'internet-safety',
-          title: 'Internet Safety Fundamentals',
-          description: 'Stay safe online with these essential tips',
-          duration: '25 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Staying Safe Online</h3>
-              
-              <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-                <h4 class="font-medium mb-2 text-red-800">Warning Signs of Scams:</h4>
-                <ul class="space-y-2 text-red-700">
-                  <li>• Urgent messages asking for money</li>
-                  <li>• Requests for passwords or personal info</li>
-                  <li>• "You've won" messages you didn't enter</li>
-                  <li>• Suspicious links or attachments</li>
-                </ul>
-              </div>
-
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Safe Browsing Tips:</h4>
-                <ul class="space-y-2">
-                  <li>• Look for "https://" in web addresses</li>
-                  <li>• Only download from official app stores</li>
-                  <li>• Keep your software updated</li>
-                  <li>• Use strong, unique passwords</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Never give personal information to strangers',
-            'When in doubt, ask a trusted person',
-            'Legitimate companies won\'t ask for passwords via email'
-          ],
-          practiceExercise: 'Identify 3 warning signs of online scams from the lesson.'
-        }
+        { id: 'device-basics', animationType: 'power-button' },
+        { id: 'mouse-keyboard', animationType: 'mouse-click' },
+        { id: 'internet-safety' }
       ]
     },
     {
       id: 'intermediate',
-      title: 'Connecting with Family & Friends',
-      description: 'Learn to use social media, video calls, and messaging safely.',
       icon: MessageSquare,
-      difficulty: 'Intermediate',
-      estimatedTime: '3-4 hours',
+      difficulty: 'Intermediate', // t('learningPage.difficulty.intermediate')
       color: 'blue',
       lessons: [
-        {
-          id: 'video-calls',
-          title: 'Video Calls with Family',
-          description: 'Connect face-to-face with loved ones anywhere',
-          duration: '30 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Making Video Calls</h3>
-              
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Popular Video Call Apps:</h4>
-                <ul class="space-y-2">
-                  <li>• <strong>FaceTime</strong> (iPhone/iPad): Built-in, very easy</li>
-                  <li>• <strong>WhatsApp</strong>: Works on all phones</li>
-                  <li>• <strong>Zoom</strong>: Great for group calls</li>
-                  <li>• <strong>Skype</strong>: Works on computers and phones</li>
-                </ul>
-              </div>
-
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Before Your Call:</h4>
-                <ul class="space-y-2">
-                  <li>• Check your internet connection</li>
-                  <li>• Find good lighting (face a window)</li>
-                  <li>• Test your camera and microphone</li>
-                  <li>• Have the person's contact ready</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Good lighting makes a big difference',
-            'Test your setup before important calls',
-            'Most apps work similarly once you learn one'
-          ],
-          practiceExercise: 'Make a test video call to a family member or friend.'
-        },
-        {
-          id: 'social-media',
-          title: 'Social Media Basics',
-          description: 'Connect with friends and family on Facebook and other platforms',
-          duration: '35 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Getting Started with Social Media</h3>
-              
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Facebook Basics:</h4>
-                <ul class="space-y-2">
-                  <li>• Create a profile with your real name</li>
-                  <li>• Add a nice profile picture</li>
-                  <li>• Send friend requests to people you know</li>
-                  <li>• Share updates, photos, and memories</li>
-                </ul>
-              </div>
-
-              <div class="bg-yellow-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Privacy Settings:</h4>
-                <ul class="space-y-2">
-                  <li>• Only accept friends you actually know</li>
-                  <li>• Set posts to "Friends only"</li>
-                  <li>• Don't share personal information publicly</li>
-                  <li>• Review what others can see about you</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Privacy settings are very important',
-            'Only connect with people you know',
-            'Think before you post - it stays online'
-          ],
-          practiceExercise: 'Set up your privacy settings to "Friends only" for posts.'
-        }
+        { id: 'video-calls' },
+        { id: 'social-media' }
       ]
     },
     {
       id: 'advanced',
-      title: 'Digital Life Mastery',
-      description: 'Advanced skills for confident digital living.',
       icon: Brain,
-      difficulty: 'Advanced',
-      estimatedTime: '4-5 hours',
+      difficulty: 'Advanced', // t('learningPage.difficulty.advanced')
       color: 'purple',
       lessons: [
-        {
-          id: 'smart-home',
-          title: 'Smart Home Devices',
-          description: 'Control your home with voice commands and apps',
-          duration: '40 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Smart Home Basics</h3>
-              
-              <div class="bg-indigo-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Popular Smart Devices:</h4>
-                <ul class="space-y-2">
-                  <li>• <strong>Smart Speakers</strong>: Alexa, Google Home</li>
-                  <li>• <strong>Smart Thermostats</strong>: Control temperature remotely</li>
-                  <li>• <strong>Smart Lights</strong>: Dim, change colors, set schedules</li>
-                  <li>• <strong>Smart Doorbells</strong>: See who's at the door</li>
-                </ul>
-              </div>
-
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">Getting Started:</h4>
-                <ul class="space-y-2">
-                  <li>• Start with one device to learn</li>
-                  <li>• Download the device's app</li>
-                  <li>• Follow setup instructions step by step</li>
-                  <li>• Practice basic voice commands</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Start simple with one device',
-            'Voice commands make life easier',
-            'Most devices have helpful apps'
-          ],
-          practiceExercise: 'If you have a smart device, practice 3 different voice commands.'
-        },
-        {
-          id: 'online-banking',
-          title: 'Online Banking Security',
-          description: 'Manage your finances safely online',
-          duration: '45 min',
-          content: `
-            <div class="space-y-6">
-              <h3 class="text-xl font-semibold">Safe Online Banking</h3>
-              
-              <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-                <h4 class="font-medium mb-2 text-red-800">Security Essentials:</h4>
-                <ul class="space-y-2 text-red-700">
-                  <li>• Always type your bank's web address directly</li>
-                  <li>• Look for the lock icon in your browser</li>
-                  <li>• Never bank on public Wi-Fi</li>
-                  <li>• Log out completely when finished</li>
-                </ul>
-              </div>
-
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-medium mb-2">What You Can Do Online:</h4>
-                <ul class="space-y-2">
-                  <li>• Check account balances</li>
-                  <li>• View transaction history</li>
-                  <li>• Transfer money between accounts</li>
-                  <li>• Pay bills electronically</li>
-                </ul>
-              </div>
-            </div>
-          `,
-          keyPoints: [
-            'Security is the top priority',
-            'Your bank will never ask for passwords via email',
-            'Online banking is very convenient when done safely'
-          ],
-          practiceExercise: 'Visit your bank\'s website and practice logging in (don\'t do any transactions yet).'
-        }
+        { id: 'smart-home' },
+        { id: 'online-banking' }
       ]
     }
   ];
 
-  // Assessment questions
-  const assessmentQuestions = [
-    {
-      question: "How comfortable are you with turning a computer or phone on and off?",
-      options: ["Never done it", "Need help every time", "Can do it sometimes", "Very comfortable"],
-      category: 'basic'
-    },
-    {
-      question: "How often do you use the internet?",
-      options: ["Never", "Rarely", "Sometimes", "Daily"],
-      category: 'internet'
-    },
-    {
-      question: "Have you ever sent an email?",
-      options: ["Never", "With lots of help", "A few times", "Regularly"],
-      category: 'communication'
-    },
-    {
-      question: "How comfortable are you with downloading apps?",
-      options: ["Never tried", "Very nervous", "With help", "Confident"],
-      category: 'apps'
-    },
-    {
-      question: "Do you use video calling (FaceTime, Zoom, etc.)?",
-      options: ["Never", "Tried once", "Sometimes", "Regularly"],
-      category: 'communication'
-    },
-    {
-      question: "How do you feel about online shopping?",
-      options: ["Too scary", "Very nervous", "Willing to try", "Shop online often"],
-      category: 'advanced'
-    },
-    {
-      question: "Have you used social media (Facebook, etc.)?",
-      options: ["Never", "Looked at it", "Have an account", "Use it regularly"],
-      category: 'social'
-    },
-    {
-      question: "How comfortable are you with passwords?",
-      options: ["Very confused", "Need help", "Understand basics", "Manage them well"],
-      category: 'security'
-    },
-    {
-      question: "Do you back up your photos and files?",
-      options: ["Don't know how", "Someone helps me", "Sometimes", "Regularly"],
-      category: 'advanced'
-    },
-    {
-      question: "How do you learn new technology?",
-      options: ["Avoid it", "Ask for help", "Try carefully", "Explore confidently"],
-      category: 'learning'
-    }
-  ];
+  const courses: Course[] = coursesDataStructure.map(courseStruct => ({
+    id: courseStruct.id,
+    title: t(`learning.courses.${courseStruct.id}.title`),
+    description: t(`learning.courses.${courseStruct.id}.description`),
+    icon: courseStruct.icon,
+    difficulty: courseStruct.difficulty as 'Beginner' | 'Intermediate' | 'Advanced', // Assuming difficulty is not translated for now, or handled elsewhere
+    estimatedTime: t(`learning.courses.${courseStruct.id}.estimatedTime`),
+    color: courseStruct.color,
+    lessons: courseStruct.lessons.map(lessonStruct => ({
+      id: lessonStruct.id,
+      title: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.title`),
+      description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.description`),
+      duration: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.duration`),
+      content: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.content`),
+      keyPoints: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.keyPoints`, { returnObjects: true }) as string[],
+      practiceExercise: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.practiceExercise`),
+      animation: lessonStruct.animationType ? {
+        type: lessonStruct.animationType as any,
+        description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.animationDesc`)
+      } : undefined
+    }))
+  }));
+
+  // Assessment questions - also translated via `learning.assessment.questions`
+  const assessmentQuestions = Array.from({ length: 10 }).map((_, i) => ({
+    question: t(`learning.assessment.questions.${i}.question`),
+    options: Object.values(t(`learning.assessment.questions.${i}.options`, { returnObjects: true })) as string[],
+    // category can remain if it's not user-facing or used for logic
+    category: ['basic', 'internet', 'communication', 'apps', 'communication', 'advanced', 'social', 'security', 'advanced', 'learning'][i]
+  }));
+
 
   // Calculate skill level from assessment
   const calculateSkillLevel = (answers: number[]) => {
@@ -456,7 +204,45 @@ const LearningCenterPage: React.FC = () => {
     if (userData?.skillLevel) {
       setUserLevel(userData.skillLevel);
     }
-  }, [userData]);
+    // Show assessment modal if not completed and user data is loaded
+    if (!userLoading && userData && !userData.skillAssessmentResult && currentView === 'overview') {
+      // Check if onboarding was just completed to avoid immediate modal popup
+      const onboardingJustCompleted = sessionStorage.getItem('onboardingJustCompleted');
+      if (!onboardingJustCompleted) {
+        setShowAssessmentModal(true);
+      } else {
+        sessionStorage.removeItem('onboardingJustCompleted'); // Clear flag
+      }
+    }
+  }, [userData, userLoading, currentView]);
+
+  const handleSubmitAssessment = async (answers: SkillAssessmentResult) => {
+    let recommendedPathId = 'fundamentals'; // Default
+    let determinedSkillLevel: 'Beginner' | 'Intermediate' | 'Advanced' = 'Beginner';
+
+    if (answers.q1ComfortLevel === 'confident' && answers.q2EmailSent && answers.q3SmartphoneUsed) {
+      recommendedPathId = 'digitalLife'; // Or 'advancedSkills'
+      determinedSkillLevel = 'Advanced';
+    } else if (answers.q1ComfortLevel === 'basics' && answers.q2EmailSent) {
+      recommendedPathId = 'onlineWorld';
+      determinedSkillLevel = 'Intermediate';
+    }
+    // Default is 'fundamentals' and 'Beginner'
+
+    try {
+      await updateUserData({
+        skillAssessmentResult: answers,
+        recommendedStartingPathId: recommendedPathId,
+        skillLevel: determinedSkillLevel // Also update skillLevel for consistency with old system
+      });
+      setUserLevel(determinedSkillLevel); // Update local state
+      // Potentially auto-scroll or highlight the recommended path later
+    } catch (error) {
+      console.error("Error saving assessment results:", error);
+      // Handle error appropriately
+    }
+    setShowAssessmentModal(false);
+  };
 
   // Save progress
   const saveProgress = async (courseId: string, lessonId: string, completed: boolean = false) => {
@@ -515,10 +301,10 @@ const LearningCenterPage: React.FC = () => {
   // Get recommended courses based on level
   const getRecommendedCourses = () => {
     if (!userLevel) return courses;
-    
+
     const levelOrder = { 'Beginner': 0, 'Intermediate': 1, 'Advanced': 2 };
     const userLevelIndex = levelOrder[userLevel];
-    
+
     return courses.filter((course, index) => index <= userLevelIndex);
   };
 
@@ -557,7 +343,7 @@ const LearningCenterPage: React.FC = () => {
           onClick={() => setShowAnimation(!showAnimation)}
           className="btn-primary text-sm px-4 py-2"
         >
-          {showAnimation ? 'Reset' : 'Show Animation'}
+          {showAnimation ? t('learningPage.animationReset') : t('learningPage.animationShow')}
         </button>
       </div>
     );
@@ -580,7 +366,7 @@ const LearningCenterPage: React.FC = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </button>
                 <Logo size="sm" />
-                <h1 className="text-xl font-semibold text-gray-800">Skills Assessment</h1>
+                <h1 className="text-xl font-semibold text-gray-800">{t('assessmentView.headerTitle')}</h1>
               </div>
             </div>
           </div>
@@ -593,7 +379,7 @@ const LearningCenterPage: React.FC = () => {
                 <Target className="w-8 h-8 text-blue-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                Question {assessmentStep + 1} of {assessmentQuestions.length}
+                {t('assessmentView.questionProgress', { current: assessmentStep + 1, total: assessmentQuestions.length })}
               </h2>
               <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                 <div 
@@ -626,11 +412,11 @@ const LearningCenterPage: React.FC = () => {
                 onClick={skipAssessment}
                 className="btn-secondary"
               >
-                Skip Assessment
+                {t('assessmentView.skipAssessment')}
               </button>
               
               <div className="text-sm text-gray-500">
-                Choose the option that best describes you
+                {t('assessmentView.chooseBestOption')}
               </div>
             </div>
           </div>
@@ -667,7 +453,7 @@ const LearningCenterPage: React.FC = () => {
                     setIsPlaying(!isPlaying);
                   }}
                   className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
-                  title="Read lesson aloud"
+                  title={t('lessonView.readAloud')}
                 >
                   <Volume2 className="w-5 h-5" />
                 </button>
@@ -703,7 +489,7 @@ const LearningCenterPage: React.FC = () => {
                 {/* Animation Demo */}
                 {selectedLesson.animation && (
                   <div className="mt-8">
-                    <h3 className="text-lg font-semibold mb-4">Interactive Demo</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('lessonView.interactiveDemoHeader')}</h3>
                     <AnimationDemo 
                       type={selectedLesson.animation.type}
                       description={selectedLesson.animation.description}
@@ -714,7 +500,7 @@ const LearningCenterPage: React.FC = () => {
                 {/* Practice Exercise */}
                 {selectedLesson.practiceExercise && (
                   <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-xl">
-                    <h3 className="text-lg font-semibold text-yellow-800 mb-2">Practice Exercise</h3>
+                    <h3 className="text-lg font-semibold text-yellow-800 mb-2">{t('lessonView.practiceExerciseHeader')}</h3>
                     <p className="text-yellow-700">{selectedLesson.practiceExercise}</p>
                   </div>
                 )}
@@ -724,12 +510,12 @@ const LearningCenterPage: React.FC = () => {
                     onClick={() => saveProgress(selectedCourse.id, selectedLesson.id, true)}
                     className="btn-primary"
                   >
-                    Mark as Complete
+                    {t('lessonView.markAsComplete')}
                   </button>
                   
                   <button className="btn-secondary">
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    Repeat Lesson
+                    {t('lessonView.repeatLesson')}
                   </button>
                 </div>
               </div>
@@ -739,7 +525,7 @@ const LearningCenterPage: React.FC = () => {
             <div className="space-y-6">
               {/* Key Points */}
               <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Key Points</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.keyPointsHeader')}</h3>
                 <ul className="space-y-3">
                   {selectedLesson.keyPoints.map((point, index) => (
                     <li key={index} className="flex items-start space-x-3">
@@ -752,27 +538,27 @@ const LearningCenterPage: React.FC = () => {
 
               {/* Download Summary */}
               <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Take it with you</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.takeItWithYouHeader')}</h3>
                 <button className="btn-secondary w-full">
                   <Download className="w-4 h-4 mr-2" />
-                  Download Summary
+                  {t('lessonView.downloadSummaryButton')}
                 </button>
                 <p className="text-sm text-gray-500 mt-2">
-                  Get a printable summary of this lesson
+                  {t('lessonView.downloadSummaryDescription')}
                 </p>
               </div>
 
               {/* Help */}
               <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Need Help?</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.needHelpHeader')}</h3>
                 <div className="space-y-3">
                   <button className="btn-secondary w-full text-sm">
                     <HelpCircle className="w-4 h-4 mr-2" />
-                    Ask a Question
+                    {t('lessonView.askAQuestionButton')}
                   </button>
                   <button className="btn-secondary w-full text-sm">
                     <MessageSquare className="w-4 h-4 mr-2" />
-                    Chat with Helper
+                    {t('lessonView.chatWithHelperButton')}
                   </button>
                 </div>
               </div>
@@ -826,7 +612,7 @@ const LearningCenterPage: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <BookOpen className="w-4 h-4" />
-                    <span>{selectedCourse.lessons.length} lessons</span>
+                    <span>{selectedCourse.lessons.length} {t('learningPage.lessonsLabel')}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Target className="w-4 h-4" />
@@ -837,8 +623,8 @@ const LearningCenterPage: React.FC = () => {
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex justify-between text-sm text-gray-600 mb-2">
-                    <span>Progress</span>
-                    <span>{completedLessons} of {selectedCourse.lessons.length} completed</span>
+                    <span>{t('learningPage.progressLabel')}</span>
+                    <span>{t('learningPage.completedOutOfTotal', {completed: completedLessons, total: selectedCourse.lessons.length})}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div 
@@ -853,7 +639,7 @@ const LearningCenterPage: React.FC = () => {
 
           {/* Lessons */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gray-800">Lessons</h3>
+            <h2 className="text-2xl font-bold text-gray-800">{t('courseView.lessonsHeader')}</h2>
             
             {selectedCourse.lessons.map((lesson, index) => {
               const isCompleted = courseProgress.some(p => p.lessonId === lesson.id && p.completed);
@@ -874,7 +660,7 @@ const LearningCenterPage: React.FC = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-800">{lesson.title}</h4>
+                        <h3 className="text-lg font-semibold text-gray-800">{lesson.title}</h3>
                         <p className="text-gray-600 mb-2">{lesson.description}</p>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
                           <div className="flex items-center space-x-1">
@@ -884,7 +670,7 @@ const LearningCenterPage: React.FC = () => {
                           {lesson.animation && (
                             <div className="flex items-center space-x-1">
                               <Play className="w-4 h-4" />
-                              <span>Interactive demo</span>
+                              <span>{t('courseView.interactiveDemoLabel')}</span>
                             </div>
                           )}
                         </div>
@@ -917,7 +703,7 @@ const LearningCenterPage: React.FC = () => {
                         }}
                         className="btn-primary"
                       >
-                        {isCompleted ? 'Review' : 'Start Lesson'}
+                        {isCompleted ? t('courseView.reviewLesson') : t('courseView.startLesson')}
                         <ChevronRight className="w-4 h-4 ml-2" />
                       </button>
                     </div>
@@ -931,11 +717,11 @@ const LearningCenterPage: React.FC = () => {
           {progressPercentage === 100 && (
             <div className="card p-8 text-center bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
               <Award className="w-16 h-16 text-green-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Congratulations!</h3>
-              <p className="text-gray-600 mb-4">You've completed the {selectedCourse.title} course!</p>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">{t('courseView.congratulations')}</h2>
+              <p className="text-gray-600 mb-4">{t('courseView.courseComplete', { courseTitle: selectedCourse.title })}</p>
               <button className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
-                Download Certificate
+                {t('courseView.downloadCertificate')}
               </button>
             </div>
           )}
@@ -945,11 +731,28 @@ const LearningCenterPage: React.FC = () => {
   }
 
   // Main overview
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+  if (currentView === 'overview') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {showAssessmentModal && !userLoading && ( // Ensure user data is loaded before deciding on modal
+          <SkillAssessmentModal
+            isOpen={showAssessmentModal}
+            onClose={() => {
+              setShowAssessmentModal(false);
+              if (!userData?.skillAssessmentResult && updateUserData) { // Check if updateUserData is defined
+                updateUserData({
+                  skillAssessmentResult: { q1ComfortLevel: 'basics', q2EmailSent: false, q3SmartphoneUsed: false },
+                  recommendedStartingPathId: 'fundamentals',
+                  skillLevel: 'Beginner' // Keep skillLevel for now
+                }).catch(err => console.error("Failed to set default assessment", err));
+              }
+            }}
+            onSubmit={handleSubmitAssessment}
+          />
+        )}
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link 
                 to="/dashboard" 
@@ -958,184 +761,187 @@ const LearningCenterPage: React.FC = () => {
                 <ArrowLeft className="w-5 h-5" />
               </Link>
               <Logo size="sm" />
-              <h1 className="text-xl font-semibold text-gray-800">Learning Center</h1>
+              <h1 className="text-xl font-semibold text-gray-800">{t('learningPage.headerTitle')}</h1>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
-        <div className="text-center mb-12">
-          <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <BookOpen className="w-10 h-10 text-white" />
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Tech Skills for Seniors
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
+            {t('learningPage.heroTitle')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Learn technology at your own pace with step-by-step lessons, interactive demos, and personalized guidance.
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
+            {t('learningPage.heroSubtitle')}
           </p>
           
-          {!userLevel && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setCurrentView('assessment')}
-                className="btn-primary text-lg px-8 py-4"
+          {/* Button to retake/trigger assessment if needed - or could be in a user profile/settings area */}
+          {userData && userData.skillAssessmentResult && (
+             <button
+                onClick={() => setShowAssessmentModal(true)} // Allow re-taking assessment
+                className="btn-secondary text-xs sm:text-sm mb-6 sm:mb-8 px-3 py-1.5 sm:px-4 sm:py-2"
               >
-                Take Skills Assessment
+                {t('learningPage.retakeAssessment')}
               </button>
-              <div className="text-gray-500">or</div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => chooseLevel('Beginner')}
-                  className="btn-secondary"
-                >
-                  I'm a Beginner
-                </button>
-                <button
-                  onClick={() => chooseLevel('Intermediate')}
-                  className="btn-secondary"
-                >
-                  I'm Intermediate
-                </button>
-                <button
-                  onClick={() => chooseLevel('Advanced')}
-                  className="btn-secondary"
-                >
-                  I'm Advanced
-                </button>
-              </div>
-            </div>
           )}
         </div>
 
-        {/* User Level Display */}
-        {userLevel && (
-          <div className="card p-6 mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Star className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800">Your Level: {userLevel}</h3>
-                  <p className="text-gray-600">Courses are personalized for your skill level</p>
-                </div>
-              </div>
-              <button
-                onClick={() => setCurrentView('assessment')}
-                className="btn-secondary text-sm"
-              >
-                Retake Assessment
-              </button>
-            </div>
+        {/* Learning Paths Grid */}
+        {isLoadingPaths && (
+          <div className="text-center py-10">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base">{t('learningPage.loadingPaths')}</p>
           </div>
         )}
 
-        {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {getRecommendedCourses().map((course) => {
-            const courseProgress = userProgress.filter(p => p.courseId === course.id);
-            const completedLessons = courseProgress.filter(p => p.completed).length;
-            const progressPercentage = (completedLessons / course.lessons.length) * 100;
+        {!isLoadingPaths && learningPaths.length === 0 && (
+          <div className="text-center py-10">
+            <p className="text-gray-600 text-lg sm:text-xl">{t('learningPage.noPathsAvailable')}</p>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 sm:mb-12">
+          {learningPaths.map((path) => {
+            const totalModulesInPath = path.modules.length;
+            const completedModulesForPath = path.modules.filter(
+              module => userData?.userLearningProgress?.completedModules?.[module.id]
+            ).length;
+            const progressPercent = totalModulesInPath > 0 ? (completedModulesForPath / totalModulesInPath) * 100 : 0;
             
+            const IconComponent = LucideIcons[path.iconName as keyof typeof LucideIcons] || Target;
+            const isPathBadgeEarned = userData?.userLearningProgress?.earnedBadges?.[path.badgeIdOnCompletion] || false;
+
             return (
               <div 
-                key={course.id}
-                className="card p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-2"
+                key={path.id}
+                className="card p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1" // Adjusted hover effect
                 onClick={() => {
-                  setSelectedCourse(course);
-                  setCurrentView('course');
+                  setSelectedPath(path);
+                  setCurrentView('pathDetail');
                 }}
               >
-                <div className={`w-16 h-16 bg-${course.color}-100 rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                  <course.icon className={`w-8 h-8 text-${course.color}-600`} />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
+                  <IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 text-blue-600`} />
                 </div>
                 
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${
-                  course.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
-                  course.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-red-100 text-red-800'
-                }`}>
-                  {course.difficulty}
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 text-center">{t(path.titleKey)}</h3>
+                <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm text-center h-10 sm:h-12 overflow-hidden"> {/* Fixed height for description */}
+                  {t(path.descriptionKey)}
+                </p>
+                
+                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 mb-1 sm:mb-2">
+                  <div
+                    className="bg-blue-600 h-2 sm:h-2.5 rounded-full"
+                    style={{ width: `${progressPercent}%` }}
+                  ></div>
                 </div>
-                
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{course.title}</h3>
-                <p className="text-gray-600 mb-4">{course.description}</p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{course.estimatedTime}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <BookOpen className="w-4 h-4" />
-                    <span>{course.lessons.length} lessons</span>
-                  </div>
+                <div className="flex justify-between items-center text-xs sm:text-sm">
+                  <p className="text-gray-500">{t('learningPage.progressComplete', { value: Math.round(progressPercent) })}</p>
+                  {isPathBadgeEarned && (
+                    <div title={t(getBadgeById(path.badgeIdOnCompletion)?.nameKey || '')} className="text-yellow-500">
+                      <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                    </div>
+                  )}
                 </div>
 
-                {/* Progress Bar */}
-                {progressPercentage > 0 && (
-                  <div className="mb-4">
-                    <div className="flex justify-between text-xs text-gray-500 mb-1">
-                      <span>Progress</span>
-                      <span>{Math.round(progressPercentage)}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className={`bg-${course.color}-500 h-2 rounded-full transition-all duration-300`}
-                        style={{ width: `${progressPercentage}%` }}
-                      ></div>
-                    </div>
+                {userData?.recommendedStartingPathId === path.id && !isPathBadgeEarned && (
+                  <div className="mt-2 sm:mt-3 text-center">
+                    <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium bg-green-100 text-green-800">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" />
+                      {t('learningPage.recommendedStart')}
+                    </span>
                   </div>
                 )}
-
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">
-                    {completedLessons} of {course.lessons.length} completed
-                  </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400" />
-                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Features Section */}
+        <div className="text-center mb-8 sm:mb-12 pt-8 sm:pt-12 border-t border-gray-200">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">{t('learningPage.featuresGridTitle')}</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
-            {
-              icon: Play,
-              title: "Interactive Demos",
-              description: "See exactly how to perform each action"
-            },
-            {
-              icon: Volume2,
-              title: "Audio Support",
-              description: "Have lessons read aloud to you"
-            },
-            {
-              icon: Download,
-              title: "Printable Guides",
-              description: "Take summaries with you offline"
-            },
-            {
-              icon: Award,
-              title: "Certificates",
-              description: "Earn certificates as you complete courses"
-            }
-          ].map((feature, index) => (
-            <div key={index} className="text-center p-6">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-6 h-6 text-blue-600" />
+            { iconName: 'Play', titleKey: "learningPage.featureInteractiveDemos", descriptionKey: "learningPage.featureInteractiveDemosDesc"},
+            { iconName: 'Volume2', titleKey: "learningPage.featureAudioSupport", descriptionKey: "learningPage.featureAudioSupportDesc"},
+            { iconName: 'Download', titleKey: "learningPage.featurePrintableGuides", descriptionKey: "learningPage.featurePrintableGuidesDesc"},
+            { iconName: 'Award', titleKey: "learningPage.featureCertificates", descriptionKey: "learningPage.featureCertificatesDesc"}
+          ].map((feature, index) => {
+            const FeatureIcon = LucideIcons[feature.iconName as keyof typeof LucideIcons] || HelpCircle;
+            return (
+              <div key={index} className="text-center p-4 sm:p-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <FeatureIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">{t(feature.titleKey)}</h3>
+                <p className="text-xs sm:text-sm text-gray-600">{t(feature.descriptionKey)}</p>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">{feature.title}</h3>
-              <p className="text-sm text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
+    </div>
+    );
+  } // End of 'overview' view
+
+  // Placeholder for pathDetail and moduleContent views
+  if (currentView === 'pathDetail' && selectedPath) {
+    return (
+      <div>
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center space-x-3 sm:space-x-4">
+            <button onClick={() => setCurrentView('overview')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <Logo size="sm" />
+            <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
+          </div>
+        </header>
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{t(selectedPath.descriptionKey)}</h2>
+          <p className="mb-4 sm:mb-6 text-sm sm:text-base">{t('learningPage.moduleListTitle', { pathTitle: t(selectedPath.titleKey) })}</p>
+          <div className="space-y-3 sm:space-y-4">
+            {selectedPath.modules.map(module => (
+              <div key={module.id} className="card p-3 sm:p-4">
+                <h3 className="text-base sm:text-lg font-semibold">{t(module.titleKey)}</h3>
+                <p className="text-xs sm:text-sm text-gray-600">{t(module.descriptionKey)}</p>
+                <p className="text-xs text-gray-500 mt-1">{t('learningPage.moduleTimeLabel')}{module.estimatedTime}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentView === 'moduleContent' && selectedModule) {
+     return (
+      <div>
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+          <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center space-x-3 sm:space-x-4">
+            <button onClick={() => setCurrentView('pathDetail')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <Logo size="sm" />
+            <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedModule.titleKey)}</h1>
+          </div>
+        </header>
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+            {t('learningPage.moduleContentTitle', { moduleTitle: t(selectedModule.titleKey) })}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-600">{t('learningPage.loadingCenter')}</p>
     </div>
   );
 };
