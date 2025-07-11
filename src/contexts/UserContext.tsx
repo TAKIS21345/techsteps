@@ -124,7 +124,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       (docSnap) => {
         if (docSnap.exists()) {
           const data = docSnap.data() as UserData;
-          setUserData({ ...data, uid: user.uid });
+          setUserData(data); // Remove uid injection
         } else {
           setUserData(null);
         }
