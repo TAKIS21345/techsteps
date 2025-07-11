@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { 
   ArrowLeft, 
@@ -8,104 +8,54 @@ import {
   CheckCircle, 
   Star, 
   Clock, 
-  Users,
   Award,
   Download,
   HelpCircle,
-  Volume2,
-  Bookmark,
-  RotateCcw,
-  ChevronRight,
-  Target,
-  Brain,
-  Smartphone,
-  Wifi,
-  Shield,
-  Camera,
-  CreditCard,
-  Home as HomeIcon,
-  Heart,
-  Cloud,
-  MessageSquare,
-  // Import all lucide icons for dynamic use, or ensure specific ones used are imported
-  // For now, assuming specific ones like Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle are imported
-  // If more are needed for badges/paths, they should be added here.
-  // Alternatively, a more dynamic approach: import * as LucideIcons from 'lucide-react';
-  // Then use <LucideIcons[IconName] />
-  // For now, let's use specific imports as they are known for paths/badges.
-  // Target, Wifi, MessageSquare, Sparkles, Award, Star, HelpCircle, Power, MousePointer2, Keyboard, Folder, Globe, Search, Mail, ShieldCheck, MailOpen, Video, Users as UsersIcon, Image as ImageIcon, ShoppingCart, Map, ImageEdit, FileText as FileTextIcon
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
 
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
-import { ttsService } from '../utils/ttsService';
 import SkillAssessmentModal from '../components/SkillAssessmentModal';
-import { SkillAssessmentResult, LearningPath, Module, Badge } from '../types/learning'; // Added LearningPath, Module, Badge
+import { SkillAssessmentResult, LearningPath } from '../types/learning'; // Removed Badge
 import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
-
-interface Course {
-  id: string;
-  title: string;
-  description: string;
-  icon: any;
-  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
-  estimatedTime: string;
-  lessons: Lesson[];
-  color: string;
-}
-
-interface Lesson {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  videoUrl?: string;
-  content: string;
-  practiceExercise?: string;
-  keyPoints: string[];
-  animation?: {
-    type: 'power-button' | 'mouse-click' | 'typing' | 'swipe' | 'tap';
-    description: string;
-  };
-}
-
-interface UserProgress {
-  courseId: string;
-  lessonId: string;
-  completed: boolean;
-  bookmarked: boolean;
-  lastAccessed: Date;
-  timeSpent: number;
-}
 
 const LearningCenterPage: React.FC = () => {
   const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment'>('overview');
-  // SelectedCourse and selectedLesson will be replaced by selectedPath and selectedModule
-  // const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  // const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
-  const [selectedModule, setSelectedModule] = useState<Module | null>(null);
-
   const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
   const [assessmentStep, setAssessmentStep] = useState(0); // For the old assessment, might remove or adapt
   const [assessmentAnswers, setAssessmentAnswers] = useState<number[]>([]);
-  const [userProgress, setUserProgress] = useState<UserProgress[]>([]);
-  const [showAnimation, setShowAnimation] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showAssessmentModal, setShowAssessmentModal] = useState(false);
   const { t } = useTranslation();
   const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]);
   const [isLoadingPaths, setIsLoadingPaths] = useState(true);
+  const [currentLessonId, setCurrentLessonId] = useState<string | null>(null);
 
   const { userData, updateUserData, loading: userLoading } = useUser(); // Added userLoading
-  const navigate = useNavigate();
+  const [userProgress, setUserProgress] = useState<any>(null);
 
   useEffect(() => {
     const fetchPaths = async () => {
       setIsLoadingPaths(true);
       try {
-        const paths = await learningService.getLearningPaths();
+        let paths = await learningService.getLearningPaths();
+        // --- DEMO: Add real content to the first lesson of the first path ---
+        if (paths && paths.length > 0 && paths[0].modules && paths[0].modules.length > 0) {
+          paths[0].modules[0] = {
+            ...paths[0].modules[0],
+            content: `
+              <h3>How to Turn On a Device</h3>
+              <ol style="font-size:1.1em;line-height:1.7;">
+                <li><b>Find the Power Button:</b> Look for a button with a circle and a line (⏻) on your device. It is usually on the side, top, or front.</li>
+                <li><b>Press and Hold:</b> Gently press and hold the power button for 1-2 seconds.</li>
+                <li><b>Wait for Lights or Sounds:</b> The screen may light up, or you may hear a sound. This means your device is turning on.</li>
+                <li><b>Be Patient:</b> It may take a few moments for the device to be ready to use.</li>
+              </ol>
+              <p style="margin-top:1em;">If nothing happens, make sure the device is plugged in or charged.</p>
+            `
+          };
+        }
         setLearningPaths(paths);
       } catch (error) {
         console.error("Error fetching learning paths:", error);
@@ -116,66 +66,6 @@ const LearningCenterPage: React.FC = () => {
     };
     fetchPaths();
   }, []);
-
-  // Course definitions - these are already largely translated via `learning.courses` in JSON
-  // We will fetch titles, descriptions, etc., from `t` function when rendering.
-  // The structure here will remain, but the text values will be replaced by keys or fetched dynamically.
-  const coursesDataStructure = [
-    {
-      id: 'beginner',
-      icon: Target,
-      difficulty: 'Beginner', // This could be translated too, e.g. t('learningPage.difficulty.beginner')
-      color: 'green',
-      lessons: [
-        { id: 'device-basics', animationType: 'power-button' },
-        { id: 'mouse-keyboard', animationType: 'mouse-click' },
-        { id: 'internet-safety' }
-      ]
-    },
-    {
-      id: 'intermediate',
-      icon: MessageSquare,
-      difficulty: 'Intermediate', // t('learningPage.difficulty.intermediate')
-      color: 'blue',
-      lessons: [
-        { id: 'video-calls' },
-        { id: 'social-media' }
-      ]
-    },
-    {
-      id: 'advanced',
-      icon: Brain,
-      difficulty: 'Advanced', // t('learningPage.difficulty.advanced')
-      color: 'purple',
-      lessons: [
-        { id: 'smart-home' },
-        { id: 'online-banking' }
-      ]
-    }
-  ];
-
-  const courses: Course[] = coursesDataStructure.map(courseStruct => ({
-    id: courseStruct.id,
-    title: t(`learning.courses.${courseStruct.id}.title`),
-    description: t(`learning.courses.${courseStruct.id}.description`),
-    icon: courseStruct.icon,
-    difficulty: courseStruct.difficulty as 'Beginner' | 'Intermediate' | 'Advanced', // Assuming difficulty is not translated for now, or handled elsewhere
-    estimatedTime: t(`learning.courses.${courseStruct.id}.estimatedTime`),
-    color: courseStruct.color,
-    lessons: courseStruct.lessons.map(lessonStruct => ({
-      id: lessonStruct.id,
-      title: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.title`),
-      description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.description`),
-      duration: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.duration`),
-      content: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.content`),
-      keyPoints: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.keyPoints`, { returnObjects: true }) as string[],
-      practiceExercise: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.practiceExercise`),
-      animation: lessonStruct.animationType ? {
-        type: lessonStruct.animationType as any,
-        description: t(`learning.courses.${courseStruct.id}.lessons.${lessonStruct.id}.animationDesc`)
-      } : undefined
-    }))
-  }));
 
   // Assessment questions - also translated via `learning.assessment.questions`
   const assessmentQuestions = Array.from({ length: 10 }).map((_, i) => ({
@@ -204,16 +94,20 @@ const LearningCenterPage: React.FC = () => {
     if (userData?.skillLevel) {
       setUserLevel(userData.skillLevel);
     }
-    // Show assessment modal if not completed and user data is loaded
-    if (!userLoading && userData && !userData.skillAssessmentResult && currentView === 'overview') {
-      // Check if onboarding was just completed to avoid immediate modal popup
-      const onboardingJustCompleted = sessionStorage.getItem('onboardingJustCompleted');
-      if (!onboardingJustCompleted) {
-        setShowAssessmentModal(true);
-      } else {
-        sessionStorage.removeItem('onboardingJustCompleted'); // Clear flag
-      }
-    }
+    // Only show assessment modal if:
+    // 1. User data is loaded (!userLoading)
+    // 2. User exists (userData)
+    // 3. User hasn't done assessment (!skillAssessmentResult)
+    // 4. We're on overview page
+    // 5. Not just completed onboarding
+    // 6. Not the first load (to prevent flashing)
+    const shouldShowAssessment = !userLoading && 
+      userData && 
+      !userData.skillAssessmentResult && 
+      currentView === 'overview' &&
+      !sessionStorage.getItem('onboardingJustCompleted');
+
+    setShowAssessmentModal(Boolean(shouldShowAssessment));
   }, [userData, userLoading, currentView]);
 
   const handleSubmitAssessment = async (answers: SkillAssessmentResult) => {
@@ -233,7 +127,7 @@ const LearningCenterPage: React.FC = () => {
       await updateUserData({
         skillAssessmentResult: answers,
         recommendedStartingPathId: recommendedPathId,
-        skillLevel: determinedSkillLevel // Also update skillLevel for consistency with old system
+        skillLevel: determinedSkillLevel as 'Beginner' | 'Intermediate' | 'Advanced' // Also update skillLevel for consistency with old system
       });
       setUserLevel(determinedSkillLevel); // Update local state
       // Potentially auto-scroll or highlight the recommended path later
@@ -261,7 +155,7 @@ const LearningCenterPage: React.FC = () => {
     if (updateUserData) {
       await updateUserData({
         learningProgress: updatedProgress,
-        skillLevel: userLevel
+        skillLevel: userLevel || undefined
       });
     }
   };
@@ -287,66 +181,6 @@ const LearningCenterPage: React.FC = () => {
   // Skip assessment
   const skipAssessment = () => {
     setCurrentView('overview');
-  };
-
-  // Choose level manually
-  const chooseLevel = (level: 'Beginner' | 'Intermediate' | 'Advanced') => {
-    setUserLevel(level);
-    if (updateUserData) {
-      updateUserData({ skillLevel: level });
-    }
-    setCurrentView('overview');
-  };
-
-  // Get recommended courses based on level
-  const getRecommendedCourses = () => {
-    if (!userLevel) return courses;
-
-    const levelOrder = { 'Beginner': 0, 'Intermediate': 1, 'Advanced': 2 };
-    const userLevelIndex = levelOrder[userLevel];
-
-    return courses.filter((course, index) => index <= userLevelIndex);
-  };
-
-  // Animation component
-  const AnimationDemo: React.FC<{ type: string; description: string }> = ({ type, description }) => {
-    return (
-      <div className="bg-gray-100 rounded-lg p-6 text-center">
-        <div className="mb-4">
-          <div className="w-32 h-32 mx-auto bg-white rounded-lg border-2 border-gray-300 flex items-center justify-center relative overflow-hidden">
-            {type === 'power-button' && (
-              <div className="relative">
-                <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center">
-                  <div className={`w-8 h-8 rounded-full border-3 border-white flex items-center justify-center transition-all duration-1000 ${showAnimation ? 'bg-green-400' : 'bg-gray-600'}`}>
-                    <div className="w-2 h-4 bg-white rounded-sm"></div>
-                  </div>
-                </div>
-                {showAnimation && (
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-ping"></div>
-                )}
-              </div>
-            )}
-            {type === 'mouse-click' && (
-              <div className="relative">
-                <div className="w-12 h-16 bg-gray-300 rounded-t-full rounded-b-lg border border-gray-400">
-                  <div className={`w-10 h-6 bg-gray-400 rounded-t-full mx-auto transition-all duration-300 ${showAnimation ? 'bg-blue-400 scale-95' : ''}`}></div>
-                </div>
-                {showAnimation && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-        <p className="text-sm text-gray-600 mb-4">{description}</p>
-        <button
-          onClick={() => setShowAnimation(!showAnimation)}
-          className="btn-primary text-sm px-4 py-2"
-        >
-          {showAnimation ? t('learningPage.animationReset') : t('learningPage.animationShow')}
-        </button>
-      </div>
-    );
   };
 
   // Render assessment view
@@ -376,7 +210,7 @@ const LearningCenterPage: React.FC = () => {
           <div className="card p-8">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-blue-600" />
+                <HelpCircle className="w-8 h-8 text-blue-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 {t('assessmentView.questionProgress', { current: assessmentStep + 1, total: assessmentQuestions.length })}
@@ -425,155 +259,14 @@ const LearningCenterPage: React.FC = () => {
     );
   }
 
-  // Render lesson view
-  if (currentView === 'lesson' && selectedLesson && selectedCourse) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b border-gray-200">
-          <div className="container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <button 
-                  onClick={() => setCurrentView('course')}
-                  className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
-                >
-                  <ArrowLeft className="w-5 h-5" />
-                </button>
-                <Logo size="sm" />
-                <div>
-                  <h1 className="text-xl font-semibold text-gray-800">{selectedLesson.title}</h1>
-                  <p className="text-sm text-gray-600">{selectedCourse.title}</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <button
-                  onClick={() => {
-                    const content = selectedLesson.content.replace(/<[^>]*>/g, '');
-                    ttsService.speak(content, { speed: 0.8 });
-                    setIsPlaying(!isPlaying);
-                  }}
-                  className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
-                  title={t('lessonView.readAloud')}
-                >
-                  <Volume2 className="w-5 h-5" />
-                </button>
-                <button className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors">
-                  <HelpCircle className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <div className="container mx-auto px-6 py-8 max-w-4xl">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <div className="card p-8 mb-6">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-800">{selectedLesson.title}</h2>
-                    <p className="text-gray-600">{selectedLesson.description}</p>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
-                    <Clock className="w-4 h-4" />
-                    <span>{selectedLesson.duration}</span>
-                  </div>
-                </div>
-
-                <div 
-                  className="prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: selectedLesson.content }}
-                />
-
-                {/* Animation Demo */}
-                {selectedLesson.animation && (
-                  <div className="mt-8">
-                    <h3 className="text-lg font-semibold mb-4">{t('lessonView.interactiveDemoHeader')}</h3>
-                    <AnimationDemo 
-                      type={selectedLesson.animation.type}
-                      description={selectedLesson.animation.description}
-                    />
-                  </div>
-                )}
-
-                {/* Practice Exercise */}
-                {selectedLesson.practiceExercise && (
-                  <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-xl">
-                    <h3 className="text-lg font-semibold text-yellow-800 mb-2">{t('lessonView.practiceExerciseHeader')}</h3>
-                    <p className="text-yellow-700">{selectedLesson.practiceExercise}</p>
-                  </div>
-                )}
-
-                <div className="flex justify-between mt-8">
-                  <button
-                    onClick={() => saveProgress(selectedCourse.id, selectedLesson.id, true)}
-                    className="btn-primary"
-                  >
-                    {t('lessonView.markAsComplete')}
-                  </button>
-                  
-                  <button className="btn-secondary">
-                    <RotateCcw className="w-4 h-4 mr-2" />
-                    {t('lessonView.repeatLesson')}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Key Points */}
-              <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.keyPointsHeader')}</h3>
-                <ul className="space-y-3">
-                  {selectedLesson.keyPoints.map((point, index) => (
-                    <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Download Summary */}
-              <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.takeItWithYouHeader')}</h3>
-                <button className="btn-secondary w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  {t('lessonView.downloadSummaryButton')}
-                </button>
-                <p className="text-sm text-gray-500 mt-2">
-                  {t('lessonView.downloadSummaryDescription')}
-                </p>
-              </div>
-
-              {/* Help */}
-              <div className="card p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('lessonView.needHelpHeader')}</h3>
-                <div className="space-y-3">
-                  <button className="btn-secondary w-full text-sm">
-                    <HelpCircle className="w-4 h-4 mr-2" />
-                    {t('lessonView.askAQuestionButton')}
-                  </button>
-                  <button className="btn-secondary w-full text-sm">
-                    <MessageSquare className="w-4 h-4 mr-2" />
-                    {t('lessonView.chatWithHelperButton')}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   // Render course view
-  if (currentView === 'course' && selectedCourse) {
-    const courseProgress = userProgress.filter(p => p.courseId === selectedCourse.id);
+  if (currentView === 'course' && selectedPath) {
+    // Use userProgress (local state) for lesson progress
+    const courseProgress = Array.isArray(userProgress)
+      ? userProgress.filter(p => p.courseId === selectedPath.id)
+      : [];
     const completedLessons = courseProgress.filter(p => p.completed).length;
-    const progressPercentage = (completedLessons / selectedCourse.lessons.length) * 100;
+    const progressPercentage = (completedLessons / selectedPath.modules.length) * 100;
 
     return (
       <div className="min-h-screen bg-gray-50">
@@ -588,47 +281,37 @@ const LearningCenterPage: React.FC = () => {
                   <ArrowLeft className="w-5 h-5" />
                 </button>
                 <Logo size="sm" />
-                <h1 className="text-xl font-semibold text-gray-800">{selectedCourse.title}</h1>
+                <h1 className="text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
               </div>
             </div>
           </div>
         </header>
 
         <div className="container mx-auto px-6 py-8 max-w-4xl">
+          {/* English Only Notice */}
+          <div className="bg-yellow-100 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded mb-8 text-center">
+            {t('learningPage.englishOnlyNotice')}
+          </div>
+
           {/* Course Header */}
           <div className="card p-8 mb-8">
             <div className="flex items-start space-x-6">
-              <div className={`w-16 h-16 bg-${selectedCourse.color}-100 rounded-2xl flex items-center justify-center`}>
-                <selectedCourse.icon className={`w-8 h-8 text-${selectedCourse.color}-600`} />
+              <div className={`w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center`}>
+                <HelpCircle className={`w-8 h-8 text-blue-600`} />
               </div>
               <div className="flex-1">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedCourse.title}</h2>
-                <p className="text-lg text-gray-600 mb-4">{selectedCourse.description}</p>
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">{t(selectedPath.titleKey)}</h2>
+                <p className="text-lg text-gray-600 mb-4">{t(selectedPath.descriptionKey)}</p>
                 
-                <div className="flex items-center space-x-6 text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="w-4 h-4" />
-                    <span>{selectedCourse.estimatedTime}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <BookOpen className="w-4 h-4" />
-                    <span>{selectedCourse.lessons.length} {t('learningPage.lessonsLabel')}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Target className="w-4 h-4" />
-                    <span>{selectedCourse.difficulty}</span>
-                  </div>
-                </div>
-
                 {/* Progress Bar */}
                 <div className="mb-4">
                   <div className="flex justify-between text-sm text-gray-600 mb-2">
                     <span>{t('learningPage.progressLabel')}</span>
-                    <span>{t('learningPage.completedOutOfTotal', {completed: completedLessons, total: selectedCourse.lessons.length})}</span>
+                    <span>{t('learningPage.completedOutOfTotal', {completed: completedLessons, total: selectedPath.modules.length})}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div 
-                      className={`bg-${selectedCourse.color}-500 h-2 rounded-full transition-all duration-300`}
+                      className={`bg-blue-500 h-2 rounded-full transition-all duration-300`}
                       style={{ width: `${progressPercentage}%` }}
                     ></div>
                   </div>
@@ -640,11 +323,10 @@ const LearningCenterPage: React.FC = () => {
           {/* Lessons */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-gray-800">{t('courseView.lessonsHeader')}</h2>
-            
-            {selectedCourse.lessons.map((lesson, index) => {
-              const isCompleted = courseProgress.some(p => p.lessonId === lesson.id && p.completed);
-              const isBookmarked = courseProgress.some(p => p.lessonId === lesson.id && p.bookmarked);
-              
+            {selectedPath.modules.map((lesson, index) => {
+              const progressEntry = courseProgress.find(p => p.lessonId === lesson.id) || {};
+              const isCompleted = !!progressEntry.completed;
+              const isBookmarked = !!progressEntry.bookmarked;
               return (
                 <div key={lesson.id} className="card p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between">
@@ -660,19 +342,13 @@ const LearningCenterPage: React.FC = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-800">{lesson.title}</h3>
-                        <p className="text-gray-600 mb-2">{lesson.description}</p>
+                        <h3 className="text-lg font-semibold text-gray-800">{t(lesson.titleKey)}</h3>
+                        <p className="text-gray-600 mb-2">{t(lesson.descriptionKey)}</p>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
                           <div className="flex items-center space-x-1">
                             <Clock className="w-4 h-4" />
-                            <span>{lesson.duration}</span>
+                            <span>{t('learningPage.moduleTimeLabel')}{lesson.estimatedTime}</span>
                           </div>
-                          {lesson.animation && (
-                            <div className="flex items-center space-x-1">
-                              <Play className="w-4 h-4" />
-                              <span>{t('courseView.interactiveDemoLabel')}</span>
-                            </div>
-                          )}
                         </div>
                       </div>
                     </div>
@@ -681,30 +357,32 @@ const LearningCenterPage: React.FC = () => {
                       <button
                         onClick={() => {
                           // Toggle bookmark
-                          const newProgress = userProgress.map(p => 
-                            p.courseId === selectedCourse.id && p.lessonId === lesson.id
+                          const newProgress = (userProgress as Array<{ courseId: string; lessonId: string; completed?: boolean; bookmarked?: boolean }> ).map((p) =>
+                            p.courseId === selectedPath.id && p.lessonId === lesson.id
                               ? { ...p, bookmarked: !p.bookmarked }
                               : p
                           );
                           setUserProgress(newProgress);
+                          if (updateUserData) {
+                            updateUserData({ learningProgress: newProgress });
+                          }
                         }}
                         className={`p-2 rounded-full transition-colors ${
                           isBookmarked ? 'text-yellow-600 bg-yellow-100' : 'text-gray-400 hover:text-gray-600'
                         }`}
+                        title={isBookmarked ? t('courseView.removeBookmark') : t('courseView.addBookmark')}
                       >
-                        <Bookmark className="w-4 h-4" />
+                        <Star className="w-4 h-4" />
                       </button>
-                      
                       <button
                         onClick={() => {
-                          setSelectedLesson(lesson);
-                          setCurrentView('lesson');
-                          saveProgress(selectedCourse.id, lesson.id);
+                          setCurrentLessonId(lesson.id);
+                          setCurrentView('moduleContent');
                         }}
                         className="btn-primary"
                       >
                         {isCompleted ? t('courseView.reviewLesson') : t('courseView.startLesson')}
-                        <ChevronRight className="w-4 h-4 ml-2" />
+                        <ArrowLeft className="w-4 h-4 ml-2" />
                       </button>
                     </div>
                   </div>
@@ -718,7 +396,7 @@ const LearningCenterPage: React.FC = () => {
             <div className="card p-8 text-center bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
               <Award className="w-16 h-16 text-green-600 mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-gray-800 mb-2">{t('courseView.congratulations')}</h2>
-              <p className="text-gray-600 mb-4">{t('courseView.courseComplete', { courseTitle: selectedCourse.title })}</p>
+              <p className="text-gray-600 mb-4">{t('courseView.courseComplete', { courseTitle: t(selectedPath.titleKey) })}</p>
               <button className="btn-primary">
                 <Download className="w-4 h-4 mr-2" />
                 {t('courseView.downloadCertificate')}
@@ -734,17 +412,27 @@ const LearningCenterPage: React.FC = () => {
   if (currentView === 'overview') {
     return (
       <div className="min-h-screen bg-gray-50">
-        {showAssessmentModal && !userLoading && ( // Ensure user data is loaded before deciding on modal
+        {showAssessmentModal && !userLoading && (
           <SkillAssessmentModal
             isOpen={showAssessmentModal}
             onClose={() => {
               setShowAssessmentModal(false);
-              if (!userData?.skillAssessmentResult && updateUserData) { // Check if updateUserData is defined
-                updateUserData({
-                  skillAssessmentResult: { q1ComfortLevel: 'basics', q2EmailSent: false, q3SmartphoneUsed: false },
+              // When closing without completing, still mark as completed with default values
+              // to prevent showing again unless explicitly requested
+              if (!userData?.skillAssessmentResult && updateUserData) {
+                const defaultAssessment = {
+                  skillAssessmentResult: { 
+                    q1ComfortLevel: 'basics' as 'basics', 
+                    q2EmailSent: false, 
+                    q3SmartphoneUsed: false 
+                  },
                   recommendedStartingPathId: 'fundamentals',
-                  skillLevel: 'Beginner' // Keep skillLevel for now
-                }).catch(err => console.error("Failed to set default assessment", err));
+                  skillLevel: 'Beginner' as 'Beginner' | 'Intermediate' | 'Advanced' // Fixed type here
+                };
+                // Use sessionStorage to track assessment completion
+                sessionStorage.setItem('assessmentCompleted', 'true');
+                updateUserData(defaultAssessment)
+                  .catch(err => console.error("Failed to set default assessment", err));
               }
             }}
             onSubmit={handleSubmitAssessment}
@@ -813,7 +501,7 @@ const LearningCenterPage: React.FC = () => {
             ).length;
             const progressPercent = totalModulesInPath > 0 ? (completedModulesForPath / totalModulesInPath) * 100 : 0;
             
-            const IconComponent = LucideIcons[path.iconName as keyof typeof LucideIcons] || Target;
+            const IconComponent = LucideIcons[path.iconName as keyof typeof LucideIcons];
             const isPathBadgeEarned = userData?.userLearningProgress?.earnedBadges?.[path.badgeIdOnCompletion] || false;
 
             return (
@@ -826,7 +514,7 @@ const LearningCenterPage: React.FC = () => {
                 }}
               >
                 <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
-                  <IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 text-blue-600`} />
+                  {renderIcon(IconComponent, 'w-6 h-6 sm:w-8 sm:h-8 text-blue-600')}
                 </div>
                 
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 text-center">{t(path.titleKey)}</h3>
@@ -873,11 +561,15 @@ const LearningCenterPage: React.FC = () => {
             { iconName: 'Download', titleKey: "learningPage.featurePrintableGuides", descriptionKey: "learningPage.featurePrintableGuidesDesc"},
             { iconName: 'Award', titleKey: "learningPage.featureCertificates", descriptionKey: "learningPage.featureCertificatesDesc"}
           ].map((feature, index) => {
-            const FeatureIcon = LucideIcons[feature.iconName as keyof typeof LucideIcons] || HelpCircle;
+            const FeatureIcon = LucideIcons[feature.iconName as keyof typeof LucideIcons];
             return (
               <div key={index} className="text-center p-4 sm:p-6">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <FeatureIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                  {typeof FeatureIcon === 'function' ? (
+                    <FeatureIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                  ) : (
+                    <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                  )}
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">{t(feature.titleKey)}</h3>
                 <p className="text-xs sm:text-sm text-gray-600">{t(feature.descriptionKey)}</p>
@@ -892,6 +584,7 @@ const LearningCenterPage: React.FC = () => {
 
   // Placeholder for pathDetail and moduleContent views
   if (currentView === 'pathDetail' && selectedPath) {
+    // Add a button to start/continue the course
     return (
       <div>
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
@@ -915,25 +608,91 @@ const LearningCenterPage: React.FC = () => {
               </div>
             ))}
           </div>
+          {/* Start/Continue Course Button */}
+          <div className="mt-8 text-center">
+            <button
+              className="btn-primary px-6 py-3 text-lg"
+              onClick={() => {
+                setCurrentLessonId(selectedPath.modules[0]?.id || null);
+                setCurrentView('moduleContent');
+              }}
+            >
+              {t('learningPage.startOrContinueCourse')}
+            </button>
+          </div>
         </div>
       </div>
     );
   }
 
-  if (currentView === 'moduleContent' && selectedModule) {
-     return (
+  // Ensure currentLessonId is set when entering moduleContent
+  if (currentView === 'moduleContent' && selectedPath) {
+    let lessonId = currentLessonId;
+    if (!lessonId && selectedPath.modules.length > 0) {
+      lessonId = selectedPath.modules[0].id;
+      setCurrentLessonId(lessonId);
+    }
+    if (!lessonId) {
+      return <div className="p-8 text-center text-gray-500">{t('learningPage.noLessonAvailable')}</div>;
+    }
+    const lessonIndex = selectedPath.modules.findIndex(m => m.id === lessonId);
+    const lesson = selectedPath.modules[lessonIndex];
+    const isCompleted = Array.isArray(userProgress)
+      ? !!userProgress.find(p => p.courseId === selectedPath.id && p.lessonId === lesson.id && p.completed)
+      : false;
+    // --- Render real content if available ---
+    return (
       <div>
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
           <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center space-x-3 sm:space-x-4">
-            <button onClick={() => setCurrentView('pathDetail')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
+            <button onClick={() => setCurrentView('course')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
               <ArrowLeft className="w-5 h-5" />
             </button>
             <Logo size="sm" />
-            <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedModule.titleKey)}</h1>
+            <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
           </div>
         </header>
-        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-            {t('learningPage.moduleContentTitle', { moduleTitle: t(selectedModule.titleKey) })}
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-2xl">
+          <h2 className="text-2xl font-bold mb-4">{t(lesson.titleKey)}</h2>
+          <p className="mb-6 text-gray-700">{t(lesson.descriptionKey)}</p>
+          {/* Render real lesson content if available */}
+          <div className="mb-8 p-4 bg-gray-50 rounded border border-gray-200">
+            {lesson.content ? (
+              <div>
+                {/* Example: allow HTML or JSX for rich content */}
+                {typeof lesson.content === 'string' ? (
+                  <div dangerouslySetInnerHTML={{ __html: lesson.content }} />
+                ) : lesson.content}
+              </div>
+            ) : (
+              t('learningPage.lessonContentPlaceholder', { lessonTitle: t(lesson.titleKey) })
+            )}
+          </div>
+          <div className="flex justify-between items-center">
+            <button
+              disabled={lessonIndex === 0}
+              className="btn-secondary"
+              onClick={() => setCurrentLessonId(selectedPath.modules[lessonIndex - 1].id)}
+            >
+              {t('courseView.previousLesson')}
+            </button>
+            <button
+              className={`btn-primary ${isCompleted ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isCompleted}
+              onClick={async () => {
+                await saveProgress(selectedPath.id, lesson.id, true);
+              }}
+            >
+              {isCompleted ? t('courseView.completed') : t('courseView.markAsComplete')}
+            </button>
+            <button
+              disabled={lessonIndex === selectedPath.modules.length - 1}
+              className="btn-secondary"
+              onClick={() => setCurrentLessonId(selectedPath.modules[lessonIndex + 1].id)}
+            >
+              {t('courseView.nextLesson')}
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -945,5 +704,10 @@ const LearningCenterPage: React.FC = () => {
     </div>
   );
 };
+
+// Define the renderIcon helper at the top of the component:
+function renderIcon(IconComponent: any, className: string) {
+  return typeof IconComponent === 'function' ? <IconComponent className={className} /> : null;
+}
 
 export default LearningCenterPage;

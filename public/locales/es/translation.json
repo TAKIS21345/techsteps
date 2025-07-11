@@ -11,114 +11,114 @@
       "title": "Tecnología hecha",
       "titleHighlight": "simple y clara",
       "subtitle": "Domina la tecnología con confianza a través de orientación personalizada paso a paso que se siente como tener un amigo paciente a tu lado.",
-      "startLearningButton": "[es] Start Learning Free",
-      "watchDemoButton": "[es] Watch Demo",
-      "freeForever": "[es] Free forever",
-      "noCreditCard": "[es] No credit card required",
-      "available247": "[es] Available 24/7"
+      "startLearningButton": "Comienza a aprender gratis",
+      "watchDemoButton": "Ver demostración",
+      "freeForever": "Gratis para siempre",
+      "noCreditCard": "No se requiere tarjeta de crédito",
+      "available247": "Disponible 24/7"
     },
     "featuresSection": {
-      "title": "[es] Features",
-      "subtitle": "[es] These are just a few of the features offered to help you grow!",
+      "title": "Características",
+      "subtitle": "¡Estas son solo algunas de las funciones que te ayudarán a crecer!",
       "items": [
         {
-          "title": "[es] Step-by-Step Guidance",
-          "description": "[es] Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues."
+          "title": "Guía paso a paso",
+          "description": "Recibe instrucciones claras y fáciles de seguir para cualquier pregunta tecnológica. Cada paso se explica en términos simples con ayudas visuales."
         },
         {
-          "title": "[es] Voice Support",
-          "description": "[es] Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most."
+          "title": "Soporte por voz",
+          "description": "Haz preguntas con tu voz y recibe respuestas leídas en voz alta. Perfecto para ayuda manos libres cuando más la necesitas."
         },
         {
-          "title": "[es] Photo Explainer",
-          "description": "[es] Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it."
+          "title": "Explicador de fotos",
+          "description": "Toma una foto de cualquier cable, botón o dispositivo y obtén una explicación instantánea de qué es y cómo usarlo."
         },
         {
-          "title": "[es] Senior-Friendly Design",
-          "description": "[es] Large text, intuitive interface, and patient explanations designed specifically with seniors in mind."
+          "title": "Diseño amigable para mayores",
+          "description": "Texto grande, interfaz intuitiva y explicaciones pacientes diseñadas especialmente para adultos mayores."
         },
         {
-          "title": "[es] Safe & Secure",
-          "description": "[es] Your personal information is protected with enterprise-grade security. No data shared with third parties."
+          "title": "Seguro y protegido",
+          "description": "Tu información personal está protegida con seguridad de nivel empresarial. No se comparte ningún dato con terceros."
         },
         {
-          "title": "[es] Instant Answers",
-          "description": "[es] Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers."
+          "title": "Respuestas instantáneas",
+          "description": "Obtén ayuda inmediata 24/7. Sin esperas ni citas. Solo pregunta y recibe respuestas."
         }
       ]
     },
     "popularQuestionsSection": {
-      "title": "[es] Popular Questions We Help With",
-      "subtitle": "[es] See what other seniors are asking about",
-      "askYourQuestionButton": "[es] Ask Your Question Now"
+      "title": "Preguntas populares que ayudamos a resolver",
+      "subtitle": "Mira sobre qué preguntan otros adultos mayores",
+      "askYourQuestionButton": "Haz tu pregunta ahora"
     },
     "testimonialsSection": {
-      "title": "[es] What Our Community Says",
-      "subtitle": "[es] Join thousands of seniors who've found tech help made simple",
+      "title": "Lo que dice nuestra comunidad",
+      "subtitle": "Únete a miles de adultos mayores que han encontrado ayuda tecnológica sencilla",
       "testimonialContent": [
         {
-          "name": "[es] Margaret K.",
+          "name": "Margaret K.",
           "age": 72,
-          "location": "[es] Austin, TX",
-          "content": "[es] Finally, someone who explains technology in a way I can understand! The step-by-step instructions helped me set up my new phone perfectly. I feel so much more confident now!",
+          "location": "Austin, TX",
+          "content": "¡Por fin alguien que explica la tecnología de una manera que puedo entender! Las instrucciones paso a paso me ayudaron a configurar mi nuevo teléfono perfectamente. ¡Ahora me siento mucho más segura!",
           "avatar": "M"
         },
         {
-          "name": "[es] Robert H.",
+          "name": "Robert H.",
           "age": 68,
-          "location": "[es] Seattle, WA",
-          "content": "[es] The voice feature is amazing! I can just ask my questions out loud and get clear answers. It's like having a tech-savvy grandchild available 24/7.",
+          "location": "Seattle, WA",
+          "content": "¡La función de voz es increíble! Puedo hacer mis preguntas en voz alta y recibir respuestas claras. Es como tener un nieto experto en tecnología disponible 24/7.",
           "avatar": "R"
         },
         {
-          "name": "[es] Dorothy S.",
+          "name": "Dorothy S.",
           "age": 75,
-          "location": "[es] Miami, FL",
-          "content": "[es] I love the photo feature! I took a picture of a confusing cable and instantly knew what it was for. This app has made me much more confident with technology.",
+          "location": "Miami, FL",
+          "content": "¡Me encanta la función de fotos! Tomé una foto de un cable confuso y al instante supe para qué servía. Esta app me ha dado mucha más confianza con la tecnología.",
           "avatar": "D"
         },
         {
-          "name": "[es] Frank M.",
+          "name": "Frank M.",
           "age": 70,
-          "location": "[es] Denver, CO",
-          "content": "[es] I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
+          "location": "Denver, CO",
+          "content": "Estaba muy frustrado con mi smart TV hasta que encontré este asistente. ¡Ahora puedo ver series, ajustar configuraciones e incluso hacer videollamadas con mis nietos!",
           "avatar": "F"
         }
       ],
-      "ageLabel": "[es] Age {{age}}"
+      "ageLabel": "Edad {{age}}"
     },
     "ctaSection": {
-      "title": "[es] Ready to Master Technology?",
-      "subtitle": "[es] Join our community of empowered seniors who've made technology simple and approachable. Start getting clear, helpful answers today - completely free!",
-      "getStartedButton": "[es] Get Started Free Today",
-      "setupInMinutes": "[es] Setup in 2 minutes"
+      "title": "¿Listo para dominar la tecnología?",
+      "subtitle": "Únete a nuestra comunidad de adultos mayores empoderados que han hecho la tecnología simple y accesible. ¡Comienza a recibir respuestas claras y útiles hoy, completamente gratis!",
+      "getStartedButton": "Comienza gratis hoy",
+      "setupInMinutes": "Configúralo en 2 minutos"
     },
     "footer": {
-      "description": "[es] Making technology accessible and understandable for seniors everywhere.",
-      "featuresTitle": "[es] Features",
+      "description": "Haciendo la tecnología accesible y comprensible para adultos mayores en todas partes.",
+      "featuresTitle": "Características",
       "featuresItems": [
-        "[es] Step-by-Step Help",
-        "[es] Voice Support",
-        "[es] Photo Explainer",
-        "[es] 24/7 Availability"
+        "Ayuda paso a paso",
+        "Soporte por voz",
+        "Explicador de fotos",
+        "Disponibilidad 24/7"
       ],
-      "supportTitle": "[es] Support",
+      "supportTitle": "Soporte",
       "supportItems": [
-        "[es] Help Center",
-        "[es] Getting Started",
-        "[es] Community",
-        "[es] Contact Us"
+        "Centro de ayuda",
+        "Primeros pasos",
+        "Comunidad",
+        "Contáctanos"
       ],
-      "companyTitle": "[es] Company",
+      "companyTitle": "Compañía",
       "companyItems": [
-        "[es] About Us",
-        "[es] Privacy Policy",
-        "[es] Terms of Service",
-        "[es] Accessibility"
+        "Sobre nosotros",
+        "Política de privacidad",
+        "Términos de servicio",
+        "Accesibilidad"
       ],
-      "copyright": "[es] © 2025 TechStep. Made with ❤️ for seniors everywhere.",
-      "trustedBy": "[es] Trusted by",
-      "trustedByCount": "[es] 50,000+ seniors"
+      "copyright": "© 2025 TechStep. Hecho con ❤️ para adultos mayores en todas partes.",
+      "trustedBy": "Confiado por",
+      "trustedByCount": "Más de 50,000 adultos mayores"
     }
   },
   "dashboard": {
@@ -151,129 +151,129 @@
     "description": "Explicador de fotos y traductor técnico"
   },
   "aiToolsModal": {
-    "header": "[es] AI Helper Tools",
+    "header": "Herramientas de Ayuda de IA",
     "tabs": {
-      "photoExplainer": "[es] Photo Explainer",
-      "techWordBuster": "[es] Tech Word Buster"
+      "photoExplainer": "Explicador de Fotos",
+      "techWordBuster": "Explicador de Términos Técnicos"
     },
     "photoExplainer": {
-      "title": "[es] Photo Explainer",
-      "description": "[es] Upload a photo of any cable, button, or device and get an instant explanation.",
-      "uploadButton": "[es] Upload Image",
-      "questionLabel": "[es] Ask a question about the photo (optional)",
-      "questionPlaceholder": "[es] What is this cable for?",
-      "explainButton": "[es] Explain Photo",
-      "analyzingButton": "[es] Analyzing...",
-      "alertNoPhoto": "[es] Please upload a photo first or check API configuration.",
-      "errorResponse": "[es] <p class=\"text-red-600\">Sorry, I couldn't analyze the image. Please try again.</p>",
-      "readResponseButton": "[es] 🔊 Read Response Aloud",
-      "previewAlt": "[es] Preview"
+      "title": "Explicador de Fotos",
+      "description": "Sube una foto de cualquier cable, botón o dispositivo y obtén una explicación instantánea.",
+      "uploadButton": "Subir Imagen",
+      "questionLabel": "Haz una pregunta sobre la foto (opcional)",
+      "questionPlaceholder": "¿Para qué es este cable?",
+      "explainButton": "Explicar Foto",
+      "analyzingButton": "Analizando...",
+      "alertNoPhoto": "Por favor, sube una foto primero o revisa la configuración de la API.",
+      "errorResponse": "<p class=\"text-red-600\">Lo siento, no pude analizar la imagen. Por favor, inténtalo de nuevo.</p>",
+      "readResponseButton": "🔊 Leer Respuesta en Voz Alta",
+      "previewAlt": "Vista Previa"
     },
     "techWordBuster": {
-      "title": "[es] Tech Word Buster",
-      "description": "[es] Confused by a tech term? Get a simple, easy-to-understand explanation with real-world analogies.",
-      "inputLabel": "[es] Enter a tech word or phrase",
-      "inputPlaceholder": "[es] e.g., Cloud Storage, WiFi, Bluetooth",
-      "explainButton": "[es] Make This Clear",
-      "explainingButton": "[es] Explaining...",
-      "alertNoTerm": "[es] Please enter a tech term first or check API configuration.",
-      "errorResponse": "[es] <p class=\"text-red-600\">Sorry, I couldn't explain that term. Please try again.</p>",
-      "readExplanationButton": "[es] 🔊 Read Explanation Aloud"
+      "title": "Explicador de Términos Técnicos",
+      "description": "¿Confundido por un término técnico? Obtén una explicación simple y fácil de entender con analogías del mundo real.",
+      "inputLabel": "Ingresa una palabra o frase técnica",
+      "inputPlaceholder": "ej. Almacenamiento en la Nube, WiFi, Bluetooth",
+      "explainButton": "Aclarar Esto",
+      "explainingButton": "Explicando...",
+      "alertNoTerm": "Por favor, ingresa un término técnico primero o revisa la configuración de la API.",
+      "errorResponse": "<p class=\"text-red-600\">Lo siento, no pude explicar ese término. Por favor, inténtalo de nuevo.</p>",
+      "readExplanationButton": "🔊 Leer Explicación en Voz Alta"
     },
-    "apiErrorNoExplanation": "[es] No explanation received"
+    "apiErrorNoExplanation": "No se recibió ninguna explicación"
   },
   "clarificationModal": {
-    "headerTitle": "[es] I need a bit more info",
-    "yourQuestionLabel": "[es] Your question:",
-    "tellMeMorePrompt": "[es] To give you the best help, could you tell me a bit more?",
-    "forExampleLabel": "[es] For example:",
-    "textareaPlaceholder": "[es] Please provide more details...",
-    "textareaSrLabel": "[es] Provide more details for your question",
-    "skipButton": "[es] Skip for now",
-    "submitButton": "[es] Get Better Help",
-    "loadingButton": "[es] Getting help..."
+    "headerTitle": "Necesito un poco más de información",
+    "yourQuestionLabel": "Tu pregunta:",
+    "tellMeMorePrompt": "Para darte la mejor ayuda, ¿podrías darme un poco más de detalles?",
+    "forExampleLabel": "Por ejemplo:",
+    "textareaPlaceholder": "Por favor, proporciona más detalles...",
+    "textareaSrLabel": "Proporciona más detalles para tu pregunta",
+    "skipButton": "Omitir por ahora",
+    "submitButton": "Obtener Mejor Ayuda",
+    "loadingButton": "Obteniendo ayuda..."
   },
   "languageNotificationBanner": {
-    "title": "[es] Complete Your Language Setup",
-    "description": "[es] Configure your preferred languages for better voice input and text interactions.",
-    "buttonText": "[es] Complete Setup"
+    "title": "Completa la Configuración de Idioma",
+    "description": "Configura tus idiomas preferidos para una mejor entrada de voz e interacciones de texto.",
+    "buttonText": "Completar Configuración"
   },
   "learningPaths": {
     "fundamentals": {
-      "title": "[es] Computer & Device Fundamentals",
-      "description": "[es] The very basics to get you started with technology.",
+      "title": "Fundamentos de Computadoras y Dispositivos",
+      "description": "Lo más básico para que comiences con la tecnología.",
       "modules": {
-        "turnOnDevice": { "title": "[es] Turning on a Device", "description": "[es] Learn to power up computers and smartphones." },
-        "mouseTouchscreen": { "title": "[es] Using a Mouse/Touchscreen", "description": "[es] Master pointing, clicking, and tapping." },
-        "keyboardTyping": { "title": "[es] Keyboard/Typing Basics", "description": "[es] Get comfortable with typing essentials." },
-        "filesFolders": { "title": "[es] Understanding Files & Folders", "description": "[es] Learn how digital information is organized." }
+        "turnOnDevice": { "title": "Encender un Dispositivo", "description": "Aprende a encender computadoras y teléfonos inteligentes." },
+        "mouseTouchscreen": { "title": "Uso del Ratón/Pantalla Táctil", "description": "Domina el arte de señalar, hacer clic y tocar." },
+        "keyboardTyping": { "title": "Conceptos Básicos de Teclado/Mecanografía", "description": "Familiarízate con lo esencial de la escritura." },
+        "filesFolders": { "title": "Entendiendo Archivos y Carpetas", "description": "Aprende cómo se organiza la información digital." }
       }
     },
     "onlineWorld": {
-      "title": "[es] The Online World",
-      "description": "[es] Getting connected and exploring the internet safely.",
+      "title": "El Mundo en Línea",
+      "description": "Conectarse y explorar internet de forma segura.",
       "modules": {
-        "webBrowsers": { "title": "[es] Understanding Web Browsers", "description": "[es] Navigate the internet with Chrome, Edge, or Safari." },
-        "searchEffectively": { "title": "[es] How to Search Effectively", "description": "[es] Find what you need online using search engines." },
-        "introEmail": { "title": "[es] Introduction to Email", "description": "[es] Learn to send and receive electronic mail." },
-        "virusSafety": { "title": "[es] Staying Safe from Viruses", "description": "[es] Protect your device from harmful software." }
+        "webBrowsers": { "title": "Entendiendo los Navegadores Web", "description": "Navega por internet con Chrome, Edge o Safari." },
+        "searchEffectively": { "title": "Cómo Buscar Eficazmente", "description": "Encuentra lo que necesitas en línea usando motores de búsqueda." },
+        "introEmail": { "title": "Introducción al Correo Electrónico", "description": "Aprende a enviar y recibir correo electrónico." },
+        "virusSafety": { "title": "Manteniéndose a Salvo de los Virus", "description": "Protege tu dispositivo de software dañino." }
       }
     },
     "digitalLife": {
-      "title": "[es] Everyday Digital Life",
-      "description": "[es] Communicate, share, and manage your digital presence.",
+      "title": "Vida Digital Cotidiana",
+      "description": "Comunica, comparte y gestiona tu presencia digital.",
       "modules": {
-        "masteringEmail": { "title": "[es] Mastering Email", "description": "[es] Attachments, folders, and email etiquette." },
-        "videoCalling": { "title": "[es] Video Calling Family & Friends", "description": "[es] Connect face-to-face with loved ones." },
-        "introSocialMedia": { "title": "[es] Introduction to Social Media", "description": "[es] Understanding platforms like Facebook." },
-        "sharingPhotos": { "title": "[es] Sharing Photos Safely", "description": "[es] Share your memories without compromising privacy." }
+        "masteringEmail": { "title": "Dominando el Correo Electrónico", "description": "Archivos adjuntos, carpetas y etiqueta en el correo." },
+        "videoCalling": { "title": "Videollamadas con Familia y Amigos", "description": "Conéctate cara a cara con tus seres queridos." },
+        "introSocialMedia": { "title": "Introducción a las Redes Sociales", "description": "Entendiendo plataformas como Facebook." },
+        "sharingPhotos": { "title": "Compartiendo Fotos de Forma Segura", "description": "Comparte tus recuerdos sin comprometer la privacidad." }
       }
     },
     "advancedSkills": {
-      "title": "[es] Advanced & Creative Skills",
-      "description": "[es] Beyond the basics: explore more of what technology offers.",
+      "title": "Habilidades Avanzadas y Creativas",
+      "description": "Más allá de lo básico: explora más de lo que la tecnología ofrece.",
       "modules": {
-        "onlineShopping": { "title": "[es] Introduction to Online Shopping", "description": "[es] Shop safely and conveniently online." },
-        "onlineMaps": { "title": "[es] Using Online Maps & Navigation", "description": "[es] Find your way with digital maps." },
-        "photoEditing": { "title": "[es] Basic Photo Editing", "description": "[es] Enhance your digital photos." },
-        "productivityTools": { "title": "[es] Intro to Productivity Tools", "description": "[es] Using tools like Google Docs or Microsoft Word basics." }
+        "onlineShopping": { "title": "Introducción a las Compras en Línea", "description": "Compra de forma segura y conveniente en línea." },
+        "onlineMaps": { "title": "Uso de Mapas y Navegación en Línea", "description": "Encuentra tu camino con mapas digitales." },
+        "photoEditing": { "title": "Edición Básica de Fotos", "description": "Mejora tus fotos digitales." },
+        "productivityTools": { "title": "Introducción a Herramientas de Productividad", "description": "Uso de herramientas como Google Docs o Microsoft Word." }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "[es] Tech Starter", "description": "[es] Completed Computer & Device Fundamentals." },
-    "onlineWorld": { "name": "[es] Online Explorer", "description": "[es] Completed The Online World path." },
-    "digitalLife": { "name": "[es] Digital Communicator", "description": "[es] Completed Everyday Digital Life path." },
-    "advancedSkills": { "name": "[es] Tech Virtuoso", "description": "[es] Completed Advanced & Creative Skills path." }
+    "fundamentals": { "name": "Iniciado en Tecnología", "description": "Completó Fundamentos de Computadoras y Dispositivos." },
+    "onlineWorld": { "name": "Explorador en Línea", "description": "Completó la ruta El Mundo en Línea." },
+    "digitalLife": { "name": "Comunicador Digital", "description": "Completó la ruta Vida Digital Cotidiana." },
+    "advancedSkills": { "name": "Virtuoso de la Tecnología", "description": "Completó la ruta Habilidades Avanzadas y Creativas." }
   },
   "skillAssessmentModal": {
-    "title": "[es] Quick Skill Check",
-    "introduction": "[es] Let's find the best place for you to start!",
-    "nextButton": "[es] Next",
-    "finishButton": "[es] Show My Starting Point",
-    "questionProgress": "[es] Question {{current}} of {{total}}"
+    "title": "Evaluación Rápida de Habilidades",
+    "introduction": "¡Encontremos el mejor lugar para que comiences!",
+    "nextButton": "Siguiente",
+    "finishButton": "Mostrar mi Punto de Partida",
+    "questionProgress": "Pregunta {{current}} de {{total}}"
   },
   "assessment": {
     "q1": {
-      "text": "[es] How comfortable are you with computers?",
+      "text": "¿Qué tan cómodo te sientes con las computadoras?",
       "options": {
-        "new": "[es] Brand New",
-        "basics": "[es] I know some basics",
-        "confident": "[es] I'm pretty confident"
+        "new": "Totalmente Nuevo",
+        "basics": "Conozco algunos conceptos básicos",
+        "confident": "Tengo bastante confianza"
       }
     },
     "q2": {
-      "text": "[es] Have you sent an email before?",
+      "text": "¿Has enviado un correo electrónico antes?",
       "options": {
-        "yes": "[es] Yes",
-        "no": "[es] No"
+        "yes": "Sí",
+        "no": "No"
       }
     },
     "q3": {
-      "text": "[es] Have you used a smartphone for more than just calls?",
+      "text": "¿Has usado un teléfono inteligente para algo más que llamadas?",
       "options": {
-        "yes": "[es] Yes",
-        "no": "[es] No"
+        "yes": "Sí",
+        "no": "No"
       }
     }
   },
@@ -534,40 +534,40 @@
     "saved": "¡Guardado!",
     "saveChanges": "Guardar Cambios",
     "errorSaving": "No se pudieron guardar las configuraciones. Por favor intenta de nuevo.",
-    "lastName": "[es] Last Name",
-    "lastNamePlaceholder": "[es] Your last name",
-    "age": "[es] Age",
-    "techExperience": "[es] Technology Experience Level",
+    "lastName": "Apellido",
+    "lastNamePlaceholder": "Tu apellido",
+    "age": "Edad",
+    "techExperience": "Nivel de Experiencia Tecnológica",
     "techExperienceOptions": {
-      "beginner": "[es] Beginner (I need step-by-step help with most things)",
-      "some": "[es] Some Experience (I can do basic tasks but need help with new things)",
-      "comfortable": "[es] Comfortable (I can figure out most things but sometimes need guidance)"
+      "beginner": "Principiante (necesito ayuda paso a paso con la mayoría de las cosas)",
+      "some": "Algo de Experiencia (puedo hacer tareas básicas pero necesito ayuda con cosas nuevas)",
+      "comfortable": "Cómodo (puedo resolver la mayoría de las cosas pero a veces necesito orientación)"
     },
-    "primaryConcerns": "[es] Primary Tech Topics of Interest/Concern",
-    "assistiveNeeds": "[es] Accessibility Needs",
-    "communicationStyle": "[es] Preferred Explanation Style",
+    "primaryConcerns": "Temas Tecnológicos de Interés/Preocupación Principal",
+    "assistiveNeeds": "Necesidades de Accesibilidad",
+    "communicationStyle": "Estilo de Explicación Preferido",
     "communicationStyleOptions": {
-      "simple": "[es] Simple & Quick (Just the steps)",
-      "detailed": "[es] Detailed (Explain the 'why')",
-      "visual": "[es] Visual (Show pictures/videos when possible)"
+      "simple": "Simple y Rápido (Solo los pasos)",
+      "detailed": "Detallado (Explica el 'porqué')",
+      "visual": "Visual (Mostrar imágenes/videos cuando sea posible)"
     },
-    "videoRecommendations": "[es] Video Recommendations",
-    "videoRecommendationsDesc": "[es] Show helpful videos and articles alongside steps",
-    "fontSize": "[es] Preferred Text Size",
+    "videoRecommendations": "Recomendaciones de Video",
+    "videoRecommendationsDesc": "Mostrar videos y artículos útiles junto a los pasos",
+    "fontSize": "Tamaño de Texto Preferido",
     "fontSizeOptions": {
-      "normal": "[es] Normal",
-      "large": "[es] Large",
-      "extraLarge": "[es] Extra Large"
+      "normal": "Normal",
+      "large": "Grande",
+      "extraLarge": "Extra Grande"
     },
-    "displayPreferences": "[es] Display & Theme",
-    "theme": "[es] Color Theme",
+    "displayPreferences": "Visualización y Tema",
+    "theme": "Tema de Color",
     "themeOptions": {
-      "light": "[es] Light",
-      "dark": "[es] Dark"
+      "light": "Claro",
+      "dark": "Oscuro"
     },
-    "highContrast": "[es] High Contrast Mode",
-    "highContrastDesc": "[es] Increase text and element contrast for better visibility",
-    "learningPreferences": "[es] Learning & Content Preferences"
+    "highContrast": "Modo de Alto Contraste",
+    "highContrastDesc": "Aumenta el contraste de texto y elementos para una mejor visibilidad",
+    "learningPreferences": "Preferencias de Aprendizaje y Contenido"
   },
   "common": {
     "settings": "Configuración",
@@ -770,174 +770,174 @@
     "couldntGetAnswer": "Lo siento, no pude obtener una respuesta ahora. Por favor intenta de nuevo."
   },
   "learningPage": {
-    "headerTitle": "[es] Learning Center",
-    "heroTitle": "[es] Tech Skills for Seniors",
-    "heroSubtitle": "[es] Learn technology at your own pace with step-by-step lessons, interactive demos, and personalized guidance.",
-    "takeSkillsAssessment": "[es] Take Skills Assessment",
-    "orSeparator": "[es] or",
-    "iAmBeginner": "[es] I'm a Beginner",
-    "iAmIntermediate": "[es] I'm Intermediate",
-    "iAmAdvanced": "[es] I'm Advanced",
-    "yourLevel": "[es] Your Level: {{level}}",
-    "levelDescription": "[es] Courses are personalized for your skill level",
-    "retakeAssessment": "[es] Retake Assessment",
-    "progressLabel": "[es] Progress",
-    "lessonsLabel": "[es] lessons",
-    "completedOutOfTotal": "[es] {{completed}} of {{total}} completed",
-    "featureInteractiveDemos": "[es] Interactive Demos",
-    "featureInteractiveDemosDesc": "[es] See exactly how to perform each action",
-    "featureAudioSupport": "[es] Audio Support",
-    "featureAudioSupportDesc": "[es] Have lessons read aloud to you",
-    "featurePrintableGuides": "[es] Printable Guides",
-    "featurePrintableGuidesDesc": "[es] Take summaries with you offline",
-    "featureCertificates": "[es] Certificates",
-    "featureCertificatesDesc": "[es] Earn certificates as you complete courses",
-    "animationShow": "[es] Show Animation",
-    "animationReset": "[es] Reset",
-    "featuresGridTitle": "[es] Explore Our Features",
-    "loadingPaths": "[es] Loading learning paths...",
-    "noPathsAvailable": "[es] No learning paths available at the moment. Please check back later.",
-    "progressComplete": "[es] {{value}}% complete",
-    "recommendedStart": "[es] Recommended Starting Point",
-    "moduleListTitle": "[es] Modules for path: {{pathTitle}}",
-    "moduleContentTitle": "[es] Content for module: {{moduleTitle}} will go here.",
-    "loadingCenter": "[es] Loading Learning Center...",
-    "moduleTimeLabel": "[es] Time: "
+    "headerTitle": "Centro de Aprendizaje",
+    "heroTitle": "Habilidades Tecnológicas para Adultos Mayores",
+    "heroSubtitle": "Aprende tecnología a tu propio ritmo con lecciones paso a paso, demostraciones interactivas y orientación personalizada.",
+    "takeSkillsAssessment": "Realizar Evaluación de Habilidades",
+    "orSeparator": "o",
+    "iAmBeginner": "Soy Principiante",
+    "iAmIntermediate": "Soy Intermedio",
+    "iAmAdvanced": "Soy Avanzado",
+    "yourLevel": "Tu Nivel: {{level}}",
+    "levelDescription": "Los cursos se personalizan según tu nivel de habilidad",
+    "retakeAssessment": "Repetir Evaluación",
+    "progressLabel": "Progreso",
+    "lessonsLabel": "lecciones",
+    "completedOutOfTotal": "{{completed}} de {{total}} completadas",
+    "featureInteractiveDemos": "Demostraciones Interactivas",
+    "featureInteractiveDemosDesc": "Ve exactamente cómo realizar cada acción",
+    "featureAudioSupport": "Soporte de Audio",
+    "featureAudioSupportDesc": "Escucha las lecciones leídas en voz alta",
+    "featurePrintableGuides": "Guías Imprimibles",
+    "featurePrintableGuidesDesc": "Lleva resúmenes contigo sin conexión",
+    "featureCertificates": "Certificados",
+    "featureCertificatesDesc": "Gana certificados a medida que completas cursos",
+    "animationShow": "Mostrar Animación",
+    "animationReset": "Reiniciar",
+    "featuresGridTitle": "Explora Nuestras Características",
+    "loadingPaths": "Cargando rutas de aprendizaje...",
+    "noPathsAvailable": "No hay rutas de aprendizaje disponibles en este momento. Por favor, vuelve a intentarlo más tarde.",
+    "progressComplete": "{{value}}% completado",
+    "recommendedStart": "Punto de Partida Recomendado",
+    "moduleListTitle": "Módulos para la ruta: {{pathTitle}}",
+    "moduleContentTitle": "El contenido del módulo: {{moduleTitle}} irá aquí.",
+    "loadingCenter": "Cargando Centro de Aprendizaje...",
+    "moduleTimeLabel": "Tiempo: "
   },
   "languageSelector": {
-    "choosePrompt": "[es] Choose your preferred language for the interface",
-    "moreComingSoon": "[es] 🌍 More languages coming soon"
+    "choosePrompt": "Elige tu idioma preferido para la interfaz",
+    "moreComingSoon": "🌍 Más idiomas próximamente"
   },
   "assessmentView": {
-    "headerTitle": "[es] Skills Assessment",
-    "questionProgress": "[es] Question {{current}} of {{total}}",
-    "chooseBestOption": "[es] Choose the option that best describes you",
-    "skipAssessment": "[es] Skip Assessment"
+    "headerTitle": "Evaluación de Habilidades",
+    "questionProgress": "Pregunta {{current}} de {{total}}",
+    "chooseBestOption": "Elige la opción que mejor te describa",
+    "skipAssessment": "Omitir Evaluación"
   },
   "courseView": {
-    "lessonsHeader": "[es] Lessons",
-    "interactiveDemoLabel": "[es] Interactive demo",
-    "startLesson": "[es] Start Lesson",
-    "reviewLesson": "[es] Review",
-    "congratulations": "[es] Congratulations!",
-    "courseComplete": "[es] You've completed the {{courseTitle}} course!",
-    "downloadCertificate": "[es] Download Certificate"
+    "lessonsHeader": "Lecciones",
+    "interactiveDemoLabel": "Demostración interactiva",
+    "startLesson": "Comenzar Lección",
+    "reviewLesson": "Repasar",
+    "congratulations": "¡Felicidades!",
+    "courseComplete": "¡Has completado el curso de {{courseTitle}}!",
+    "downloadCertificate": "Descargar Certificado"
   },
   "lessonView": {
-    "readAloud": "[es] Read lesson aloud",
-    "interactiveDemoHeader": "[es] Interactive Demo",
-    "practiceExerciseHeader": "[es] Practice Exercise",
-    "markAsComplete": "[es] Mark as Complete",
-    "repeatLesson": "[es] Repeat Lesson",
-    "keyPointsHeader": "[es] Key Points",
-    "takeItWithYouHeader": "[es] Take it with you",
-    "downloadSummaryButton": "[es] Download Summary",
-    "downloadSummaryDescription": "[es] Get a printable summary of this lesson",
-    "needHelpHeader": "[es] Need Help?",
-    "askAQuestionButton": "[es] Ask a Question",
-    "chatWithHelperButton": "[es] Chat with Helper"
+    "readAloud": "Leer lección en voz alta",
+    "interactiveDemoHeader": "Demostración Interactiva",
+    "practiceExerciseHeader": "Ejercicio de Práctica",
+    "markAsComplete": "Marcar como Completado",
+    "repeatLesson": "Repetir Lección",
+    "keyPointsHeader": "Puntos Clave",
+    "takeItWithYouHeader": "Llévalo contigo",
+    "downloadSummaryButton": "Descargar Resumen",
+    "downloadSummaryDescription": "Obtén un resumen imprimible de esta lección",
+    "needHelpHeader": "¿Necesitas Ayuda?",
+    "askAQuestionButton": "Hacer una Pregunta",
+    "chatWithHelperButton": "Chatear con un Asistente"
   },
   "privacyPolicy": {
-    "headerTitle": "[es] Privacy Policy",
-    "pageTitle": "[es] Privacy Policy",
-    "lastUpdated": "[es] Last updated: {{date}}",
+    "headerTitle": "Política de Privacidad",
+    "pageTitle": "Política de Privacidad",
+    "lastUpdated": "Última actualización: {{date}}",
     "ourPromise": {
-      "title": "[es] Our Promise to You",
-      "text": "[es] At Senior Tech Helper, we understand that your privacy is precious. We're committed to protecting your personal information and being completely transparent about how we use it. This policy explains everything in simple, clear language."
+      "title": "Nuestra Promesa para Ti",
+      "text": "En Senior Tech Helper, entendemos que tu privacidad es valiosa. Estamos comprometidos a proteger tu información personal y a ser completamente transparentes sobre cómo la usamos. Esta política lo explica todo en un lenguaje simple y claro."
     },
     "cookies": {
-      "title": "[es] How We Use Cookies",
-      "whatAreCookiesTitle": "[es] What are cookies?",
-      "whatAreCookiesText": "[es] Cookies are small text files that help us remember your preferences and make your experience better. Think of them like bookmarks that help us remember where you left off.",
-      "weUseCookiesForTitle": "[es] We use cookies ONLY to help you:",
+      "title": "Cómo Usamos las Cookies",
+      "whatAreCookiesTitle": "¿Qué son las cookies?",
+      "whatAreCookiesText": "Las cookies son pequeños archivos de texto que nos ayudan a recordar tus preferencias y a mejorar tu experiencia. Piensa en ellas como marcadores que nos ayudan a recordar dónde lo dejaste.",
+      "weUseCookiesForTitle": "Usamos cookies SOLO para ayudarte a:",
       "uses": [
-        "[es] Remember your preferences: Text size, voice settings, and accessibility options you've chosen",
-        "[es] Keep you signed in: So you don't have to enter your password every time",
-        "[es] Improve our help: Understanding which features are most helpful to seniors like you"
+        "Recordar tus preferencias: Tamaño del texto, configuración de voz y opciones de accesibilidad que has elegido",
+        "Mantenerte conectado: Para que no tengas que introducir tu contraseña cada vez",
+        "Mejorar nuestra ayuda: Entendiendo qué características son más útiles para personas mayores como tú"
       ],
-      "whatWeDontDoTitle": "[es] What we DON'T do with cookies:",
+      "whatWeDontDoTitle": "Lo que NO hacemos con las cookies:",
       "donts": [
-        "[es] Track you across other websites",
-        "[es] Sell your information to anyone",
-        "[es] Share your data with advertisers",
-        "[es] Use them for marketing purposes"
+        "Rastrearte a través de otros sitios web",
+        "Vender tu información a nadie",
+        "Compartir tus datos con anunciantes",
+        "Usarlas con fines de marketing"
       ]
     },
     "informationCollected": {
-      "title": "[es] What Information We Collect",
-      "youGiveUsTitle": "[es] Information you give us:",
+      "title": "Qué Información Recopilamos",
+      "youGiveUsTitle": "Información que nos proporcionas:",
       "youGiveUsList": [
-        "[es] Your name and email address",
-        "[es] Your device type (iPhone, Windows, etc.)",
-        "[es] Your tech experience level",
-        "[es] Your accessibility preferences",
-        "[es] Questions you ask our AI helper"
+        "Tu nombre y dirección de correo electrónico",
+        "Tu tipo de dispositivo (iPhone, Windows, etc.)",
+        "Tu nivel de experiencia tecnológica",
+        "Tus preferencias de accesibilidad",
+        "Preguntas que haces a nuestro asistente de IA"
       ],
-      "weCollectTitle": "[es] Information we automatically collect:",
+      "weCollectTitle": "Información que recopilamos automáticamente:",
       "weCollectList": [
-        "[es] How you use our app (which features help most)",
-        "[es] Technical information (browser type, device)",
-        "[es] Error reports (to fix problems quickly)"
+        "Cómo usas nuestra aplicación (qué características ayudan más)",
+        "Información técnica (tipo de navegador, dispositivo)",
+        "Informes de errores (para solucionar problemas rápidamente)"
       ]
     },
     "howWeProtect": {
-      "title": "[es] How We Protect Your Information",
+      "title": "Cómo Protegemos Tu Información",
       "protections": [
-        "[es] Encryption: All your data is encrypted (scrambled) so only we can read it",
-        "[es] Secure servers: Your information is stored on protected, professional-grade servers",
-        "[es] Limited access: Only our essential team members can access your data",
-        "[es] Regular security checks: We constantly monitor for any security threats"
+        "Cifrado: Todos tus datos están cifrados (codificados) para que solo nosotros podamos leerlos",
+        "Servidores seguros: Tu información se almacena en servidores protegidos de grado profesional",
+        "Acceso limitado: Solo los miembros esenciales de nuestro equipo pueden acceder a tus datos",
+        "Controles de seguridad regulares: Monitoreamos constantemente cualquier amenaza de seguridad"
       ]
     },
     "sharingInformation": {
-      "title": "[es] Sharing Your Information",
-      "neverSell": "[es] We will NEVER sell or rent your personal information.",
-      "onlyShareInSituations": "[es] We only share your information in these very limited situations:",
+      "title": "Compartir Tu Información",
+      "neverSell": "NUNCA venderemos ni alquilaremos tu información personal.",
+      "onlyShareInSituations": "Solo compartimos tu información en estas situaciones muy limitadas:",
       "sharingSituations": [
-        "[es] With your permission: If you specifically ask us to share something",
-        "[es] For technical support: With trusted service providers who help us run the app (they're bound by strict privacy agreements)",
-        "[es] If required by law: Only if we're legally required to do so"
+        "Con tu permiso: Si nos pides específicamente que compartamos algo",
+        "Para soporte técnico: Con proveedores de servicios de confianza que nos ayudan a ejecutar la aplicación (están obligados por estrictos acuerdos de privacidad)",
+        "Si lo exige la ley: Solo si estamos legalmente obligados a hacerlo"
       ]
     },
     "yourRights": {
-      "title": "[es] Your Rights and Choices",
-      "youCanAlwaysTitle": "[es] You can always:",
+      "title": "Tus Derechos y Opciones",
+      "youCanAlwaysTitle": "Siempre puedes:",
       "rightsList": [
-        "[es] See what information we have about you",
-        "[es] Ask us to correct any wrong information",
-        "[es] Request that we delete your account and data",
-        "[es] Turn off cookies in your browser settings",
-        "[es] Contact us with any privacy questions"
+        "Ver qué información tenemos sobre ti",
+        "Pedirnos que corrijamos cualquier información incorrecta",
+        "Solicitar que eliminemos tu cuenta y tus datos",
+        "Desactivar las cookies en la configuración de tu navegador",
+        "Contactarnos con cualquier pregunta sobre privacidad"
       ],
-      "noteDeletingCookiesTitle": "[es] Note about deleting cookies:",
-      "noteDeletingCookiesText": "[es] If you delete our cookies, you'll need to set up your preferences again, and some features might not work as well."
+      "noteDeletingCookiesTitle": "Nota sobre la eliminación de cookies:",
+      "noteDeletingCookiesText": "Si eliminas nuestras cookies, tendrás que configurar tus preferencias de nuevo, y algunas características podrían no funcionar tan bien."
     },
     "thirdPartyServices": {
-      "title": "[es] Third-Party Services",
-      "weUseTrustedServices": "[es] We use some trusted third-party services to help provide our features:",
+      "title": "Servicios de Terceros",
+      "weUseTrustedServices": "Usamos algunos servicios de terceros de confianza para ayudar a proporcionar nuestras características:",
       "servicesList": [
-        "[es] Google AI (Gemini): Powers our AI assistant that answers your questions",
-        "[es] Firebase: Securely stores your account information",
-        "[es] YouTube/Educational Sites: We may recommend helpful videos and articles"
+        "IA de Google (Gemini): Potencia nuestro asistente de IA que responde a tus preguntas",
+        "Firebase: Almacena de forma segura la información de tu cuenta",
+        "YouTube/Sitios Educativos: Podemos recomendar videos y artículos útiles"
       ],
-      "servicesOwnPolicies": "[es] These services have their own privacy policies, and we only share the minimum information needed for them to work."
+      "servicesOwnPolicies": "Estos servicios tienen sus propias políticas de privacidad, y solo compartimos la información mínima necesaria para que funcionen."
     },
     "changesToPolicy": {
-      "title": "[es] Changes to This Policy",
-      "text": "[es] If we need to update this privacy policy, we'll notify you by email and show a notice in the app. We'll always explain what's changing and why in simple, clear language."
+      "title": "Cambios a Esta Política",
+      "text": "Si necesitamos actualizar esta política de privacidad, te lo notificaremos por correo electrónico y mostraremos un aviso en la aplicación. Siempre explicaremos qué está cambiando y por qué en un lenguaje simple y claro."
     },
     "contactUs": {
-      "title": "[es] Contact Us",
-      "questions": "[es] Have questions about your privacy or this policy? The TechStep team is here to help!",
-      "email": "[es] Email: privacy@techstep.com",
-      "phone": "[es] Phone: 1-800-TECH-HELP (1-800-832-4435)",
-      "mailLine1": "[es] Mail: TechStep Privacy Team",
-      "mailLine2": "[es] 123 Tech Support Lane",
-      "mailLine3": "[es] Helpful City, HC 12345"
+      "title": "Contáctanos",
+      "questions": "¿Tienes preguntas sobre tu privacidad o esta política? ¡El equipo de TechStep está aquí para ayudar!",
+      "email": "Correo: privacy@techstep.com",
+      "phone": "Teléfono: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Dirección: Equipo de Privacidad de TechStep",
+      "mailLine2": "123 Tech Support Lane",
+      "mailLine3": "Helpful City, HC 12345"
     },
     "footer": {
-      "thankYou": "[es] Thank you for trusting TechStep with your information. We're committed to keeping it safe and using it only to help you succeed with technology.",
-      "backToHome": "[es] Back to Home"
+      "thankYou": "Gracias por confiar tu información a TechStep. Estamos comprometidos a mantenerla segura y usarla solo para ayudarte a tener éxito con la tecnología.",
+      "backToHome": "Volver al Inicio"
     }
   }
 }

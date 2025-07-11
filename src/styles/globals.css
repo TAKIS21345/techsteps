@@ -300,10 +300,14 @@ body {
   --text-primary: #000000;
   --text-secondary: #333333;
   --border-color: #000000;
+  background: #000 !important;
+  color: #fff !important;
 }
 
 .high-contrast .card {
   @apply border-2 border-black;
+  background: #111 !important;
+  color: #fff !important;
 }
 
 .high-contrast .btn-primary {
@@ -363,4 +367,14 @@ body {
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+.font-normal {
+  font-size: 1rem;
+}
+.font-large {
+  font-size: 1.25rem;
+}
+.font-extralarge {
+  font-size: 1.5rem;
 }

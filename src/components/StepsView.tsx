@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, Home, MessageCircle } from 'lucide-react';
 import ResourceRecommendations from './ResourceRecommendations';
 import { crispService } from '../utils/crispService';
+import { chatMemoryService } from '../utils/chatMemoryService';
 import { ttsService } from '../utils/ttsService';
 
 interface StepsViewProps {

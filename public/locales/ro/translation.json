@@ -1,0 +1,944 @@
+{
+  "welcome": "Bun venit!",
+  "onboarding": {
+    "step1": {
+      "title": "Să facem cunoștință",
+      "subtitle": "Ajutați-mă să vă personalizez experiența",
+      "firstName": "Prenume",
+      "firstNamePlaceholder": "Prenumele dumneavoastră",
+      "lastName": "Nume de familie",
+      "lastNamePlaceholder": "Numele dumneavoastră de familie",
+      "age": "Vârstă (mă ajută să ajustez explicațiile)"
+    },
+    "step2": {
+      "title": "Alegeți limbile preferate",
+      "subtitle": "Selectați limbile pe care doriți să le utilizați pentru comunicare și introducere vocală",
+      "languageSelection": "Selecția limbii",
+      "languageDescription": "Alegeți limbile în care vă simțiți confortabil. Acest lucru va:",
+      "speechToText": "Configura recunoașterea vocală pentru a vă înțelege vocea în aceste limbi",
+      "textInteractions": "Activa interacțiunile text în limbile alese",
+      "interfaceOptions": "Personaliza opțiunile interfeței pentru o mai bună accesibilitate",
+      "searchLanguages": "Căutați limbi...",
+      "selectAll": "Selectează tot",
+      "deselectAll": "Deselectează tot",
+      "selected": "Selectată: {{count}} limbă",
+      "selected_plural": "Selectate: {{count}} limbi",
+      "noLanguagesFound": "Nu s-au găsit limbi care să corespundă cu \"{{search}}\"",
+      "languageRequired": "Este necesară selectarea unei limbi",
+      "languageRequiredDesc": "Vă rugăm să selectați cel puțin o limbă pentru a continua. Acest lucru asigură cea mai bună experiență pentru introducerea vocală și interacțiunile text."
+    },
+    "step3": {
+      "title": "Ce dispozitiv folosiți cel mai des?",
+      "subtitle": "Acest lucru mă ajută să vă ofer instrucțiuni mai bune",
+      "devices": {
+        "windowscomputer": "Computer Windows",
+        "macapplecomputer": "Mac (Computer Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Telefon sau tabletă Android",
+        "smarttv": "Smart TV",
+        "multipledevices": "Mai multe dispozitive"
+      }
+    },
+    "step4": {
+      "title": "Cât de confortabil vă simțiți cu tehnologia?",
+      "subtitle": "Fiți sincer(ă) - acest lucru mă ajută să explic lucrurile la nivelul potrivit",
+      "beginner": "Începător",
+      "beginnerDesc": "Am nevoie de ajutor pas cu pas pentru majoritatea lucrurilor",
+      "some": "Ceva experiență",
+      "someDesc": "Pot face sarcini de bază, dar am nevoie de ajutor cu lucruri noi",
+      "comfortable": "Confortabil",
+      "comfortableDesc": "Mă descurc cu majoritatea lucrurilor, dar uneori am nevoie de îndrumare"
+    },
+    "step5": {
+      "title": "Ce subiecte tehnologice vă îngrijorează cel mai mult?",
+      "subtitle": "Selectați tot ce se aplică - voi acorda prioritate ajutorului în aceste domenii",
+      "concerns": {
+        "onlineSafety": "Siguranța online și înșelătoriile",
+        "passwordManagement": "Gestionarea parolelor",
+        "videoCalling": "Apeluri video cu familia",
+        "socialMedia": "Rețelele sociale",
+        "onlineBanking": "Servicii bancare online",
+        "emailMessaging": "E-mail și mesagerie",
+        "photoStorage": "Stocarea și partajarea fotografiilor",
+        "appDownloads": "Descărcări și actualizări de aplicații",
+        "wifiInternet": "Probleme cu Wi-Fi și internetul",
+        "deviceSettings": "Setările dispozitivului",
+        "onlineShopping": "Cumpărături online",
+        "healthApps": "Aplicații și portaluri de sănătate"
+      }
+    },
+    "step6": {
+      "title": "Aveți nevoie de funcții de accesibilitate?",
+      "subtitle": "Vreau să mă asigur că puteți utiliza acest instrument confortabil",
+      "needs": {
+        "largerText": "Text și butoane mai mari",
+        "highContrast": "Culori cu contrast ridicat",
+        "voiceCommands": "Comenzi vocale",
+        "screenReader": "Suport pentru cititor de ecran",
+        "slowerExplanations": "Explicații mai lente",
+        "visualSteps": "Indicatori vizuali ai pașilor",
+        "noneNeeded": "Nu este nevoie"
+      }
+    },
+    "step7": {
+      "title": "Cum preferați să învățați?",
+      "subtitle": "Voi ajusta stilul meu de predare pentru a se potrivi preferințelor dumneavoastră",
+      "simple": "Simplu și rapid",
+      "simpleDesc": "Doar spuneți-mi ce să fac, pas cu pas",
+      "detailed": "Explicații detaliate",
+      "detailedDesc": "Explicați de ce fac fiecare pas",
+      "visual": "Învățare vizuală",
+      "visualDesc": "Arătați-mi imagini și videoclipuri când este posibil"
+    },
+    "step8": {
+      "title": "Ultimele retușuri",
+      "subtitle": "Configurați-vă mediul de învățare perfect",
+      "textToSpeech": "Text-în-Vorbire",
+      "textToSpeechDesc": "Răspunsurile să fie citite cu voce tare",
+      "voiceInput": "Introducere vocală",
+      "voiceInputDesc": "Puneți întrebări vorbind",
+      "videoRecommendations": "Recomandări video",
+      "videoRecommendationsDesc": "Afișați videoclipuri și articole utile",
+      "textSize": "Dimensiunea preferată a textului",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Mare",
+      "textSizeExtraLarge": "Foarte mare"
+    },
+    "back": "Înapoi",
+    "next": "Următorul",
+    "settingUp": "Se configurează...",
+    "completeSetup": "Finalizează configurarea",
+    "errorSaving": "Preferințele dumneavoastră nu au putut fi salvate. Vă rugăm să încercați din nou."
+  },
+  "nav": {
+    "features": "Funcționalități",
+    "reviews": "Recenzii",
+    "signIn": "Autentificare",
+    "getStarted": "Începeți"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Apreciat de seniori din întreaga lume",
+      "title": "Tehnologia a devenit",
+      "titleHighlight": "simplă și clară",
+      "subtitle": "Stăpâniți tehnologia cu încredere prin îndrumare personalizată, pas cu pas, care se simte ca și cum ați avea un prieten răbdător alături.",
+      "startLearningButton": "Începeți să învățați gratuit",
+      "watchDemoButton": "Urmăriți demonstrația",
+      "freeForever": "Gratuit pentru totdeauna",
+      "noCreditCard": "Nu este necesar un card de credit",
+      "available247": "Disponibil 24/7"
+    },
+    "featuresSection": {
+      "title": "Funcționalități",
+      "subtitle": "Acestea sunt doar câteva dintre funcționalitățile oferite pentru a vă ajuta să progresați!",
+      "items": [
+        {
+          "title": "Îndrumare pas cu pas",
+          "description": "Obțineți instrucțiuni clare și ușor de urmat pentru orice întrebare tehnică. Fiecare pas este explicat în termeni simpli, cu indicii vizuale."
+        },
+        {
+          "title": "Suport vocal",
+          "description": "Puneți întrebări cu vocea și ascultați răspunsurile citite cu voce tare. Perfect pentru ajutor fără a folosi mâinile, atunci când aveți cea mai mare nevoie."
+        },
+        {
+          "title": "Explicator foto",
+          "description": "Faceți o fotografie oricărui cablu, buton sau dispozitiv și obțineți o explicație instantanee despre ce este și cum se folosește."
+        },
+        {
+          "title": "Design prietenos pentru seniori",
+          "description": "Text mare, interfață intuitivă și explicații răbdătoare, concepute special cu gândul la seniori."
+        },
+        {
+          "title": "Sigur și securizat",
+          "description": "Informațiile dumneavoastră personale sunt protejate cu securitate de nivel enterprise. Nicio dată nu este partajată cu terți."
+        },
+        {
+          "title": "Răspunsuri instantanee",
+          "description": "Obțineți ajutor imediat 24/7. Fără așteptare la telefon sau programări. Doar întrebați și primiți răspunsuri."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Întrebări populare la care ajutăm",
+      "subtitle": "Vedeți ce întreabă alți seniori",
+      "askYourQuestionButton": "Puneți întrebarea acum"
+    },
+    "testimonialsSection": {
+      "title": "Ce spune comunitatea noastră",
+      "subtitle": "Alăturați-vă miilor de seniori care au găsit ajutor tehnologic simplificat",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "În sfârșit, cineva care explică tehnologia într-un mod pe care îl pot înțelege! Instrucțiunile pas cu pas m-au ajutat să-mi configurez perfect noul telefon. Mă simt mult mai încrezătoare acum!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "Funcția vocală este uimitoare! Pot doar să pun întrebările cu voce tare și să primesc răspunsuri clare. E ca și cum aș avea un nepot priceput la tehnologie disponibil 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Ador funcția foto! Am făcut o poză unui cablu confuz și am știut instantaneu la ce folosește. Această aplicație m-a făcut mult mai încrezătoare în tehnologie.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Eram atât de frustrat de televizorul meu inteligent până am găsit acest ajutor. Acum pot viziona emisiuni, pot ajusta setările și chiar pot vorbi prin video cu nepoții mei!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Vârsta {{age}}"
+    },
+    "ctaSection": {
+      "title": "Sunteți gata să stăpâniți tehnologia?",
+      "subtitle": "Alăturați-vă comunității noastre de seniori împuterniciți care au făcut tehnologia simplă și accesibilă. Începeți să primiți răspunsuri clare și utile astăzi - complet gratuit!",
+      "getStartedButton": "Începeți gratuit astăzi",
+      "setupInMinutes": "Configurare în 2 minute"
+    },
+    "footer": {
+      "description": "Facem tehnologia accesibilă și de înțeles pentru seniori de pretutindeni.",
+      "featuresTitle": "Funcționalități",
+      "featuresItems": [
+        "Ajutor pas cu pas",
+        "Suport vocal",
+        "Explicator foto",
+        "Disponibilitate 24/7"
+      ],
+      "supportTitle": "Suport",
+      "supportItems": [
+        "Centru de ajutor",
+        "Primii pași",
+        "Comunitate",
+        "Contactați-ne"
+      ],
+      "companyTitle": "Companie",
+      "companyItems": [
+        "Despre noi",
+        "Politica de confidențialitate",
+        "Termeni și condiții",
+        "Accesibilitate"
+      ],
+      "copyright": "© 2025 TechStep. Realizat cu ❤️ pentru seniori de pretutindeni.",
+      "trustedBy": "Apreciat de",
+      "trustedByCount": "peste 50.000 de seniori"
+    }
+  },
+  "dashboard": {
+    "welcome": "Bun venit la TechStep",
+    "welcomeUser": "Bun venit înapoi, {{name}}!",
+    "ready": "Sunteți gata să învățați ceva nou?",
+    "getHelp": "Obțineți ajutor instantaneu",
+    "askQuestion": "Puneți orice întrebare tehnică și primiți îndrumare pas cu pas",
+    "placeholder": "Cu ce ați dori ajutor astăzi?",
+    "getSteps": "Obțineți ajutor pas cu pas",
+    "gettingSteps": "Se preiau pașii dumneavoastră...",
+    "craftingSteps": "Se elaborează pașii personalizați...",
+    "takesAMoment": "Acest lucru poate dura un moment",
+    "quickTips": "Sfaturi rapide pentru dumneavoastră",
+    "popularQuestions": "Întrebări populare astăzi",
+    "quickActions": "Acțiuni rapide",
+    "recentActivity": "Activitate recentă",
+    "yourProgress": "Progresul dumneavoastră",
+    "needHelp": "Aveți nevoie de ajutor?",
+    "helpingHand": "Suntem aici pentru a vă ajuta să reușiți",
+    "chatHuman": "Discutați cu un om",
+    "browseGuides": "Răsfoiți ghiduri video",
+    "browseTips": "Răsfoiți sfaturi",
+    "commonSolutions": "Găsiți soluții comune",
+    "stepsCompleted": "{{count}} pași finalizați",
+    "needMoreInfo": "Am nevoie de puțin mai multe informații pentru a vă ajuta mai bine"
+  },
+  "aiTools": {
+    "title": "Instrumente de ajutor AI",
+    "description": "Explicator foto și traducător tehnic"
+  },
+  "aiToolsModal": {
+    "header": "Instrumente de ajutor AI",
+    "tabs": {
+      "photoExplainer": "Explicator foto",
+      "techWordBuster": "Descifrator de termeni tehnici"
+    },
+    "photoExplainer": {
+      "title": "Explicator foto",
+      "description": "Încărcați o fotografie a oricărui cablu, buton sau dispozitiv și obțineți o explicație instantanee.",
+      "uploadButton": "Încarcă imagine",
+      "questionLabel": "Puneți o întrebare despre fotografie (opțional)",
+      "questionPlaceholder": "La ce folosește acest cablu?",
+      "explainButton": "Explică fotografia",
+      "analyzingButton": "Se analizează...",
+      "alertNoPhoto": "Vă rugăm să încărcați mai întâi o fotografie sau să verificați configurația API.",
+      "errorResponse": "<p class=\"text-red-600\">Ne pare rău, nu am putut analiza imaginea. Vă rugăm să încercați din nou.</p>",
+      "readResponseButton": "🔊 Citiți răspunsul cu voce tare",
+      "previewAlt": "Previzualizare"
+    },
+    "techWordBuster": {
+      "title": "Descifrator de termeni tehnici",
+      "description": "Sunteți confuz de un termen tehnic? Obțineți o explicație simplă, ușor de înțeles, cu analogii din lumea reală.",
+      "inputLabel": "Introduceți un cuvânt sau o expresie tehnică",
+      "inputPlaceholder": "de ex., Stocare în cloud, WiFi, Bluetooth",
+      "explainButton": "Clarifică acest lucru",
+      "explainingButton": "Se explică...",
+      "alertNoTerm": "Vă rugăm să introduceți mai întâi un termen tehnic sau să verificați configurația API.",
+      "errorResponse": "<p class=\"text-red-600\">Ne pare rău, nu am putut explica acel termen. Vă rugăm să încercați din nou.</p>",
+      "readExplanationButton": "🔊 Citiți explicația cu voce tare"
+    },
+    "apiErrorNoExplanation": "Nu s-a primit nicio explicație"
+  },
+  "clarificationModal": {
+    "headerTitle": "Am nevoie de puțin mai multe informații",
+    "yourQuestionLabel": "Întrebarea dumneavoastră:",
+    "tellMeMorePrompt": "Pentru a vă oferi cel mai bun ajutor, ați putea să-mi spuneți puțin mai mult?",
+    "forExampleLabel": "De exemplu:",
+    "textareaPlaceholder": "Vă rugăm să oferiți mai multe detalii...",
+    "textareaSrLabel": "Oferiți mai multe detalii pentru întrebarea dumneavoastră",
+    "skipButton": "Sariți peste pentru moment",
+    "submitButton": "Obțineți ajutor mai bun",
+    "loadingButton": "Se obține ajutor..."
+  },
+  "languageNotificationBanner": {
+    "title": "Finalizați configurarea limbii",
+    "description": "Configurați limbile preferate pentru o mai bună introducere vocală și interacțiuni text.",
+    "buttonText": "Finalizează configurarea"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Fundamentele computerului și dispozitivelor",
+      "description": "Elementele de bază pentru a începe cu tehnologia.",
+      "modules": {
+        "turnOnDevice": { "title": "Pornirea unui dispozitiv", "description": "Învățați să porniți computere și smartphone-uri." },
+        "mouseTouchscreen": { "title": "Utilizarea unui mouse/ecran tactil", "description": "Stăpâniți indicarea, clicul și atingerea." },
+        "keyboardTyping": { "title": "Bazele tastaturii/dactilografierii", "description": "Familiarizați-vă cu elementele esențiale ale tastării." },
+        "filesFolders": { "title": "Înțelegerea fișierelor și folderelor", "description": "Învățați cum este organizată informația digitală." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Lumea online",
+      "description": "Conectarea și explorarea internetului în siguranță.",
+      "modules": {
+        "webBrowsers": { "title": "Înțelegerea browserelor web", "description": "Navigați pe internet cu Chrome, Edge sau Safari." },
+        "searchEffectively": { "title": "Cum să căutați eficient", "description": "Găsiți ceea ce aveți nevoie online folosind motoarele de căutare." },
+        "introEmail": { "title": "Introducere în e-mail", "description": "Învățați să trimiteți și să primiți e-mailuri." },
+        "virusSafety": { "title": "Protecția împotriva virușilor", "description": "Protejați-vă dispozitivul de software-ul dăunător." }
+      }
+    },
+    "digitalLife": {
+      "title": "Viața digitală de zi cu zi",
+      "description": "Comunicați, partajați și gestionați-vă prezența digitală.",
+      "modules": {
+        "masteringEmail": { "title": "Stăpânirea e-mailului", "description": "Atașamente, foldere și eticheta e-mailului." },
+        "videoCalling": { "title": "Apeluri video cu familia și prietenii", "description": "Conectați-vă față în față cu cei dragi." },
+        "introSocialMedia": { "title": "Introducere în rețelele sociale", "description": "Înțelegerea platformelor precum Facebook." },
+        "sharingPhotos": { "title": "Partajarea fotografiilor în siguranță", "description": "Partajați-vă amintirile fără a compromite confidențialitatea." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Abilități avansate și creative",
+      "description": "Dincolo de elementele de bază: explorați mai mult din ceea ce oferă tehnologia.",
+      "modules": {
+        "onlineShopping": { "title": "Introducere în cumpărăturile online", "description": "Cumpărați în siguranță și convenabil online." },
+        "onlineMaps": { "title": "Utilizarea hărților și navigației online", "description": "Găsiți-vă drumul cu hărți digitale." },
+        "photoEditing": { "title": "Editare foto de bază", "description": "Îmbunătățiți-vă fotografiile digitale." },
+        "productivityTools": { "title": "Introducere în instrumentele de productivitate", "description": "Utilizarea unor instrumente precum elementele de bază ale Google Docs sau Microsoft Word." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Inițiat în tehnologie", "description": "A finalizat parcursul Fundamentele computerului și dispozitivelor." },
+    "onlineWorld": { "name": "Explorator online", "description": "A finalizat parcursul Lumea online." },
+    "digitalLife": { "name": "Comunicator digital", "description": "A finalizat parcursul Viața digitală de zi cu zi." },
+    "advancedSkills": { "name": "Virtuoz al tehnologiei", "description": "A finalizat parcursul Abilități avansate și creative." }
+  },
+  "skillAssessmentModal": {
+    "title": "Verificare rapidă a abilităților",
+    "introduction": "Să găsim cel mai bun loc pentru a începe!",
+    "nextButton": "Următorul",
+    "finishButton": "Arată-mi punctul de plecare",
+    "questionProgress": "Întrebarea {{current}} din {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Cât de confortabil vă simțiți cu computerele?",
+      "options": {
+        "new": "Complet nou",
+        "basics": "Știu câteva elemente de bază",
+        "confident": "Sunt destul de încrezător"
+      }
+    },
+    "q2": {
+      "text": "Ați mai trimis un e-mail înainte?",
+      "options": {
+        "yes": "Da",
+        "no": "Nu"
+      }
+    },
+    "q3": {
+      "text": "Ați folosit un smartphone pentru mai mult decât apeluri?",
+      "options": {
+        "yes": "Da",
+        "no": "Nu"
+      }
+    }
+  },
+  "learning": {
+    "title": "Centrul de învățare",
+    "structuredCourses": "Cursuri și tutoriale structurate",
+    "skillsAssessment": "Evaluarea abilităților",
+    "questionNumber": "Întrebarea {{current}} din {{total}}",
+    "resetAnimation": "Resetează",
+    "showAnimation": "Arată animația",
+    "courses": {
+      "beginner": {
+        "title": "Primii pași în tehnologie",
+        "description": "Perfect pentru începători. Învățați elementele de bază pas cu pas.",
+        "estimatedTime": "2-3 ore",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Elemente de bază ale dispozitivului",
+            "description": "Învățați cum să porniți și să opriți dispozitivul în siguranță",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Pornirea și oprirea dispozitivului</h3><p>Fiecare dispozitiv are un buton de pornire. Să învățăm cum să-l folosim în siguranță.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Pentru computere:</h4><ul class=\"space-y-2\"><li>• Căutați un buton rotund cu simbolul de pornire (⏻)</li><li>• Apăsați-l o dată pentru a porni</li><li>• Pentru a opri: Folosiți meniul Start, apoi „Închidere”</li><li>• Nu apăsați niciodată doar butonul de pornire pentru a opri!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Pentru telefoane/tablete:</h4><ul class=\"space-y-2\"><li>• Butonul de pornire este de obicei pe lateral</li><li>• Apăsați și țineți apăsat timp de 2-3 secunde pentru a porni</li><li>• Pentru a opri: Apăsați și țineți apăsat, apoi glisați pentru a opri</li></ul></div></div>",
+            "keyPoints": [
+              "Folosiți întotdeauna procedurile corecte de închidere",
+              "Locația butonului de pornire variază în funcție de dispozitiv",
+              "Nu forțați niciodată oprirea, cu excepția cazului în care este absolut necesar"
+            ],
+            "practiceExercise": "Exersați pornirea și oprirea dispozitivului de 3 ori folosind metoda corectă.",
+            "animationDesc": "Urmăriți cum să apăsați corect butonul de pornire"
+          },
+          "mouseKeyboard": {
+            "title": "Utilizarea mouse-ului și a tastaturii",
+            "description": "Stăpâniți elementele de bază ale dispozitivelor de intrare ale computerului",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Elemente de bază ale mouse-ului și tastaturii</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Elemente de bază ale mouse-ului:</h4><ul class=\"space-y-2\"><li>• Clic stânga: Selectează elemente, deschide programe</li><li>• Clic dreapta: Deschide meniuri cu mai multe opțiuni</li><li>• Dublu clic: Deschide fișiere și programe</li><li>• Rotița de derulare: Deplasează în sus și în jos pe pagini</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Elemente esențiale ale tastaturii:</h4><ul class=\"space-y-2\"><li>• Bara de spațiu: Adaugă spații între cuvinte</li><li>• Enter: Începe o nouă linie sau confirmă</li><li>• Backspace: Șterge litera dinaintea cursorului</li><li>• Shift: Creează litere mari</li></ul></div></div>",
+            "keyPoints": [
+              "Clicul stânga este instrumentul principal",
+              "Clicul dreapta deschide meniuri utile",
+              "Practica duce la perfecțiune"
+            ],
+            "practiceExercise": "Deschideți un program de text simplu și tastați-vă numele, apoi ștergeți-l folosind backspace.",
+            "animationDesc": "Vedeți cum să faceți clic, dublu clic și clic dreapta"
+          },
+          "internetSafety": {
+            "title": "Fundamentele siguranței pe internet",
+            "description": "Rămâneți în siguranță online cu aceste sfaturi esențiale",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Rămâneți în siguranță online</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Semne de avertizare ale înșelătoriilor:</h4><ul class=\"space-y-2 text-red-700\"><li>• Mesaje urgente care cer bani</li><li>• Solicitări de parole sau informații personale</li><li>• Mesaje „Ați câștigat” la care nu ați participat</li><li>• Linkuri sau atașamente suspecte</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Sfaturi pentru navigare sigură:</h4><ul class=\"space-y-2\"><li>• Căutați „https://” în adresele web</li><li>• Descărcați doar din magazinele de aplicații oficiale</li><li>• Mențineți software-ul actualizat</li><li>• Folosiți parole puternice, unice</li></ul></div></div>",
+            "keyPoints": [
+              "Nu dați niciodată informații personale străinilor",
+              "Când aveți dubii, întrebați o persoană de încredere",
+              "Companiile legitime nu vor cere parole prin e-mail"
+            ],
+            "practiceExercise": "Identificați 3 semne de avertizare ale înșelătoriilor online din lecție."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Conectarea cu familia și prietenii",
+        "description": "Învățați să folosiți în siguranță rețelele sociale, apelurile video și mesageria.",
+        "estimatedTime": "3-4 ore",
+        "lessons": {
+          "videoCalls": {
+            "title": "Apeluri video cu familia",
+            "description": "Conectați-vă față în față cu cei dragi oriunde",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Efectuarea apelurilor video</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Aplicații populare pentru apeluri video:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Încorporat, foarte ușor</li><li>• <strong>WhatsApp</strong>: Funcționează pe toate telefoanele</li><li>• <strong>Zoom</strong>: Excelent pentru apeluri de grup</li><li>• <strong>Skype</strong>: Funcționează pe computere și telefoane</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Înainte de apel:</h4><ul class=\"space-y-2\"><li>• Verificați conexiunea la internet</li><li>• Găsiți o lumină bună (cu fața la o fereastră)</li><li>• Testați camera și microfonul</li><li>• Aveți la îndemână contactul persoanei</li></ul></div></div>",
+            "keyPoints": [
+              "Lumina bună face o mare diferență",
+              "Testați-vă configurația înainte de apeluri importante",
+              "Majoritatea aplicațiilor funcționează similar odată ce ați învățat una"
+            ],
+            "practiceExercise": "Efectuați un apel video de test cu un membru al familiei sau un prieten."
+          },
+          "socialMedia": {
+            "title": "Bazele rețelelor sociale",
+            "description": "Conectați-vă cu prietenii și familia pe Facebook și alte platforme",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Primii pași în rețelele sociale</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Bazele Facebook:</h4><ul class=\"space-y-2\"><li>• Creați un profil cu numele real</li><li>• Adăugați o fotografie de profil drăguță</li><li>• Trimiteți cereri de prietenie persoanelor pe care le cunoașteți</li><li>• Partajați actualizări, fotografii și amintiri</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Setările de confidențialitate:</h4><ul class=\"space-y-2\"><li>• Acceptați doar prietenii pe care îi cunoașteți cu adevărat</li><li>• Setați postările ca „Doar pentru prieteni”</li><li>• Nu partajați informații personale public</li><li>• Revizuiți ce pot vedea alții despre dumneavoastră</li></ul></div></div>",
+            "keyPoints": [
+              "Setările de confidențialitate sunt foarte importante",
+              "Conectați-vă doar cu persoanele pe care le cunoașteți",
+              "Gândiți-vă înainte de a posta - rămâne online"
+            ],
+            "practiceExercise": "Setați setările de confidențialitate pentru postări la „Doar pentru prieteni”."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Măiestria vieții digitale",
+        "description": "Abilități avansate pentru o viață digitală încrezătoare.",
+        "estimatedTime": "4-5 ore",
+        "lessons": {
+          "smartHome": {
+            "title": "Dispozitive pentru casă inteligentă",
+            "description": "Controlați-vă casa cu comenzi vocale și aplicații",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Bazele casei inteligente</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Dispozitive inteligente populare:</h4><ul class=\"space-y-2\"><li>• <strong>Boxe inteligente</strong>: Alexa, Google Home</li><li>• <strong>Termostate inteligente</strong>: Controlați temperatura de la distanță</li><li>• <strong>Lumini inteligente</strong>: Reglați intensitatea, schimbați culorile, setați programe</li><li>• <strong>Sonerii inteligente</strong>: Vedeți cine este la ușă</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Primii pași:</h4><ul class=\"space-y-2\"><li>• Începeți cu un singur dispozitiv pentru a învăța</li><li>• Descărcați aplicația dispozitivului</li><li>• Urmați instrucțiunile de configurare pas cu pas</li><li>• Exersați comenzile vocale de bază</li></ul></div></div>",
+            "keyPoints": [
+              "Începeți simplu cu un singur dispozitiv",
+              "Comenzile vocale fac viața mai ușoară",
+              "Majoritatea dispozitivelor au aplicații utile"
+            ],
+            "practiceExercise": "Dacă aveți un dispozitiv inteligent, exersați 3 comenzi vocale diferite."
+          },
+          "onlineBanking": {
+            "title": "Securitatea serviciilor bancare online",
+            "description": "Gestionați-vă finanțele în siguranță online",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Servicii bancare online sigure</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Elemente esențiale de securitate:</h4><ul class=\"space-y-2 text-red-700\"><li>• Tastați întotdeauna direct adresa web a băncii dumneavoastră</li><li>• Căutați pictograma lacătului în browser</li><li>• Nu efectuați niciodată tranzacții bancare pe Wi-Fi public</li><li>• Deconectați-vă complet când ați terminat</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Ce puteți face online:</h4><ul class=\"space-y-2\"><li>• Verificați soldurile conturilor</li><li>• Vizualizați istoricul tranzacțiilor</li><li>• Transferați bani între conturi</li><li>• Plătiți facturile electronic</li></ul></div></div>",
+            "keyPoints": [
+              "Securitatea este prioritatea principală",
+              "Banca dumneavoastră nu vă va cere niciodată parolele prin e-mail",
+              "Serviciile bancare online sunt foarte convenabile atunci când sunt utilizate în siguranță"
+            ],
+            "practiceExercise": "Vizitați site-ul băncii dumneavoastră și exersați autentificarea (nu efectuați încă nicio tranzacție)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Cât de confortabil vă simțiți să porniți și să opriți un computer sau un telefon?",
+          "options": {
+            "0": "Nu am făcut-o niciodată",
+            "1": "Am nevoie de ajutor de fiecare dată",
+            "2": "O pot face uneori",
+            "3": "Foarte confortabil"
+          }
+        },
+        "1": {
+          "question": "Cât de des folosiți internetul?",
+          "options": {
+            "0": "Niciodată",
+            "1": "Rar",
+            "2": "Uneori",
+            "3": "Zilnic"
+          }
+        },
+        "2": {
+          "question": "Ați mai trimis un e-mail vreodată?",
+          "options": {
+            "0": "Niciodată",
+            "1": "Cu mult ajutor",
+            "2": "De câteva ori",
+            "3": "Regulat"
+          }
+        },
+        "3": {
+          "question": "Cât de confortabil vă simțiți să descărcați aplicații?",
+          "options": {
+            "0": "Nu am încercat niciodată",
+            "1": "Foarte nervos",
+            "2": "Cu ajutor",
+            "3": "Încrezător"
+          }
+        },
+        "4": {
+          "question": "Folosiți apeluri video (FaceTime, Zoom etc.)?",
+          "options": {
+            "0": "Niciodată",
+            "1": "Am încercat o dată",
+            "2": "Uneori",
+            "3": "Regulat"
+          }
+        },
+        "5": {
+          "question": "Ce părere aveți despre cumpărăturile online?",
+          "options": {
+            "0": "Prea înfricoșător",
+            "1": "Foarte nervos",
+            "2": "Dispus să încerc",
+            "3": "Cumpăr des online"
+          }
+        },
+        "6": {
+          "question": "Ați folosit rețele sociale (Facebook etc.)?",
+          "options": {
+            "0": "Niciodată",
+            "1": "M-am uitat",
+            "2": "Am un cont",
+            "3": "Le folosesc regulat"
+          }
+        },
+        "7": {
+          "question": "Cât de confortabil vă simțiți cu parolele?",
+          "options": {
+            "0": "Foarte confuz",
+            "1": "Am nevoie de ajutor",
+            "2": "Înțeleg elementele de bază",
+            "3": "Le gestionez bine"
+          }
+        },
+        "8": {
+          "question": "Faceți backup la fotografiile și fișierele dumneavoastră?",
+          "options": {
+            "0": "Nu știu cum",
+            "1": "Cineva mă ajută",
+            "2": "Uneori",
+            "3": "Regulat"
+          }
+        },
+        "9": {
+          "question": "Cum învățați tehnologii noi?",
+          "options": {
+            "0": "Le evit",
+            "1": "Cer ajutor",
+            "2": "Încerc cu atenție",
+            "3": "Explorez cu încredere"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Personalizați-vă preferințele",
+    "personalInfo": "Informații personale",
+    "firstName": "Prenume",
+    "firstNamePlaceholder": "Prenumele dumneavoastră",
+    "primaryDevice": "Dispozitiv principal",
+    "devices": {
+      "windowsComputer": "Computer Windows",
+      "macComputer": "Mac (Computer Apple)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Telefon sau tabletă Android"
+    },
+    "accessibility": "Accesibilitate",
+    "textToSpeech": "Text-în-Vorbire",
+    "textToSpeechDesc": "Răspunsurile să fie citite cu voce tare",
+    "voiceInput": "Introducere vocală",
+    "voiceInputDesc": "Puneți întrebări vorbind",
+    "languagePreferences": "Preferințe de limbă",
+    "hideLanguages": "Ascunde",
+    "modifyLanguages": "Modifică limbile",
+    "defaultLanguage": "Limbă implicită (întregul site va folosi această limbă)",
+    "defaultLanguageDesc": "Aceasta va fi limba principală pentru toate elementele de interfață și interacțiuni.",
+    "otherLanguages": "Alte limbi pe care doriți să le utilizați:",
+    "default": "Implicită",
+    "languageConfiguration": "Configurarea limbii",
+    "languageConfigurationDesc": "Limbile selectate vor fi utilizate pentru:",
+    "speechToText": "Recunoașterea și procesarea vorbirii în text",
+    "multilingualText": "Interacțiuni și răspunsuri text multilingve",
+    "interfaceLanguage": "Opțiuni de limbă ale interfeței și accesibilitate",
+    "searchLanguages": "Căutați limbi...",
+    "selectAll": "Selectează tot",
+    "deselectAll": "Deselectează tot",
+    "selectedLanguages": "Selectată: {{count}} limbă",
+    "selectedLanguages_plural": "Selectate: {{count}} limbi",
+    "noLanguagesFound": "Nu s-au găsit limbi care să corespundă cu \"{{search}}\"",
+    "languageRequired": "Este necesară cel puțin o limbă",
+    "languageRequiredDesc": "Vă rugăm să selectați cel puțin o limbă pentru a asigura funcționalitatea corectă a introducerii vocale și a interacțiunilor text.",
+    "account": "Cont",
+    "signOut": "Deconectare",
+    "signOutDesc": "Deconectați-vă de la contul dumneavoastră",
+    "cancel": "Anulează",
+    "saving": "Se salvează...",
+    "saved": "Salvat!",
+    "saveChanges": "Salvează modificările",
+    "errorSaving": "Nu s-au putut salva setările. Vă rugăm să încercați din nou.",
+    "lastName": "Nume de familie",
+    "lastNamePlaceholder": "Numele de familie",
+    "age": "Vârstă",
+    "techExperience": "Nivel de experiență tehnologică",
+    "techExperienceOptions": {
+      "beginner": "Începător (am nevoie de ajutor pas cu pas pentru majoritatea lucrurilor)",
+      "some": "Ceva experiență (pot face sarcini de bază, dar am nevoie de ajutor cu lucruri noi)",
+      "comfortable": "Confortabil (mă descurc cu majoritatea lucrurilor, dar uneori am nevoie de îndrumare)"
+    },
+    "primaryConcerns": "Principalele subiecte de interes/preocupare tehnologică",
+    "assistiveNeeds": "Nevoi de accesibilitate",
+    "communicationStyle": "Stil de explicație preferat",
+    "communicationStyleOptions": {
+      "simple": "Simplu și rapid (doar pașii)",
+      "detailed": "Detaliat (explică 'de ce')",
+      "visual": "Vizual (arată imagini/videoclipuri când este posibil)"
+    },
+    "videoRecommendations": "Recomandări video",
+    "videoRecommendationsDesc": "Afișează videoclipuri și articole utile alături de pași",
+    "fontSize": "Dimensiunea preferată a textului",
+    "fontSizeOptions": {
+      "normal": "Normal",
+      "large": "Mare",
+      "extraLarge": "Foarte mare"
+    },
+    "displayPreferences": "Afișaj și temă",
+    "theme": "Tema de culori",
+    "themeOptions": {
+      "light": "Luminos",
+      "dark": "Întunecat"
+    },
+    "highContrast": "Mod contrast ridicat",
+    "highContrastDesc": "Mărește contrastul textului și al elementelor pentru o mai bună vizibilitate",
+    "learningPreferences": "Preferințe de învățare și conținut"
+  },
+  "common": {
+    "settings": "Setări",
+    "signOut": "Deconectare",
+    "close": "Închide"
+  },
+  "tips": {
+    "connectWifi": "Conectați-vă la Wi-Fi",
+    "connectWifiDesc": "Intrați online în siguranță și cu ușurință",
+    "videoCall": "Efectuați un apel video",
+    "videoCallDesc": "Conectați-vă cu familia față în față",
+    "screenshot": "Faceți o captură de ecran",
+    "screenshotDesc": "Capturați ceea ce este pe ecran",
+    "updateApps": "Actualizați-vă aplicațiile",
+    "updateAppsDesc": "Mențineți aplicațiile actuale și sigure"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Comunicare",
+    "basicSkills": "Abilități de bază",
+    "maintenance": "Întreținere"
+  },
+  "questions": {
+    "makeTextBigger": "Cum măresc textul?",
+    "connectWifi": "Cum mă conectez la Wi-Fi?",
+    "takeScreenshot": "Cum fac o captură de ecran?",
+    "makeVideoCall": "Cum efectuez un apel video?",
+    "backupPhotos": "Cum fac backup la fotografiile mele?",
+    "updateApps": "Cum îmi actualizez aplicațiile?",
+    "onlineBanking": "Cum folosesc serviciile bancare online în siguranță?",
+    "joinZoom": "Cum mă alătur unei întâlniri Zoom?"
+  },
+  "achievements": {
+    "gettingStarted": "Primii pași",
+    "gettingStartedDesc": "Ați pus prima întrebare",
+    "questionExplorer": "Explorator de întrebări",
+    "questionExplorerDesc": "Ați pus 5 întrebări",
+    "stepMaster": "Maestru al pașilor",
+    "stepMasterDesc": "Ați finalizat 25 de pași"
+  },
+  "stats": {
+    "seniorsHelped": "Seniori ajutați",
+    "questionsAnswered": "Întrebări răspunse",
+    "successRate": "Rata de succes",
+    "alwaysAvailable": "Disponibil întotdeauna"
+  },
+  "time": {
+    "now": "Chiar acum",
+    "hourAgo": "acum 1 oră",
+    "hoursAgo": "acum {{count}} ore",
+    "dayAgo": "acum 1 zi",
+    "daysAgo": "acum {{count}} zile"
+  },
+  "voice": {
+    "startInput": "Începe introducerea vocală",
+    "stopRecording": "Oprește înregistrarea",
+    "processing": "Se procesează...",
+    "recognized": "Voce recunoscută",
+    "failed": "Introducerea vocală a eșuat"
+  },
+  "language": {
+    "select": "Selectează limba",
+    "translate": "Tradu",
+    "translating": "Se traduce...",
+    "detecting": "Se detectează limba...",
+    "error": "Traducerea a eșuat"
+  },
+  "auth": {
+    "backToHome": "Înapoi la pagina principală",
+    "createAccount": "Creează cont",
+    "welcomeBack": "Bun venit înapoi",
+    "joinFamily": "Alăturați-vă familiei noastre de seniori împuterniciți",
+    "welcomeBackDesc": "Autentificați-vă pentru a continua călătoria tehnologică",
+    "email": "Adresă de e-mail",
+    "emailPlaceholder": "Introduceți e-mailul",
+    "password": "Parolă",
+    "passwordPlaceholder": "Introduceți parola",
+    "confirmPassword": "Confirmă parola",
+    "confirmPasswordPlaceholder": "Confirmați parola",
+    "passwordsNoMatch": "Parolele nu se potrivesc",
+    "passwordTooShort": "Parola trebuie să aibă cel puțin 6 caractere",
+    "creatingAccount": "Se creează contul...",
+    "signingIn": "Autentificare...",
+    "alreadyHaveAccount": "Aveți deja un cont? Autentificare",
+    "dontHaveAccount": "Nu aveți cont? Înregistrați-vă"
+  },
+  "error": {
+    "askQuestionFirst": "Vă rugăm să puneți mai întâi o întrebare",
+    "couldntGetAnswer": "Ne pare rău, nu am putut obține un răspuns acum. Vă rugăm să încercați din nou."
+  },
+  "learningPage": {
+    "headerTitle": "Centrul de învățare",
+    "heroTitle": "Abilități tehnologice pentru seniori",
+    "heroSubtitle": "Învățați tehnologia în ritmul dumneavoastră cu lecții pas cu pas, demonstrații interactive și îndrumare personalizată.",
+    "takeSkillsAssessment": "Faceți evaluarea abilităților",
+    "orSeparator": "sau",
+    "iAmBeginner": "Sunt începător",
+    "iAmIntermediate": "Sunt intermediar",
+    "iAmAdvanced": "Sunt avansat",
+    "yourLevel": "Nivelul dumneavoastră: {{level}}",
+    "levelDescription": "Cursurile sunt personalizate pentru nivelul dumneavoastră de abilități",
+    "retakeAssessment": "Refaceți evaluarea",
+    "progressLabel": "Progres",
+    "lessonsLabel": "lecții",
+    "completedOutOfTotal": "{{completed}} din {{total}} finalizate",
+    "featureInteractiveDemos": "Demonstrații interactive",
+    "featureInteractiveDemosDesc": "Vedeți exact cum să efectuați fiecare acțiune",
+    "featureAudioSupport": "Suport audio",
+    "featureAudioSupportDesc": "Lecțiile să fie citite cu voce tare",
+    "featurePrintableGuides": "Ghiduri printabile",
+    "featurePrintableGuidesDesc": "Luați rezumatele cu dumneavoastră offline",
+    "featureCertificates": "Certificate",
+    "featureCertificatesDesc": "Câștigați certificate pe măsură ce finalizați cursurile",
+    "animationShow": "Arată animația",
+    "animationReset": "Resetează",
+    "featuresGridTitle": "Explorați funcționalitățile noastre",
+    "loadingPaths": "Se încarcă parcursurile de învățare...",
+    "noPathsAvailable": "Nu sunt disponibile parcursuri de învățare în acest moment. Vă rugăm să reveniți mai târziu.",
+    "progressComplete": "{{value}}% finalizat",
+    "recommendedStart": "Punct de plecare recomandat",
+    "moduleListTitle": "Module pentru parcursul: {{pathTitle}}",
+    "moduleContentTitle": "Conținutul pentru modulul: {{moduleTitle}} va fi aici.",
+    "loadingCenter": "Se încarcă Centrul de învățare...",
+    "moduleTimeLabel": "Timp: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Alegeți limba preferată pentru interfață",
+    "moreComingSoon": "🌍 Mai multe limbi în curând"
+  },
+  "assessmentView": {
+    "headerTitle": "Evaluarea abilităților",
+    "questionProgress": "Întrebarea {{current}} din {{total}}",
+    "chooseBestOption": "Alegeți opțiunea care vă descrie cel mai bine",
+    "skipAssessment": "Sariți peste evaluare"
+  },
+  "courseView": {
+    "lessonsHeader": "Lecții",
+    "interactiveDemoLabel": "Demonstrație interactivă",
+    "startLesson": "Începe lecția",
+    "reviewLesson": "Recapitulează",
+    "congratulations": "Felicitări!",
+    "courseComplete": "Ați finalizat cursul {{courseTitle}}!",
+    "downloadCertificate": "Descarcă certificatul"
+  },
+  "lessonView": {
+    "readAloud": "Citește lecția cu voce tare",
+    "interactiveDemoHeader": "Demonstrație interactivă",
+    "practiceExerciseHeader": "Exercițiu practic",
+    "markAsComplete": "Marchează ca finalizat",
+    "repeatLesson": "Repetă lecția",
+    "keyPointsHeader": "Puncte cheie",
+    "takeItWithYouHeader": "Luați cu dumneavoastră",
+    "downloadSummaryButton": "Descarcă rezumatul",
+    "downloadSummaryDescription": "Obțineți un rezumat printabil al acestei lecții",
+    "needHelpHeader": "Aveți nevoie de ajutor?",
+    "askAQuestionButton": "Puneți o întrebare",
+    "chatWithHelperButton": "Discutați cu un ajutor"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Politica de confidențialitate",
+    "pageTitle": "Politica de confidențialitate",
+    "lastUpdated": "Ultima actualizare: {{date}}",
+    "ourPromise": {
+      "title": "Promisiunea noastră față de dumneavoastră",
+      "text": "La Senior Tech Helper, înțelegem că confidențialitatea dumneavoastră este prețioasă. Ne angajăm să protejăm informațiile dumneavoastră personale și să fim complet transparenți cu privire la modul în care le folosim. Această politică explică totul într-un limbaj simplu și clar."
+    },
+    "cookies": {
+      "title": "Cum folosim cookie-urile",
+      "whatAreCookiesTitle": "Ce sunt cookie-urile?",
+      "whatAreCookiesText": "Cookie-urile sunt mici fișiere text care ne ajută să ne amintim preferințele dumneavoastră și să vă îmbunătățim experiența. Gândiți-vă la ele ca la niște semne de carte care ne ajută să ne amintim unde ați rămas.",
+      "weUseCookiesForTitle": "Folosim cookie-uri DOAR pentru a vă ajuta:",
+      "uses": [
+        "Să ne amintim preferințele dumneavoastră: dimensiunea textului, setările vocale și opțiunile de accesibilitate pe care le-ați ales",
+        "Să vă menținem autentificat: pentru a nu fi nevoie să introduceți parola de fiecare dată",
+        "Să ne îmbunătățim ajutorul: înțelegând ce funcționalități sunt cele mai utile pentru seniori ca dumneavoastră"
+      ],
+      "whatWeDontDoTitle": "Ce NU facem cu cookie-urile:",
+      "donts": [
+        "Nu vă urmărim pe alte site-uri web",
+        "Nu vindem informațiile dumneavoastră nimănui",
+        "Nu partajăm datele dumneavoastră cu agenții de publicitate",
+        "Nu le folosim în scopuri de marketing"
+      ]
+    },
+    "informationCollected": {
+      "title": "Ce informații colectăm",
+      "youGiveUsTitle": "Informații pe care ni le oferiți:",
+      "youGiveUsList": [
+        "Numele și adresa dumneavoastră de e-mail",
+        "Tipul dispozitivului dumneavoastră (iPhone, Windows etc.)",
+        "Nivelul dumneavoastră de experiență tehnologică",
+        "Preferințele dumneavoastră de accesibilitate",
+        "Întrebările pe care le puneți asistentului nostru AI"
+      ],
+      "weCollectTitle": "Informații pe care le colectăm automat:",
+      "weCollectList": [
+        "Cum folosiți aplicația noastră (ce funcționalități ajută cel mai mult)",
+        "Informații tehnice (tipul browserului, dispozitivul)",
+        "Rapoarte de eroare (pentru a remedia rapid problemele)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Cum vă protejăm informațiile",
+      "protections": [
+        "Criptare: toate datele dumneavoastră sunt criptate (amestecate) astfel încât doar noi le putem citi",
+        "Servere sigure: informațiile dumneavoastră sunt stocate pe servere protejate, de nivel profesional",
+        "Acces limitat: doar membrii esențiali ai echipei noastre pot accesa datele dumneavoastră",
+        "Verificări regulate de securitate: monitorizăm constant orice amenințări la adresa securității"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Partajarea informațiilor dumneavoastră",
+      "neverSell": "NU vom vinde sau închiria NICIODATĂ informațiile dumneavoastră personale.",
+      "onlyShareInSituations": "Partajăm informațiile dumneavoastră doar în aceste situații foarte limitate:",
+      "sharingSituations": [
+        "Cu permisiunea dumneavoastră: dacă ne cereți în mod specific să partajăm ceva",
+        "Pentru suport tehnic: cu furnizori de servicii de încredere care ne ajută să rulăm aplicația (aceștia sunt obligați prin acorduri stricte de confidențialitate)",
+        "Dacă este cerut de lege: doar dacă suntem obligați legal să o facem"
+      ]
+    },
+    "yourRights": {
+      "title": "Drepturile și opțiunile dumneavoastră",
+      "youCanAlwaysTitle": "Puteți oricând:",
+      "rightsList": [
+        "Să vedeți ce informații avem despre dumneavoastră",
+        "Să ne cereți să corectăm orice informație greșită",
+        "Să solicitați ștergerea contului și a datelor dumneavoastră",
+        "Să dezactivați cookie-urile în setările browserului dumneavoastră",
+        "Să ne contactați cu orice întrebări legate de confidențialitate"
+      ],
+      "noteDeletingCookiesTitle": "Notă despre ștergerea cookie-urilor:",
+      "noteDeletingCookiesText": "Dacă ștergeți cookie-urile noastre, va trebui să vă configurați din nou preferințele, iar unele funcționalități s-ar putea să nu funcționeze la fel de bine."
+    },
+    "thirdPartyServices": {
+      "title": "Servicii terțe",
+      "weUseTrustedServices": "Folosim unele servicii terțe de încredere pentru a ne ajuta să oferim funcționalitățile noastre:",
+      "servicesList": [
+        "Google AI (Gemini): alimentează asistentul nostru AI care răspunde la întrebările dumneavoavoastră",
+        "Firebase: stochează în siguranță informațiile contului dumneavoastră",
+        "YouTube/Site-uri educaționale: putem recomanda videoclipuri și articole utile"
+      ],
+      "servicesOwnPolicies": "Aceste servicii au propriile lor politici de confidențialitate și partajăm doar informațiile minime necesare pentru funcționarea lor."
+    },
+    "changesToPolicy": {
+      "title": "Modificări ale acestei politici",
+      "text": "Dacă trebuie să actualizăm această politică de confidențialitate, vă vom notifica prin e-mail și vom afișa o notificare în aplicație. Vom explica întotdeauna ce se schimbă și de ce, într-un limbaj simplu și clar."
+    },
+    "contactUs": {
+      "title": "Contactați-ne",
+      "questions": "Aveți întrebări despre confidențialitatea dumneavoastră sau această politică? Echipa TechStep este aici pentru a vă ajuta!",
+      "email": "E-mail: privacy@techstep.com",
+      "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Poștă: Echipa de confidențialitate TechStep",
+      "mailLine2": "Strada Suport Tehnic 123",
+      "mailLine3": "Orașul Ajutor, OA 12345"
+    },
+    "footer": {
+      "thankYou": "Vă mulțumim că ați încredințat TechStep informațiile dumneavoastră. Ne angajăm să le păstrăm în siguranță și să le folosim doar pentru a vă ajuta să reușiți cu tehnologia.",
+      "backToHome": "Înapoi la pagina principală"
+    }
+  }
+}

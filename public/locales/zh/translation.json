@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "features": "功能",
+    "reviews": "评价",
+    "signIn": "登录",
+    "getStarted": "开始使用"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "全球长者的信赖之选",
+      "title": "让科技变得",
+      "titleHighlight": "简单明了",
+      "subtitle": "通过个性化的分步指导，自信地掌握技术，感觉就像一位有耐心的朋友在您身边。",
+      "startLearningButton": "开始免费学习",
+      "watchDemoButton": "观看演示",
+      "freeForever": "永久免费",
+      "noCreditCard": "无需信用卡",
+      "available247": "全天候可用"
+    },
+    "featuresSection": {
+      "title": "功能特色",
+      "subtitle": "这只是我们为帮助您成长而提供的部分功能！",
+      "items": [
+        {
+          "title": "分步指导",
+          "description": "为任何技术问题提供清晰、易于遵循的说明。每个步骤都用简单的术语和视觉提示来解释。"
+        },
+        {
+          "title": "语音支持",
+          "description": "用您的声音提问，并让系统大声朗读答案。非常适合在您最需要时提供免提帮助。"
+        },
+        {
+          "title": "照片讲解",
+          "description": "拍下任何电缆、按钮或设备的照片，即可立即获得关于它是什么以及如何使用的解释。"
+        },
+        {
+          "title": "长者友好设计",
+          "description": "大号字体、直观的界面和耐心的解释，专为长者设计。"
+        },
+        {
+          "title": "安全可靠",
+          "description": "您的个人信息受到企业级安全保护。绝不与第三方共享数据。"
+        },
+        {
+          "title": "即时解答",
+          "description": "全天候获得即时帮助。无需排队等候或预约。只需提问即可获得答案。"
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "我们帮助解答的热门问题",
+      "subtitle": "看看其他长者都在问些什么",
+      "askYourQuestionButton": "立即提问"
+    },
+    "testimonialsSection": {
+      "title": "我们的社区怎么说",
+      "subtitle": "加入成千上万已发现科技可以如此简单的长者行列",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "德克萨斯州, 奥斯汀",
+          "content": "终于有人用我能理解的方式解释技术了！分步说明帮助我完美地设置了我的新手机。我现在感觉自信多了！",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "华盛顿州, 西雅图",
+          "content": "语音功能太棒了！我可以直接说出我的问题，然后得到清晰的答案。这就像有一个精通技术的孙辈随时待命。",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "佛罗里达州, 迈阿密",
+          "content": "我喜欢照片功能！我拍了一张令人困惑的电缆的照片，立刻就知道了它的用途。这个应用让我对技术更加自信了。",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "科罗拉多州, 丹佛",
+          "content": "在我找到这个助手之前，我的智能电视让我非常沮丧。现在我可以看流媒体节目、调整设置，甚至和我的孙子孙女视频聊天！",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "年龄 {{age}}"
+    },
+    "ctaSection": {
+      "title": "准备好掌握技术了吗？",
+      "subtitle": "加入我们这个充满力量的长者社区，他们已经让技术变得简单易懂。立即开始获得清晰、有用的答案——完全免费！",
+      "getStartedButton": "立即免费开始",
+      "setupInMinutes": "2分钟内完成设置"
+    },
+    "footer": {
+      "description": "让各地的长者都能轻松理解和使用技术。",
+      "featuresTitle": "功能",
+      "featuresItems": [
+        "分步帮助",
+        "语音支持",
+        "照片讲解",
+        "全天候可用"
+      ],
+      "supportTitle": "支持",
+      "supportItems": [
+        "帮助中心",
+        "入门指南",
+        "社区",
+        "联系我们"
+      ],
+      "companyTitle": "公司",
+      "companyItems": [
+        "关于我们",
+        "隐私政策",
+        "服务条款",
+        "无障碍"
+      ],
+      "copyright": "© 2025 TechStep。怀着 ❤️ 为全球长者制作。",
+      "trustedBy": "受到",
+      "trustedByCount": "50,000+ 长者的信赖"
+    }
+  },
+  "dashboard": {
+    "welcome": "欢迎来到 TechStep",
+    "welcomeUser": "欢迎回来，{{name}}！",
+    "ready": "准备好学习新东西了吗？",
+    "getHelp": "获取即时帮助",
+    "askQuestion": "提出任何技术问题，获取分步指导",
+    "placeholder": "今天您需要什么帮助？",
+    "getSteps": "获取分步帮助",
+    "gettingSteps": "正在获取您的步骤...",
+    "craftingSteps": "正在为您生成个性化步骤...",
+    "takesAMoment": "这可能需要一些时间",
+    "quickTips": "给您的小贴士",
+    "popularQuestions": "今日热门问题",
+    "quickActions": "快捷操作",
+    "recentActivity": "最近活动",
+    "yourProgress": "您的进度",
+    "needHelp": "需要帮助？",
+    "helpingHand": "我们在这里帮助您成功",
+    "chatHuman": "与真人聊天",
+    "browseGuides": "浏览视频指南",
+    "browseTips": "浏览小贴士",
+    "commonSolutions": "查找常见解决方案",
+    "stepsCompleted": "已完成 {{count}} 个步骤",
+    "needMoreInfo": "我需要更多信息才能更好地帮助您"
+  },
+  "aiTools": {
+    "title": "AI 助手工具",
+    "description": "照片讲解与技术术语翻译"
+  },
+  "aiToolsModal": {
+    "header": "AI 助手工具",
+    "tabs": {
+      "photoExplainer": "照片讲解",
+      "techWordBuster": "技术术语解释"
+    },
+    "photoExplainer": {
+      "title": "照片讲解",
+      "description": "上传任何电缆、按钮或设备的照片，即可立即获得解释。",
+      "uploadButton": "上传图片",
+      "questionLabel": "对照片提问（可选）",
+      "questionPlaceholder": "这条电缆是做什么用的？",
+      "explainButton": "解释照片",
+      "analyzingButton": "正在分析...",
+      "alertNoPhoto": "请先上传一张照片或检查 API 配置。",
+      "errorResponse": "<p class=\"text-red-600\">抱歉，我无法分析该图像。请重试。</p>",
+      "readResponseButton": "🔊 朗读回答",
+      "previewAlt": "预览"
+    },
+    "techWordBuster": {
+      "title": "技术术语解释",
+      "description": "对某个技术术语感到困惑？通过现实生活中的类比，获得简单易懂的解释。",
+      "inputLabel": "输入一个技术词语或短语",
+      "inputPlaceholder": "例如：云存储, WiFi, 蓝牙",
+      "explainButton": "解释清楚",
+      "explainingButton": "正在解释...",
+      "alertNoTerm": "请先输入一个技术术语或检查 API 配置。",
+      "errorResponse": "<p class=\"text-red-600\">抱歉，我无法解释该术语。请重试。</p>",
+      "readExplanationButton": "🔊 朗读解释"
+    },
+    "apiErrorNoExplanation": "未收到解释"
+  },
+  "clarificationModal": {
+    "headerTitle": "我需要更多信息",
+    "yourQuestionLabel": "您的问题：",
+    "tellMeMorePrompt": "为了给您最好的帮助，您能告诉我更多信息吗？",
+    "forExampleLabel": "例如：",
+    "textareaPlaceholder": "请提供更多细节...",
+    "textareaSrLabel": "为您的问题提供更多细节",
+    "skipButton": "暂时跳过",
+    "submitButton": "获取更好的帮助",
+    "loadingButton": "正在获取帮助..."
+  },
+  "languageNotificationBanner": {
+    "title": "完成您的语言设置",
+    "description": "配置您的首选语言，以获得更好的语音输入和文本交互体验。",
+    "buttonText": "完成设置"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "电脑与设备基础",
+      "description": "让您开始使用技术的最基本知识。",
+      "modules": {
+        "turnOnDevice": { "title": "打开设备", "description": "学习如何启动电脑和智能手机。" },
+        "mouseTouchscreen": { "title": "使用鼠标/触摸屏", "description": "掌握指向、点击和轻触。" },
+        "keyboardTyping": { "title": "键盘/打字基础", "description": "熟悉打字要领。" },
+        "filesFolders": { "title": "理解文件和文件夹", "description": "了解数字信息是如何组织的。" }
+      }
+    },
+    "onlineWorld": {
+      "title": "网络世界",
+      "description": "安全地上网和探索互联网。",
+      "modules": {
+        "webBrowsers": { "title": "理解网页浏览器", "description": "使用 Chrome、Edge 或 Safari 浏览互联网。" },
+        "searchEffectively": { "title": "如何有效搜索", "description": "使用搜索引擎在网上找到您需要的东西。" },
+        "introEmail": { "title": "电子邮件入门", "description": "学习发送和接收电子邮件。" },
+        "virusSafety": { "title": "远离病毒", "description": "保护您的设备免受有害软件的侵害。" }
+      }
+    },
+    "digitalLife": {
+      "title": "日常数字生活",
+      "description": "沟通、分享和管理您的数字生活。",
+      "modules": {
+        "masteringEmail": { "title": "精通电子邮件", "description": "附件、文件夹和电子邮件礼仪。" },
+        "videoCalling": { "title": "与家人朋友视频通话", "description": "与亲人进行面对面的联系。" },
+        "introSocialMedia": { "title": "社交媒体入门", "description": "了解像微信这样的平台。" },
+        "sharingPhotos": { "title": "安全分享照片", "description": "在不损害隐私的情况下分享您的回忆。" }
+      }
+    },
+    "advancedSkills": {
+      "title": "高级与创意技能",
+      "description": "超越基础：探索技术提供的更多功能。",
+      "modules": {
+        "onlineShopping": { "title": "网上购物入门", "description": "安全方便地在网上购物。" },
+        "onlineMaps": { "title": "使用在线地图和导航", "description": "使用数字地图找到您的路。" },
+        "photoEditing": { "title": "基础照片编辑", "description": "美化您的数码照片。" },
+        "productivityTools": { "title": "办公工具入门", "description": "使用像WPS或微软Office这样的工具的基础知识。" }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "科技新星", "description": "完成了电脑与设备基础课程。" },
+    "onlineWorld": { "name": "网络探险家", "description": "完成了网络世界课程。" },
+    "digitalLife": { "name": "数字沟通者", "description": "完成了日常数字生活课程。" },
+    "advancedSkills": { "name": "科技达人", "description": "完成了高级与创意技能课程。" }
+  },
+  "skillAssessmentModal": {
+    "title": "快速技能检查",
+    "introduction": "让我们为您找到最佳的起点！",
+    "nextButton": "下一步",
+    "finishButton": "显示我的起点",
+    "questionProgress": "问题 {{current}} / {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "您对电脑的熟悉程度如何？",
+      "options": {
+        "new": "全新手",
+        "basics": "我懂一些基础",
+        "confident": "我很有信心"
+      }
+    },
+    "q2": {
+      "text": "您以前发送过电子邮件吗？",
+      "options": {
+        "yes": "是",
+        "no": "否"
+      }
+    },
+    "q3": {
+      "text": "您使用智能手机除了打电话外还做其他事吗？",
+      "options": {
+        "yes": "是",
+        "no": "否"
+      }
+    }
+  },
+  "learning": {
+    "title": "学习中心",
+    "structuredCourses": "结构化课程和教程",
+    "skillsAssessment": "技能评估",
+    "questionNumber": "问题 {{current}} / {{total}}",
+    "resetAnimation": "重置",
+    "showAnimation": "显示动画",
+    "courses": {
+      "beginner": {
+        "title": "技术入门",
+        "description": "非常适合完全的初学者。一步一步学习基础知识。",
+        "estimatedTime": "2-3 小时",
+        "lessons": {
+          "deviceBasics": {
+            "title": "设备基础",
+            "description": "学习如何安全地打开和关闭您的设备",
+            "duration": "15 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">打开和关闭您的设备</h3><p>每个设备都有一个电源按钮。让我们学习如何安全地使用它。</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">对于电脑：</h4><ul class=\"space-y-2\"><li>• 寻找一个带有电源符号 (⏻) 的圆形按钮</li><li>• 按一下以打开</li><li>• 关闭时：使用开始菜单，然后选择“关机”</li><li>• 切勿直接按电源按钮关机！</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">对于手机/平板：</h4><ul class=\"space-y-2\"><li>• 电源按钮通常在侧面</li><li>• 按住2-3秒以打开</li><li>• 关闭时：按住按钮，然后滑动以关机</li></ul></div></div>",
+            "keyPoints": [
+              "始终使用正确的关机程序",
+              "电源按钮位置因设备而异",
+              "除非绝对必要，否则切勿强制关机"
+            ],
+            "practiceExercise": "使用正确的方法练习开关设备3次。",
+            "animationDesc": "观看如何正确按电源按钮"
+          },
+          "mouseKeyboard": {
+            "title": "使用鼠标和键盘",
+            "description": "掌握计算机输入设备的基础知识",
+            "duration": "20 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">鼠标和键盘基础</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">鼠标基础：</h4><ul class=\"space-y-2\"><li>• 左键单击：选择项目、打开程序</li><li>• 右键单击：打开带更多选项的菜单</li><li>• 双击：打开文件和程序</li><li>• 滚轮：在页面上上下移动</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">键盘要点：</h4><ul class=\"space-y-2\"><li>• 空格键：在单词之间添加空格</li><li>• 回车键：开始新的一行或确认</li><li>• 退格键：删除光标前的字母</li><li>• Shift键：输入大写字母</li></ul></div></div>",
+            "keyPoints": [
+              "左键单击是您的主要工具",
+              "右键单击可以打开有用的菜单",
+              "熟能生巧"
+            ],
+            "practiceExercise": "打开一个简单的文本程序并输入您的名字，然后使用退格键删除它。",
+            "animationDesc": "查看如何单击、双击和右键单击"
+          },
+          "internetSafety": {
+            "title": "网络安全基础",
+            "description": "通过这些基本技巧保持在线安全",
+            "duration": "25 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">保持在线安全</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">诈骗的警告信号：</h4><ul class=\"space-y-2 text-red-700\"><li>• 要求汇款的紧急消息</li><li>• 索要密码或个人信息</li><li>• 您没有参加过的“您已中奖”消息</li><li>• 可疑的链接或附件</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">安全浏览技巧：</h4><ul class=\"space-y-2\"><li>• 在网址中寻找“https://”</li><li>• 仅从官方应用商店下载</li><li>• 保持您的软件更新</li><li>• 使用强大、独特的密码</li></ul></div></div>",
+            "keyPoints": [
+              "切勿将个人信息提供给陌生人",
+              "如有疑问，请咨询信任的人",
+              "合法公司不会通过电子邮件索要密码"
+            ],
+            "practiceExercise": "从课程中找出3个网络诈骗的警告信号。"
+          }
+        }
+      },
+      "intermediate": {
+        "title": "与家人和朋友联系",
+        "description": "学习安全地使用社交媒体、视频通话和即时消息。",
+        "estimatedTime": "3-4 小时",
+        "lessons": {
+          "videoCalls": {
+            "title": "与家人视频通话",
+            "description": "随时随地与亲人面对面联系",
+            "duration": "30 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">进行视频通话</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">热门视频通话应用：</h4><ul class=\"space-y-2\"><li>• <strong>微信</strong>：在所有手机上通用</li><li>• <strong>FaceTime</strong> (iPhone/iPad)：内置，非常简单</li><li>• <strong>Zoom</strong>：非常适合群组通话</li><li>• <strong>Skype</strong>：适用于电脑和手机</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">通话前准备：</h4><ul class=\"space-y-2\"><li>• 检查您的网络连接</li><li>• 找一个光线好的地方（面向窗户）</li><li>• 测试您的摄像头和麦克风</li><li>• 准备好对方的联系方式</li></ul></div></div>",
+            "keyPoints": [
+              "良好的光线会产生很大的不同",
+              "在重要通话前测试您的设备",
+              "一旦学会一个，大多数应用的操作都类似"
+            ],
+            "practiceExercise": "与家人或朋友进行一次测试视频通话。"
+          },
+          "socialMedia": {
+            "title": "社交媒体基础",
+            "description": "在微信和其他平台上与朋友和家人联系",
+            "duration": "35 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">社交媒体入门</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">微信朋友圈基础：</h4><ul class=\"space-y-2\"><li>• 使用您的真实姓名创建个人资料</li><li>• 添加一张好看的头像照片</li><li>• 向您认识的人发送好友请求</li><li>• 分享动态、照片和回忆</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">隐私设置：</h4><ul class=\"space-y-2\"><li>• 只接受您真正认识的好友</li><li>• 将帖子设置为“仅好友可见”</li><li>• 不公开分享个人信息</li><li>• 检查其他人可以看到您的哪些信息</li></ul></div></div>",
+            "keyPoints": [
+              "隐私设置非常重要",
+              "只与您认识的人联系",
+              "发布前请三思——它会留在网上"
+            ],
+            "practiceExercise": "将您的帖子隐私设置设为“仅好友可见”。"
+          }
+        }
+      },
+      "advanced": {
+        "title": "数字生活精通",
+        "description": "为自信的数字生活提供的高级技能。",
+        "estimatedTime": "4-5 小时",
+        "lessons": {
+          "smartHome": {
+            "title": "智能家居设备",
+            "description": "用语音命令和应用控制您的家",
+            "duration": "40 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">智能家居基础</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">热门智能设备：</h4><ul class=\"space-y-2\"><li>• <strong>智能音箱</strong>：小爱同学, 天猫精灵</li><li>• <strong>智能恒温器</strong>：远程控制温度</li><li>• <strong>智能灯</strong>：调暗、改变颜色、设置时间表</li><li>• <strong>智能门铃</strong>：查看门口是谁</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">入门指南：</h4><ul class=\"space-y-2\"><li>• 从一个设备开始学习</li><li>• 下载设备的应用程序</li><li>• 按照设置说明一步一步操作</li><li>• 练习基本的语音命令</li></ul></div></div>",
+            "keyPoints": [
+              "从一个简单的设备开始",
+              "语音命令让生活更轻松",
+              "大多数设备都有帮助性的应用程序"
+            ],
+            "practiceExercise": "如果您有智能设备，练习3个不同的语音命令。"
+          },
+          "onlineBanking": {
+            "title": "网上银行安全",
+            "description": "安全地在线管理您的财务",
+            "duration": "45 分钟",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">安全的网上银行</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">安全要点：</h4><ul class=\"space-y-2 text-red-700\"><li>• 始终直接输入您银行的网址</li><li>• 在浏览器中寻找锁形图标</li><li>• 切勿在公共Wi-Fi上进行银行业务</li><li>• 完成后完全退出登录</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">您可以在线做什么：</h4><ul class=\"space-y-2\"><li>• 查看账户余额</li><li>• 查看交易历史</li><li>• 在账户之间转账</li><li>• 电子支付账单</li></ul></div></div>",
+            "keyPoints": [
+              "安全是重中之重",
+              "您的银行绝不会通过电子邮件索要密码",
+              "安全操作时，网上银行非常方便"
+            ],
+            "practiceExercise": "访问您银行的网站并练习登录（暂时不要进行任何交易）。"
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "您对打开和关闭电脑或手机的熟悉程度如何？",
+          "options": {
+            "0": "从未做过",
+            "1": "每次都需要帮助",
+            "2": "有时可以做到",
+            "3": "非常熟悉"
+          }
+        },
+        "1": {
+          "question": "您多久使用一次互联网？",
+          "options": {
+            "0": "从不",
+            "1": "很少",
+            "2": "有时",
+            "3": "每天"
+          }
+        },
+        "2": {
+          "question": "您曾经发送过电子邮件吗？",
+          "options": {
+            "0": "从未",
+            "1": "需要很多帮助",
+            "2": "几次",
+            "3": "经常"
+          }
+        },
+        "3": {
+          "question": "您对下载应用程序的熟悉程度如何？",
+          "options": {
+            "0": "从未尝试过",
+            "1": "非常紧张",
+            "2": "需要帮助",
+            "3": "有信心"
+          }
+        },
+        "4": {
+          "question": "您使用视频通话（微信视频，Zoom等）吗？",
+          "options": {
+            "0": "从不",
+            "1": "尝试过一次",
+            "2": "有时",
+            "3": "经常"
+          }
+        },
+        "5": {
+          "question": "您对网上购物感觉如何？",
+          "options": {
+            "0": "太可怕了",
+            "1": "非常紧张",
+            "2": "愿意尝试",
+            "3": "经常网购"
+          }
+        },
+        "6": {
+          "question": "您使用过社交媒体（微信朋友圈等）吗？",
+          "options": {
+            "0": "从不",
+            "1": "看过",
+            "2": "有账户",
+            "3": "经常使用"
+          }
+        },
+        "7": {
+          "question": "您对密码的熟悉程度如何？",
+          "options": {
+            "0": "非常困惑",
+            "1": "需要帮助",
+            "2": "了解基础",
+            "3": "管理得很好"
+          }
+        },
+        "8": {
+          "question": "您会备份您的照片和文件吗？",
+          "options": {
+            "0": "不知道怎么做",
+            "1": "有人帮我",
+            "2": "有时会",
+            "3": "经常"
+          }
+        },
+        "9": {
+          "question": "您如何学习新技术？",
+          "options": {
+            "0": "避免它",
+            "1": "寻求帮助",
+            "2": "小心尝试",
+            "3": "自信地探索"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "自定义您的偏好",
+    "personalInfo": "个人信息",
+    "firstName": "名字",
+    "firstNamePlaceholder": "您的名字",
+    "primaryDevice": "主要设备",
+    "devices": {
+      "windowsComputer": "Windows 电脑",
+      "macComputer": "Mac (苹果电脑)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "安卓手机或平板"
+    },
+    "accessibility": "无障碍",
+    "textToSpeech": "文本转语音",
+    "textToSpeechDesc": "让答案为您朗读",
+    "voiceInput": "语音输入",
+    "voiceInputDesc": "通过说话提问",
+    "languagePreferences": "语言偏好",
+    "hideLanguages": "隐藏",
+    "modifyLanguages": "修改语言",
+    "defaultLanguage": "默认语言 (整个网站将使用此语言)",
+    "defaultLanguageDesc": "这将是所有界面元素和交互的主要语言。",
+    "otherLanguages": "您希望使用的其他语言：",
+    "default": "默认",
+    "languageConfiguration": "语言配置",
+    "languageConfigurationDesc": "您选择的语言将用于：",
+    "speechToText": "语音转文本识别和处理",
+    "multilingualText": "多语言文本交互和响应",
+    "interfaceLanguage": "界面语言选项和无障碍功能",
+    "searchLanguages": "搜索语言...",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "selectedLanguages": "已选择: {{count}} 种语言",
+    "selectedLanguages_plural": "已选择: {{count}} 种语言",
+    "noLanguagesFound": "未找到匹配 \"{{search}}\" 的语言",
+    "languageRequired": "至少需要一种语言",
+    "languageRequiredDesc": "请至少选择一种语言，以确保语音输入和文本交互的正常功能。",
+    "account": "账户",
+    "signOut": "退出登录",
+    "signOutDesc": "退出您的账户",
+    "cancel": "取消",
+    "saving": "正在保存...",
+    "saved": "已保存！",
+    "saveChanges": "保存更改",
+    "errorSaving": "无法保存设置。请重试。",
+    "lastName": "姓氏",
+    "lastNamePlaceholder": "您的姓氏",
+    "age": "年龄",
+    "techExperience": "技术经验水平",
+    "techExperienceOptions": {
+      "beginner": "初学者 (大多数事情都需要分步帮助)",
+      "some": "有一些经验 (能完成基本任务，但对新事物需要帮助)",
+      "comfortable": "熟悉 (能自己解决大多数问题，但有时需要指导)"
+    },
+    "primaryConcerns": "主要感兴趣/担心的技术主题",
+    "assistiveNeeds": "无障碍需求",
+    "communicationStyle": "偏好的解释风格",
+    "communicationStyleOptions": {
+      "simple": "简单快捷 (只要步骤)",
+      "detailed": "详细 (解释“为什么”)",
+      "visual": "视觉化 (尽可能显示图片/视频)"
+    },
+    "videoRecommendations": "视频推荐",
+    "videoRecommendationsDesc": "在步骤旁边显示有用的视频和文章",
+    "fontSize": "偏好的字体大小",
+    "fontSizeOptions": {
+      "normal": "正常",
+      "large": "大",
+      "extraLarge": "特大"
+    },
+    "displayPreferences": "显示与主题",
+    "theme": "颜色主题",
+    "themeOptions": {
+      "light": "浅色",
+      "dark": "深色"
+    },
+    "highContrast": "高对比度模式",
+    "highContrastDesc": "增加文本和元素的对比度以获得更好的可见性",
+    "learningPreferences": "学习与内容偏好"
+  },
+  "common": {
+    "settings": "设置",
+    "signOut": "退出登录",
+    "close": "关闭"
+  },
+  "tips": {
+    "connectWifi": "连接到 Wi-Fi",
+    "connectWifiDesc": "安全轻松地上网",
+    "videoCall": "进行视频通话",
+    "videoCallDesc": "与家人面对面联系",
+    "screenshot": "截屏",
+    "screenshotDesc": "捕捉屏幕上的内容",
+    "updateApps": "更新您的应用",
+    "updateAppsDesc": "保持您的应用最新和安全"
+  },
+  "category": {
+    "internet": "网络",
+    "communication": "沟通",
+    "basicSkills": "基本技能",
+    "maintenance": "维护"
+  },
+  "questions": {
+    "makeTextBigger": "如何放大字体？",
+    "connectWifi": "如何连接到 Wi-Fi？",
+    "takeScreenshot": "如何截屏？",
+    "makeVideoCall": "如何进行视频通话？",
+    "backupPhotos": "如何备份我的照片？",
+    "updateApps": "如何更新我的应用？",
+    "onlineBanking": "如何安全地使用网上银行？",
+    "joinZoom": "如何加入 Zoom 会议？"
+  },
+  "achievements": {
+    "gettingStarted": "新手上路",
+    "gettingStartedDesc": "提出了您的第一个问题",
+    "questionExplorer": "问题探险家",
+    "questionExplorerDesc": "提出了5个问题",
+    "stepMaster": "步骤大师",
+    "stepMasterDesc": "完成了25个步骤"
+  },
+  "stats": {
+    "seniorsHelped": "已帮助长者",
+    "questionsAnswered": "已回答问题",
+    "successRate": "成功率",
+    "alwaysAvailable": "随时可用"
+  },
+  "time": {
+    "now": "刚刚",
+    "hourAgo": "1小时前",
+    "hoursAgo": "{{count}}小时前",
+    "dayAgo": "1天前",
+    "daysAgo": "{{count}}天前"
+  },
+  "voice": {
+    "startInput": "开始语音输入",
+    "stopRecording": "停止录音",
+    "processing": "处理中...",
+    "recognized": "语音已识别",
+    "failed": "语音输入失败"
+  },
+  "language": {
+    "select": "选择语言",
+    "translate": "翻译",
+    "translating": "翻译中...",
+    "detecting": "正在检测语言...",
+    "error": "翻译失败"
+  },
+  "auth": {
+    "backToHome": "返回首页",
+    "createAccount": "创建账户",
+    "welcomeBack": "欢迎回来",
+    "joinFamily": "加入我们充满力量的长者大家庭",
+    "welcomeBackDesc": "登录以继续您的科技之旅",
+    "email": "电子邮箱地址",
+    "emailPlaceholder": "输入您的电子邮箱",
+    "password": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "confirmPassword": "确认密码",
+    "confirmPasswordPlaceholder": "确认您的密码",
+    "passwordsNoMatch": "密码不匹配",
+    "passwordTooShort": "密码必须至少为6个字符",
+    "creatingAccount": "正在创建账户...",
+    "signingIn": "正在登录...",
+    "alreadyHaveAccount": "已有账户？登录",
+    "dontHaveAccount": "没有账户？注册"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "让我们了解您",
+      "subtitle": "帮助我为您提供个性化体验",
+      "firstName": "名字",
+      "firstNamePlaceholder": "您的名字",
+      "lastName": "姓氏",
+      "lastNamePlaceholder": "您的姓氏",
+      "age": "年龄 (帮助我调整解释方式)"
+    },
+    "step2": {
+      "title": "选择您的首选语言",
+      "subtitle": "选择您希望用于沟通和语音输入的语言",
+      "languageSelection": "语言选择",
+      "languageDescription": "选择您熟悉的语言。这将：",
+      "speechToText": "配置语音转文本以理解您使用这些语言的语音",
+      "textInteractions": "启用您所选语言的文本交互",
+      "interfaceOptions": "自定义界面选项以获得更好的无障碍体验",
+      "searchLanguages": "搜索语言...",
+      "selectAll": "全选",
+      "deselectAll": "取消全选",
+      "selected": "已选择：{{count}} 种语言",
+      "selected_plural": "已选择：{{count}} 种语言",
+      "noLanguagesFound": "未找到匹配 “{{search}}” 的语言",
+      "languageRequired": "需要选择语言",
+      "languageRequiredDesc": "请至少选择一种语言以继续。这能确保语音输入和文本交互的最佳体验。"
+    },
+    "step3": {
+      "title": "您最常使用什么设备？",
+      "subtitle": "这有助于我给您更好的指导",
+      "devices": {
+        "windowscomputer": "Windows 电脑",
+        "macapplecomputer": "Mac (苹果电脑)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "安卓手机或平板",
+        "smarttv": "智能电视",
+        "multipledevices": "多个设备"
+      }
+    },
+    "step4": {
+      "title": "您对技术的熟悉程度如何？",
+      "subtitle": "请诚实回答 - 这有助于我以合适的水平解释事情",
+      "beginner": "初学者",
+      "beginnerDesc": "大多数事情我都需要分步帮助",
+      "some": "有一些经验",
+      "someDesc": "我能做基本任务，但对新事物需要帮助",
+      "comfortable": "熟悉",
+      "comfortableDesc": "我能自己解决大多数问题，但有时需要指导"
+    },
+    "step5": {
+      "title": "哪些技术主题最让您担心？",
+      "subtitle": "选择所有适用的选项 - 我会优先在这些领域提供帮助",
+      "concerns": {
+        "onlineSafety": "网络安全与诈骗",
+        "passwordManagement": "密码管理",
+        "videoCalling": "与家人视频通话",
+        "socialMedia": "社交媒体",
+        "onlineBanking": "网上银行",
+        "emailMessaging": "电子邮件与消息",
+        "photoStorage": "照片存储与分享",
+        "appDownloads": "应用下载与更新",
+        "wifiInternet": "Wi-Fi 与网络问题",
+        "deviceSettings": "设备设置",
+        "onlineShopping": "网上购物",
+        "healthApps": "健康应用与门户"
+      }
+    },
+    "step6": {
+      "title": "您需要任何无障碍功能吗？",
+      "subtitle": "我希望确保您可以舒适地使用",
+      "needs": {
+        "largerText": "更大的文本和按钮",
+        "highContrast": "高对比度颜色",
+        "voiceCommands": "语音命令",
+        "screenReader": "屏幕阅读器支持",
+        "slowerExplanations": "更慢的解释",
+        "visualSteps": "视觉步骤指示器",
+        "noneNeeded": "不需要"
+      }
+    },
+    "step7": {
+      "title": "您喜欢怎样学习？",
+      "subtitle": "我会根据您的偏好调整我的教学风格",
+      "simple": "简单快捷",
+      "simpleDesc": "一步一步告诉我该做什么",
+      "detailed": "详细解释",
+      "detailedDesc": "解释我为什么要做每一步",
+      "visual": "视觉学习",
+      "visualDesc": "尽可能给我看图片和视频"
+    },
+    "step8": {
+      "title": "最后调整",
+      "subtitle": "设置您完美的学习环境",
+      "textToSpeech": "文本转语音",
+      "textToSpeechDesc": "让答案朗读出来",
+      "voiceInput": "语音输入",
+      "voiceInputDesc": "通过说话提问",
+      "videoRecommendations": "视频推荐",
+      "videoRecommendationsDesc": "显示有用的视频和文章",
+      "textSize": "字体大小偏好",
+      "textSizeNormal": "正常",
+      "textSizeLarge": "大",
+      "textSizeExtraLarge": "特大"
+    },
+    "back": "上一步",
+    "next": "下一步",
+    "settingUp": "正在设置...",
+    "completeSetup": "完成设置",
+    "errorSaving": "无法保存您的偏好。请重试。"
+  },
+  "error": {
+    "askQuestionFirst": "请先提问",
+    "couldntGetAnswer": "抱歉，现在无法获取答案。请重试。"
+  },
+  "learningPage": {
+    "headerTitle": "学习中心",
+    "heroTitle": "长者技术技能",
+    "heroSubtitle": "通过分步课程、互动演示和个性化指导，按照自己的节奏学习技术。",
+    "takeSkillsAssessment": "进行技能评估",
+    "orSeparator": "或",
+    "iAmBeginner": "我是初学者",
+    "iAmIntermediate": "我是中级水平",
+    "iAmAdvanced": "我是高级水平",
+    "yourLevel": "您的水平：{{level}}",
+    "levelDescription": "课程根据您的技能水平个性化定制",
+    "retakeAssessment": "重新评估",
+    "progressLabel": "进度",
+    "lessonsLabel": "课时",
+    "completedOutOfTotal": "已完成 {{completed}} / {{total}}",
+    "featureInteractiveDemos": "互动演示",
+    "featureInteractiveDemosDesc": "准确了解如何执行每个操作",
+    "featureAudioSupport": "音频支持",
+    "featureAudioSupportDesc": "让课程为您朗读",
+    "featurePrintableGuides": "可打印指南",
+    "featurePrintableGuidesDesc": "离线携带摘要",
+    "featureCertificates": "证书",
+    "featureCertificatesDesc": "完成课程即可获得证书",
+    "animationShow": "显示动画",
+    "animationReset": "重置",
+    "featuresGridTitle": "探索我们的功能",
+    "loadingPaths": "正在加载学习路径...",
+    "noPathsAvailable": "目前没有可用的学习路径。请稍后查看。",
+    "progressComplete": "已完成 {{value}}%",
+    "recommendedStart": "推荐起点",
+    "moduleListTitle": "路径模块：{{pathTitle}}",
+    "moduleContentTitle": "模块内容：{{moduleTitle}} 将在此处显示。",
+    "loadingCenter": "正在加载学习中心...",
+    "moduleTimeLabel": "时间："
+  },
+  "languageSelector": {
+    "choosePrompt": "选择您的界面首选语言",
+    "moreComingSoon": "🌍 更多语言即将推出"
+  },
+  "assessmentView": {
+    "headerTitle": "技能评估",
+    "questionProgress": "问题 {{current}} / {{total}}",
+    "chooseBestOption": "选择最能描述您的选项",
+    "skipAssessment": "跳过评估"
+  },
+  "courseView": {
+    "lessonsHeader": "课程",
+    "interactiveDemoLabel": "互动演示",
+    "startLesson": "开始课程",
+    "reviewLesson": "复习",
+    "congratulations": "恭喜！",
+    "courseComplete": "您已完成 {{courseTitle}} 课程！",
+    "downloadCertificate": "下载证书"
+  },
+  "lessonView": {
+    "readAloud": "朗读课程",
+    "interactiveDemoHeader": "互动演示",
+    "practiceExerciseHeader": "练习",
+    "markAsComplete": "标记为完成",
+    "repeatLesson": "重复课程",
+    "keyPointsHeader": "要点",
+    "takeItWithYouHeader": "随身携带",
+    "downloadSummaryButton": "下载摘要",
+    "downloadSummaryDescription": "获取本课程的可打印摘要",
+    "needHelpHeader": "需要帮助？",
+    "askAQuestionButton": "提问",
+    "chatWithHelperButton": "与助手聊天"
+  },
+  "privacyPolicy": {
+    "headerTitle": "隐私政策",
+    "pageTitle": "隐私政策",
+    "lastUpdated": "最后更新：{{date}}",
+    "ourPromise": {
+      "title": "我们对您的承诺",
+      "text": "在 Senior Tech Helper，我们明白您的隐私至关重要。我们致力于保护您的个人信息，并完全透明地说明我们如何使用它。本政策用简单明了的语言解释一切。"
+    },
+    "cookies": {
+      "title": "我们如何使用 Cookie",
+      "whatAreCookiesTitle": "什么是 Cookie？",
+      "whatAreCookiesText": "Cookie 是帮助我们记住您的偏好并改善您体验的小文本文件。您可以把它们想象成书签，帮助我们记住您上次停留在哪里。",
+      "weUseCookiesForTitle": "我们仅使用 Cookie 来帮助您：",
+      "uses": [
+        "记住您的偏好：您选择的文字大小、语音设置和无障碍选项",
+        "保持您的登录状态：这样您就不必每次都输入密码",
+        "改进我们的帮助：了解哪些功能对像您这样的长者最有帮助"
+      ],
+      "whatWeDontDoTitle": "我们不使用 Cookie 做的事情：",
+      "donts": [
+        "在其他网站上跟踪您",
+        "将您的信息出售给任何人",
+        "与广告商共享您的数据",
+        "将它们用于营销目的"
+      ]
+    },
+    "informationCollected": {
+      "title": "我们收集哪些信息",
+      "youGiveUsTitle": "您提供给我们的信息：",
+      "youGiveUsList": [
+        "您的姓名和电子邮件地址",
+        "您的设备类型（iPhone、Windows 等）",
+        "您的技术经验水平",
+        "您的无障碍偏好",
+        "您向我们的 AI 助手提出的问题"
+      ],
+      "weCollectTitle": "我们自动收集的信息：",
+      "weCollectList": [
+        "您如何使用我们的应用（哪些功能最有帮助）",
+        "技术信息（浏览器类型、设备）",
+        "错误报告（以快速解决问题）"
+      ]
+    },
+    "howWeProtect": {
+      "title": "我们如何保护您的信息",
+      "protections": [
+        "加密：您的所有数据都经过加密（打乱），所以只有我们能读取",
+        "安全服务器：您的信息存储在受保护的专业级服务器上",
+        "有限访问：只有我们的核心团队成员才能访问您的数据",
+        "定期安全检查：我们不断监控任何安全威胁"
+      ]
+    },
+    "sharingInformation": {
+      "title": "共享您的信息",
+      "neverSell": "我们绝不会出售或出租您的个人信息。",
+      "onlyShareInSituations": "我们仅在以下非常有限的情况下共享您的信息：",
+      "sharingSituations": [
+        "经您许可：如果您明确要求我们共享某些内容",
+        "用于技术支持：与帮助我们运营应用的受信任服务提供商共享（他们受严格的隐私协议约束）",
+        "法律要求时：仅当我们有法律义务这样做时"
+      ]
+    },
+    "yourRights": {
+      "title": "您的权利和选择",
+      "youCanAlwaysTitle": "您随时可以：",
+      "rightsList": [
+        "查看我们拥有的关于您的信息",
+        "要求我们更正任何错误信息",
+        "请求我们删除您的账户和数据",
+        "在您的浏览器设置中关闭 Cookie",
+        "就任何隐私问题联系我们"
+      ],
+      "noteDeletingCookiesTitle": "关于删除 Cookie 的说明：",
+      "noteDeletingCookiesText": "如果您删除我们的 Cookie，您需要重新设置您的偏好，并且某些功能可能无法正常工作。"
+    },
+    "thirdPartyServices": {
+      "title": "第三方服务",
+      "weUseTrustedServices": "我们使用一些受信任的第三方服务来帮助提供我们的功能：",
+      "servicesList": [
+        "Google AI (Gemini)：为我们的 AI 助手提供支持，回答您的问题",
+        "Firebase：安全地存储您的账户信息",
+        "YouTube/教育网站：我们可能会推荐有用的视频和文章"
+      ],
+      "servicesOwnPolicies": "这些服务有自己的隐私政策，我们只共享它们工作所需的最低限度信息。"
+    },
+    "changesToPolicy": {
+      "title": "本政策的变更",
+      "text": "如果我们需要更新本隐私政策，我们将通过电子邮件通知您，并在应用中显示通知。我们将始终用简单明了的语言解释变更内容及其原因。"
+    },
+    "contactUs": {
+      "title": "联系我们",
+      "questions": "对您的隐私或本政策有疑问吗？TechStep 团队随时为您提供帮助！",
+      "email": "电子邮件：privacy@techstep.com",
+      "phone": "电话：1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "邮寄地址：TechStep 隐私团队",
+      "mailLine2": "科技支持巷 123号",
+      "mailLine3": "帮助城, HC 12345"
+    },
+    "footer": {
+      "thankYou": "感谢您信任 TechStep 并将您的信息托付给我们。我们致力于保护其安全，并仅用其帮助您成功掌握技术。",
+      "backToHome": "返回首页"
+    }
+  }
+}

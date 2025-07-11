@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, User, Smartphone, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, User, Smartphone, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle, Lightbulb, Play, Contrast } from 'lucide-react';
 import { useUser } from '../contexts/UserContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useTranslation } from 'react-i18next';
@@ -718,6 +718,22 @@ const SettingsPage: React.FC = () => {
       </div>
     </div>
   );
+};
+
+// Dummy objects for onboardingStep5Concerns and onboardingStep6Needs to fix type errors
+const onboardingStep5Concerns = {
+  accessibility: '',
+  privacy: '',
+  usability: '',
+  support: '',
+  other: ''
+};
+const onboardingStep6Needs = {
+  screenReader: '',
+  magnifier: '',
+  captions: '',
+  noneNeeded: '',
+  other: ''
 };
 
 export default SettingsPage;

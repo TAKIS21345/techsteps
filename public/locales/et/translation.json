@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "features": "Funktsioonid",
+    "reviews": "Arvustused",
+    "signIn": "Logi sisse",
+    "getStarted": "Alusta"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Seenioride poolt usaldatud üle maailma",
+      "title": "Tehnoloogia on tehtud",
+      "titleHighlight": "lihtsaks ja selgeks",
+      "subtitle": "Õppige tehnoloogiat enesekindlalt tänu isikupärastatud, samm-sammulistele juhistele, mis on nagu kannatliku sõbra olemasolu teie kõrval.",
+      "startLearningButton": "Alusta tasuta õppimist",
+      "watchDemoButton": "Vaata demo",
+      "freeForever": "Igavesti tasuta",
+      "noCreditCard": "Krediitkaarti pole vaja",
+      "available247": "Saadaval 24/7"
+    },
+    "featuresSection": {
+      "title": "Funktsioonid",
+      "subtitle": "Need on vaid mõned funktsioonidest, mida pakume teie arengu toetamiseks!",
+      "items": [
+        {
+          "title": "Samm-sammuline juhendamine",
+          "description": "Saate selged ja lihtsasti järgitavad juhised igale tehnilisele küsimusele. Iga samm on selgitatud lihtsate terminite ja visuaalsete näpunäidetega."
+        },
+        {
+          "title": "Häältugi",
+          "description": "Esitage küsimusi oma häälega ja laske vastused ette lugeda. Ideaalne käed-vabad abi saamiseks, kui seda kõige rohkem vajate."
+        },
+        {
+          "title": "Foto seletaja",
+          "description": "Tehke pilt mis tahes kaablist, nupust või seadmest ja saate kohe selgituse, mis see on ja kuidas seda kasutada."
+        },
+        {
+          "title": "Seeniorisõbralik disain",
+          "description": "Suur tekst, intuitiivne liides ja kannatlikud selgitused, mis on loodud spetsiaalselt seeniore silmas pidades."
+        },
+        {
+          "title": "Turvaline ja kaitstud",
+          "description": "Teie isikuandmed on kaitstud ettevõtte tasemel turvalisusega. Andmeid ei jagata kolmandate osapooltega."
+        },
+        {
+          "title": "Kohesed vastused",
+          "description": "Saate kohest abi 24/7. Ei mingit ootamist ega kohtumiste planeerimist. Lihtsalt küsige ja saate vastused."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Populaarsed küsimused, millele aitame vastata",
+      "subtitle": "Vaadake, mida teised seeniorid küsivad",
+      "askYourQuestionButton": "Esitage oma küsimus kohe"
+    },
+    "testimonialsSection": {
+      "title": "Mida meie kogukond ütleb",
+      "subtitle": "Liituge tuhandete seenioridega, kes on leidnud, et tehnoloogiaabi on tehtud lihtsaks",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Lõpuks ometi keegi, kes selgitab tehnoloogiat viisil, millest ma aru saan! Samm-sammulised juhised aitasid mul oma uue telefoni ideaalselt seadistada. Tunnen end nüüd palju enesekindlamalt!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "Häälfunktsioon on hämmastav! Ma saan lihtsalt oma küsimused valjusti esitada ja saan selged vastused. See on nagu tehnikateadlik lapselaps, kes on saadaval 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Ma armastan fotofunktsiooni! Tegin pildi segadust tekitavast kaablist ja sain kohe teada, milleks see on. See rakendus on teinud mind tehnoloogiaga palju enesekindlamaks.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Olin oma nutiteleriga nii pettunud, kuni leidsin selle abimehe. Nüüd saan vaadata saateid, reguleerida seadeid ja isegi videovestelda oma lastelastega!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Vanus {{age}}"
+    },
+    "ctaSection": {
+      "title": "Valmis tehnoloogiat valdama?",
+      "subtitle": "Liituge meie võimestatud seenioride kogukonnaga, kes on muutnud tehnoloogia lihtsaks ja ligipääsetavaks. Alustage selgete ja abistavate vastuste saamist juba täna - täiesti tasuta!",
+      "getStartedButton": "Alusta tasuta juba täna",
+      "setupInMinutes": "Seadistamine 2 minutiga"
+    },
+    "footer": {
+      "description": "Tehnoloogia muutmine ligipääsetavaks ja arusaadavaks seenioridele kõikjal.",
+      "featuresTitle": "Funktsioonid",
+      "featuresItems": [
+        "Samm-sammuline abi",
+        "Häältugi",
+        "Foto seletaja",
+        "Saadaval 24/7"
+      ],
+      "supportTitle": "Tugi",
+      "supportItems": [
+        "Abikeskus",
+        "Alustamine",
+        "Kogukond",
+        "Võta meiega ühendust"
+      ],
+      "companyTitle": "Ettevõte",
+      "companyItems": [
+        "Meist",
+        "Privaatsuspoliitika",
+        "Teenusetingimused",
+        "Ligipääsetavus"
+      ],
+      "copyright": "© 2025 TechStep. Tehtud ❤️ seenioridele kõikjal.",
+      "trustedBy": "Usaldavad",
+      "trustedByCount": "50,000+ seeniori"
+    }
+  },
+  "dashboard": {
+    "welcome": "Tere tulemast TechStepi",
+    "welcomeUser": "Tere tulemast tagasi, {{name}}!",
+    "ready": "Valmis midagi uut õppima?",
+    "getHelp": "Saa kohest abi",
+    "askQuestion": "Esita ükskõik milline tehniline küsimus ja saa samm-sammult juhiseid",
+    "placeholder": "Millega saaksin täna aidata?",
+    "getSteps": "Saa samm-sammult abi",
+    "gettingSteps": "Hankin teie samme...",
+    "craftingSteps": "Koostan teie isikupärastatud samme...",
+    "takesAMoment": "See võib hetke aega võtta",
+    "quickTips": "Kiired näpunäited teile",
+    "popularQuestions": "Tänased populaarsed küsimused",
+    "quickActions": "Kiired toimingud",
+    "recentActivity": "Hiljutine tegevus",
+    "yourProgress": "Teie edusammud",
+    "needHelp": "Vajad abi?",
+    "helpingHand": "Oleme siin, et aidata teil õnnestuda",
+    "chatHuman": "Vestle inimesega",
+    "browseGuides": "Sirvi videojuhendeid",
+    "browseTips": "Sirvi näpunäiteid",
+    "commonSolutions": "Leia levinud lahendusi",
+    "stepsCompleted": "{{count}} sammu lõpetatud",
+    "needMoreInfo": "Vajan veidi rohkem teavet, et teid paremini aidata"
+  },
+  "aiTools": {
+    "title": "AI abivahendid",
+    "description": "Foto seletaja ja tehniliste terminite tõlkija"
+  },
+  "aiToolsModal": {
+    "header": "AI abivahendid",
+    "tabs": {
+      "photoExplainer": "Foto seletaja",
+      "techWordBuster": "Tehniliste terminite seletaja"
+    },
+    "photoExplainer": {
+      "title": "Foto seletaja",
+      "description": "Laadige üles pilt mis tahes kaablist, nupust või seadmest ja saate kohe selgituse.",
+      "uploadButton": "Laadi pilt üles",
+      "questionLabel": "Esita küsimus foto kohta (valikuline)",
+      "questionPlaceholder": "Milleks see kaabel on?",
+      "explainButton": "Selgita fotot",
+      "analyzingButton": "Analüüsin...",
+      "alertNoPhoto": "Palun laadige esmalt foto üles või kontrollige API konfiguratsiooni.",
+      "errorResponse": "<p class=\"text-red-600\">Vabandust, ma ei suutnud pilti analüüsida. Palun proovige uuesti.</p>",
+      "readResponseButton": "🔊 Loe vastus ette",
+      "previewAlt": "Eelvaade"
+    },
+    "techWordBuster": {
+      "title": "Tehniliste terminite seletaja",
+      "description": "Segaduses tehnilisest terminist? Saate lihtsa, kergesti arusaadava selgituse koos reaalsete analoogiatega.",
+      "inputLabel": "Sisestage tehniline sõna või fraas",
+      "inputPlaceholder": "nt pilvemälu, WiFi, Bluetooth",
+      "explainButton": "Tee see selgeks",
+      "explainingButton": "Selgitan...",
+      "alertNoTerm": "Palun sisestage esmalt tehniline termin või kontrollige API konfiguratsiooni.",
+      "errorResponse": "<p class=\"text-red-600\">Vabandust, ma ei suutnud seda terminit selgitada. Palun proovige uuesti.</p>",
+      "readExplanationButton": "🔊 Loe selgitus ette"
+    },
+    "apiErrorNoExplanation": "Selgitust ei saadud"
+  },
+  "clarificationModal": {
+    "headerTitle": "Vajan veidi rohkem infot",
+    "yourQuestionLabel": "Teie küsimus:",
+    "tellMeMorePrompt": "Et anda teile parimat abi, kas saaksite mulle veidi rohkem rääkida?",
+    "forExampleLabel": "Näiteks:",
+    "textareaPlaceholder": "Palun esitage rohkem üksikasju...",
+    "textareaSrLabel": "Esitage oma küsimuse kohta rohkem üksikasju",
+    "skipButton": "Jäta praegu vahele",
+    "submitButton": "Saa paremat abi",
+    "loadingButton": "Hangi abi..."
+  },
+  "languageNotificationBanner": {
+    "title": "Lõpeta oma keele seadistamine",
+    "description": "Konfigureerige oma eelistatud keeled parema häälsisestuse ja tekstisuhtluse jaoks.",
+    "buttonText": "Lõpeta seadistamine"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Arvuti ja seadmete põhitõed",
+      "description": "Kõige põhilisemad teadmised tehnoloogiaga alustamiseks.",
+      "modules": {
+        "turnOnDevice": { "title": "Seadme sisselülitamine", "description": "Õppige arvuteid ja nutitelefone sisse lülitama." },
+        "mouseTouchscreen": { "title": "Hiire/puuteekraani kasutamine", "description": "Õppige osutama, klõpsama ja koputama." },
+        "keyboardTyping": { "title": "Klaviatuuri/trükkimise põhitõed", "description": "Saage tuttavaks trükkimise põhitõdedega." },
+        "filesFolders": { "title": "Failide ja kaustade mõistmine", "description": "Õppige, kuidas digitaalne teave on korraldatud." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Veebimaailm",
+      "description": "Ühenduse loomine ja interneti turvaline avastamine.",
+      "modules": {
+        "webBrowsers": { "title": "Veebibrauserite mõistmine", "description": "Navigeerige internetis Chrome'i, Edge'i või Safari abil." },
+        "searchEffectively": { "title": "Kuidas tõhusalt otsida", "description": "Leidke otsingumootorite abil veebist vajalikku teavet." },
+        "introEmail": { "title": "E-posti sissejuhatus", "description": "Õppige saatma ja vastu võtma elektroonilist kirja." },
+        "virusSafety": { "title": "Viiruste eest kaitsmine", "description": "Kaitske oma seadet kahjuliku tarkvara eest." }
+      }
+    },
+    "digitalLife": {
+      "title": "Igapäevane digitaalelu",
+      "description": "Suhelge, jagage ja hallake oma digitaalset kohalolekut.",
+      "modules": {
+        "masteringEmail": { "title": "E-posti valdamine", "description": "Manused, kaustad ja e-posti etikett." },
+        "videoCalling": { "title": "Videokõned pere ja sõpradega", "description": "Looge silmast silma ühendus oma lähedastega." },
+        "introSocialMedia": { "title": "Sotsiaalmeedia sissejuhatus", "description": "Platvormide nagu Facebook mõistmine." },
+        "sharingPhotos": { "title": "Fotode turvaline jagamine", "description": "Jagage oma mälestusi privaatsust kahjustamata." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Edasijõudnute ja loomingulised oskused",
+      "description": "Põhitõdedest kaugemale: avastage rohkem tehnoloogia pakutavast.",
+      "modules": {
+        "onlineShopping": { "title": "Veebipoodlemise sissejuhatus", "description": "Ostke turvaliselt ja mugavalt veebis." },
+        "onlineMaps": { "title": "Veebikaartide ja navigeerimise kasutamine", "description": "Leidke oma tee digitaalsete kaartide abil." },
+        "photoEditing": { "title": "Põhiline fototöötlus", "description": "Täiustage oma digitaalseid fotosid." },
+        "productivityTools": { "title": "Sissejuhatus tootlikkuse tööriistadesse", "description": "Tööriistade nagu Google Docs või Microsoft Word põhitõdede kasutamine." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Tehnikaga alustaja", "description": "Lõpetas arvuti ja seadmete põhitõed." },
+    "onlineWorld": { "name": "Veebiavastaja", "description": "Lõpetas veebimaailma tee." },
+    "digitalLife": { "name": "Digitaalne suhtleja", "description": "Lõpetas igapäevase digitaalelu tee." },
+    "advancedSkills": { "name": "Tehnikavirtuoos", "description": "Lõpetas edasijõudnute ja loominguliste oskuste tee." }
+  },
+  "skillAssessmentModal": {
+    "title": "Kiire oskuste kontroll",
+    "introduction": "Leiame teile parima koha alustamiseks!",
+    "nextButton": "Järgmine",
+    "finishButton": "Näita minu alguspunkti",
+    "questionProgress": "Küsimus {{current}} / {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Kui mugavalt te end arvutitega tunnete?",
+      "options": {
+        "new": "Täiesti uus",
+        "basics": "Tean mõningaid põhitõdesid",
+        "confident": "Olen üsna enesekindel"
+      }
+    },
+    "q2": {
+      "text": "Kas olete varem e-kirja saatnud?",
+      "options": {
+        "yes": "Jah",
+        "no": "Ei"
+      }
+    },
+    "q3": {
+      "text": "Kas olete kasutanud nutitelefoni millekski muuks kui helistamiseks?",
+      "options": {
+        "yes": "Jah",
+        "no": "Ei"
+      }
+    }
+  },
+  "learning": {
+    "title": "Õppekeskus",
+    "structuredCourses": "Struktureeritud kursused ja õpetused",
+    "skillsAssessment": "Oskuste hindamine",
+    "questionNumber": "Küsimus {{current}} / {{total}}",
+    "resetAnimation": "Lähtesta",
+    "showAnimation": "Näita animatsiooni",
+    "courses": {
+      "beginner": {
+        "title": "Tehnoloogiaga alustamine",
+        "description": "Ideaalne täielikele algajatele. Õppige põhitõdesid samm-sammult.",
+        "estimatedTime": "2-3 tundi",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Seadme põhitõed",
+            "description": "Õppige, kuidas seadet ohutult sisse ja välja lülitada",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Seadme sisse- ja väljalülitamine</h3><p>Igal seadmel on toitenupp. Õpime, kuidas seda ohutult kasutada.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Arvutite puhul:</h4><ul class=\"space-y-2\"><li>• Otsige ümmargust nuppu toitesümboliga (⏻)</li><li>• Vajutage seda üks kord sisselülitamiseks</li><li>• Väljalülitamiseks: kasutage Start-menüüd, seejärel \"Lülita välja\"</li><li>• Ärge kunagi lihtsalt vajutage toitenuppu väljalülitamiseks!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Telefonide/tahvelarvutite puhul:</h4><ul class=\"space-y-2\"><li>• Toitenupp on tavaliselt küljel</li><li>• Vajutage ja hoidke 2-3 sekundit sisselülitamiseks</li><li>• Väljalülitamiseks: vajutage ja hoidke, seejärel libistage väljalülitamiseks</li></ul></div></div>",
+            "keyPoints": [
+              "Kasutage alati korrektseid väljalülitamisprotseduure",
+              "Toitenupu asukoht varieerub seadmeti",
+              "Ärge kunagi sundige seadet välja lülitama, kui see pole absoluutselt vajalik"
+            ],
+            "practiceExercise": "Harjutage seadme sisse- ja väljalülitamist 3 korda, kasutades korrektset meetodit.",
+            "animationDesc": "Vaadake, kuidas toitenupule õigesti vajutada"
+          },
+          "mouseKeyboard": {
+            "title": "Hiire ja klaviatuuri kasutamine",
+            "description": "Õppige arvuti sisendseadmete põhitõdesid",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Hiire ja klaviatuuri põhitõed</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Hiire põhitõed:</h4><ul class=\"space-y-2\"><li>• Vasakklõps: valige esemeid, avage programme</li><li>• Paremklõps: avage menüüd rohkemate valikutega</li><li>• Topeltklõps: avage faile ja programme</li><li>• Kerimisratas: liikuge lehekülgedel üles ja alla</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Klaviatuuri põhitõed:</h4><ul class=\"space-y-2\"><li>• Tühikuklahv: lisage sõnade vahele tühikuid</li><li>• Enter: alustage uut rida või kinnitage</li><li>• Tagasilükkeklahv (Backspace): kustutage kursorist eelnev täht</li><li>• Shift: tehke suurtähti</li></ul></div></div>",
+            "keyPoints": [
+              "Vasakklõps on teie peamine tööriist",
+              "Paremklõps avab abistavaid menüüsid",
+              "Harjutamine teeb meistriks"
+            ],
+            "practiceExercise": "Avage lihtne tekstiprogramm ja tippige oma nimi, seejärel kustutage see tagasilükkeklahviga.",
+            "animationDesc": "Vaadake, kuidas klõpsata, topeltklõpsata ja paremklõpsata"
+          },
+          "internetSafety": {
+            "title": "Internetiohutuse põhitõed",
+            "description": "Olge veebis turvaline nende oluliste näpunäidete abil",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Veebis turvalisena püsimine</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Pettuste hoiatavad märgid:</h4><ul class=\"space-y-2 text-red-700\"><li>• Kiireloomulised teated, milles küsitakse raha</li><li>• Salasõnade või isiklike andmete küsimine</li><li>• \"Olete võitnud\" teated võistlustelt, milles te ei osalenud</li><li>• Kahtlased lingid või manused</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Turvalise sirvimise näpunäited:</h4><ul class=\"space-y-2\"><li>• Otsige veebiaadressidest \"https://\"</li><li>• Laadige alla ainult ametlikest rakenduste poodidest</li><li>• Hoidke oma tarkvara uuendatud</li><li>• Kasutage tugevaid ja unikaalseid paroole</li></ul></div></div>",
+            "keyPoints": [
+              "Ärge kunagi andke isiklikku teavet võõrastele",
+              "Kahtluse korral küsige usaldusväärselt isikult",
+              "Legitiimsed ettevõtted ei küsi paroole e-posti teel"
+            ],
+            "practiceExercise": "Tuvastage õppetükist 3 veebipettuste hoiatavat märki."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Pere ja sõpradega ühenduse pidamine",
+        "description": "Õppige turvaliselt kasutama sotsiaalmeediat, videokõnesid ja sõnumside.",
+        "estimatedTime": "3-4 tundi",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videokõned perega",
+            "description": "Looge silmast silma ühendus lähedastega kõikjal",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Videokõnede tegemine</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populaarsed videokõnerakendused:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Sisseehitatud, väga lihtne</li><li>• <strong>WhatsApp</strong>: Töötab kõikides telefonides</li><li>• <strong>Zoom</strong>: Suurepärane grupikõnedeks</li><li>• <strong>Skype</strong>: Töötab arvutites ja telefonides</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Enne kõnet:</h4><ul class=\"space-y-2\"><li>• Kontrollige oma internetiühendust</li><li>• Leidke hea valgustus (näoga akna poole)</li><li>• Testige oma kaamerat ja mikrofoni</li><li>• Hoidke isiku kontaktandmed valmis</li></ul></div></div>",
+            "keyPoints": [
+              "Hea valgustus teeb suure erinevuse",
+              "Testige oma seadistust enne olulisi kõnesid",
+              "Enamik rakendusi töötab sarnaselt, kui olete ühe selgeks õppinud"
+            ],
+            "practiceExercise": "Tehke testvideokõne pereliikmele või sõbrale."
+          },
+          "socialMedia": {
+            "title": "Sotsiaalmeedia põhitõed",
+            "description": "Looge ühendus sõprade ja perega Facebookis ja teistel platvormidel",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Sotsiaalmeediaga alustamine</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Facebooki põhitõed:</h4><ul class=\"space-y-2\"><li>• Looge profiil oma pärisnimega</li><li>• Lisage kena profiilipilt</li><li>• Saatke sõbrakutseid inimestele, keda tunnete</li><li>• Jagage uuendusi, fotosid ja mälestusi</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Privaatsusseaded:</h4><ul class=\"space-y-2\"><li>• Nõustuge ainult sõpradega, keda te tegelikult tunnete</li><li>• Seadke postitused \"Ainult sõpradele\"</li><li>• Ärge jagage isiklikku teavet avalikult</li><li>• Vaadake üle, mida teised teie kohta näevad</li></ul></div></div>",
+            "keyPoints": [
+              "Privaatsusseaded on väga olulised",
+              "Looge ühendus ainult inimestega, keda tunnete",
+              "Mõelge enne postitamist - see jääb veebi alles"
+            ],
+            "practiceExercise": "Seadistage oma privaatsusseaded postituste jaoks \"Ainult sõpradele\"."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Digitaalelu meisterlikkus",
+        "description": "Edasijõudnute oskused enesekindlaks digitaalseks eluks.",
+        "estimatedTime": "4-5 tundi",
+        "lessons": {
+          "smartHome": {
+            "title": "Nutikodu seadmed",
+            "description": "Kontrollige oma kodu häälkäskluste ja rakenduste abil",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Nutikodu põhitõed</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populaarsed nutiseadmed:</h4><ul class=\"space-y-2\"><li>• <strong>Nutikõlarid</strong>: Alexa, Google Home</li><li>• <strong>Nutitermostaadid</strong>: Kontrollige temperatuuri eemalt</li><li>• <strong>Nutivalgustid</strong>: Hämardage, muutke värve, seadistage ajakavasid</li><li>• <strong>Nutiuksekellad</strong>: Vaadake, kes on ukse taga</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Alustamine:</h4><ul class=\"space-y-2\"><li>• Alustage õppimiseks ühest seadmest</li><li>• Laadige alla seadme rakendus</li><li>• Järgige seadistusjuhiseid samm-sammult</li><li>• Harjutage põhilisi häälkäsklusi</li></ul></div></div>",
+            "keyPoints": [
+              "Alustage lihtsalt ühest seadmest",
+              "Häälkäsklused teevad elu lihtsamaks",
+              "Enamikul seadmetel on abistavad rakendused"
+            ],
+            "practiceExercise": "Kui teil on nutiseade, harjutage 3 erinevat häälkäsklust."
+          },
+          "onlineBanking": {
+            "title": "Veebipanganduse turvalisus",
+            "description": "Hallake oma rahandust turvaliselt veebis",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Turvaline veebipangandus</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Turvalisuse põhitõed:</h4><ul class=\"space-y-2 text-red-700\"><li>• Sisestage alati oma panga veebiaadress otse</li><li>• Otsige oma brauserist lukuikooni</li><li>• Ärge kunagi tehke pangatoiminguid avalikus WiFi-võrgus</li><li>• Logige pärast lõpetamist täielikult välja</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mida saate veebis teha:</h4><ul class=\"space-y-2\"><li>• Kontrollige kontojääke</li><li>• Vaadake tehingute ajalugu</li><li>• Kandke raha kontode vahel</li><li>• Makske arveid elektrooniliselt</li></ul></div></div>",
+            "keyPoints": [
+              "Turvalisus on esmatähtis",
+              "Teie pank ei küsi kunagi paroole e-posti teel",
+              "Veebipangandus on turvaliselt tehes väga mugav"
+            ],
+            "practiceExercise": "Külastage oma panga veebisaiti ja harjutage sisselogimist (ärge tehke veel tehinguid)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Kui mugavalt tunnete end arvuti või telefoni sisse- ja väljalülitamisega?",
+          "options": {
+            "0": "Pole kunagi teinud",
+            "1": "Vajan iga kord abi",
+            "2": "Saan mõnikord hakkama",
+            "3": "Väga mugavalt"
+          }
+        },
+        "1": {
+          "question": "Kui tihti te internetti kasutate?",
+          "options": {
+            "0": "Mitte kunagi",
+            "1": "Harva",
+            "2": "Mõnikord",
+            "3": "Iga päev"
+          }
+        },
+        "2": {
+          "question": "Kas olete kunagi e-kirja saatnud?",
+          "options": {
+            "0": "Mitte kunagi",
+            "1": "Suure abiga",
+            "2": "Mõned korrad",
+            "3": "Regulaarselt"
+          }
+        },
+        "3": {
+          "question": "Kui mugavalt tunnete end rakenduste allalaadimisega?",
+          "options": {
+            "0": "Pole proovinud",
+            "1": "Väga närvis",
+            "2": "Abiga",
+            "3": "Enesekindlalt"
+          }
+        },
+        "4": {
+          "question": "Kas te kasutate videokõnesid (FaceTime, Zoom jne)?",
+          "options": {
+            "0": "Mitte kunagi",
+            "1": "Proovisin korra",
+            "2": "Mõnikord",
+            "3": "Regulaarselt"
+          }
+        },
+        "5": {
+          "question": "Kuidas te suhtute veebipoodlemisse?",
+          "options": {
+            "0": "Liiga hirmutav",
+            "1": "Väga närvis",
+            "2": "Olen valmis proovima",
+            "3": "Ostan sageli veebist"
+          }
+        },
+        "6": {
+          "question": "Kas olete kasutanud sotsiaalmeediat (Facebook jne)?",
+          "options": {
+            "0": "Mitte kunagi",
+            "1": "Olen vaadanud",
+            "2": "Mul on konto",
+            "3": "Kasutan regulaarselt"
+          }
+        },
+        "7": {
+          "question": "Kui mugavalt tunnete end paroolidega?",
+          "options": {
+            "0": "Väga segaduses",
+            "1": "Vajan abi",
+            "2": "Mõistan põhitõdesid",
+            "3": "Haldan neid hästi"
+          }
+        },
+        "8": {
+          "question": "Kas te varundate oma fotosid ja faile?",
+          "options": {
+            "0": "Ei oska",
+            "1": "Keegi aitab mind",
+            "2": "Mõnikord",
+            "3": "Regulaarselt"
+          }
+        },
+        "9": {
+          "question": "Kuidas te uut tehnoloogiat õpite?",
+          "options": {
+            "0": "Väldin seda",
+            "1": "Küsin abi",
+            "2": "Proovin ettevaatlikult",
+            "3": "Uurin enesekindlalt"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Kohandage oma eelistusi",
+    "personalInfo": "Isiklik teave",
+    "firstName": "Eesnimi",
+    "firstNamePlaceholder": "Teie eesnimi",
+    "primaryDevice": "Peamine seade",
+    "devices": {
+      "windowsComputer": "Windowsi arvuti",
+      "macComputer": "Mac (Apple'i arvuti)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android-telefon või -tahvelarvuti"
+    },
+    "accessibility": "Ligipääsetavus",
+    "textToSpeech": "Tekst kõneks",
+    "textToSpeechDesc": "Laske vastused endale ette lugeda",
+    "voiceInput": "Häälsisestus",
+    "voiceInputDesc": "Esitage küsimusi rääkides",
+    "languagePreferences": "Keele-eelistused",
+    "hideLanguages": "Peida",
+    "modifyLanguages": "Muuda keeli",
+    "defaultLanguage": "Vaikimisi keel (kogu veebisait kasutab seda keelt)",
+    "defaultLanguageDesc": "See on kõigi liideseelementide ja interaktsioonide peamine keel.",
+    "otherLanguages": "Muud keeled, mida soovite kasutada:",
+    "default": "Vaikimisi",
+    "languageConfiguration": "Keele konfiguratsioon",
+    "languageConfigurationDesc": "Teie valitud keeli kasutatakse:",
+    "speechToText": "Kõne tekstiks tuvastamiseks ja töötlemiseks",
+    "multilingualText": "Mitmekeelseteks tekstisuhtlusteks ja vastusteks",
+    "interfaceLanguage": "Liidese keelevalikuteks ja ligipääsetavuseks",
+    "searchLanguages": "Otsi keeli...",
+    "selectAll": "Vali kõik",
+    "deselectAll": "Tühista kõik valikud",
+    "selectedLanguages": "Valitud: {{count}} keel",
+    "selectedLanguages_plural": "Valitud: {{count}} keelt",
+    "noLanguagesFound": "Ei leitud keeli, mis vastaksid otsingule \"{{search}}\"",
+    "languageRequired": "Vähemalt üks keel on nõutav",
+    "languageRequiredDesc": "Palun valige vähemalt üks keel, et tagada häälsisestuse ja tekstisuhtluse korrektne toimimine.",
+    "account": "Konto",
+    "signOut": "Logi välja",
+    "signOutDesc": "Logige oma kontolt välja",
+    "cancel": "Tühista",
+    "saving": "Salvestan...",
+    "saved": "Salvestatud!",
+    "saveChanges": "Salvesta muudatused",
+    "errorSaving": "Seadete salvestamine ebaõnnestus. Palun proovige uuesti.",
+    "lastName": "Perekonnanimi",
+    "lastNamePlaceholder": "Teie perekonnanimi",
+    "age": "Vanus",
+    "techExperience": "Tehnoloogia kogemuse tase",
+    "techExperienceOptions": {
+      "beginner": "Algaja (vajan enamiku asjadega samm-sammult abi)",
+      "some": "Mõningane kogemus (saan hakkama põhiülesannetega, kuid vajan abi uute asjadega)",
+      "comfortable": "Mugav (saan enamiku asjadega ise hakkama, kuid vajan mõnikord juhendamist)"
+    },
+    "primaryConcerns": "Peamised tehnoloogiateemad, mis pakuvad huvi/muret",
+    "assistiveNeeds": "Ligipääsetavuse vajadused",
+    "communicationStyle": "Eelistatud selgitusstiil",
+    "communicationStyleOptions": {
+      "simple": "Lihtne ja kiire (ainult sammud)",
+      "detailed": "Detailne (selgita 'miks')",
+      "visual": "Visuaalne (näita pilte/videoid, kui võimalik)"
+    },
+    "videoRecommendations": "Videosoovitused",
+    "videoRecommendationsDesc": "Näita abistavaid videoid ja artikleid sammude kõrval",
+    "fontSize": "Eelistatud teksti suurus",
+    "fontSizeOptions": {
+      "normal": "Normaalne",
+      "large": "Suur",
+      "extraLarge": "Eriti suur"
+    },
+    "displayPreferences": "Kuva ja teema",
+    "theme": "Värviteema",
+    "themeOptions": {
+      "light": "Hele",
+      "dark": "Tume"
+    },
+    "highContrast": "Kõrge kontrastsuse režiim",
+    "highContrastDesc": "Suurendage teksti ja elementide kontrastsust parema nähtavuse tagamiseks",
+    "learningPreferences": "Õppimise ja sisu eelistused"
+  },
+  "common": {
+    "settings": "Seaded",
+    "signOut": "Logi välja",
+    "close": "Sulge"
+  },
+  "tips": {
+    "connectWifi": "Ühenda Wi-Fi-ga",
+    "connectWifiDesc": "Mine turvaliselt ja lihtsalt võrku",
+    "videoCall": "Tee videokõne",
+    "videoCallDesc": "Loo perega silmast silma ühendus",
+    "screenshot": "Tee ekraanipilt",
+    "screenshotDesc": "Jäädvusta, mis on sinu ekraanil",
+    "updateApps": "Uuenda oma rakendusi",
+    "updateAppsDesc": "Hoia oma rakendused ajakohased ja turvalised"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Suhtlus",
+    "basicSkills": "Põhioskused",
+    "maintenance": "Hooldus"
+  },
+  "questions": {
+    "makeTextBigger": "Kuidas ma saan teksti suuremaks teha?",
+    "connectWifi": "Kuidas ma saan Wi-Fi-ga ühendust luua?",
+    "takeScreenshot": "Kuidas ma saan ekraanipilti teha?",
+    "makeVideoCall": "Kuidas ma saan videokõnet teha?",
+    "backupPhotos": "Kuidas ma saan oma fotosid varundada?",
+    "updateApps": "Kuidas ma saan oma rakendusi uuendada?",
+    "onlineBanking": "Kuidas ma saan turvaliselt veebipanka kasutada?",
+    "joinZoom": "Kuidas ma saan Zoomi koosolekuga liituda?"
+  },
+  "achievements": {
+    "gettingStarted": "Alustamine",
+    "gettingStartedDesc": "Esitasid oma esimese küsimuse",
+    "questionExplorer": "Küsimuste avastaja",
+    "questionExplorerDesc": "Esitasid 5 küsimust",
+    "stepMaster": "Sammude meister",
+    "stepMasterDesc": "Lõpetasid 25 sammu"
+  },
+  "stats": {
+    "seniorsHelped": "Aidatud seeniore",
+    "questionsAnswered": "Vastatud küsimusi",
+    "successRate": "Edukuse määr",
+    "alwaysAvailable": "Alati saadaval"
+  },
+  "time": {
+    "now": "Just nüüd",
+    "hourAgo": "1 tund tagasi",
+    "hoursAgo": "{{count}} tundi tagasi",
+    "dayAgo": "1 päev tagasi",
+    "daysAgo": "{{count}} päeva tagasi"
+  },
+  "voice": {
+    "startInput": "Alusta häälsisestust",
+    "stopRecording": "Lõpeta salvestamine",
+    "processing": "Töötlen...",
+    "recognized": "Hääl tuvastatud",
+    "failed": "Häälsisestus ebaõnnestus"
+  },
+  "language": {
+    "select": "Vali keel",
+    "translate": "Tõlgi",
+    "translating": "Tõlgin...",
+    "detecting": "Tuvastan keelt...",
+    "error": "Tõlkimine ebaõnnestus"
+  },
+  "auth": {
+    "backToHome": "Tagasi avalehele",
+    "createAccount": "Loo konto",
+    "welcomeBack": "Tere tulemast tagasi",
+    "joinFamily": "Liitu meie võimestatud seenioride perega",
+    "welcomeBackDesc": "Logi sisse, et jätkata oma tehnikateekonda",
+    "email": "E-posti aadress",
+    "emailPlaceholder": "Sisesta oma e-posti aadress",
+    "password": "Parool",
+    "passwordPlaceholder": "Sisesta oma parool",
+    "confirmPassword": "Kinnita parool",
+    "confirmPasswordPlaceholder": "Kinnita oma parool",
+    "passwordsNoMatch": "Paroolid ei kattu",
+    "passwordTooShort": "Parool peab olema vähemalt 6 tähemärki pikk",
+    "creatingAccount": "Loon kontot...",
+    "signingIn": "Loggin sisse...",
+    "alreadyHaveAccount": "Kas sul on juba konto? Logi sisse",
+    "dontHaveAccount": "Kas sul pole kontot? Registreeru"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Saame sinuga tuttavaks",
+      "subtitle": "Aita mul sinu kogemust isikupärastada",
+      "firstName": "Eesnimi",
+      "firstNamePlaceholder": "Sinu eesnimi",
+      "lastName": "Perekonnanimi",
+      "lastNamePlaceholder": "Sinu perekonnanimi",
+      "age": "Vanus (aitab mul selgitusi kohandada)"
+    },
+    "step2": {
+      "title": "Vali oma eelistatud keeled",
+      "subtitle": "Vali keeled, mida soovid kasutada suhtlemiseks ja häälsisestuseks",
+      "languageSelection": "Keele valik",
+      "languageDescription": "Vali keeled, millega tunned end mugavalt. See:",
+      "speechToText": "Konfigureerib kõne tekstiks muutmise, et mõista sinu häält nendes keeltes",
+      "textInteractions": "Võimaldab tekstisuhtlust sinu valitud keeltes",
+      "interfaceOptions": "Kohandab liidese valikuid parema ligipääsetavuse tagamiseks",
+      "searchLanguages": "Otsi keeli...",
+      "selectAll": "Vali kõik",
+      "deselectAll": "Tühista kõik valikud",
+      "selected": "Valitud: {{count}} keel",
+      "selected_plural": "Valitud: {{count}} keelt",
+      "noLanguagesFound": "Ei leitud keeli, mis vastaksid otsingule \"{{search}}\"",
+      "languageRequired": "Keele valik on kohustuslik",
+      "languageRequiredDesc": "Palun vali jätkamiseks vähemalt üks keel. See tagab parima kogemuse häälsisestuse ja tekstisuhtluse jaoks."
+    },
+    "step3": {
+      "title": "Millist seadet sa kõige rohkem kasutad?",
+      "subtitle": "See aitab mul anda sulle paremaid juhiseid",
+      "devices": {
+        "windowscomputer": "Windowsi arvuti",
+        "macapplecomputer": "Mac (Apple'i arvuti)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android-telefon või -tahvelarvuti",
+        "smarttv": "Nutiteler",
+        "multipledevices": "Mitu seadet"
+      }
+    },
+    "step4": {
+      "title": "Kui mugavalt sa end tehnoloogiaga tunned?",
+      "subtitle": "Ole aus - see aitab mul asju õigel tasemel selgitada",
+      "beginner": "Algaja",
+      "beginnerDesc": "Vajan enamiku asjadega samm-sammult abi",
+      "some": "Mõningane kogemus",
+      "someDesc": "Saan hakkama põhiülesannetega, kuid vajan abi uute asjadega",
+      "comfortable": "Mugav",
+      "comfortableDesc": "Saan enamiku asjadega ise hakkama, kuid vajan mõnikord juhendamist"
+    },
+    "step5": {
+      "title": "Millised tehnoloogiateemad teevad sulle kõige rohkem muret?",
+      "subtitle": "Vali kõik sobivad - ma sean nendes valdkondades abi esikohale",
+      "concerns": {
+        "onlineSafety": "Veebiohutus ja pettused",
+        "passwordManagement": "Paroolihaldus",
+        "videoCalling": "Videokõned perega",
+        "socialMedia": "Sotsiaalmeedia",
+        "onlineBanking": "Veebipangandus",
+        "emailMessaging": "E-post ja sõnumside",
+        "photoStorage": "Fotode salvestamine ja jagamine",
+        "appDownloads": "Rakenduste allalaadimine ja uuendamine",
+        "wifiInternet": "Wi-Fi ja internetiprobleemid",
+        "deviceSettings": "Seadme seaded",
+        "onlineShopping": "Veebipoodlemine",
+        "healthApps": "Terviserakendused ja -portaalid"
+      }
+    },
+    "step6": {
+      "title": "Kas vajad ligipääsetavusfunktsioone?",
+      "subtitle": "Ma tahan veenduda, et saaksid seda mugavalt kasutada",
+      "needs": {
+        "largerText": "Suurem tekst ja nupud",
+        "highContrast": "Kõrge kontrastsusega värvid",
+        "voiceCommands": "Häälkäsklused",
+        "screenReader": "Ekraanilugeja tugi",
+        "slowerExplanations": "Aeglasemad selgitused",
+        "visualSteps": "Visuaalsed sammude indikaatorid",
+        "noneNeeded": "Pole vaja"
+      }
+    },
+    "step7": {
+      "title": "Kuidas sa eelistad õppida?",
+      "subtitle": "Ma kohandan oma õpetamisstiili vastavalt sinu eelistusele",
+      "simple": "Lihtne ja kiire",
+      "simpleDesc": "Lihtsalt ütle mulle, mida teha, samm-sammult",
+      "detailed": "Detailne selgitus",
+      "detailedDesc": "Selgita, miks ma iga sammu teen",
+      "visual": "Visuaalne õppimine",
+      "visualDesc": "Näita mulle pilte ja videoid, kui võimalik"
+    },
+    "step8": {
+      "title": "Viimased lihvid",
+      "subtitle": "Seadista endale täiuslik õpikeskkond",
+      "textToSpeech": "Tekst kõneks",
+      "textToSpeechDesc": "Lase vastused ette lugeda",
+      "voiceInput": "Häälsisestus",
+      "voiceInputDesc": "Esita küsimusi rääkides",
+      "videoRecommendations": "Videosoovitused",
+      "videoRecommendationsDesc": "Näita abistavaid videoid ja artikleid",
+      "textSize": "Teksti suuruse eelistus",
+      "textSizeNormal": "Normaalne",
+      "textSizeLarge": "Suur",
+      "textSizeExtraLarge": "Eriti suur"
+    },
+    "back": "Tagasi",
+    "next": "Järgmine",
+    "settingUp": "Seadistan...",
+    "completeSetup": "Lõpeta seadistamine",
+    "errorSaving": "Sinu eelistuste salvestamine ebaõnnestus. Palun proovi uuesti."
+  },
+  "error": {
+    "askQuestionFirst": "Palun esita esmalt küsimus",
+    "couldntGetAnswer": "Vabandust, ma ei saanud praegu vastust. Palun proovi uuesti."
+  },
+  "learningPage": {
+    "headerTitle": "Õppekeskus",
+    "heroTitle": "Tehnoloogiaoskused seenioridele",
+    "heroSubtitle": "Õpi tehnoloogiat omas tempos samm-sammuliste õppetundide, interaktiivsete demode ja isikupärastatud juhendamise abil.",
+    "takeSkillsAssessment": "Tee oskuste hindamine",
+    "orSeparator": "või",
+    "iAmBeginner": "Olen algaja",
+    "iAmIntermediate": "Olen kesktasemel",
+    "iAmAdvanced": "Olen edasijõudnu",
+    "yourLevel": "Sinu tase: {{level}}",
+    "levelDescription": "Kursused on isikupärastatud vastavalt sinu oskuste tasemele",
+    "retakeAssessment": "Tee hindamine uuesti",
+    "progressLabel": "Edusammud",
+    "lessonsLabel": "õppetundi",
+    "completedOutOfTotal": "{{completed}} / {{total}} lõpetatud",
+    "featureInteractiveDemos": "Interaktiivsed demod",
+    "featureInteractiveDemosDesc": "Vaata täpselt, kuidas iga toimingut sooritada",
+    "featureAudioSupport": "Helitugi",
+    "featureAudioSupportDesc": "Lase õppetunnid endale ette lugeda",
+    "featurePrintableGuides": "Prinditavad juhendid",
+    "featurePrintableGuidesDesc": "Võta kokkuvõtted endaga kaasa võrguühenduseta",
+    "featureCertificates": "Sertifikaadid",
+    "featureCertificatesDesc": "Teeni kursuste läbimisel sertifikaate",
+    "animationShow": "Näita animatsiooni",
+    "animationReset": "Lähtesta",
+    "featuresGridTitle": "Avasta meie funktsioone",
+    "loadingPaths": "Laen õpperadu...",
+    "noPathsAvailable": "Hetkel pole saadaval ühtegi õpperada. Palun proovi hiljem uuesti.",
+    "progressComplete": "{{value}}% lõpetatud",
+    "recommendedStart": "Soovitatav alguspunkt",
+    "moduleListTitle": "Moodulid rajale: {{pathTitle}}",
+    "moduleContentTitle": "Mooduli sisu: {{moduleTitle}} kuvatakse siin.",
+    "loadingCenter": "Laen õppekeskust...",
+    "moduleTimeLabel": "Aeg: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Vali liidese jaoks eelistatud keel",
+    "moreComingSoon": "🌍 Rohkem keeli peagi tulekul"
+  },
+  "assessmentView": {
+    "headerTitle": "Oskuste hindamine",
+    "questionProgress": "Küsimus {{current}} / {{total}}",
+    "chooseBestOption": "Vali variant, mis sind kõige paremini kirjeldab",
+    "skipAssessment": "Jäta hindamine vahele"
+  },
+  "courseView": {
+    "lessonsHeader": "Õppetunnid",
+    "interactiveDemoLabel": "Interaktiivne demo",
+    "startLesson": "Alusta õppetundi",
+    "reviewLesson": "Korda",
+    "congratulations": "Palju õnne!",
+    "courseComplete": "Oled lõpetanud {{courseTitle}} kursuse!",
+    "downloadCertificate": "Laadi alla sertifikaat"
+  },
+  "lessonView": {
+    "readAloud": "Loe õppetund ette",
+    "interactiveDemoHeader": "Interaktiivne demo",
+    "practiceExerciseHeader": "Praktiline harjutus",
+    "markAsComplete": "Märgi lõpetatuks",
+    "repeatLesson": "Korda õppetundi",
+    "keyPointsHeader": "Põhipunktid",
+    "takeItWithYouHeader": "Võta kaasa",
+    "downloadSummaryButton": "Laadi alla kokkuvõte",
+    "downloadSummaryDescription": "Saa selle õppetunni prinditav kokkuvõte",
+    "needHelpHeader": "Vajad abi?",
+    "askAQuestionButton": "Esita küsimus",
+    "chatWithHelperButton": "Vestle abilisega"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Privaatsuspoliitika",
+    "pageTitle": "Privaatsuspoliitika",
+    "lastUpdated": "Viimati uuendatud: {{date}}",
+    "ourPromise": {
+      "title": "Meie lubadus teile",
+      "text": "Senior Tech Helperis mõistame, et teie privaatsus on hinnaline. Oleme pühendunud teie isikuandmete kaitsmisele ja oleme täiesti läbipaistvad selle kohta, kuidas me neid kasutame. See poliitika selgitab kõike lihtsas ja selges keeles."
+    },
+    "cookies": {
+      "title": "Kuidas me kasutame küpsiseid",
+      "whatAreCookiesTitle": "Mis on küpsised?",
+      "whatAreCookiesText": "Küpsised on väikesed tekstifailid, mis aitavad meil meeles pidada teie eelistusi ja parandada teie kogemust. Mõelge neist kui järjehoidjatest, mis aitavad meil meeles pidada, kuhu te pooleli jäite.",
+      "weUseCookiesForTitle": "Me kasutame küpsiseid AINULT selleks, et teid aidata:",
+      "uses": [
+        "Mäletada teie eelistusi: teksti suurus, hääleseaded ja teie valitud ligipääsetavuse valikud",
+        "Hoida teid sisselogituna: et te ei peaks iga kord oma parooli sisestama",
+        "Parandada meie abi: mõista, millised funktsioonid on teiesugustele seenioridele kõige kasulikumad"
+      ],
+      "whatWeDontDoTitle": "Mida me küpsistega EI tee:",
+      "donts": [
+        "Jälgida teid teistel veebisaitidel",
+        "Müüa teie teavet kellelegi",
+        "Jagada teie andmeid reklaamijatega",
+        "Kasutada neid turunduseesmärkidel"
+      ]
+    },
+    "informationCollected": {
+      "title": "Millist teavet me kogume",
+      "youGiveUsTitle": "Teave, mille te meile annate:",
+      "youGiveUsList": [
+        "Teie nimi ja e-posti aadress",
+        "Teie seadme tüüp (iPhone, Windows jne)",
+        "Teie tehnoloogia kogemuse tase",
+        "Teie ligipääsetavuse eelistused",
+        "Küsimused, mida te esitate meie AI abilisele"
+      ],
+      "weCollectTitle": "Teave, mida me automaatselt kogume:",
+      "weCollectList": [
+        "Kuidas te meie rakendust kasutate (millised funktsioonid on kõige kasulikumad)",
+        "Tehniline teave (brauseri tüüp, seade)",
+        "Vearaportid (probleemide kiireks lahendamiseks)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Kuidas me teie teavet kaitseme",
+      "protections": [
+        "Krüpteerimine: kõik teie andmed on krüpteeritud (segatud), nii et ainult meie saame neid lugeda",
+        "Turvalised serverid: teie teave on salvestatud kaitstud, professionaalse kvaliteediga serveritesse",
+        "Piiratud juurdepääs: ainult meie olulised meeskonnaliikmed saavad teie andmetele juurde pääseda",
+        "Regulaarsed turvakontrollid: me jälgime pidevalt turvaohte"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Teie teabe jagamine",
+      "neverSell": "Me ei müü ega rendi KUNAGI teie isikuandmeid.",
+      "onlyShareInSituations": "Me jagame teie teavet ainult nendes väga piiratud olukordades:",
+      "sharingSituations": [
+        "Teie loal: kui te konkreetselt palute meil midagi jagada",
+        "Tehnilise toe jaoks: usaldusväärsete teenusepakkujatega, kes aitavad meil rakendust käitada (nad on seotud rangete privaatsuslepingutega)",
+        "Kui seadus seda nõuab: ainult siis, kui meil on selleks seaduslik kohustus"
+      ]
+    },
+    "yourRights": {
+      "title": "Teie õigused ja valikud",
+      "youCanAlwaysTitle": "Te saate alati:",
+      "rightsList": [
+        "Näha, millist teavet meil teie kohta on",
+        "Paluda meil parandada mis tahes vale teave",
+        "Taotleda, et me kustutaksime teie konto ja andmed",
+        "Lülitada küpsised oma brauseri seadetes välja",
+        "Võtta meiega ühendust mis tahes privaatsusküsimustega"
+      ],
+      "noteDeletingCookiesTitle": "Märkus küpsiste kustutamise kohta:",
+      "noteDeletingCookiesText": "Kui te kustutate meie küpsised, peate oma eelistused uuesti seadistama ja mõned funktsioonid ei pruugi nii hästi töötada."
+    },
+    "thirdPartyServices": {
+      "title": "Kolmandate osapoolte teenused",
+      "weUseTrustedServices": "Me kasutame mõningaid usaldusväärseid kolmandate osapoolte teenuseid, et aidata pakkuda meie funktsioone:",
+      "servicesList": [
+        "Google AI (Gemini): annab jõudu meie AI-abilisele, kes vastab teie küsimustele",
+        "Firebase: salvestab turvaliselt teie konto teavet",
+        "YouTube/hariduslikud saidid: võime soovitada kasulikke videoid ja artikleid"
+      ],
+      "servicesOwnPolicies": "Nendel teenustel on oma privaatsuspoliitikad ja me jagame ainult minimaalset teavet, mis on vajalik nende toimimiseks."
+    },
+    "changesToPolicy": {
+      "title": "Selle poliitika muudatused",
+      "text": "Kui meil on vaja seda privaatsuspoliitikat uuendada, teavitame teid e-posti teel ja kuvame teate rakenduses. Me selgitame alati, mis muutub ja miks, lihtsas ja selges keeles."
+    },
+    "contactUs": {
+      "title": "Võta meiega ühendust",
+      "questions": "On küsimusi oma privaatsuse või selle poliitika kohta? TechStepi meeskond on siin, et aidata!",
+      "email": "E-post: privacy@techstep.com",
+      "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Post: TechStepi privaatsusmeeskond",
+      "mailLine2": "Tehnilise toe tee 123",
+      "mailLine3": "Abilinn, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Täname, et usaldasite TechStepile oma teabe. Oleme pühendunud selle turvalisuse tagamisele ja kasutame seda ainult selleks, et aidata teil tehnoloogiaga edukalt toime tulla.",
+      "backToHome": "Tagasi avalehele"
+    }
+  }
+}

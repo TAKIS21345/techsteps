@@ -34,6 +34,7 @@ import ResourceRecommendations from '../components/ResourceRecommendations';
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
 import { speechService } from '../utils/speechService';
 import { crispService } from '../utils/crispService';
+import { chatMemoryService } from '../utils/chatMemoryService';
 import Cookies from 'js-cookie';
 
 const DashboardPage: React.FC = () => {
@@ -59,14 +60,35 @@ const DashboardPage: React.FC = () => {
   // Initialize Crisp when component mounts
   useEffect(() => {
     crispService.initialize();
-    
     // Set user info if available
     if (userData) {
-      crispService.setUserInfo({
-        email: userData.email,
-        nickname: userData.firstName,
-        userId: userData.uid
-      });
+      const userInfo: any = {};
+      // Try to get email from AuthContext's user if available
+      let email = undefined;
+      try {
+        // Try to get the user from AuthContext
+        const auth = require('../contexts/AuthContext');
+        const authUser = auth?.useAuth?.().user;
+        if (authUser && typeof authUser.email === 'string' && authUser.email.trim()) {
+          email = authUser.email;
+        }
+      } catch {}
+      // Fallback: try userData.email if it exists
+      if (!email && (userData as any).email && typeof (userData as any).email === 'string' && (userData as any).email.trim()) {
+        email = (userData as any).email;
+      }
+      if (email) {
+        userInfo.email = email;
+      }
+      if (userData.firstName && typeof userData.firstName === 'string' && userData.firstName.trim()) {
+        userInfo.nickname = userData.firstName;
+      }
+      if ((userData as any).uid && typeof (userData as any).uid === 'string' && (userData as any).uid.trim()) {
+        userInfo.userId = (userData as any).uid;
+      }
+      if (Object.keys(userInfo).length > 0) {
+        crispService.setUserInfo(userInfo);
+      }
     }
   }, [userData]);
 
@@ -177,9 +199,9 @@ const DashboardPage: React.FC = () => {
       const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
       
       if (diffInHours < 1) return t('time.now');
-      if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours.toString() });
+      if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours });
       const diffInDays = Math.floor(diffInHours / 24);
-      if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays.toString() });
+      if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays });
       return date.toLocaleDateString();
     } catch (error) {
       console.error('Error formatting time:', error);
@@ -201,7 +223,7 @@ const DashboardPage: React.FC = () => {
     try {
       // Get relevant chat memories for context
       const relevantMemories = await chatMemoryService.getRelevantMemories(
-        userData?.uid || 'anonymous',
+        (userData as any)?.uid || 'anonymous',
         question,
         userData
       );
@@ -302,7 +324,7 @@ Remember: It's better to provide a helpful general answer than to overwhelm seni
     try {
       // Get relevant chat memories for context
       const relevantMemories = await chatMemoryService.getRelevantMemories(
-        userData?.uid || 'anonymous',
+        (userData as any)?.uid || 'anonymous',
         userQuestion,
         userData
       );
@@ -391,14 +413,10 @@ User's question: "${userQuestion}"`
           
           // Analyze and save chat memory
           await chatMemoryService.analyzeAndSaveMemory(
-            userData?.uid || 'anonymous',
-            {
-              question: userQuestion,
-              response: parsed.steps,
-              userProfile: userData,
-              successful: true
-            },
-            updateUserData
+            (userData as any)?.uid || 'anonymous',
+            question,
+            steps,
+            userData
           );
           
           // Generate resource recommendations if user wants them
@@ -878,7 +896,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                     <p className="text-sm font-medium text-gray-800 mb-1">{activity.question}</p>
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <span>{activity.time}</span>
-                      <span>{t('dashboard.stepsCompleted', { count: activity.steps.toString() })}</span>
+                      <span>{t('dashboard.stepsCompleted', { count: activity.steps })}</span>
                     </div>
                   </div>
                 ))}

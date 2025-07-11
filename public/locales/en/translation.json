@@ -204,7 +204,19 @@
       "description": "The very basics to get you started with technology.",
       "modules": {
         "turnOnDevice": { "title": "Turning on a Device", "description": "Learn to power up computers and smartphones." },
-        "mouseTouchscreen": { "title": "Using a Mouse/Touchscreen", "description": "Master pointing, clicking, and tapping." },
+        "mouseTouchscreen": {
+          "title": "Using a Mouse/Touchscreen",
+          "description": "Master pointing, clicking, and tapping.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Let’s Play: Mouse & Touchscreen Basics</h3><p>Ready to explore? Your mouse and touchscreen are your magic wands for the digital world!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mouse Fun:</h4><ul class=\"space-y-2\"><li>• <b>Point</b>: Move the mouse and watch the arrow follow you!</li><li>• <b>Click</b>: Press the left button to select things. Try clicking on a button below!</li><li>• <b>Double Click</b>: Quickly press twice to open files or programs.</li><li>• <b>Right Click</b>: Press the right button for a secret menu.</li><li>• <b>Scroll</b>: Roll the wheel to move up and down a page.</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Touchscreen Tricks:</h4><ul class=\"space-y-2\"><li>• <b>Tap</b>: Gently touch the screen to select.</li><li>• <b>Swipe</b>: Slide your finger to scroll or switch screens.</li><li>• <b>Pinch</b>: Move two fingers together or apart to zoom in and out.</li><li>• <b>Long Press</b>: Hold your finger down for more options (like right click!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Try It Out!</h4><ul class=\"space-y-2\"><li>• Move your mouse and see what changes on the screen.</li><li>• Tap and swipe on your device to explore.</li></ul></div></div>",
+          "keyPoints": [
+            "The mouse pointer follows your hand!",
+            "Left click is your main action.",
+            "Touchscreens let you tap, swipe, and zoom!"
+          ],
+          "practiceExercise": "Try clicking, double-clicking, and right-clicking on your desktop. On a touchscreen, tap and swipe to move between screens.",
+          "animationDesc": "Watch how to click, double-click, and swipe on a touchscreen."
+        },
         "keyboardTyping": { "title": "Keyboard/Typing Basics", "description": "Get comfortable with typing essentials." },
         "filesFolders": { "title": "Understanding Files & Folders", "description": "Learn how digital information is organized." }
       }
@@ -238,13 +250,35 @@
         "photoEditing": { "title": "Basic Photo Editing", "description": "Enhance your digital photos." },
         "productivityTools": { "title": "Intro to Productivity Tools", "description": "Using tools like Google Docs or Microsoft Word basics." }
       }
+    },
+    "accessibility": {
+      "title": "Accessibility & Ease of Use",
+      "description": "Make your device easier to see, hear, and control.",
+      "modules": {
+        "screenMagnifier": { "title": "Using a Screen Magnifier", "description": "Make text and images bigger on your screen." },
+        "voiceCommands": { "title": "Voice Commands & Dictation", "description": "Control your device and type with your voice." },
+        "highContrast": { "title": "High Contrast & Color Settings", "description": "Adjust colors for better visibility." },
+        "assistiveTouch": { "title": "Assistive Touch & Shortcuts", "description": "Use on-screen tools for easier navigation." }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Health, Safety & Privacy",
+      "description": "Stay safe, healthy, and private while using technology.",
+      "modules": {
+        "privacySettings": { "title": "Privacy Settings", "description": "Protect your personal information online." },
+        "scamAwareness": { "title": "Scam Awareness", "description": "Spot and avoid common online scams." },
+        "healthApps": { "title": "Using Health Apps", "description": "Track your health and wellness with apps." },
+        "emergencyContacts": { "title": "Setting Up Emergency Contacts", "description": "Add emergency contacts to your device." }
+      }
     }
   },
   "badges": {
     "fundamentals": { "name": "Tech Starter", "description": "Completed Computer & Device Fundamentals." },
     "onlineWorld": { "name": "Online Explorer", "description": "Completed The Online World path." },
     "digitalLife": { "name": "Digital Communicator", "description": "Completed Everyday Digital Life path." },
-    "advancedSkills": { "name": "Tech Virtuoso", "description": "Completed Advanced & Creative Skills path." }
+    "advancedSkills": { "name": "Tech Virtuoso", "description": "Completed Advanced & Creative Skills path." },
+    "accessibility": { "name": "Accessibility Champion", "description": "Completed Accessibility & Ease of Use path." },
+    "healthAndSafety": { "name": "Safety Guardian", "description": "Completed Health, Safety & Privacy path." }
   },
   "skillAssessmentModal": {
     "title": "Quick Skill Check",
@@ -770,57 +804,35 @@
     "couldntGetAnswer": "Sorry, I couldn't get an answer right now. Please try again."
   },
   "learningPage": {
-    "headerTitle": "Learning Center",
-    "heroTitle": "Tech Skills for Seniors",
-    "heroSubtitle": "Learn technology at your own pace with step-by-step lessons, interactive demos, and personalized guidance.",
-    "takeSkillsAssessment": "Take Skills Assessment",
-    "orSeparator": "or",
-    "iAmBeginner": "I'm a Beginner",
-    "iAmIntermediate": "I'm Intermediate",
-    "iAmAdvanced": "I'm Advanced",
-    "yourLevel": "Your Level: {{level}}",
-    "levelDescription": "Courses are personalized for your skill level",
-    "retakeAssessment": "Retake Assessment",
+    "startOrContinueCourse": "Start or Continue Course",
     "progressLabel": "Progress",
-    "lessonsLabel": "lessons",
     "completedOutOfTotal": "{{completed}} of {{total}} completed",
-    "featureInteractiveDemos": "Interactive Demos",
-    "featureInteractiveDemosDesc": "See exactly how to perform each action",
-    "featureAudioSupport": "Audio Support",
-    "featureAudioSupportDesc": "Have lessons read aloud to you",
-    "featurePrintableGuides": "Printable Guides",
-    "featurePrintableGuidesDesc": "Take summaries with you offline",
-    "featureCertificates": "Certificates",
-    "featureCertificatesDesc": "Earn certificates as you complete courses",
-    "animationShow": "Show Animation",
-    "animationReset": "Reset",
-    "featuresGridTitle": "Explore Our Features",
-    "loadingPaths": "Loading learning paths...",
-    "noPathsAvailable": "No learning paths available at the moment. Please check back later.",
-    "progressComplete": "{{value}}% complete",
-    "recommendedStart": "Recommended Starting Point",
-    "moduleListTitle": "Modules for path: {{pathTitle}}",
-    "moduleContentTitle": "Content for module: {{moduleTitle}} will go here.",
+    "lessonsHeader": "Lessons",
+    "moduleTimeLabel": "Time: ",
+    "lessonContentPlaceholder": "No content available for {{lessonTitle}} yet.",
     "loadingCenter": "Loading Learning Center...",
-    "moduleTimeLabel": "Time: "
-  },
-  "languageSelector": {
-    "choosePrompt": "Choose your preferred language for the interface",
-    "moreComingSoon": "🌍 More languages coming soon"
-  },
-  "assessmentView": {
-    "headerTitle": "Skills Assessment",
-    "questionProgress": "Question {{current}} of {{total}}",
-    "chooseBestOption": "Choose the option that best describes you",
-    "skipAssessment": "Skip Assessment"
+    "progressComplete": "{{value}}% complete",
+    "noPathsAvailable": "No learning paths available.",
+    "featuresGridTitle": "Features",
+    "heroTitle": "Welcome to the Learning Center",
+    "heroSubtitle": "Step-by-step courses, interactive demos, and practical skills for everyone.",
+    "recommendedStart": "Recommended Start",
+    "loadingPaths": "Loading courses...",
+    "moduleListTitle": "Lessons in {{pathTitle}}:",
+    "noLessonAvailable": "No lesson available.",
+    "retakeAssessment": "Retake Skills Assessment"
   },
   "courseView": {
-    "lessonsHeader": "Lessons",
-    "interactiveDemoLabel": "Interactive demo",
+    "previousLesson": "Previous Lesson",
+    "nextLesson": "Next Lesson",
+    "markAsComplete": "Mark as Complete",
+    "completed": "Completed",
+    "reviewLesson": "Review Lesson",
     "startLesson": "Start Lesson",
-    "reviewLesson": "Review",
+    "removeBookmark": "Remove Bookmark",
+    "addBookmark": "Add Bookmark",
     "congratulations": "Congratulations!",
-    "courseComplete": "You've completed the {{courseTitle}} course!",
+    "courseComplete": "You have completed the course: {{courseTitle}}.",
     "downloadCertificate": "Download Certificate"
   },
   "lessonView": {

@@ -1,0 +1,944 @@
+{
+  "welcome": "Sveiki atvykę!",
+  "onboarding": {
+    "step1": {
+      "title": "Susipažinkime",
+      "subtitle": "Padėkite man suasmeninti Jūsų patirtį",
+      "firstName": "Vardas",
+      "firstNamePlaceholder": "Jūsų vardas",
+      "lastName": "Pavardė",
+      "lastNamePlaceholder": "Jūsų pavardė",
+      "age": "Amžius (padeda man pritaikyti paaiškinimus)"
+    },
+    "step2": {
+      "title": "Pasirinkite norimas kalbas",
+      "subtitle": "Pasirinkite kalbas, kurias norite naudoti bendravimui ir balso įvestims",
+      "languageSelection": "Kalbos pasirinkimas",
+      "languageDescription": "Pasirinkite kalbas, kuriomis jaučiatės patogiai. Tai leis:",
+      "speechToText": "Konfigūruoti kalbos atpažinimą, kad suprastų Jūsų balsą šiomis kalbomis",
+      "textInteractions": "Įjungti tekstinius bendravimus Jūsų pasirinktomis kalbomis",
+      "interfaceOptions": "Pritaikyti sąsajos parinktis geresniam prieinamumui",
+      "searchLanguages": "Ieškoti kalbų...",
+      "selectAll": "Pasirinkti viską",
+      "deselectAll": "Atšaukti visų pasirinkimą",
+      "selected": "Pasirinkta kalba: {{count}}",
+      "selected_plural": "Pasirinkta kalbų: {{count}}",
+      "noLanguagesFound": "Nerasta kalbų, atitinkančių „{{search}}“",
+      "languageRequired": "Būtina pasirinkti kalbą",
+      "languageRequiredDesc": "Norėdami tęsti, pasirinkite bent vieną kalbą. Tai užtikrins geriausią balso įvesties ir tekstinio bendravimo patirtį."
+    },
+    "step3": {
+      "title": "Kokį įrenginį naudojate dažniausiai?",
+      "subtitle": "Tai padeda man pateikti geresnes instrukcijas",
+      "devices": {
+        "windowscomputer": "Windows kompiuteris",
+        "macapplecomputer": "Mac (Apple kompiuteris)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android telefonas ar planšetė",
+        "smarttv": "Išmanusis televizorius",
+        "multipledevices": "Keli įrenginiai"
+      }
+    },
+    "step4": {
+      "title": "Kaip patogiai jaučiatės su technologijomis?",
+      "subtitle": "Būkite atviri – tai padės man paaiškinti viską tinkamu lygiu",
+      "beginner": "Pradedantysis",
+      "beginnerDesc": "Daugumai dalykų man reikia pagalbos žingsnis po žingsnio",
+      "some": "Šiek tiek patirties",
+      "someDesc": "Galiu atlikti pagrindines užduotis, bet reikia pagalbos su naujais dalykais",
+      "comfortable": "Patogiai",
+      "comfortableDesc": "Daugumą dalykų galiu išsiaiškinti pats, bet kartais reikia patarimo"
+    },
+    "step5": {
+      "title": "Kokios technologijų temos Jums kelia daugiausiai nerimo?",
+      "subtitle": "Pasirinkite viską, kas tinka – šiose srityse pagalbą teiksiu pirmumo tvarka",
+      "concerns": {
+        "onlineSafety": "Saugumas internete ir sukčiai",
+        "passwordManagement": "Slaptažodžių valdymas",
+        "videoCalling": "Vaizdo skambučiai su šeima",
+        "socialMedia": "Socialiniai tinklai",
+        "onlineBanking": "Internetinė bankininkystė",
+        "emailMessaging": "El. paštas ir žinutės",
+        "photoStorage": "Nuotraukų saugojimas ir dalijimasis",
+        "appDownloads": "Programėlių atsisiuntimas ir atnaujinimas",
+        "wifiInternet": "„Wi-Fi“ ir interneto problemos",
+        "deviceSettings": "Įrenginio nustatymai",
+        "onlineShopping": "Apsipirkimas internetu",
+        "healthApps": "Sveikatos programėlės ir portalai"
+      }
+    },
+    "step6": {
+      "title": "Ar Jums reikalingos prieinamumo funkcijos?",
+      "subtitle": "Noriu užtikrinti, kad galėtumėte patogiai naudotis šia programa",
+      "needs": {
+        "largerText": "Didesnis tekstas ir mygtukai",
+        "highContrast": "Didelio kontrasto spalvos",
+        "voiceCommands": "Balso komandos",
+        "screenReader": "Ekrano skaitytuvo palaikymas",
+        "slowerExplanations": "Lėtesni paaiškinimai",
+        "visualSteps": "Vaizdiniai žingsnių indikatoriai",
+        "noneNeeded": "Nereikalingos"
+      }
+    },
+    "step7": {
+      "title": "Kaip Jums labiausiai patinka mokytis?",
+      "subtitle": "Pritaikysiu savo mokymo stilių prie Jūsų pageidavimų",
+      "simple": "Paprastai ir greitai",
+      "simpleDesc": "Tiesiog pasakykite, ką daryti, žingsnis po žingsnio",
+      "detailed": "Išsamūs paaiškinimai",
+      "detailedDesc": "Paaiškinkite, kodėl atlieku kiekvieną žingsnį",
+      "visual": "Vizualus mokymasis",
+      "visualDesc": "Parodykite man paveikslėlius ir vaizdo įrašus, kai įmanoma"
+    },
+    "step8": {
+      "title": "Paskutiniai potėpiai",
+      "subtitle": "Sukurkite sau tobulą mokymosi aplinką",
+      "textToSpeech": "Teksto skaitymas balsu",
+      "textToSpeechDesc": "Atsakymai bus perskaityti garsiai",
+      "voiceInput": "Balso įvestis",
+      "voiceInputDesc": "Užduokite klausimus kalbėdami",
+      "videoRecommendations": "Vaizdo įrašų rekomendacijos",
+      "videoRecommendationsDesc": "Rodyti naudingus vaizdo įrašus ir straipsnius",
+      "textSize": "Pageidaujamas teksto dydis",
+      "textSizeNormal": "Normalus",
+      "textSizeLarge": "Didelis",
+      "textSizeExtraLarge": "Labai didelis"
+    },
+    "back": "Atgal",
+    "next": "Toliau",
+    "settingUp": "Nustatoma...",
+    "completeSetup": "Užbaigti sąranką",
+    "errorSaving": "Nepavyko išsaugoti Jūsų nustatymų. Bandykite dar kartą."
+  },
+  "nav": {
+    "features": "Funkcijos",
+    "reviews": "Atsiliepimai",
+    "signIn": "Prisijungti",
+    "getStarted": "Pradėti"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Pasitiki senjorai visame pasaulyje",
+      "title": "Technologijos tapo",
+      "titleHighlight": "paprastos ir aiškios",
+      "subtitle": "Įvaldykite technologijas užtikrintai su asmeninėmis, žingsnis po žingsnio instrukcijomis, kurios suteikia jausmą, lyg šalia Jūsų būtų kantrus draugas.",
+      "startLearningButton": "Pradėti mokytis nemokamai",
+      "watchDemoButton": "Žiūrėti demonstraciją",
+      "freeForever": "Nemokamai amžinai",
+      "noCreditCard": "Kredito kortelė nereikalinga",
+      "available247": "Pasiekiama 24/7"
+    },
+    "featuresSection": {
+      "title": "Funkcijos",
+      "subtitle": "Tai tik kelios iš siūlomų funkcijų, kurios padės Jums tobulėti!",
+      "items": [
+        {
+          "title": "Pagalba žingsnis po žingsnio",
+          "description": "Gaukite aiškias, lengvai sekamas instrukcijas bet kokiam technologiniam klausimui. Kiekvienas žingsnis paaiškinamas paprastais terminais su vaizdinėmis užuominomis."
+        },
+        {
+          "title": "Palaikymas balsu",
+          "description": "Užduokite klausimus balsu ir gaukite atsakymus, perskaitytus garsiai. Puikiai tinka pagalbai laisvomis rankomis, kai jos labiausiai reikia."
+        },
+        {
+          "title": "Paaiškinimas pagal nuotrauką",
+          "description": "Nufotografuokite bet kokį kabelį, mygtuką ar įrenginį ir gaukite momentinį paaiškinimą, kas tai yra ir kaip jį naudoti."
+        },
+        {
+          "title": "Senjorams pritaikytas dizainas",
+          "description": "Didelis tekstas, intuityvi sąsaja ir kantrūs paaiškinimai, sukurti specialiai galvojant apie senjorus."
+        },
+        {
+          "title": "Saugu ir patikima",
+          "description": "Jūsų asmeninė informacija yra apsaugota įmonės lygio saugumu. Duomenys nėra bendrinami su trečiosiomis šalimis."
+        },
+        {
+          "title": "Momentiniai atsakymai",
+          "description": "Gaukite pagalbą nedelsiant, 24/7. Jokių laukimų eilėje ar susitikimų planavimo. Tiesiog klauskite ir gaukite atsakymus."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Populiarūs klausimai, su kuriais padedame",
+      "subtitle": "Pažiūrėkite, ko klausia kiti senjorai",
+      "askYourQuestionButton": "Užduokite savo klausimą dabar"
+    },
+    "testimonialsSection": {
+      "title": "Ką sako mūsų bendruomenė",
+      "subtitle": "Prisijunkite prie tūkstančių senjorų, kurie rado paprastą pagalbą technologijų srityje",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Ostinas, Teksasas",
+          "content": "Pagaliau kažkas, kas paaiškina technologijas taip, kad aš suprasčiau! Žingsnis po žingsnio instrukcijos padėjo man puikiai nustatyti naują telefoną. Dabar jaučiuosi daug labiau pasitikinti savimi!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Siatlas, Vašingtonas",
+          "content": "Balso funkcija yra nuostabi! Galiu tiesiog garsiai užduoti klausimus ir gauti aiškius atsakymus. Tai lyg turėti technologijas išmanantį anūką, pasiekiamą 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Majamis, Florida",
+          "content": "Aš dievinu nuotraukų funkciją! Nufotografavau painų kabelį ir akimirksniu sužinojau, kam jis skirtas. Ši programėlė padarė mane daug labiau pasitikinčia technologijomis.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denveris, Koloradas",
+          "content": "Buvau labai nusivylęs savo išmaniuoju televizoriumi, kol neradau šio pagalbininko. Dabar galiu transliuoti laidas, reguliuoti nustatymus ir netgi kalbėtis vaizdo skambučiu su anūkais!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Amžius: {{age}}"
+    },
+    "ctaSection": {
+      "title": "Pasiruošę įvaldyti technologijas?",
+      "subtitle": "Prisijunkite prie mūsų įgalintų senjorų bendruomenės, kurie padarė technologijas paprastas ir prieinamas. Pradėkite gauti aiškius, naudingus atsakymus šiandien – visiškai nemokamai!",
+      "getStartedButton": "Pradėkite nemokamai šiandien",
+      "setupInMinutes": "Sąranka per 2 minutes"
+    },
+    "footer": {
+      "description": "Technologijų prieinamumo ir suprantamumo didinimas senjorams visur.",
+      "featuresTitle": "Funkcijos",
+      "featuresItems": [
+        "Pagalba žingsnis po žingsnio",
+        "Pagalba balsu",
+        "Paaiškinimas pagal nuotrauką",
+        "Prieinamumas 24/7"
+      ],
+      "supportTitle": "Pagalba",
+      "supportItems": [
+        "Pagalbos centras",
+        "Darbo pradžia",
+        "Bendruomenė",
+        "Susisiekite su mumis"
+      ],
+      "companyTitle": "Įmonė",
+      "companyItems": [
+        "Apie mus",
+        "Privatumo politika",
+        "Paslaugų teikimo sąlygos",
+        "Prieinamumas"
+      ],
+      "copyright": "© 2025 TechStep. Sukurta su ❤️ senjorams visur.",
+      "trustedBy": "Pasitiki",
+      "trustedByCount": "50 000+ senjorų"
+    }
+  },
+  "dashboard": {
+    "welcome": "Sveiki atvykę į TechStep",
+    "welcomeUser": "Sveiki sugrįžę, {{name}}!",
+    "ready": "Pasiruošę išmokti kažką naujo?",
+    "getHelp": "Gaukite greitą pagalbą",
+    "askQuestion": "Užduokite bet kokį techninį klausimą ir gaukite instrukcijas žingsnis po žingsnio",
+    "placeholder": "Kuo galėčiau Jums šiandien padėti?",
+    "getSteps": "Gauti pagalbą žingsnis po žingsnio",
+    "gettingSteps": "Gaunami Jūsų žingsniai...",
+    "craftingSteps": "Kuriamos Jūsų asmeninės instrukcijos...",
+    "takesAMoment": "Tai gali užtrukti akimirką",
+    "quickTips": "Greiti patarimai Jums",
+    "popularQuestions": "Populiarūs klausimai šiandien",
+    "quickActions": "Greiti veiksmai",
+    "recentActivity": "Naujausia veikla",
+    "yourProgress": "Jūsų progresas",
+    "needHelp": "Reikia pagalbos?",
+    "helpingHand": "Mes esame čia, kad padėtume Jums pasiekti sėkmę",
+    "chatHuman": "Kalbėtis su žmogumi",
+    "browseGuides": "Naršyti vaizdo vadovus",
+    "browseTips": "Naršyti patarimus",
+    "commonSolutions": "Rasti įprastus sprendimus",
+    "stepsCompleted": "Atlikta žingsnių: {{count}}",
+    "needMoreInfo": "Man reikia šiek tiek daugiau informacijos, kad galėčiau Jums geriau padėti"
+  },
+  "aiTools": {
+    "title": "DI pagalbos įrankiai",
+    "description": "Nuotraukų paaiškintojas ir technologijų vertėjas"
+  },
+  "aiToolsModal": {
+    "header": "DI pagalbos įrankiai",
+    "tabs": {
+      "photoExplainer": "Nuotraukų paaiškintojas",
+      "techWordBuster": "Technologinių žodžių „laužytojas“"
+    },
+    "photoExplainer": {
+      "title": "Nuotraukų paaiškintojas",
+      "description": "Įkelkite bet kokio kabelio, mygtuko ar įrenginio nuotrauką ir gaukite momentinį paaiškinimą.",
+      "uploadButton": "Įkelti nuotrauką",
+      "questionLabel": "Užduokite klausimą apie nuotrauką (neprivaloma)",
+      "questionPlaceholder": "Kam skirtas šis kabelis?",
+      "explainButton": "Paaiškinti nuotrauką",
+      "analyzingButton": "Analizuojama...",
+      "alertNoPhoto": "Pirmiausia įkelkite nuotrauką arba patikrinkite API konfigūraciją.",
+      "errorResponse": "<p class=\"text-red-600\">Atsiprašome, nepavyko išanalizuoti nuotraukos. Bandykite dar kartą.</p>",
+      "readResponseButton": "🔊 Perskaityti atsakymą garsiai",
+      "previewAlt": "Peržiūra"
+    },
+    "techWordBuster": {
+      "title": "Technologinių žodžių „laužytojas“",
+      "description": "Sumišote dėl technologinio termino? Gaukite paprastą, lengvai suprantamą paaiškinimą su realaus pasaulio analogijomis.",
+      "inputLabel": "Įveskite technologinį žodį ar frazę",
+      "inputPlaceholder": "pvz., Debesų saugykla, „Wi-Fi“, „Bluetooth“",
+      "explainButton": "Padaryti tai aišku",
+      "explainingButton": "Aiškina...",
+      "alertNoTerm": "Pirmiausia įveskite technologinį terminą arba patikrinkite API konfigūraciją.",
+      "errorResponse": "<p class=\"text-red-600\">Atsiprašome, nepavyko paaiškinti šio termino. Bandykite dar kartą.</p>",
+      "readExplanationButton": "🔊 Perskaityti paaiškinimą garsiai"
+    },
+    "apiErrorNoExplanation": "Negautas joks paaiškinimas"
+  },
+  "clarificationModal": {
+    "headerTitle": "Man reikia šiek tiek daugiau informacijos",
+    "yourQuestionLabel": "Jūsų klausimas:",
+    "tellMeMorePrompt": "Kad galėčiau suteikti geriausią pagalbą, ar galėtumėte papasakoti šiek tiek daugiau?",
+    "forExampleLabel": "Pavyzdžiui:",
+    "textareaPlaceholder": "Prašome pateikti daugiau informacijos...",
+    "textareaSrLabel": "Pateikite daugiau informacijos apie savo klausimą",
+    "skipButton": "Praleisti kol kas",
+    "submitButton": "Gauti geresnę pagalbą",
+    "loadingButton": "Gaunama pagalba..."
+  },
+  "languageNotificationBanner": {
+    "title": "Užbaikite kalbos nustatymą",
+    "description": "Konfigūruokite norimas kalbas geresniam balso įvesties ir tekstinių bendravimų naudojimui.",
+    "buttonText": "Užbaigti sąranką"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Kompiuterio ir įrenginio pagrindai",
+      "description": "Pirmieji žingsniai, padėsiantys Jums pradėti naudotis technologijomis.",
+      "modules": {
+        "turnOnDevice": { "title": "Įrenginio įjungimas", "description": "Išmokite įjungti kompiuterius ir išmaniuosius telefonus." },
+        "mouseTouchscreen": { "title": "Pelės / jutiklinio ekrano naudojimas", "description": "Įvaldykite žymėjimą, spustelėjimą ir bakstelėjimą." },
+        "keyboardTyping": { "title": "Klaviatūros / spausdinimo pagrindai", "description": "Susipažinkite su spausdinimo pagrindais." },
+        "filesFolders": { "title": "Failų ir aplankų supratimas", "description": "Sužinokite, kaip organizuojama skaitmeninė informacija." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Internetinis pasaulis",
+      "description": "Prisijungimas ir saugus interneto naršymas.",
+      "modules": {
+        "webBrowsers": { "title": "Interneto naršyklių supratimas", "description": "Naršykite internete su „Chrome“, „Edge“ ar „Safari“." },
+        "searchEffectively": { "title": "Kaip efektyviai ieškoti", "description": "Raskite, ko Jums reikia, internete naudodami paieškos sistemas." },
+        "introEmail": { "title": "Įvadas į el. paštą", "description": "Išmokite siųsti ir gauti elektroninius laiškus." },
+        "virusSafety": { "title": "Apsauga nuo virusų", "description": "Apsaugokite savo įrenginį nuo kenkėjiškos programinės įrangos." }
+      }
+    },
+    "digitalLife": {
+      "title": "Kasdienis skaitmeninis gyvenimas",
+      "description": "Bendraukite, dalinkitės ir valdykite savo skaitmeninį buvimą.",
+      "modules": {
+        "masteringEmail": { "title": "El. pašto įvaldymas", "description": "Priedai, aplankai ir el. pašto etiketas." },
+        "videoCalling": { "title": "Vaizdo skambučiai su šeima ir draugais", "description": "Bendraukite akis į akį su artimaisiais." },
+        "introSocialMedia": { "title": "Įvadas į socialinius tinklus", "description": "Supraskite platformas, tokias kaip „Facebook“." },
+        "sharingPhotos": { "title": "Saugus nuotraukų dalijimasis", "description": "Dalinkitės savo prisiminimais, nepakenkdami privatumui." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Pažangūs ir kūrybiniai įgūdžiai",
+      "description": "Daugiau nei pagrindai: atraskite, ką dar siūlo technologijos.",
+      "modules": {
+        "onlineShopping": { "title": "Įvadas į apsipirkimą internetu", "description": "Apsipirkite saugiai ir patogiai internetu." },
+        "onlineMaps": { "title": "Internetinių žemėlapių ir navigacijos naudojimas", "description": "Raskite kelią su skaitmeniniais žemėlapiais." },
+        "photoEditing": { "title": "Pagrindinis nuotraukų redagavimas", "description": "Patobulinkite savo skaitmenines nuotraukas." },
+        "productivityTools": { "title": "Įvadas į produktyvumo įrankius", "description": "Naudokitės įrankiais, tokiais kaip „Google Docs“ ar „Microsoft Word“ pagrindai." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Technologijų pradedantysis", "description": "Pabaigėte Kompiuterio ir įrenginio pagrindų kursą." },
+    "onlineWorld": { "name": "Internetinis tyrinėtojas", "description": "Pabaigėte Internetinio pasaulio kursą." },
+    "digitalLife": { "name": "Skaitmeninis komunikatorius", "description": "Pabaigėte Kasdienio skaitmeninio gyvenimo kursą." },
+    "advancedSkills": { "name": "Technologijų virtuozas", "description": "Pabaigėte Pažangių ir kūrybinių įgūdžių kursą." }
+  },
+  "skillAssessmentModal": {
+    "title": "Greitas įgūdžių patikrinimas",
+    "introduction": "Raskime geriausią vietą Jums pradėti!",
+    "nextButton": "Toliau",
+    "finishButton": "Rodyti mano pradinį tašką",
+    "questionProgress": "Klausimas {{current}} iš {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Kaip patogiai jaučiatės su kompiuteriais?",
+      "options": {
+        "new": "Visiškai naujas",
+        "basics": "Žinau pagrindus",
+        "confident": "Gana pasitikintis"
+      }
+    },
+    "q2": {
+      "text": "Ar kada nors siuntėte el. laišką?",
+      "options": {
+        "yes": "Taip",
+        "no": "Ne"
+      }
+    },
+    "q3": {
+      "text": "Ar naudojote išmanųjį telefoną ne tik skambučiams?",
+      "options": {
+        "yes": "Taip",
+        "no": "Ne"
+      }
+    }
+  },
+  "learning": {
+    "title": "Mokymosi centras",
+    "structuredCourses": "Struktūrizuoti kursai ir pamokos",
+    "skillsAssessment": "Įgūdžių vertinimas",
+    "questionNumber": "Klausimas {{current}} iš {{total}}",
+    "resetAnimation": "Atstatyti",
+    "showAnimation": "Rodyti animaciją",
+    "courses": {
+      "beginner": {
+        "title": "Darbo su technologijomis pradžia",
+        "description": "Puikiai tinka visiems pradedantiesiems. Išmokite pagrindus žingsnis po žingsnio.",
+        "estimatedTime": "2-3 valandos",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Įrenginio pagrindai",
+            "description": "Išmokite saugiai įjungti ir išjungti savo įrenginį",
+            "duration": "15 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Įrenginio įjungimas ir išjungimas</h3><p>Kiekvienas įrenginys turi maitinimo mygtuką. Išmokime jį naudoti saugiai.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Kompiuteriams:</h4><ul class=\"space-y-2\"><li>• Ieškokite apvalaus mygtuko su maitinimo simboliu (⏻)</li><li>• Paspauskite jį vieną kartą, kad įjungtumėte</li><li>• Norėdami išjungti: naudokite meniu „Pradėti“, tada „Išjungti“</li><li>• Niekada nespauskite maitinimo mygtuko, kad išjungtumėte!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Telefonams/planšetėms:</h4><ul class=\"space-y-2\"><li>• Maitinimo mygtukas paprastai yra šone</li><li>• Paspauskite ir palaikykite 2–3 sekundes, kad įjungtumėte</li><li>• Norėdami išjungti: paspauskite ir palaikykite, tada slinkite, kad išjungtumėte</li></ul></div></div>",
+            "keyPoints": [
+              "Visada naudokite tinkamas išjungimo procedūras",
+              "Maitinimo mygtuko vieta priklauso nuo įrenginio",
+              "Niekada neišjunkite priverstinai, nebent tai yra absoliučiai būtina"
+            ],
+            "practiceExercise": "Praktikuokitės įjungti ir išjungti savo įrenginį 3 kartus, naudojant tinkamą metodą.",
+            "animationDesc": "Pažiūrėkite, kaip tinkamai paspausti maitinimo mygtuką"
+          },
+          "mouseKeyboard": {
+            "title": "Pelės ir klaviatūros naudojimas",
+            "description": "Įvaldykite kompiuterio įvesties įrenginių pagrindus",
+            "duration": "20 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Pelės ir klaviatūros pagrindai</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Pelės pagrindai:</h4><ul class=\"space-y-2\"><li>• Kairysis spustelėjimas: pasirinkti elementus, atidaryti programas</li><li>• Dešinysis spustelėjimas: atidaryti meniu su daugiau parinkčių</li><li>• Dvigubas spustelėjimas: atidaryti failus ir programas</li><li>• Slinkties ratukas: judėti aukštyn ir žemyn puslapiuose</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Klaviatūros pagrindai:</h4><ul class=\"space-y-2\"><li>• Tarpų klavišas: pridėti tarpus tarp žodžių</li><li>• Enter: pradėti naują eilutę arba patvirtinti</li><li>• Backspace: ištrinti raidę prieš žymeklį</li><li>• Shift: rašyti didžiąsias raides</li></ul></div></div>",
+            "keyPoints": [
+              "Kairysis spustelėjimas yra jūsų pagrindinis įrankis",
+              "Dešinysis spustelėjimas atidaro naudingus meniu",
+              "Praktika daro meistru"
+            ],
+            "practiceExercise": "Atidarykite paprastą teksto programą ir parašykite savo vardą, tada ištrinkite jį naudodami „backspace“.",
+            "animationDesc": "Pažiūrėkite, kaip spustelėti, dukart spustelėti ir dešiniuoju pelės mygtuku spustelėti"
+          },
+          "internetSafety": {
+            "title": "Interneto saugumo pagrindai",
+            "description": "Būkite saugūs internete naudodamiesi šiais esminiais patarimais",
+            "duration": "25 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Saugumas internete</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Sukčiavimo įspėjamieji ženklai:</h4><ul class=\"space-y-2 text-red-700\"><li>• Skubūs pranešimai, prašantys pinigų</li><li>• Prašymai pateikti slaptažodžius ar asmeninę informaciją</li><li>• „Jūs laimėjote“ pranešimai, kai nedalyvavote</li><li>• Įtartinos nuorodos ar priedai</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Saugaus naršymo patarimai:</h4><ul class=\"space-y-2\"><li>• Ieškokite „https://“ interneto adresuose</li><li>• Atsisiųskite tik iš oficialių programėlių parduotuvių</li><li>• Laikykite savo programinę įrangą atnaujintą</li><li>• Naudokite stiprius, unikalius slaptažodžius</li></ul></div></div>",
+            "keyPoints": [
+              "Niekada neduokite asmeninės informacijos nepažįstamiems",
+              "Jei abejojate, paklauskite patikimo asmens",
+              "Teisėtos įmonės neprašys slaptažodžių el. paštu"
+            ],
+            "practiceExercise": "Iš pamokos nurodykite 3 internetinio sukčiavimo įspėjamuosius ženklus."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Bendravimas su šeima ir draugais",
+        "description": "Išmokite saugiai naudotis socialiniais tinklais, vaizdo skambučiais ir žinutėmis.",
+        "estimatedTime": "3-4 valandos",
+        "lessons": {
+          "videoCalls": {
+            "title": "Vaizdo skambučiai su šeima",
+            "description": "Bendraukite akis į akį su artimaisiais bet kur",
+            "duration": "30 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Vaizdo skambučių atlikimas</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populiarios vaizdo skambučių programėlės:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): įdiegta, labai paprasta</li><li>• <strong>WhatsApp</strong>: veikia visuose telefonuose</li><li>• <strong>Zoom</strong>: puikiai tinka grupiniams skambučiams</li><li>• <strong>Skype</strong>: veikia kompiuteriuose ir telefonuose</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Prieš skambutį:</h4><ul class=\"space-y-2\"><li>• Patikrinkite interneto ryšį</li><li>• Raskite gerą apšvietimą (atsisukę į langą)</li><li>• Išbandykite kamerą ir mikrofoną</li><li>• Turėkite paruoštą asmens kontaktą</li></ul></div></div>",
+            "keyPoints": [
+              "Geras apšvietimas daro didelį skirtumą",
+              "Išbandykite savo sąranką prieš svarbius skambučius",
+              "Dauguma programėlių veikia panašiai, kai išmokstate vieną"
+            ],
+            "practiceExercise": "Atlikite bandomąjį vaizdo skambutį šeimos nariui ar draugui."
+          },
+          "socialMedia": {
+            "title": "Socialinių tinklų pagrindai",
+            "description": "Bendraukite su draugais ir šeima „Facebook“ ir kitose platformose",
+            "duration": "35 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Darbo su socialiniais tinklais pradžia</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">„Facebook“ pagrindai:</h4><ul class=\"space-y-2\"><li>• Sukurkite profilį su savo tikruoju vardu</li><li>• Pridėkite gražią profilio nuotrauką</li><li>• Siųskite draugystės prašymus žmonėms, kuriuos pažįstate</li><li>• Dalinkitės naujienomis, nuotraukomis ir prisiminimais</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Privatumo nustatymai:</h4><ul class=\"space-y-2\"><li>• Priimkite tik tuos draugus, kuriuos tikrai pažįstate</li><li>• Nustatykite įrašus kaip „Tik draugams“</li><li>• Niekada viešai nesidalinkite asmenine informacija</li><li>• Peržiūrėkite, ką kiti gali matyti apie jus</li></ul></div></div>",
+            "keyPoints": [
+              "Privatumo nustatymai yra labai svarbūs",
+              "Bendraukite tik su žmonėmis, kuriuos pažįstate",
+              "Pagalvokite prieš skelbdami – tai lieka internete"
+            ],
+            "practiceExercise": "Nustatykite savo privatumo nustatymus įrašams į „Tik draugams“."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Skaitmeninio gyvenimo įvaldymas",
+        "description": "Pažangūs įgūdžiai užtikrintam skaitmeniniam gyvenimui.",
+        "estimatedTime": "4-5 valandos",
+        "lessons": {
+          "smartHome": {
+            "title": "Išmaniųjų namų įrenginiai",
+            "description": "Valdykite savo namus balso komandomis ir programėlėmis",
+            "duration": "40 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Išmaniųjų namų pagrindai</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populiarūs išmanieji įrenginiai:</h4><ul class=\"space-y-2\"><li>• <strong>Išmanieji garsiakalbiai</strong>: Alexa, Google Home</li><li>• <strong>Išmanieji termostatai</strong>: valdykite temperatūrą nuotoliniu būdu</li><li>• <strong>Išmaniosios lemputės</strong>: pritemdykite, keiskite spalvas, nustatykite tvarkaraščius</li><li>• <strong>Išmanieji durų skambučiai</strong>: pažiūrėkite, kas yra prie durų</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Darbo pradžia:</h4><ul class=\"space-y-2\"><li>• Pradėkite nuo vieno įrenginio, kad išmoktumėte</li><li>• Atsisiųskite įrenginio programėlę</li><li>• Vykdykite sąrankos instrukcijas žingsnis po žingsnio</li><li>• Praktikuokitės pagrindines balso komandas</li></ul></div></div>",
+            "keyPoints": [
+              "Pradėkite paprastai nuo vieno įrenginio",
+              "Balso komandos palengvina gyvenimą",
+              "Dauguma įrenginių turi naudingas programėles"
+            ],
+            "practiceExercise": "Jei turite išmanųjį įrenginį, praktikuokitės 3 skirtingas balso komandas."
+          },
+          "onlineBanking": {
+            "title": "Internetinės bankininkystės saugumas",
+            "description": "Valdykite savo finansus saugiai internetu",
+            "duration": "45 min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Saugi internetinė bankininkystė</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Saugumo pagrindai:</h4><ul class=\"space-y-2 text-red-700\"><li>• Visada tiesiogiai įveskite savo banko interneto adresą</li><li>• Ieškokite spynos ikonos savo naršyklėje</li><li>• Niekada nesinaudokite bankininkyste viešajame „Wi-Fi“ tinkle</li><li>• Baigę visiškai atsijunkite</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Ką galite daryti internetu:</h4><ul class=\"space-y-2\"><li>• Tikrinti sąskaitų likučius</li><li>• Peržiūrėti operacijų istoriją</li><li>• Pervesti pinigus tarp sąskaitų</li><li>• Apmokėti sąskaitas elektroniniu būdu</li></ul></div></div>",
+            "keyPoints": [
+              "Saugumas yra svarbiausias prioritetas",
+              "Jūsų bankas niekada neprašys slaptažodžių el. paštu",
+              "Internetinė bankininkystė yra labai patogi, kai atliekama saugiai"
+            ],
+            "practiceExercise": "Apsilankykite savo banko svetainėje ir praktikuokitės prisijungti (dar neatlikite jokių operacijų)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Kaip patogiai jaučiatės įjungdami ir išjungdami kompiuterį ar telefoną?",
+          "options": {
+            "0": "Niekada to nedariau",
+            "1": "Kiekvieną kartą reikia pagalbos",
+            "2": "Kartais galiu tai padaryti",
+            "3": "Labai patogiai"
+          }
+        },
+        "1": {
+          "question": "Kaip dažnai naudojatės internetu?",
+          "options": {
+            "0": "Niekada",
+            "1": "Retai",
+            "2": "Kartais",
+            "3": "Kasdien"
+          }
+        },
+        "2": {
+          "question": "Ar kada nors siuntėte el. laišką?",
+          "options": {
+            "0": "Niekada",
+            "1": "Su daug pagalbos",
+            "2": "Keletą kartų",
+            "3": "Reguliariai"
+          }
+        },
+        "3": {
+          "question": "Kaip patogiai jaučiatės atsisiųsdami programėles?",
+          "options": {
+            "0": "Niekada nebandžiau",
+            "1": "Labai nervinuosi",
+            "2": "Su pagalba",
+            "3": "Pasitikėdamas"
+          }
+        },
+        "4": {
+          "question": "Ar naudojatės vaizdo skambučiais („FaceTime“, „Zoom“ ir kt.)?",
+          "options": {
+            "0": "Niekada",
+            "1": "Išbandžiau vieną kartą",
+            "2": "Kartais",
+            "3": "Reguliariai"
+          }
+        },
+        "5": {
+          "question": "Kaip vertinate apsipirkimą internetu?",
+          "options": {
+            "0": "Per daug baisu",
+            "1": "Labai nervinuosi",
+            "2": "Pasiruošęs išbandyti",
+            "3": "Dažnai apsiperku internetu"
+          }
+        },
+        "6": {
+          "question": "Ar naudojotės socialiniais tinklais („Facebook“ ir kt.)?",
+          "options": {
+            "0": "Niekada",
+            "1": "Peržiūrėjau",
+            "2": "Turiu paskyrą",
+            "3": "Reguliariai naudoju"
+          }
+        },
+        "7": {
+          "question": "Kaip patogiai jaučiatės su slaptažodžiais?",
+          "options": {
+            "0": "Labai sutrikęs",
+            "1": "Reikia pagalbos",
+            "2": "Suprantu pagrindus",
+            "3": "Gerai juos valdau"
+          }
+        },
+        "8": {
+          "question": "Ar darote atsargines nuotraukų ir failų kopijas?",
+          "options": {
+            "0": "Nežinau kaip",
+            "1": "Kažkas man padeda",
+            "2": "Kartais",
+            "3": "Reguliariai"
+          }
+        },
+        "9": {
+          "question": "Kaip mokotės naujų technologijų?",
+          "options": {
+            "0": "Vengiu to",
+            "1": "Prašau pagalbos",
+            "2": "Atsargiai bandau",
+            "3": "Užtikrintai tyrinėju"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Tinkinti savo nustatymus",
+    "personalInfo": "Asmeninė informacija",
+    "firstName": "Vardas",
+    "firstNamePlaceholder": "Jūsų vardas",
+    "primaryDevice": "Pagrindinis įrenginys",
+    "devices": {
+      "windowsComputer": "Windows kompiuteris",
+      "macComputer": "Mac (Apple kompiuteris)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android telefonas ar planšetė"
+    },
+    "accessibility": "Prieinamumas",
+    "textToSpeech": "Teksto skaitymas balsu",
+    "textToSpeechDesc": "Atsakymai bus perskaityti garsiai",
+    "voiceInput": "Balso įvestis",
+    "voiceInputDesc": "Užduokite klausimus kalbėdami",
+    "languagePreferences": "Kalbos nustatymai",
+    "hideLanguages": "Slėpti",
+    "modifyLanguages": "Keisti kalbas",
+    "defaultLanguage": "Numatytoji kalba (visa svetainė naudos šią kalbą)",
+    "defaultLanguageDesc": "Tai bus pagrindinė kalba visiems sąsajos elementams ir sąveikoms.",
+    "otherLanguages": "Kitos kalbos, kurias norėtumėte naudoti:",
+    "default": "Numatytoji",
+    "languageConfiguration": "Kalbos konfigūracija",
+    "languageConfigurationDesc": "Jūsų pasirinktos kalbos bus naudojamos:",
+    "speechToText": "Kalbos atpažinimui ir apdorojimui",
+    "multilingualText": "Daugiakalbiams tekstiniams bendravimams ir atsakymams",
+    "interfaceLanguage": "Sąsajos kalbos parinktims ir prieinamumui",
+    "searchLanguages": "Ieškoti kalbų...",
+    "selectAll": "Pasirinkti viską",
+    "deselectAll": "Atšaukti visų pasirinkimą",
+    "selectedLanguages": "Pasirinkta kalba: {{count}}",
+    "selectedLanguages_plural": "Pasirinkta kalbų: {{count}}",
+    "noLanguagesFound": "Nerasta kalbų, atitinkančių „{{search}}“",
+    "languageRequired": "Būtina pasirinkti bent vieną kalbą",
+    "languageRequiredDesc": "Prašome pasirinkti bent vieną kalbą, kad užtikrintumėte tinkamą balso įvesties ir tekstinių bendravimų funkcionalumą.",
+    "account": "Paskyra",
+    "signOut": "Atsijungti",
+    "signOutDesc": "Atsijungti nuo savo paskyros",
+    "cancel": "Atšaukti",
+    "saving": "Saugoma...",
+    "saved": "Išsaugota!",
+    "saveChanges": "Išsaugoti pakeitimus",
+    "errorSaving": "Nepavyko išsaugoti nustatymų. Bandykite dar kartą.",
+    "lastName": "Pavardė",
+    "lastNamePlaceholder": "Jūsų pavardė",
+    "age": "Amžius",
+    "techExperience": "Technologijų patirties lygis",
+    "techExperienceOptions": {
+      "beginner": "Pradedantysis (daugumai dalykų man reikia pagalbos žingsnis po žingsnio)",
+      "some": "Šiek tiek patirties (galiu atlikti pagrindines užduotis, bet reikia pagalbos su naujais dalykais)",
+      "comfortable": "Patogiai (daugumą dalykų galiu išsiaiškinti pats, bet kartais reikia patarimo)"
+    },
+    "primaryConcerns": "Pagrindinės technologijų temos, keliančios susidomėjimą/susirūpinimą",
+    "assistiveNeeds": "Prieinamumo poreikiai",
+    "communicationStyle": "Pageidaujamas paaiškinimo stilius",
+    "communicationStyleOptions": {
+      "simple": "Paprastai ir greitai (tik žingsniai)",
+      "detailed": "Išsamiai (paaiškinti 'kodėl')",
+      "visual": "Vizualiai (rodyti paveikslėlius/vaizdo įrašus, kai įmanoma)"
+    },
+    "videoRecommendations": "Vaizdo įrašų rekomendacijos",
+    "videoRecommendationsDesc": "Rodyti naudingus vaizdo įrašus ir straipsnius kartu su žingsniais",
+    "fontSize": "Pageidaujamas teksto dydis",
+    "fontSizeOptions": {
+      "normal": "Normalus",
+      "large": "Didelis",
+      "extraLarge": "Labai didelis"
+    },
+    "displayPreferences": "Ekranas ir tema",
+    "theme": "Spalvų tema",
+    "themeOptions": {
+      "light": "Šviesi",
+      "dark": "Tamsi"
+    },
+    "highContrast": "Didelio kontrasto režimas",
+    "highContrastDesc": "Padidinti teksto ir elementų kontrastą geresniam matomumui",
+    "learningPreferences": "Mokymosi ir turinio nustatymai"
+  },
+  "common": {
+    "settings": "Nustatymai",
+    "signOut": "Atsijungti",
+    "close": "Uždaryti"
+  },
+  "tips": {
+    "connectWifi": "Prisijungti prie „Wi-Fi“",
+    "connectWifiDesc": "Prisijunkite prie interneto saugiai ir lengvai",
+    "videoCall": "Atlikti vaizdo skambutį",
+    "videoCallDesc": "Bendraukite su šeima akis į akį",
+    "screenshot": "Padaryti ekrano nuotrauką",
+    "screenshotDesc": "Užfiksuokite tai, kas yra Jūsų ekrane",
+    "updateApps": "Atnaujinti savo programėles",
+    "updateAppsDesc": "Laikykite savo programėles naujausias ir saugias"
+  },
+  "category": {
+    "internet": "Internetas",
+    "communication": "Bendravimas",
+    "basicSkills": "Pagrindiniai įgūdžiai",
+    "maintenance": "Priežiūra"
+  },
+  "questions": {
+    "makeTextBigger": "Kaip padidinti tekstą?",
+    "connectWifi": "Kaip prisijungti prie „Wi-Fi“?",
+    "takeScreenshot": "Kaip padaryti ekrano nuotrauką?",
+    "makeVideoCall": "Kaip atlikti vaizdo skambutį?",
+    "backupPhotos": "Kaip pasidaryti atsarginę nuotraukų kopiją?",
+    "updateApps": "Kaip atnaujinti savo programėles?",
+    "onlineBanking": "Kaip saugiai naudotis internetine bankininkyste?",
+    "joinZoom": "Kaip prisijungti prie „Zoom“ susitikimo?"
+  },
+  "achievements": {
+    "gettingStarted": "Darbo pradžia",
+    "gettingStartedDesc": "Uždavėte savo pirmąjį klausimą",
+    "questionExplorer": "Klausimų tyrinėtojas",
+    "questionExplorerDesc": "Uždavėte 5 klausimus",
+    "stepMaster": "Žingsnių meistras",
+    "stepMasterDesc": "Atlikote 25 žingsnius"
+  },
+  "stats": {
+    "seniorsHelped": "Pagalba suteikta senjorams",
+    "questionsAnswered": "Atsakyta klausimų",
+    "successRate": "Sėkmės rodiklis",
+    "alwaysAvailable": "Visada pasiekiama"
+  },
+  "time": {
+    "now": "Ką tik",
+    "hourAgo": "prieš 1 valandą",
+    "hoursAgo": "prieš {{count}} valandas",
+    "dayAgo": "prieš 1 dieną",
+    "daysAgo": "prieš {{count}} dienas"
+  },
+  "voice": {
+    "startInput": "Pradėti balso įvestį",
+    "stopRecording": "Sustabdyti įrašymą",
+    "processing": "Apdorojama...",
+    "recognized": "Balsas atpažintas",
+    "failed": "Balso įvestis nepavyko"
+  },
+  "language": {
+    "select": "Pasirinkti kalbą",
+    "translate": "Versti",
+    "translating": "Verčiama...",
+    "detecting": "Aptinkama kalba...",
+    "error": "Vertimas nepavyko"
+  },
+  "auth": {
+    "backToHome": "Grįžti į pradinį puslapį",
+    "createAccount": "Sukurti paskyrą",
+    "welcomeBack": "Sveiki sugrįžę",
+    "joinFamily": "Prisijunkite prie mūsų įgalintų senjorų šeimos",
+    "welcomeBackDesc": "Prisijunkite, kad tęstumėte savo technologijų kelionę",
+    "email": "El. pašto adresas",
+    "emailPlaceholder": "Įveskite savo el. paštą",
+    "password": "Slaptažodis",
+    "passwordPlaceholder": "Įveskite savo slaptažodį",
+    "confirmPassword": "Patvirtinti slaptažodį",
+    "confirmPasswordPlaceholder": "Patvirtinkite savo slaptažodį",
+    "passwordsNoMatch": "Slaptažodžiai nesutampa",
+    "passwordTooShort": "Slaptažodis turi būti bent 6 simbolių ilgio",
+    "creatingAccount": "Kuriama paskyra...",
+    "signingIn": "Prisijungiama...",
+    "alreadyHaveAccount": "Jau turite paskyrą? Prisijunkite",
+    "dontHaveAccount": "Neturite paskyros? Užsiregistruokite"
+  },
+  "error": {
+    "askQuestionFirst": "Pirmiausia užduokite klausimą",
+    "couldntGetAnswer": "Atsiprašome, šiuo metu nepavyko gauti atsakymo. Bandykite dar kartą."
+  },
+  "learningPage": {
+    "headerTitle": "Mokymosi centras",
+    "heroTitle": "Technologijų įgūdžiai senjorams",
+    "heroSubtitle": "Mokykitės technologijų savo tempu su žingsnis po žingsnio pamokomis, interaktyviomis demonstracijomis ir asmenine pagalba.",
+    "takeSkillsAssessment": "Atlikti įgūdžių vertinimą",
+    "orSeparator": "arba",
+    "iAmBeginner": "Esu pradedantysis",
+    "iAmIntermediate": "Esu vidutinio lygio",
+    "iAmAdvanced": "Esu pažengęs",
+    "yourLevel": "Jūsų lygis: {{level}}",
+    "levelDescription": "Kursai yra pritaikyti pagal Jūsų įgūdžių lygį",
+    "retakeAssessment": "Pakartoti vertinimą",
+    "progressLabel": "Progresas",
+    "lessonsLabel": "pamokos",
+    "completedOutOfTotal": "atlikta {{completed}} iš {{total}}",
+    "featureInteractiveDemos": "Interaktyvios demonstracijos",
+    "featureInteractiveDemosDesc": "Pažiūrėkite, kaip tiksliai atlikti kiekvieną veiksmą",
+    "featureAudioSupport": "Garso palaikymas",
+    "featureAudioSupportDesc": "Klausykitės pamokų, perskaitytų garsiai",
+    "featurePrintableGuides": "Spausdinami vadovai",
+    "featurePrintableGuidesDesc": "Pasiimkite santraukas su savimi neprisijungę",
+    "featureCertificates": "Sertifikatai",
+    "featureCertificatesDesc": "Uždirbkite sertifikatus baigdami kursus",
+    "animationShow": "Rodyti animaciją",
+    "animationReset": "Atstatyti",
+    "featuresGridTitle": "Išbandykite mūsų funkcijas",
+    "loadingPaths": "Įkeliami mokymosi keliai...",
+    "noPathsAvailable": "Šiuo metu nėra galimų mokymosi kelių. Patikrinkite vėliau.",
+    "progressComplete": "atlikta {{value}}%",
+    "recommendedStart": "Rekomenduojamas pradžios taškas",
+    "moduleListTitle": "Moduliai keliui: {{pathTitle}}",
+    "moduleContentTitle": "Modulio turinys: {{moduleTitle}} bus čia.",
+    "loadingCenter": "Įkeliamas mokymosi centras...",
+    "moduleTimeLabel": "Laikas: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Pasirinkite norimą sąsajos kalbą",
+    "moreComingSoon": "🌍 Netrukus bus daugiau kalbų"
+  },
+  "assessmentView": {
+    "headerTitle": "Įgūdžių vertinimas",
+    "questionProgress": "Klausimas {{current}} iš {{total}}",
+    "chooseBestOption": "Pasirinkite variantą, kuris geriausiai Jus apibūdina",
+    "skipAssessment": "Praleisti vertinimą"
+  },
+  "courseView": {
+    "lessonsHeader": "Pamokos",
+    "interactiveDemoLabel": "Interaktyvi demonstracija",
+    "startLesson": "Pradėti pamoką",
+    "reviewLesson": "Peržiūrėti",
+    "congratulations": "Sveikiname!",
+    "courseComplete": "Jūs baigėte kursą „{{courseTitle}}“!",
+    "downloadCertificate": "Atsisiųsti sertifikatą"
+  },
+  "lessonView": {
+    "readAloud": "Perskaityti pamoką garsiai",
+    "interactiveDemoHeader": "Interaktyvi demonstracija",
+    "practiceExerciseHeader": "Praktinė užduotis",
+    "markAsComplete": "Pažymėti kaip atliktą",
+    "repeatLesson": "Pakartoti pamoką",
+    "keyPointsHeader": "Pagrindiniai punktai",
+    "takeItWithYouHeader": "Pasiimkite su savimi",
+    "downloadSummaryButton": "Atsisiųsti santrauką",
+    "downloadSummaryDescription": "Gaukite spausdinamą šios pamokos santrauką",
+    "needHelpHeader": "Reikia pagalbos?",
+    "askAQuestionButton": "Užduoti klausimą",
+    "chatWithHelperButton": "Kalbėtis su pagalbininku"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Privatumo politika",
+    "pageTitle": "Privatumo politika",
+    "lastUpdated": "Paskutinį kartą atnaujinta: {{date}}",
+    "ourPromise": {
+      "title": "Mūsų pažadas Jums",
+      "text": "„Senior Tech Helper“ suprantame, kad Jūsų privatumas yra brangus. Mes įsipareigojame saugoti Jūsų asmeninę informaciją ir būti visiškai skaidrūs dėl to, kaip ją naudojame. Ši politika viską paaiškina paprasta, aiškia kalba."
+    },
+    "cookies": {
+      "title": "Kaip mes naudojame slapukus",
+      "whatAreCookiesTitle": "Kas yra slapukai?",
+      "whatAreCookiesText": "Slapukai yra maži tekstiniai failai, kurie padeda mums atsiminti Jūsų nustatymus ir pagerinti Jūsų patirtį. Galvokite apie juos kaip apie žymeklius, kurie padeda mums prisiminti, kur baigėte.",
+      "weUseCookiesForTitle": "Slapukus naudojame TIK tam, kad padėtume Jums:",
+      "uses": [
+        "Atsiminti Jūsų nustatymus: teksto dydį, balso nustatymus ir pasirinktas prieinamumo parinktis",
+        "Išlaikyti Jus prisijungusius: kad nereikėtų kaskart įvesti slaptažodžio",
+        "Pagerinti mūsų pagalbą: suprasti, kurios funkcijos yra naudingiausios tokiems senjorams kaip Jūs"
+      ],
+      "whatWeDontDoTitle": "Ko mes NEDAROME su slapukais:",
+      "donts": [
+        "Nesekame Jūsų kitose svetainėse",
+        "Neparduodame Jūsų informacijos niekam",
+        "Nebendriname Jūsų duomenų su reklamuotojais",
+        "Nenaudojame jų rinkodaros tikslais"
+      ]
+    },
+    "informationCollected": {
+      "title": "Kokią informaciją mes renkame",
+      "youGiveUsTitle": "Informacija, kurią Jūs mums suteikiate:",
+      "youGiveUsList": [
+        "Jūsų vardą ir el. pašto adresą",
+        "Jūsų įrenginio tipą („iPhone“, „Windows“ ir kt.)",
+        "Jūsų technologijų patirties lygį",
+        "Jūsų prieinamumo nustatymus",
+        "Klausimus, kuriuos užduodate mūsų DI pagalbinei sistemai"
+      ],
+      "weCollectTitle": "Informacija, kurią mes renkame automatiškai:",
+      "weCollectList": [
+        "Kaip Jūs naudojatės mūsų programėle (kurios funkcijos labiausiai padeda)",
+        "Techninę informaciją (naršyklės tipą, įrenginį)",
+        "Klaidų ataskaitas (kad greitai išspręstume problemas)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Kaip mes saugome Jūsų informaciją",
+      "protections": [
+        "Šifravimas: visi Jūsų duomenys yra užšifruoti (supainioti), todėl juos galime perskaityti tik mes",
+        "Saugūs serveriai: Jūsų informacija saugoma apsaugotuose, profesionalaus lygio serveriuose",
+        "Ribota prieiga: prie Jūsų duomenų gali prieiti tik būtiniausi mūsų komandos nariai",
+        "Reguliarūs saugumo patikrinimai: nuolat stebime bet kokias saugumo grėsmes"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Jūsų informacijos bendrinimas",
+      "neverSell": "Mes NIEKADA neparduosime ir neišnuomosime Jūsų asmeninės informacijos.",
+      "onlyShareInSituations": "Jūsų informaciją bendriname tik šiose labai ribotose situacijose:",
+      "sharingSituations": [
+        "Su Jūsų leidimu: jei Jūs konkrečiai paprašote mus kažką bendrinti",
+        "Techninei pagalbai: su patikimais paslaugų teikėjais, kurie padeda mums valdyti programėlę (jie yra įpareigoti griežtais privatumo susitarimais)",
+        "Jei to reikalauja įstatymai: tik jei esame teisiškai įpareigoti tai daryti"
+      ]
+    },
+    "yourRights": {
+      "title": "Jūsų teisės ir pasirinkimai",
+      "youCanAlwaysTitle": "Jūs visada galite:",
+      "rightsList": [
+        "Matyti, kokią informaciją turime apie Jus",
+        "Prašyti mūsų ištaisyti bet kokią neteisingą informaciją",
+        "Prašyti, kad ištrintume Jūsų paskyrą ir duomenis",
+        "Išjungti slapukus savo naršyklės nustatymuose",
+        "Susisiekti su mumis su bet kokiais privatumo klausimais"
+      ],
+      "noteDeletingCookiesTitle": "Pastaba dėl slapukų ištrynimo:",
+      "noteDeletingCookiesText": "Jei ištrinsite mūsų slapukus, turėsite iš naujo nustatyti savo parinktis, o kai kurios funkcijos gali neveikti taip gerai."
+    },
+    "thirdPartyServices": {
+      "title": "Trečiųjų šalių paslaugos",
+      "weUseTrustedServices": "Mes naudojame kai kurias patikimas trečiųjų šalių paslaugas, kad galėtume teikti savo funkcijas:",
+      "servicesList": [
+        "Google DI (Gemini): valdo mūsų DI asistentą, kuris atsako į Jūsų klausimus",
+        "Firebase: saugiai saugo Jūsų paskyros informaciją",
+        "YouTube / edukacinės svetainės: galime rekomenduoti naudingus vaizdo įrašus ir straipsnius"
+      ],
+      "servicesOwnPolicies": "Šios paslaugos turi savo privatumo politikas, ir mes bendriname tik minimalią informaciją, reikalingą jų veikimui."
+    },
+    "changesToPolicy": {
+      "title": "Šios politikos pakeitimai",
+      "text": "Jei reikės atnaujinti šią privatumo politiką, pranešime Jums el. paštu ir parodysime pranešimą programėlėje. Visada paprasta, aiškia kalba paaiškinsime, kas keičiasi ir kodėl."
+    },
+    "contactUs": {
+      "title": "Susisiekite su mumis",
+      "questions": "Turite klausimų apie savo privatumą ar šią politiką? „TechStep“ komanda yra čia, kad padėtų!",
+      "email": "El. paštas: privacy@techstep.com",
+      "phone": "Telefonas: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Paštas: TechStep privatumo komanda",
+      "mailLine2": "Techninės pagalbos al. 123",
+      "mailLine3": "Pagalbos miestas, PM 12345"
+    },
+    "footer": {
+      "thankYou": "Dėkojame, kad patikėjote savo informaciją „TechStep“. Mes įsipareigojame ją saugoti ir naudoti tik tam, kad padėtume Jums sėkmingai naudotis technologijomis.",
+      "backToHome": "Grįžti į pradinį puslapį"
+    }
+  }
+}

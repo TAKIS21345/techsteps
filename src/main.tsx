@@ -20,12 +20,18 @@ const Loading = () => (
 );
 
 import { TranslationAnimationProvider } from './contexts/TranslationAnimationContext';
+import { AuthProvider } from './contexts/AuthContext';
+import { UserProvider } from './contexts/UserContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={<Loading />}>
       <TranslationAnimationProvider>
-        <App />
+        <AuthProvider>
+          <UserProvider>
+            <App />
+          </UserProvider>
+        </AuthProvider>
       </TranslationAnimationProvider>
     </Suspense>
   </StrictMode>

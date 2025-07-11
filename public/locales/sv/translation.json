@@ -1,0 +1,944 @@
+{
+  "welcome": "Välkommen!",
+  "onboarding": {
+    "step1": {
+      "title": "Låt oss lära känna dig",
+      "subtitle": "Hjälp mig att anpassa din upplevelse",
+      "firstName": "Förnamn",
+      "firstNamePlaceholder": "Ditt förnamn",
+      "lastName": "Efternamn",
+      "lastNamePlaceholder": "Ditt efternamn",
+      "age": "Ålder (hjälper mig att anpassa mina förklaringar)"
+    },
+    "step2": {
+      "title": "Välj dina föredragna språk",
+      "subtitle": "Välj de språk du vill använda för kommunikation och röstinmatning",
+      "languageSelection": "Språkval",
+      "languageDescription": "Välj de språk du är bekväm med. Detta kommer att:",
+      "speechToText": "Konfigurera taligenkänning för att förstå din röst på dessa språk",
+      "textInteractions": "Möjliggöra textinteraktioner på dina valda språk",
+      "interfaceOptions": "Anpassa gränssnittsalternativ för bättre tillgänglighet",
+      "searchLanguages": "Sök språk...",
+      "selectAll": "Välj alla",
+      "deselectAll": "Avmarkera alla",
+      "selected": "Valt: {{count}} språk",
+      "selected_plural": "Valda: {{count}} språk",
+      "noLanguagesFound": "Inga språk hittades som matchar \"{{search}}\"",
+      "languageRequired": "Språkval krävs",
+      "languageRequiredDesc": "Vänligen välj minst ett språk för att fortsätta. Detta säkerställer den bästa upplevelsen för röstinmatning och textinteraktioner."
+    },
+    "step3": {
+      "title": "Vilken enhet använder du mest?",
+      "subtitle": "Detta hjälper mig att ge dig bättre instruktioner",
+      "devices": {
+        "windowscomputer": "Windows-dator",
+        "macapplecomputer": "Mac (Apple-dator)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android-telefon eller surfplatta",
+        "smarttv": "Smart-TV",
+        "multipledevices": "Flera enheter"
+      }
+    },
+    "step4": {
+      "title": "Hur bekväm är du med teknik?",
+      "subtitle": "Var ärlig - detta hjälper mig att förklara saker på rätt nivå",
+      "beginner": "Nybörjare",
+      "beginnerDesc": "Jag behöver steg-för-steg-hjälp med det mesta",
+      "some": "Viss erfarenhet",
+      "someDesc": "Jag kan utföra grundläggande uppgifter men behöver hjälp med nya saker",
+      "comfortable": "Bekväm",
+      "comfortableDesc": "Jag kan lista ut det mesta men behöver ibland vägledning"
+    },
+    "step5": {
+      "title": "Vilka tekniska ämnen oroar dig mest?",
+      "subtitle": "Välj allt som gäller - jag kommer att prioritera hjälp inom dessa områden",
+      "concerns": {
+        "onlineSafety": "Onlinesäkerhet och bedrägerier",
+        "passwordManagement": "Lösenordshantering",
+        "videoCalling": "Videosamtal med familjen",
+        "socialMedia": "Sociala medier",
+        "onlineBanking": "Internetbank",
+        "emailMessaging": "E-post och meddelanden",
+        "photoStorage": "Fotolagring och delning",
+        "appDownloads": "Appnedladdningar och uppdateringar",
+        "wifiInternet": "Wi-Fi och internetproblem",
+        "deviceSettings": "Enhetsinställningar",
+        "onlineShopping": "Online-shopping",
+        "healthApps": "Hälsoappar och portaler"
+      }
+    },
+    "step6": {
+      "title": "Behöver du några tillgänglighetsfunktioner?",
+      "subtitle": "Jag vill se till att du kan använda detta bekvämt",
+      "needs": {
+        "largerText": "Större text och knappar",
+        "highContrast": "Högkontrastfärger",
+        "voiceCommands": "Röstkommandon",
+        "screenReader": "Skärmläsarstöd",
+        "slowerExplanations": "Långsammare förklaringar",
+        "visualSteps": "Visuella stegindikatorer",
+        "noneNeeded": "Inget behov"
+      }
+    },
+    "step7": {
+      "title": "Hur föredrar du att lära dig?",
+      "subtitle": "Jag kommer att anpassa min undervisningsstil för att matcha dina preferenser",
+      "simple": "Enkelt och snabbt",
+      "simpleDesc": "Säg bara vad jag ska göra, steg för steg",
+      "detailed": "Detaljerade förklaringar",
+      "detailedDesc": "Förklara varför jag gör varje steg",
+      "visual": "Visuellt lärande",
+      "visualDesc": "Visa mig bilder och videor när det är möjligt"
+    },
+    "step8": {
+      "title": "Sista finjusteringarna",
+      "subtitle": "Ställ in din perfekta lärmiljö",
+      "textToSpeech": "Text-till-tal",
+      "textToSpeechDesc": "Få svar upplästa",
+      "voiceInput": "Röstinmatning",
+      "voiceInputDesc": "Ställ frågor genom att tala",
+      "videoRecommendations": "Videorekommendationer",
+      "videoRecommendationsDesc": "Visa hjälpsamma videor och artiklar",
+      "textSize": "Föredragen textstorlek",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Stor",
+      "textSizeExtraLarge": "Extra stor"
+    },
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "settingUp": "Konfigurerar...",
+    "completeSetup": "Slutför konfiguration",
+    "errorSaving": "Kunde inte spara dina preferenser. Försök igen."
+  },
+  "nav": {
+    "features": "Funktioner",
+    "reviews": "Recensioner",
+    "signIn": "Logga in",
+    "getStarted": "Kom igång"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Används av seniorer världen över",
+      "title": "Teknik har blivit",
+      "titleHighlight": "enkelt och tydligt",
+      "subtitle": "Bemästra teknik med självförtroende genom personlig, steg-för-steg-vägledning som känns som att ha en tålmodig vän vid din sida.",
+      "startLearningButton": "Börja lära dig gratis",
+      "watchDemoButton": "Titta på demo",
+      "freeForever": "Gratis för alltid",
+      "noCreditCard": "Inget kreditkort krävs",
+      "available247": "Tillgänglig 24/7"
+    },
+    "featuresSection": {
+      "title": "Funktioner",
+      "subtitle": "Dessa är bara några av de funktioner som erbjuds för att hjälpa dig att utvecklas!",
+      "items": [
+        {
+          "title": "Steg-för-steg-vägledning",
+          "description": "Få tydliga, lätta att följa instruktioner för alla tekniska frågor. Varje steg förklaras i enkla termer med visuella ledtrådar."
+        },
+        {
+          "title": "Röststöd",
+          "description": "Ställ frågor med din röst och få svar upplästa. Perfekt för handsfree-hjälp när du behöver det som mest."
+        },
+        {
+          "title": "Fotoförklarare",
+          "description": "Ta ett foto av en kabel, knapp eller enhet och få en omedelbar förklaring av vad det är och hur man använder det."
+        },
+        {
+          "title": "Seniorvänlig design",
+          "description": "Stor text, intuitivt gränssnitt och tålmodiga förklaringar utformade specifikt med seniorer i åtanke."
+        },
+        {
+          "title": "Tryggt och säkert",
+          "description": "Din personliga information skyddas med säkerhet på företagsnivå. Ingen data delas med tredje parter."
+        },
+        {
+          "title": "Omedelbara svar",
+          "description": "Få omedelbar hjälp 24/7. Ingen väntetid i kö eller bokning av tider. Fråga bara och få svar."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Populära frågor vi hjälper till med",
+      "subtitle": "Se vad andra seniorer frågar om",
+      "askYourQuestionButton": "Ställ din fråga nu"
+    },
+    "testimonialsSection": {
+      "title": "Vad vår gemenskap säger",
+      "subtitle": "Gå med tusentals seniorer som har hittat teknisk hjälp som gjorts enkel",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Äntligen någon som förklarar teknik på ett sätt jag kan förstå! Steg-för-steg-instruktionerna hjälpte mig att ställa in min nya telefon perfekt. Jag känner mig så mycket mer självsäker nu!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "Röstfunktionen är fantastisk! Jag kan bara ställa mina frågor högt och få tydliga svar. Det är som att ha ett tekniskt kunnigt barnbarn tillgängligt 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Jag älskar fotofunktionen! Jag tog en bild på en förvirrande kabel och visste direkt vad den var till för. Den här appen har gjort mig mycket mer självsäker med teknik.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Jag var så frustrerad över min smart-TV tills jag hittade den här hjälpen. Nu kan jag strömma program, justera inställningar och till och med videochatta med mina barnbarn!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Ålder {{age}}"
+    },
+    "ctaSection": {
+      "title": "Redo att bemästra teknik?",
+      "subtitle": "Gå med i vår gemenskap av stärkta seniorer som har gjort tekniken enkel och lättillgänglig. Börja få tydliga, hjälpsamma svar idag - helt gratis!",
+      "getStartedButton": "Kom igång gratis idag",
+      "setupInMinutes": "Installation på 2 minuter"
+    },
+    "footer": {
+      "description": "Gör teknik tillgänglig och förståelig för seniorer överallt.",
+      "featuresTitle": "Funktioner",
+      "featuresItems": [
+        "Steg-för-steg-hjälp",
+        "Röststöd",
+        "Fotoförklarare",
+        "Tillgänglighet 24/7"
+      ],
+      "supportTitle": "Support",
+      "supportItems": [
+        "Hjälpcenter",
+        "Komma igång",
+        "Gemenskap",
+        "Kontakta oss"
+      ],
+      "companyTitle": "Företag",
+      "companyItems": [
+        "Om oss",
+        "Integritetspolicy",
+        "Användarvillkor",
+        "Tillgänglighet"
+      ],
+      "copyright": "© 2025 TechStep. Gjort med ❤️ för seniorer överallt.",
+      "trustedBy": "Används av",
+      "trustedByCount": "50 000+ seniorer"
+    }
+  },
+  "dashboard": {
+    "welcome": "Välkommen till TechStep",
+    "welcomeUser": "Välkommen tillbaka, {{name}}!",
+    "ready": "Redo att lära dig något nytt?",
+    "getHelp": "Få omedelbar hjälp",
+    "askQuestion": "Ställ vilken teknisk fråga som helst och få steg-för-steg-vägledning",
+    "placeholder": "Vad vill du ha hjälp med idag?",
+    "getSteps": "Få steg-för-steg-hjälp",
+    "gettingSteps": "Hämtar dina steg...",
+    "craftingSteps": "Skapar dina personliga steg...",
+    "takesAMoment": "Detta kan ta en stund",
+    "quickTips": "Snabba tips för dig",
+    "popularQuestions": "Populära frågor idag",
+    "quickActions": "Snabba åtgärder",
+    "recentActivity": "Senaste aktivitet",
+    "yourProgress": "Dina framsteg",
+    "needHelp": "Behöver du hjälp?",
+    "helpingHand": "Vi är här för att hjälpa dig att lyckas",
+    "chatHuman": "Chatta med en människa",
+    "browseGuides": "Bläddra i videoguider",
+    "browseTips": "Bläddra bland tips",
+    "commonSolutions": "Hitta vanliga lösningar",
+    "stepsCompleted": "{{count}} steg slutförda",
+    "needMoreInfo": "Jag behöver lite mer information för att kunna hjälpa dig bättre"
+  },
+  "aiTools": {
+    "title": "AI-hjälpverktyg",
+    "description": "Fotoförklarare och tekniköversättare"
+  },
+  "aiToolsModal": {
+    "header": "AI-hjälpverktyg",
+    "tabs": {
+      "photoExplainer": "Fotoförklarare",
+      "techWordBuster": "Teknikords-knäckare"
+    },
+    "photoExplainer": {
+      "title": "Fotoförklarare",
+      "description": "Ladda upp ett foto av en kabel, knapp eller enhet och få en omedelbar förklaring.",
+      "uploadButton": "Ladda upp bild",
+      "questionLabel": "Ställ en fråga om fotot (valfritt)",
+      "questionPlaceholder": "Vad är den här kabeln till för?",
+      "explainButton": "Förklara foto",
+      "analyzingButton": "Analyserar...",
+      "alertNoPhoto": "Ladda upp ett foto först eller kontrollera API-konfigurationen.",
+      "errorResponse": "<p class=\"text-red-600\">Tyvärr, jag kunde inte analysera bilden. Försök igen.</p>",
+      "readResponseButton": "🔊 Läs upp svaret",
+      "previewAlt": "Förhandsgranskning"
+    },
+    "techWordBuster": {
+      "title": "Teknikords-knäckare",
+      "description": "Förvirrad av ett tekniskt begrepp? Få en enkel, lättförståelig förklaring med verkliga analogier.",
+      "inputLabel": "Ange ett tekniskt ord eller en fras",
+      "inputPlaceholder": "t.ex. molnlagring, WiFi, Bluetooth",
+      "explainButton": "Gör detta tydligt",
+      "explainingButton": "Förklarar...",
+      "alertNoTerm": "Ange ett tekniskt begrepp först eller kontrollera API-konfigurationen.",
+      "errorResponse": "<p class=\"text-red-600\">Tyvärr, jag kunde inte förklara det begreppet. Försök igen.</p>",
+      "readExplanationButton": "🔊 Läs upp förklaringen"
+    },
+    "apiErrorNoExplanation": "Ingen förklaring mottogs"
+  },
+  "clarificationModal": {
+    "headerTitle": "Jag behöver lite mer information",
+    "yourQuestionLabel": "Din fråga:",
+    "tellMeMorePrompt": "För att ge dig den bästa hjälpen, kan du berätta lite mer?",
+    "forExampleLabel": "Till exempel:",
+    "textareaPlaceholder": "Vänligen ge fler detaljer...",
+    "textareaSrLabel": "Ge fler detaljer för din fråga",
+    "skipButton": "Hoppa över för nu",
+    "submitButton": "Få bättre hjälp",
+    "loadingButton": "Hämtar hjälp..."
+  },
+  "languageNotificationBanner": {
+    "title": "Slutför din språkkonfiguration",
+    "description": "Konfigurera dina föredragna språk för bättre röstinmatning och textinteraktioner.",
+    "buttonText": "Slutför konfiguration"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Grunderna i datorer och enheter",
+      "description": "De absoluta grunderna för att komma igång med teknik.",
+      "modules": {
+        "turnOnDevice": { "title": "Starta en enhet", "description": "Lär dig att starta datorer och smartphones." },
+        "mouseTouchscreen": { "title": "Använda mus/pekskärm", "description": "Bemästra att peka, klicka och trycka." },
+        "keyboardTyping": { "title": "Grunderna i tangentbord/skrivning", "description": "Bli bekväm med grundläggande skrivfärdigheter." },
+        "filesFolders": { "title": "Förstå filer och mappar", "description": "Lär dig hur digital information organiseras." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Onlinevärlden",
+      "description": "Ansluta och utforska internet på ett säkert sätt.",
+      "modules": {
+        "webBrowsers": { "title": "Förstå webbläsare", "description": "Navigera på internet med Chrome, Edge eller Safari." },
+        "searchEffectively": { "title": "Hur man söker effektivt", "description": "Hitta vad du behöver online med hjälp av sökmotorer." },
+        "introEmail": { "title": "Introduktion till e-post", "description": "Lär dig att skicka och ta emot elektronisk post." },
+        "virusSafety": { "title": "Skydda sig mot virus", "description": "Skydda din enhet från skadlig programvara." }
+      }
+    },
+    "digitalLife": {
+      "title": "Vardagligt digitalt liv",
+      "description": "Kommunicera, dela och hantera din digitala närvaro.",
+      "modules": {
+        "masteringEmail": { "title": "Bemästra e-post", "description": "Bilagor, mappar och e-postetikett." },
+        "videoCalling": { "title": "Videosamtal med familj och vänner", "description": "Anslut ansikte mot ansikte med nära och kära." },
+        "introSocialMedia": { "title": "Introduktion till sociala medier", "description": "Förstå plattformar som Facebook." },
+        "sharingPhotos": { "title": "Dela foton på ett säkert sätt", "description": "Dela dina minnen utan att kompromissa med integriteten." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Avancerade och kreativa färdigheter",
+      "description": "Utöver grunderna: utforska mer av vad tekniken erbjuder.",
+      "modules": {
+        "onlineShopping": { "title": "Introduktion till online-shopping", "description": "Handla säkert och bekvämt online." },
+        "onlineMaps": { "title": "Använda onlinekartor och navigering", "description": "Hitta vägen med digitala kartor." },
+        "photoEditing": { "title": "Grundläggande fotoredigering", "description": "Förbättra dina digitala foton." },
+        "productivityTools": { "title": "Introduktion till produktivitetsverktyg", "description": "Använda verktyg som grunderna i Google Docs eller Microsoft Word." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Teknikstartare", "description": "Slutförde kursen Grunderna i datorer och enheter." },
+    "onlineWorld": { "name": "Onlineutforskare", "description": "Slutförde kursen Onlinevärlden." },
+    "digitalLife": { "name": "Digital kommunikatör", "description": "Slutförde kursen Vardagligt digitalt liv." },
+    "advancedSkills": { "name": "Teknikvirtuos", "description": "Slutförde kursen Avancerade och kreativa färdigheter." }
+  },
+  "skillAssessmentModal": {
+    "title": "Snabb färdighetskontroll",
+    "introduction": "Låt oss hitta det bästa stället för dig att börja!",
+    "nextButton": "Nästa",
+    "finishButton": "Visa min startpunkt",
+    "questionProgress": "Fråga {{current}} av {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Hur bekväm är du med datorer?",
+      "options": {
+        "new": "Helt ny",
+        "basics": "Jag kan några grunder",
+        "confident": "Jag är ganska självsäker"
+      }
+    },
+    "q2": {
+      "text": "Har du skickat ett e-postmeddelande tidigare?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nej"
+      }
+    },
+    "q3": {
+      "text": "Har du använt en smartphone för mer än bara samtal?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nej"
+      }
+    }
+  },
+  "learning": {
+    "title": "Lärcentrum",
+    "structuredCourses": "Strukturerade kurser och handledningar",
+    "skillsAssessment": "Färdighetsbedömning",
+    "questionNumber": "Fråga {{current}} av {{total}}",
+    "resetAnimation": "Återställ",
+    "showAnimation": "Visa animation",
+    "courses": {
+      "beginner": {
+        "title": "Komma igång med teknik",
+        "description": "Perfekt för kompletta nybörjare. Lär dig grunderna steg för steg.",
+        "estimatedTime": "2-3 timmar",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Grunderna i enheter",
+            "description": "Lär dig att slå på och stänga av din enhet på ett säkert sätt",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Slå på och stänga av din enhet</h3><p>Varje enhet har en strömknapp. Låt oss lära oss att använda den på ett säkert sätt.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">För datorer:</h4><ul class=\"space-y-2\"><li>• Leta efter en rund knapp med en strömsymbol (⏻)</li><li>• Tryck på den en gång för att slå på</li><li>• För att stänga av: Använd Start-menyn, sedan \"Stäng av\"</li><li>• Tryck aldrig bara på strömknappen för att stänga av!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">För telefoner/surfplattor:</h4><ul class=\"space-y-2\"><li>• Strömknappen är vanligtvis på sidan</li><li>• Håll intryckt i 2-3 sekunder för att slå på</li><li>• För att stänga av: Håll intryckt, dra sedan för att stänga av</li></ul></div></div>",
+            "keyPoints": [
+              "Använd alltid korrekta avstängningsprocedurer",
+              "Strömknappens placering varierar mellan enheter",
+              "Tvinga aldrig avstängning om det inte är absolut nödvändigt"
+            ],
+            "practiceExercise": "Öva på att slå på och stänga av din enhet 3 gånger med rätt metod.",
+            "animationDesc": "Se hur man korrekt trycker på strömknappen"
+          },
+          "mouseKeyboard": {
+            "title": "Använda mus och tangentbord",
+            "description": "Bemästra grunderna i datorns inmatningsenheter",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Grunderna i mus och tangentbord</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Grunderna i mus:</h4><ul class=\"space-y-2\"><li>• Vänsterklick: Välj objekt, öppna program</li><li>• Högerklick: Öppna menyer med fler alternativ</li><li>• Dubbelklick: Öppna filer och program</li><li>• Rullhjul: Flytta upp och ner på sidor</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Grunderna i tangentbord:</h4><ul class=\"space-y-2\"><li>• Mellanslag: Lägg till mellanrum mellan ord</li><li>• Enter: Starta en ny rad eller bekräfta</li><li>• Backsteg: Ta bort bokstaven före markören</li><li>• Skift: Skapa stora bokstäver</li></ul></div></div>",
+            "keyPoints": [
+              "Vänsterklick är ditt huvudverktyg",
+              "Högerklick öppnar hjälpsamma menyer",
+              "Övning ger färdighet"
+            ],
+            "practiceExercise": "Öppna ett enkelt textprogram och skriv ditt namn, radera det sedan med backsteg.",
+            "animationDesc": "Se hur man klickar, dubbelklickar och högerklickar"
+          },
+          "internetSafety": {
+            "title": "Grunderna i internetsäkerhet",
+            "description": "Håll dig säker online med dessa viktiga tips",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Hålla sig säker online</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Varningstecken på bedrägerier:</h4><ul class=\"space-y-2 text-red-700\"><li>• Brådskande meddelanden som ber om pengar</li><li>• Förfrågningar om lösenord eller personlig information</li><li>• \"Du har vunnit\"-meddelanden som du inte har deltagit i</li><li>• Misstänkta länkar eller bilagor</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tips för säker surfning:</h4><ul class=\"space-y-2\"><li>• Leta efter \"https://\" i webbadresser</li><li>• Ladda bara ner från officiella appbutiker</li><li>• Håll din programvara uppdaterad</li><li>• Använd starka, unika lösenord</li></ul></div></div>",
+            "keyPoints": [
+              "Ge aldrig personlig information till främlingar",
+              "Vid tvekan, fråga en betrodd person",
+              "Legitima företag kommer inte att be om lösenord via e-post"
+            ],
+            "practiceExercise": "Identifiera 3 varningstecken på onlinebedrägerier från lektionen."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Ansluta med familj och vänner",
+        "description": "Lär dig att använda sociala medier, videosamtal och meddelanden på ett säkert sätt.",
+        "estimatedTime": "3-4 timmar",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videosamtal med familjen",
+            "description": "Anslut ansikte mot ansikte med nära och kära var som helst",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Genomföra videosamtal</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populära appar för videosamtal:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Inbyggt, mycket enkelt</li><li>• <strong>WhatsApp</strong>: Fungerar på alla telefoner</li><li>• <strong>Zoom</strong>: Utmärkt för gruppsamtal</li><li>• <strong>Skype</strong>: Fungerar på datorer och telefoner</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Innan ditt samtal:</h4><ul class=\"space-y-2\"><li>• Kontrollera din internetanslutning</li><li>• Hitta bra belysning (vänd mot ett fönster)</li><li>• Testa din kamera och mikrofon</li><li>• Ha personens kontaktuppgifter redo</li></ul></div></div>",
+            "keyPoints": [
+              "Bra belysning gör stor skillnad",
+              "Testa din utrustning före viktiga samtal",
+              "De flesta appar fungerar på liknande sätt när du väl lärt dig en"
+            ],
+            "practiceExercise": "Gör ett testvideosamtal till en familjemedlem eller vän."
+          },
+          "socialMedia": {
+            "title": "Grunderna i sociala medier",
+            "description": "Anslut med vänner och familj på Facebook och andra plattformar",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Komma igång med sociala medier</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Grunderna i Facebook:</h4><ul class=\"space-y-2\"><li>• Skapa en profil med ditt riktiga namn</li><li>• Lägg till en trevlig profilbild</li><li>• Skicka vänförfrågningar till personer du känner</li><li>• Dela uppdateringar, foton och minnen</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Integritetsinställningar:</h4><ul class=\"space-y-2\"><li>• Acceptera endast vänner du faktiskt känner</li><li>• Ställ in inlägg på \"Endast vänner\"</li><li>• Dela inte personlig information offentligt</li><li>• Granska vad andra kan se om dig</li></ul></div></div>",
+            "keyPoints": [
+              "Integritetsinställningar är mycket viktiga",
+              "Anslut endast med personer du känner",
+              "Tänk innan du publicerar - det stannar online"
+            ],
+            "practiceExercise": "Ställ in dina integritetsinställningar på \"Endast vänner\" för inlägg."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Bemästra det digitala livet",
+        "description": "Avancerade färdigheter för ett självsäkert digitalt liv.",
+        "estimatedTime": "4-5 timmar",
+        "lessons": {
+          "smartHome": {
+            "title": "Smarta hemenheter",
+            "description": "Styr ditt hem med röstkommandon och appar",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Grunderna i smarta hem</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populära smarta enheter:</h4><ul class=\"space-y-2\"><li>• <strong>Smarta högtalare</strong>: Alexa, Google Home</li><li>• <strong>Smarta termostater</strong>: Styr temperaturen på distans</li><li>• <strong>Smarta lampor</strong>: Dimma, ändra färger, ställ in scheman</li><li>• <strong>Smarta dörrklockor</strong>: Se vem som är vid dörren</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Komma igång:</h4><ul class=\"space-y-2\"><li>• Börja med en enhet för att lära dig</li><li>• Ladda ner enhetens app</li><li>• Följ installationsanvisningarna steg för steg</li><li>• Öva på grundläggande röstkommandon</li></ul></div></div>",
+            "keyPoints": [
+              "Börja enkelt med en enhet",
+              "Röstkommandon gör livet enklare",
+              "De flesta enheter har hjälpsamma appar"
+            ],
+            "practiceExercise": "Om du har en smart enhet, öva på 3 olika röstkommandon."
+          },
+          "onlineBanking": {
+            "title": "Säkerhet vid internetbank",
+            "description": "Hantera dina finanser säkert online",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Säker internetbank</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Säkerhetsgrunder:</h4><ul class=\"space-y-2 text-red-700\"><li>• Skriv alltid in din banks webbadress direkt</li><li>• Leta efter låsikonen i din webbläsare</li><li>• Använd aldrig banktjänster på offentligt Wi-Fi</li><li>• Logga ut helt när du är klar</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Vad du kan göra online:</h4><ul class=\"space-y-2\"><li>• Kontrollera kontosaldon</li><li>• Se transaktionshistorik</li><li>• Överför pengar mellan konton</li><li>• Betala räkningar elektroniskt</li></ul></div></div>",
+            "keyPoints": [
+              "Säkerhet är högsta prioritet",
+              "Din bank kommer aldrig att be om lösenord via e-post",
+              "Internetbank är mycket bekvämt när det görs på ett säkert sätt"
+            ],
+            "practiceExercise": "Besök din banks webbplats och öva på att logga in (gör inga transaktioner än)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Hur bekväm är du med att slå på och stänga av en dator eller telefon?",
+          "options": {
+            "0": "Aldrig gjort det",
+            "1": "Behöver hjälp varje gång",
+            "2": "Kan göra det ibland",
+            "3": "Mycket bekväm"
+          }
+        },
+        "1": {
+          "question": "Hur ofta använder du internet?",
+          "options": {
+            "0": "Aldrig",
+            "1": "Sällan",
+            "2": "Ibland",
+            "3": "Dagligen"
+          }
+        },
+        "2": {
+          "question": "Har du någonsin skickat ett e-postmeddelande?",
+          "options": {
+            "0": "Aldrig",
+            "1": "Med mycket hjälp",
+            "2": "Några gånger",
+            "3": "Regelbundet"
+          }
+        },
+        "3": {
+          "question": "Hur bekväm är du med att ladda ner appar?",
+          "options": {
+            "0": "Aldrig försökt",
+            "1": "Mycket nervös",
+            "2": "Med hjälp",
+            "3": "Självsäker"
+          }
+        },
+        "4": {
+          "question": "Använder du videosamtal (FaceTime, Zoom, etc.)?",
+          "options": {
+            "0": "Aldrig",
+            "1": "Försökt en gång",
+            "2": "Ibland",
+            "3": "Regelbundet"
+          }
+        },
+        "5": {
+          "question": "Hur känner du inför online-shopping?",
+          "options": {
+            "0": "För läskigt",
+            "1": "Mycket nervös",
+            "2": "Villig att prova",
+            "3": "Handlar ofta online"
+          }
+        },
+        "6": {
+          "question": "Har du använt sociala medier (Facebook, etc.)?",
+          "options": {
+            "0": "Aldrig",
+            "1": "Tittat på det",
+            "2": "Har ett konto",
+            "3": "Använder det regelbundet"
+          }
+        },
+        "7": {
+          "question": "Hur bekväm är du med lösenord?",
+          "options": {
+            "0": "Mycket förvirrad",
+            "1": "Behöver hjälp",
+            "2": "Förstår grunderna",
+            "3": "Hanterar dem väl"
+          }
+        },
+        "8": {
+          "question": "Säkerhetskopierar du dina foton och filer?",
+          "options": {
+            "0": "Vet inte hur",
+            "1": "Någon hjälper mig",
+            "2": "Ibland",
+            "3": "Regelbundet"
+          }
+        },
+        "9": {
+          "question": "Hur lär du dig ny teknik?",
+          "options": {
+            "0": "Undviker det",
+            "1": "Ber om hjälp",
+            "2": "Försöker försiktigt",
+            "3": "Utforskar med självförtroende"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Anpassa dina preferenser",
+    "personalInfo": "Personlig information",
+    "firstName": "Förnamn",
+    "firstNamePlaceholder": "Ditt förnamn",
+    "primaryDevice": "Primär enhet",
+    "devices": {
+      "windowsComputer": "Windows-dator",
+      "macComputer": "Mac (Apple-dator)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android-telefon eller surfplatta"
+    },
+    "accessibility": "Tillgänglighet",
+    "textToSpeech": "Text-till-tal",
+    "textToSpeechDesc": "Få svar upplästa för dig",
+    "voiceInput": "Röstinmatning",
+    "voiceInputDesc": "Ställ frågor genom att tala",
+    "languagePreferences": "Språkpreferenser",
+    "hideLanguages": "Dölj",
+    "modifyLanguages": "Ändra språk",
+    "defaultLanguage": "Standardspråk (hela webbplatsen kommer att använda detta språk)",
+    "defaultLanguageDesc": "Detta kommer att vara det primära språket för alla gränssnittselement och interaktioner.",
+    "otherLanguages": "Andra språk du vill använda:",
+    "default": "Standard",
+    "languageConfiguration": "Språkkonfiguration",
+    "languageConfigurationDesc": "Dina valda språk kommer att användas för:",
+    "speechToText": "Tal-till-text-igenkänning och bearbetning",
+    "multilingualText": "Flerspråkiga textinteraktioner och svar",
+    "interfaceLanguage": "Gränssnittsspråkalternativ och tillgänglighet",
+    "searchLanguages": "Sök språk...",
+    "selectAll": "Välj alla",
+    "deselectAll": "Avmarkera alla",
+    "selectedLanguages": "Valt: {{count}} språk",
+    "selectedLanguages_plural": "Valda: {{count}} språk",
+    "noLanguagesFound": "Inga språk hittades som matchar \"{{search}}\"",
+    "languageRequired": "Minst ett språk krävs",
+    "languageRequiredDesc": "Vänligen välj minst ett språk för att säkerställa korrekt funktion av röstinmatning och textinteraktioner.",
+    "account": "Konto",
+    "signOut": "Logga ut",
+    "signOutDesc": "Logga ut från ditt konto",
+    "cancel": "Avbryt",
+    "saving": "Sparar...",
+    "saved": "Sparat!",
+    "saveChanges": "Spara ändringar",
+    "errorSaving": "Kunde inte spara inställningarna. Försök igen.",
+    "lastName": "Efternamn",
+    "lastNamePlaceholder": "Ditt efternamn",
+    "age": "Ålder",
+    "techExperience": "Nivå på teknikerfarenhet",
+    "techExperienceOptions": {
+      "beginner": "Nybörjare (jag behöver steg-för-steg-hjälp med det mesta)",
+      "some": "Viss erfarenhet (jag kan göra grundläggande uppgifter men behöver hjälp med nya saker)",
+      "comfortable": "Bekväm (jag kan lista ut det mesta men behöver ibland vägledning)"
+    },
+    "primaryConcerns": "Primära tekniska ämnen av intresse/oro",
+    "assistiveNeeds": "Tillgänglighetsbehov",
+    "communicationStyle": "Föredragen förklaringsstil",
+    "communicationStyleOptions": {
+      "simple": "Enkelt och snabbt (bara stegen)",
+      "detailed": "Detaljerat (förklara 'varför')",
+      "visual": "Visuellt (visa bilder/videor när det är möjligt)"
+    },
+    "videoRecommendations": "Videorekommendationer",
+    "videoRecommendationsDesc": "Visa hjälpsamma videor och artiklar tillsammans med stegen",
+    "fontSize": "Föredragen textstorlek",
+    "fontSizeOptions": {
+      "normal": "Normal",
+      "large": "Stor",
+      "extraLarge": "Extra stor"
+    },
+    "displayPreferences": "Visning och tema",
+    "theme": "Färgtema",
+    "themeOptions": {
+      "light": "Ljus",
+      "dark": "Mörk"
+    },
+    "highContrast": "Högkontrastläge",
+    "highContrastDesc": "Öka text- och elementkontrasten för bättre synlighet",
+    "learningPreferences": "Inlärnings- och innehållspreferenser"
+  },
+  "common": {
+    "settings": "Inställningar",
+    "signOut": "Logga ut",
+    "close": "Stäng"
+  },
+  "tips": {
+    "connectWifi": "Anslut till Wi-Fi",
+    "connectWifiDesc": "Gå online säkert och enkelt",
+    "videoCall": "Ring ett videosamtal",
+    "videoCallDesc": "Anslut med familjen ansikte mot ansikte",
+    "screenshot": "Ta en skärmdump",
+    "screenshotDesc": "Fånga det som finns på din skärm",
+    "updateApps": "Uppdatera dina appar",
+    "updateAppsDesc": "Håll dina appar aktuella och säkra"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Kommunikation",
+    "basicSkills": "Grundläggande färdigheter",
+    "maintenance": "Underhåll"
+  },
+  "questions": {
+    "makeTextBigger": "Hur gör jag texten större?",
+    "connectWifi": "Hur ansluter jag till Wi-Fi?",
+    "takeScreenshot": "Hur tar jag en skärmdump?",
+    "makeVideoCall": "Hur ringer jag ett videosamtal?",
+    "backupPhotos": "Hur säkerhetskopierar jag mina foton?",
+    "updateApps": "Hur uppdaterar jag mina appar?",
+    "onlineBanking": "Hur använder jag internetbank på ett säkert sätt?",
+    "joinZoom": "Hur ansluter jag till ett Zoom-möte?"
+  },
+  "achievements": {
+    "gettingStarted": "Komma igång",
+    "gettingStartedDesc": "Ställde din första fråga",
+    "questionExplorer": "Frågeutforskare",
+    "questionExplorerDesc": "Ställde 5 frågor",
+    "stepMaster": "Stegmästare",
+    "stepMasterDesc": "Slutförde 25 steg"
+  },
+  "stats": {
+    "seniorsHelped": "Hjälpta seniorer",
+    "questionsAnswered": "Besvarade frågor",
+    "successRate": "Framgångsgrad",
+    "alwaysAvailable": "Alltid tillgänglig"
+  },
+  "time": {
+    "now": "Just nu",
+    "hourAgo": "för 1 timme sedan",
+    "hoursAgo": "för {{count}} timmar sedan",
+    "dayAgo": "för 1 dag sedan",
+    "daysAgo": "för {{count}} dagar sedan"
+  },
+  "voice": {
+    "startInput": "Starta röstinmatning",
+    "stopRecording": "Stoppa inspelning",
+    "processing": "Bearbetar...",
+    "recognized": "Röst igenkänd",
+    "failed": "Röstinmatning misslyckades"
+  },
+  "language": {
+    "select": "Välj språk",
+    "translate": "Översätt",
+    "translating": "Översätter...",
+    "detecting": "Identifierar språk...",
+    "error": "Översättning misslyckades"
+  },
+  "auth": {
+    "backToHome": "Tillbaka till startsidan",
+    "createAccount": "Skapa konto",
+    "welcomeBack": "Välkommen tillbaka",
+    "joinFamily": "Gå med i vår familj av stärkta seniorer",
+    "welcomeBackDesc": "Logga in för att fortsätta din teknikresa",
+    "email": "E-postadress",
+    "emailPlaceholder": "Ange din e-postadress",
+    "password": "Lösenord",
+    "passwordPlaceholder": "Ange ditt lösenord",
+    "confirmPassword": "Bekräfta lösenord",
+    "confirmPasswordPlaceholder": "Bekräfta ditt lösenord",
+    "passwordsNoMatch": "Lösenorden matchar inte",
+    "passwordTooShort": "Lösenordet måste vara minst 6 tecken långt",
+    "creatingAccount": "Skapar konto...",
+    "signingIn": "Loggar in...",
+    "alreadyHaveAccount": "Har du redan ett konto? Logga in",
+    "dontHaveAccount": "Har du inget konto? Registrera dig"
+  },
+  "error": {
+    "askQuestionFirst": "Ställ en fråga först",
+    "couldntGetAnswer": "Tyvärr, jag kunde inte få ett svar just nu. Försök igen."
+  },
+  "learningPage": {
+    "headerTitle": "Lärcentrum",
+    "heroTitle": "Teknikkunskaper för seniorer",
+    "heroSubtitle": "Lär dig teknik i din egen takt med steg-för-steg-lektioner, interaktiva demonstrationer och personlig vägledning.",
+    "takeSkillsAssessment": "Gör färdighetsbedömning",
+    "orSeparator": "eller",
+    "iAmBeginner": "Jag är nybörjare",
+    "iAmIntermediate": "Jag är medelgod",
+    "iAmAdvanced": "Jag är avancerad",
+    "yourLevel": "Din nivå: {{level}}",
+    "levelDescription": "Kurserna anpassas efter din färdighetsnivå",
+    "retakeAssessment": "Gör om bedömningen",
+    "progressLabel": "Framsteg",
+    "lessonsLabel": "lektioner",
+    "completedOutOfTotal": "{{completed}} av {{total}} slutförda",
+    "featureInteractiveDemos": "Interaktiva demonstrationer",
+    "featureInteractiveDemosDesc": "Se exakt hur man utför varje åtgärd",
+    "featureAudioSupport": "Ljudstöd",
+    "featureAudioSupportDesc": "Få lektioner upplästa för dig",
+    "featurePrintableGuides": "Utskrivbara guider",
+    "featurePrintableGuidesDesc": "Ta med dig sammanfattningar offline",
+    "featureCertificates": "Certifikat",
+    "featureCertificatesDesc": "Få certifikat när du slutför kurser",
+    "animationShow": "Visa animation",
+    "animationReset": "Återställ",
+    "featuresGridTitle": "Utforska våra funktioner",
+    "loadingPaths": "Laddar inlärningsvägar...",
+    "noPathsAvailable": "Inga inlärningsvägar tillgängliga för tillfället. Vänligen kom tillbaka senare.",
+    "progressComplete": "{{value}}% slutfört",
+    "recommendedStart": "Rekommenderad startpunkt",
+    "moduleListTitle": "Moduler för vägen: {{pathTitle}}",
+    "moduleContentTitle": "Innehåll för modul: {{moduleTitle}} kommer här.",
+    "loadingCenter": "Laddar Lärcentrum...",
+    "moduleTimeLabel": "Tid: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Välj ditt föredragna språk för gränssnittet",
+    "moreComingSoon": "🌍 Fler språk kommer snart"
+  },
+  "assessmentView": {
+    "headerTitle": "Färdighetsbedömning",
+    "questionProgress": "Fråga {{current}} av {{total}}",
+    "chooseBestOption": "Välj det alternativ som bäst beskriver dig",
+    "skipAssessment": "Hoppa över bedömning"
+  },
+  "courseView": {
+    "lessonsHeader": "Lektioner",
+    "interactiveDemoLabel": "Interaktiv demo",
+    "startLesson": "Starta lektion",
+    "reviewLesson": "Granska",
+    "congratulations": "Grattis!",
+    "courseComplete": "Du har slutfört kursen {{courseTitle}}!",
+    "downloadCertificate": "Ladda ner certifikat"
+  },
+  "lessonView": {
+    "readAloud": "Läs upp lektionen",
+    "interactiveDemoHeader": "Interaktiv demo",
+    "practiceExerciseHeader": "Övningsuppgift",
+    "markAsComplete": "Markera som slutförd",
+    "repeatLesson": "Repetera lektion",
+    "keyPointsHeader": "Nyckelpunkter",
+    "takeItWithYouHeader": "Ta med dig",
+    "downloadSummaryButton": "Ladda ner sammanfattning",
+    "downloadSummaryDescription": "Få en utskrivbar sammanfattning av denna lektion",
+    "needHelpHeader": "Behöver du hjälp?",
+    "askAQuestionButton": "Ställ en fråga",
+    "chatWithHelperButton": "Chatta med hjälpare"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Integritetspolicy",
+    "pageTitle": "Integritetspolicy",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "ourPromise": {
+      "title": "Vårt löfte till dig",
+      "text": "På Senior Tech Helper förstår vi att din integritet är värdefull. Vi är engagerade i att skydda din personliga information och att vara helt transparenta med hur vi använder den. Denna policy förklarar allt på ett enkelt och tydligt språk."
+    },
+    "cookies": {
+      "title": "Hur vi använder cookies",
+      "whatAreCookiesTitle": "Vad är cookies?",
+      "whatAreCookiesText": "Cookies är små textfiler som hjälper oss att komma ihåg dina preferenser och förbättra din upplevelse. Tänk på dem som bokmärken som hjälper oss att komma ihåg var du slutade.",
+      "weUseCookiesForTitle": "Vi använder cookies ENDAST för att hjälpa dig:",
+      "uses": [
+        "Komma ihåg dina preferenser: Textstorlek, röstinställningar och tillgänglighetsalternativ du har valt",
+        "Hålla dig inloggad: Så att du inte behöver ange ditt lösenord varje gång",
+        "Förbättra vår hjälp: Genom att förstå vilka funktioner som är mest hjälpsamma för seniorer som du"
+      ],
+      "whatWeDontDoTitle": "Vad vi INTE gör med cookies:",
+      "donts": [
+        "Spårar dig över andra webbplatser",
+        "Säljer din information till någon",
+        "Delar dina data med annonsörer",
+        "Använder dem i marknadsföringssyfte"
+      ]
+    },
+    "informationCollected": {
+      "title": "Vilken information vi samlar in",
+      "youGiveUsTitle": "Information du ger oss:",
+      "youGiveUsList": [
+        "Ditt namn och din e-postadress",
+        "Din enhetstyp (iPhone, Windows, etc.)",
+        "Din tekniska erfarenhetsnivå",
+        "Dina tillgänglighetspreferenser",
+        "Frågor du ställer till vår AI-hjälpare"
+      ],
+      "weCollectTitle": "Information vi samlar in automatiskt:",
+      "weCollectList": [
+        "Hur du använder vår app (vilka funktioner som hjälper mest)",
+        "Teknisk information (webbläsartyp, enhet)",
+        "Felrapporter (för att snabbt åtgärda problem)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Hur vi skyddar din information",
+      "protections": [
+        "Kryptering: Alla dina data är krypterade (förvrängda) så att bara vi kan läsa dem",
+        "Säkra servrar: Din information lagras på skyddade, professionella servrar",
+        "Begränsad åtkomst: Endast våra nödvändiga teammedlemmar kan komma åt dina data",
+        "Regelbundna säkerhetskontroller: Vi övervakar ständigt för eventuella säkerhetshot"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Dela din information",
+      "neverSell": "Vi kommer ALDRIG att sälja eller hyra ut din personliga information.",
+      "onlyShareInSituations": "Vi delar din information endast i dessa mycket begränsade situationer:",
+      "sharingSituations": [
+        "Med ditt tillstånd: Om du specifikt ber oss att dela något",
+        "För teknisk support: Med betrodda tjänsteleverantörer som hjälper oss att driva appen (de är bundna av strikta integritetsavtal)",
+        "Om det krävs enligt lag: Endast om vi är juridiskt skyldiga att göra det"
+      ]
+    },
+    "yourRights": {
+      "title": "Dina rättigheter och val",
+      "youCanAlwaysTitle": "Du kan alltid:",
+      "rightsList": [
+        "Se vilken information vi har om dig",
+        "Be oss att korrigera felaktig information",
+        "Begära att vi raderar ditt konto och dina data",
+        "Stänga av cookies i din webbläsares inställningar",
+        "Kontakta oss med eventuella integritetsfrågor"
+      ],
+      "noteDeletingCookiesTitle": "Observera om att radera cookies:",
+      "noteDeletingCookiesText": "Om du raderar våra cookies måste du ställa in dina preferenser igen, och vissa funktioner kanske inte fungerar lika bra."
+    },
+    "thirdPartyServices": {
+      "title": "Tredjepartstjänster",
+      "weUseTrustedServices": "Vi använder några betrodda tredjepartstjänster för att hjälpa till att tillhandahålla våra funktioner:",
+      "servicesList": [
+        "Google AI (Gemini): Driver vår AI-assistent som besvarar dina frågor",
+        "Firebase: Lagrar säkert din kontoinformation",
+        "YouTube/Utbildningssajter: Vi kan rekommendera hjälpsamma videor och artiklar"
+      ],
+      "servicesOwnPolicies": "Dessa tjänster har sina egna integritetspolicyer, och vi delar bara den minimiinformation som behövs för att de ska fungera."
+    },
+    "changesToPolicy": {
+      "title": "Ändringar i denna policy",
+      "text": "Om vi behöver uppdatera denna integritetspolicy kommer vi att meddela dig via e-post och visa ett meddelande i appen. Vi kommer alltid att förklara vad som ändras och varför på ett enkelt och tydligt språk."
+    },
+    "contactUs": {
+      "title": "Kontakta oss",
+      "questions": "Har du frågor om din integritet eller denna policy? TechStep-teamet är här för att hjälpa till!",
+      "email": "E-post: privacy@techstep.com",
+      "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Post: TechStep Privacy Team",
+      "mailLine2": "123 Tech Support Lane",
+      "mailLine3": "Helpful City, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Tack för att du litar på TechStep med din information. Vi är engagerade i att hålla den säker och använda den endast för att hjälpa dig att lyckas med teknik.",
+      "backToHome": "Tillbaka till startsidan"
+    }
+  }
+}

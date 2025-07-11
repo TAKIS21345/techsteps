@@ -1,4 +1,5 @@
 import { LearningPath, Module } from '../types/learning';
+import type { Badge } from '../types/learning';
 
 // These keys would need to be added to translation.json files
 // For example:
@@ -71,6 +72,34 @@ const MOCK_LEARNING_PATHS: LearningPath[] = [
       { id: 'productivityTools', titleKey: 'learningPaths.advancedSkills.modules.productivityTools.title', descriptionKey: 'learningPaths.advancedSkills.modules.productivityTools.description', estimatedTime: '40 min', dependsOn: ['photoEditing'], iconName: 'FileText' },
     ],
   },
+  {
+    id: 'accessibility',
+    titleKey: 'learningPaths.accessibility.title',
+    descriptionKey: 'learningPaths.accessibility.description',
+    iconName: 'Heart',
+    sortOrder: 5,
+    badgeIdOnCompletion: 'accessibilityBadge',
+    modules: [
+      { id: 'screenMagnifier', titleKey: 'learningPaths.accessibility.modules.screenMagnifier.title', descriptionKey: 'learningPaths.accessibility.modules.screenMagnifier.description', estimatedTime: '10 min', iconName: 'ZoomIn' },
+      { id: 'voiceCommands', titleKey: 'learningPaths.accessibility.modules.voiceCommands.title', descriptionKey: 'learningPaths.accessibility.modules.voiceCommands.description', estimatedTime: '15 min', iconName: 'Mic' },
+      { id: 'highContrast', titleKey: 'learningPaths.accessibility.modules.highContrast.title', descriptionKey: 'learningPaths.accessibility.modules.highContrast.description', estimatedTime: '10 min', iconName: 'Contrast' },
+      { id: 'assistiveTouch', titleKey: 'learningPaths.accessibility.modules.assistiveTouch.title', descriptionKey: 'learningPaths.accessibility.modules.assistiveTouch.description', estimatedTime: '10 min', iconName: 'Touchpad' }
+    ],
+  },
+  {
+    id: 'healthAndSafety',
+    titleKey: 'learningPaths.healthAndSafety.title',
+    descriptionKey: 'learningPaths.healthAndSafety.description',
+    iconName: 'Shield',
+    sortOrder: 6,
+    badgeIdOnCompletion: 'healthAndSafetyBadge',
+    modules: [
+      { id: 'privacySettings', titleKey: 'learningPaths.healthAndSafety.modules.privacySettings.title', descriptionKey: 'learningPaths.healthAndSafety.modules.privacySettings.description', estimatedTime: '15 min', iconName: 'ShieldCheck' },
+      { id: 'scamAwareness', titleKey: 'learningPaths.healthAndSafety.modules.scamAwareness.title', descriptionKey: 'learningPaths.healthAndSafety.modules.scamAwareness.description', estimatedTime: '20 min', iconName: 'AlertTriangle' },
+      { id: 'healthApps', titleKey: 'learningPaths.healthAndSafety.modules.healthApps.title', descriptionKey: 'learningPaths.healthAndSafety.modules.healthApps.description', estimatedTime: '20 min', iconName: 'HeartPulse' },
+      { id: 'emergencyContacts', titleKey: 'learningPaths.healthAndSafety.modules.emergencyContacts.title', descriptionKey: 'learningPaths.healthAndSafety.modules.emergencyContacts.description', estimatedTime: '10 min', iconName: 'PhoneCall' }
+    ],
+  },
 ];
 
 export const learningService = {
@@ -90,9 +119,58 @@ export const learningService = {
     return path?.modules.find(m => m.id === moduleId);
   },
 
-  // Functions to update user progress would go here
-  // e.g., markModuleAsCompleted(userId: string, moduleId: string, pathId: string): Promise<void>
-  // e.g., awardBadge(userId: string, badgeId: string): Promise<void>
+  /**
+   * Mark a module as completed for the current user (delegates to UserContext in UI, but can be used for backend or service logic)
+   * @param userLearningProgress Current userLearningProgress object (from UserContext)
+   * @param moduleId Module ID to mark as complete
+   * @param pathId Path ID for the module
+   * @param allLearningPaths All available learning paths (for badge logic)
+   * @returns Updated userLearningProgress object
+   */
+  markModuleAsCompleted: (
+    userLearningProgress: {
+      completedModules: Record<string, boolean>;
+      earnedBadges: Record<string, boolean>;
+      pathProgress?: Record<string, { completedCount: number; totalCount: number; progressPercent: number }>;
+    },
+    moduleId: string,
+    pathId: string,
+    allLearningPaths: LearningPath[]
+  ) => {
+    const updatedCompletedModules = {
+      ...userLearningProgress.completedModules,
+      [moduleId]: true
+    };
+    let updatedEarnedBadges = { ...userLearningProgress.earnedBadges };
+    const path = allLearningPaths.find(p => p.id === pathId);
+    if (path) {
+      const allModulesInPathComplete = path.modules.every(
+        module => updatedCompletedModules[module.id]
+      );
+      if (allModulesInPathComplete && path.badgeIdOnCompletion) {
+        updatedEarnedBadges = {
+          ...updatedEarnedBadges,
+          [path.badgeIdOnCompletion]: true
+        };
+      }
+    }
+    // Recalculate progress for all paths
+    const updatedPathProgress: Record<string, { completedCount: number, totalCount: number, progressPercent: number }> = {};
+    allLearningPaths.forEach(p => {
+      const totalModules = p.modules.length;
+      const completedCount = p.modules.filter(m => updatedCompletedModules[m.id]).length;
+      updatedPathProgress[p.id] = {
+        completedCount,
+        totalCount: totalModules,
+        progressPercent: totalModules > 0 ? (completedCount / totalModules) * 100 : 0,
+      };
+    });
+    return {
+      completedModules: updatedCompletedModules,
+      earnedBadges: updatedEarnedBadges,
+      pathProgress: updatedPathProgress
+    };
+  },
 };
 
 // Mock badge data (would also be in Firestore or constants)
@@ -101,6 +179,8 @@ export const MOCK_BADGES: Badge[] = [
     { id: 'onlineWorldBadge', nameKey: 'badges.onlineWorld.name', descriptionKey: 'badges.onlineWorld.description', iconName: 'Wifi' },
     { id: 'digitalLifeBadge', nameKey: 'badges.digitalLife.name', descriptionKey: 'badges.digitalLife.description', iconName: 'MessageSquare' },
     { id: 'advancedSkillsBadge', nameKey: 'badges.advancedSkills.name', descriptionKey: 'badges.advancedSkills.description', iconName: 'Sparkles' },
+    { id: 'accessibilityBadge', nameKey: 'badges.accessibility.name', descriptionKey: 'badges.accessibility.description', iconName: 'Heart' },
+    { id: 'healthAndSafetyBadge', nameKey: 'badges.healthAndSafety.name', descriptionKey: 'badges.healthAndSafety.description', iconName: 'Shield' },
 ];
 
 export const getBadgeById = (badgeId: string): Badge | undefined => {

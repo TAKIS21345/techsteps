@@ -1,0 +1,944 @@
+{
+  "welcome": "Tervetuloa!",
+  "onboarding": {
+    "step1": {
+      "title": "Tutustutaanpa sinuun",
+      "subtitle": "Auta minua personoimaan kokemuksesi",
+      "firstName": "Etunimi",
+      "firstNamePlaceholder": "Sinun etunimesi",
+      "lastName": "Sukunimi",
+      "lastNamePlaceholder": "Sinun sukunimesi",
+      "age": "Ikä (auttaa minua mukauttamaan selityksiäni)"
+    },
+    "step2": {
+      "title": "Valitse haluamasi kielet",
+      "subtitle": "Valitse kielet, joita haluat käyttää kommunikointiin ja puheentunnistukseen",
+      "languageSelection": "Kielivalinta",
+      "languageDescription": "Valitse kielet, joiden kanssa tunnet olosi mukavaksi. Tämä:",
+      "speechToText": "Määrittää puheentunnistuksen ymmärtämään ääntäsi näillä kielillä",
+      "textInteractions": "Mahdollistaa tekstivuorovaikutuksen valitsemillasi kielillä",
+      "interfaceOptions": "Mukauttaa käyttöliittymän vaihtoehtoja paremman saavutettavuuden takaamiseksi",
+      "searchLanguages": "Etsi kieliä...",
+      "selectAll": "Valitse kaikki",
+      "deselectAll": "Poista kaikkien valinta",
+      "selected": "Valittu: {{count}} kieli",
+      "selected_plural": "Valittu: {{count}} kieltä",
+      "noLanguagesFound": "Ei löytynyt kieliä, jotka vastaisivat hakua \"{{search}}\"",
+      "languageRequired": "Kielivalinta vaaditaan",
+      "languageRequiredDesc": "Valitse vähintään yksi kieli jatkaaksesi. Tämä takaa parhaan kokemuksen puheentunnistukselle ja tekstivuorovaikutukselle."
+    },
+    "step3": {
+      "title": "Mitä laitetta käytät eniten?",
+      "subtitle": "Tämä auttaa minua antamaan sinulle parempia ohjeita",
+      "devices": {
+        "windowscomputer": "Windows-tietokone",
+        "macapplecomputer": "Mac (Apple-tietokone)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android-puhelin tai -tabletti",
+        "smarttv": "Älytelevisio",
+        "multipledevices": "Useita laitteita"
+      }
+    },
+    "step4": {
+      "title": "Kuinka mukavaksi koet teknologian käytön?",
+      "subtitle": "Ole rehellinen - tämä auttaa minua selittämään asiat oikealla tasolla",
+      "beginner": "Aloittelija",
+      "beginnerDesc": "Tarvitsen askel-askeleelta apua useimmissa asioissa",
+      "some": "Jonkin verran kokemusta",
+      "someDesc": "Osaan tehdä perustehtäviä, mutta tarvitsen apua uusissa asioissa",
+      "comfortable": "Kokenut",
+      "comfortableDesc": "Saan selvää useimmista asioista, mutta tarvitsen joskus ohjausta"
+    },
+    "step5": {
+      "title": "Mitkä teknologia-aiheet huolestuttavat sinua eniten?",
+      "subtitle": "Valitse kaikki soveltuvat - priorisoin apua näillä alueilla",
+      "concerns": {
+        "onlineSafety": "Verkkoturvallisuus ja huijaukset",
+        "passwordManagement": "Salasanojen hallinta",
+        "videoCalling": "Videopuhelut perheen kanssa",
+        "socialMedia": "Sosiaalinen media",
+        "onlineBanking": "Verkkopankki",
+        "emailMessaging": "Sähköposti ja viestit",
+        "photoStorage": "Kuvien tallennus ja jakaminen",
+        "appDownloads": "Sovellusten lataukset ja päivitykset",
+        "wifiInternet": "Wi-Fi- ja internet-ongelmat",
+        "deviceSettings": "Laitteen asetukset",
+        "onlineShopping": "Verkko-ostokset",
+        "healthApps": "Terveyssovellukset ja -portaalit"
+      }
+    },
+    "step6": {
+      "title": "Tarvitsetko saavutettavuusominaisuuksia?",
+      "subtitle": "Haluan varmistaa, että voit käyttää tätä mukavasti",
+      "needs": {
+        "largerText": "Suurempi teksti ja painikkeet",
+        "highContrast": "Korkean kontrastin värit",
+        "voiceCommands": "Äänikomennot",
+        "screenReader": "Näytönlukuohjelman tuki",
+        "slowerExplanations": "Hitaammat selitykset",
+        "visualSteps": "Visuaaliset vaihe-indikaattorit",
+        "noneNeeded": "Ei tarvita"
+      }
+    },
+    "step7": {
+      "title": "Miten opit mieluiten?",
+      "subtitle": "Säädän opetustyyliäni mieltymystesi mukaan",
+      "simple": "Yksinkertaisesti ja nopeasti",
+      "simpleDesc": "Kerro vain, mitä minun pitää tehdä, askel askeleelta",
+      "detailed": "Yksityiskohtaiset selitykset",
+      "detailedDesc": "Selitä, miksi teen kunkin vaiheen",
+      "visual": "Visuaalinen oppiminen",
+      "visualDesc": "Näytä minulle kuvia ja videoita, kun mahdollista"
+    },
+    "step8": {
+      "title": "Viimeiset silaukset",
+      "subtitle": "Aseta täydellinen oppimisympäristösi",
+      "textToSpeech": "Teksti puheeksi",
+      "textToSpeechDesc": "Vastaukset luetaan ääneen",
+      "voiceInput": "Puhesyöttö",
+      "voiceInputDesc": "Esitä kysymyksiä puhumalla",
+      "videoRecommendations": "Videosuositukset",
+      "videoRecommendationsDesc": "Näytä hyödyllisiä videoita ja artikkeleita",
+      "textSize": "Tekstin kokomieltymys",
+      "textSizeNormal": "Normaali",
+      "textSizeLarge": "Suuri",
+      "textSizeExtraLarge": "Erittäin suuri"
+    },
+    "back": "Takaisin",
+    "next": "Seuraava",
+    "settingUp": "Asetetaan...",
+    "completeSetup": "Viimeistele asennus",
+    "errorSaving": "Asetuksiasi ei voitu tallentaa. Yritä uudelleen."
+  },
+  "nav": {
+    "features": "Ominaisuudet",
+    "reviews": "Arvostelut",
+    "signIn": "Kirjaudu sisään",
+    "getStarted": "Aloita"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Seniorit ympäri maailmaa luottavat meihin",
+      "title": "Teknologiasta tehty",
+      "titleHighlight": "yksinkertaista ja selkeää",
+      "subtitle": "Hallitse teknologiaa itsevarmasti henkilökohtaisten, askel-askeleelta etenevien ohjeiden avulla, jotka tuntuvat kuin vierelläsi olisi kärsivällinen ystävä.",
+      "startLearningButton": "Aloita oppiminen ilmaiseksi",
+      "watchDemoButton": "Katso demo",
+      "freeForever": "Ilmainen ikuisesti",
+      "noCreditCard": "Luottokorttia ei vaadita",
+      "available247": "Saatavilla 24/7"
+    },
+    "featuresSection": {
+      "title": "Ominaisuudet",
+      "subtitle": "Tässä on vain muutama ominaisuus, jotka auttavat sinua kehittymään!",
+      "items": [
+        {
+          "title": "Askel-askeleelta ohjeet",
+          "description": "Saa selkeät, helposti seurattavat ohjeet mihin tahansa tekniseen kysymykseen. Jokainen vaihe selitetään yksinkertaisin termein visuaalisten vihjeiden avulla."
+        },
+        {
+          "title": "Äänituki",
+          "description": "Esitä kysymyksiä äänelläsi ja kuuntele vastaukset ääneen luettuina. Täydellinen handsfree-apuun, kun sitä eniten tarvitset."
+        },
+        {
+          "title": "Valokuvaselittäjä",
+          "description": "Ota kuva mistä tahansa kaapelista, painikkeesta tai laitteesta ja saat välittömästi selityksen siitä, mikä se on ja miten sitä käytetään."
+        },
+        {
+          "title": "Senioriystävällinen muotoilu",
+          "description": "Suuri teksti, intuitiivinen käyttöliittymä ja kärsivälliset selitykset, jotka on suunniteltu erityisesti senioreita ajatellen."
+        },
+        {
+          "title": "Turvallinen ja suojattu",
+          "description": "Henkilötietosi on suojattu yritystason turvallisuudella. Tietoja ei jaeta kolmansille osapuolille."
+        },
+        {
+          "title": "Välittömät vastaukset",
+          "description": "Saa välitöntä apua 24/7. Ei jonottamista tai aikojen varaamista. Kysy vain ja saat vastauksia."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Suosittuja kysymyksiä, joissa autamme",
+      "subtitle": "Katso, mitä muut seniorit kysyvät",
+      "askYourQuestionButton": "Kysy kysymyksesi nyt"
+    },
+    "testimonialsSection": {
+      "title": "Mitä yhteisömme sanoo",
+      "subtitle": "Liity tuhansien seniorien joukkoon, jotka ovat löytäneet yksinkertaista teknistä apua",
+      "testimonialContent": [
+        {
+          "name": "Margareta K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Vihdoinkin joku, joka selittää teknologiaa tavalla, jonka ymmärrän! Askel-askeleelta-ohjeet auttoivat minua asentamaan uuden puhelimeni täydellisesti. Tunnen oloni nyt paljon itsevarmemmaksi!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "Äänitoiminto on uskomaton! Voin vain kysyä kysymykseni ääneen ja saada selkeitä vastauksia. On kuin teknisesti taitava lapsenlapsi olisi saatavilla 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Rakastan valokuvatoimintoa! Otin kuvan sekavasta kaapelista ja tiesin heti, mihin se oli tarkoitettu. Tämä sovellus on tehnyt minusta paljon itsevarmemman teknologian kanssa.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Olin niin turhautunut älytelevisiooni, kunnes löysin tämän apurin. Nyt voin suoratoistaa ohjelmia, säätää asetuksia ja jopa videopuhella lastenlasteni kanssa!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Ikä {{age}}"
+    },
+    "ctaSection": {
+      "title": "Oletko valmis hallitsemaan teknologian?",
+      "subtitle": "Liity voimaantuneiden seniorien yhteisöömme, jotka ovat tehneet teknologiasta yksinkertaista ja lähestyttävää. Aloita selkeiden, hyödyllisten vastausten saaminen tänään - täysin ilmaiseksi!",
+      "getStartedButton": "Aloita ilmaiseksi tänään",
+      "setupInMinutes": "Asennus 2 minuutissa"
+    },
+    "footer": {
+      "description": "Teemme teknologiasta saavutettavaa ja ymmärrettävää senioreille kaikkialla.",
+      "featuresTitle": "Ominaisuudet",
+      "featuresItems": [
+        "Askel-askeleelta apu",
+        "Äänituki",
+        "Valokuvaselittäjä",
+        "24/7 saatavuus"
+      ],
+      "supportTitle": "Tuki",
+      "supportItems": [
+        "Ohjekeskus",
+        "Aloitus",
+        "Yhteisö",
+        "Ota yhteyttä"
+      ],
+      "companyTitle": "Yritys",
+      "companyItems": [
+        "Tietoja meistä",
+        "Tietosuojakäytäntö",
+        "Käyttöehdot",
+        "Saavutettavuus"
+      ],
+      "copyright": "© 2025 TechStep. Tehty ❤️:llä senioreille kaikkialla.",
+      "trustedBy": "Luottavat",
+      "trustedByCount": "50 000+ senioria"
+    }
+  },
+  "dashboard": {
+    "welcome": "Tervetuloa TechStepiin",
+    "welcomeUser": "Tervetuloa takaisin, {{name}}!",
+    "ready": "Oletko valmis oppimaan jotain uutta?",
+    "getHelp": "Saa välitöntä apua",
+    "askQuestion": "Kysy mikä tahansa tekninen kysymys ja saat askel-askeleelta ohjeet",
+    "placeholder": "Mitä haluaisit apua tänään?",
+    "getSteps": "Saa askel-askeleelta apua",
+    "gettingSteps": "Haetaan ohjeitasi...",
+    "craftingSteps": "Luodaan henkilökohtaisia ohjeitasi...",
+    "takesAMoment": "Tämä voi kestää hetken",
+    "quickTips": "Pikavinkkejä sinulle",
+    "popularQuestions": "Tämän päivän suosituimmat kysymykset",
+    "quickActions": "Pikatoiminnot",
+    "recentActivity": "Viimeaikainen toiminta",
+    "yourProgress": "Edistymisesi",
+    "needHelp": "Tarvitsetko apua?",
+    "helpingHand": "Olemme täällä auttaaksemme sinua onnistumaan",
+    "chatHuman": "Keskustele ihmisen kanssa",
+    "browseGuides": "Selaa video-oppaita",
+    "browseTips": "Selaa vinkkejä",
+    "commonSolutions": "Löydä yleisiä ratkaisuja",
+    "stepsCompleted": "{{count}} askelta suoritettu",
+    "needMoreInfo": "Tarvitsen hieman lisätietoja auttaakseni sinua paremmin"
+  },
+  "aiTools": {
+    "title": "Tekoälyapurin työkalut",
+    "description": "Valokuvaselittäjä ja tekninen kääntäjä"
+  },
+  "aiToolsModal": {
+    "header": "Tekoälyapurin työkalut",
+    "tabs": {
+      "photoExplainer": "Valokuvaselittäjä",
+      "techWordBuster": "Teknisten sanojen selventäjä"
+    },
+    "photoExplainer": {
+      "title": "Valokuvaselittäjä",
+      "description": "Lataa kuva mistä tahansa kaapelista, painikkeesta tai laitteesta ja saat välittömän selityksen.",
+      "uploadButton": "Lataa kuva",
+      "questionLabel": "Esitä kysymys kuvasta (valinnainen)",
+      "questionPlaceholder": "Mihin tämä kaapeli on tarkoitettu?",
+      "explainButton": "Selitä kuva",
+      "analyzingButton": "Analysoidaan...",
+      "alertNoPhoto": "Lataa ensin kuva tai tarkista API-määritykset.",
+      "errorResponse": "<p class=\"text-red-600\">Valitettavasti en voinut analysoida kuvaa. Yritä uudelleen.</p>",
+      "readResponseButton": "🔊 Lue vastaus ääneen",
+      "previewAlt": "Esikatselu"
+    },
+    "techWordBuster": {
+      "title": "Teknisten sanojen selventäjä",
+      "description": "Oletko hämmentynyt teknisestä termistä? Saat yksinkertaisen, helposti ymmärrettävän selityksen tosielämän analogioiden avulla.",
+      "inputLabel": "Kirjoita tekninen sana tai lause",
+      "inputPlaceholder": "esim. Pilvitallennus, WiFi, Bluetooth",
+      "explainButton": "Selvennä tämä",
+      "explainingButton": "Selvennetään...",
+      "alertNoTerm": "Syötä ensin tekninen termi tai tarkista API-määritykset.",
+      "errorResponse": "<p class=\"text-red-600\">Valitettavasti en voinut selittää tuota termiä. Yritä uudelleen.</p>",
+      "readExplanationButton": "🔊 Lue selitys ääneen"
+    },
+    "apiErrorNoExplanation": "Selitystä ei saatu"
+  },
+  "clarificationModal": {
+    "headerTitle": "Tarvitsen hieman lisätietoja",
+    "yourQuestionLabel": "Kysymyksesi:",
+    "tellMeMorePrompt": "Jotta voisin antaa sinulle parasta mahdollista apua, voisitko kertoa hieman lisää?",
+    "forExampleLabel": "Esimerkiksi:",
+    "textareaPlaceholder": "Anna lisätietoja...",
+    "textareaSrLabel": "Anna lisätietoja kysymykseesi",
+    "skipButton": "Ohita toistaiseksi",
+    "submitButton": "Saa parempaa apua",
+    "loadingButton": "Haetaan apua..."
+  },
+  "languageNotificationBanner": {
+    "title": "Viimeistele kieliasetuksesi",
+    "description": "Määritä haluamasi kielet parempaa puheentunnistusta ja tekstivuorovaikutusta varten.",
+    "buttonText": "Viimeistele asennus"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Tietokoneiden ja laitteiden perusteet",
+      "description": "Perusasiat, joiden avulla pääset alkuun teknologian parissa.",
+      "modules": {
+        "turnOnDevice": { "title": "Laitteen käynnistäminen", "description": "Opi käynnistämään tietokoneita ja älypuhelimia." },
+        "mouseTouchscreen": { "title": "Hiiren/kosketusnäytön käyttö", "description": "Hallitse osoittaminen, napsauttaminen ja napauttaminen." },
+        "keyboardTyping": { "title": "Näppäimistön/kirjoittamisen perusteet", "description": "Tutustu kirjoittamisen perusteisiin." },
+        "filesFolders": { "title": "Tiedostojen ja kansioiden ymmärtäminen", "description": "Opi, miten digitaalista tietoa järjestetään." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Verkkomaailma",
+      "description": "Yhteyden muodostaminen ja internetin turvallinen tutkiminen.",
+      "modules": {
+        "webBrowsers": { "title": "Verkkoselaimien ymmärtäminen", "description": "Selaa internetiä Chromella, Edgellä tai Safarilla." },
+        "searchEffectively": { "title": "Kuinka hakea tehokkaasti", "description": "Löydä tarvitsemasi verkosta hakukoneiden avulla." },
+        "introEmail": { "title": "Johdanto sähköpostiin", "description": "Opi lähettämään ja vastaanottamaan sähköpostia." },
+        "virusSafety": { "title": "Suojautuminen viruksilta", "description": "Suojaa laitteesi haitallisilta ohjelmistoilta." }
+      }
+    },
+    "digitalLife": {
+      "title": "Jokapäiväinen digitaalinen elämä",
+      "description": "Kommunikoi, jaa ja hallitse digitaalista läsnäoloasi.",
+      "modules": {
+        "masteringEmail": { "title": "Sähköpostin hallinta", "description": "Liitteet, kansiot ja sähköpostietiketti." },
+        "videoCalling": { "title": "Videopuhelut perheen ja ystävien kanssa", "description": "Ota yhteys kasvokkain rakkaimpiisi." },
+        "introSocialMedia": { "title": "Johdanto sosiaaliseen mediaan", "description": "Ymmärrä alustoja, kuten Facebook." },
+        "sharingPhotos": { "title": "Kuvien turvallinen jakaminen", "description": "Jaa muistosi vaarantamatta yksityisyyttäsi." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Edistyneet ja luovat taidot",
+      "description": "Perusteiden jälkeen: tutustu laajemmin teknologian tarjontaan.",
+      "modules": {
+        "onlineShopping": { "title": "Johdanto verkko-ostoksiin", "description": "Tee ostoksia turvallisesti ja kätevästi verkossa." },
+        "onlineMaps": { "title": "Verkkokarttojen ja navigoinnin käyttö", "description": "Löydä perille digitaalisten karttojen avulla." },
+        "photoEditing": { "title": "Peruskuvankäsittely", "description": "Paranna digitaalisia valokuviasi." },
+        "productivityTools": { "title": "Johdanto tuottavuustyökaluihin", "description": "Käytä työkaluja, kuten Google Docsin tai Microsoft Wordin perusteita." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Tekniikan aloittelija", "description": "Suoritettu Tietokoneiden ja laitteiden perusteet -polku." },
+    "onlineWorld": { "name": "Verkkotutkija", "description": "Suoritettu Verkkomaailma-polku." },
+    "digitalLife": { "name": "Digitaalinen viestijä", "description": "Suoritettu Jokapäiväinen digitaalinen elämä -polku." },
+    "advancedSkills": { "name": "Tekniikan virtuoosi", "description": "Suoritettu Edistyneet ja luovat taidot -polku." }
+  },
+  "skillAssessmentModal": {
+    "title": "Nopea taitotarkistus",
+    "introduction": "Etsitään sinulle paras paikka aloittaa!",
+    "nextButton": "Seuraava",
+    "finishButton": "Näytä lähtökohtani",
+    "questionProgress": "Kysymys {{current}}/{{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Kuinka mukavaksi koet tietokoneiden käytön?",
+      "options": {
+        "new": "Aivan uusi",
+        "basics": "Tiedän perusasiat",
+        "confident": "Olen melko itsevarma"
+      }
+    },
+    "q2": {
+      "text": "Oletko lähettänyt sähköpostia aiemmin?",
+      "options": {
+        "yes": "Kyllä",
+        "no": "Ei"
+      }
+    },
+    "q3": {
+      "text": "Oletko käyttänyt älypuhelinta muuhun kuin puheluihin?",
+      "options": {
+        "yes": "Kyllä",
+        "no": "Ei"
+      }
+    }
+  },
+  "learning": {
+    "title": "Oppimiskeskus",
+    "structuredCourses": "Strukturoidut kurssit ja opetusohjelmat",
+    "skillsAssessment": "Taitojen arviointi",
+    "questionNumber": "Kysymys {{current}}/{{total}}",
+    "resetAnimation": "Nollaa",
+    "showAnimation": "Näytä animaatio",
+    "courses": {
+      "beginner": {
+        "title": "Teknologian käytön aloittaminen",
+        "description": "Täydellinen aloittelijoille. Opi perusteet askel askeleelta.",
+        "estimatedTime": "2-3 tuntia",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Laitteen perusteet",
+            "description": "Opi käynnistämään ja sammuttamaan laitteesi turvallisesti",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Laitteen käynnistäminen ja sammuttaminen</h3><p>Jokaisessa laitteessa on virtapainike. Opetellaan käyttämään sitä turvallisesti.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tietokoneet:</h4><ul class=\"space-y-2\"><li>• Etsi pyöreä painike, jossa on virtasymboli (⏻)</li><li>• Paina sitä kerran käynnistääksesi</li><li>• Sammuttaminen: Käytä Käynnistä-valikkoa, sitten \"Sammuta\"</li><li>• Älä koskaan sammuta vain virtapainikkeesta!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Puhelimet/Tabletit:</h4><ul class=\"space-y-2\"><li>• Virtapainike on yleensä sivussa</li><li>• Paina ja pidä pohjassa 2-3 sekuntia käynnistääksesi</li><li>• Sammuttaminen: Paina ja pidä pohjassa, sitten liu'uta sammuttaaksesi</li></ul></div></div>",
+            "keyPoints": [
+              "Käytä aina oikeita sammutusmenetelmiä",
+              "Virtapainikkeen sijainti vaihtelee laitteittain",
+              "Älä koskaan pakota sammutusta, ellei se ole ehdottoman välttämätöntä"
+            ],
+            "practiceExercise": "Harjoittele laitteen käynnistämistä ja sammuttamista 3 kertaa oikealla tavalla.",
+            "animationDesc": "Katso, miten virtapainiketta painetaan oikein"
+          },
+          "mouseKeyboard": {
+            "title": "Hiiren ja näppäimistön käyttö",
+            "description": "Hallitse tietokoneen syöttölaitteiden perusteet",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Hiiren ja näppäimistön perusteet</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Hiiren perusteet:</h4><ul class=\"space-y-2\"><li>• Vasen napsautus: Valitse kohteita, avaa ohjelmia</li><li>• Oikea napsautus: Avaa valikoita, joissa on lisää vaihtoehtoja</li><li>• Kaksoisnapsautus: Avaa tiedostoja ja ohjelmia</li><li>• Vierityspyörä: Liiku sivuilla ylös ja alas</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Näppäimistön olennaiset:</h4><ul class=\"space-y-2\"><li>• Välilyönti: Lisää välilyöntejä sanojen väliin</li><li>• Enter: Aloita uusi rivi tai vahvista</li><li>• Askelpalautin: Poista kirjain kohdistimen edestä</li><li>• Vaihto: Tee isoja kirjaimia</li></ul></div></div>",
+            "keyPoints": [
+              "Vasen napsautus on päätyökalusi",
+              "Oikea napsautus avaa hyödyllisiä valikoita",
+              "Harjoitus tekee mestarin"
+            ],
+            "practiceExercise": "Avaa yksinkertainen tekstiohjelma ja kirjoita nimesi, poista se sitten askelpalauttimella.",
+            "animationDesc": "Katso, miten napsautetaan, kaksoisnapsautetaan ja oikea-napsautetaan"
+          },
+          "internetSafety": {
+            "title": "Internet-turvallisuuden perusteet",
+            "description": "Pysy turvassa verkossa näiden olennaisten vinkkien avulla",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Pysyminen turvassa verkossa</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Huijausten varoitusmerkit:</h4><ul class=\"space-y-2 text-red-700\"><li>• Kiireelliset viestit, joissa pyydetään rahaa</li><li>• Salasanojen tai henkilötietojen pyynnöt</li><li>• \"Olet voittanut\" -viestit, joihin et ole osallistunut</li><li>• Epäilyttävät linkit tai liitteet</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Turvallisen selailun vinkit:</h4><ul class=\"space-y-2\"><li>• Etsi \"https://\" verkko-osoitteista</li><li>• Lataa vain virallisista sovelluskaupoista</li><li>• Pidä ohjelmistosi ajan tasalla</li><li>• Käytä vahvoja, ainutlaatuisia salasanoja</li></ul></div></div>",
+            "keyPoints": [
+              "Älä koskaan anna henkilötietoja tuntemattomille",
+              "Jos olet epävarma, kysy luotetulta henkilöltä",
+              "Lailliset yritykset eivät pyydä salasanoja sähköpostitse"
+            ],
+            "practiceExercise": "Tunnista 3 verkkohuijausten varoitusmerkkiä oppitunnista."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Yhteydenpito perheeseen ja ystäviin",
+        "description": "Opi käyttämään sosiaalista mediaa, videopuheluita ja viestejä turvallisesti.",
+        "estimatedTime": "3-4 tuntia",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videopuhelut perheen kanssa",
+            "description": "Ota yhteys kasvokkain rakkaimpiisi missä tahansa",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Videopuheluiden soittaminen</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Suositut videopuhelusovellukset:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Sisäänrakennettu, erittäin helppo</li><li>• <strong>WhatsApp</strong>: Toimii kaikissa puhelimissa</li><li>• <strong>Zoom</strong>: Erinomainen ryhmäpuheluihin</li><li>• <strong>Skype</strong>: Toimii tietokoneilla ja puhelimilla</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Ennen puheluasi:</h4><ul class=\"space-y-2\"><li>• Tarkista internet-yhteytesi</li><li>• Etsi hyvä valaistus (kasvot ikkunaan päin)</li><li>• Testaa kamerasi ja mikrofonisi</li><li>• Pidä henkilön yhteystiedot valmiina</li></ul></div></div>",
+            "keyPoints": [
+              "Hyvä valaistus tekee suuren eron",
+              "Testaa asetuksesi ennen tärkeitä puheluita",
+              "Useimmat sovellukset toimivat samalla tavalla, kun olet oppinut yhden"
+            ],
+            "practiceExercise": "Soita testivideopuhelu perheenjäsenelle tai ystävälle."
+          },
+          "socialMedia": {
+            "title": "Sosiaalisen median perusteet",
+            "description": "Ota yhteys ystäviin ja perheeseen Facebookissa ja muilla alustoilla",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Sosiaalisen median käytön aloittaminen</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Facebookin perusteet:</h4><ul class=\"space-y-2\"><li>• Luo profiili oikealla nimelläsi</li><li>• Lisää kiva profiilikuva</li><li>• Lähetä kaveripyyntöjä tuntemillesi ihmisille</li><li>• Jaa päivityksiä, valokuvia ja muistoja</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Yksityisyysasetukset:</h4><ul class=\"space-y-2\"><li>• Hyväksy vain ystäviä, jotka todella tunnet</li><li>• Aseta julkaisut näkymään \"Vain ystäville\"</li><li>• Älä jaa henkilökohtaisia tietoja julkisesti</li><li>• Tarkista, mitä muut voivat nähdä sinusta</li></ul></div></div>",
+            "keyPoints": [
+              "Yksityisyysasetukset ovat erittäin tärkeitä",
+              "Ota yhteys vain ihmisiin, jotka tunnet",
+              "Mieti ennen kuin julkaiset - se pysyy verkossa"
+            ],
+            "practiceExercise": "Aseta yksityisyysasetuksesi julkaisuille \"Vain ystäville\"."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Digitaalisen elämän hallinta",
+        "description": "Edistyneet taidot itsevarmaan digitaaliseen elämään.",
+        "estimatedTime": "4-5 tuntia",
+        "lessons": {
+          "smartHome": {
+            "title": "Älykotilaitteet",
+            "description": "Ohjaa kotiasi äänikomennoilla ja sovelluksilla",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Älykodin perusteet</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Suositut älylaitteet:</h4><ul class=\"space-y-2\"><li>• <strong>Älykaiuttimet</strong>: Alexa, Google Home</li><li>• <strong>Älytermostaatit</strong>: Säädä lämpötilaa etänä</li><li>• <strong>Älyvalot</strong>: Himmennä, vaihda värejä, aseta aikatauluja</li><li>• <strong>Älykkäät ovikellot</strong>: Näe, kuka on ovella</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Aloittaminen:</h4><ul class=\"space-y-2\"><li>• Aloita yhdellä laitteella oppiaksesi</li><li>• Lataa laitteen sovellus</li><li>• Seuraa asennusohjeita askel askeleelta</li><li>• Harjoittele perusäänikomentoja</li></ul></div></div>",
+            "keyPoints": [
+              "Aloita yksinkertaisesti yhdellä laitteella",
+              "Äänikomennot tekevät elämästä helpompaa",
+              "Useimmilla laitteilla on hyödyllisiä sovelluksia"
+            ],
+            "practiceExercise": "Jos sinulla on älylaite, harjoittele 3 erilaista äänikomentoa."
+          },
+          "onlineBanking": {
+            "title": "Verkkopankin turvallisuus",
+            "description": "Hoida raha-asioitasi turvallisesti verkossa",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Turvallinen verkkopankki</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Turvallisuuden perusteet:</h4><ul class=\"space-y-2 text-red-700\"><li>• Kirjoita aina pankkisi verkko-osoite suoraan</li><li>• Etsi lukkosymboli selaimestasi</li><li>• Älä koskaan käytä pankkia julkisessa Wi-Fi-verkossa</li><li>• Kirjaudu kokonaan ulos, kun olet valmis</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mitä voit tehdä verkossa:</h4><ul class=\"space-y-2\"><li>• Tarkista tilien saldot</li><li>• Tarkastele tilitapahtumia</li><li>• Siirrä rahaa tilien välillä</li><li>• Maksa laskuja sähköisesti</li></ul></div></div>",
+            "keyPoints": [
+              "Turvallisuus on tärkein prioriteetti",
+              "Pankkisi ei koskaan kysy salasanoja sähköpostitse",
+              "Verkkopankki on erittäin kätevä, kun sitä käytetään turvallisesti"
+            ],
+            "practiceExercise": "Käy pankkisi verkkosivustolla ja harjoittele sisäänkirjautumista (älä tee vielä mitään tilitapahtumia)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Kuinka mukavaksi koet tietokoneen tai puhelimen käynnistämisen ja sammuttamisen?",
+          "options": {
+            "0": "En ole koskaan tehnyt",
+            "1": "Tarvitsen apua joka kerta",
+            "2": "Voin tehdä sen joskus",
+            "3": "Erittäin mukavasti"
+          }
+        },
+        "1": {
+          "question": "Kuinka usein käytät internetiä?",
+          "options": {
+            "0": "Ei koskaan",
+            "1": "Harvoin",
+            "2": "Joskus",
+            "3": "Päivittäin"
+          }
+        },
+        "2": {
+          "question": "Oletko koskaan lähettänyt sähköpostia?",
+          "options": {
+            "0": "Ei koskaan",
+            "1": "Suurella avulla",
+            "2": "Muutaman kerran",
+            "3": "Säännöllisesti"
+          }
+        },
+        "3": {
+          "question": "Kuinka mukavaksi koet sovellusten lataamisen?",
+          "options": {
+            "0": "En ole koskaan kokeillut",
+            "1": "Erittäin hermostunut",
+            "2": "Avun kanssa",
+            "3": "Itsevarmasti"
+          }
+        },
+        "4": {
+          "question": "Käytätkö videopuheluita (FaceTime, Zoom jne.)?",
+          "options": {
+            "0": "Ei koskaan",
+            "1": "Kokeillut kerran",
+            "2": "Joskus",
+            "3": "Säännöllisesti"
+          }
+        },
+        "5": {
+          "question": "Miten suhtaudut verkko-ostoksiin?",
+          "options": {
+            "0": "Liian pelottavaa",
+            "1": "Erittäin hermostunut",
+            "2": "Halukas kokeilemaan",
+            "3": "Teen usein ostoksia verkossa"
+          }
+        },
+        "6": {
+          "question": "Oletko käyttänyt sosiaalista mediaa (Facebook jne.)?",
+          "options": {
+            "0": "Ei koskaan",
+            "1": "Olen katsonut sitä",
+            "2": "Minulla on tili",
+            "3": "Käytän sitä säännöllisesti"
+          }
+        },
+        "7": {
+          "question": "Kuinka mukavaksi koet salasanojen käytön?",
+          "options": {
+            "0": "Erittäin sekavaa",
+            "1": "Tarvitsen apua",
+            "2": "Ymmärrän perusteet",
+            "3": "Hallitsen ne hyvin"
+          }
+        },
+        "8": {
+          "question": "Varmuuskopioitko valokuvasi ja tiedostosi?",
+          "options": {
+            "0": "En tiedä miten",
+            "1": "Joku auttaa minua",
+            "2": "Joskus",
+            "3": "Säännöllisesti"
+          }
+        },
+        "9": {
+          "question": "Miten opit uutta teknologiaa?",
+          "options": {
+            "0": "Vältän sitä",
+            "1": "Kysyn apua",
+            "2": "Yritän varovasti",
+            "3": "Tutkin itsevarmasti"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Mukauta asetuksiasi",
+    "personalInfo": "Henkilötiedot",
+    "firstName": "Etunimi",
+    "firstNamePlaceholder": "Sinun etunimesi",
+    "primaryDevice": "Ensisijainen laite",
+    "devices": {
+      "windowsComputer": "Windows-tietokone",
+      "macComputer": "Mac (Apple-tietokone)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android-puhelin tai -tabletti"
+    },
+    "accessibility": "Saavutettavuus",
+    "textToSpeech": "Teksti puheeksi",
+    "textToSpeechDesc": "Vastaukset luetaan sinulle ääneen",
+    "voiceInput": "Puhesyöttö",
+    "voiceInputDesc": "Esitä kysymyksiä puhumalla",
+    "languagePreferences": "Kieliasetukset",
+    "hideLanguages": "Piilota",
+    "modifyLanguages": "Muokkaa kieliä",
+    "defaultLanguage": "Oletuskieli (koko verkkosivusto käyttää tätä kieltä)",
+    "defaultLanguageDesc": "Tämä on ensisijainen kieli kaikille käyttöliittymän elementeille ja vuorovaikutuksille.",
+    "otherLanguages": "Muut kielet, joita haluaisit käyttää:",
+    "default": "Oletus",
+    "languageConfiguration": "Kielimääritykset",
+    "languageConfigurationDesc": "Valitsemiasi kieliä käytetään:",
+    "speechToText": "Puheentunnistukseen ja -käsittelyyn",
+    "multilingualText": "Monikielisiin tekstivuorovaikutuksiin ja vastauksiin",
+    "interfaceLanguage": "Käyttöliittymän kielivaihtoehtoihin ja saavutettavuuteen",
+    "searchLanguages": "Etsi kieliä...",
+    "selectAll": "Valitse kaikki",
+    "deselectAll": "Poista kaikkien valinta",
+    "selectedLanguages": "Valittu: {{count}} kieli",
+    "selectedLanguages_plural": "Valittu: {{count}} kieltä",
+    "noLanguagesFound": "Ei löytynyt kieliä, jotka vastaisivat hakua \"{{search}}\"",
+    "languageRequired": "Vähintään yksi kieli vaaditaan",
+    "languageRequiredDesc": "Valitse vähintään yksi kieli varmistaaksesi puheentunnistuksen ja tekstivuorovaikutuksen oikean toiminnan.",
+    "account": "Tili",
+    "signOut": "Kirjaudu ulos",
+    "signOutDesc": "Kirjaudu ulos tililtäsi",
+    "cancel": "Peruuta",
+    "saving": "Tallennetaan...",
+    "saved": "Tallennettu!",
+    "saveChanges": "Tallenna muutokset",
+    "errorSaving": "Asetuksia ei voitu tallentaa. Yritä uudelleen.",
+    "lastName": "Sukunimi",
+    "lastNamePlaceholder": "Sinun sukunimesi",
+    "age": "Ikä",
+    "techExperience": "Teknologiakokemuksen taso",
+    "techExperienceOptions": {
+      "beginner": "Aloittelija (tarvitsen askel-askeleelta apua useimmissa asioissa)",
+      "some": "Jonkin verran kokemusta (osaan tehdä perustehtäviä, mutta tarvitsen apua uusissa asioissa)",
+      "comfortable": "Kokenut (saan selvää useimmista asioista, mutta tarvitsen joskus ohjausta)"
+    },
+    "primaryConcerns": "Ensisijaiset teknologia-aiheet/huolet",
+    "assistiveNeeds": "Saavutettavuustarpeet",
+    "communicationStyle": "Ensisijainen selitystyyli",
+    "communicationStyleOptions": {
+      "simple": "Yksinkertainen ja nopea (Vain vaiheet)",
+      "detailed": "Yksityiskohtainen (Selitä 'miksi')",
+      "visual": "Visuaalinen (Näytä kuvia/videoita, kun mahdollista)"
+    },
+    "videoRecommendations": "Videosuositukset",
+    "videoRecommendationsDesc": "Näytä hyödyllisiä videoita ja artikkeleita ohjeiden rinnalla",
+    "fontSize": "Ensisijainen tekstin koko",
+    "fontSizeOptions": {
+      "normal": "Normaali",
+      "large": "Suuri",
+      "extraLarge": "Erittäin suuri"
+    },
+    "displayPreferences": "Näyttö ja teema",
+    "theme": "Väriteema",
+    "themeOptions": {
+      "light": "Vaalea",
+      "dark": "Tumma"
+    },
+    "highContrast": "Korkean kontrastin tila",
+    "highContrastDesc": "Lisää tekstin ja elementtien kontrastia paremman näkyvyyden saavuttamiseksi",
+    "learningPreferences": "Oppimis- ja sisältöasetukset"
+  },
+  "common": {
+    "settings": "Asetukset",
+    "signOut": "Kirjaudu ulos",
+    "close": "Sulje"
+  },
+  "tips": {
+    "connectWifi": "Yhdistä Wi-Fi-verkkoon",
+    "connectWifiDesc": "Mene verkkoon turvallisesti ja helposti",
+    "videoCall": "Soita videopuhelu",
+    "videoCallDesc": "Ota yhteys perheeseen kasvokkain",
+    "screenshot": "Ota kuvakaappaus",
+    "screenshotDesc": "Tallenna, mitä näytölläsi on",
+    "updateApps": "Päivitä sovelluksesi",
+    "updateAppsDesc": "Pidä sovelluksesi ajan tasalla ja turvassa"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Viestintä",
+    "basicSkills": "Perustaidot",
+    "maintenance": "Ylläpito"
+  },
+  "questions": {
+    "makeTextBigger": "Miten saan tekstin suuremmaksi?",
+    "connectWifi": "Miten yhdistän Wi-Fi-verkkoon?",
+    "takeScreenshot": "Miten otan kuvakaappauksen?",
+    "makeVideoCall": "Miten soitan videopuhelun?",
+    "backupPhotos": "Miten varmuuskopioin valokuvani?",
+    "updateApps": "Miten päivitän sovellukseni?",
+    "onlineBanking": "Miten käytän verkkopankkia turvallisesti?",
+    "joinZoom": "Miten liityn Zoom-kokoukseen?"
+  },
+  "achievements": {
+    "gettingStarted": "Aloitus",
+    "gettingStartedDesc": "Kysyit ensimmäisen kysymyksesi",
+    "questionExplorer": "Kysymysten tutkija",
+    "questionExplorerDesc": "Kysyit 5 kysymystä",
+    "stepMaster": "Askelmestari",
+    "stepMasterDesc": "Suoritit 25 askelta"
+  },
+  "stats": {
+    "seniorsHelped": "Autettuja senioreita",
+    "questionsAnswered": "Vastattuja kysymyksiä",
+    "successRate": "Onnistumisprosentti",
+    "alwaysAvailable": "Aina saatavilla"
+  },
+  "time": {
+    "now": "Juuri nyt",
+    "hourAgo": "1 tunti sitten",
+    "hoursAgo": "{{count}} tuntia sitten",
+    "dayAgo": "1 päivä sitten",
+    "daysAgo": "{{count}} päivää sitten"
+  },
+  "voice": {
+    "startInput": "Aloita puhesyöttö",
+    "stopRecording": "Lopeta tallennus",
+    "processing": "Käsitellään...",
+    "recognized": "Ääni tunnistettu",
+    "failed": "Puhesyöttö epäonnistui"
+  },
+  "language": {
+    "select": "Valitse kieli",
+    "translate": "Käännä",
+    "translating": "Käännetään...",
+    "detecting": "Tunnistetaan kieltä...",
+    "error": "Kääntäminen epäonnistui"
+  },
+  "auth": {
+    "backToHome": "Takaisin etusivulle",
+    "createAccount": "Luo tili",
+    "welcomeBack": "Tervetuloa takaisin",
+    "joinFamily": "Liity voimaantuneiden seniorien perheeseemme",
+    "welcomeBackDesc": "Kirjaudu sisään jatkaaksesi teknistä matkaasi",
+    "email": "Sähköpostiosoite",
+    "emailPlaceholder": "Syötä sähköpostisi",
+    "password": "Salasana",
+    "passwordPlaceholder": "Syötä salasanasi",
+    "confirmPassword": "Vahvista salasana",
+    "confirmPasswordPlaceholder": "Vahvista salasanasi",
+    "passwordsNoMatch": "Salasanat eivät täsmää",
+    "passwordTooShort": "Salasanan on oltava vähintään 6 merkkiä pitkä",
+    "creatingAccount": "Luodaan tiliä...",
+    "signingIn": "Kirjaudutaan sisään...",
+    "alreadyHaveAccount": "Onko sinulla jo tili? Kirjaudu sisään",
+    "dontHaveAccount": "Eikö sinulla ole tiliä? Rekisteröidy"
+  },
+  "error": {
+    "askQuestionFirst": "Kysy ensin kysymys",
+    "couldntGetAnswer": "Valitettavasti en saanut vastausta juuri nyt. Yritä uudelleen."
+  },
+  "learningPage": {
+    "headerTitle": "Oppimiskeskus",
+    "heroTitle": "Teknologiataidot senioreille",
+    "heroSubtitle": "Opi teknologiaa omaan tahtiisi askel-askeleelta etenevien oppituntien, interaktiivisten demojen ja henkilökohtaisen ohjauksen avulla.",
+    "takeSkillsAssessment": "Tee taitojen arviointi",
+    "orSeparator": "tai",
+    "iAmBeginner": "Olen aloittelija",
+    "iAmIntermediate": "Olen keskitasoinen",
+    "iAmAdvanced": "Olen edistynyt",
+    "yourLevel": "Tasosi: {{level}}",
+    "levelDescription": "Kurssit on räätälöity taitotasosi mukaan",
+    "retakeAssessment": "Tee arviointi uudelleen",
+    "progressLabel": "Edistyminen",
+    "lessonsLabel": "oppituntia",
+    "completedOutOfTotal": "{{completed}}/{{total}} suoritettu",
+    "featureInteractiveDemos": "Interaktiiviset demot",
+    "featureInteractiveDemosDesc": "Katso tarkalleen, miten kukin toimenpide suoritetaan",
+    "featureAudioSupport": "Äänituki",
+    "featureAudioSupportDesc": "Kuuntele oppitunnit ääneen luettuina",
+    "featurePrintableGuides": "Tulostettavat oppaat",
+    "featurePrintableGuidesDesc": "Ota yhteenvedot mukaasi offline-tilassa",
+    "featureCertificates": "Todistukset",
+    "featureCertificatesDesc": "Ansaitse todistuksia suorittaessasi kursseja",
+    "animationShow": "Näytä animaatio",
+    "animationReset": "Nollaa",
+    "featuresGridTitle": "Tutustu ominaisuuksiimme",
+    "loadingPaths": "Ladataan oppimispolkuja...",
+    "noPathsAvailable": "Oppimispolkuja ei ole tällä hetkellä saatavilla. Yritä myöhemmin uudelleen.",
+    "progressComplete": "{{value}}% suoritettu",
+    "recommendedStart": "Suositeltu aloituskohta",
+    "moduleListTitle": "Moduulit polulle: {{pathTitle}}",
+    "moduleContentTitle": "Moduulin sisältö: {{moduleTitle}} tulee tähän.",
+    "loadingCenter": "Ladataan oppimiskeskusta...",
+    "moduleTimeLabel": "Aika: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Valitse haluamasi kieli käyttöliittymälle",
+    "moreComingSoon": "🌍 Lisää kieliä tulossa pian"
+  },
+  "assessmentView": {
+    "headerTitle": "Taitojen arviointi",
+    "questionProgress": "Kysymys {{current}}/{{total}}",
+    "chooseBestOption": "Valitse vaihtoehto, joka kuvaa sinua parhaiten",
+    "skipAssessment": "Ohita arviointi"
+  },
+  "courseView": {
+    "lessonsHeader": "Oppitunnit",
+    "interactiveDemoLabel": "Interaktiivinen demo",
+    "startLesson": "Aloita oppitunti",
+    "reviewLesson": "Kertaa",
+    "congratulations": "Onneksi olkoon!",
+    "courseComplete": "Olet suorittanut kurssin {{courseTitle}}!",
+    "downloadCertificate": "Lataa todistus"
+  },
+  "lessonView": {
+    "readAloud": "Lue oppitunti ääneen",
+    "interactiveDemoHeader": "Interaktiivinen demo",
+    "practiceExerciseHeader": "Käytännön harjoitus",
+    "markAsComplete": "Merkitse suoritetuksi",
+    "repeatLesson": "Toista oppitunti",
+    "keyPointsHeader": "Avainkohdat",
+    "takeItWithYouHeader": "Ota mukaasi",
+    "downloadSummaryButton": "Lataa yhteenveto",
+    "downloadSummaryDescription": "Saa tulostettava yhteenveto tästä oppitunnista",
+    "needHelpHeader": "Tarvitsetko apua?",
+    "askAQuestionButton": "Kysy kysymys",
+    "chatWithHelperButton": "Keskustele avustajan kanssa"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Tietosuojakäytäntö",
+    "pageTitle": "Tietosuojakäytäntö",
+    "lastUpdated": "Viimeksi päivitetty: {{date}}",
+    "ourPromise": {
+      "title": "Lupauksemme sinulle",
+      "text": "Me Seniori Tekniikka-avussa ymmärrämme, että yksityisyytesi on arvokas. Olemme sitoutuneet suojelemaan henkilötietojasi ja olemaan täysin läpinäkyviä niiden käytössä. Tämä käytäntö selittää kaiken yksinkertaisella ja selkeällä kielellä."
+    },
+    "cookies": {
+      "title": "Miten käytämme evästeitä",
+      "whatAreCookiesTitle": "Mitä evästeet ovat?",
+      "whatAreCookiesText": "Evästeet ovat pieniä tekstitiedostoja, jotka auttavat meitä muistamaan asetuksesi ja parantamaan käyttökokemustasi. Ajattele niitä kirjanmerkkeinä, jotka auttavat meitä muistamaan, mihin jäit.",
+      "weUseCookiesForTitle": "Käytämme evästeitä VAIN auttaaksemme sinua:",
+      "uses": [
+        "Muistamaan asetuksesi: Tekstin koko, ääniasetukset ja saavutettavuusvaihtoehdot, jotka olet valinnut",
+        "Pitämään sinut kirjautuneena: Jotta sinun ei tarvitse syöttää salasanaasi joka kerta",
+        "Parantamaan apuamme: Ymmärtämällä, mitkä ominaisuudet ovat hyödyllisimpiä kaltaisillesi senioreille"
+      ],
+      "whatWeDontDoTitle": "Mitä emme tee evästeillä:",
+      "donts": [
+        "Emme seuraa sinua muilla verkkosivustoilla",
+        "Emme myy tietojasi kenellekään",
+        "Emme jaa tietojasi mainostajille",
+        "Emme käytä niitä markkinointitarkoituksiin"
+      ]
+    },
+    "informationCollected": {
+      "title": "Mitä tietoja keräämme",
+      "youGiveUsTitle": "Tiedot, jotka annat meille:",
+      "youGiveUsList": [
+        "Nimesi ja sähköpostiosoitteesi",
+        "Laitetyyppisi (iPhone, Windows jne.)",
+        "Teknologiakokemuksesi taso",
+        "Saavutettavuusasetuksesi",
+        "Kysymykset, joita esität tekoälyapurillemme"
+      ],
+      "weCollectTitle": "Tiedot, joita keräämme automaattisesti:",
+      "weCollectList": [
+        "Miten käytät sovellustamme (mitkä ominaisuudet auttavat eniten)",
+        "Tekniset tiedot (selaimen tyyppi, laite)",
+        "Virheraportit (ongelmien nopeaa korjaamista varten)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Miten suojaamme tietojasi",
+      "protections": [
+        "Salaus: Kaikki tietosi on salattu (sotkettu), joten vain me voimme lukea niitä",
+        "Turvalliset palvelimet: Tietosi tallennetaan suojatuille, ammattitason palvelimille",
+        "Rajoitettu pääsy: Vain välttämättömät tiimimme jäsenet pääsevät käsiksi tietoihisi",
+        "Säännölliset turvatarkastukset: Valvomme jatkuvasti mahdollisia turvallisuusuhkia"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Tietojesi jakaminen",
+      "neverSell": "Emme KOSKAAN myy tai vuokraa henkilötietojasi.",
+      "onlyShareInSituations": "Jaamme tietojasi vain näissä hyvin rajallisissa tilanteissa:",
+      "sharingSituations": [
+        "Luvallasi: Jos pyydät meitä erikseen jakamaan jotain",
+        "Tekniseen tukeen: Luotettavien palveluntarjoajien kanssa, jotka auttavat meitä pyörittämään sovellusta (he ovat sitoutuneet tiukkoihin tietosuojasopimuksiin)",
+        "Jos laki niin vaatii: Vain jos meidän on lain mukaan tehtävä niin"
+      ]
+    },
+    "yourRights": {
+      "title": "Oikeutesi ja valintasi",
+      "youCanAlwaysTitle": "Voit aina:",
+      "rightsList": [
+        "Nähdä, mitä tietoja meillä on sinusta",
+        "Pyytää meitä korjaamaan virheelliset tiedot",
+        "Pyytää meitä poistamaan tilisi ja tietosi",
+        "Poistaa evästeet käytöstä selaimesi asetuksista",
+        "Ottaa meihin yhteyttä yksityisyyttä koskevissa kysymyksissä"
+      ],
+      "noteDeletingCookiesTitle": "Huomautus evästeiden poistamisesta:",
+      "noteDeletingCookiesText": "Jos poistat evästeemme, sinun on määritettävä asetuksesi uudelleen, ja jotkut ominaisuudet eivät ehkä toimi yhtä hyvin."
+    },
+    "thirdPartyServices": {
+      "title": "Kolmansien osapuolten palvelut",
+      "weUseTrustedServices": "Käytämme joitakin luotettuja kolmansien osapuolten palveluita ominaisuuksiemme tarjoamiseen:",
+      "servicesList": [
+        "Google AI (Gemini): Toimii tekoälyassistenttimme moottorina, joka vastaa kysymyksiisi",
+        "Firebase: Tallentaa turvallisesti tilitietosi",
+        "YouTube/Koulutussivustot: Saatamme suositella hyödyllisiä videoita ja artikkeleita"
+      ],
+      "servicesOwnPolicies": "Näillä palveluilla on omat tietosuojakäytäntönsä, ja jaamme vain vähimmäistiedot, jotka ovat tarpeen niiden toimimiseksi."
+    },
+    "changesToPolicy": {
+      "title": "Muutokset tähän käytäntöön",
+      "text": "Jos meidän on päivitettävä tätä tietosuojakäytäntöä, ilmoitamme sinulle sähköpostitse ja näytämme ilmoituksen sovelluksessa. Selitämme aina, mikä muuttuu ja miksi, yksinkertaisella ja selkeällä kielellä."
+    },
+    "contactUs": {
+      "title": "Ota yhteyttä",
+      "questions": "Onko sinulla kysyttävää yksityisyydestäsi tai tästä käytännöstä? TechStep-tiimi on täällä auttamassa!",
+      "email": "Sähköposti: privacy@techstep.com",
+      "phone": "Puhelin: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Posti: TechStep Privacy Team",
+      "mailLine2": "123 Tech Support Lane",
+      "mailLine3": "Helpful City, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Kiitos, että luotat TechStepille tietosi. Olemme sitoutuneet pitämään ne turvassa ja käyttämään niitä vain auttaaksemme sinua menestymään teknologian parissa.",
+      "backToHome": "Takaisin etusivulle"
+    }
+  }
+}

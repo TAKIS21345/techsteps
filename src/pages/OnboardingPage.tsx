@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { ChevronLeft, ChevronRight, Search, Globe, Check, AlertTriangle } from 'lucide-react';
@@ -33,8 +33,15 @@ const OnboardingPage: React.FC = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const { updateUserData } = useUser();
+  const { userData, updateUserData, loading: userLoading } = useUser();
   const navigate = useNavigate();
+
+  // Redirect to dashboard if onboarding is already completed
+  useEffect(() => {
+    if (userData && userData.onboardingCompleted) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [userData, navigate]);
 
   // Comprehensive language list with native names including Hindi
   const allLanguages = [
@@ -304,25 +311,24 @@ const OnboardingPage: React.FC = () => {
       content: (
         <div className="space-y-3">
           {[
-            'Windows Computer',
-            'Mac (Apple Computer)',
-            'iPhone',
-            'iPad',
-            'Android Phone',
-            'Android Tablet',
-            'Smart TV',
-            'Multiple devices'
-          ].map((device) => (
+            'windowscomputer',
+            'macapplecomputer',
+            'iphone',
+            'ipad',
+            'androidphoneortablet',
+            'smarttv',
+            'multipledevices'
+          ].map((deviceKey) => (
             <button
-              key={device}
-              onClick={() => setFormData(prev => ({ ...prev, os: device }))}
+              key={deviceKey}
+              onClick={() => setFormData(prev => ({ ...prev, os: t(`onboarding.step3.devices.${deviceKey}`) }))}
               className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
-                formData.os === device 
-                  ? 'border-blue-500 bg-blue-50 text-blue-700' 
+                formData.os === t(`onboarding.step3.devices.${deviceKey}`)
+                  ? 'border-blue-500 bg-blue-50 text-blue-700'
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              {t(`onboarding.step3.devices.${device.toLowerCase().replace(/[^a-z]/g, '')}`)}
+              {t(`onboarding.step3.devices.${deviceKey}`)}
             </button>
           ))}
         </div>
@@ -569,7 +575,7 @@ const OnboardingPage: React.FC = () => {
       case 3:
         return formData.techExperience.length > 0;
       case 4:
-        return formData.primaryConcerns.length > 0;
+        return true; // Step 5 (primary concerns) is now optional
       case 5:
         return formData.assistiveNeeds.length > 0;
       case 6:
@@ -605,7 +611,10 @@ const OnboardingPage: React.FC = () => {
       // Save user preferences to cookies for offline access
       Cookies.set('userPreferences', JSON.stringify(formData.preferences), { expires: 365 });
       Cookies.set('userName', formData.firstName, { expires: 365 });
-      
+      // Apply preferences immediately
+      if (typeof window !== 'undefined') {
+        applyPreferencesToDOM(formData.preferences);
+      }
       const finalData = {
         ...formData,
         onboardingCompleted: true // Set the flag
@@ -620,6 +629,26 @@ const OnboardingPage: React.FC = () => {
       setLoading(false);
     }
   };
+
+  // Helper to apply preferences to DOM
+  function applyPreferencesToDOM(preferences) {
+    const body = document.body;
+    // Font size
+    body.classList.remove('font-normal', 'font-large', 'font-extralarge');
+    if (preferences.fontSize === 'large') body.classList.add('font-large');
+    else if (preferences.fontSize === 'extra-large') body.classList.add('font-extralarge');
+    else body.classList.add('font-normal');
+    // High contrast
+    if (preferences.highContrast) body.classList.add('high-contrast');
+    else body.classList.remove('high-contrast');
+  }
+
+  // On mount, apply preferences if available
+  useEffect(() => {
+    if (userData && userData.preferences) {
+      applyPreferencesToDOM(userData.preferences);
+    }
+  }, [userData]);
 
   return (
     <div className="min-h-screen flex items-center justify-center py-8 sm:py-12 px-4">

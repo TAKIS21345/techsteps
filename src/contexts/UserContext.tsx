@@ -151,6 +151,11 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       ...(userData ? {} : { createdAt: new Date() })
     };
 
+    // Ensure skillLevel is not undefined before saving
+    if ('skillLevel' in updateData && updateData.skillLevel === undefined) {
+      updateData.skillLevel = 'Beginner'; // Default value
+    }
+
     await setDoc(userDocRef, updateData, { merge: true });
   };
 

@@ -38,6 +38,24 @@ export class CrispService {
       return;
     }
 
+    // Validate userInfo fields before setting
+    if (userInfo.email && typeof userInfo.email !== 'string') {
+      console.error('Invalid email for Crisp user info');
+      return;
+    }
+    if (userInfo.nickname && typeof userInfo.nickname !== 'string') {
+      console.error('Invalid nickname for Crisp user info');
+      return;
+    }
+    if (userInfo.phone && typeof userInfo.phone !== 'string') {
+      console.error('Invalid phone for Crisp user info');
+      return;
+    }
+    if (userInfo.userId && typeof userInfo.userId !== 'string') {
+      console.error('Invalid userId for Crisp user info');
+      return;
+    }
+
     try {
       if (userInfo.email) {
         window.$crisp.push(["set", "user:email", userInfo.email]);
