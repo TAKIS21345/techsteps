@@ -524,25 +524,97 @@ body {
   border: 3px solid #000000 !important;
 }
 
-/* Mobile app optimizations */
+/* Senior-friendly mobile app optimizations */
 @media (max-width: 768px) {
   .btn-primary, .btn-secondary {
-    @apply min-h-[48px] text-lg;
+    @apply min-h-[56px] text-lg px-6 py-4;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
   }
   
   .input-field {
-    @apply min-h-[48px] text-lg;
+    @apply min-h-[56px] text-lg px-4 py-4;
+    border-radius: var(--radius-lg);
   }
   
   /* Larger touch targets for seniors */
-  button, .clickable {
-    @apply min-h-[44px] min-w-[44px];
+  button, .clickable, a {
+    @apply min-h-[48px] min-w-[48px];
+    touch-action: manipulation;
   }
+  
+  /* Better spacing for mobile */
+  .card {
+    @apply mx-2 p-6;
+    border-radius: var(--radius-lg);
+  }
+  
+  /* Mobile typography improvements */
+  h1 { @apply text-2xl font-bold leading-tight; }
+  h2 { @apply text-xl font-semibold leading-tight; }
+  h3 { @apply text-lg font-medium leading-tight; }
+  p { @apply text-base leading-relaxed; }
   
   /* Mobile language selector adjustments */
   .language-selector .dropdown {
-    @apply w-72 max-w-[90vw];
+    @apply w-80 max-w-[95vw];
   }
+  
+  /* Mobile navigation improvements */
+  nav {
+    @apply px-4 py-3;
+  }
+  
+  /* Better modal experience on mobile */
+  .modal {
+    @apply mx-2 rounded-xl;
+    max-width: calc(100vw - 16px);
+  }
+}
+
+/* Improved mobile landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .btn-primary, .btn-secondary {
+    @apply min-h-[48px] py-3;
+  }
+  
+  .input-field {
+    @apply min-h-[48px] py-3;
+  }
+}
+
+/* Senior-friendly enhancements */
+.senior-friendly {
+  /* Larger text by default */
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.senior-friendly h1 { @apply text-3xl font-bold mb-6; }
+.senior-friendly h2 { @apply text-2xl font-semibold mb-4; }
+.senior-friendly h3 { @apply text-xl font-medium mb-3; }
+.senior-friendly p { @apply text-lg leading-relaxed mb-4; }
+
+/* Better button spacing for seniors */
+.senior-friendly .btn-primary,
+.senior-friendly .btn-secondary {
+  @apply px-8 py-5 text-lg;
+  min-height: 56px;
+  margin: 8px 4px;
+}
+
+/* Simplified card design */
+.senior-friendly .card {
+  @apply p-8 border-2;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Better focus indicators for seniors */
+.senior-friendly *:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 /* PWA specific styles */
