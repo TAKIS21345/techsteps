@@ -341,40 +341,40 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* CTA Section - Modern and Clean */}
+      <section className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-800/20"></div>
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <Heart className="w-12 h-12 sm:w-16 sm:h-16 text-white/80 mx-auto mb-6" />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            {t('landing.ctaSection.title')}
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            {t('landing.ctaSection.subtitle')}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="max-w-4xl mx-auto">
+            <Heart className="w-16 h-16 text-blue-400 mx-auto mb-8" />
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+              {t('landing.ctaSection.title')}
+            </h2>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+              {t('landing.ctaSection.subtitle')}
+            </p>
+            
             <Link 
               to="/auth" 
-              className="inline-flex items-center bg-white text-blue-600 font-bold px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base sm:text-lg md:text-xl hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+              className="inline-flex items-center bg-white text-gray-900 font-bold px-10 py-5 rounded-xl text-xl hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 mb-12"
             >
               {t('landing.ctaSection.getStartedButton')}
-              <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+              <ArrowRight className="ml-3 w-6 h-6" />
             </Link>
-          </div>
 
-          <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 items-center justify-center sm:space-x-4 md:space-x-6 text-blue-100 text-sm sm:text-base">
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              <span>{t('landing.hero.noCreditCard')}</span> {/* Reusing key */}
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              <span>{t('landing.hero.freeForever')}</span> {/* Reusing key */}
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              <span>{t('landing.ctaSection.setupInMinutes')}</span>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-gray-300">
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-3 text-green-400" />
+                <span className="text-lg">{t('landing.hero.noCreditCard')}</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-3 text-green-400" />
+                <span className="text-lg">{t('landing.hero.freeForever')}</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-3 text-green-400" />
+                <span className="text-lg">{t('landing.ctaSection.setupInMinutes')}</span>
+              </div>
             </div>
           </div>
         </div>
