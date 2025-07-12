@@ -292,30 +292,146 @@ body {
 }
 
 /* High contrast mode */
+
+/* Strong, accessible high contrast mode */
 .high-contrast {
-  --accent-color: #0066cc;
-  --accent-color-dark: #004499;
-  --background-color: #ffffff;
-  --card-background: #ffffff;
-  --text-primary: #000000;
-  --text-secondary: #333333;
-  --border-color: #000000;
+  --accent-color: #FFD600;
+  --accent-color-dark: #FFAB00;
+  --background-color: #000000;
+  --card-background: #000000;
+  --text-primary: #FFFF00;
+  --text-secondary: #FFFFFF;
+  --border-color: #FFFF00;
+  --input-background: #000000;
+  --success-color: #00FF00;
+  --error-color: #FF1744;
+  --warning-color: #FFD600;
   background: #000 !important;
-  color: #fff !important;
+  color: #FFFF00 !important;
 }
 
-.high-contrast .card {
-  @apply border-2 border-black;
-  background: #111 !important;
-  color: #fff !important;
+.high-contrast body,
+.high-contrast .card,
+.high-contrast .btn-primary,
+.high-contrast .btn-secondary,
+.high-contrast .input-field,
+.high-contrast .border,
+.high-contrast .bg-white,
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100,
+.high-contrast .bg-blue-50,
+.high-contrast .bg-green-100,
+.high-contrast .bg-yellow-100,
+.high-contrast .bg-orange-100,
+.high-contrast .bg-purple-100,
+.high-contrast .bg-blue-100,
+.high-contrast .bg-red-50,
+.high-contrast .bg-green-50,
+.high-contrast .bg-gradient-to-br,
+.high-contrast .shadow-md,
+.high-contrast .shadow-lg,
+.high-contrast .shadow-xl {
+  background: #000 !important;
+  color: #FFFF00 !important;
+  border-color: #FFD600 !important;
+  box-shadow: none !important;
+}
+
+.high-contrast .card,
+.high-contrast .btn-primary,
+.high-contrast .btn-secondary,
+.high-contrast .input-field {
+  border: 2px solid #FFD600 !important;
+  color: #FFFF00 !important;
+  background: #000 !important;
 }
 
 .high-contrast .btn-primary {
-  @apply bg-black text-white border-2 border-black;
+  background: #FFD600 !important;
+  color: #000 !important;
+  border: 2px solid #FFD600 !important;
 }
 
 .high-contrast .btn-secondary {
-  @apply bg-white text-black border-2 border-black;
+  background: #000 !important;
+  color: #FFD600 !important;
+  border: 2px solid #FFD600 !important;
+}
+
+.high-contrast .input-field {
+  background: #000 !important;
+  color: #FFD600 !important;
+  border: 2px solid #FFD600 !important;
+  caret-color: #FFD600 !important;
+}
+
+.high-contrast .text-gray-800,
+.high-contrast .text-gray-700,
+.high-contrast .text-gray-600,
+.high-contrast .text-gray-500,
+.high-contrast .text-blue-600,
+.high-contrast .text-blue-800,
+.high-contrast .text-green-800,
+.high-contrast .text-green-600,
+.high-contrast .text-yellow-500,
+.high-contrast .text-orange-600,
+.high-contrast .text-purple-600,
+.high-contrast .text-red-600,
+.high-contrast .text-white,
+.high-contrast .text-black {
+  color: #FFFF00 !important;
+}
+
+.high-contrast .border-gray-200,
+.high-contrast .border-gray-300,
+.high-contrast .border-blue-300,
+.high-contrast .border-green-200,
+.high-contrast .border-yellow-400,
+.high-contrast .border-orange-200,
+.high-contrast .border-purple-200,
+.high-contrast .border-blue-100,
+.high-contrast .border-green-100,
+.high-contrast .border-yellow-100,
+.high-contrast .border-orange-100,
+.high-contrast .border-purple-100,
+.high-contrast .border-black,
+.high-contrast .border-white {
+  border-color: #FFD600 !important;
+}
+
+.high-contrast a,
+.high-contrast button,
+.high-contrast .clickable {
+  color: #FFD600 !important;
+  border-color: #FFD600 !important;
+}
+
+.high-contrast ::selection {
+  background: #FFD600 !important;
+  color: #000 !important;
+}
+
+.high-contrast .focus-visible,
+.high-contrast :focus {
+  outline: 2px solid #FFD600 !important;
+  box-shadow: 0 0 0 2px #FFD600 !important;
+}
+
+.high-contrast .bg-gradient-to-br,
+.high-contrast .gradient-bg,
+.high-contrast .gradient-bg-blue,
+.high-contrast .gradient-bg-purple {
+  background: #000 !important;
+}
+
+.high-contrast .shadow,
+.high-contrast .shadow-md,
+.high-contrast .shadow-lg,
+.high-contrast .shadow-xl,
+.high-contrast .shadow-soft,
+.high-contrast .shadow-medium,
+.high-contrast .shadow-strong {
+  box-shadow: none !important;
 }
 
 /* Mobile app optimizations */

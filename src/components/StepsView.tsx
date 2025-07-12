@@ -284,15 +284,15 @@ const StepsView: React.FC<StepsViewProps> = ({
                   Still need help? Connect with a real person →
                 </button>
               </div>
-              
-              {/* Show resources after completion */}
-              {resources.length > 0 && onResourceClick && (
-                <ResourceRecommendations
-                  resources={resources}
-                  onResourceClick={onResourceClick}
-                />
-              )}
             </div>
+          )}
+
+          {/* Always show resources if available */}
+          {resources.length > 0 && onResourceClick && (
+            <ResourceRecommendations
+              resources={resources}
+              onResourceClick={onResourceClick}
+            />
           )}
         </div>
       </div>

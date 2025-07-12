@@ -24,6 +24,7 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyCiWRaYRxRJJ9BGuJ37eAe-nDKS8YF5nD4';
 
+  // Handle photo upload or camera capture
   const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -221,17 +222,35 @@ const AIToolsModal: React.FC<AIToolsModalProps> = ({ isOpen, onClose }) => {
                 </p>
               </div>
 
-              <div>
+              <div className="flex flex-col sm:flex-row gap-2 w-full justify-center mb-2">
+                {/* Camera capture */}
                 <input
                   type="file"
-                  id="photo-upload"
                   accept="image/*"
+                  capture="environment"
+                  id="photo-camera"
+                  onChange={handlePhotoUpload}
+                  className="hidden"
+                />
+                <label
+                  htmlFor="photo-camera"
+                  className="btn-secondary w-full sm:w-auto cursor-pointer inline-flex items-center justify-center mb-2 sm:mb-0"
+                >
+                  <Camera className="w-5 h-5 mr-2" />
+                  {t('aiToolsModal.photoExplainer.takePhotoButton', 'Take Photo')}
+                </label>
+
+                {/* Upload from device */}
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="photo-upload"
                   onChange={handlePhotoUpload}
                   className="hidden"
                 />
                 <label
                   htmlFor="photo-upload"
-                  className="btn-secondary w-full cursor-pointer inline-flex items-center justify-center"
+                  className="btn-secondary w-full sm:w-auto cursor-pointer inline-flex items-center justify-center"
                 >
                   <Upload className="w-5 h-5 mr-2" />
                   {t('aiToolsModal.photoExplainer.uploadButton')}
