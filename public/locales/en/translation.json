@@ -820,7 +820,17 @@
     "loadingPaths": "Loading courses...",
     "moduleListTitle": "Lessons in {{pathTitle}}:",
     "noLessonAvailable": "No lesson available.",
-    "retakeAssessment": "Retake Skills Assessment"
+    "retakeAssessment": "Retake Skills Assessment",
+    "headerTitle": "Learning Center",
+    "englishOnlyNotice": "Note: Learning content is currently available in English only. We're working on translations!",
+    "featureInteractiveDemos": "Interactive Demos",
+    "featureInteractiveDemosDesc": "Visual step-by-step guides",
+    "featureAudioSupport": "Audio Support", 
+    "featureAudioSupportDesc": "Listen to instructions",
+    "featurePrintableGuides": "Printable Guides",
+    "featurePrintableGuidesDesc": "Take lessons offline",
+    "featureCertificates": "Certificates",
+    "featureCertificatesDesc": "Earn completion badges"
   },
   "courseView": {
     "previousLesson": "Previous Lesson",
