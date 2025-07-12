@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
 import { useAuth } from './AuthContext';
-import Cookies from 'js-cookie';
 import { SkillAssessmentResult, UserLearningProgress as NewUserLearningProgress } from '../types/learning'; // Renamed to avoid conflict
 
 interface QuestionHistory {
@@ -272,8 +271,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const newLearningProgress: NewUserLearningProgress = {
       completedModules: updatedCompletedModules,
-      earnedBadges: updatedEarnedBadges,
-      pathProgress: updatedPathProgress
+      earnedBadges: updatedEarnedBadges
     };
 
     // Store the string array of badge IDs in UserData as defined

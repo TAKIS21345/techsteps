@@ -8,8 +8,8 @@ export interface Module {
   id: string; // e.g., "turn-on-pc"
   titleKey: string; // For i18n, e.g., "learningPaths.fundamentals.modules.turnOnPc.title"
   descriptionKey: string; // For i18n
-  // content could be rich text/HTML, a link to a sub-page, or structured steps.
-  // For now, let's assume it's a key that can be used to fetch/display more detailed content.
+  // Add content property for rich lesson content
+  content?: string | JSX.Element;
   contentDetailsKey?: string; // e.g., "learningPaths.fundamentals.modules.turnOnPc.details"
   estimatedTime: string; // e.g., "15 min"
   dependsOn?: string[]; // IDs of modules that must be completed first

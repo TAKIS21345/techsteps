@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { 
-  ArrowLeft, 
-  BookOpen, 
-  Play, 
-  CheckCircle, 
-  Star, 
-  Clock, 
-  Award,
-  Download,
-  HelpCircle,
-} from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 import * as LucideIcons from 'lucide-react'; // Using this for dynamic icon rendering based on string names
 
 import { useUser } from '../contexts/UserContext';
 import Logo from '../components/Logo';
 import SkillAssessmentModal from '../components/SkillAssessmentModal';
 import { SkillAssessmentResult, LearningPath } from '../types/learning'; // Removed Badge
+import { Module } from '../types/learning';
 import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
 
 const LearningCenterPage: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment'>('overview');
+  const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment' | 'course'>('overview');
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
   const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
   const [assessmentStep, setAssessmentStep] = useState(0); // For the old assessment, might remove or adapt
@@ -140,7 +131,7 @@ const LearningCenterPage: React.FC = () => {
 
   // Save progress
   const saveProgress = async (courseId: string, lessonId: string, completed: boolean = false) => {
-    const newProgress: UserProgress = {
+    const newProgress = {
       courseId,
       lessonId,
       completed,
@@ -148,8 +139,7 @@ const LearningCenterPage: React.FC = () => {
       lastAccessed: new Date(),
       timeSpent: 0
     };
-
-    const updatedProgress = [...userProgress.filter(p => !(p.courseId === courseId && p.lessonId === lessonId)), newProgress];
+    const updatedProgress = [...userProgress.filter((p: any) => !(p.courseId === courseId && p.lessonId === lessonId)), newProgress];
     setUserProgress(updatedProgress);
 
     if (updateUserData) {
@@ -197,7 +187,7 @@ const LearningCenterPage: React.FC = () => {
                   onClick={() => setCurrentView('overview')}
                   className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
                 >
-                  <ArrowLeft className="w-5 h-5" />
+                  {renderIcon(LucideIcons['ArrowLeft'], "w-5 h-5")}
                 </button>
                 <Logo size="sm" />
                 <h1 className="text-xl font-semibold text-gray-800">{t('assessmentView.headerTitle')}</h1>
@@ -210,7 +200,7 @@ const LearningCenterPage: React.FC = () => {
           <div className="card p-8">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <HelpCircle className="w-8 h-8 text-blue-600" />
+                {renderIcon(LucideIcons['HelpCircle'], "w-8 h-8 text-blue-600")}
               </div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 {t('assessmentView.questionProgress', { current: assessmentStep + 1, total: assessmentQuestions.length })}
@@ -278,7 +268,7 @@ const LearningCenterPage: React.FC = () => {
                   onClick={() => setCurrentView('overview')}
                   className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
                 >
-                  <ArrowLeft className="w-5 h-5" />
+                  {renderIcon(LucideIcons['ArrowLeft'], "w-5 h-5")}
                 </button>
                 <Logo size="sm" />
                 <h1 className="text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
@@ -297,7 +287,7 @@ const LearningCenterPage: React.FC = () => {
           <div className="card p-8 mb-8">
             <div className="flex items-start space-x-6">
               <div className={`w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center`}>
-                <HelpCircle className={`w-8 h-8 text-blue-600`} />
+                {renderIcon(LucideIcons['HelpCircle'], "w-8 h-8 text-blue-600")}
               </div>
               <div className="flex-1">
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">{t(selectedPath.titleKey)}</h2>
@@ -324,7 +314,7 @@ const LearningCenterPage: React.FC = () => {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-gray-800">{t('courseView.lessonsHeader')}</h2>
             {selectedPath.modules.map((lesson, index) => {
-              const progressEntry = courseProgress.find(p => p.lessonId === lesson.id) || {};
+              const progressEntry = courseProgress.find((p: any) => p.lessonId === lesson.id) || {};
               const isCompleted = !!progressEntry.completed;
               const isBookmarked = !!progressEntry.bookmarked;
               return (
@@ -335,7 +325,7 @@ const LearningCenterPage: React.FC = () => {
                         isCompleted ? 'bg-green-100' : 'bg-gray-100'
                       }`}>
                         {isCompleted ? (
-                          <CheckCircle className="w-6 h-6 text-green-600" />
+                          renderIcon(LucideIcons['CheckCircle'], "w-6 h-6 text-green-600")
                         ) : (
                           <span className="text-gray-600 font-semibold">{index + 1}</span>
                         )}
@@ -346,7 +336,7 @@ const LearningCenterPage: React.FC = () => {
                         <p className="text-gray-600 mb-2">{t(lesson.descriptionKey)}</p>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
                           <div className="flex items-center space-x-1">
-                            <Clock className="w-4 h-4" />
+                            {renderIcon(LucideIcons['Clock'], "w-4 h-4")}
                             <span>{t('learningPage.moduleTimeLabel')}{lesson.estimatedTime}</span>
                           </div>
                         </div>
@@ -357,7 +347,7 @@ const LearningCenterPage: React.FC = () => {
                       <button
                         onClick={() => {
                           // Toggle bookmark
-                          const newProgress = (userProgress as Array<{ courseId: string; lessonId: string; completed?: boolean; bookmarked?: boolean }> ).map((p) =>
+                          const newProgress = (userProgress as any[]).map((p: any) =>
                             p.courseId === selectedPath.id && p.lessonId === lesson.id
                               ? { ...p, bookmarked: !p.bookmarked }
                               : p
@@ -372,7 +362,7 @@ const LearningCenterPage: React.FC = () => {
                         }`}
                         title={isBookmarked ? t('courseView.removeBookmark') : t('courseView.addBookmark')}
                       >
-                        <Star className="w-4 h-4" />
+                        {renderIcon(LucideIcons['Star'], "w-4 h-4")}
                       </button>
                       <button
                         onClick={() => {
@@ -382,7 +372,7 @@ const LearningCenterPage: React.FC = () => {
                         className="btn-primary"
                       >
                         {isCompleted ? t('courseView.reviewLesson') : t('courseView.startLesson')}
-                        <ArrowLeft className="w-4 h-4 ml-2" />
+                        {renderIcon(LucideIcons['ArrowLeft'], "w-4 h-4 ml-2")}
                       </button>
                     </div>
                   </div>
@@ -394,11 +384,11 @@ const LearningCenterPage: React.FC = () => {
           {/* Course Completion */}
           {progressPercentage === 100 && (
             <div className="card p-8 text-center bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
-              <Award className="w-16 h-16 text-green-600 mx-auto mb-4" />
+              {renderIcon(LucideIcons['Award'], "w-16 h-16 text-green-600 mx-auto mb-4")}
               <h2 className="text-2xl font-bold text-gray-800 mb-2">{t('courseView.congratulations')}</h2>
               <p className="text-gray-600 mb-4">{t('courseView.courseComplete', { courseTitle: t(selectedPath.titleKey) })}</p>
               <button className="btn-primary">
-                <Download className="w-4 h-4 mr-2" />
+                {renderIcon(LucideIcons['Download'], "w-4 h-4 mr-2")}
                 {t('courseView.downloadCertificate')}
               </button>
             </div>
@@ -446,7 +436,7 @@ const LearningCenterPage: React.FC = () => {
                 to="/dashboard" 
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
               >
-                <ArrowLeft className="w-5 h-5" />
+                {renderIcon(LucideIcons['ArrowLeft'], "w-5 h-5")}
               </Link>
               <Logo size="sm" />
               <h1 className="text-xl font-semibold text-gray-800">{t('learningPage.headerTitle')}</h1>
@@ -459,7 +449,7 @@ const LearningCenterPage: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center mb-8 sm:mb-12">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-            <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+            {renderIcon(LucideIcons['BookOpen'], "w-8 h-8 sm:w-10 sm:h-10 text-white")}
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
             {t('learningPage.heroTitle')}
@@ -532,7 +522,7 @@ const LearningCenterPage: React.FC = () => {
                   <p className="text-gray-500">{t('learningPage.progressComplete', { value: Math.round(progressPercent) })}</p>
                   {isPathBadgeEarned && (
                     <div title={t(getBadgeById(path.badgeIdOnCompletion)?.nameKey || '')} className="text-yellow-500">
-                      <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                      {renderIcon(LucideIcons['Award'], "w-3 h-3 sm:w-4 sm:h-4")}
                     </div>
                   )}
                 </div>
@@ -540,7 +530,7 @@ const LearningCenterPage: React.FC = () => {
                 {userData?.recommendedStartingPathId === path.id && !isPathBadgeEarned && (
                   <div className="mt-2 sm:mt-3 text-center">
                     <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium bg-green-100 text-green-800">
-                      <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5" />
+                      {renderIcon(LucideIcons['Star'], "w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5")}
                       {t('learningPage.recommendedStart')}
                     </span>
                   </div>
@@ -565,11 +555,7 @@ const LearningCenterPage: React.FC = () => {
             return (
               <div key={index} className="text-center p-4 sm:p-6">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  {typeof FeatureIcon === 'function' ? (
-                    <FeatureIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                  ) : (
-                    <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                  )}
+                  {renderIcon(FeatureIcon, "w-5 h-5 sm:w-6 sm:h-6 text-blue-600")}
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">{t(feature.titleKey)}</h3>
                 <p className="text-xs sm:text-sm text-gray-600">{t(feature.descriptionKey)}</p>
@@ -590,7 +576,7 @@ const LearningCenterPage: React.FC = () => {
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
           <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center space-x-3 sm:space-x-4">
             <button onClick={() => setCurrentView('overview')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
-              <ArrowLeft className="w-5 h-5" />
+              {renderIcon(LucideIcons['ArrowLeft'], "w-5 h-5")}
             </button>
             <Logo size="sm" />
             <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
@@ -600,7 +586,7 @@ const LearningCenterPage: React.FC = () => {
           <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{t(selectedPath.descriptionKey)}</h2>
           <p className="mb-4 sm:mb-6 text-sm sm:text-base">{t('learningPage.moduleListTitle', { pathTitle: t(selectedPath.titleKey) })}</p>
           <div className="space-y-3 sm:space-y-4">
-            {selectedPath.modules.map(module => (
+            {(selectedPath.modules as Module[]).map(module => (
               <div key={module.id} className="card p-3 sm:p-4">
                 <h3 className="text-base sm:text-lg font-semibold">{t(module.titleKey)}</h3>
                 <p className="text-xs sm:text-sm text-gray-600">{t(module.descriptionKey)}</p>
@@ -635,8 +621,8 @@ const LearningCenterPage: React.FC = () => {
     if (!lessonId) {
       return <div className="p-8 text-center text-gray-500">{t('learningPage.noLessonAvailable')}</div>;
     }
-    const lessonIndex = selectedPath.modules.findIndex(m => m.id === lessonId);
-    const lesson = selectedPath.modules[lessonIndex];
+    const lessonIndex = (selectedPath.modules as Module[]).findIndex(m => m.id === lessonId);
+    const lesson = (selectedPath.modules as Module[])[lessonIndex];
     const isCompleted = Array.isArray(userProgress)
       ? !!userProgress.find(p => p.courseId === selectedPath.id && p.lessonId === lesson.id && p.completed)
       : false;
@@ -646,7 +632,7 @@ const LearningCenterPage: React.FC = () => {
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
           <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center space-x-3 sm:space-x-4">
             <button onClick={() => setCurrentView('course')} className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100">
-              <ArrowLeft className="w-5 h-5" />
+              {renderIcon(LucideIcons['ArrowLeft'], "w-5 h-5")}
             </button>
             <Logo size="sm" />
             <h1 className="text-lg sm:text-xl font-semibold text-gray-800">{t(selectedPath.titleKey)}</h1>
@@ -707,7 +693,10 @@ const LearningCenterPage: React.FC = () => {
 
 // Define the renderIcon helper at the top of the component:
 function renderIcon(IconComponent: any, className: string) {
-  return typeof IconComponent === 'function' ? <IconComponent className={className} /> : null;
+  if (typeof IconComponent === 'function' || (IconComponent && IconComponent.$$typeof)) {
+    return <IconComponent className={className} />;
+  }
+  return <HelpCircle className={className} />;
 }
 
 export default LearningCenterPage;

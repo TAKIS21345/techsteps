@@ -8,7 +8,6 @@ import {
   LogOut, 
   Mic, 
   MicOff, 
-  Volume2,
   Clock,
   TrendingUp,
   Award,
@@ -30,7 +29,6 @@ import Logo from '../components/Logo';
 import AIToolsModal from '../components/AIToolsModal';
 import StepsView from '../components/StepsView';
 import ClarificationModal from '../components/ClarificationModal';
-import ResourceRecommendations from '../components/ResourceRecommendations';
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
 import { speechService } from '../utils/speechService';
 import { crispService } from '../utils/crispService';
@@ -42,7 +40,6 @@ const DashboardPage: React.FC = () => {
   const [currentView, setCurrentView] = useState<'main' | 'loading' | 'steps'>('main');
   const [steps, setSteps] = useState<string[]>([]);
   const [resources, setResources] = useState<any[]>([]);
-  const [isListening, setIsListening] = useState(false);
   const [speechStatus, setSpeechStatus] = useState<'idle' | 'recording' | 'processing' | 'complete' | 'error'>('idle');
   const [showAITools, setShowAITools] = useState(false);
   const [showClarification, setShowClarification] = useState(false);
@@ -545,18 +542,15 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
     if (speechStatus === 'recording') {
       // Stop recording
       speechService.stopRecording();
-      setIsListening(false);
       setSpeechStatus('processing');
     } else {
       // Start recording with AssemblyAI
-      setIsListening(true);
       setSpeechStatus('recording');
       
       speechService.startRecording(
         // onTranscript
         (transcript: string) => {
           setQuestion(transcript);
-          setIsListening(false);
           setSpeechStatus('complete');
           
           // Auto-clear status after 2 seconds
@@ -568,7 +562,6 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         (error: string) => {
           console.error('Speech recognition error:', error);
           alert(error);
-          setIsListening(false);
           setSpeechStatus('error');
           
           // Auto-clear status after 3 seconds
@@ -579,9 +572,6 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         // onStatusChange
         (status: 'recording' | 'processing' | 'complete' | 'error') => {
           setSpeechStatus(status);
-          if (status === 'processing') {
-            setIsListening(false);
-          }
         }
       );
     }
