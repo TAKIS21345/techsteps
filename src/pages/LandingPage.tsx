@@ -88,35 +88,35 @@ const LandingPage: React.FC = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="container mx-auto px-4 sm:px-6 py-4 sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav className="container mx-auto px-4 sm:px-6 py-6 sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
         <div className="flex items-center justify-between">
           <Logo size="md" />
-          {/* Mobile Menu Button (placeholder - full functionality requires JS) */}
+          {/* Mobile Menu Button */}
           <div className="sm:hidden">
-            <button className="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <button className="text-gray-600 hover:text-gray-800 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
           </div>
           {/* Desktop Menu */}
-          <div className="hidden sm:flex items-center space-x-2 md:space-x-4 lg:space-x-6">
-            <a href="#features" className="text-gray-600 hover:text-gray-800 font-medium transition-colors">
+          <div className="hidden sm:flex items-center space-x-8">
+            <a href="#features" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-lg">
               {t('nav.features')}
             </a>
-            <a href="#testimonials" className="text-gray-600 hover:text-gray-800 font-medium transition-colors">
+            <a href="#testimonials" className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-lg">
               {t('nav.reviews')}
             </a>
             <LanguageSelector showLabel={false} />
             <Link 
               to="/auth" 
-              className="text-gray-600 hover:text-gray-800 font-medium transition-colors px-3 py-2 rounded-md hover:bg-gray-100"
+              className="text-gray-600 hover:text-gray-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-gray-50 text-lg"
             >
               {t('nav.signIn')}
             </Link>
             <Link 
               to="/auth" 
-              className="btn-primary text-sm md:text-base px-3 py-2 md:px-4"
+              className="btn-primary text-lg px-6 py-3"
             >
               {t('nav.getStarted')}
             </Link>
