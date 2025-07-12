@@ -124,63 +124,63 @@ const LandingPage: React.FC = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-16 md:py-20 text-center relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="max-w-5xl mx-auto animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4 mr-2" />
+      {/* Hero Section - Clean and Modern */}
+      <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-base font-medium mb-8 border border-blue-100">
+            <Sparkles className="w-5 h-5 mr-2" />
             {t('landing.hero.tagline')}
           </div>
           
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
             {t('landing.hero.title')}
-            <span className="gradient-text block">{t('landing.hero.titleHighlight')}</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block mt-2">
+              {t('landing.hero.titleHighlight')}
+            </span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             {t('landing.hero.subtitle')}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Link 
               to="/auth" 
-              className="btn-primary text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 inline-flex items-center shadow-2xl hover:shadow-3xl transform hover:scale-105"
+              className="btn-primary text-xl px-8 py-4 sm:px-10 sm:py-5 inline-flex items-center shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               {t('landing.hero.startLearningButton')}
-              <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+              <ArrowRight className="ml-3 w-6 h-6" />
             </Link>
-            <button className="btn-secondary text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 inline-flex items-center group">
-              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+            <button className="btn-secondary text-xl px-8 py-4 sm:px-10 sm:py-5 inline-flex items-center group">
+              <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
               {t('landing.hero.watchDemoButton')}
             </button>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center space-x-2 sm:space-x-4 text-sm text-gray-500 mb-12">
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>{t('landing.hero.freeForever')}</span>
-            <span className="mx-2">•</span>
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>{t('landing.hero.noCreditCard')}</span>
-            <span className="mx-2">•</span>
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            <span>{t('landing.hero.available247')}</span>
+          <div className="flex flex-wrap justify-center items-center gap-8 text-gray-500 mb-16">
+            <div className="flex items-center">
+              <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+              <span className="text-lg">{t('landing.hero.freeForever')}</span>
+            </div>
+            <div className="flex items-center">
+              <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+              <span className="text-lg">{t('landing.hero.noCreditCard')}</span>
+            </div>
+            <div className="flex items-center">
+              <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+              <span className="text-lg">{t('landing.hero.available247')}</span>
+            </div>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <stat.icon className="w-6 h-6 text-blue-600" />
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-100">
+                  <stat.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-800 mb-1">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
+                <div className="text-gray-600 text-lg">{stat.label}</div>
               </div>
             ))}
           </div>
