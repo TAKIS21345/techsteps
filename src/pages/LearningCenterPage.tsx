@@ -12,6 +12,24 @@ import { Module } from '../types/learning';
 import { learningService, getBadgeById } from '../services/learningService'; // Added learningService and getBadgeById
 
 const LearningCenterPage: React.FC = () => {
+  // Add state and handlers for photo explainer
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPhotoPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleExplainPhoto = () => {
+    // Placeholder: send photoPreview to backend or process it
+    alert('Photo explanation feature coming soon!');
+  };
   const [currentView, setCurrentView] = useState<'overview' | 'pathDetail' | 'moduleContent' | 'assessment' | 'course'>('overview');
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
   const [userLevel, setUserLevel] = useState<'Beginner' | 'Intermediate' | 'Advanced' | null>(null); // This might be driven by recommendedStartingPathId or assessment
@@ -445,28 +463,60 @@ const LearningCenterPage: React.FC = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
         {/* Hero Section */}
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-            {renderIcon(LucideIcons['BookOpen'], "w-8 h-8 sm:w-10 sm:h-10 text-white")}
+        <div className="text-center mb-6 sm:mb-10">
+          <div className="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6">
+            {renderIcon(LucideIcons['BookOpen'], "w-7 h-7 sm:w-10 sm:h-10 text-white")}
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
             {t('learningPage.heroTitle')}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
+          <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-4 sm:mb-8">
             {t('learningPage.heroSubtitle')}
           </p>
-          
-          {/* Button to retake/trigger assessment if needed - or could be in a user profile/settings area */}
           {userData && userData.skillAssessmentResult && (
              <button
-                onClick={() => setShowAssessmentModal(true)} // Allow re-taking assessment
-                className="btn-secondary text-xs sm:text-sm mb-6 sm:mb-8 px-3 py-1.5 sm:px-4 sm:py-2"
+                onClick={() => setShowAssessmentModal(true)}
+                className="btn-secondary text-xs sm:text-sm mb-4 sm:mb-8 px-3 py-1.5 sm:px-4 sm:py-2"
               >
                 {t('learningPage.retakeAssessment')}
               </button>
           )}
+        </div>
+
+        {/* Photo Explainer Feature (Mobile Friendly) */}
+        <div className="mb-8 sm:mb-12 flex flex-col items-center justify-center">
+          <div className="card w-full max-w-md mx-auto p-4 sm:p-6 flex flex-col items-center">
+            <div className="flex items-center space-x-2 mb-2">
+              {renderIcon(LucideIcons['Camera'], 'w-6 h-6 text-blue-600')}
+              <h3 className="font-semibold text-gray-800 text-base sm:text-lg">Photo Explainer</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-gray-600 mb-3 text-center">Take a photo or upload one to get help or an explanation.</p>
+            <div className="flex flex-col sm:flex-row gap-2 w-full justify-center">
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="block w-full sm:w-auto text-sm text-gray-700 border border-gray-300 rounded-lg p-2 mb-2 sm:mb-0"
+                onChange={e => handlePhotoChange(e)}
+                style={{ maxWidth: '180px' }}
+              />
+              <input
+                type="file"
+                accept="image/*"
+                className="block w-full sm:w-auto text-sm text-gray-700 border border-gray-300 rounded-lg p-2"
+                onChange={e => handlePhotoChange(e)}
+                style={{ maxWidth: '180px' }}
+              />
+            </div>
+            {photoPreview && (
+              <div className="mt-4 w-full flex flex-col items-center">
+                <img src={photoPreview} alt="Preview" className="rounded-lg border border-gray-300 max-h-48 object-contain" />
+                <button className="btn-primary mt-2 w-full" onClick={handleExplainPhoto}>Explain this photo</button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Learning Paths Grid */}
@@ -483,7 +533,7 @@ const LearningCenterPage: React.FC = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 sm:mb-12">
           {learningPaths.map((path) => {
             const totalModulesInPath = path.modules.length;
             const completedModulesForPath = path.modules.filter(
@@ -497,7 +547,7 @@ const LearningCenterPage: React.FC = () => {
             return (
               <div 
                 key={path.id}
-                className="card p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1" // Adjusted hover effect
+                className="card p-3 sm:p-5 hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1 rounded-xl" // More mobile-friendly
                 onClick={() => {
                   setSelectedPath(path);
                   setCurrentView('pathDetail');
@@ -544,7 +594,7 @@ const LearningCenterPage: React.FC = () => {
         <div className="text-center mb-8 sm:mb-12 pt-8 sm:pt-12 border-t border-gray-200">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">{t('learningPage.featuresGridTitle')}</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {[
             { iconName: 'Play', titleKey: "learningPage.featureInteractiveDemos", descriptionKey: "learningPage.featureInteractiveDemosDesc"},
             { iconName: 'Volume2', titleKey: "learningPage.featureAudioSupport", descriptionKey: "learningPage.featureAudioSupportDesc"},

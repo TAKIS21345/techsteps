@@ -20,7 +20,8 @@ import {
   Wifi,
   Smartphone,
   Laptop,
-  AlertCircle
+  AlertCircle,
+  Menu
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../contexts/AuthContext';
@@ -47,6 +48,7 @@ const DashboardPage: React.FC = () => {
   const [clarificationQuestions, setClarificationQuestions] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [originalQuestion, setOriginalQuestion] = useState('');
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const { logout } = useAuth();
   const { userData, addQuestionToHistory, markQuestionCompleted, updateUserData } = useUser();
@@ -631,8 +633,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
       {/* Language Setup Notification */}
       <LanguageNotificationBanner />
-      
-      {/* Header */}
+      {/* Responsive Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
@@ -645,7 +646,8 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                 <p className="text-xs sm:text-sm text-gray-600">{t('dashboard.ready')}</p>
               </div>
             </div>
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* Desktop Nav: show on sm and up */}
+            <div className="hidden sm:flex items-center space-x-2 sm:space-x-3">
               <Link 
                 to="/settings" 
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
@@ -661,17 +663,45 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                 <LogOut className="w-5 h-5" />
               </button>
             </div>
+            {/* Mobile Hamburger: show below sm */}
+            <button
+              className="sm:hidden p-2 rounded-full text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+              aria-label="Menu"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
           </div>
         </div>
+        {/* Mobile Menu Drawer: only show below sm */}
+        {showMobileMenu && (
+          <div className="sm:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 z-50 shadow-md animate-slide-down">
+            <div className="flex flex-col items-center py-2">
+              <Link 
+                to="/settings" 
+                className="w-full px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                <Settings className="inline w-5 h-5 mr-2" /> {t('common.settings')}
+              </Link>
+              <button 
+                onClick={() => { setShowMobileMenu(false); logout(); }}
+                className="w-full px-4 py-2 text-gray-700 hover:bg-gray-100 text-center"
+              >
+                <LogOut className="inline w-5 h-5 mr-2" /> {t('common.signOut')}
+              </button>
+            </div>
+          </div>
+        )}
       </header>
 
-      <div className="container mx-auto px-4 sm:px-6 py-8">
-        <div className="grid lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gap */}
+      <div className="container mx-auto px-2 sm:px-6 py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
           {/* Main Column */}
-          <div className="lg:col-span-2 space-y-6 md:space-y-8"> {/* Adjusted space-y */}
+          <div className="lg:col-span-2 space-y-4 md:space-y-8">
             {/* Main Interface */}
-            <div className="card p-6 sm:p-8 text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <div className="card p-4 sm:p-8 text-center rounded-xl shadow-md bg-white">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-6">
                 <MessageSquare className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
@@ -681,12 +711,12 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                 {t('dashboard.askQuestion')}
               </p>
               
-              <div className="relative mb-4 sm:mb-6">
+              <div className="relative mb-3 sm:mb-6">
                 <textarea
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                   placeholder={t('dashboard.placeholder')}
-                  className="input-field text-base sm:text-lg p-4 sm:p-6 text-center resize-none min-h-[100px] sm:min-h-[120px] w-full"
+                  className="input-field text-base sm:text-lg p-3 sm:p-6 text-center resize-none min-h-[80px] sm:min-h-[120px] w-full rounded-lg border border-gray-200 focus:border-blue-400"
                   rows={3}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -696,43 +726,50 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                   }}
                 />
                 {userData?.preferences?.voiceInput && (
-                  <button
-                    onClick={handleVoiceInput}
-                    disabled={speechStatus === 'processing'}
-                    className={`absolute right-2 bottom-2 sm:right-4 sm:bottom-4 p-2 sm:p-3 rounded-full transition-all duration-200 ${
-                      speechStatus === 'recording'
-                        ? 'bg-red-100 text-red-600 animate-pulse' 
-                        : speechStatus === 'processing'
-                        ? 'bg-yellow-100 text-yellow-600'
-                        : speechStatus === 'complete'
-                        ? 'bg-green-100 text-green-600'
-                        : speechStatus === 'error'
-                        ? 'bg-red-100 text-red-600'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110'
-                    }`}
-                    title={
-                      speechStatus === 'recording' ? t('voice.stopRecording') :
-                      speechStatus === 'processing' ? t('voice.processing') :
-                      speechStatus === 'complete' ? t('voice.recognized') :
-                      speechStatus === 'error' ? t('voice.failed') :
-                      t('voice.startInput')
-                    }
-                  >
-                    {speechStatus === 'recording' ? (
-                      <MicOff className="w-5 h-5 sm:w-6 sm:h-6" />
-                    ) : speechStatus === 'processing' ? (
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
-                    ) : (
-                      <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <>
+                    <button
+                      onClick={handleVoiceInput}
+                      disabled={speechStatus === 'processing'}
+                      className={`absolute right-2 bottom-2 sm:right-4 sm:bottom-4 p-2 sm:p-3 rounded-full transition-all duration-200 ${
+                        speechStatus === 'recording'
+                          ? 'bg-red-100 text-red-600 animate-pulse' 
+                          : speechStatus === 'processing'
+                          ? 'bg-yellow-100 text-yellow-600'
+                          : speechStatus === 'complete'
+                          ? 'bg-green-100 text-green-600'
+                          : speechStatus === 'error'
+                          ? 'bg-red-100 text-red-600'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-110'
+                      }`}
+                      title={
+                        speechStatus === 'recording' ? t('voice.stopRecording') :
+                        speechStatus === 'processing' ? t('voice.processing') :
+                        speechStatus === 'complete' ? t('voice.recognized') :
+                        speechStatus === 'error' ? t('voice.failed') :
+                        t('voice.startInput')
+                      }
+                    >
+                      {speechStatus === 'recording' ? (
+                        <MicOff className="w-5 h-5 sm:w-6 sm:h-6" />
+                      ) : speechStatus === 'processing' ? (
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
+                      ) : (
+                        <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
+                      )}
+                    </button>
+                    {speechStatus === 'recording' && (
+                      <div className="absolute left-2 bottom-2 sm:left-4 sm:bottom-4 bg-white text-red-600 text-xs sm:text-sm rounded px-2 py-1 shadow-md border border-red-200 animate-pulse z-10">
+                        {t('voice.pressToStop', 'Press the button again to stop recording.')}
+                      </div>
                     )}
-                  </button>
+                  </>
                 )}
               </div>
 
               <button
                 onClick={handleAskQuestion}
                 disabled={loading || !question.trim()}
-                className="btn-primary text-base px-6 py-3 sm:text-lg sm:px-8 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary w-full text-base px-4 py-3 sm:text-lg sm:px-8 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg"
               >
                 {loading ? t('dashboard.gettingSteps') : t('dashboard.getSteps')}
               </button>
@@ -748,12 +785,12 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Quick Tips */}
-            <div className="card p-6 sm:p-8">
-              <div className="flex items-center justify-between mb-4 sm:mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
+            <div className="card p-4 sm:p-8 rounded-xl shadow-md bg-white">
+              <div className="flex items-center justify-between mb-3 sm:mb-6">
+                <h2 className="text-lg sm:text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
                 <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
               </div>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {quickTips.map((tip, index) => (
                   <button
                     key={index}
@@ -761,28 +798,26 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                       setQuestion(tip.title);
                       handleAskQuestion();
                     }}
-                    className="text-left p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
+                    className="text-left p-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group flex items-center gap-3"
                   >
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                        <tip.icon className="w-5 h-5 text-blue-600" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-medium text-gray-800 group-hover:text-blue-800">{tip.title}</h3>
-                        <p className="text-sm text-gray-600 mt-1">{tip.description}</p>
-                        <span className="text-xs text-blue-600 mt-2 inline-block">{tip.category}</span>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <tip.icon className="w-5 h-5 text-blue-600" />
                     </div>
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-800 group-hover:text-blue-800 text-base">{tip.title}</h3>
+                      <p className="text-xs text-gray-600 mt-1">{tip.description}</p>
+                      <span className="text-xs text-blue-600 mt-1 block">{tip.category}</span>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Popular Questions */}
-            <div className="card p-6 sm:p-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">{t('dashboard.popularQuestions')}</h2>
-              <div className="grid md:grid-cols-2 gap-4">
+            <div className="card p-4 sm:p-8 rounded-xl shadow-md bg-white">
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-6">{t('dashboard.popularQuestions')}</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {popularQuestions.map((q, index) => (
                   <button
                     key={index}
@@ -790,12 +825,10 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                       setQuestion(q);
                       handleAskQuestion();
                     }}
-                    className="text-left p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
+                    className="text-left p-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group flex items-center justify-between"
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-700 group-hover:text-blue-800">{q}</span>
-                      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
-                    </div>
+                    <span className="text-gray-700 group-hover:text-blue-800 text-base">{q}</span>
+                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
                   </button>
                 ))}
               </div>
@@ -803,11 +836,11 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Quick Actions */}
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('dashboard.quickActions')}</h3>
-              <div className="space-y-3">
+            <div className="card p-4 rounded-xl shadow-md bg-white">
+              <h3 className="text-base font-semibold text-gray-800 mb-3">{t('dashboard.quickActions')}</h3>
+              <div className="space-y-2">
                 <button
                   onClick={() => setShowAITools(true)}
                   className="w-full p-4 text-left rounded-xl border border-gray-200 hover:border-purple-300 hover:bg-purple-50 transition-all duration-200 group"
@@ -875,15 +908,15 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Recent Activity */}
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.recentActivity')}</h3>
+            <div className="card p-4 rounded-xl shadow-md bg-white">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-base font-semibold text-gray-800">{t('dashboard.recentActivity')}</h3>
                 <Clock className="w-5 h-5 text-gray-400" />
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {recentActivity.map((activity, index) => (
-                  <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                    <p className="text-sm font-medium text-gray-800 mb-1">{activity.question}</p>
+                  <div key={index} className="p-2 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-medium text-gray-800 mb-1">{activity.question}</p>
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <span>{activity.time}</span>
                       <span>{t('dashboard.stepsCompleted', { count: activity.steps })}</span>
@@ -894,26 +927,26 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Achievements */}
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.yourProgress')}</h3>
+            <div className="card p-4 rounded-xl shadow-md bg-white">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-base font-semibold text-gray-800">{t('dashboard.yourProgress')}</h3>
                 <TrendingUp className="w-5 h-5 text-green-500" />
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {achievements.map((achievement, index) => (
                   <div 
                     key={index} 
-                    className={`p-3 rounded-lg ${achievement.unlocked ? 'bg-green-50 border border-green-200' : 'bg-gray-50 border border-gray-200'}`}
+                    className={`p-2 rounded-lg ${achievement.unlocked ? 'bg-green-50 border border-green-200' : 'bg-gray-50 border border-gray-200'}`}
                   >
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${achievement.unlocked ? 'bg-green-500' : 'bg-gray-400'}`}>
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-7 h-7 rounded-full flex items-center justify-center ${achievement.unlocked ? 'bg-green-500' : 'bg-gray-400'}`}> 
                         <achievement.icon className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <p className={`text-sm font-medium ${achievement.unlocked ? 'text-green-800' : 'text-gray-600'}`}>
+                        <p className={`text-xs font-medium ${achievement.unlocked ? 'text-green-800' : 'text-gray-600'}`}> 
                           {achievement.title}
                         </p>
-                        <p className={`text-xs ${achievement.unlocked ? 'text-green-600' : 'text-gray-500'}`}>
+                        <p className={`text-xs ${achievement.unlocked ? 'text-green-600' : 'text-gray-500'}`}> 
                           {achievement.description}
                         </p>
                       </div>
@@ -924,22 +957,22 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Help & Support */}
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800">{t('dashboard.needHelp')}</h3>
+            <div className="card p-4 rounded-xl shadow-md bg-white">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-base font-semibold text-gray-800">{t('dashboard.needHelp')}</h3>
                 <HelpCircle className="w-5 h-5 text-blue-500" />
               </div>
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 text-xs">
                 <p className="text-gray-600">
                   {t('dashboard.helpingHand')}
                 </p>
                 <button 
                   onClick={handleNeedHelp}
-                  className="w-full p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors"
+                  className="w-full p-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors"
                 >
                   {t('dashboard.chatHuman')}
                 </button>
-                <button className="w-full p-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">{t('dashboard.browseGuides')}</button>
+                <button className="w-full p-2 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">{t('dashboard.browseGuides')}</button>
               </div>
             </div>
           </div>

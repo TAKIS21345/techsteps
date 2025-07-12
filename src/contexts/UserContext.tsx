@@ -77,6 +77,7 @@ interface UserProgress {
 
 interface UserContextType {
   userData: UserData | null;
+  preferences: UserData['preferences'] | undefined;
   loading: boolean;
   updateUserData: (data: Partial<UserData>) => Promise<void>;
   updateUserStats: (stats: Partial<UserStats>) => Promise<void>;
@@ -107,6 +108,25 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
 
+  // Centralized function to apply preferences to DOM
+  function applyPreferencesToDOM(preferences?: UserData['preferences']) {
+    if (!preferences) return;
+    const body = document.body;
+    // Theme
+    body.classList.remove('theme-light', 'theme-dark');
+    if (preferences.theme === 'dark') body.classList.add('theme-dark');
+    else body.classList.add('theme-light');
+    // Font size
+    body.classList.remove('font-normal', 'font-large', 'font-extralarge');
+    if (preferences.fontSize === 'large') body.classList.add('font-large');
+    else if (preferences.fontSize === 'extra-large') body.classList.add('font-extralarge');
+    else body.classList.add('font-normal');
+    // High contrast
+    if (preferences.highContrast) body.classList.add('high-contrast');
+    else body.classList.remove('high-contrast');
+    // Add more settings as needed
+  }
+
   useEffect(() => {
     if (!user) {
       setUserData(null);
@@ -123,7 +143,9 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       (docSnap) => {
         if (docSnap.exists()) {
           const data = docSnap.data() as UserData;
-          setUserData(data); // Remove uid injection
+          setUserData(data);
+          // Apply preferences to DOM whenever userData changes
+          if (data.preferences) applyPreferencesToDOM(data.preferences);
         } else {
           setUserData(null);
         }
@@ -138,6 +160,13 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     return () => unsubscribe();
   }, [user]);
+
+  // Also apply preferences if they change independently
+  useEffect(() => {
+    if (userData && userData.preferences) {
+      applyPreferencesToDOM(userData.preferences);
+    }
+  }, [userData?.preferences]);
 
   const updateUserData = async (data: Partial<UserData>) => {
     if (!user) throw new Error('No authenticated user');
@@ -282,6 +311,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const value = {
     userData,
+    preferences: userData?.preferences,
     loading,
     updateUserData,
     updateUserStats,
