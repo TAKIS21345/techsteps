@@ -187,37 +187,35 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-16 sm:py-24 bg-white">
+      {/* Features Section - Modern Grid */}
+      <section id="features" className="py-24 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               {t('landing.featuresSection.title')}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t('landing.featuresSection.subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(t('landing.featuresSection.items', { returnObjects: true }) as {title: string, description: string}[]).map((feature, index) => {
               const icons = [MessageSquare, Headphones, Camera, Users, Shield, Zap];
               const colors = ["blue", "green", "purple", "orange", "red", "yellow"];
               const IconComponent = icons[index % icons.length];
               const color = colors[index % colors.length];
-              const delay = `${index * 0.1}s`;
 
               return (
                 <div
                   key={index}
-                  className="card p-6 md:p-8 text-center hover:shadow-2xl transition-all duration-500 animate-slide-up group hover:-translate-y-2"
-                  style={{ animationDelay: delay }}
+                  className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className={`w-12 h-12 md:w-16 md:h-16 bg-${color}-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className={`w-6 h-6 md:w-8 md:h-8 text-${color}-600`} />
+                  <div className={`w-16 h-16 bg-${color}-50 border border-${color}-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform`}>
+                    <IconComponent className={`w-8 h-8 text-${color}-600`} />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
