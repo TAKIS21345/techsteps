@@ -280,6 +280,13 @@
     "accessibility": { "name": "Accessibility Champion", "description": "Completed Accessibility & Ease of Use path." },
     "healthAndSafety": { "name": "Safety Guardian", "description": "Completed Health, Safety & Privacy path." }
   },
+  "skillAssessmentModal": {
+    "title": "Quick Skill Check",
+    "introduction": "Let's find the best place for you to start!",
+    "nextButton": "Next",
+    "finishButton": "Show My Starting Point",
+    "questionProgress": "Question {{current}} of {{total}}"
+  },
   "assessmentView": {
     "headerTitle": "Skills Assessment",
     "questionProgress": "Question {{current}} of {{total}}",
