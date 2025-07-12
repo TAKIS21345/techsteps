@@ -291,80 +291,94 @@ body {
   border: 0;
 }
 
-/* High contrast mode */
+/* High contrast mode - Senior-friendly accessible design */
 
-/* Strong, accessible high contrast mode */
+/* Professional high contrast mode with proper accessibility */
 .high-contrast {
-  --accent-color: #FFD600;
-  --accent-color-dark: #FFAB00;
-  --background-color: #000000;
-  --card-background: #000000;
-  --text-primary: #FFFF00;
-  --text-secondary: #FFFFFF;
-  --border-color: #FFFF00;
-  --input-background: #000000;
-  --success-color: #00FF00;
-  --error-color: #FF1744;
-  --warning-color: #FFD600;
-  background: #000 !important;
-  color: #FFFF00 !important;
+  --accent-color: #0066CC;
+  --accent-color-dark: #004499;
+  --background-color: #FFFFFF;
+  --card-background: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --border-color: #000000;
+  --input-background: #FFFFFF;
+  --success-color: #006600;
+  --error-color: #CC0000;
+  --warning-color: #FF6600;
+  background: #FFFFFF !important;
+  color: #000000 !important;
 }
 
+/* High contrast backgrounds - clean white/black theme */
 .high-contrast body,
-.high-contrast .card,
-.high-contrast .btn-primary,
-.high-contrast .btn-secondary,
-.high-contrast .input-field,
-.high-contrast .border,
 .high-contrast .bg-white,
 .high-contrast .bg-gray-50,
 .high-contrast .bg-gray-100,
 .high-contrast .bg-blue-50,
-.high-contrast .bg-green-100,
-.high-contrast .bg-yellow-100,
-.high-contrast .bg-orange-100,
-.high-contrast .bg-purple-100,
-.high-contrast .bg-blue-100,
-.high-contrast .bg-red-50,
 .high-contrast .bg-green-50,
-.high-contrast .bg-gradient-to-br,
-.high-contrast .shadow-md,
-.high-contrast .shadow-lg,
-.high-contrast .shadow-xl {
-  background: #000 !important;
-  color: #FFFF00 !important;
-  border-color: #FFD600 !important;
-  box-shadow: none !important;
+.high-contrast .bg-yellow-50,
+.high-contrast .bg-orange-50,
+.high-contrast .bg-purple-50,
+.high-contrast .bg-red-50,
+.high-contrast .bg-gradient-to-br {
+  background: #FFFFFF !important;
+  color: #000000 !important;
 }
 
-.high-contrast .card,
-.high-contrast .btn-primary,
-.high-contrast .btn-secondary,
-.high-contrast .input-field {
-  border: 2px solid #FFD600 !important;
-  color: #FFFF00 !important;
-  background: #000 !important;
+/* High contrast cards with clear borders */
+.high-contrast .card {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
+/* High contrast buttons - clear and bold */
 .high-contrast .btn-primary {
-  background: #FFD600 !important;
-  color: #000 !important;
-  border: 2px solid #FFD600 !important;
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  border: 3px solid #000000 !important;
+  font-weight: bold !important;
+}
+
+.high-contrast .btn-primary:hover {
+  background: #333333 !important;
+  border-color: #333333 !important;
 }
 
 .high-contrast .btn-secondary {
-  background: #000 !important;
-  color: #FFD600 !important;
-  border: 2px solid #FFD600 !important;
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  font-weight: bold !important;
 }
 
-.high-contrast .input-field {
-  background: #000 !important;
-  color: #FFD600 !important;
-  border: 2px solid #FFD600 !important;
-  caret-color: #FFD600 !important;
+.high-contrast .btn-secondary:hover {
+  background: #F0F0F0 !important;
 }
 
+/* High contrast input fields */
+.high-contrast .input-field,
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  caret-color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+.high-contrast .input-field:focus,
+.high-contrast input:focus,
+.high-contrast textarea:focus,
+.high-contrast select:focus {
+  border-color: #0066CC !important;
+  box-shadow: 0 0 0 2px #0066CC !important;
+}
+
+/* High contrast text colors */
 .high-contrast .text-gray-800,
 .high-contrast .text-gray-700,
 .high-contrast .text-gray-600,
@@ -378,10 +392,22 @@ body {
 .high-contrast .text-purple-600,
 .high-contrast .text-red-600,
 .high-contrast .text-white,
-.high-contrast .text-black {
-  color: #FFFF00 !important;
+.high-contrast .text-black,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast p,
+.high-contrast span,
+.high-contrast div {
+  color: #000000 !important;
+  font-weight: 500 !important;
 }
 
+/* High contrast borders */
+.high-contrast .border,
 .high-contrast .border-gray-200,
 .high-contrast .border-gray-300,
 .high-contrast .border-blue-300,
@@ -393,37 +419,48 @@ body {
 .high-contrast .border-green-100,
 .high-contrast .border-yellow-100,
 .high-contrast .border-orange-100,
-.high-contrast .border-purple-100,
-.high-contrast .border-black,
-.high-contrast .border-white {
-  border-color: #FFD600 !important;
+.high-contrast .border-purple-100 {
+  border-color: #000000 !important;
+  border-width: 2px !important;
 }
 
+/* High contrast links and interactive elements */
 .high-contrast a,
-.high-contrast button,
+.high-contrast button:not(.btn-primary):not(.btn-secondary),
 .high-contrast .clickable {
-  color: #FFD600 !important;
-  border-color: #FFD600 !important;
+  color: #0066CC !important;
+  font-weight: bold !important;
+  text-decoration: underline !important;
 }
 
+.high-contrast a:hover,
+.high-contrast button:hover {
+  color: #004499 !important;
+  background: #F0F0F0 !important;
+}
+
+/* High contrast selection */
 .high-contrast ::selection {
-  background: #FFD600 !important;
-  color: #000 !important;
+  background: #0066CC !important;
+  color: #FFFFFF !important;
 }
 
+/* High contrast focus states */
 .high-contrast .focus-visible,
 .high-contrast :focus {
-  outline: 2px solid #FFD600 !important;
-  box-shadow: 0 0 0 2px #FFD600 !important;
+  outline: 3px solid #0066CC !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px #0066CC !important;
 }
 
-.high-contrast .bg-gradient-to-br,
-.high-contrast .gradient-bg,
-.high-contrast .gradient-bg-blue,
-.high-contrast .gradient-bg-purple {
-  background: #000 !important;
+/* High contrast icons and special elements */
+.high-contrast svg,
+.high-contrast .icon {
+  stroke: #000000 !important;
+  fill: #000000 !important;
 }
 
+/* Remove problematic shadows in high contrast */
 .high-contrast .shadow,
 .high-contrast .shadow-md,
 .high-contrast .shadow-lg,
@@ -431,7 +468,20 @@ body {
 .high-contrast .shadow-soft,
 .high-contrast .shadow-medium,
 .high-contrast .shadow-strong {
-  box-shadow: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* High contrast navigation improvements */
+.high-contrast nav {
+  background: #FFFFFF !important;
+  border-bottom: 3px solid #000000 !important;
+}
+
+/* High contrast modal and overlay improvements */
+.high-contrast .modal,
+.high-contrast .overlay {
+  background: #FFFFFF !important;
+  border: 3px solid #000000 !important;
 }
 
 /* Mobile app optimizations */
