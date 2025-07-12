@@ -380,60 +380,59 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 sm:py-16">
+      {/* Footer - Clean and Modern */}
+      <footer className="bg-white border-t border-gray-100 py-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div className="col-span-1 sm:col-span-2 md:col-span-1">
-              <Logo size="sm" />
-              <p className="text-gray-400 mt-4 leading-relaxed text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div className="lg:col-span-1">
+              <Logo size="md" />
+              <p className="text-gray-600 mt-6 leading-relaxed text-lg">
                 {t('landing.footer.description')}
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-base">{t('landing.footer.featuresTitle')}</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="font-semibold mb-6 text-lg text-gray-900">{t('landing.footer.featuresTitle')}</h4>
+              <ul className="space-y-3 text-gray-600">
                 {(t('landing.footer.featuresItems', { returnObjects: true }) as string[]).map((item, index) => (
-                  <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+                  <li key={index}><a href="#" className="hover:text-gray-900 transition-colors text-lg">{item}</a></li>
                 ))}
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-base">{t('landing.footer.supportTitle')}</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="font-semibold mb-6 text-lg text-gray-900">{t('landing.footer.supportTitle')}</h4>
+              <ul className="space-y-3 text-gray-600">
                 {(t('landing.footer.supportItems', { returnObjects: true }) as string[]).map((item, index) => (
-                  <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+                  <li key={index}><a href="#" className="hover:text-gray-900 transition-colors text-lg">{item}</a></li>
                 ))}
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-base">{t('landing.footer.companyTitle')}</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="font-semibold mb-6 text-lg text-gray-900">{t('landing.footer.companyTitle')}</h4>
+              <ul className="space-y-3 text-gray-600">
                 {(t('landing.footer.companyItems', { returnObjects: true }) as string[]).map((item, index) => {
                   if (item === "Privacy Policy") {
-                    return <li key={index}><Link to="/privacy-policy" className="hover:text-white transition-colors">{item}</Link></li>;
+                    return <li key={index}><Link to="/privacy-policy" className="hover:text-gray-900 transition-colors text-lg">{item}</Link></li>;
                   }
-                  // Add similar condition for Terms of Service if that page existed and was linked
-                  return <li key={index}><a href="#" className="hover:text-white transition-colors">{item}</a></li>;
+                  return <li key={index}><a href="#" className="hover:text-gray-900 transition-colors text-lg">{item}</a></li>;
                 })}
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-              <p className="text-gray-400 mb-4 md:mb-0">{t('landing.footer.copyright')}</p>
-              <div className="flex items-center space-x-2 sm:space-x-4">
-                <span className="text-gray-400">{t('landing.footer.trustedBy')}</span>
+          <div className="border-t border-gray-100 pt-8">
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <p className="text-gray-600 mb-4 lg:mb-0 text-lg">{t('landing.footer.copyright')}</p>
+              <div className="flex items-center space-x-4">
+                <span className="text-gray-600 text-lg">{t('landing.footer.trustedBy')}</span>
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-gray-400">{t('landing.footer.trustedByCount')}</span>
+                <span className="text-gray-600 text-lg">{t('landing.footer.trustedByCount')}</span>
               </div>
             </div>
           </div>
