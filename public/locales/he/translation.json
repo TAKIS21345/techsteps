@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "features": "תכונות",
+    "reviews": "ביקורות",
+    "signIn": "כניסה",
+    "getStarted": "להתחלה"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "מהימן על ידי אזרחים ותיקים ברחבי העולם",
+      "title": "טכנולוגיה שנעשתה",
+      "titleHighlight": "פשוטה וברורה",
+      "subtitle": "שלטו בטכנולוגיה בביטחון באמצעות הדרכה אישית וצעד-אחר-צעד שמרגישה כמו חבר סבלני לצידכם.",
+      "startLearningButton": "התחילו ללמוד בחינם",
+      "watchDemoButton": "צפו בהדגמה",
+      "freeForever": "חינם לתמיד",
+      "noCreditCard": "אין צורך בכרטיס אשראי",
+      "available247": "זמין 24/7"
+    },
+    "featuresSection": {
+      "title": "תכונות",
+      "subtitle": "אלו הן רק כמה מהתכונות המוצעות כדי לעזור לכם לצמוח!",
+      "items": [
+        {
+          "title": "הדרכה צעד-אחר-צעד",
+          "description": "קבלו הוראות ברורות וקלות למעקב לכל שאלה טכנולוגית. כל שלב מוסבר במונחים פשוטים עם רמזים חזותיים."
+        },
+        {
+          "title": "תמיכה קולית",
+          "description": "שאלו שאלות בקולכם וקבלו תשובות שיוקראו לכם בקול רם. מושלם לעזרה ללא ידיים כשאתם הכי צריכים אותה."
+        },
+        {
+          "title": "מסביר תמונות",
+          "description": "צלמו תמונה של כל כבל, כפתור או מכשיר וקבלו הסבר מיידי מה זה ואיך להשתמש בזה."
+        },
+        {
+          "title": "עיצוב ידידותי לגיל השלישי",
+          "description": "טקסט גדול, ממשק אינטואיטיבי והסברים סבלניים שעוצבו במיוחד מתוך מחשבה על אזרחים ותיקים."
+        },
+        {
+          "title": "בטוח ומאובטח",
+          "description": "המידע האישי שלכם מוגן באבטחה ברמה ארגונית. שום מידע אינו משותף עם צדדים שלישיים."
+        },
+        {
+          "title": "תשובות מיידיות",
+          "description": "קבלו עזרה מיידית 24/7. אין צורך לחכות בתור או לקבוע פגישות. פשוט שאלו וקבלו תשובות."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "שאלות פופולריות שאנו עוזרים בהן",
+      "subtitle": "ראו מה שואלים אזרחים ותיקים אחרים",
+      "askYourQuestionButton": "שאלו את שאלתכם עכשיו"
+    },
+    "testimonialsSection": {
+      "title": "מה הקהילה שלנו אומרת",
+      "subtitle": "הצטרפו לאלפי אזרחים ותיקים שמצאו עזרה טכנולוגית פשוטה",
+      "testimonialContent": [
+        {
+          "name": "מרגרט כ.",
+          "age": 72,
+          "location": "אוסטין, טקסס",
+          "content": "סוף סוף מישהו שמסביר טכנולוגיה בצורה שאני יכולה להבין! ההוראות צעד-אחר-צעד עזרו לי להגדיר את הטלפון החדש שלי בצורה מושלמת. אני מרגישה הרבה יותר בטוחה עכשיו!",
+          "avatar": "מ"
+        },
+        {
+          "name": "רוברט ה.",
+          "age": 68,
+          "location": "סיאטל, וושינגטון",
+          "content": "תכונת הקול מדהימה! אני יכול פשוט לשאול את השאלות שלי בקול רם ולקבל תשובות ברורות. זה כמו שיש נכד שמבין בטכנולוגיה זמין 24/7.",
+          "avatar": "ר"
+        },
+        {
+          "name": "דורותי ש.",
+          "age": 75,
+          "location": "מיאמי, פלורידה",
+          "content": "אני אוהבת את תכונת התמונה! צילמתי כבל מבלבל ומיד ידעתי למה הוא משמש. האפליקציה הזו הפכה אותי להרבה יותר בטוחה עם טכנולוגיה.",
+          "avatar": "ד"
+        },
+        {
+          "name": "פרנק מ.",
+          "age": 70,
+          "location": "דנוור, קולורדו",
+          "content": "הייתי כל כך מתוסכל מהטלוויזיה החכמה שלי עד שמצאתי את העוזר הזה. עכשיו אני יכול להזרים תכנים, לשנות הגדרות ואפילו לעשות שיחות וידאו עם הנכדים שלי!",
+          "avatar": "פ"
+        }
+      ],
+      "ageLabel": "גיל {{age}}"
+    },
+    "ctaSection": {
+      "title": "מוכנים לשלוט בטכנולוגיה?",
+      "subtitle": "הצטרפו לקהילת האזרחים הוותיקים המועצמת שלנו שהפכה את הטכנולוגיה לפשוטה ונגישה. התחילו לקבל תשובות ברורות ומועילות עוד היום - לגמרי בחינם!",
+      "getStartedButton": "התחילו בחינם היום",
+      "setupInMinutes": "הגדרה תוך 2 דקות"
+    },
+    "footer": {
+      "description": "הופכים את הטכנולוגיה לנגישה ומובנת לאזרחים ותיקים בכל מקום.",
+      "featuresTitle": "תכונות",
+      "featuresItems": [
+        "עזרה צעד-אחר-צעד",
+        "תמיכה קולית",
+        "מסביר תמונות",
+        "זמינות 24/7"
+      ],
+      "supportTitle": "תמיכה",
+      "supportItems": [
+        "מרכז עזרה",
+        "צעדים ראשונים",
+        "קהילה",
+        "צרו קשר"
+      ],
+      "companyTitle": "חברה",
+      "companyItems": [
+        "אודותינו",
+        "מדיניות פרטיות",
+        "תנאי שירות",
+        "נגישות"
+      ],
+      "copyright": "© 2025 TechStep. נוצר באהבה ❤️ לאזרחים ותיקים בכל מקום.",
+      "trustedBy": "מהימן על ידי",
+      "trustedByCount": "50,000+ אזרחים ותיקים"
+    }
+  },
+  "dashboard": {
+    "welcome": "ברוך הבא ל-TechStep",
+    "welcomeUser": "ברוך שובך, {{name}}!",
+    "ready": "מוכן ללמוד משהו חדש?",
+    "getHelp": "קבל עזרה מיידית",
+    "askQuestion": "שאל כל שאלה טכנית וקבל הדרכה צעד-אחר-צעד",
+    "placeholder": "במה תרצה עזרה היום?",
+    "getSteps": "קבל עזרה צעד-אחר-צעד",
+    "gettingSteps": "משיג את הצעדים שלך...",
+    "craftingSteps": "מכין את הצעדים המותאמים אישית שלך...",
+    "takesAMoment": "זה עשוי לקחת רגע",
+    "quickTips": "טיפים מהירים עבורך",
+    "popularQuestions": "שאלות פופולריות היום",
+    "quickActions": "פעולות מהירות",
+    "recentActivity": "פעילות אחרונה",
+    "yourProgress": "ההתקדמות שלך",
+    "needHelp": "צריך עזרה?",
+    "helpingHand": "אנחנו כאן כדי לעזור לך להצליח",
+    "chatHuman": "שוחח עם אדם",
+    "browseGuides": "עיין במדריכי וידאו",
+    "browseTips": "עיין בטיפים",
+    "commonSolutions": "מצא פתרונות נפוצים",
+    "stepsCompleted": "{{count}} צעדים הושלמו",
+    "needMoreInfo": "אני צריך קצת יותר מידע כדי לעזור לך טוב יותר"
+  },
+  "aiTools": {
+    "title": "כלי עזר של בינה מלאכותית",
+    "description": "מסביר תמונות ומתרגם טכני"
+  },
+  "aiToolsModal": {
+    "header": "כלי עזר של בינה מלאכותית",
+    "tabs": {
+      "photoExplainer": "מסביר תמונות",
+      "techWordBuster": "מפענח מונחים טכניים"
+    },
+    "photoExplainer": {
+      "title": "מסביר תמונות",
+      "description": "העלה תמונה של כל כבל, כפתור או מכשיר וקבל הסבר מיידי.",
+      "uploadButton": "העלה תמונה",
+      "questionLabel": "שאל שאלה על התמונה (אופציונלי)",
+      "questionPlaceholder": "למה הכבל הזה משמש?",
+      "explainButton": "הסבר תמונה",
+      "analyzingButton": "מנתח...",
+      "alertNoPhoto": "אנא העלה תמונה תחילה או בדוק את תצורת ה-API.",
+      "errorResponse": "<p class=\"text-red-600\">מצטער, לא הצלחתי לנתח את התמונה. אנא נסה שוב.</p>",
+      "readResponseButton": "🔊 קרא את התגובה בקול",
+      "previewAlt": "תצוגה מקדימה"
+    },
+    "techWordBuster": {
+      "title": "מפענח מונחים טכניים",
+      "description": "מבולבל ממונח טכני? קבל הסבר פשוט וקל להבנה עם אנלוגיות מהעולם האמיתי.",
+      "inputLabel": "הזן מילה או ביטוי טכני",
+      "inputPlaceholder": "לדוגמה: אחסון בענן, WiFi, בלוטות'",
+      "explainButton": "הבהר לי את זה",
+      "explainingButton": "מסביר...",
+      "alertNoTerm": "אנא הזן מונח טכני תחילה או בדוק את תצורת ה-API.",
+      "errorResponse": "<p class=\"text-red-600\">מצטער, לא הצלחתי להסביר את המונח הזה. אנא נסה שוב.</p>",
+      "readExplanationButton": "🔊 קרא את ההסבר בקול"
+    },
+    "apiErrorNoExplanation": "לא התקבל הסבר"
+  },
+  "clarificationModal": {
+    "headerTitle": "אני צריך קצת יותר מידע",
+    "yourQuestionLabel": "שאלתך:",
+    "tellMeMorePrompt": "כדי לתת לך את העזרה הטובה ביותר, האם תוכל לספר לי קצת יותר?",
+    "forExampleLabel": "לדוגמה:",
+    "textareaPlaceholder": "אנא ספק פרטים נוספים...",
+    "textareaSrLabel": "ספק פרטים נוספים לשאלתך",
+    "skipButton": "דלג לעת עתה",
+    "submitButton": "קבל עזרה טובה יותר",
+    "loadingButton": "מקבל עזרה..."
+  },
+  "languageNotificationBanner": {
+    "title": "השלם את הגדרות השפה שלך",
+    "description": "הגדר את השפות המועדפות עליך לקלט קולי ואינטראקציות טקסט טובות יותר.",
+    "buttonText": "השלם הגדרות"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "יסודות המחשב והמכשירים",
+      "description": "היסודות הבסיסיים ביותר כדי להתחיל עם טכנולוגיה.",
+      "modules": {
+        "turnOnDevice": { "title": "הפעלת מכשיר", "description": "למד להפעיל מחשבים וסמארטפונים." },
+        "mouseTouchscreen": { "title": "שימוש בעכבר/מסך מגע", "description": "למד להצביע, ללחוץ ולהקיש." },
+        "keyboardTyping": { "title": "יסודות המקלדת/הקלדה", "description": "התרגל ליסודות ההקלדה." },
+        "filesFolders": { "title": "הבנת קבצים ותיקיות", "description": "למד כיצד מאורגן מידע דיגיטלי." }
+      }
+    },
+    "onlineWorld": {
+      "title": "העולם המקוון",
+      "description": "להתחבר ולחקור את האינטרנט בבטחה.",
+      "modules": {
+        "webBrowsers": { "title": "הבנת דפדפני אינטרנט", "description": "נווט באינטרנט עם כרום, אדג' או ספארי." },
+        "searchEffectively": { "title": "כיצד לחפש ביעילות", "description": "מצא את מה שאתה צריך באינטרנט באמצעות מנועי חיפוש." },
+        "introEmail": { "title": "מבוא לדואר אלקטרוני", "description": "למד לשלוח ולקבל דואר אלקטרוני." },
+        "virusSafety": { "title": "להישאר בטוחים מפני וירוסים", "description": "הגן על המכשיר שלך מתוכנות מזיקות." }
+      }
+    },
+    "digitalLife": {
+      "title": "חיים דיגיטליים יומיומיים",
+      "description": "תקשר, שתף ונהל את הנוכחות הדיגיטלית שלך.",
+      "modules": {
+        "masteringEmail": { "title": "שליטה בדואר אלקטרוני", "description": "קבצים מצורפים, תיקיות ונימוסי דוא\"ל." },
+        "videoCalling": { "title": "שיחות וידאו עם משפחה וחברים", "description": "התחבר פנים אל פנים עם יקיריך." },
+        "introSocialMedia": { "title": "מבוא לרשתות חברתיות", "description": "הבנת פלטפורמות כמו פייסבוק." },
+        "sharingPhotos": { "title": "שיתוף תמונות בבטחה", "description": "שתף את הזיכרונות שלך מבלי להתפשר על הפרטיות." }
+      }
+    },
+    "advancedSkills": {
+      "title": "מיומנויות מתקדמות ויצירתיות",
+      "description": "מעבר ליסודות: חקור יותר ממה שהטכנולוגיה מציעה.",
+      "modules": {
+        "onlineShopping": { "title": "מבוא לקניות מקוונות", "description": "קנה בבטחה ובנוחות באינטרנט." },
+        "onlineMaps": { "title": "שימוש במפות וניווט מקוונים", "description": "מצא את דרכך עם מפות דיגיטליות." },
+        "photoEditing": { "title": "עריכת תמונות בסיסית", "description": "שפר את התמונות הדיגיטליות שלך." },
+        "productivityTools": { "title": "מבוא לכלי פרודוקטיביות", "description": "שימוש בכלים כמו Google Docs או יסודות Microsoft Word." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "מתחיל טכנולוגי", "description": "השלים את יסודות המחשב והמכשירים." },
+    "onlineWorld": { "name": "חוקר מקוון", "description": "השלים את מסלול העולם המקוון." },
+    "digitalLife": { "name": "מתקשר דיגיטלי", "description": "השלים את מסלול החיים הדיגיטליים היומיומיים." },
+    "advancedSkills": { "name": "וירטואוז טכנולוגי", "description": "השלים את מסלול המיומנויות המתקדמות והיצירתיות." }
+  },
+  "skillAssessmentModal": {
+    "title": "בדיקת מיומנות מהירה",
+    "introduction": "בואו נמצא את המקום הטוב ביותר עבורך להתחיל!",
+    "nextButton": "הבא",
+    "finishButton": "הראה לי את נקודת ההתחלה שלי",
+    "questionProgress": "שאלה {{current}} מתוך {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "כמה נוח לך עם מחשבים?",
+      "options": {
+        "new": "חדש לגמרי",
+        "basics": "אני מכיר כמה יסודות",
+        "confident": "אני די בטוח"
+      }
+    },
+    "q2": {
+      "text": "האם שלחת אימייל בעבר?",
+      "options": {
+        "yes": "כן",
+        "no": "לא"
+      }
+    },
+    "q3": {
+      "text": "האם השתמשת בסמארטפון ליותר מסתם שיחות?",
+      "options": {
+        "yes": "כן",
+        "no": "לא"
+      }
+    }
+  },
+  "learning": {
+    "title": "מרכז למידה",
+    "structuredCourses": "קורסים והדרכות מובנים",
+    "skillsAssessment": "הערכת מיומנויות",
+    "questionNumber": "שאלה {{current}} מתוך {{total}}",
+    "resetAnimation": "אפס",
+    "showAnimation": "הצג אנימציה",
+    "courses": {
+      "beginner": {
+        "title": "מתחילים עם טכנולוגיה",
+        "description": "מושלם למתחילים גמורים. למדו את היסודות צעד אחר צעד.",
+        "estimatedTime": "2-3 שעות",
+        "lessons": {
+          "deviceBasics": {
+            "title": "יסודות המכשיר",
+            "description": "למד כיצד להדליק ולכבות את המכשיר שלך בבטחה",
+            "duration": "15 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">הדלקה וכיבוי של המכשיר שלך</h3><p>לכל מכשיר יש כפתור הפעלה. בואו נלמד להשתמש בו בבטחה.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">למחשבים:</h4><ul class=\"space-y-2\"><li>• חפש כפתור עגול עם סמל הפעלה (⏻)</li><li>• לחץ עליו פעם אחת כדי להדליק</li><li>• כדי לכבות: השתמש בתפריט התחל, ואז \"כיבוי\"</li><li>• לעולם אל תלחץ רק על כפתור ההפעלה כדי לכבות!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">לטלפונים/טאבלטים:</h4><ul class=\"space-y-2\"><li>• כפתור ההפעלה נמצא בדרך כלל בצד</li><li>• לחץ והחזק למשך 2-3 שניות כדי להדליק</li><li>• כדי לכבות: לחץ והחזק, ואז החלק כדי לכבות</li></ul></div></div>",
+            "keyPoints": [
+              "השתמש תמיד בהליכי כיבוי נאותים",
+              "מיקום כפתור ההפעלה משתנה ממכשיר למכשיר",
+              "לעולם אל תכפה כיבוי אלא אם כן זה הכרחי לחלוטין"
+            ],
+            "practiceExercise": "תרגל הדלקה וכיבוי של המכשיר שלך 3 פעמים בשיטה הנכונה.",
+            "animationDesc": "ראה כיצד ללחוץ נכון על כפתור ההפעלה"
+          },
+          "mouseKeyboard": {
+            "title": "שימוש בעכבר ומקלדת",
+            "description": "למד את יסודות התקני הקלט של המחשב",
+            "duration": "20 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">יסודות עכבר ומקלדת</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">יסודות העכבר:</h4><ul class=\"space-y-2\"><li>• לחיצה שמאלית: בחר פריטים, פתח תוכניות</li><li>• לחיצה ימנית: פתח תפריטים עם אפשרויות נוספות</li><li>• לחיצה כפולה: פתח קבצים ותוכניות</li><li>• גלגל גלילה: הזז למעלה ולמטה בדפים</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">יסודות המקלדת:</h4><ul class=\"space-y-2\"><li>• מקש הרווח: הוסף רווחים בין מילים</li><li>• Enter: התחל שורה חדשה או אשר</li><li>• Backspace: מחק את האות שלפני הסמן</li><li>• Shift: צור אותיות גדולות</li></ul></div></div>",
+            "keyPoints": [
+              "לחיצה שמאלית היא הכלי העיקרי שלך",
+              "לחיצה ימנית פותחת תפריטים מועילים",
+              "תרגול מביא לשלמות"
+            ],
+            "practiceExercise": "פתח תוכנת טקסט פשוטה והקלד את שמך, ואז מחק אותו באמצעות מקש ה-backspace.",
+            "animationDesc": "ראה כיצד ללחוץ, ללחוץ פעמיים וללחוץ ימנית"
+          },
+          "internetSafety": {
+            "title": "יסודות בטיחות באינטרנט",
+            "description": "הישאר בטוח באינטרנט עם הטיפים החיוניים האלה",
+            "duration": "25 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">להישאר בטוחים באינטרנט</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">סימני אזהרה להונאות:</h4><ul class=\"space-y-2 text-red-700\"><li>• הודעות דחופות המבקשות כסף</li><li>• בקשות לסיסמאות או מידע אישי</li><li>• הודעות \"זכית\" שלא נרשמת אליהן</li><li>• קישורים או קבצים מצורפים חשודים</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">טיפים לגלישה בטוחה:</h4><ul class=\"space-y-2\"><li>• חפש \"https://\" בכתובות אינטרנט</li><li>• הורד רק מחנויות אפליקציות רשמיות</li><li>• שמור על עדכניות התוכנה שלך</li><li>• השתמש בסיסמאות חזקות וייחודיות</li></ul></div></div>",
+            "keyPoints": [
+              "לעולם אל תמסור מידע אישי לזרים",
+              "כאשר יש ספק, שאל אדם מהימן",
+              "חברות לגיטימיות לא יבקשו סיסמאות באמצעות דוא\"ל"
+            ],
+            "practiceExercise": "זהה 3 סימני אזהרה להונאות מקוונות מהשיעור."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "חיבור למשפחה וחברים",
+        "description": "למד להשתמש ברשתות חברתיות, שיחות וידאו והודעות בבטחה.",
+        "estimatedTime": "3-4 שעות",
+        "lessons": {
+          "videoCalls": {
+            "title": "שיחות וידאו עם המשפחה",
+            "description": "התחבר פנים אל פנים עם יקיריך בכל מקום",
+            "duration": "30 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">ביצוע שיחות וידאו</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">אפליקציות פופולריות לשיחות וידאו:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (אייפון/אייפד): מובנה, קל מאוד</li><li>• <strong>WhatsApp</strong>: עובד על כל הטלפונים</li><li>• <strong>Zoom</strong>: מצוין לשיחות קבוצתיות</li><li>• <strong>Skype</strong>: עובד על מחשבים וטלפונים</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">לפני השיחה שלך:</h4><ul class=\"space-y-2\"><li>• בדוק את חיבור האינטרנט שלך</li><li>• מצא תאורה טובה (פנה לחלון)</li><li>• בדוק את המצלמה והמיקרופון שלך</li><li>• הכן את איש הקשר של האדם</li></ul></div></div>",
+            "keyPoints": [
+              "תאורה טובה עושה הבדל גדול",
+              "בדוק את ההגדרות שלך לפני שיחות חשובות",
+              "רוב האפליקציות פועלות באופן דומה ברגע שלומדים אחת"
+            ],
+            "practiceExercise": "בצע שיחת וידאו ניסיון לבן משפחה או חבר."
+          },
+          "socialMedia": {
+            "title": "יסודות הרשתות החברתיות",
+            "description": "התחבר עם חברים ומשפחה בפייסבוק ופלטפורמות אחרות",
+            "duration": "35 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">מתחילים עם רשתות חברתיות</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">יסודות פייסבוק:</h4><ul class=\"space-y-2\"><li>• צור פרופיל עם שמך האמיתי</li><li>• הוסף תמונת פרופיל יפה</li><li>• שלח בקשות חברות לאנשים שאתה מכיר</li><li>• שתף עדכונים, תמונות וזיכרונות</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">הגדרות פרטיות:</h4><ul class=\"space-y-2\"><li>• קבל רק חברים שאתה באמת מכיר</li><li>• הגדר פוסטים ל\"חברים בלבד\"</li><li>• אל תשתף מידע אישי באופן ציבורי</li><li>• בדוק מה אחרים יכולים לראות עליך</li></ul></div></div>",
+            "keyPoints": [
+              "הגדרות הפרטיות חשובות מאוד",
+              "התחבר רק עם אנשים שאתה מכיר",
+              "חשוב לפני שאתה מפרסם - זה נשאר באינטרנט"
+            ],
+            "practiceExercise": "הגדר את הגדרות הפרטיות שלך ל\"חברים בלבד\" עבור פוסטים."
+          }
+        }
+      },
+      "advanced": {
+        "title": "שליטה בחיים הדיגיטליים",
+        "description": "מיומנויות מתקדמות לחיים דיגיטליים בטוחים.",
+        "estimatedTime": "4-5 שעות",
+        "lessons": {
+          "smartHome": {
+            "title": "מכשירי בית חכם",
+            "description": "שלוט בביתך באמצעות פקודות קוליות ואפליקציות",
+            "duration": "40 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">יסודות הבית החכם</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">מכשירים חכמים פופולריים:</h4><ul class=\"space-y-2\"><li>• <strong>רמקולים חכמים</strong>: Alexa, Google Home</li><li>• <strong>תרמוסטטים חכמים</strong>: שלוט בטמפרטורה מרחוק</li><li>• <strong>אורות חכמים</strong>: עמעם, שנה צבעים, קבע לוחות זמנים</li><li>• <strong>פעמוני דלת חכמים</strong>: ראה מי בדלת</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">מתחילים:</h4><ul class=\"space-y-2\"><li>• התחל עם מכשיר אחד כדי ללמוד</li><li>• הורד את האפליקציה של המכשיר</li><li>• עקוב אחר הוראות ההתקנה צעד אחר צעד</li><li>• תרגל פקודות קוליות בסיסיות</li></ul></div></div>",
+            "keyPoints": [
+              "התחל בפשטות עם מכשיר אחד",
+              "פקודות קוליות מקלות על החיים",
+              "לרוב המכשירים יש אפליקציות מועילות"
+            ],
+            "practiceExercise": "אם יש לך מכשיר חכם, תרגל 3 פקודות קוליות שונות."
+          },
+          "onlineBanking": {
+            "title": "אבטחת בנקאות מקוונת",
+            "description": "נהל את הכספים שלך בבטחה באינטרנט",
+            "duration": "45 דקות",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">בנקאות מקוונת בטוחה</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">יסודות האבטחה:</h4><ul class=\"space-y-2 text-red-700\"><li>• הקלד תמיד את כתובת האינטרנט של הבנק שלך ישירות</li><li>• חפש את סמל המנעול בדפדפן שלך</li><li>• לעולם אל תבצע פעולות בנקאיות ב-Wi-Fi ציבורי</li><li>• התנתק לחלוטין בסיום</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">מה אפשר לעשות באינטרנט:</h4><ul class=\"space-y-2\"><li>• בדוק יתרות חשבון</li><li>• הצג היסטוריית עסקאות</li><li>• העבר כסף בין חשבונות</li><li>• שלם חשבונות אלקטרונית</li></ul></div></div>",
+            "keyPoints": [
+              "אבטחה היא בראש סדר העדיפויות",
+              "הבנק שלך לעולם לא יבקש סיסמאות באמצעות דוא\"ל",
+              "בנקאות מקוונת נוחה מאוד כאשר עושים זאת בבטחה"
+            ],
+            "practiceExercise": "בקר באתר האינטרנט של הבנק שלך ותרגל כניסה (אל תבצע עסקאות עדיין)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "כמה נוח לך להדליק ולכבות מחשב או טלפון?",
+          "options": {
+            "0": "מעולם לא עשיתי זאת",
+            "1": "אני צריך עזרה בכל פעם",
+            "2": "אני יכול לעשות זאת לפעמים",
+            "3": "מאוד נוח לי"
+          }
+        },
+        "1": {
+          "question": "באיזו תדירות אתה משתמש באינטרנט?",
+          "options": {
+            "0": "אף פעם",
+            "1": "לעיתים רחוקות",
+            "2": "לפעמים",
+            "3": "יומיום"
+          }
+        },
+        "2": {
+          "question": "האם אי פעם שלחת אימייל?",
+          "options": {
+            "0": "אף פעם",
+            "1": "עם הרבה עזרה",
+            "2": "כמה פעמים",
+            "3": "באופן קבוע"
+          }
+        },
+        "3": {
+          "question": "כמה נוח לך להוריד אפליקציות?",
+          "options": {
+            "0": "מעולם לא ניסיתי",
+            "1": "מאוד לחוץ",
+            "2": "עם עזרה",
+            "3": "בטוח בעצמי"
+          }
+        },
+        "4": {
+          "question": "האם אתה משתמש בשיחות וידאו (FaceTime, Zoom וכו')?",
+          "options": {
+            "0": "אף פעם",
+            "1": "ניסיתי פעם אחת",
+            "2": "לפעמים",
+            "3": "באופן קבוע"
+          }
+        },
+        "5": {
+          "question": "איך אתה מרגיש לגבי קניות באינטרנט?",
+          "options": {
+            "0": "מפחיד מדי",
+            "1": "מאוד לחוץ",
+            "2": "מוכן לנסות",
+            "3": "קונה באינטרנט לעתים קרובות"
+          }
+        },
+        "6": {
+          "question": "האם השתמשת ברשתות חברתיות (פייסבוק וכו')?",
+          "options": {
+            "0": "אף פעם",
+            "1": "הסתכלתי על זה",
+            "2": "יש לי חשבון",
+            "3": "משתמש בזה באופן קבוע"
+          }
+        },
+        "7": {
+          "question": "כמה נוח לך עם סיסמאות?",
+          "options": {
+            "0": "מאוד מבולבל",
+            "1": "אני צריך עזרה",
+            "2": "מבין את היסודות",
+            "3": "מנהל אותן היטב"
+          }
+        },
+        "8": {
+          "question": "האם אתה מגבה את התמונות והקבצים שלך?",
+          "options": {
+            "0": "לא יודע איך",
+            "1": "מישהו עוזר לי",
+            "2": "לפעמים",
+            "3": "באופן קבוע"
+          }
+        },
+        "9": {
+          "question": "איך אתה לומד טכנולוגיה חדשה?",
+          "options": {
+            "0": "נמנע מזה",
+            "1": "מבקש עזרה",
+            "2": "מנסה בזהירות",
+            "3": "חוקר בביטחון"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "התאם אישית את ההעדפות שלך",
+    "personalInfo": "מידע אישי",
+    "firstName": "שם פרטי",
+    "firstNamePlaceholder": "השם הפרטי שלך",
+    "primaryDevice": "מכשיר עיקרי",
+    "devices": {
+      "windowsComputer": "מחשב Windows",
+      "macComputer": "מק (מחשב אפל)",
+      "iphone": "אייפון",
+      "ipad": "אייפד",
+      "androidDevice": "טלפון או טאבלט אנדרואיד"
+    },
+    "accessibility": "נגישות",
+    "textToSpeech": "טקסט לדיבור",
+    "textToSpeechDesc": "האזן לתשובות שיוקראו לך",
+    "voiceInput": "קלט קולי",
+    "voiceInputDesc": "שאל שאלות באמצעות דיבור",
+    "languagePreferences": "העדפות שפה",
+    "hideLanguages": "הסתר",
+    "modifyLanguages": "שנה שפות",
+    "defaultLanguage": "שפת ברירת מחדל (כל האתר ישתמש בשפה זו)",
+    "defaultLanguageDesc": "זו תהיה השפה העיקרית לכל רכיבי הממשק והאינטראקציות.",
+    "otherLanguages": "שפות אחרות שתרצה להשתמש בהן:",
+    "default": "ברירת מחדל",
+    "languageConfiguration": "תצורת שפה",
+    "languageConfigurationDesc": "השפות שבחרת ישמשו עבור:",
+    "speechToText": "זיהוי ועיבוד דיבור לטקסט",
+    "multilingualText": "אינטראקציות ותגובות טקסט רב-לשוניות",
+    "interfaceLanguage": "אפשרויות שפת ממשק ונגישות",
+    "searchLanguages": "חפש שפות...",
+    "selectAll": "בחר הכל",
+    "deselectAll": "בטל בחירת הכל",
+    "selectedLanguages": "נבחרה שפה {{count}}",
+    "selectedLanguages_plural": "נבחרו {{count}} שפות",
+    "noLanguagesFound": "לא נמצאו שפות התואמות ל-\"{{search}}\"",
+    "languageRequired": "נדרשת לפחות שפה אחת",
+    "languageRequiredDesc": "אנא בחר לפחות שפה אחת כדי להבטיח תפקוד תקין של קלט קולי ואינטראקציות טקסט.",
+    "account": "חשבון",
+    "signOut": "התנתק",
+    "signOutDesc": "התנתק מהחשבון שלך",
+    "cancel": "ביטול",
+    "saving": "שומר...",
+    "saved": "נשמר!",
+    "saveChanges": "שמור שינויים",
+    "errorSaving": "לא ניתן היה לשמור את ההגדרות. אנא נסה שוב.",
+    "lastName": "שם משפחה",
+    "lastNamePlaceholder": "שם המשפחה שלך",
+    "age": "גיל",
+    "techExperience": "רמת ניסיון בטכנולוגיה",
+    "techExperienceOptions": {
+      "beginner": "מתחיל (אני צריך עזרה צעד-אחר-צעד עם רוב הדברים)",
+      "some": "ניסיון כלשהו (אני יכול לעשות משימות בסיסיות אבל צריך עזרה עם דברים חדשים)",
+      "comfortable": "נוח (אני יכול להבין את רוב הדברים אבל לפעמים צריך הדרכה)"
+    },
+    "primaryConcerns": "נושאי טכנולוגיה עיקריים שמעניינים/מדאיגים",
+    "assistiveNeeds": "צרכי נגישות",
+    "communicationStyle": "סגנון הסבר מועדף",
+    "communicationStyleOptions": {
+      "simple": "פשוט ומהיר (רק הצעדים)",
+      "detailed": "מפורט (הסבר את ה'למה')",
+      "visual": "ויזואלי (הצג תמונות/סרטונים כשאפשר)"
+    },
+    "videoRecommendations": "המלצות וידאו",
+    "videoRecommendationsDesc": "הצג סרטונים ומאמרים מועילים לצד הצעדים",
+    "fontSize": "גודל טקסט מועדף",
+    "fontSizeOptions": {
+      "normal": "רגיל",
+      "large": "גדול",
+      "extraLarge": "גדול במיוחד"
+    },
+    "displayPreferences": "תצוגה ועיצוב",
+    "theme": "ערכת צבעים",
+    "themeOptions": {
+      "light": "בהיר",
+      "dark": "כהה"
+    },
+    "highContrast": "מצב ניגודיות גבוהה",
+    "highContrastDesc": "הגדל את ניגודיות הטקסט והרכיבים לראות טובה יותר",
+    "learningPreferences": "העדפות למידה ותוכן"
+  },
+  "common": {
+    "settings": "הגדרות",
+    "signOut": "התנתק",
+    "close": "סגור"
+  },
+  "tips": {
+    "connectWifi": "התחבר ל-Wi-Fi",
+    "connectWifiDesc": "התחבר לרשת בבטחה ובקלות",
+    "videoCall": "בצע שיחת וידאו",
+    "videoCallDesc": "התחבר עם המשפחה פנים אל פנים",
+    "screenshot": "צלם צילום מסך",
+    "screenshotDesc": "לכוד את מה שמופיע על המסך שלך",
+    "updateApps": "עדכן את האפליקציות שלך",
+    "updateAppsDesc": "שמור על האפליקציות שלך עדכניות ומאובטחות"
+  },
+  "category": {
+    "internet": "אינטרנט",
+    "communication": "תקשורת",
+    "basicSkills": "מיומנויות בסיסיות",
+    "maintenance": "תחזוקה"
+  },
+  "questions": {
+    "makeTextBigger": "איך אני מגדיל את הטקסט?",
+    "connectWifi": "איך אני מתחבר ל-Wi-Fi?",
+    "takeScreenshot": "איך אני מצלם צילום מסך?",
+    "makeVideoCall": "איך אני מבצע שיחת וידאו?",
+    "backupPhotos": "איך אני מגבה את התמונות שלי?",
+    "updateApps": "איך אני מעדכן את האפליקציות שלי?",
+    "onlineBanking": "איך אני משתמש בבנקאות מקוונת בבטחה?",
+    "joinZoom": "איך אני מצטרף לפגישת זום?"
+  },
+  "achievements": {
+    "gettingStarted": "מתחילים",
+    "gettingStartedDesc": "שאלת את שאלתך הראשונה",
+    "questionExplorer": "חוקר שאלות",
+    "questionExplorerDesc": "שאלת 5 שאלות",
+    "stepMaster": "אמן הצעדים",
+    "stepMasterDesc": "השלמת 25 צעדים"
+  },
+  "stats": {
+    "seniorsHelped": "אזרחים ותיקים שנעזרו",
+    "questionsAnswered": "שאלות שנענו",
+    "successRate": "שיעור הצלחה",
+    "alwaysAvailable": "תמיד זמין"
+  },
+  "time": {
+    "now": "ממש עכשיו",
+    "hourAgo": "לפני שעה",
+    "hoursAgo": "לפני {{count}} שעות",
+    "dayAgo": "לפני יום",
+    "daysAgo": "לפני {{count}} ימים"
+  },
+  "voice": {
+    "startInput": "התחל קלט קולי",
+    "stopRecording": "עצור הקלטה",
+    "processing": "מעבד...",
+    "recognized": "קול זוהה",
+    "failed": "קלט קולי נכשל"
+  },
+  "language": {
+    "select": "בחר שפה",
+    "translate": "תרגם",
+    "translating": "מתרגם...",
+    "detecting": "מזהה שפה...",
+    "error": "תרגום נכשל"
+  },
+  "auth": {
+    "backToHome": "חזור לדף הבית",
+    "createAccount": "צור חשבון",
+    "welcomeBack": "ברוך שובך",
+    "joinFamily": "הצטרף למשפחת האזרחים הוותיקים המועצמת שלנו",
+    "welcomeBackDesc": "התחבר כדי להמשיך את מסע הטכנולוגיה שלך",
+    "email": "כתובת אימייל",
+    "emailPlaceholder": "הזן את האימייל שלך",
+    "password": "סיסמה",
+    "passwordPlaceholder": "הזן את סיסמתך",
+    "confirmPassword": "אשר סיסמה",
+    "confirmPasswordPlaceholder": "אשר את סיסמתך",
+    "passwordsNoMatch": "הסיסמאות אינן תואמות",
+    "passwordTooShort": "הסיסמה חייבת להכיל לפחות 6 תווים",
+    "creatingAccount": "יוצר חשבון...",
+    "signingIn": "מתחבר...",
+    "alreadyHaveAccount": "כבר יש לך חשבון? התחבר",
+    "dontHaveAccount": "אין לך חשבון? הירשם"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "בואו נכיר אתכם",
+      "subtitle": "עזרו לי להתאים אישית את החוויה שלכם",
+      "firstName": "שם פרטי",
+      "firstNamePlaceholder": "השם הפרטי שלך",
+      "lastName": "שם משפחה",
+      "lastNamePlaceholder": "שם המשפחה שלך",
+      "age": "גיל (עוזר לי להתאים את ההסברים שלי)"
+    },
+    "step2": {
+      "title": "בחרו את השפות המועדפות עליכם",
+      "subtitle": "בחרו את השפות שבהן תרצו להשתמש לתקשורת ולקלט קולי",
+      "languageSelection": "בחירת שפה",
+      "languageDescription": "בחרו את השפות שנוח לכם איתן. זה יאפשר:",
+      "speechToText": "להגדיר זיהוי דיבור-לטקסט כדי להבין את קולכם בשפות אלו",
+      "textInteractions": "לאפשר אינטראקציות טקסט בשפות שבחרתם",
+      "interfaceOptions": "להתאים אישית אפשרויות ממשק לנגישות טובה יותר",
+      "searchLanguages": "חפש שפות...",
+      "selectAll": "בחר הכל",
+      "deselectAll": "בטל בחירת הכל",
+      "selected": "נבחרה שפה {{count}}",
+      "selected_plural": "נבחרו {{count}} שפות",
+      "noLanguagesFound": "לא נמצאו שפות התואמות לחיפוש \"{{search}}\"",
+      "languageRequired": "נדרשת בחירת שפה",
+      "languageRequiredDesc": "אנא בחר לפחות שפה אחת כדי להמשיך. זה מבטיח את החוויה הטובה ביותר לקלט קולי ואינטראקציות טקסט."
+    },
+    "step3": {
+      "title": "באיזה מכשיר אתה משתמש הכי הרבה?",
+      "subtitle": "זה עוזר לי לתת לך הוראות טובות יותר",
+      "devices": {
+        "windowscomputer": "מחשב Windows",
+        "macapplecomputer": "מק (מחשב אפל)",
+        "iphone": "אייפון",
+        "ipad": "אייפד",
+        "androidphoneortablet": "טלפון או טאבלט אנדרואיד",
+        "smarttv": "טלוויזיה חכמה",
+        "multipledevices": "מספר מכשירים"
+      }
+    },
+    "step4": {
+      "title": "כמה נוח לך עם טכנולוגיה?",
+      "subtitle": "היה כן - זה עוזר לי להסביר דברים ברמה הנכונה",
+      "beginner": "מתחיל",
+      "beginnerDesc": "אני צריך עזרה צעד-אחר-צעד עם רוב הדברים",
+      "some": "ניסיון כלשהו",
+      "someDesc": "אני יכול לעשות משימות בסיסיות אבל צריך עזרה עם דברים חדשים",
+      "comfortable": "נוח",
+      "comfortableDesc": "אני יכול להבין את רוב הדברים אבל לפעמים צריך הדרכה"
+    },
+    "step5": {
+      "title": "אילו נושאים טכנולוגיים מדאיגים אותך ביותר?",
+      "subtitle": "בחר את כל מה שרלוונטי - אני אתן עדיפות לעזרה בתחומים אלה",
+      "concerns": {
+        "onlineSafety": "בטיחות ברשת והונאות",
+        "passwordManagement": "ניהול סיסמאות",
+        "videoCalling": "שיחות וידאו עם המשפחה",
+        "socialMedia": "רשתות חברתיות",
+        "onlineBanking": "בנקאות מקוונת",
+        "emailMessaging": "דוא\"ל והודעות",
+        "photoStorage": "אחסון ושיתוף תמונות",
+        "appDownloads": "הורדות ועדכוני אפליקציות",
+        "wifiInternet": "בעיות Wi-Fi ואינטרנט",
+        "deviceSettings": "הגדרות מכשיר",
+        "onlineShopping": "קניות באינטרנט",
+        "healthApps": "אפליקציות ופורטלים בריאותיים"
+      }
+    },
+    "step6": {
+      "title": "האם אתה זקוק לתכונות נגישות כלשהן?",
+      "subtitle": "אני רוצה לוודא שתוכל להשתמש בזה בנוחות",
+      "needs": {
+        "largerText": "טקסט וכפתורים גדולים יותר",
+        "highContrast": "צבעים בניגודיות גבוהה",
+        "voiceCommands": "פקודות קוליות",
+        "screenReader": "תמיכה בקורא מסך",
+        "slowerExplanations": "הסברים איטיים יותר",
+        "visualSteps": "מחוונים חזותיים לשלבים",
+        "noneNeeded": "אין צורך"
+      }
+    },
+    "step7": {
+      "title": "איך אתה מעדיף ללמוד?",
+      "subtitle": "אני אתאים את סגנון ההוראה שלי להעדפתך",
+      "simple": "פשוט ומהיר",
+      "simpleDesc": "רק תגיד לי מה לעשות, צעד אחר צעד",
+      "detailed": "הסברים מפורטים",
+      "detailedDesc": "הסבר למה אני עושה כל שלב",
+      "visual": "למידה חזותית",
+      "visualDesc": "הראה לי תמונות וסרטונים כשאפשר"
+    },
+    "step8": {
+      "title": "נגיעות אחרונות",
+      "subtitle": "הגדר את סביבת הלמידה המושלמת שלך",
+      "textToSpeech": "טקסט לדיבור",
+      "textToSpeechDesc": "האזן לתשובות שיוקראו בקול",
+      "voiceInput": "קלט קולי",
+      "voiceInputDesc": "שאל שאלות באמצעות דיבור",
+      "videoRecommendations": "המלצות וידאו",
+      "videoRecommendationsDesc": "הצג סרטונים ומאמרים מועילים",
+      "textSize": "העדפת גודל טקסט",
+      "textSizeNormal": "רגיל",
+      "textSizeLarge": "גדול",
+      "textSizeExtraLarge": "גדול במיוחד"
+    },
+    "back": "אחורה",
+    "next": "הבא",
+    "settingUp": "מגדיר...",
+    "completeSetup": "השלם הגדרות",
+    "errorSaving": "לא ניתן היה לשמור את ההעדפות שלך. אנא נסה שוב."
+  },
+  "error": {
+    "askQuestionFirst": "אנא שאל שאלה תחילה",
+    "couldntGetAnswer": "מצטער, לא הצלחתי לקבל תשובה כרגע. אנא נסה שוב."
+  },
+  "learningPage": {
+    "headerTitle": "מרכז למידה",
+    "heroTitle": "מיומנויות טכנולוגיות לאזרחים ותיקים",
+    "heroSubtitle": "למד טכנולוגיה בקצב שלך עם שיעורים צעד-אחר-צעד, הדגמות אינטראקטיביות והדרכה אישית.",
+    "takeSkillsAssessment": "בצע הערכת מיומנויות",
+    "orSeparator": "או",
+    "iAmBeginner": "אני מתחיל",
+    "iAmIntermediate": "אני ברמה בינונית",
+    "iAmAdvanced": "אני מתקדם",
+    "yourLevel": "התאמה אישית לרמה: {{level}}",
+    "levelDescription": "הקורסים מותאמים אישית לרמת המיומנות שלך",
+    "retakeAssessment": "בצע הערכה מחדש",
+    "progressLabel": "התקדמות",
+    "lessonsLabel": "שיעורים",
+    "completedOutOfTotal": "{{completed}} מתוך {{total}} הושלמו",
+    "featureInteractiveDemos": "הדגמות אינטראקטיביות",
+    "featureInteractiveDemosDesc": "ראה בדיוק כיצד לבצע כל פעולה",
+    "featureAudioSupport": "תמיכת שמע",
+    "featureAudioSupportDesc": "האזן לשיעורים שיוקראו לך",
+    "featurePrintableGuides": "מדריכים להדפסה",
+    "featurePrintableGuidesDesc": "קח סיכומים איתך ללא חיבור לאינטרנט",
+    "featureCertificates": "תעודות",
+    "featureCertificatesDesc": "קבל תעודות עם השלמת הקורסים",
+    "animationShow": "הצג אנימציה",
+    "animationReset": "אפס",
+    "featuresGridTitle": "גלה את התכונות שלנו",
+    "loadingPaths": "טוען מסלולי למידה...",
+    "noPathsAvailable": "אין מסלולי למידה זמינים כרגע. אנא בדוק שוב מאוחר יותר.",
+    "progressComplete": "{{value}}% הושלם",
+    "recommendedStart": "נקודת התחלה מומלצת",
+    "moduleListTitle": "מודולים למסלול: {{pathTitle}}",
+    "moduleContentTitle": "תוכן למודול: {{moduleTitle}} יופיע כאן.",
+    "loadingCenter": "טוען מרכז למידה...",
+    "moduleTimeLabel": "זמן: "
+  },
+  "languageSelector": {
+    "choosePrompt": "בחר את השפה המועדפת עליך לממשק",
+    "moreComingSoon": "🌍 שפות נוספות בקרוב"
+  },
+  "assessmentView": {
+    "headerTitle": "הערכת מיומנויות",
+    "questionProgress": "שאלה {{current}} מתוך {{total}}",
+    "chooseBestOption": "בחר את האפשרות המתארת אותך בצורה הטובה ביותר",
+    "skipAssessment": "דלג על ההערכה"
+  },
+  "courseView": {
+    "lessonsHeader": "שיעורים",
+    "interactiveDemoLabel": "הדגמה אינטראקטיבית",
+    "startLesson": "התחל שיעור",
+    "reviewLesson": "חזור על השיעור",
+    "congratulations": "כל הכבוד!",
+    "courseComplete": "השלמת את קורס {{courseTitle}}!",
+    "downloadCertificate": "הורד תעודה"
+  },
+  "lessonView": {
+    "readAloud": "קרא שיעור בקול",
+    "interactiveDemoHeader": "הדגמה אינטראקטיבית",
+    "practiceExerciseHeader": "תרגול",
+    "markAsComplete": "סמן כהושלם",
+    "repeatLesson": "חזור על השיעור",
+    "keyPointsHeader": "נקודות מפתח",
+    "takeItWithYouHeader": "קח את זה איתך",
+    "downloadSummaryButton": "הורד סיכום",
+    "downloadSummaryDescription": "קבל סיכום להדפסה של שיעור זה",
+    "needHelpHeader": "צריך עזרה?",
+    "askAQuestionButton": "שאל שאלה",
+    "chatWithHelperButton": "שוחח עם עוזר"
+  },
+  "privacyPolicy": {
+    "headerTitle": "מדיניות פרטיות",
+    "pageTitle": "מדיניות פרטיות",
+    "lastUpdated": "עדכון אחרון: {{date}}",
+    "ourPromise": {
+      "title": "ההבטחה שלנו אליך",
+      "text": "ב-Senior Tech Helper, אנו מבינים שהפרטיות שלך יקרה. אנו מחויבים להגן על המידע האישי שלך ולהיות שקופים לחלוטין לגבי אופן השימוש בו. מדיניות זו מסבירה הכל בשפה פשוטה וברורה."
+    },
+    "cookies": {
+      "title": "כיצד אנו משתמשים בקובצי קוקיז",
+      "whatAreCookiesTitle": "מהם קובצי קוקיז?",
+      "whatAreCookiesText": "קוקיז הם קבצי טקסט קטנים שעוזרים לנו לזכור את ההעדפות שלך ולשפר את החוויה שלך. חשוב עליהם כעל סימניות שעוזרות לנו לזכור איפה עצרת.",
+      "weUseCookiesForTitle": "אנו משתמשים בקוקיז רק כדי לעזור לך:",
+      "uses": [
+        "לזכור את ההעדפות שלך: גודל טקסט, הגדרות קול ואפשרויות נגישות שבחרת",
+        "לשמור אותך מחובר: כדי שלא תצטרך להזין את הסיסמה שלך בכל פעם",
+        "לשפר את העזרה שלנו: הבנת אילו תכונות הן המועילות ביותר לאזרחים ותיקים כמוך"
+      ],
+      "whatWeDontDoTitle": "מה אנחנו לא עושים עם קוקיז:",
+      "donts": [
+        "לעקוב אחריך באתרים אחרים",
+        "למכור את המידע שלך לאף אחד",
+        "לשתף את הנתונים שלך עם מפרסמים",
+        "להשתמש בהם למטרות שיווקיות"
+      ]
+    },
+    "informationCollected": {
+      "title": "איזה מידע אנו אוספים",
+      "youGiveUsTitle": "מידע שאתה נותן לנו:",
+      "youGiveUsList": [
+        "שמך וכתובת האימייל שלך",
+        "סוג המכשיר שלך (אייפון, ווינדוס וכו')",
+        "רמת הניסיון הטכנולוגי שלך",
+        "העדפות הנגישות שלך",
+        "שאלות שאתה שואל את עוזר הבינה המלאכותית שלנו"
+      ],
+      "weCollectTitle": "מידע שאנו אוספים באופן אוטומטי:",
+      "weCollectList": [
+        "כיצד אתה משתמש באפליקציה שלנו (אילו תכונות עוזרות הכי הרבה)",
+        "מידע טכני (סוג דפדפן, מכשיר)",
+        "דוחות שגיאה (כדי לתקן בעיות במהירות)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "כיצד אנו מגנים על המידע שלך",
+      "protections": [
+        "הצפנה: כל הנתונים שלך מוצפנים כך שרק אנחנו יכולים לקרוא אותם",
+        "שרתים מאובטחים: המידע שלך מאוחסן בשרתים מוגנים ומקצועיים",
+        "גישה מוגבלת: רק חברי הצוות החיוניים שלנו יכולים לגשת לנתונים שלך",
+        "בדיקות אבטחה קבועות: אנו מנטרים כל הזמן אחר איומי אבטחה"
+      ]
+    },
+    "sharingInformation": {
+      "title": "שיתוף המידע שלך",
+      "neverSell": "לעולם לא נמכור או נשכיר את המידע האישי שלך.",
+      "onlyShareInSituations": "אנו משתפים את המידע שלך רק במצבים מוגבלים מאוד אלה:",
+      "sharingSituations": [
+        "באישורך: אם תבקש מאיתנו במפורש לשתף משהו",
+        "לתמיכה טכנית: עם ספקי שירות מהימנים שעוזרים לנו להפעיל את האפליקציה (הם מחויבים להסכמי פרטיות מחמירים)",
+        "אם נדרש על פי חוק: רק אם אנו נדרשים חוקית לעשות זאת"
+      ]
+    },
+    "yourRights": {
+      "title": "הזכויות והבחירות שלך",
+      "youCanAlwaysTitle": "אתה תמיד יכול:",
+      "rightsList": [
+        "לראות איזה מידע יש לנו עליך",
+        "לבקש מאיתנו לתקן כל מידע שגוי",
+        "לבקש שנמחק את חשבונך והנתונים שלך",
+        "לכבות קוקיז בהגדרות הדפדפן שלך",
+        "לפנות אלינו בכל שאלה בנושא פרטיות"
+      ],
+      "noteDeletingCookiesTitle": "הערה לגבי מחיקת קוקיז:",
+      "noteDeletingCookiesText": "אם תמחק את קובצי הקוקיז שלנו, תצטרך להגדיר מחדש את ההעדפות שלך, ותכונות מסוימות עלולות לא לעבוד כראוי."
+    },
+    "thirdPartyServices": {
+      "title": "שירותי צד שלישי",
+      "weUseTrustedServices": "אנו משתמשים בכמה שירותי צד שלישי מהימנים כדי לסייע במתן התכונות שלנו:",
+      "servicesList": [
+        "בינה מלאכותית של גוגל (Gemini): מפעילה את העוזר החכם שלנו שעונה על שאלותיך",
+        "Firebase: מאחסן באופן מאובטח את פרטי החשבון שלך",
+        "YouTube/אתרים חינוכיים: אנו עשויים להמליץ על סרטונים ומאמרים מועילים"
+      ],
+      "servicesOwnPolicies": "לשירותים אלה יש מדיניות פרטיות משלהם, ואנו משתפים רק את המידע המינימלי הדרוש להם כדי לעבוד."
+    },
+    "changesToPolicy": {
+      "title": "שינויים במדיניות זו",
+      "text": "אם נצטרך לעדכן מדיניות פרטיות זו, נודיע לך באימייל ונציג הודעה באפליקציה. תמיד נסביר מה משתנה ולמה בשפה פשוטה וברורה."
+    },
+    "contactUs": {
+      "title": "צרו קשר",
+      "questions": "יש לך שאלות לגבי פרטיותך או מדיניות זו? צוות TechStep כאן כדי לעזור!",
+      "email": "אימייל: privacy@techstep.com",
+      "phone": "טלפון: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "דואר: צוות הפרטיות של TechStep",
+      "mailLine2": "רחוב תמיכה טכנית 123",
+      "mailLine3": "עיר עוזרת, HC 12345"
+    },
+    "footer": {
+      "thankYou": "תודה שאתה סומך על TechStep עם המידע שלך. אנו מחויבים לשמור עליו בטוח ולהשתמש בו רק כדי לעזור לך להצליח עם הטכנולוגיה.",
+      "backToHome": "חזור לדף הבית"
+    }
+  }
+}

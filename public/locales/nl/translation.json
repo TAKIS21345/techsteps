@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "features": "Functies",
+    "reviews": "Recensies",
+    "signIn": "Inloggen",
+    "getStarted": "Aan de slag"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Wereldwijd vertrouwd door senioren",
+      "title": "Technologie eenvoudig",
+      "titleHighlight": "en duidelijk gemaakt",
+      "subtitle": "Beheers technologie met vertrouwen door gepersonaliseerde, stapsgewijze begeleiding die voelt alsof u een geduldige vriend naast u heeft.",
+      "startLearningButton": "Begin gratis met leren",
+      "watchDemoButton": "Bekijk demo",
+      "freeForever": "Voor altijd gratis",
+      "noCreditCard": "Geen creditcard vereist",
+      "available247": "24/7 beschikbaar"
+    },
+    "featuresSection": {
+      "title": "Functies",
+      "subtitle": "Dit zijn slechts enkele van de functies die worden aangeboden om u te helpen groeien!",
+      "items": [
+        {
+          "title": "Stapsgewijze begeleiding",
+          "description": "Krijg duidelijke, eenvoudig te volgen instructies voor elke technische vraag. Elke stap wordt in eenvoudige bewoordingen met visuele aanwijzingen uitgelegd."
+        },
+        {
+          "title": "Spraakondersteuning",
+          "description": "Stel vragen met uw stem en laat antwoorden hardop voorlezen. Perfect voor handsfree hulp wanneer u die het meest nodig heeft."
+        },
+        {
+          "title": "Foto-uitlegger",
+          "description": "Maak een foto van een kabel, knop of apparaat en krijg direct een uitleg van wat het is en hoe u het moet gebruiken."
+        },
+        {
+          "title": "Seniorvriendelijk ontwerp",
+          "description": "Grote tekst, intuïtieve interface en geduldige uitleg, speciaal ontworpen met senioren in gedachten."
+        },
+        {
+          "title": "Veilig en beveiligd",
+          "description": "Uw persoonlijke informatie wordt beschermd met beveiliging van bedrijfsniveau. Geen gegevens gedeeld met derden."
+        },
+        {
+          "title": "Directe antwoorden",
+          "description": "Krijg onmiddellijk hulp, 24/7. Geen wachttijden of afspraken plannen. Vraag gewoon en krijg antwoord."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Populaire vragen waarmee we helpen",
+      "subtitle": "Zie waar andere senioren naar vragen",
+      "askYourQuestionButton": "Stel nu uw vraag"
+    },
+    "testimonialsSection": {
+      "title": "Wat onze gemeenschap zegt",
+      "subtitle": "Sluit u aan bij duizenden senioren die technologiehulp eenvoudig hebben gemaakt",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Eindelijk iemand die technologie uitlegt op een manier die ik kan begrijpen! De stapsgewijze instructies hielpen me mijn nieuwe telefoon perfect in te stellen. Ik voel me nu zoveel zelfverzekerder!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "De spraakfunctie is geweldig! Ik kan gewoon mijn vragen hardop stellen en duidelijke antwoorden krijgen. Het is alsof je 24/7 een technisch onderlegde kleinkind beschikbaar hebt.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Ik ben dol op de fotofunctie! Ik maakte een foto van een verwarrende kabel en wist meteen waarvoor hij diende. Deze app heeft me veel zelfverzekerder gemaakt met technologie.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Ik was zo gefrustreerd met mijn smart-tv totdat ik deze helper vond. Nu kan ik programma's streamen, instellingen aanpassen en zelfs videochatten met mijn kleinkinderen!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Leeftijd {{age}}"
+    },
+    "ctaSection": {
+      "title": "Klaar om technologie te beheersen?",
+      "subtitle": "Sluit u aan bij onze gemeenschap van zelfredzame senioren die technologie eenvoudig en toegankelijk hebben gemaakt. Begin vandaag nog met het krijgen van duidelijke, nuttige antwoorden - volledig gratis!",
+      "getStartedButton": "Begin vandaag gratis",
+      "setupInMinutes": "Installatie in 2 minuten"
+    },
+    "footer": {
+      "description": "Technologie toegankelijk en begrijpelijk maken voor senioren overal.",
+      "featuresTitle": "Functies",
+      "featuresItems": [
+        "Stapsgewijze hulp",
+        "Spraakondersteuning",
+        "Foto-uitlegger",
+        "24/7 beschikbaarheid"
+      ],
+      "supportTitle": "Ondersteuning",
+      "supportItems": [
+        "Helpcentrum",
+        "Aan de slag",
+        "Gemeenschap",
+        "Neem contact met ons op"
+      ],
+      "companyTitle": "Bedrijf",
+      "companyItems": [
+        "Over ons",
+        "Privacybeleid",
+        "Servicevoorwaarden",
+        "Toegankelijkheid"
+      ],
+      "copyright": "© 2025 TechStep. Met ❤️ gemaakt voor senioren overal.",
+      "trustedBy": "Vertrouwd door",
+      "trustedByCount": "50.000+ senioren"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welkom bij TechStep",
+    "welcomeUser": "Welkom terug, {{name}}!",
+    "ready": "Klaar om iets nieuws te leren?",
+    "getHelp": "Krijg direct hulp",
+    "askQuestion": "Stel een technische vraag en krijg stapsgewijze begeleiding",
+    "placeholder": "Waar wilt u vandaag hulp bij?",
+    "getSteps": "Krijg stapsgewijze hulp",
+    "gettingSteps": "Uw stappen worden opgehaald...",
+    "craftingSteps": "Uw gepersonaliseerde stappen worden gemaakt...",
+    "takesAMoment": "Dit kan even duren",
+    "quickTips": "Snelle tips voor u",
+    "popularQuestions": "Populaire vragen vandaag",
+    "quickActions": "Snelle acties",
+    "recentActivity": "Recente activiteit",
+    "yourProgress": "Uw voortgang",
+    "needHelp": "Hulp nodig?",
+    "helpingHand": "We zijn hier om u te helpen slagen",
+    "chatHuman": "Chat met een mens",
+    "browseGuides": "Blader door videogidsen",
+    "browseTips": "Blader door tips",
+    "commonSolutions": "Vind veelvoorkomende oplossingen",
+    "stepsCompleted": "{{count}} stappen voltooid",
+    "needMoreInfo": "Ik heb wat meer informatie nodig om u beter te kunnen helpen"
+  },
+  "aiTools": {
+    "title": "AI-hulptools",
+    "description": "Foto-uitlegger & tech-vertaler"
+  },
+  "aiToolsModal": {
+    "header": "AI-hulptools",
+    "tabs": {
+      "photoExplainer": "Foto-uitlegger",
+      "techWordBuster": "Tech-woordkraker"
+    },
+    "photoExplainer": {
+      "title": "Foto-uitlegger",
+      "description": "Upload een foto van een kabel, knop of apparaat en krijg direct een uitleg.",
+      "uploadButton": "Afbeelding uploaden",
+      "questionLabel": "Stel een vraag over de foto (optioneel)",
+      "questionPlaceholder": "Waar is deze kabel voor?",
+      "explainButton": "Foto uitleggen",
+      "analyzingButton": "Analyseren...",
+      "alertNoPhoto": "Upload eerst een foto of controleer de API-configuratie.",
+      "errorResponse": "<p class=\"text-red-600\">Sorry, ik kon de afbeelding niet analyseren. Probeer het opnieuw.</p>",
+      "readResponseButton": "🔊 Reactie hardop voorlezen",
+      "previewAlt": "Voorbeeld"
+    },
+    "techWordBuster": {
+      "title": "Tech-woordkraker",
+      "description": "Verward door een technische term? Krijg een eenvoudige, gemakkelijk te begrijpen uitleg met analogieën uit de echte wereld.",
+      "inputLabel": "Voer een technisch woord of een zin in",
+      "inputPlaceholder": "bijv. Cloudopslag, WiFi, Bluetooth",
+      "explainButton": "Maak dit duidelijk",
+      "explainingButton": "Uitleggen...",
+      "alertNoTerm": "Voer eerst een technische term in of controleer de API-configuratie.",
+      "errorResponse": "<p class=\"text-red-600\">Sorry, ik kon die term niet uitleggen. Probeer het opnieuw.</p>",
+      "readExplanationButton": "🔊 Uitleg hardop voorlezen"
+    },
+    "apiErrorNoExplanation": "Geen uitleg ontvangen"
+  },
+  "clarificationModal": {
+    "headerTitle": "Ik heb wat meer informatie nodig",
+    "yourQuestionLabel": "Uw vraag:",
+    "tellMeMorePrompt": "Om u de beste hulp te geven, kunt u mij wat meer vertellen?",
+    "forExampleLabel": "Bijvoorbeeld:",
+    "textareaPlaceholder": "Geef meer details...",
+    "textareaSrLabel": "Geef meer details voor uw vraag",
+    "skipButton": "Nu overslaan",
+    "submitButton": "Krijg betere hulp",
+    "loadingButton": "Hulp wordt ingeschakeld..."
+  },
+  "languageNotificationBanner": {
+    "title": "Voltooi uw taalinstelling",
+    "description": "Configureer uw voorkeurstalen voor betere spraakinvoer en tekstinteracties.",
+    "buttonText": "Installatie voltooien"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Basisprincipes van computer en apparaat",
+      "description": "De absolute basisprincipes om u op weg te helpen met technologie.",
+      "modules": {
+        "turnOnDevice": { "title": "Een apparaat aanzetten", "description": "Leer hoe u computers en smartphones aanzet." },
+        "mouseTouchscreen": { "title": "Een muis/touchscreen gebruiken", "description": "Beheers aanwijzen, klikken en tikken." },
+        "keyboardTyping": { "title": "Basisprincipes van toetsenbord/typen", "description": "Raak vertrouwd met de basisprincipes van typen." },
+        "filesFolders": { "title": "Bestanden en mappen begrijpen", "description": "Leer hoe digitale informatie wordt georganiseerd." }
+      }
+    },
+    "onlineWorld": {
+      "title": "De online wereld",
+      "description": "Verbinding maken en veilig het internet verkennen.",
+      "modules": {
+        "webBrowsers": { "title": "Webbrowsers begrijpen", "description": "Navigeer op internet met Chrome, Edge of Safari." },
+        "searchEffectively": { "title": "Hoe effectief te zoeken", "description": "Vind wat u online nodig heeft met behulp van zoekmachines." },
+        "introEmail": { "title": "Inleiding tot e-mail", "description": "Leer elektronische post verzenden en ontvangen." },
+        "virusSafety": { "title": "Veilig blijven voor virussen", "description": "Bescherm uw apparaat tegen schadelijke software." }
+      }
+    },
+    "digitalLife": {
+      "title": "Dagelijks digitaal leven",
+      "description": "Communiceer, deel en beheer uw digitale aanwezigheid.",
+      "modules": {
+        "masteringEmail": { "title": "E-mail beheersen", "description": "Bijlagen, mappen en e-mailetiquette." },
+        "videoCalling": { "title": "Videobellen met familie en vrienden", "description": "Maak face-to-face contact met dierbaren." },
+        "introSocialMedia": { "title": "Inleiding tot sociale media", "description": "Platforms zoals Facebook begrijpen." },
+        "sharingPhotos": { "title": "Foto's veilig delen", "description": "Deel uw herinneringen zonder de privacy in gevaar te brengen." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Geavanceerde en creatieve vaardigheden",
+      "description": "Naast de basis: ontdek meer van wat technologie te bieden heeft.",
+      "modules": {
+        "onlineShopping": { "title": "Inleiding tot online winkelen", "description": "Winkel veilig en gemakkelijk online." },
+        "onlineMaps": { "title": "Online kaarten en navigatie gebruiken", "description": "Vind uw weg met digitale kaarten." },
+        "photoEditing": { "title": "Basis fotobewerking", "description": "Verbeter uw digitale foto's." },
+        "productivityTools": { "title": "Inleiding tot productiviteitstools", "description": "Tools zoals de basisprincipes van Google Docs of Microsoft Word gebruiken." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Tech Starter", "description": "Basisprincipes van computer en apparaat voltooid." },
+    "onlineWorld": { "name": "Online ontdekkingsreiziger", "description": "Het pad 'De online wereld' voltooid." },
+    "digitalLife": { "name": "Digitale communicator", "description": "Het pad 'Dagelijks digitaal leven' voltooid." },
+    "advancedSkills": { "name": "Tech Virtuoso", "description": "Het pad 'Geavanceerde en creatieve vaardigheden' voltooid." }
+  },
+  "skillAssessmentModal": {
+    "title": "Snelle vaardigheidscontrole",
+    "introduction": "Laten we de beste plek voor u vinden om te beginnen!",
+    "nextButton": "Volgende",
+    "finishButton": "Toon mijn startpunt",
+    "questionProgress": "Vraag {{current}} van {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Hoe comfortabel bent u met computers?",
+      "options": {
+        "new": "Gloednieuw",
+        "basics": "Ik ken enkele basisprincipes",
+        "confident": "Ik ben behoorlijk zelfverzekerd"
+      }
+    },
+    "q2": {
+      "text": "Heeft u ooit een e-mail verzonden?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nee"
+      }
+    },
+    "q3": {
+      "text": "Heeft u een smartphone voor meer dan alleen bellen gebruikt?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nee"
+      }
+    }
+  },
+  "learning": {
+    "title": "Leercentrum",
+    "structuredCourses": "Gestructureerde cursussen en tutorials",
+    "skillsAssessment": "Vaardighedenbeoordeling",
+    "questionNumber": "Vraag {{current}} van {{total}}",
+    "resetAnimation": "Resetten",
+    "showAnimation": "Animatie tonen",
+    "courses": {
+      "beginner": {
+        "title": "Aan de slag met technologie",
+        "description": "Perfect voor complete beginners. Leer de basisprincipes stap voor stap.",
+        "estimatedTime": "2-3 uur",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Basisprincipes van het apparaat",
+            "description": "Leer hoe u uw apparaat veilig aan- en uitzet",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Uw apparaat aan- en uitzetten</h3><p>Elk apparaat heeft een aan/uit-knop. Laten we leren hoe we deze veilig kunnen gebruiken.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Voor computers:</h4><ul class=\"space-y-2\"><li>• Zoek naar een ronde knop met een aan/uit-symbool (⏻)</li><li>• Druk er eenmaal op om in te schakelen</li><li>• Om uit te schakelen: Gebruik het menu Start en vervolgens \"Afsluiten\"</li><li>• Druk nooit alleen op de aan/uit-knop om uit te schakelen!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Voor telefoons/tablets:</h4><ul class=\"space-y-2\"><li>• De aan/uit-knop bevindt zich meestal aan de zijkant</li><li>• Houd 2-3 seconden ingedrukt om in te schakelen</li><li>• Om uit te schakelen: Houd ingedrukt en schuif vervolgens om uit te schakelen</li></ul></div></div>",
+            "keyPoints": [
+              "Gebruik altijd de juiste afsluitprocedures",
+              "De locatie van de aan/uit-knop verschilt per apparaat",
+              "Schakel nooit geforceerd uit, tenzij absoluut noodzakelijk"
+            ],
+            "practiceExercise": "Oefen het 3 keer aan- en uitzetten van uw apparaat met de juiste methode.",
+            "animationDesc": "Bekijk hoe u de aan/uit-knop correct indrukt"
+          },
+          "mouseKeyboard": {
+            "title": "Muis en toetsenbord gebruiken",
+            "description": "Beheers de basisprincipes van computerinvoerapparaten",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Basisprincipes van muis en toetsenbord</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Basisprincipes van de muis:</h4><ul class=\"space-y-2\"><li>• Linkerklik: items selecteren, programma's openen</li><li>• Rechterklik: menu's openen met meer opties</li><li>• Dubbelklik: bestanden en programma's openen</li><li>• Scrollwiel: op en neer bewegen op pagina's</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Essentiële toetsenbordfuncties:</h4><ul class=\"space-y-2\"><li>• Spatiebalk: spaties tussen woorden toevoegen</li><li>• Enter: een nieuwe regel beginnen of bevestigen</li><li>• Backspace: de letter voor de cursor verwijderen</li><li>• Shift: hoofdletters maken</li></ul></div></div>",
+            "keyPoints": [
+              "Linkerklik is uw belangrijkste hulpmiddel",
+              "Rechterklik opent handige menu's",
+              "Oefening baart kunst"
+            ],
+            "practiceExercise": "Open een eenvoudig tekstprogramma, typ uw naam en verwijder deze vervolgens met de backspace-toets.",
+            "animationDesc": "Bekijk hoe u klikt, dubbelklikt en rechtsklikt"
+          },
+          "internetSafety": {
+            "title": "Basisprincipes van internetveiligheid",
+            "description": "Blijf veilig online met deze essentiële tips",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Veilig online blijven</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Waarschuwingssignalen van oplichting:</h4><ul class=\"space-y-2 text-red-700\"><li>• Dringende berichten waarin om geld wordt gevraagd</li><li>• Verzoeken om wachtwoorden of persoonlijke informatie</li><li>• Berichten \"U heeft gewonnen\" waarvoor u niet heeft meegedaan</li><li>• Verdachte links of bijlagen</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tips voor veilig browsen:</h4><ul class=\"space-y-2\"><li>• Zoek naar \"https://\" in webadressen</li><li>• Download alleen van officiële app-winkels</li><li>• Houd uw software up-to-date</li><li>• Gebruik sterke, unieke wachtwoorden</li></ul></div></div>",
+            "keyPoints": [
+              "Geef nooit persoonlijke informatie aan vreemden",
+              "Vraag bij twijfel een vertrouwd persoon",
+              "Legitieme bedrijven vragen niet om wachtwoorden via e-mail"
+            ],
+            "practiceExercise": "Identificeer 3 waarschuwingssignalen van online oplichting uit de les."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Verbinding maken met familie en vrienden",
+        "description": "Leer sociale media, videogesprekken en berichten veilig te gebruiken.",
+        "estimatedTime": "3-4 uur",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videogesprekken met familie",
+            "description": "Maak overal face-to-face contact met dierbaren",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Videogesprekken voeren</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populaire apps voor videogesprekken:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Ingebouwd, heel eenvoudig</li><li>• <strong>WhatsApp</strong>: Werkt op alle telefoons</li><li>• <strong>Zoom</strong>: Ideaal voor groepsgesprekken</li><li>• <strong>Skype</strong>: Werkt op computers en telefoons</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Voor uw gesprek:</h4><ul class=\"space-y-2\"><li>• Controleer uw internetverbinding</li><li>• Zoek goede verlichting (kijk naar een raam)</li><li>• Test uw camera en microfoon</li><li>• Houd de contactgegevens van de persoon bij de hand</li></ul></div></div>",
+            "keyPoints": [
+              "Goede verlichting maakt een groot verschil",
+              "Test uw opstelling voor belangrijke gesprekken",
+              "De meeste apps werken op dezelfde manier als u er eenmaal een heeft geleerd"
+            ],
+            "practiceExercise": "Voer een testvideogesprek met een familielid of vriend."
+          },
+          "socialMedia": {
+            "title": "Basisprincipes van sociale media",
+            "description": "Maak contact met vrienden en familie op Facebook en andere platforms",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Aan de slag met sociale media</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Basisprincipes van Facebook:</h4><ul class=\"space-y-2\"><li>• Maak een profiel aan met uw echte naam</li><li>• Voeg een leuke profielfoto toe</li><li>• Stuur vriendschapsverzoeken naar mensen die u kent</li><li>• Deel updates, foto's en herinneringen</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Privacy-instellingen:</h4><ul class=\"space-y-2\"><li>• Accepteer alleen vrienden die u daadwerkelijk kent</li><li>• Stel berichten in op \"Alleen vrienden\"</li><li>• Deel geen persoonlijke informatie openbaar</li><li>• Controleer wat anderen over u kunnen zien</li></ul></div></div>",
+            "keyPoints": [
+              "Privacy-instellingen zijn erg belangrijk",
+              "Maak alleen contact met mensen die u kent",
+              "Denk na voordat u iets plaatst - het blijft online"
+            ],
+            "practiceExercise": "Stel uw privacy-instellingen in op \"Alleen vrienden\" voor berichten."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Beheersing van het digitale leven",
+        "description": "Geavanceerde vaardigheden voor een zelfverzekerd digitaal leven.",
+        "estimatedTime": "4-5 uur",
+        "lessons": {
+          "smartHome": {
+            "title": "Slimme huisapparaten",
+            "description": "Bedien uw huis met spraakopdrachten en apps",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Basisprincipes van een slim huis</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Populaire slimme apparaten:</h4><ul class=\"space-y-2\"><li>• <strong>Slimme luidsprekers</strong>: Alexa, Google Home</li><li>• <strong>Slimme thermostaten</strong>: Bedien de temperatuur op afstand</li><li>• <strong>Slimme lampen</strong>: Dim, verander van kleur, stel schema's in</li><li>• <strong>Slimme deurbellen</strong>: Zie wie er aan de deur is</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Aan de slag:</h4><ul class=\"space-y-2\"><li>• Begin met één apparaat om te leren</li><li>• Download de app van het apparaat</li><li>• Volg de installatie-instructies stap voor stap</li><li>• Oefen basisspraakopdrachten</li></ul></div></div>",
+            "keyPoints": [
+              "Begin eenvoudig met één apparaat",
+              "Spraakopdrachten maken het leven gemakkelijker",
+              "De meeste apparaten hebben handige apps"
+            ],
+            "practiceExercise": "Als u een slim apparaat heeft, oefen dan 3 verschillende spraakopdrachten."
+          },
+          "onlineBanking": {
+            "title": "Beveiliging van online bankieren",
+            "description": "Beheer uw financiën veilig online",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Veilig online bankieren</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Essentiële beveiliging:</h4><ul class=\"space-y-2 text-red-700\"><li>• Typ altijd rechtstreeks het webadres van uw bank in</li><li>• Zoek naar het slotpictogram in uw browser</li><li>• Bankier nooit op openbare Wi-Fi</li><li>• Log volledig uit als u klaar bent</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Wat u online kunt doen:</h4><ul class=\"space-y-2\"><li>• Rekeningsaldi controleren</li><li>• Transactiegeschiedenis bekijken</li><li>• Geld overmaken tussen rekeningen</li><li>• Rekeningen elektronisch betalen</li></ul></div></div>",
+            "keyPoints": [
+              "Beveiliging is de hoogste prioriteit",
+              "Uw bank zal nooit om wachtwoorden via e-mail vragen",
+              "Online bankieren is erg handig als het veilig wordt gedaan"
+            ],
+            "practiceExercise": "Bezoek de website van uw bank en oefen met inloggen (voer nog geen transacties uit)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Hoe comfortabel voelt u zich bij het aan- en uitzetten van een computer of telefoon?",
+          "options": {
+            "0": "Nog nooit gedaan",
+            "1": "Heb elke keer hulp nodig",
+            "2": "Kan het soms doen",
+            "3": "Zeer comfortabel"
+          }
+        },
+        "1": {
+          "question": "Hoe vaak gebruikt u internet?",
+          "options": {
+            "0": "Nooit",
+            "1": "Zelden",
+            "2": "Soms",
+            "3": "Dagelijks"
+          }
+        },
+        "2": {
+          "question": "Heeft u ooit een e-mail verzonden?",
+          "options": {
+            "0": "Nooit",
+            "1": "Met veel hulp",
+            "2": "Een paar keer",
+            "3": "Regelmatig"
+          }
+        },
+        "3": {
+          "question": "Hoe comfortabel voelt u zich bij het downloaden van apps?",
+          "options": {
+            "0": "Nog nooit geprobeerd",
+            "1": "Zeer nerveus",
+            "2": "Met hulp",
+            "3": "Zelfverzekerd"
+          }
+        },
+        "4": {
+          "question": "Gebruikt u videogesprekken (FaceTime, Zoom, etc.)?",
+          "options": {
+            "0": "Nooit",
+            "1": "Eén keer geprobeerd",
+            "2": "Soms",
+            "3": "Regelmatig"
+          }
+        },
+        "5": {
+          "question": "Hoe denkt u over online winkelen?",
+          "options": {
+            "0": "Te eng",
+            "1": "Zeer nerveus",
+            "2": "Bereid om te proberen",
+            "3": "Winkel vaak online"
+          }
+        },
+        "6": {
+          "question": "Heeft u sociale media (Facebook, etc.) gebruikt?",
+          "options": {
+            "0": "Nooit",
+            "1": "Heb ernaar gekeken",
+            "2": "Heb een account",
+            "3": "Gebruik het regelmatig"
+          }
+        },
+        "7": {
+          "question": "Hoe comfortabel bent u met wachtwoorden?",
+          "options": {
+            "0": "Zeer verward",
+            "1": "Hulp nodig",
+            "2": "Begrijp de basis",
+            "3": "Beheer ze goed"
+          }
+        },
+        "8": {
+          "question": "Maakt u een back-up van uw foto's en bestanden?",
+          "options": {
+            "0": "Weet niet hoe",
+            "1": "Iemand helpt me",
+            "2": "Soms",
+            "3": "Regelmatig"
+          }
+        },
+        "9": {
+          "question": "Hoe leert u nieuwe technologie?",
+          "options": {
+            "0": "Vermijd het",
+            "1": "Vraag om hulp",
+            "2": "Probeer voorzichtig",
+            "3": "Verken met vertrouwen"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Pas uw voorkeuren aan",
+    "personalInfo": "Persoonlijke informatie",
+    "firstName": "Voornaam",
+    "firstNamePlaceholder": "Uw voornaam",
+    "primaryDevice": "Primair apparaat",
+    "devices": {
+      "windowsComputer": "Windows-computer",
+      "macComputer": "Mac (Apple-computer)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android-telefoon of -tablet"
+    },
+    "accessibility": "Toegankelijkheid",
+    "textToSpeech": "Tekst-naar-spraak",
+    "textToSpeechDesc": "Laat antwoorden hardop voorlezen",
+    "voiceInput": "Spraakinvoer",
+    "voiceInputDesc": "Stel vragen door te spreken",
+    "languagePreferences": "Taalvoorkeuren",
+    "hideLanguages": "Verbergen",
+    "modifyLanguages": "Talen wijzigen",
+    "defaultLanguage": "Standaardtaal (de hele website zal deze taal gebruiken)",
+    "defaultLanguageDesc": "Dit is de primaire taal voor alle interface-elementen en interacties.",
+    "otherLanguages": "Andere talen die u wilt gebruiken:",
+    "default": "Standaard",
+    "languageConfiguration": "Taalconfiguratie",
+    "languageConfigurationDesc": "Uw geselecteerde talen worden gebruikt voor:",
+    "speechToText": "Spraak-naar-tekstherkenning en -verwerking",
+    "multilingualText": "Meertalige tekstinteracties en -reacties",
+    "interfaceLanguage": "Interfacetaalopties en toegankelijkheid",
+    "searchLanguages": "Talen zoeken...",
+    "selectAll": "Alles selecteren",
+    "deselectAll": "Alles deselecteren",
+    "selectedLanguages": "Geselecteerd: {{count}} taal",
+    "selectedLanguages_plural": "Geselecteerd: {{count}} talen",
+    "noLanguagesFound": "Geen talen gevonden die overeenkomen met \"{{search}}\"",
+    "languageRequired": "Minstens één taal vereist",
+    "languageRequiredDesc": "Selecteer ten minste één taal om een goede werking van spraakinvoer en tekstinteracties te garanderen.",
+    "account": "Account",
+    "signOut": "Uitloggen",
+    "signOutDesc": "Uitloggen bij uw account",
+    "cancel": "Annuleren",
+    "saving": "Opslaan...",
+    "saved": "Opgeslagen!",
+    "saveChanges": "Wijzigingen opslaan",
+    "errorSaving": "Kon de instellingen niet opslaan. Probeer het opnieuw.",
+    "lastName": "Achternaam",
+    "lastNamePlaceholder": "Uw achternaam",
+    "age": "Leeftijd",
+    "techExperience": "Niveau van technologische ervaring",
+    "techExperienceOptions": {
+      "beginner": "Beginner (ik heb stapsgewijze hulp nodig bij de meeste dingen)",
+      "some": "Enige ervaring (ik kan basistaken uitvoeren, maar heb hulp nodig bij nieuwe dingen)",
+      "comfortable": "Comfortabel (ik kan de meeste dingen zelf uitzoeken, maar heb soms begeleiding nodig)"
+    },
+    "primaryConcerns": "Primaire technische onderwerpen van belang/zorg",
+    "assistiveNeeds": "Toegankelijkheidsbehoeften",
+    "communicationStyle": "Voorkeursstijl voor uitleg",
+    "communicationStyleOptions": {
+      "simple": "Eenvoudig en snel (alleen de stappen)",
+      "detailed": "Gedetailleerd (leg het 'waarom' uit)",
+      "visual": "Visueel (toon foto's/video's indien mogelijk)"
+    },
+    "videoRecommendations": "Videoaanbevelingen",
+    "videoRecommendationsDesc": "Toon nuttige video's en artikelen naast de stappen",
+    "fontSize": "Voorkeurstekstgrootte",
+    "fontSizeOptions": {
+      "normal": "Normaal",
+      "large": "Groot",
+      "extraLarge": "Extra groot"
+    },
+    "displayPreferences": "Weergave en thema",
+    "theme": "Kleurthema",
+    "themeOptions": {
+      "light": "Licht",
+      "dark": "Donker"
+    },
+    "highContrast": "Modus met hoog contrast",
+    "highContrastDesc": "Verhoog het contrast van tekst en elementen voor betere zichtbaarheid",
+    "learningPreferences": "Leer- en inhoudsvoorkeuren"
+  },
+  "common": {
+    "settings": "Instellingen",
+    "signOut": "Uitloggen",
+    "close": "Sluiten"
+  },
+  "tips": {
+    "connectWifi": "Verbinding maken met Wi-Fi",
+    "connectWifiDesc": "Ga veilig en gemakkelijk online",
+    "videoCall": "Een videogesprek voeren",
+    "videoCallDesc": "Maak face-to-face contact met familie",
+    "screenshot": "Een schermafbeelding maken",
+    "screenshotDesc": "Leg vast wat er op uw scherm staat",
+    "updateApps": "Uw apps bijwerken",
+    "updateAppsDesc": "Houd uw apps actueel en veilig"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Communicatie",
+    "basicSkills": "Basisvaardigheden",
+    "maintenance": "Onderhoud"
+  },
+  "questions": {
+    "makeTextBigger": "Hoe maak ik tekst groter?",
+    "connectWifi": "Hoe maak ik verbinding met Wi-Fi?",
+    "takeScreenshot": "Hoe maak ik een schermafbeelding?",
+    "makeVideoCall": "Hoe voer ik een videogesprek?",
+    "backupPhotos": "Hoe maak ik een back-up van mijn foto's?",
+    "updateApps": "Hoe werk ik mijn apps bij?",
+    "onlineBanking": "Hoe gebruik ik online bankieren veilig?",
+    "joinZoom": "Hoe neem ik deel aan een Zoom-vergadering?"
+  },
+  "achievements": {
+    "gettingStarted": "Aan de slag",
+    "gettingStartedDesc": "Uw eerste vraag gesteld",
+    "questionExplorer": "Vragenverkenner",
+    "questionExplorerDesc": "5 vragen gesteld",
+    "stepMaster": "Stappenmeester",
+    "stepMasterDesc": "25 stappen voltooid"
+  },
+  "stats": {
+    "seniorsHelped": "Senioren geholpen",
+    "questionsAnswered": "Vragen beantwoord",
+    "successRate": "Succespercentage",
+    "alwaysAvailable": "Altijd beschikbaar"
+  },
+  "time": {
+    "now": "Zojuist",
+    "hourAgo": "1 uur geleden",
+    "hoursAgo": "{{count}} uur geleden",
+    "dayAgo": "1 dag geleden",
+    "daysAgo": "{{count}} dagen geleden"
+  },
+  "voice": {
+    "startInput": "Spraakinvoer starten",
+    "stopRecording": "Opname stoppen",
+    "processing": "Verwerken...",
+    "recognized": "Stem herkend",
+    "failed": "Spraakinvoer mislukt"
+  },
+  "language": {
+    "select": "Selecteer taal",
+    "translate": "Vertalen",
+    "translating": "Vertalen...",
+    "detecting": "Taal detecteren...",
+    "error": "Vertaling mislukt"
+  },
+  "auth": {
+    "backToHome": "Terug naar startpagina",
+    "createAccount": "Account aanmaken",
+    "welcomeBack": "Welkom terug",
+    "joinFamily": "Sluit u aan bij onze familie van zelfredzame senioren",
+    "welcomeBackDesc": "Log in om uw technische reis voort te zetten",
+    "email": "E-mailadres",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Voer uw wachtwoord in",
+    "confirmPassword": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig uw wachtwoord",
+    "passwordsNoMatch": "Wachtwoorden komen niet overeen",
+    "passwordTooShort": "Wachtwoord moet minstens 6 tekens lang zijn",
+    "creatingAccount": "Account aanmaken...",
+    "signingIn": "Inloggen...",
+    "alreadyHaveAccount": "Heeft u al een account? Log in",
+    "dontHaveAccount": "Heeft u geen account? Meld u aan"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Laten we u leren kennen",
+      "subtitle": "Help me uw ervaring te personaliseren",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Uw voornaam",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Uw achternaam",
+      "age": "Leeftijd (helpt me mijn uitleg aan te passen)"
+    },
+    "step2": {
+      "title": "Kies uw voorkeurstalen",
+      "subtitle": "Selecteer de talen die u wilt gebruiken voor communicatie en spraakinvoer",
+      "languageSelection": "Taalselectie",
+      "languageDescription": "Kies de talen waarmee u vertrouwd bent. Dit zal:",
+      "speechToText": "Spraak-naar-tekst configureren om uw stem in deze talen te begrijpen",
+      "textInteractions": "Tekstinteracties in uw gekozen talen inschakelen",
+      "interfaceOptions": "Interface-opties aanpassen voor betere toegankelijkheid",
+      "searchLanguages": "Talen zoeken...",
+      "selectAll": "Alles selecteren",
+      "deselectAll": "Alles deselecteren",
+      "selected": "Geselecteerd: {{count}} taal",
+      "selected_plural": "Geselecteerd: {{count}} talen",
+      "noLanguagesFound": "Geen talen gevonden die overeenkomen met \"{{search}}\"",
+      "languageRequired": "Taalselectie vereist",
+      "languageRequiredDesc": "Selecteer ten minste één taal om door te gaan. Dit zorgt voor de beste ervaring voor spraakinvoer en tekstinteracties."
+    },
+    "step3": {
+      "title": "Welk apparaat gebruikt u het meest?",
+      "subtitle": "Dit helpt me u betere instructies te geven",
+      "devices": {
+        "windowscomputer": "Windows-computer",
+        "macapplecomputer": "Mac (Apple-computer)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android-telefoon of -tablet",
+        "smarttv": "Smart TV",
+        "multipledevices": "Meerdere apparaten"
+      }
+    },
+    "step4": {
+      "title": "Hoe comfortabel bent u met technologie?",
+      "subtitle": "Wees eerlijk - dit helpt me dingen op het juiste niveau uit te leggen",
+      "beginner": "Beginner",
+      "beginnerDesc": "Ik heb stapsgewijze hulp nodig bij de meeste dingen",
+      "some": "Enige ervaring",
+      "someDesc": "Ik kan basistaken uitvoeren, maar heb hulp nodig bij nieuwe dingen",
+      "comfortable": "Comfortabel",
+      "comfortableDesc": "Ik kan de meeste dingen zelf uitzoeken, maar heb soms begeleiding nodig"
+    },
+    "step5": {
+      "title": "Welke technische onderwerpen maken u het meest zorgen?",
+      "subtitle": "Selecteer alles wat van toepassing is - ik zal hulp op deze gebieden prioriteren",
+      "concerns": {
+        "onlineSafety": "Online veiligheid en oplichting",
+        "passwordManagement": "Wachtwoordbeheer",
+        "videoCalling": "Videobellen met familie",
+        "socialMedia": "Sociale media",
+        "onlineBanking": "Online bankieren",
+        "emailMessaging": "E-mail en berichten",
+        "photoStorage": "Foto-opslag en -deling",
+        "appDownloads": "App-downloads en -updates",
+        "wifiInternet": "Wi-Fi- en internetproblemen",
+        "deviceSettings": "Apparaatinstellingen",
+        "onlineShopping": "Online winkelen",
+        "healthApps": "Gezondheidsapps en -portalen"
+      }
+    },
+    "step6": {
+      "title": "Heeft u toegankelijkheidsfuncties nodig?",
+      "subtitle": "Ik wil ervoor zorgen dat u dit comfortabel kunt gebruiken",
+      "needs": {
+        "largerText": "Grotere tekst en knoppen",
+        "highContrast": "Kleuren met hoog contrast",
+        "voiceCommands": "Spraakopdrachten",
+        "screenReader": "Ondersteuning voor schermlezers",
+        "slowerExplanations": "Langzamere uitleg",
+        "visualSteps": "Visuele stapindicatoren",
+        "noneNeeded": "Geen nodig"
+      }
+    },
+    "step7": {
+      "title": "Hoe leert u het liefst?",
+      "subtitle": "Ik pas mijn lesstijl aan uw voorkeur aan",
+      "simple": "Eenvoudig en snel",
+      "simpleDesc": "Vertel me gewoon wat ik moet doen, stap voor stap",
+      "detailed": "Gedetailleerde uitleg",
+      "detailedDesc": "Leg uit waarom ik elke stap doe",
+      "visual": "Visueel leren",
+      "visualDesc": "Toon me foto's en video's indien mogelijk"
+    },
+    "step8": {
+      "title": "Laatste aanpassingen",
+      "subtitle": "Stel uw perfecte leeromgeving in",
+      "textToSpeech": "Tekst-naar-spraak",
+      "textToSpeechDesc": "Laat antwoorden hardop voorlezen",
+      "voiceInput": "Spraakinvoer",
+      "voiceInputDesc": "Stel vragen door te spreken",
+      "videoRecommendations": "Videoaanbevelingen",
+      "videoRecommendationsDesc": "Toon nuttige video's en artikelen",
+      "textSize": "Voorkeur voor tekstgrootte",
+      "textSizeNormal": "Normaal",
+      "textSizeLarge": "Groot",
+      "textSizeExtraLarge": "Extra groot"
+    },
+    "back": "Terug",
+    "next": "Volgende",
+    "settingUp": "Instellen...",
+    "completeSetup": "Installatie voltooien",
+    "errorSaving": "Kon uw voorkeuren niet opslaan. Probeer het opnieuw."
+  },
+  "error": {
+    "askQuestionFirst": "Stel eerst een vraag",
+    "couldntGetAnswer": "Sorry, ik kon op dit moment geen antwoord krijgen. Probeer het opnieuw."
+  },
+  "learningPage": {
+    "headerTitle": "Leercentrum",
+    "heroTitle": "Technische vaardigheden voor senioren",
+    "heroSubtitle": "Leer technologie in uw eigen tempo met stapsgewijze lessen, interactieve demo's en gepersonaliseerde begeleiding.",
+    "takeSkillsAssessment": "Doe de vaardighedenbeoordeling",
+    "orSeparator": "of",
+    "iAmBeginner": "Ik ben een beginner",
+    "iAmIntermediate": "Ik ben gemiddeld",
+    "iAmAdvanced": "Ik ben gevorderd",
+    "yourLevel": "Uw niveau: {{level}}",
+    "levelDescription": "Cursussen zijn gepersonaliseerd voor uw vaardigheidsniveau",
+    "retakeAssessment": "Beoordeling opnieuw doen",
+    "progressLabel": "Voortgang",
+    "lessonsLabel": "lessen",
+    "completedOutOfTotal": "{{completed}} van {{total}} voltooid",
+    "featureInteractiveDemos": "Interactieve demo's",
+    "featureInteractiveDemosDesc": "Zie precies hoe u elke actie moet uitvoeren",
+    "featureAudioSupport": "Audio-ondersteuning",
+    "featureAudioSupportDesc": "Laat lessen hardop voorlezen",
+    "featurePrintableGuides": "Afdrukbare gidsen",
+    "featurePrintableGuidesDesc": "Neem samenvattingen offline mee",
+    "featureCertificates": "Certificaten",
+    "featureCertificatesDesc": "Verdien certificaten terwijl u cursussen voltooit",
+    "animationShow": "Animatie tonen",
+    "animationReset": "Resetten",
+    "featuresGridTitle": "Ontdek onze functies",
+    "loadingPaths": "Leerpaden laden...",
+    "noPathsAvailable": "Er zijn momenteel geen leerpaden beschikbaar. Kom later terug.",
+    "progressComplete": "{{value}}% voltooid",
+    "recommendedStart": "Aanbevolen startpunt",
+    "moduleListTitle": "Modules voor pad: {{pathTitle}}",
+    "moduleContentTitle": "Inhoud voor module: {{moduleTitle}} komt hier.",
+    "loadingCenter": "Leercentrum laden...",
+    "moduleTimeLabel": "Tijd: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Kies uw voorkeurstaal voor de interface",
+    "moreComingSoon": "🌍 Binnenkort meer talen beschikbaar"
+  },
+  "assessmentView": {
+    "headerTitle": "Vaardighedenbeoordeling",
+    "questionProgress": "Vraag {{current}} van {{total}}",
+    "chooseBestOption": "Kies de optie die u het beste omschrijft",
+    "skipAssessment": "Beoordeling overslaan"
+  },
+  "courseView": {
+    "lessonsHeader": "Lessen",
+    "interactiveDemoLabel": "Interactieve demo",
+    "startLesson": "Les starten",
+    "reviewLesson": "Beoordelen",
+    "congratulations": "Gefeliciteerd!",
+    "courseComplete": "U heeft de cursus {{courseTitle}} voltooid!",
+    "downloadCertificate": "Certificaat downloaden"
+  },
+  "lessonView": {
+    "readAloud": "Les hardop voorlezen",
+    "interactiveDemoHeader": "Interactieve demo",
+    "practiceExerciseHeader": "Praktijkoefening",
+    "markAsComplete": "Markeren als voltooid",
+    "repeatLesson": "Les herhalen",
+    "keyPointsHeader": "Kernpunten",
+    "takeItWithYouHeader": "Neem het mee",
+    "downloadSummaryButton": "Samenvatting downloaden",
+    "downloadSummaryDescription": "Krijg een afdrukbare samenvatting van deze les",
+    "needHelpHeader": "Hulp nodig?",
+    "askAQuestionButton": "Een vraag stellen",
+    "chatWithHelperButton": "Chatten met helper"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Privacybeleid",
+    "pageTitle": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: {{date}}",
+    "ourPromise": {
+      "title": "Onze belofte aan u",
+      "text": "Bij Senior Tech Helper begrijpen we dat uw privacy kostbaar is. We zijn toegewijd aan het beschermen van uw persoonlijke informatie en volledig transparant te zijn over hoe we deze gebruiken. Dit beleid legt alles uit in eenvoudige, duidelijke taal."
+    },
+    "cookies": {
+      "title": "Hoe we cookies gebruiken",
+      "whatAreCookiesTitle": "Wat zijn cookies?",
+      "whatAreCookiesText": "Cookies zijn kleine tekstbestanden die ons helpen uw voorkeuren te onthouden en uw ervaring te verbeteren. Zie ze als bladwijzers die ons helpen te onthouden waar u was gebleven.",
+      "weUseCookiesForTitle": "We gebruiken cookies ALLEEN om u te helpen:",
+      "uses": [
+        "Uw voorkeuren onthouden: Tekstgrootte, spraakinstellingen en toegankelijkheidsopties die u heeft gekozen",
+        "U ingelogd houden: Zodat u niet elke keer uw wachtwoord hoeft in te voeren",
+        "Onze hulp verbeteren: Begrijpen welke functies het nuttigst zijn voor senioren zoals u"
+      ],
+      "whatWeDontDoTitle": "Wat we NIET doen met cookies:",
+      "donts": [
+        "U volgen op andere websites",
+        "Uw informatie aan iemand verkopen",
+        "Uw gegevens delen met adverteerders",
+        "Ze gebruiken voor marketingdoeleinden"
+      ]
+    },
+    "informationCollected": {
+      "title": "Welke informatie we verzamelen",
+      "youGiveUsTitle": "Informatie die u ons geeft:",
+      "youGiveUsList": [
+        "Uw naam en e-mailadres",
+        "Uw apparaattype (iPhone, Windows, etc.)",
+        "Uw niveau van technische ervaring",
+        "Uw toegankelijkheidsvoorkeuren",
+        "Vragen die u aan onze AI-helper stelt"
+      ],
+      "weCollectTitle": "Informatie die we automatisch verzamelen:",
+      "weCollectList": [
+        "Hoe u onze app gebruikt (welke functies het meest helpen)",
+        "Technische informatie (browsertype, apparaat)",
+        "Foutrapporten (om problemen snel op te lossen)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Hoe we uw informatie beschermen",
+      "protections": [
+        "Versleuteling: Al uw gegevens worden versleuteld (door elkaar gegooid) zodat alleen wij ze kunnen lezen",
+        "Beveiligde servers: Uw informatie wordt opgeslagen op beschermde, professionele servers",
+        "Beperkte toegang: Alleen onze essentiële teamleden hebben toegang tot uw gegevens",
+        "Regelmatige veiligheidscontroles: We controleren voortdurend op beveiligingsrisico's"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Uw informatie delen",
+      "neverSell": "We zullen uw persoonlijke informatie NOOIT verkopen of verhuren.",
+      "onlyShareInSituations": "We delen uw informatie alleen in deze zeer beperkte situaties:",
+      "sharingSituations": [
+        "Met uw toestemming: Als u ons specifiek vraagt iets te delen",
+        "Voor technische ondersteuning: Met vertrouwde serviceproviders die ons helpen de app te beheren (zij zijn gebonden aan strikte privacyovereenkomsten)",
+        "Indien wettelijk vereist: Alleen als we wettelijk verplicht zijn dit te doen"
+      ]
+    },
+    "yourRights": {
+      "title": "Uw rechten en keuzes",
+      "youCanAlwaysTitle": "U kunt altijd:",
+      "rightsList": [
+        "Zien welke informatie we over u hebben",
+        "Ons vragen om onjuiste informatie te corrigeren",
+        "Verzoeken dat we uw account en gegevens verwijderen",
+        "Cookies uitschakelen in uw browserinstellingen",
+        "Contact met ons opnemen met eventuele privacyvragen"
+      ],
+      "noteDeletingCookiesTitle": "Opmerking over het verwijderen van cookies:",
+      "noteDeletingCookiesText": "Als u onze cookies verwijdert, moet u uw voorkeuren opnieuw instellen en werken sommige functies mogelijk niet zo goed."
+    },
+    "thirdPartyServices": {
+      "title": "Diensten van derden",
+      "weUseTrustedServices": "We gebruiken enkele vertrouwde diensten van derden om onze functies te helpen bieden:",
+      "servicesList": [
+        "Google AI (Gemini): Voedt onze AI-assistent die uw vragen beantwoordt",
+        "Firebase: Slaat uw accountinformatie veilig op",
+        "YouTube/Educatieve sites: We kunnen nuttige video's en artikelen aanbevelen"
+      ],
+      "servicesOwnPolicies": "Deze diensten hebben hun eigen privacybeleid en we delen alleen de minimale informatie die nodig is om ze te laten werken."
+    },
+    "changesToPolicy": {
+      "title": "Wijzigingen in dit beleid",
+      "text": "Als we dit privacybeleid moeten bijwerken, zullen we u per e-mail op de hoogte stellen en een melding in de app tonen. We zullen altijd in eenvoudige, duidelijke taal uitleggen wat er verandert en waarom."
+    },
+    "contactUs": {
+      "title": "Neem contact met ons op",
+      "questions": "Heeft u vragen over uw privacy of dit beleid? Het TechStep-team is hier om te helpen!",
+      "email": "E-mail: privacy@techstep.com",
+      "phone": "Telefoon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Post: TechStep Privacy Team",
+      "mailLine2": "123 Tech Support Lane",
+      "mailLine3": "Helpful City, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Bedankt dat u TechStep uw informatie toevertrouwt. We zijn toegewijd om deze veilig te houden en alleen te gebruiken om u te helpen slagen met technologie.",
+      "backToHome": "Terug naar startpagina"
+    }
+  }
+}

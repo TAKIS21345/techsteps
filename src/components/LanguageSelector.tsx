@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useTranslationAnimation } from '../contexts/TranslationAnimationContext'; // Import the hook
 
 interface LanguageSelectorProps {
   className?: string;
@@ -12,13 +13,43 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   showLabel = true 
 }) => {
   const { i18n, t } = useTranslation();
+  const { triggerTranslationAnimation } = useTranslationAnimation(); // Use the hook
   const [isOpen, setIsOpen] = useState(false);
   
   const supportedLanguages = [
     { code: 'en', name: 'English', nativeName: 'English' },
     { code: 'es', name: 'Spanish', nativeName: 'Español' },
     { code: 'fr', name: 'French', nativeName: 'Français' },
-    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' }
+    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
+    { code: 'zh', name: 'Chinese', nativeName: '中文' },
+    { code: 'cs', name: 'Czech', nativeName: 'Čeština' },
+    { code: 'hr', name: 'Croatian', nativeName: 'Hrvatski' },
+    { code: 'et', name: 'Estonian', nativeName: 'Eesti' },
+    { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+    { code: 'bg', name: 'Bulgarian', nativeName: 'Български' },
+    { code: 'da', name: 'Danish', nativeName: 'Dansk' },
+    { code: 'de', name: 'German', nativeName: 'Deutsch' },
+    { code: 'fi', name: 'Finnish', nativeName: 'Suomi' },
+    { code: 'he', name: 'Hebrew', nativeName: 'עברית' },
+    { code: 'hu', name: 'Hungarian', nativeName: 'Magyar' },
+    { code: 'it', name: 'Italian', nativeName: 'Italiano' },
+    { code: 'ja', name: 'Japanese', nativeName: '日本語' },
+    { code: 'ko', name: 'Korean', nativeName: '한국어' },
+    { code: 'lt', name: 'Lithuanian', nativeName: 'Lietuvių' },
+    { code: 'lv', name: 'Latvian', nativeName: 'Latviešu' },
+    { code: 'nl', name: 'Dutch', nativeName: 'Nederlands' },
+    { code: 'no', name: 'Norwegian', nativeName: 'Norsk' },
+    { code: 'pl', name: 'Polish', nativeName: 'Polski' },
+    { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
+    { code: 'ro', name: 'Romanian', nativeName: 'Română' },
+    { code: 'ru', name: 'Russian', nativeName: 'Русский' },
+    { code: 'sk', name: 'Slovak', nativeName: 'Slovenčina' },
+    { code: 'sl', name: 'Slovenian', nativeName: 'Slovenščina' },
+    { code: 'sv', name: 'Swedish', nativeName: 'Svenska' },
+    { code: 'th', name: 'Thai', nativeName: 'ไทย' },
+    { code: 'tr', name: 'Turkish', nativeName: 'Türkçe' },
+    { code: 'uk', name: 'Ukrainian', nativeName: 'Українська' },
+    { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt' }
   ];
   
   const currentLanguage = supportedLanguages.find(lang => lang.code === i18n.language);
@@ -28,14 +59,49 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     en: '🇺🇸',
     es: '🇪🇸', 
     fr: '🇫🇷',
-    hi: '🇮🇳'
+    hi: '🇮🇳',
+    zh: '🇨🇳',
+    cs: '🇨🇿',
+    hr: '🇭🇷',
+    et: '🇪🇪',
+    ar: '🇸🇦',
+    bg: '🇧🇬',
+    da: '🇩🇰',
+    de: '🇩🇪',
+    fi: '🇫🇮',
+    he: '🇮🇱',
+    hu: '🇭🇺',
+    it: '🇮🇹',
+    ja: '🇯🇵',
+    ko: '🇰🇷',
+    lt: '🇱🇹',
+    lv: '🇱🇻',
+    nl: '🇳🇱',
+    no: '🇳🇴',
+    pl: '🇵🇱',
+    pt: '🇵🇹',
+    ro: '🇷🇴',
+    ru: '🇷🇺',
+    sk: '🇸🇰',
+    sl: '🇸🇮',
+    sv: '🇸🇪',
+    th: '🇹🇭',
+    tr: '🇹🇷',
+    uk: '🇺🇦',
+    vi: '🇻🇳'
   };
 
-  const handleLanguageChange = (newLanguage: string) => {
-    i18n.changeLanguage(newLanguage);
+  const handleLanguageChange = async (newLanguage: string) => {
+    await triggerTranslationAnimation(async () => {
+      await i18n.changeLanguage(newLanguage);
+    });
     setIsOpen(false);
     
     // Announce language change for screen readers
+    // This should ideally happen AFTER the language has actually changed and content is updated.
+    // The i18next 'languageChanged' event listener in App.tsx is a better place for global announcements,
+    // or this announcement needs to be delayed until after the change is fully processed.
+    // For now, keeping it here, but it might announce in the old language.
     const announcement = `Language changed to ${supportedLanguages.find(l => l.code === newLanguage)?.name}`;
     const ariaLive = document.createElement('div');
     ariaLive.setAttribute('aria-live', 'polite');
@@ -120,7 +186,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                 {t('language.select')}
               </h3>
               <p className="text-xs text-gray-600 mt-1">
-                Choose your preferred language for the interface
+                {t('languageSelector.choosePrompt')}
               </p>
             </div>
             
@@ -158,7 +224,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
             <div className="p-3 border-t border-gray-100 bg-gray-50">
               <p className="text-xs text-gray-500 text-center">
-                🌍 More languages coming soon
+                {t('languageSelector.moreComingSoon')}
               </p>
             </div>
           </div>

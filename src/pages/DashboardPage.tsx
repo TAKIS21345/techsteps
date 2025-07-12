@@ -8,7 +8,6 @@ import {
   LogOut, 
   Mic, 
   MicOff, 
-  Volume2,
   Clock,
   TrendingUp,
   Award,
@@ -30,10 +29,10 @@ import Logo from '../components/Logo';
 import AIToolsModal from '../components/AIToolsModal';
 import StepsView from '../components/StepsView';
 import ClarificationModal from '../components/ClarificationModal';
-import ResourceRecommendations from '../components/ResourceRecommendations';
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
 import { speechService } from '../utils/speechService';
 import { crispService } from '../utils/crispService';
+import { chatMemoryService } from '../utils/chatMemoryService';
 import Cookies from 'js-cookie';
 
 const DashboardPage: React.FC = () => {
@@ -41,7 +40,6 @@ const DashboardPage: React.FC = () => {
   const [currentView, setCurrentView] = useState<'main' | 'loading' | 'steps'>('main');
   const [steps, setSteps] = useState<string[]>([]);
   const [resources, setResources] = useState<any[]>([]);
-  const [isListening, setIsListening] = useState(false);
   const [speechStatus, setSpeechStatus] = useState<'idle' | 'recording' | 'processing' | 'complete' | 'error'>('idle');
   const [showAITools, setShowAITools] = useState(false);
   const [showClarification, setShowClarification] = useState(false);
@@ -59,14 +57,35 @@ const DashboardPage: React.FC = () => {
   // Initialize Crisp when component mounts
   useEffect(() => {
     crispService.initialize();
-    
     // Set user info if available
     if (userData) {
-      crispService.setUserInfo({
-        email: userData.email,
-        nickname: userData.firstName,
-        userId: userData.uid
-      });
+      const userInfo: any = {};
+      // Try to get email from AuthContext's user if available
+      let email = undefined;
+      try {
+        // Try to get the user from AuthContext
+        const auth = require('../contexts/AuthContext');
+        const authUser = auth?.useAuth?.().user;
+        if (authUser && typeof authUser.email === 'string' && authUser.email.trim()) {
+          email = authUser.email;
+        }
+      } catch {}
+      // Fallback: try userData.email if it exists
+      if (!email && (userData as any).email && typeof (userData as any).email === 'string' && (userData as any).email.trim()) {
+        email = (userData as any).email;
+      }
+      if (email) {
+        userInfo.email = email;
+      }
+      if (userData.firstName && typeof userData.firstName === 'string' && userData.firstName.trim()) {
+        userInfo.nickname = userData.firstName;
+      }
+      if ((userData as any).uid && typeof (userData as any).uid === 'string' && (userData as any).uid.trim()) {
+        userInfo.userId = (userData as any).uid;
+      }
+      if (Object.keys(userInfo).length > 0) {
+        crispService.setUserInfo(userInfo);
+      }
     }
   }, [userData]);
 
@@ -177,9 +196,9 @@ const DashboardPage: React.FC = () => {
       const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
       
       if (diffInHours < 1) return t('time.now');
-      if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours.toString() });
+      if (diffInHours < 24) return diffInHours === 1 ? t('time.hourAgo') : t('time.hoursAgo', { count: diffInHours });
       const diffInDays = Math.floor(diffInHours / 24);
-      if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays.toString() });
+      if (diffInDays < 7) return diffInDays === 1 ? t('time.dayAgo') : t('time.daysAgo', { count: diffInDays });
       return date.toLocaleDateString();
     } catch (error) {
       console.error('Error formatting time:', error);
@@ -201,7 +220,7 @@ const DashboardPage: React.FC = () => {
     try {
       // Get relevant chat memories for context
       const relevantMemories = await chatMemoryService.getRelevantMemories(
-        userData?.uid || 'anonymous',
+        (userData as any)?.uid || 'anonymous',
         question,
         userData
       );
@@ -302,7 +321,7 @@ Remember: It's better to provide a helpful general answer than to overwhelm seni
     try {
       // Get relevant chat memories for context
       const relevantMemories = await chatMemoryService.getRelevantMemories(
-        userData?.uid || 'anonymous',
+        (userData as any)?.uid || 'anonymous',
         userQuestion,
         userData
       );
@@ -391,14 +410,10 @@ User's question: "${userQuestion}"`
           
           // Analyze and save chat memory
           await chatMemoryService.analyzeAndSaveMemory(
-            userData?.uid || 'anonymous',
-            {
-              question: userQuestion,
-              response: parsed.steps,
-              userProfile: userData,
-              successful: true
-            },
-            updateUserData
+            (userData as any)?.uid || 'anonymous',
+            question,
+            steps,
+            userData
           );
           
           // Generate resource recommendations if user wants them
@@ -527,18 +542,15 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
     if (speechStatus === 'recording') {
       // Stop recording
       speechService.stopRecording();
-      setIsListening(false);
       setSpeechStatus('processing');
     } else {
       // Start recording with AssemblyAI
-      setIsListening(true);
       setSpeechStatus('recording');
       
       speechService.startRecording(
         // onTranscript
         (transcript: string) => {
           setQuestion(transcript);
-          setIsListening(false);
           setSpeechStatus('complete');
           
           // Auto-clear status after 2 seconds
@@ -550,7 +562,6 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         (error: string) => {
           console.error('Speech recognition error:', error);
           alert(error);
-          setIsListening(false);
           setSpeechStatus('error');
           
           // Auto-clear status after 3 seconds
@@ -561,9 +572,6 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         // onStatusChange
         (status: 'recording' | 'processing' | 'complete' | 'error') => {
           setSpeechStatus(status);
-          if (status === 'processing') {
-            setIsListening(false);
-          }
         }
       );
     }
@@ -626,18 +634,18 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
       
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <Logo size="sm" />
               <div>
-                <h1 className="text-xl font-semibold text-gray-800">
+                <h1 className="text-lg sm:text-xl font-semibold text-gray-800">
                   {userData ? t('dashboard.welcomeUser', { name: userData.firstName }) : t('dashboard.welcome')}
                 </h1>
-                <p className="text-sm text-gray-600">{t('dashboard.ready')}</p>
+                <p className="text-xs sm:text-sm text-gray-600">{t('dashboard.ready')}</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <Link 
                 to="/settings" 
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
@@ -657,28 +665,28 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gap */}
           {/* Main Column */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 md:space-y-8"> {/* Adjusted space-y */}
             {/* Main Interface */}
-            <div className="card p-8 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <MessageSquare className="w-10 h-10 text-white" />
+            <div className="card p-6 sm:p-8 text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <MessageSquare className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
                 {t('dashboard.getHelp')}
               </h2>
-              <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto">
                 {t('dashboard.askQuestion')}
               </p>
               
-              <div className="relative mb-6">
+              <div className="relative mb-4 sm:mb-6">
                 <textarea
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
                   placeholder={t('dashboard.placeholder')}
-                  className="input-field text-lg p-6 text-center resize-none min-h-[120px] w-full"
+                  className="input-field text-base sm:text-lg p-4 sm:p-6 text-center resize-none min-h-[100px] sm:min-h-[120px] w-full"
                   rows={3}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -691,7 +699,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                   <button
                     onClick={handleVoiceInput}
                     disabled={speechStatus === 'processing'}
-                    className={`absolute right-4 bottom-4 p-3 rounded-full transition-all duration-200 ${
+                    className={`absolute right-2 bottom-2 sm:right-4 sm:bottom-4 p-2 sm:p-3 rounded-full transition-all duration-200 ${
                       speechStatus === 'recording'
                         ? 'bg-red-100 text-red-600 animate-pulse' 
                         : speechStatus === 'processing'
@@ -711,11 +719,11 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                     }
                   >
                     {speechStatus === 'recording' ? (
-                      <MicOff className="w-6 h-6" />
+                      <MicOff className="w-5 h-5 sm:w-6 sm:h-6" />
                     ) : speechStatus === 'processing' ? (
-                      <div className="w-6 h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-yellow-600 border-t-transparent rounded-full animate-spin" />
                     ) : (
-                      <Mic className="w-6 h-6" />
+                      <Mic className="w-5 h-5 sm:w-6 sm:h-6" />
                     )}
                   </button>
                 )}
@@ -724,7 +732,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
               <button
                 onClick={handleAskQuestion}
                 disabled={loading || !question.trim()}
-                className="btn-primary text-xl px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary text-base px-6 py-3 sm:text-lg sm:px-8 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? t('dashboard.gettingSteps') : t('dashboard.getSteps')}
               </button>
@@ -740,10 +748,10 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Quick Tips */}
-            <div className="card p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h3>
-                <Lightbulb className="w-6 h-6 text-yellow-500" />
+            <div className="card p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('dashboard.quickTips')}</h2>
+                <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {quickTips.map((tip, index) => (
@@ -760,7 +768,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                         <tip.icon className="w-5 h-5 text-blue-600" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-800 group-hover:text-blue-800">{tip.title}</h4>
+                        <h3 className="font-medium text-gray-800 group-hover:text-blue-800">{tip.title}</h3>
                         <p className="text-sm text-gray-600 mt-1">{tip.description}</p>
                         <span className="text-xs text-blue-600 mt-2 inline-block">{tip.category}</span>
                       </div>
@@ -772,8 +780,8 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
             </div>
 
             {/* Popular Questions */}
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">{t('dashboard.popularQuestions')}</h3>
+            <div className="card p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">{t('dashboard.popularQuestions')}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {popularQuestions.map((q, index) => (
                   <button
@@ -878,7 +886,7 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                     <p className="text-sm font-medium text-gray-800 mb-1">{activity.question}</p>
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <span>{activity.time}</span>
-                      <span>{t('dashboard.stepsCompleted', { count: activity.steps.toString() })}</span>
+                      <span>{t('dashboard.stepsCompleted', { count: activity.steps })}</span>
                     </div>
                   </div>
                 ))}

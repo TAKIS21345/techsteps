@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "reviews": "Bewertungen",
+    "signIn": "Anmelden",
+    "getStarted": "Loslegen"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Von Senioren weltweit als vertrauenswürdig eingestuft",
+      "title": "Technologie, einfach",
+      "titleHighlight": "und klar gemacht",
+      "subtitle": "Meistern Sie die Technologie mit Zuversicht durch eine personalisierte Schritt-für-Schritt-Anleitung, die sich anfühlt, als hätten Sie einen geduldigen Freund an Ihrer Seite.",
+      "startLearningButton": "Kostenlos mit dem Lernen beginnen",
+      "watchDemoButton": "Demo ansehen",
+      "freeForever": "Für immer kostenlos",
+      "noCreditCard": "Keine Kreditkarte erforderlich",
+      "available247": "24/7 verfügbar"
+    },
+    "featuresSection": {
+      "title": "Funktionen",
+      "subtitle": "Dies sind nur einige der Funktionen, die Ihnen beim Wachsen helfen!",
+      "items": [
+        {
+          "title": "Schritt-für-Schritt-Anleitung",
+          "description": "Erhalten Sie klare, leicht verständliche Anweisungen für jede technische Frage. Jeder Schritt wird in einfachen Worten mit visuellen Hinweisen erklärt."
+        },
+        {
+          "title": "Sprachunterstützung",
+          "description": "Stellen Sie Fragen mit Ihrer Stimme und lassen Sie sich die Antworten vorlesen. Perfekt für freihändige Hilfe, wenn Sie sie am meisten brauchen."
+        },
+        {
+          "title": "Foto-Erklärer",
+          "description": "Machen Sie ein Foto von einem Kabel, einem Knopf oder einem Gerät und erhalten Sie eine sofortige Erklärung, was es ist und wie man es benutzt."
+        },
+        {
+          "title": "Seniorenfreundliches Design",
+          "description": "Großer Text, eine intuitive Benutzeroberfläche und geduldige Erklärungen, die speziell für Senioren entwickelt wurden."
+        },
+        {
+          "title": "Sicher und geschützt",
+          "description": "Ihre persönlichen Daten sind mit unternehmenstauglicher Sicherheit geschützt. Es werden keine Daten an Dritte weitergegeben."
+        },
+        {
+          "title": "Sofortige Antworten",
+          "description": "Erhalten Sie sofortige Hilfe rund um die Uhr. Kein Warten in der Warteschleife oder Terminvereinbarungen. Fragen Sie einfach und erhalten Sie Antworten."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Beliebte Fragen, bei denen wir helfen",
+      "subtitle": "Sehen Sie, wonach andere Senioren fragen",
+      "askYourQuestionButton": "Stellen Sie jetzt Ihre Frage"
+    },
+    "testimonialsSection": {
+      "title": "Was unsere Gemeinschaft sagt",
+      "subtitle": "Schließen Sie sich Tausenden von Senioren an, die eine vereinfachte technische Hilfe gefunden haben",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Endlich jemand, der Technologie so erklärt, dass ich es verstehen kann! Die Schritt-für-Schritt-Anleitungen haben mir geholfen, mein neues Telefon perfekt einzurichten. Ich fühle mich jetzt so viel sicherer!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "Die Sprachfunktion ist erstaunlich! Ich kann meine Fragen einfach laut stellen und bekomme klare Antworten. Es ist, als hätte man einen technikaffinen Enkel rund um die Uhr zur Verfügung.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "Ich liebe die Fotofunktion! Ich habe ein Foto von einem verwirrenden Kabel gemacht und sofort gewusst, wofür es ist. Diese App hat mich im Umgang mit Technik viel selbstbewusster gemacht.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "Ich war so frustriert mit meinem Smart-TV, bis ich diesen Helfer gefunden habe. Jetzt kann ich Sendungen streamen, Einstellungen anpassen und sogar mit meinen Enkeln videochatten!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Alter {{age}}"
+    },
+    "ctaSection": {
+      "title": "Bereit, die Technologie zu meistern?",
+      "subtitle": "Treten Sie unserer Gemeinschaft von gestärkten Senioren bei, die Technologie einfach und zugänglich gemacht haben. Erhalten Sie noch heute klare, hilfreiche Antworten – völlig kostenlos!",
+      "getStartedButton": "Heute kostenlos loslegen",
+      "setupInMinutes": "Einrichtung in 2 Minuten"
+    },
+    "footer": {
+      "description": "Technologie für Senioren überall zugänglich und verständlich machen.",
+      "featuresTitle": "Funktionen",
+      "featuresItems": [
+        "Schritt-für-Schritt-Hilfe",
+        "Sprachunterstützung",
+        "Foto-Erklärer",
+        "24/7 Verfügbarkeit"
+      ],
+      "supportTitle": "Support",
+      "supportItems": [
+        "Hilfezentrum",
+        "Erste Schritte",
+        "Gemeinschaft",
+        "Kontaktieren Sie uns"
+      ],
+      "companyTitle": "Unternehmen",
+      "companyItems": [
+        "Über uns",
+        "Datenschutzrichtlinie",
+        "Nutzungsbedingungen",
+        "Barrierefreiheit"
+      ],
+      "copyright": "© 2025 TechStep. Mit ❤️ für Senioren überall gemacht.",
+      "trustedBy": "Vertraut von",
+      "trustedByCount": "50.000+ Senioren"
+    }
+  },
+  "dashboard": {
+    "welcome": "Willkommen bei TechStep",
+    "welcomeUser": "Willkommen zurück, {{name}}!",
+    "ready": "Bereit, etwas Neues zu lernen?",
+    "getHelp": "Sofortige Hilfe erhalten",
+    "askQuestion": "Stellen Sie eine beliebige technische Frage und erhalten Sie eine Schritt-für-Schritt-Anleitung",
+    "placeholder": "Womit kann ich Ihnen heute helfen?",
+    "getSteps": "Schritt-für-Schritt-Hilfe erhalten",
+    "gettingSteps": "Ihre Schritte werden abgerufen...",
+    "craftingSteps": "Ihre personalisierten Schritte werden erstellt...",
+    "takesAMoment": "Dies kann einen Moment dauern",
+    "quickTips": "Schnelle Tipps für Sie",
+    "popularQuestions": "Heutige beliebte Fragen",
+    "quickActions": "Schnellaktionen",
+    "recentActivity": "Letzte Aktivitäten",
+    "yourProgress": "Ihr Fortschritt",
+    "needHelp": "Benötigen Sie Hilfe?",
+    "helpingHand": "Wir sind hier, um Ihnen zum Erfolg zu verhelfen",
+    "chatHuman": "Mit einem Menschen chatten",
+    "browseGuides": "Video-Anleitungen durchsuchen",
+    "browseTips": "Tipps durchsuchen",
+    "commonSolutions": "Häufige Lösungen finden",
+    "stepsCompleted": "{{count}} Schritte abgeschlossen",
+    "needMoreInfo": "Ich benötige etwas mehr Informationen, um Ihnen besser helfen zu können"
+  },
+  "aiTools": {
+    "title": "KI-Hilfswerkzeuge",
+    "description": "Foto-Erklärer & Technik-Übersetzer"
+  },
+  "aiToolsModal": {
+    "header": "KI-Hilfswerkzeuge",
+    "tabs": {
+      "photoExplainer": "Foto-Erklärer",
+      "techWordBuster": "Technikbegriffe-Erklärer"
+    },
+    "photoExplainer": {
+      "title": "Foto-Erklärer",
+      "description": "Laden Sie ein Foto von einem Kabel, Knopf oder Gerät hoch und erhalten Sie eine sofortige Erklärung.",
+      "uploadButton": "Bild hochladen",
+      "questionLabel": "Stellen Sie eine Frage zum Foto (optional)",
+      "questionPlaceholder": "Wofür ist dieses Kabel?",
+      "explainButton": "Foto erklären",
+      "analyzingButton": "Analysiere...",
+      "alertNoPhoto": "Bitte laden Sie zuerst ein Foto hoch oder überprüfen Sie die API-Konfiguration.",
+      "errorResponse": "<p class=\"text-red-600\">Entschuldigung, ich konnte das Bild nicht analysieren. Bitte versuchen Sie es erneut.</p>",
+      "readResponseButton": "🔊 Antwort vorlesen",
+      "previewAlt": "Vorschau"
+    },
+    "techWordBuster": {
+      "title": "Technikbegriffe-Erklärer",
+      "description": "Verwirrt von einem Fachbegriff? Erhalten Sie eine einfache, leicht verständliche Erklärung mit realen Analogien.",
+      "inputLabel": "Geben Sie einen Fachbegriff oder eine Phrase ein",
+      "inputPlaceholder": "z.B. Cloud-Speicher, WLAN, Bluetooth",
+      "explainButton": "Dies verdeutlichen",
+      "explainingButton": "Erkläre...",
+      "alertNoTerm": "Bitte geben Sie zuerst einen Fachbegriff ein oder überprüfen Sie die API-Konfiguration.",
+      "errorResponse": "<p class=\"text-red-600\">Entschuldigung, ich konnte diesen Begriff nicht erklären. Bitte versuchen Sie es erneut.</p>",
+      "readExplanationButton": "🔊 Erklärung vorlesen"
+    },
+    "apiErrorNoExplanation": "Keine Erklärung erhalten"
+  },
+  "clarificationModal": {
+    "headerTitle": "Ich benötige etwas mehr Informationen",
+    "yourQuestionLabel": "Ihre Frage:",
+    "tellMeMorePrompt": "Um Ihnen die beste Hilfe zu geben, könnten Sie mir bitte etwas mehr erzählen?",
+    "forExampleLabel": "Zum Beispiel:",
+    "textareaPlaceholder": "Bitte geben Sie mehr Details an...",
+    "textareaSrLabel": "Geben Sie mehr Details zu Ihrer Frage an",
+    "skipButton": "Für jetzt überspringen",
+    "submitButton": "Bessere Hilfe erhalten",
+    "loadingButton": "Hilfe wird geholt..."
+  },
+  "languageNotificationBanner": {
+    "title": "Vervollständigen Sie Ihre Spracheinrichtung",
+    "description": "Konfigurieren Sie Ihre bevorzugten Sprachen für eine bessere Spracheingabe und Textinteraktionen.",
+    "buttonText": "Einrichtung abschließen"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Grundlagen von Computer & Geräten",
+      "description": "Die absoluten Grundlagen, um mit der Technologie zu beginnen.",
+      "modules": {
+        "turnOnDevice": { "title": "Ein Gerät einschalten", "description": "Lernen Sie, Computer und Smartphones einzuschalten." },
+        "mouseTouchscreen": { "title": "Eine Maus/einen Touchscreen verwenden", "description": "Meistern Sie das Zeigen, Klicken und Tippen." },
+        "keyboardTyping": { "title": "Grundlagen der Tastatur/des Tippens", "description": "Machen Sie sich mit den Grundlagen des Tippens vertraut." },
+        "filesFolders": { "title": "Dateien & Ordner verstehen", "description": "Lernen Sie, wie digitale Informationen organisiert sind." }
+      }
+    },
+    "onlineWorld": {
+      "title": "Die Online-Welt",
+      "description": "Sicher ins Internet gehen und es erkunden.",
+      "modules": {
+        "webBrowsers": { "title": "Webbrowser verstehen", "description": "Navigieren Sie im Internet mit Chrome, Edge oder Safari." },
+        "searchEffectively": { "title": "Wie man effektiv sucht", "description": "Finden Sie mit Suchmaschinen, was Sie online benötigen." },
+        "introEmail": { "title": "Einführung in E-Mail", "description": "Lernen Sie, elektronische Post zu senden und zu empfangen." },
+        "virusSafety": { "title": "Sicher vor Viren bleiben", "description": "Schützen Sie Ihr Gerät vor schädlicher Software." }
+      }
+    },
+    "digitalLife": {
+      "title": "Alltägliches digitales Leben",
+      "description": "Kommunizieren, teilen und verwalten Sie Ihre digitale Präsenz.",
+      "modules": {
+        "masteringEmail": { "title": "E-Mail meistern", "description": "Anhänge, Ordner und E-Mail-Etikette." },
+        "videoCalling": { "title": "Videoanrufe mit Familie & Freunden", "description": "Verbinden Sie sich von Angesicht zu Angesicht mit Ihren Lieben." },
+        "introSocialMedia": { "title": "Einführung in soziale Medien", "description": "Plattformen wie Facebook verstehen." },
+        "sharingPhotos": { "title": "Fotos sicher teilen", "description": "Teilen Sie Ihre Erinnerungen, ohne die Privatsphäre zu gefährden." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Fortgeschrittene & kreative Fähigkeiten",
+      "description": "Über die Grundlagen hinaus: Entdecken Sie mehr von dem, was Technologie bietet.",
+      "modules": {
+        "onlineShopping": { "title": "Einführung in den Online-Einkauf", "description": "Kaufen Sie sicher und bequem online ein." },
+        "onlineMaps": { "title": "Online-Karten & Navigation verwenden", "description": "Finden Sie Ihren Weg mit digitalen Karten." },
+        "photoEditing": { "title": "Grundlegende Fotobearbeitung", "description": "Verbessern Sie Ihre digitalen Fotos." },
+        "productivityTools": { "title": "Einführung in Produktivitätswerkzeuge", "description": "Verwendung von Werkzeugen wie Google Docs oder den Grundlagen von Microsoft Word." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Technik-Starter", "description": "Grundlagen von Computer & Geräten abgeschlossen." },
+    "onlineWorld": { "name": "Online-Entdecker", "description": "Pfad 'Die Online-Welt' abgeschlossen." },
+    "digitalLife": { "name": "Digital-Kommunikator", "description": "Pfad 'Alltägliches digitales Leben' abgeschlossen." },
+    "advancedSkills": { "name": "Technik-Virtuose", "description": "Pfad 'Fortgeschrittene & kreative Fähigkeiten' abgeschlossen." }
+  },
+  "skillAssessmentModal": {
+    "title": "Schneller Fähigkeits-Check",
+    "introduction": "Lassen Sie uns den besten Ausgangspunkt für Sie finden!",
+    "nextButton": "Weiter",
+    "finishButton": "Meinen Ausgangspunkt anzeigen",
+    "questionProgress": "Frage {{current}} von {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Wie vertraut sind Sie mit Computern?",
+      "options": {
+        "new": "Ganz neu",
+        "basics": "Ich kenne einige Grundlagen",
+        "confident": "Ich bin ziemlich zuversichtlich"
+      }
+    },
+    "q2": {
+      "text": "Haben Sie schon einmal eine E-Mail gesendet?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nein"
+      }
+    },
+    "q3": {
+      "text": "Haben Sie ein Smartphone für mehr als nur Anrufe verwendet?",
+      "options": {
+        "yes": "Ja",
+        "no": "Nein"
+      }
+    }
+  },
+  "learning": {
+    "title": "Lernzentrum",
+    "structuredCourses": "Strukturierte Kurse und Tutorials",
+    "skillsAssessment": "Fähigkeitsbewertung",
+    "questionNumber": "Frage {{current}} von {{total}}",
+    "resetAnimation": "Zurücksetzen",
+    "showAnimation": "Animation zeigen",
+    "courses": {
+      "beginner": {
+        "title": "Erste Schritte mit Technologie",
+        "description": "Perfekt für absolute Anfänger. Lernen Sie die Grundlagen Schritt für Schritt.",
+        "estimatedTime": "2-3 Stunden",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Gerätegrundlagen",
+            "description": "Lernen Sie, wie Sie Ihr Gerät sicher ein- und ausschalten",
+            "duration": "15 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Ihr Gerät ein- und ausschalten</h3><p>Jedes Gerät hat einen Netzschalter. Lernen wir, ihn sicher zu benutzen.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Für Computer:</h4><ul class=\"space-y-2\"><li>• Suchen Sie nach einem runden Knopf mit einem Netzsymbol (⏻)</li><li>• Drücken Sie ihn einmal zum Einschalten</li><li>• Zum Ausschalten: Verwenden Sie das Startmenü, dann \"Herunterfahren\"</li><li>• Drücken Sie niemals nur den Netzschalter zum Ausschalten!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Für Handys/Tablets:</h4><ul class=\"space-y-2\"><li>• Der Netzschalter befindet sich normalerweise an der Seite</li><li>• 2-3 Sekunden gedrückt halten zum Einschalten</li><li>• Zum Ausschalten: Gedrückt halten, dann zum Ausschalten wischen</li></ul></div></div>",
+            "keyPoints": [
+              "Verwenden Sie immer die richtigen Herunterfahrverfahren",
+              "Die Position des Netzschalters variiert je nach Gerät",
+              "Erzwingen Sie das Ausschalten niemals, es sei denn, es ist absolut notwendig"
+            ],
+            "practiceExercise": "Üben Sie das Ein- und Ausschalten Ihres Geräts 3 Mal mit der richtigen Methode.",
+            "animationDesc": "Sehen Sie, wie man den Netzschalter richtig drückt"
+          },
+          "mouseKeyboard": {
+            "title": "Maus und Tastatur verwenden",
+            "description": "Meistern Sie die Grundlagen der Computereingabegeräte",
+            "duration": "20 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Grundlagen von Maus und Tastatur</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Maus-Grundlagen:</h4><ul class=\"space-y-2\"><li>• Linksklick: Elemente auswählen, Programme öffnen</li><li>• Rechtsklick: Menüs mit weiteren Optionen öffnen</li><li>• Doppelklick: Dateien und Programme öffnen</li><li>• Scrollrad: Auf Seiten auf und ab bewegen</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tastatur-Grundlagen:</h4><ul class=\"space-y-2\"><li>• Leertaste: Leerzeichen zwischen Wörtern hinzufügen</li><li>• Enter: Eine neue Zeile beginnen oder bestätigen</li><li>• Rücktaste: Den Buchstaben vor dem Cursor löschen</li><li>• Shift: Großbuchstaben erstellen</li></ul></div></div>",
+            "keyPoints": [
+              "Der Linksklick ist Ihr Hauptwerkzeug",
+              "Der Rechtsklick öffnet hilfreiche Menüs",
+              "Übung macht den Meister"
+            ],
+            "practiceExercise": "Öffnen Sie ein einfaches Textprogramm und tippen Sie Ihren Namen, dann löschen Sie ihn mit der Rücktaste.",
+            "animationDesc": "Sehen Sie, wie man klickt, doppelklickt und rechtsklickt"
+          },
+          "internetSafety": {
+            "title": "Grundlagen der Internetsicherheit",
+            "description": "Bleiben Sie online sicher mit diesen wichtigen Tipps",
+            "duration": "25 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Online sicher bleiben</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Warnzeichen für Betrug:</h4><ul class=\"space-y-2 text-red-700\"><li>• Dringende Nachrichten, die um Geld bitten</li><li>• Anfragen nach Passwörtern oder persönlichen Informationen</li><li>• \"Sie haben gewonnen\"-Nachrichten, obwohl Sie nicht teilgenommen haben</li><li>• Verdächtige Links oder Anhänge</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tipps für sicheres Surfen:</h4><ul class=\"space-y-2\"><li>• Achten Sie auf \"https://\" in Webadressen</li><li>• Laden Sie nur aus offiziellen App-Stores herunter</li><li>• Halten Sie Ihre Software auf dem neuesten Stand</li><li>• Verwenden Sie starke, einzigartige Passwörter</li></ul></div></div>",
+            "keyPoints": [
+              "Geben Sie niemals persönliche Informationen an Fremde weiter",
+              "Im Zweifelsfall fragen Sie eine vertrauenswürdige Person",
+              "Seriöse Unternehmen fragen nicht per E-Mail nach Passwörtern"
+            ],
+            "practiceExercise": "Identifizieren Sie 3 Warnzeichen für Online-Betrug aus der Lektion."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Mit Familie & Freunden in Verbindung treten",
+        "description": "Lernen Sie, soziale Medien, Videoanrufe und Messaging sicher zu nutzen.",
+        "estimatedTime": "3-4 Stunden",
+        "lessons": {
+          "videoCalls": {
+            "title": "Videoanrufe mit der Familie",
+            "description": "Verbinden Sie sich von Angesicht zu Angesicht mit Ihren Lieben, egal wo sie sind",
+            "duration": "30 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Videoanrufe tätigen</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Beliebte Videoanruf-Apps:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Integriert, sehr einfach</li><li>• <strong>WhatsApp</strong>: Funktioniert auf allen Handys</li><li>• <strong>Zoom</strong>: Ideal für Gruppenanrufe</li><li>• <strong>Skype</strong>: Funktioniert auf Computern und Handys</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Vor Ihrem Anruf:</h4><ul class=\"space-y-2\"><li>• Überprüfen Sie Ihre Internetverbindung</li><li>• Finden Sie eine gute Beleuchtung (Gesicht zum Fenster)</li><li>• Testen Sie Ihre Kamera und Ihr Mikrofon</li><li>• Halten Sie den Kontakt der Person bereit</li></ul></div></div>",
+            "keyPoints": [
+              "Gute Beleuchtung macht einen großen Unterschied",
+              "Testen Sie Ihre Einrichtung vor wichtigen Anrufen",
+              "Die meisten Apps funktionieren ähnlich, sobald Sie eine gelernt haben"
+            ],
+            "practiceExercise": "Machen Sie einen Test-Videoanruf mit einem Familienmitglied oder Freund."
+          },
+          "socialMedia": {
+            "title": "Grundlagen der sozialen Medien",
+            "description": "Vernetzen Sie sich mit Freunden und Familie auf Facebook und anderen Plattformen",
+            "duration": "35 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Erste Schritte mit sozialen Medien</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Facebook-Grundlagen:</h4><ul class=\"space-y-2\"><li>• Erstellen Sie ein Profil mit Ihrem richtigen Namen</li><li>• Fügen Sie ein schönes Profilbild hinzu</li><li>• Senden Sie Freundschaftsanfragen an Personen, die Sie kennen</li><li>• Teilen Sie Updates, Fotos und Erinnerungen</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Datenschutzeinstellungen:</h4><ul class=\"space-y-2\"><li>• Akzeptieren Sie nur Freunde, die Sie tatsächlich kennen</li><li>• Stellen Sie Beiträge auf \"Nur Freunde\" ein</li><li>• Geben Sie keine persönlichen Informationen öffentlich preis</li><li>• Überprüfen Sie, was andere über Sie sehen können</li></ul></div></div>",
+            "keyPoints": [
+              "Datenschutzeinstellungen sind sehr wichtig",
+              "Vernetzen Sie sich nur mit Personen, die Sie kennen",
+              "Denken Sie nach, bevor Sie posten - es bleibt online"
+            ],
+            "practiceExercise": "Stellen Sie Ihre Datenschutzeinstellungen für Beiträge auf \"Nur Freunde\" ein."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Meisterschaft im digitalen Leben",
+        "description": "Fortgeschrittene Fähigkeiten für ein selbstbewusstes digitales Leben.",
+        "estimatedTime": "4-5 Stunden",
+        "lessons": {
+          "smartHome": {
+            "title": "Smart-Home-Geräte",
+            "description": "Steuern Sie Ihr Zuhause mit Sprachbefehlen und Apps",
+            "duration": "40 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Smart-Home-Grundlagen</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Beliebte Smart-Geräte:</h4><ul class=\"space-y-2\"><li>• <strong>Smarte Lautsprecher</strong>: Alexa, Google Home</li><li>• <strong>Smarte Thermostate</strong>: Temperatur fernsteuern</li><li>• <strong>Smarte Lichter</strong>: Dimmen, Farben ändern, Zeitpläne festlegen</li><li>• <strong>Smarte Türklingeln</strong>: Sehen, wer an der Tür ist</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Erste Schritte:</h4><ul class=\"space-y-2\"><li>• Beginnen Sie zum Lernen mit einem Gerät</li><li>• Laden Sie die App des Geräts herunter</li><li>• Befolgen Sie die Einrichtungsanweisungen Schritt für Schritt</li><li>• Üben Sie grundlegende Sprachbefehle</li></ul></div></div>",
+            "keyPoints": [
+              "Fangen Sie einfach mit einem Gerät an",
+              "Sprachbefehle erleichtern das Leben",
+              "Die meisten Geräte haben hilfreiche Apps"
+            ],
+            "practiceExercise": "Wenn Sie ein Smart-Gerät haben, üben Sie 3 verschiedene Sprachbefehle."
+          },
+          "onlineBanking": {
+            "title": "Sicherheit beim Online-Banking",
+            "description": "Verwalten Sie Ihre Finanzen sicher online",
+            "duration": "45 Min.",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Sicheres Online-Banking</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Sicherheitsgrundlagen:</h4><ul class=\"space-y-2 text-red-700\"><li>• Geben Sie die Webadresse Ihrer Bank immer direkt ein</li><li>• Suchen Sie nach dem Schloss-Symbol in Ihrem Browser</li><li>• Nutzen Sie niemals öffentliches WLAN für Bankgeschäfte</li><li>• Melden Sie sich nach Abschluss vollständig ab</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Was Sie online tun können:</h4><ul class=\"space-y-2\"><li>• Kontostände prüfen</li><li>• Transaktionsverlauf einsehen</li><li>• Geld zwischen Konten überweisen</li><li>• Rechnungen elektronisch bezahlen</li></ul></div></div>",
+            "keyPoints": [
+              "Sicherheit hat oberste Priorität",
+              "Ihre Bank wird Sie niemals per E-Mail nach Passwörtern fragen",
+              "Online-Banking ist sehr bequem, wenn es sicher durchgeführt wird"
+            ],
+            "practiceExercise": "Besuchen Sie die Website Ihrer Bank und üben Sie das Einloggen (führen Sie noch keine Transaktionen durch)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Wie vertraut sind Sie damit, einen Computer oder ein Telefon ein- und auszuschalten?",
+          "options": {
+            "0": "Noch nie gemacht",
+            "1": "Brauche jedes Mal Hilfe",
+            "2": "Kann es manchmal",
+            "3": "Sehr vertraut"
+          }
+        },
+        "1": {
+          "question": "Wie oft nutzen Sie das Internet?",
+          "options": {
+            "0": "Nie",
+            "1": "Selten",
+            "2": "Manchmal",
+            "3": "Täglich"
+          }
+        },
+        "2": {
+          "question": "Haben Sie schon einmal eine E-Mail gesendet?",
+          "options": {
+            "0": "Nie",
+            "1": "Mit viel Hilfe",
+            "2": "Ein paar Mal",
+            "3": "Regelmäßig"
+          }
+        },
+        "3": {
+          "question": "Wie sicher fühlen Sie sich beim Herunterladen von Apps?",
+          "options": {
+            "0": "Noch nie versucht",
+            "1": "Sehr nervös",
+            "2": "Mit Hilfe",
+            "3": "Sicher"
+          }
+        },
+        "4": {
+          "question": "Nutzen Sie Videoanrufe (FaceTime, Zoom usw.)?",
+          "options": {
+            "0": "Nie",
+            "1": "Einmal versucht",
+            "2": "Manchmal",
+            "3": "Regelmäßig"
+          }
+        },
+        "5": {
+          "question": "Was halten Sie vom Online-Shopping?",
+          "options": {
+            "0": "Zu beängstigend",
+            "1": "Sehr nervös",
+            "2": "Bereit, es zu versuchen",
+            "3": "Kaufe oft online ein"
+          }
+        },
+        "6": {
+          "question": "Haben Sie soziale Medien (Facebook usw.) genutzt?",
+          "options": {
+            "0": "Nie",
+            "1": "Habe es mir angesehen",
+            "2": "Habe einen Account",
+            "3": "Nutze es regelmäßig"
+          }
+        },
+        "7": {
+          "question": "Wie vertraut sind Sie mit Passwörtern?",
+          "options": {
+            "0": "Sehr verwirrt",
+            "1": "Brauche Hilfe",
+            "2": "Verstehe die Grundlagen",
+            "3": "Verwalte sie gut"
+          }
+        },
+        "8": {
+          "question": "Sichern Sie Ihre Fotos und Dateien?",
+          "options": {
+            "0": "Weiß nicht wie",
+            "1": "Jemand hilft mir",
+            "2": "Manchmal",
+            "3": "Regelmäßig"
+          }
+        },
+        "9": {
+          "question": "Wie lernen Sie neue Technologien?",
+          "options": {
+            "0": "Ich vermeide sie",
+            "1": "Ich bitte um Hilfe",
+            "2": "Ich probiere es vorsichtig aus",
+            "3": "Ich erkunde selbstbewusst"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "customizePrefs": "Passen Sie Ihre Einstellungen an",
+    "personalInfo": "Persönliche Informationen",
+    "firstName": "Vorname",
+    "firstNamePlaceholder": "Ihr Vorname",
+    "primaryDevice": "Hauptgerät",
+    "devices": {
+      "windowsComputer": "Windows-Computer",
+      "macComputer": "Mac (Apple-Computer)",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidDevice": "Android-Handy oder -Tablet"
+    },
+    "accessibility": "Barrierefreiheit",
+    "textToSpeech": "Text-zu-Sprache",
+    "textToSpeechDesc": "Lassen Sie sich Antworten vorlesen",
+    "voiceInput": "Spracheingabe",
+    "voiceInputDesc": "Stellen Sie Fragen durch Sprechen",
+    "languagePreferences": "Spracheinstellungen",
+    "hideLanguages": "Ausblenden",
+    "modifyLanguages": "Sprachen ändern",
+    "defaultLanguage": "Standardsprache (die gesamte Website wird diese Sprache verwenden)",
+    "defaultLanguageDesc": "Dies wird die primäre Sprache für alle Oberflächenelemente und Interaktionen sein.",
+    "otherLanguages": "Andere Sprachen, die Sie verwenden möchten:",
+    "default": "Standard",
+    "languageConfiguration": "Sprachkonfiguration",
+    "languageConfigurationDesc": "Ihre ausgewählten Sprachen werden verwendet für:",
+    "speechToText": "Spracherkennung und -verarbeitung",
+    "multilingualText": "Mehrsprachige Textinteraktionen und Antworten",
+    "interfaceLanguage": "Optionen für die Benutzeroberfläche und Barrierefreiheit",
+    "searchLanguages": "Sprachen suchen...",
+    "selectAll": "Alle auswählen",
+    "deselectAll": "Alle abwählen",
+    "selectedLanguages": "Ausgewählt: {{count}} Sprache",
+    "selectedLanguages_plural": "Ausgewählt: {{count}} Sprachen",
+    "noLanguagesFound": "Keine Sprachen gefunden, die mit \"{{search}}\" übereinstimmen",
+    "languageRequired": "Mindestens eine Sprache erforderlich",
+    "languageRequiredDesc": "Bitte wählen Sie mindestens eine Sprache aus, um die ordnungsgemäße Funktion der Spracheingabe und der Textinteraktionen zu gewährleisten.",
+    "account": "Konto",
+    "signOut": "Abmelden",
+    "signOutDesc": "Melden Sie sich von Ihrem Konto ab",
+    "cancel": "Abbrechen",
+    "saving": "Speichere...",
+    "saved": "Gespeichert!",
+    "saveChanges": "Änderungen speichern",
+    "errorSaving": "Einstellungen konnten nicht gespeichert werden. Bitte versuchen Sie es erneut.",
+    "lastName": "Nachname",
+    "lastNamePlaceholder": "Ihr Nachname",
+    "age": "Alter",
+    "techExperience": "Technologie-Erfahrungslevel",
+    "techExperienceOptions": {
+      "beginner": "Anfänger (ich benötige bei den meisten Dingen Schritt-für-Schritt-Hilfe)",
+      "some": "Etwas Erfahrung (ich kann grundlegende Aufgaben erledigen, benötige aber bei neuen Dingen Hilfe)",
+      "comfortable": "Vertraut (ich kann die meisten Dinge selbst herausfinden, benötige aber manchmal Anleitung)"
+    },
+    "primaryConcerns": "Hauptinteressen/Bedenken bei technischen Themen",
+    "assistiveNeeds": "Bedürfnisse bezüglich Barrierefreiheit",
+    "communicationStyle": "Bevorzugter Erklärungsstil",
+    "communicationStyleOptions": {
+      "simple": "Einfach & Schnell (Nur die Schritte)",
+      "detailed": "Detailliert (Erklären Sie das 'Warum')",
+      "visual": "Visuell (Zeigen Sie Bilder/Videos, wenn möglich)"
+    },
+    "videoRecommendations": "Video-Empfehlungen",
+    "videoRecommendationsDesc": "Zeigen Sie hilfreiche Videos und Artikel neben den Schritten an",
+    "fontSize": "Bevorzugte Textgröße",
+    "fontSizeOptions": {
+      "normal": "Normal",
+      "large": "Groß",
+      "extraLarge": "Extra Groß"
+    },
+    "displayPreferences": "Anzeige & Thema",
+    "theme": "Farbthema",
+    "themeOptions": {
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "highContrast": "Modus mit hohem Kontrast",
+    "highContrastDesc": "Erhöhen Sie den Kontrast von Text und Elementen für eine bessere Sichtbarkeit",
+    "learningPreferences": "Lern- & Inhaltseinstellungen"
+  },
+  "common": {
+    "settings": "Einstellungen",
+    "signOut": "Abmelden",
+    "close": "Schließen"
+  },
+  "tips": {
+    "connectWifi": "Mit WLAN verbinden",
+    "connectWifiDesc": "Sicher und einfach online gehen",
+    "videoCall": "Einen Videoanruf tätigen",
+    "videoCallDesc": "Sich von Angesicht zu Angesicht mit der Familie verbinden",
+    "screenshot": "Einen Screenshot machen",
+    "screenshotDesc": "Erfassen, was auf Ihrem Bildschirm ist",
+    "updateApps": "Ihre Apps aktualisieren",
+    "updateAppsDesc": "Halten Sie Ihre Apps aktuell und sicher"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Kommunikation",
+    "basicSkills": "Grundkenntnisse",
+    "maintenance": "Wartung"
+  },
+  "questions": {
+    "makeTextBigger": "Wie mache ich den Text größer?",
+    "connectWifi": "Wie verbinde ich mich mit dem WLAN?",
+    "takeScreenshot": "Wie mache ich einen Screenshot?",
+    "makeVideoCall": "Wie tätige ich einen Videoanruf?",
+    "backupPhotos": "Wie sichere ich meine Fotos?",
+    "updateApps": "Wie aktualisiere ich meine Apps?",
+    "onlineBanking": "Wie nutze ich Online-Banking sicher?",
+    "joinZoom": "Wie trete ich einem Zoom-Meeting bei?"
+  },
+  "achievements": {
+    "gettingStarted": "Erste Schritte",
+    "gettingStartedDesc": "Ihre erste Frage gestellt",
+    "questionExplorer": "Fragen-Entdecker",
+    "questionExplorerDesc": "5 Fragen gestellt",
+    "stepMaster": "Schritt-Meister",
+    "stepMasterDesc": "25 Schritte abgeschlossen"
+  },
+  "stats": {
+    "seniorsHelped": "Senioren geholfen",
+    "questionsAnswered": "Fragen beantwortet",
+    "successRate": "Erfolgsquote",
+    "alwaysAvailable": "Immer verfügbar"
+  },
+  "time": {
+    "now": "Gerade eben",
+    "hourAgo": "Vor 1 Stunde",
+    "hoursAgo": "Vor {{count}} Stunden",
+    "dayAgo": "Vor 1 Tag",
+    "daysAgo": "Vor {{count}} Tagen"
+  },
+  "voice": {
+    "startInput": "Spracheingabe starten",
+    "stopRecording": "Aufnahme stoppen",
+    "processing": "Verarbeite...",
+    "recognized": "Stimme erkannt",
+    "failed": "Spracheingabe fehlgeschlagen"
+  },
+  "language": {
+    "select": "Sprache auswählen",
+    "translate": "Übersetzen",
+    "translating": "Übersetze...",
+    "detecting": "Sprache wird erkannt...",
+    "error": "Übersetzung fehlgeschlagen"
+  },
+  "auth": {
+    "backToHome": "Zurück zur Startseite",
+    "createAccount": "Konto erstellen",
+    "welcomeBack": "Willkommen zurück",
+    "joinFamily": "Treten Sie unserer Familie von gestärkten Senioren bei",
+    "welcomeBackDesc": "Melden Sie sich an, um Ihre Technik-Reise fortzusetzen",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "password": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "confirmPassword": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Bestätigen Sie Ihr Passwort",
+    "passwordsNoMatch": "Passwörter stimmen nicht überein",
+    "passwordTooShort": "Das Passwort muss mindestens 6 Zeichen lang sein",
+    "creatingAccount": "Konto wird erstellt...",
+    "signingIn": "Anmeldung läuft...",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto? Anmelden",
+    "dontHaveAccount": "Haben Sie kein Konto? Registrieren"
+  },
+  "onboarding": {
+    "step1": {
+      "title": "Lassen Sie uns Sie kennenlernen",
+      "subtitle": "Helfen Sie mir, Ihre Erfahrung zu personalisieren",
+      "firstName": "Vorname",
+      "firstNamePlaceholder": "Ihr Vorname",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "Ihr Nachname",
+      "age": "Alter (hilft mir, meine Erklärungen anzupassen)"
+    },
+    "step2": {
+      "title": "Wählen Sie Ihre bevorzugten Sprachen",
+      "subtitle": "Wählen Sie die Sprachen aus, die Sie für die Kommunikation und Spracheingabe verwenden möchten",
+      "languageSelection": "Sprachauswahl",
+      "languageDescription": "Wählen Sie die Sprachen, mit denen Sie sich wohlfühlen. Dies wird:",
+      "speechToText": "Die Spracherkennung konfigurieren, um Ihre Stimme in diesen Sprachen zu verstehen",
+      "textInteractions": "Textinteraktionen in Ihren gewählten Sprachen ermöglichen",
+      "interfaceOptions": "Oberflächenoptionen für eine bessere Zugänglichkeit anpassen",
+      "searchLanguages": "Sprachen suchen...",
+      "selectAll": "Alle auswählen",
+      "deselectAll": "Alle abwählen",
+      "selected": "Ausgewählt: {{count}} Sprache",
+      "selected_plural": "Ausgewählt: {{count}} Sprachen",
+      "noLanguagesFound": "Keine Sprachen gefunden, die zu \"{{search}}\" passen",
+      "languageRequired": "Sprachauswahl erforderlich",
+      "languageRequiredDesc": "Bitte wählen Sie mindestens eine Sprache aus, um fortzufahren. Dies gewährleistet die beste Erfahrung für Spracheingabe und Textinteraktionen."
+    },
+    "step3": {
+      "title": "Welches Gerät benutzen Sie am häufigsten?",
+      "subtitle": "Dies hilft mir, Ihnen bessere Anweisungen zu geben",
+      "devices": {
+        "windowscomputer": "Windows-Computer",
+        "macapplecomputer": "Mac (Apple-Computer)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android-Handy oder -Tablet",
+        "smarttv": "Smart-TV",
+        "multipledevices": "Mehrere Geräte"
+      }
+    },
+    "step4": {
+      "title": "Wie vertraut sind Sie mit Technologie?",
+      "subtitle": "Seien Sie ehrlich - das hilft mir, die Dinge auf dem richtigen Niveau zu erklären",
+      "beginner": "Anfänger",
+      "beginnerDesc": "Ich brauche bei den meisten Dingen eine Schritt-für-Schritt-Anleitung",
+      "some": "Etwas Erfahrung",
+      "someDesc": "Ich kann grundlegende Aufgaben erledigen, brauche aber bei neuen Dingen Hilfe",
+      "comfortable": "Vertraut",
+      "comfortableDesc": "Ich kann die meisten Dinge selbst herausfinden, brauche aber manchmal eine Anleitung"
+    },
+    "step5": {
+      "title": "Welche technischen Themen bereiten Ihnen am meisten Sorgen?",
+      "subtitle": "Wählen Sie alle zutreffenden aus - ich werde die Hilfe in diesen Bereichen priorisieren",
+      "concerns": {
+        "onlineSafety": "Online-Sicherheit & Betrug",
+        "passwordManagement": "Passwortverwaltung",
+        "videoCalling": "Videoanrufe mit der Familie",
+        "socialMedia": "Soziale Medien",
+        "onlineBanking": "Online-Banking",
+        "emailMessaging": "E-Mail & Messaging",
+        "photoStorage": "Fotospeicherung & -freigabe",
+        "appDownloads": "App-Downloads & -Updates",
+        "wifiInternet": "WLAN- & Internetprobleme",
+        "deviceSettings": "Geräteeinstellungen",
+        "onlineShopping": "Online-Einkauf",
+        "healthApps": "Gesundheits-Apps & -Portale"
+      }
+    },
+    "step6": {
+      "title": "Benötigen Sie Barrierefreiheitsfunktionen?",
+      "subtitle": "Ich möchte sicherstellen, dass Sie dies bequem nutzen können",
+      "needs": {
+        "largerText": "Größerer Text und größere Schaltflächen",
+        "highContrast": "Kontrastreiche Farben",
+        "voiceCommands": "Sprachbefehle",
+        "screenReader": "Bildschirmleser-Unterstützung",
+        "slowerExplanations": "Langsamere Erklärungen",
+        "visualSteps": "Visuelle Schrittanzeigen",
+        "noneNeeded": "Keine benötigt"
+      }
+    },
+    "step7": {
+      "title": "Wie lernen Sie am liebsten?",
+      "subtitle": "Ich passe meinen Lehrstil an Ihre Vorlieben an",
+      "simple": "Einfach & Schnell",
+      "simpleDesc": "Sagen Sie mir einfach Schritt für Schritt, was zu tun ist",
+      "detailed": "Detaillierte Erklärungen",
+      "detailedDesc": "Erklären Sie, warum ich jeden Schritt mache",
+      "visual": "Visuelles Lernen",
+      "visualDesc": "Zeigen Sie mir Bilder und Videos, wenn möglich"
+    },
+    "step8": {
+      "title": "Letzte Anpassungen",
+      "subtitle": "Richten Sie Ihre perfekte Lernumgebung ein",
+      "textToSpeech": "Text-zu-Sprache",
+      "textToSpeechDesc": "Antworten vorlesen lassen",
+      "voiceInput": "Spracheingabe",
+      "voiceInputDesc": "Fragen durch Sprechen stellen",
+      "videoRecommendations": "Video-Empfehlungen",
+      "videoRecommendationsDesc": "Hilfreiche Videos und Artikel anzeigen",
+      "textSize": "Textgröße-Präferenz",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Groß",
+      "textSizeExtraLarge": "Extra Groß"
+    },
+    "back": "Zurück",
+    "next": "Weiter",
+    "settingUp": "Wird eingerichtet...",
+    "completeSetup": "Einrichtung abschließen",
+    "errorSaving": "Ihre Einstellungen konnten nicht gespeichert werden. Bitte versuchen Sie es erneut."
+  },
+  "error": {
+    "askQuestionFirst": "Bitte stellen Sie zuerst eine Frage",
+    "couldntGetAnswer": "Entschuldigung, ich konnte im Moment keine Antwort erhalten. Bitte versuchen Sie es erneut."
+  },
+  "learningPage": {
+    "headerTitle": "Lernzentrum",
+    "heroTitle": "Technik-Fähigkeiten für Senioren",
+    "heroSubtitle": "Lernen Sie Technologie in Ihrem eigenen Tempo mit Schritt-für-Schritt-Lektionen, interaktiven Demos und personalisierter Anleitung.",
+    "takeSkillsAssessment": "Fähigkeitsbewertung durchführen",
+    "orSeparator": "oder",
+    "iAmBeginner": "Ich bin Anfänger",
+    "iAmIntermediate": "Ich bin Fortgeschrittener",
+    "iAmAdvanced": "Ich bin Experte",
+    "yourLevel": "Ihr Level: {{level}}",
+    "levelDescription": "Die Kurse sind auf Ihr Fähigkeitsniveau zugeschnitten",
+    "retakeAssessment": "Bewertung wiederholen",
+    "progressLabel": "Fortschritt",
+    "lessonsLabel": "Lektionen",
+    "completedOutOfTotal": "{{completed}} von {{total}} abgeschlossen",
+    "featureInteractiveDemos": "Interaktive Demos",
+    "featureInteractiveDemosDesc": "Sehen Sie genau, wie jede Aktion ausgeführt wird",
+    "featureAudioSupport": "Audio-Unterstützung",
+    "featureAudioSupportDesc": "Lassen Sie sich Lektionen vorlesen",
+    "featurePrintableGuides": "Druckbare Anleitungen",
+    "featurePrintableGuidesDesc": "Nehmen Sie Zusammenfassungen offline mit",
+    "featureCertificates": "Zertifikate",
+    "featureCertificatesDesc": "Verdienen Sie Zertifikate, während Sie Kurse abschließen",
+    "animationShow": "Animation zeigen",
+    "animationReset": "Zurücksetzen",
+    "featuresGridTitle": "Entdecken Sie unsere Funktionen",
+    "loadingPaths": "Lernpfade werden geladen...",
+    "noPathsAvailable": "Im Moment sind keine Lernpfade verfügbar. Bitte schauen Sie später wieder vorbei.",
+    "progressComplete": "{{value}}% abgeschlossen",
+    "recommendedStart": "Empfohlener Startpunkt",
+    "moduleListTitle": "Module für den Pfad: {{pathTitle}}",
+    "moduleContentTitle": "Inhalt für das Modul: {{moduleTitle}} wird hier angezeigt.",
+    "loadingCenter": "Lernzentrum wird geladen...",
+    "moduleTimeLabel": "Zeit: "
+  },
+  "languageSelector": {
+    "choosePrompt": "Wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche",
+    "moreComingSoon": "🌍 Weitere Sprachen folgen in Kürze"
+  },
+  "assessmentView": {
+    "headerTitle": "Fähigkeitsbewertung",
+    "questionProgress": "Frage {{current}} von {{total}}",
+    "chooseBestOption": "Wählen Sie die Option, die Sie am besten beschreibt",
+    "skipAssessment": "Bewertung überspringen"
+  },
+  "courseView": {
+    "lessonsHeader": "Lektionen",
+    "interactiveDemoLabel": "Interaktive Demo",
+    "startLesson": "Lektion beginnen",
+    "reviewLesson": "Überprüfen",
+    "congratulations": "Herzlichen Glückwunsch!",
+    "courseComplete": "Sie haben den Kurs {{courseTitle}} abgeschlossen!",
+    "downloadCertificate": "Zertifikat herunterladen"
+  },
+  "lessonView": {
+    "readAloud": "Lektion vorlesen",
+    "interactiveDemoHeader": "Interaktive Demo",
+    "practiceExerciseHeader": "Praktische Übung",
+    "markAsComplete": "Als abgeschlossen markieren",
+    "repeatLesson": "Lektion wiederholen",
+    "keyPointsHeader": "Wichtige Punkte",
+    "takeItWithYouHeader": "Zum Mitnehmen",
+    "downloadSummaryButton": "Zusammenfassung herunterladen",
+    "downloadSummaryDescription": "Erhalten Sie eine druckbare Zusammenfassung dieser Lektion",
+    "needHelpHeader": "Benötigen Sie Hilfe?",
+    "askAQuestionButton": "Eine Frage stellen",
+    "chatWithHelperButton": "Mit Helfer chatten"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Datenschutzrichtlinie",
+    "pageTitle": "Datenschutzrichtlinie",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "ourPromise": {
+      "title": "Unser Versprechen an Sie",
+      "text": "Bei Senior Tech Helper verstehen wir, dass Ihre Privatsphäre kostbar ist. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und absolut transparent darüber zu sein, wie wir sie verwenden. Diese Richtlinie erklärt alles in einfacher, klarer Sprache."
+    },
+    "cookies": {
+      "title": "Wie wir Cookies verwenden",
+      "whatAreCookiesTitle": "Was sind Cookies?",
+      "whatAreCookiesText": "Cookies sind kleine Textdateien, die uns helfen, Ihre Präferenzen zu speichern und Ihre Erfahrung zu verbessern. Stellen Sie sie sich wie Lesezeichen vor, die uns helfen, uns zu merken, wo Sie aufgehört haben.",
+      "weUseCookiesForTitle": "Wir verwenden Cookies NUR, um Ihnen zu helfen:",
+      "uses": [
+        "Ihre Präferenzen zu speichern: Textgröße, Spracheinstellungen und von Ihnen gewählte Barrierefreiheitsoptionen",
+        "Sie angemeldet zu halten: Damit Sie nicht jedes Mal Ihr Passwort eingeben müssen",
+        "Unsere Hilfe zu verbessern: Verstehen, welche Funktionen für Senioren wie Sie am hilfreichsten sind"
+      ],
+      "whatWeDontDoTitle": "Was wir NICHT mit Cookies tun:",
+      "donts": [
+        "Sie über andere Websites hinweg verfolgen",
+        "Ihre Informationen an Dritte verkaufen",
+        "Ihre Daten mit Werbetreibenden teilen",
+        "Sie für Marketingzwecke verwenden"
+      ]
+    },
+    "informationCollected": {
+      "title": "Welche Informationen wir sammeln",
+      "youGiveUsTitle": "Informationen, die Sie uns geben:",
+      "youGiveUsList": [
+        "Ihr Name und Ihre E-Mail-Adresse",
+        "Ihr Gerätetyp (iPhone, Windows usw.)",
+        "Ihr technisches Erfahrungsniveau",
+        "Ihre Barrierefreiheitseinstellungen",
+        "Fragen, die Sie unserem KI-Helfer stellen"
+      ],
+      "weCollectTitle": "Informationen, die wir automatisch sammeln:",
+      "weCollectList": [
+        "Wie Sie unsere App nutzen (welche Funktionen am meisten helfen)",
+        "Technische Informationen (Browsertyp, Gerät)",
+        "Fehlerberichte (um Probleme schnell zu beheben)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Wie wir Ihre Informationen schützen",
+      "protections": [
+        "Verschlüsselung: Alle Ihre Daten werden verschlüsselt, sodass nur wir sie lesen können",
+        "Sichere Server: Ihre Informationen werden auf geschützten, professionellen Servern gespeichert",
+        "Beschränkter Zugriff: Nur unsere wesentlichen Teammitglieder können auf Ihre Daten zugreifen",
+        "Regelmäßige Sicherheitsüberprüfungen: Wir überwachen ständig auf Sicherheitsbedrohungen"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Weitergabe Ihrer Informationen",
+      "neverSell": "Wir werden Ihre persönlichen Daten NIEMALS verkaufen oder vermieten.",
+      "onlyShareInSituations": "Wir geben Ihre Informationen nur in diesen sehr begrenzten Situationen weiter:",
+      "sharingSituations": [
+        "Mit Ihrer Erlaubnis: Wenn Sie uns ausdrücklich bitten, etwas zu teilen",
+        "Für den technischen Support: Mit vertrauenswürdigen Dienstleistern, die uns beim Betrieb der App helfen (sie sind an strenge Datenschutzvereinbarungen gebunden)",
+        "Wenn gesetzlich vorgeschrieben: Nur wenn wir gesetzlich dazu verpflichtet sind"
+      ]
+    },
+    "yourRights": {
+      "title": "Ihre Rechte und Wahlmöglichkeiten",
+      "youCanAlwaysTitle": "Sie können immer:",
+      "rightsList": [
+        "Sehen, welche Informationen wir über Sie haben",
+        "Uns bitten, falsche Informationen zu korrigieren",
+        "Verlangen, dass wir Ihr Konto und Ihre Daten löschen",
+        "Cookies in Ihren Browsereinstellungen deaktivieren",
+        "Uns bei Datenschutzfragen kontaktieren"
+      ],
+      "noteDeletingCookiesTitle": "Hinweis zum Löschen von Cookies:",
+      "noteDeletingCookiesText": "Wenn Sie unsere Cookies löschen, müssen Sie Ihre Einstellungen erneut einrichten, und einige Funktionen funktionieren möglicherweise nicht mehr so gut."
+    },
+    "thirdPartyServices": {
+      "title": "Dienste von Drittanbietern",
+      "weUseTrustedServices": "Wir nutzen einige vertrauenswürdige Drittanbieterdienste, um unsere Funktionen bereitzustellen:",
+      "servicesList": [
+        "Google AI (Gemini): Betreibt unseren KI-Assistenten, der Ihre Fragen beantwortet",
+        "Firebase: Speichert Ihre Kontoinformationen sicher",
+        "YouTube/Bildungsseiten: Wir können hilfreiche Videos und Artikel empfehlen"
+      ],
+      "servicesOwnPolicies": "Diese Dienste haben ihre eigenen Datenschutzrichtlinien, und wir geben nur die minimal notwendigen Informationen weiter, damit sie funktionieren."
+    },
+    "changesToPolicy": {
+      "title": "Änderungen dieser Richtlinie",
+      "text": "Wenn wir diese Datenschutzrichtlinie aktualisieren müssen, werden wir Sie per E-Mail benachrichtigen und einen Hinweis in der App anzeigen. Wir werden immer in einfacher, klarer Sprache erklären, was sich ändert und warum."
+    },
+    "contactUs": {
+      "title": "Kontaktieren Sie uns",
+      "questions": "Haben Sie Fragen zu Ihrer Privatsphäre oder dieser Richtlinie? Das TechStep-Team ist hier, um zu helfen!",
+      "email": "E-Mail: privacy@techstep.com",
+      "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Post: TechStep Datenschutzteam",
+      "mailLine2": "Technik-Hilfe-Weg 123",
+      "mailLine3": "Hilfreiche Stadt, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Vielen Dank, dass Sie TechStep Ihre Informationen anvertrauen. Wir verpflichten uns, sie sicher zu halten und sie nur zu verwenden, um Ihnen zum Erfolg mit der Technologie zu verhelfen.",
+      "backToHome": "Zurück zur Startseite"
+    }
+  }
+}

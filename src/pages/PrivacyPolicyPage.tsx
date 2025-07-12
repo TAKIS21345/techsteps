@@ -1,91 +1,82 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Cookie, Eye, Lock, Users, FileText } from 'lucide-react';
+import { ArrowLeft, Shield, Cookie, Eye, Lock, Users, FileText, Heart } from 'lucide-react';
 import Logo from '../components/Logo';
+import { useTranslation } from 'react-i18next';
 
 const PrivacyPolicyPage: React.FC = () => {
+  const { t } = useTranslation();
+  const currentDate = new Date().toLocaleDateString();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link 
-                to="/" 
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <Link
+                to="/"
                 className="p-2 text-gray-600 hover:text-gray-800 rounded-full hover:bg-gray-100 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
               </Link>
               <Logo size="sm" />
-              <h1 className="text-xl font-semibold text-gray-800">Privacy Policy</h1>
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-800">{t('privacyPolicy.headerTitle')}</h2>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-12 max-w-4xl">
-        <div className="card p-8">
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-blue-600" />
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
+        <div className="card p-6 sm:p-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Privacy Policy</h1>
-            <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">{t('privacyPolicy.pageTitle')}</h1>
+            <p className="text-sm sm:text-base text-gray-600">{t('privacyPolicy.lastUpdated', { date: currentDate })}</p>
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose prose-sm sm:prose-base max-w-none"> {/* Adjusted prose size */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
               <h2 className="text-xl font-semibold text-blue-800 mb-3 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
-                Our Promise to You
+                {t('privacyPolicy.ourPromise.title')}
               </h2>
               <p className="text-blue-700 leading-relaxed">
-                At Senior Tech Helper, we understand that your privacy is precious. We're committed to protecting your personal information and being completely transparent about how we use it. This policy explains everything in simple, clear language.
+                {t('privacyPolicy.ourPromise.text')}
               </p>
             </div>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                 <Cookie className="w-6 h-6 mr-3 text-orange-500" />
-                How We Use Cookies
+                {t('privacyPolicy.cookies.title')}
               </h2>
               <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 mb-4">
-                <h3 className="font-semibold text-orange-800 mb-2">What are cookies?</h3>
+                <h3 className="font-semibold text-orange-800 mb-2">{t('privacyPolicy.cookies.whatAreCookiesTitle')}</h3>
                 <p className="text-orange-700 mb-4">
-                  Cookies are small text files that help us remember your preferences and make your experience better. Think of them like bookmarks that help us remember where you left off.
+                  {t('privacyPolicy.cookies.whatAreCookiesText')}
                 </p>
               </div>
               
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">We use cookies ONLY to help you:</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3">{t('privacyPolicy.cookies.weUseCookiesForTitle')}</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <strong>Remember your preferences:</strong> Text size, voice settings, and accessibility options you've chosen
-                  </div>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <strong>Keep you signed in:</strong> So you don't have to enter your password every time
-                  </div>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <strong>Improve our help:</strong> Understanding which features are most helpful to seniors like you
-                  </div>
-                </li>
+                {(t('privacyPolicy.cookies.uses', { returnObjects: true }) as string[]).map((item, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
               </ul>
 
               <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                <h3 className="font-semibold text-red-800 mb-2">What we DON'T do with cookies:</h3>
+                <h3 className="font-semibold text-red-800 mb-2">{t('privacyPolicy.cookies.whatWeDontDoTitle')}</h3>
                 <ul className="space-y-2 text-red-700">
-                  <li>❌ Track you across other websites</li>
-                  <li>❌ Sell your information to anyone</li>
-                  <li>❌ Share your data with advertisers</li>
-                  <li>❌ Use them for marketing purposes</li>
+                  {(t('privacyPolicy.cookies.donts', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index}>❌ {item}</li>
+                  ))}
                 </ul>
               </div>
             </section>
@@ -93,27 +84,25 @@ const PrivacyPolicyPage: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                 <Eye className="w-6 h-6 mr-3 text-blue-500" />
-                What Information We Collect
+                {t('privacyPolicy.informationCollected.title')}
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-gray-800 mb-3">Information you give us:</h3>
+                  <h3 className="font-semibold text-gray-800 mb-3">{t('privacyPolicy.informationCollected.youGiveUsTitle')}</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Your name and email address</li>
-                    <li>• Your device type (iPhone, Windows, etc.)</li>
-                    <li>• Your tech experience level</li>
-                    <li>• Your accessibility preferences</li>
-                    <li>• Questions you ask our AI helper</li>
+                    {(t('privacyPolicy.informationCollected.youGiveUsList', { returnObjects: true }) as string[]).map((item, index) => (
+                      <li key={index}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
                 
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-gray-800 mb-3">Information we automatically collect:</h3>
+                  <h3 className="font-semibold text-gray-800 mb-3">{t('privacyPolicy.informationCollected.weCollectTitle')}</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• How you use our app (which features help most)</li>
-                    <li>• Technical information (browser type, device)</li>
-                    <li>• Error reports (to fix problems quickly)</li>
+                    {(t('privacyPolicy.informationCollected.weCollectList', { returnObjects: true }) as string[]).map((item, index) => (
+                      <li key={index}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -122,27 +111,17 @@ const PrivacyPolicyPage: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                 <Lock className="w-6 h-6 mr-3 text-green-500" />
-                How We Protect Your Information
+                {t('privacyPolicy.howWeProtect.title')}
               </h2>
               
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                 <ul className="space-y-3 text-green-800">
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span><strong>Encryption:</strong> All your data is encrypted (scrambled) so only we can read it</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span><strong>Secure servers:</strong> Your information is stored on protected, professional-grade servers</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span><strong>Limited access:</strong> Only our essential team members can access your data</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span><strong>Regular security checks:</strong> We constantly monitor for any security threats</span>
-                  </li>
+                  {(t('privacyPolicy.howWeProtect.protections', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                      <span dangerouslySetInnerHTML={{ __html: item }} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             </section>
@@ -150,18 +129,18 @@ const PrivacyPolicyPage: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                 <Users className="w-6 h-6 mr-3 text-purple-500" />
-                Sharing Your Information
+                {t('privacyPolicy.sharingInformation.title')}
               </h2>
               
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-                <h3 className="font-semibold text-purple-800 mb-3">We will NEVER sell or rent your personal information.</h3>
+                <h3 className="font-semibold text-purple-800 mb-3">{t('privacyPolicy.sharingInformation.neverSell')}</h3>
                 <p className="text-purple-700 mb-4">
-                  We only share your information in these very limited situations:
+                  {t('privacyPolicy.sharingInformation.onlyShareInSituations')}
                 </p>
                 <ul className="space-y-2 text-purple-700">
-                  <li>• <strong>With your permission:</strong> If you specifically ask us to share something</li>
-                  <li>• <strong>For technical support:</strong> With trusted service providers who help us run the app (they're bound by strict privacy agreements)</li>
-                  <li>• <strong>If required by law:</strong> Only if we're legally required to do so</li>
+                  {(t('privacyPolicy.sharingInformation.sharingSituations', { returnObjects: true }) as string[]).map((item, index) => (
+                     <li key={index} dangerouslySetInnerHTML={{ __html: `• ${item}` }} />
+                  ))}
                 </ul>
               </div>
             </section>
@@ -169,83 +148,79 @@ const PrivacyPolicyPage: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                 <FileText className="w-6 h-6 mr-3 text-indigo-500" />
-                Your Rights and Choices
+                {t('privacyPolicy.yourRights.title')}
               </h2>
               
               <div className="space-y-4">
                 <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-indigo-800 mb-2">You can always:</h3>
+                  <h3 className="font-semibold text-indigo-800 mb-2">{t('privacyPolicy.yourRights.youCanAlwaysTitle')}</h3>
                   <ul className="space-y-1 text-indigo-700">
-                    <li>• See what information we have about you</li>
-                    <li>• Ask us to correct any wrong information</li>
-                    <li>• Request that we delete your account and data</li>
-                    <li>• Turn off cookies in your browser settings</li>
-                    <li>• Contact us with any privacy questions</li>
+                    {(t('privacyPolicy.yourRights.rightsList', { returnObjects: true }) as string[]).map((item, index) => (
+                      <li key={index}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
                 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-yellow-800 mb-2">Note about deleting cookies:</h3>
+                  <h3 className="font-semibold text-yellow-800 mb-2">{t('privacyPolicy.yourRights.noteDeletingCookiesTitle')}</h3>
                   <p className="text-yellow-700">
-                    If you delete our cookies, you'll need to set up your preferences again, and some features might not work as well.
+                    {t('privacyPolicy.yourRights.noteDeletingCookiesText')}
                   </p>
                 </div>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Third-Party Services</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.thirdPartyServices.title')}</h2>
               
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-gray-700 mb-4">
-                  We use some trusted third-party services to help provide our features:
+                  {t('privacyPolicy.thirdPartyServices.weUseTrustedServices')}
                 </p>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• <strong>Google AI (Gemini):</strong> Powers our AI assistant that answers your questions</li>
-                  <li>• <strong>Firebase:</strong> Securely stores your account information</li>
-                  <li>• <strong>YouTube/Educational Sites:</strong> We may recommend helpful videos and articles</li>
+                  {(t('privacyPolicy.thirdPartyServices.servicesList', { returnObjects: true }) as string[]).map((item, index) => (
+                    <li key={index} dangerouslySetInnerHTML={{ __html: `• ${item}` }} />
+                  ))}
                 </ul>
                 <p className="text-gray-600 text-sm mt-4">
-                  These services have their own privacy policies, and we only share the minimum information needed for them to work.
+                  {t('privacyPolicy.thirdPartyServices.servicesOwnPolicies')}
                 </p>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Changes to This Policy</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.changesToPolicy.title')}</h2>
               
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <p className="text-blue-700">
-                  If we need to update this privacy policy, we'll notify you by email and show a notice in the app. 
-                  We'll always explain what's changing and why in simple, clear language.
+                  {t('privacyPolicy.changesToPolicy.text')}
                 </p>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.contactUs.title')}</h2>
               
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                 <p className="text-green-700 mb-4">
-                  Have questions about your privacy or this policy? The TechStep team is here to help!
+                  {t('privacyPolicy.contactUs.questions')}
                 </p>
                 <div className="space-y-2 text-green-700">
-                  <p><strong>Email:</strong> privacy@techstep.com</p>
-                  <p><strong>Phone:</strong> 1-800-TECH-HELP (1-800-832-4435)</p>
-                  <p><strong>Mail:</strong> TechStep Privacy Team<br />
-                     123 Tech Support Lane<br />
-                     Helpful City, HC 12345</p>
+                  <p><strong>{t('privacyPolicy.contactUs.email').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.email').split(': ')[1]}</p>
+                  <p><strong>{t('privacyPolicy.contactUs.phone').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.phone').split(': ')[1]}</p>
+                  <p><strong>{t('privacyPolicy.contactUs.mailLine1').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.mailLine1').split(': ')[1]}<br />
+                     {t('privacyPolicy.contactUs.mailLine2')}<br />
+                     {t('privacyPolicy.contactUs.mailLine3')}</p>
                 </div>
               </div>
             </section>
 
             <div className="text-center pt-8 border-t border-gray-200">
               <p className="text-gray-600 mb-4">
-                Thank you for trusting TechStep with your information. 
-                We're committed to keeping it safe and using it only to help you succeed with technology.
+                {t('privacyPolicy.footer.thankYou')}
               </p>
               <Link to="/" className="btn-primary">
-                Back to Home
+                {t('privacyPolicy.footer.backToHome')}
               </Link>
             </div>
           </div>

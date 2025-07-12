@@ -10,7 +10,115 @@
       "tagline": "Trusted by seniors worldwide",
       "title": "Technology made",
       "titleHighlight": "simple & clear",
-      "subtitle": "Master technology with confidence through personalized, step-by-step guidance that feels like having a patient friend by your side."
+      "subtitle": "Master technology with confidence through personalized, step-by-step guidance that feels like having a patient friend by your side.",
+      "startLearningButton": "Start Learning Free",
+      "watchDemoButton": "Watch Demo",
+      "freeForever": "Free forever",
+      "noCreditCard": "No credit card required",
+      "available247": "Available 24/7"
+    },
+    "featuresSection": {
+      "title": "Features",
+      "subtitle": "These are just a few of the features offered to help you grow!",
+      "items": [
+        {
+          "title": "Step-by-Step Guidance",
+          "description": "Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues."
+        },
+        {
+          "title": "Voice Support",
+          "description": "Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most."
+        },
+        {
+          "title": "Photo Explainer",
+          "description": "Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it."
+        },
+        {
+          "title": "Senior-Friendly Design",
+          "description": "Large text, intuitive interface, and patient explanations designed specifically with seniors in mind."
+        },
+        {
+          "title": "Safe & Secure",
+          "description": "Your personal information is protected with enterprise-grade security. No data shared with third parties."
+        },
+        {
+          "title": "Instant Answers",
+          "description": "Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Popular Questions We Help With",
+      "subtitle": "See what other seniors are asking about",
+      "askYourQuestionButton": "Ask Your Question Now"
+    },
+    "testimonialsSection": {
+      "title": "What Our Community Says",
+      "subtitle": "Join thousands of seniors who've found tech help made simple",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Finally, someone who explains technology in a way I can understand! The step-by-step instructions helped me set up my new phone perfectly. I feel so much more confident now!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "The voice feature is amazing! I can just ask my questions out loud and get clear answers. It's like having a tech-savvy grandchild available 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "I love the photo feature! I took a picture of a confusing cable and instantly knew what it was for. This app has made me much more confident with technology.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "Age {{age}}"
+    },
+    "ctaSection": {
+      "title": "Ready to Master Technology?",
+      "subtitle": "Join our community of empowered seniors who've made technology simple and approachable. Start getting clear, helpful answers today - completely free!",
+      "getStartedButton": "Get Started Free Today",
+      "setupInMinutes": "Setup in 2 minutes"
+    },
+    "footer": {
+      "description": "Making technology accessible and understandable for seniors everywhere.",
+      "featuresTitle": "Features",
+      "featuresItems": [
+        "Step-by-Step Help",
+        "Voice Support",
+        "Photo Explainer",
+        "24/7 Availability"
+      ],
+      "supportTitle": "Support",
+      "supportItems": [
+        "Help Center",
+        "Getting Started",
+        "Community",
+        "Contact Us"
+      ],
+      "companyTitle": "Company",
+      "companyItems": [
+        "About Us",
+        "Privacy Policy",
+        "Terms of Service",
+        "Accessibility"
+      ],
+      "copyright": "© 2025 TechStep. Made with ❤️ for seniors everywhere.",
+      "trustedBy": "Trusted by",
+      "trustedByCount": "50,000+ seniors"
     }
   },
   "dashboard": {
@@ -41,6 +149,167 @@
   "aiTools": {
     "title": "AI Helper Tools",
     "description": "Photo explainer & tech translator"
+  },
+  "aiToolsModal": {
+    "header": "AI Helper Tools",
+    "tabs": {
+      "photoExplainer": "Photo Explainer",
+      "techWordBuster": "Tech Word Buster"
+    },
+    "photoExplainer": {
+      "title": "Photo Explainer",
+      "description": "Upload a photo of any cable, button, or device and get an instant explanation.",
+      "uploadButton": "Upload Image",
+      "questionLabel": "Ask a question about the photo (optional)",
+      "questionPlaceholder": "What is this cable for?",
+      "explainButton": "Explain Photo",
+      "analyzingButton": "Analyzing...",
+      "alertNoPhoto": "Please upload a photo first or check API configuration.",
+      "errorResponse": "<p class=\"text-red-600\">Sorry, I couldn't analyze the image. Please try again.</p>",
+      "readResponseButton": "🔊 Read Response Aloud",
+      "previewAlt": "Preview"
+    },
+    "techWordBuster": {
+      "title": "Tech Word Buster",
+      "description": "Confused by a tech term? Get a simple, easy-to-understand explanation with real-world analogies.",
+      "inputLabel": "Enter a tech word or phrase",
+      "inputPlaceholder": "e.g., Cloud Storage, WiFi, Bluetooth",
+      "explainButton": "Make This Clear",
+      "explainingButton": "Explaining...",
+      "alertNoTerm": "Please enter a tech term first or check API configuration.",
+      "errorResponse": "<p class=\"text-red-600\">Sorry, I couldn't explain that term. Please try again.</p>",
+      "readExplanationButton": "🔊 Read Explanation Aloud"
+    },
+    "apiErrorNoExplanation": "No explanation received"
+  },
+  "clarificationModal": {
+    "headerTitle": "I need a bit more info",
+    "yourQuestionLabel": "Your question:",
+    "tellMeMorePrompt": "To give you the best help, could you tell me a bit more?",
+    "forExampleLabel": "For example:",
+    "textareaPlaceholder": "Please provide more details...",
+    "textareaSrLabel": "Provide more details for your question",
+    "skipButton": "Skip for now",
+    "submitButton": "Get Better Help",
+    "loadingButton": "Getting help..."
+  },
+  "languageNotificationBanner": {
+    "title": "Complete Your Language Setup",
+    "description": "Configure your preferred languages for better voice input and text interactions.",
+    "buttonText": "Complete Setup"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Computer & Device Fundamentals",
+      "description": "The very basics to get you started with technology.",
+      "modules": {
+        "turnOnDevice": { "title": "Turning on a Device", "description": "Learn to power up computers and smartphones." },
+        "mouseTouchscreen": {
+          "title": "Using a Mouse/Touchscreen",
+          "description": "Master pointing, clicking, and tapping.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Let’s Play: Mouse & Touchscreen Basics</h3><p>Ready to explore? Your mouse and touchscreen are your magic wands for the digital world!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mouse Fun:</h4><ul class=\"space-y-2\"><li>• <b>Point</b>: Move the mouse and watch the arrow follow you!</li><li>• <b>Click</b>: Press the left button to select things. Try clicking on a button below!</li><li>• <b>Double Click</b>: Quickly press twice to open files or programs.</li><li>• <b>Right Click</b>: Press the right button for a secret menu.</li><li>• <b>Scroll</b>: Roll the wheel to move up and down a page.</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Touchscreen Tricks:</h4><ul class=\"space-y-2\"><li>• <b>Tap</b>: Gently touch the screen to select.</li><li>• <b>Swipe</b>: Slide your finger to scroll or switch screens.</li><li>• <b>Pinch</b>: Move two fingers together or apart to zoom in and out.</li><li>• <b>Long Press</b>: Hold your finger down for more options (like right click!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Try It Out!</h4><ul class=\"space-y-2\"><li>• Move your mouse and see what changes on the screen.</li><li>• Tap and swipe on your device to explore.</li></ul></div></div>",
+          "keyPoints": [
+            "The mouse pointer follows your hand!",
+            "Left click is your main action.",
+            "Touchscreens let you tap, swipe, and zoom!"
+          ],
+          "practiceExercise": "Try clicking, double-clicking, and right-clicking on your desktop. On a touchscreen, tap and swipe to move between screens.",
+          "animationDesc": "Watch how to click, double-click, and swipe on a touchscreen."
+        },
+        "keyboardTyping": { "title": "Keyboard/Typing Basics", "description": "Get comfortable with typing essentials." },
+        "filesFolders": { "title": "Understanding Files & Folders", "description": "Learn how digital information is organized." }
+      }
+    },
+    "onlineWorld": {
+      "title": "The Online World",
+      "description": "Getting connected and exploring the internet safely.",
+      "modules": {
+        "webBrowsers": { "title": "Understanding Web Browsers", "description": "Navigate the internet with Chrome, Edge, or Safari." },
+        "searchEffectively": { "title": "How to Search Effectively", "description": "Find what you need online using search engines." },
+        "introEmail": { "title": "Introduction to Email", "description": "Learn to send and receive electronic mail." },
+        "virusSafety": { "title": "Staying Safe from Viruses", "description": "Protect your device from harmful software." }
+      }
+    },
+    "digitalLife": {
+      "title": "Everyday Digital Life",
+      "description": "Communicate, share, and manage your digital presence.",
+      "modules": {
+        "masteringEmail": { "title": "Mastering Email", "description": "Attachments, folders, and email etiquette." },
+        "videoCalling": { "title": "Video Calling Family & Friends", "description": "Connect face-to-face with loved ones." },
+        "introSocialMedia": { "title": "Introduction to Social Media", "description": "Understanding platforms like Facebook." },
+        "sharingPhotos": { "title": "Sharing Photos Safely", "description": "Share your memories without compromising privacy." }
+      }
+    },
+    "advancedSkills": {
+      "title": "Advanced & Creative Skills",
+      "description": "Beyond the basics: explore more of what technology offers.",
+      "modules": {
+        "onlineShopping": { "title": "Introduction to Online Shopping", "description": "Shop safely and conveniently online." },
+        "onlineMaps": { "title": "Using Online Maps & Navigation", "description": "Find your way with digital maps." },
+        "photoEditing": { "title": "Basic Photo Editing", "description": "Enhance your digital photos." },
+        "productivityTools": { "title": "Intro to Productivity Tools", "description": "Using tools like Google Docs or Microsoft Word basics." }
+      }
+    },
+    "accessibility": {
+      "title": "Accessibility & Ease of Use",
+      "description": "Make your device easier to see, hear, and control.",
+      "modules": {
+        "screenMagnifier": { "title": "Using a Screen Magnifier", "description": "Make text and images bigger on your screen." },
+        "voiceCommands": { "title": "Voice Commands & Dictation", "description": "Control your device and type with your voice." },
+        "highContrast": { "title": "High Contrast & Color Settings", "description": "Adjust colors for better visibility." },
+        "assistiveTouch": { "title": "Assistive Touch & Shortcuts", "description": "Use on-screen tools for easier navigation." }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Health, Safety & Privacy",
+      "description": "Stay safe, healthy, and private while using technology.",
+      "modules": {
+        "privacySettings": { "title": "Privacy Settings", "description": "Protect your personal information online." },
+        "scamAwareness": { "title": "Scam Awareness", "description": "Spot and avoid common online scams." },
+        "healthApps": { "title": "Using Health Apps", "description": "Track your health and wellness with apps." },
+        "emergencyContacts": { "title": "Setting Up Emergency Contacts", "description": "Add emergency contacts to your device." }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": { "name": "Tech Starter", "description": "Completed Computer & Device Fundamentals." },
+    "onlineWorld": { "name": "Online Explorer", "description": "Completed The Online World path." },
+    "digitalLife": { "name": "Digital Communicator", "description": "Completed Everyday Digital Life path." },
+    "advancedSkills": { "name": "Tech Virtuoso", "description": "Completed Advanced & Creative Skills path." },
+    "accessibility": { "name": "Accessibility Champion", "description": "Completed Accessibility & Ease of Use path." },
+    "healthAndSafety": { "name": "Safety Guardian", "description": "Completed Health, Safety & Privacy path." }
+  },
+  "skillAssessmentModal": {
+    "title": "Quick Skill Check",
+    "introduction": "Let's find the best place for you to start!",
+    "nextButton": "Next",
+    "finishButton": "Show My Starting Point",
+    "questionProgress": "Question {{current}} of {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "How comfortable are you with computers?",
+      "options": {
+        "new": "Brand New",
+        "basics": "I know some basics",
+        "confident": "I'm pretty confident"
+      }
+    },
+    "q2": {
+      "text": "Have you sent an email before?",
+      "options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "q3": {
+      "text": "Have you used a smartphone for more than just calls?",
+      "options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    }
   },
   "learning": {
     "title": "Learning Center",
@@ -298,7 +567,41 @@
     "saving": "Saving...",
     "saved": "Saved!",
     "saveChanges": "Save Changes",
-    "errorSaving": "Could not save settings. Please try again."
+    "errorSaving": "Could not save settings. Please try again.",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Your last name",
+    "age": "Age",
+    "techExperience": "Technology Experience Level",
+    "techExperienceOptions": {
+      "beginner": "Beginner (I need step-by-step help with most things)",
+      "some": "Some Experience (I can do basic tasks but need help with new things)",
+      "comfortable": "Comfortable (I can figure out most things but sometimes need guidance)"
+    },
+    "primaryConcerns": "Primary Tech Topics of Interest/Concern",
+    "assistiveNeeds": "Accessibility Needs",
+    "communicationStyle": "Preferred Explanation Style",
+    "communicationStyleOptions": {
+      "simple": "Simple & Quick (Just the steps)",
+      "detailed": "Detailed (Explain the 'why')",
+      "visual": "Visual (Show pictures/videos when possible)"
+    },
+    "videoRecommendations": "Video Recommendations",
+    "videoRecommendationsDesc": "Show helpful videos and articles alongside steps",
+    "fontSize": "Preferred Text Size",
+    "fontSizeOptions": {
+      "normal": "Normal",
+      "large": "Large",
+      "extraLarge": "Extra Large"
+    },
+    "displayPreferences": "Display & Theme",
+    "theme": "Color Theme",
+    "themeOptions": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "highContrast": "High Contrast Mode",
+    "highContrastDesc": "Increase text and element contrast for better visibility",
+    "learningPreferences": "Learning & Content Preferences"
   },
   "common": {
     "settings": "Settings",
@@ -499,5 +802,154 @@
   "error": {
     "askQuestionFirst": "Please ask a question first",
     "couldntGetAnswer": "Sorry, I couldn't get an answer right now. Please try again."
+  },
+  "learningPage": {
+    "startOrContinueCourse": "Start or Continue Course",
+    "progressLabel": "Progress",
+    "completedOutOfTotal": "{{completed}} of {{total}} completed",
+    "lessonsHeader": "Lessons",
+    "moduleTimeLabel": "Time: ",
+    "lessonContentPlaceholder": "No content available for {{lessonTitle}} yet.",
+    "loadingCenter": "Loading Learning Center...",
+    "progressComplete": "{{value}}% complete",
+    "noPathsAvailable": "No learning paths available.",
+    "featuresGridTitle": "Features",
+    "heroTitle": "Welcome to the Learning Center",
+    "heroSubtitle": "Step-by-step courses, interactive demos, and practical skills for everyone.",
+    "recommendedStart": "Recommended Start",
+    "loadingPaths": "Loading courses...",
+    "moduleListTitle": "Lessons in {{pathTitle}}:",
+    "noLessonAvailable": "No lesson available.",
+    "retakeAssessment": "Retake Skills Assessment"
+  },
+  "courseView": {
+    "previousLesson": "Previous Lesson",
+    "nextLesson": "Next Lesson",
+    "markAsComplete": "Mark as Complete",
+    "completed": "Completed",
+    "reviewLesson": "Review Lesson",
+    "startLesson": "Start Lesson",
+    "removeBookmark": "Remove Bookmark",
+    "addBookmark": "Add Bookmark",
+    "congratulations": "Congratulations!",
+    "courseComplete": "You have completed the course: {{courseTitle}}.",
+    "downloadCertificate": "Download Certificate"
+  },
+  "lessonView": {
+    "readAloud": "Read lesson aloud",
+    "interactiveDemoHeader": "Interactive Demo",
+    "practiceExerciseHeader": "Practice Exercise",
+    "markAsComplete": "Mark as Complete",
+    "repeatLesson": "Repeat Lesson",
+    "keyPointsHeader": "Key Points",
+    "takeItWithYouHeader": "Take it with you",
+    "downloadSummaryButton": "Download Summary",
+    "downloadSummaryDescription": "Get a printable summary of this lesson",
+    "needHelpHeader": "Need Help?",
+    "askAQuestionButton": "Ask a Question",
+    "chatWithHelperButton": "Chat with Helper"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Privacy Policy",
+    "pageTitle": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "ourPromise": {
+      "title": "Our Promise to You",
+      "text": "At Senior Tech Helper, we understand that your privacy is precious. We're committed to protecting your personal information and being completely transparent about how we use it. This policy explains everything in simple, clear language."
+    },
+    "cookies": {
+      "title": "How We Use Cookies",
+      "whatAreCookiesTitle": "What are cookies?",
+      "whatAreCookiesText": "Cookies are small text files that help us remember your preferences and make your experience better. Think of them like bookmarks that help us remember where you left off.",
+      "weUseCookiesForTitle": "We use cookies ONLY to help you:",
+      "uses": [
+        "Remember your preferences: Text size, voice settings, and accessibility options you've chosen",
+        "Keep you signed in: So you don't have to enter your password every time",
+        "Improve our help: Understanding which features are most helpful to seniors like you"
+      ],
+      "whatWeDontDoTitle": "What we DON'T do with cookies:",
+      "donts": [
+        "Track you across other websites",
+        "Sell your information to anyone",
+        "Share your data with advertisers",
+        "Use them for marketing purposes"
+      ]
+    },
+    "informationCollected": {
+      "title": "What Information We Collect",
+      "youGiveUsTitle": "Information you give us:",
+      "youGiveUsList": [
+        "Your name and email address",
+        "Your device type (iPhone, Windows, etc.)",
+        "Your tech experience level",
+        "Your accessibility preferences",
+        "Questions you ask our AI helper"
+      ],
+      "weCollectTitle": "Information we automatically collect:",
+      "weCollectList": [
+        "How you use our app (which features help most)",
+        "Technical information (browser type, device)",
+        "Error reports (to fix problems quickly)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "How We Protect Your Information",
+      "protections": [
+        "Encryption: All your data is encrypted (scrambled) so only we can read it",
+        "Secure servers: Your information is stored on protected, professional-grade servers",
+        "Limited access: Only our essential team members can access your data",
+        "Regular security checks: We constantly monitor for any security threats"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Sharing Your Information",
+      "neverSell": "We will NEVER sell or rent your personal information.",
+      "onlyShareInSituations": "We only share your information in these very limited situations:",
+      "sharingSituations": [
+        "With your permission: If you specifically ask us to share something",
+        "For technical support: With trusted service providers who help us run the app (they're bound by strict privacy agreements)",
+        "If required by law: Only if we're legally required to do so"
+      ]
+    },
+    "yourRights": {
+      "title": "Your Rights and Choices",
+      "youCanAlwaysTitle": "You can always:",
+      "rightsList": [
+        "See what information we have about you",
+        "Ask us to correct any wrong information",
+        "Request that we delete your account and data",
+        "Turn off cookies in your browser settings",
+        "Contact us with any privacy questions"
+      ],
+      "noteDeletingCookiesTitle": "Note about deleting cookies:",
+      "noteDeletingCookiesText": "If you delete our cookies, you'll need to set up your preferences again, and some features might not work as well."
+    },
+    "thirdPartyServices": {
+      "title": "Third-Party Services",
+      "weUseTrustedServices": "We use some trusted third-party services to help provide our features:",
+      "servicesList": [
+        "Google AI (Gemini): Powers our AI assistant that answers your questions",
+        "Firebase: Securely stores your account information",
+        "YouTube/Educational Sites: We may recommend helpful videos and articles"
+      ],
+      "servicesOwnPolicies": "These services have their own privacy policies, and we only share the minimum information needed for them to work."
+    },
+    "changesToPolicy": {
+      "title": "Changes to This Policy",
+      "text": "If we need to update this privacy policy, we'll notify you by email and show a notice in the app. We'll always explain what's changing and why in simple, clear language."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "questions": "Have questions about your privacy or this policy? The TechStep team is here to help!",
+      "email": "Email: privacy@techstep.com",
+      "phone": "Phone: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Mail: TechStep Privacy Team",
+      "mailLine2": "123 Tech Support Lane",
+      "mailLine3": "Helpful City, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Thank you for trusting TechStep with your information. We're committed to keeping it safe and using it only to help you succeed with technology.",
+      "backToHome": "Back to Home"
+    }
   }
 }

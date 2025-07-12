@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, MessageCircle, Send } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ClarificationModalProps {
   isOpen: boolean;
@@ -18,6 +19,7 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
   onSubmitClarification,
   loading = false
 }) => {
+  const { t } = useTranslation();
   const [clarification, setClarification] = useState('');
 
   const handleSubmit = () => {
@@ -50,7 +52,7 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-blue-600" />
             </div>
-            <h2 className="text-xl font-bold text-gray-800">I need a bit more info</h2>
+            <h2 className="text-xl font-bold text-gray-800">{t('clarificationModal.headerTitle')}</h2>
           </div>
           <button
             onClick={onClose}
@@ -63,7 +65,7 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
         {/* Content */}
         <div className="p-6">
           <div className="mb-6">
-            <h3 className="text-lg font-medium text-gray-800 mb-2">Your question:</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-2">{t('clarificationModal.yourQuestionLabel')}</h3>
             <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
               <p className="text-gray-700">{question}</p>
             </div>
@@ -71,11 +73,11 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
 
           <div className="mb-6">
             <p className="text-gray-600 mb-4">
-              To give you the best help, could you tell me a bit more?
+              {t('clarificationModal.tellMeMorePrompt')}
             </p>
             {clarificationQuestions.length > 0 && (
               <>
-                <p className="text-gray-600 mb-2">For example:</p>
+                <p className="text-gray-600 mb-2">{t('clarificationModal.forExampleLabel')}</p>
                 <ul className="text-sm text-gray-500 space-y-1 mb-4">
                   {clarificationQuestions.map((q, index) => (
                     <li key={index}>• {q}</li>
@@ -86,11 +88,15 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
           </div>
 
           <div className="space-y-4">
+            <label htmlFor="clarification-textarea" className="sr-only">
+              {t('clarificationModal.textareaSrLabel')}
+            </label>
             <textarea
+              id="clarification-textarea"
               value={clarification}
               onChange={(e) => setClarification(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Please provide more details..."
+              placeholder={t('clarificationModal.textareaPlaceholder')}
               className="input-field resize-none min-h-[100px]"
               rows={4}
               disabled={loading}
@@ -102,7 +108,7 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
                 className="btn-secondary flex-1"
                 disabled={loading}
               >
-                Skip for now
+                {t('clarificationModal.skipButton')}
               </button>
               <button
                 onClick={handleSubmit}
@@ -112,12 +118,12 @@ const ClarificationModal: React.FC<ClarificationModalProps> = ({
                 {loading ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                    Getting help...
+                    {t('clarificationModal.loadingButton')}
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 mr-2" />
-                    Get Better Help
+                    {t('clarificationModal.submitButton')}
                   </>
                 )}
               </button>
