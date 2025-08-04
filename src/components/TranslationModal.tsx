@@ -46,7 +46,7 @@ const TranslationModal: React.FC<TranslationModalProps> = ({
       if (detected) {
         setSourceLanguage(detected);
       }
-    } catch (err) {
+    } catch {
       setError(t('language.error'));
     } finally {
       setIsDetecting(false);
@@ -62,7 +62,7 @@ const TranslationModal: React.FC<TranslationModalProps> = ({
     try {
       const translated = await translateText(sourceText, targetLanguage);
       setTranslatedText(translated);
-    } catch (err) {
+    } catch {
       setError(t('language.error'));
     } finally {
       setIsTranslating(false);

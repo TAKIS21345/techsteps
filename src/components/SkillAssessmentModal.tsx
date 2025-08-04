@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, CheckCircle, ChevronRight, HelpCircle } from 'lucide-react';
+import { X, HelpCircle } from 'lucide-react';
 import { SkillAssessmentResult } from '../types/learning';
 
 interface SkillAssessmentModalProps {
@@ -8,10 +8,6 @@ interface SkillAssessmentModalProps {
   onClose: () => void;
   onSubmit: (answers: SkillAssessmentResult) => void;
 }
-
-type AnswerQ1 = 'new' | 'basics' | 'confident';
-type AnswerQ2 = 'yes' | 'no';
-type AnswerQ3 = 'yes' | 'no';
 
 const SkillAssessmentModal: React.FC<SkillAssessmentModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const { t } = useTranslation();

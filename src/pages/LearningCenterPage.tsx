@@ -48,7 +48,7 @@ const LearningCenterPage: React.FC = () => {
     const fetchPaths = async () => {
       setIsLoadingPaths(true);
       try {
-        let paths = await learningService.getLearningPaths();
+        const paths = await learningService.getLearningPaths();
         // --- DEMO: Add real content to the first lesson of the first path ---
         if (paths && paths.length > 0 && paths[0].modules && paths[0].modules.length > 0) {
           paths[0].modules[0] = {
@@ -430,7 +430,7 @@ const LearningCenterPage: React.FC = () => {
               if (!userData?.skillAssessmentResult && updateUserData) {
                 const defaultAssessment = {
                   skillAssessmentResult: { 
-                    q1ComfortLevel: 'basics' as 'basics', 
+                    q1ComfortLevel: 'basics' as const, 
                     q2EmailSent: false, 
                     q3SmartphoneUsed: false 
                   },

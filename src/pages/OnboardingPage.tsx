@@ -33,7 +33,7 @@ const OnboardingPage: React.FC = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const { userData, updateUserData, loading: userLoading } = useUser();
+  const { userData, updateUserData } = useUser();
   const navigate = useNavigate();
 
   // Redirect to dashboard if onboarding is already completed

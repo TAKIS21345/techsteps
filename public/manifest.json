@@ -1,13 +1,20 @@
 {
-  "name": "TechStep",
+  "name": "TechStep - Senior Learning Platform",
   "short_name": "TechStep",
   "description": "Technology made simple, one step at a time - empowering seniors with step-by-step tech guidance",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007aff",
   "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
@@ -21,7 +28,52 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["education", "utilities", "lifestyle"],
+  "categories": ["education", "utilities", "lifestyle", "accessibility"],
   "lang": "en-US",
-  "dir": "ltr"
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Start Learning",
+      "short_name": "Learn",
+      "description": "Jump right into your learning journey",
+      "url": "/learn",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Get Help",
+      "short_name": "Help",
+      "description": "Access support and assistance",
+      "url": "/help",
+      "icons": [
+        {
+          "src": "/favicon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "TechStep learning interface on desktop"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "TechStep mobile learning experience"
+    }
+  ]
 }

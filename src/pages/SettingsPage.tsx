@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, User, Smartphone, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle, Lightbulb, Play, Contrast } from 'lucide-react';
+import { ArrowLeft, User, Volume2, Mic, Palette, Save, Globe, Search, Check, AlertTriangle, Lightbulb, Play, Contrast, Database, Shield } from 'lucide-react';
 import { useUser } from '../contexts/UserContext';
 import { useAuth } from '../contexts/AuthContext';
 import { useTranslation } from 'react-i18next';
 import Logo from '../components/Logo';
+import { DataPortabilitySettings } from '../components/privacy/DataPortabilitySettings';
 
 const SettingsPage: React.FC = () => {
   const { userData, updateUserData } = useUser();
@@ -298,13 +299,12 @@ const SettingsPage: React.FC = () => {
                   {t('settings.primaryConcerns')}
                 </label>
                 <div className="space-y-2">
-                  {(Object.keys(t('onboarding.step5.concerns', { returnObjects: true })) as Array<keyof typeof onboardingStep5Concerns>).map((key) => (
+                  {Object.entries(t('onboarding.step5.concerns', { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
                     <label key={key} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={formData.primaryConcerns.includes(t(`onboarding.step5.concerns.${key}`))}
+                        checked={formData.primaryConcerns.includes(value)}
                         onChange={() => {
-                          const value = t(`onboarding.step5.concerns.${key}`);
                           setFormData(prev => ({
                             ...prev,
                             primaryConcerns: prev.primaryConcerns.includes(value)
@@ -314,7 +314,7 @@ const SettingsPage: React.FC = () => {
                         }}
                         className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                       />
-                      <span className="text-sm text-gray-700">{t(`onboarding.step5.concerns.${key}`)}</span>
+                      <span className="text-sm text-gray-700">{value}</span>
                     </label>
                   ))}
                 </div>
@@ -324,13 +324,12 @@ const SettingsPage: React.FC = () => {
                   {t('settings.assistiveNeeds')}
                 </label>
                 <div className="space-y-2">
-                  {(Object.keys(t('onboarding.step6.needs', { returnObjects: true })) as Array<keyof typeof onboardingStep6Needs>).map((key) => (
+                  {Object.entries(t('onboarding.step6.needs', { returnObjects: true }) as Record<string, string>).map(([key, value]) => (
                     <label key={key} className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={formData.assistiveNeeds.includes(t(`onboarding.step6.needs.${key}`))}
+                        checked={formData.assistiveNeeds.includes(value)}
                         onChange={() => {
-                          const value = t(`onboarding.step6.needs.${key}`);
                           const noneNeededValue = t('onboarding.step6.needs.noneNeeded');
                           setFormData(prev => {
                             let newNeeds = [...prev.assistiveNeeds];
@@ -348,7 +347,7 @@ const SettingsPage: React.FC = () => {
                         }}
                         className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                       />
-                      <span className="text-sm text-gray-700">{t(`onboarding.step6.needs.${key}`)}</span>
+                      <span className="text-sm text-gray-700">{value}</span>
                     </label>
                   ))}
                 </div>
@@ -664,6 +663,30 @@ const SettingsPage: React.FC = () => {
             )}
           </div>
 
+          {/* Data Portability & Privacy Rights */}
+          <div className="card p-6 sm:p-8">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4">
+                <Database className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{t('settings.dataPortability', 'Data & Privacy Rights')}</h2>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+              <div className="flex items-start space-x-3">
+                <Shield className="w-5 h-5 text-blue-600 mt-0.5" />
+                <div>
+                  <h3 className="font-medium text-blue-800 mb-1">{t('settings.dataRights', 'Your Data Rights')}</h3>
+                  <p className="text-sm text-blue-700">
+                    {t('settings.dataRightsDesc', 'You have complete control over your personal data. Export, manage sharing preferences, or delete your data at any time.')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <DataPortabilitySettings />
+          </div>
+
           {/* Account Actions */}
           <div className="card p-6 sm:p-8">
             <div className="flex items-center mb-4 sm:mb-6">
@@ -718,22 +741,6 @@ const SettingsPage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-// Dummy objects for onboardingStep5Concerns and onboardingStep6Needs to fix type errors
-const onboardingStep5Concerns = {
-  accessibility: '',
-  privacy: '',
-  usability: '',
-  support: '',
-  other: ''
-};
-const onboardingStep6Needs = {
-  screenReader: '',
-  magnifier: '',
-  captions: '',
-  noneNeeded: '',
-  other: ''
 };
 
 export default SettingsPage;

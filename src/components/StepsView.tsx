@@ -1,19 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Volume2, Home, MessageCircle } from 'lucide-react';
 import ResourceRecommendations from './ResourceRecommendations';
+import FlashcardAvatar from './ai/avatar/FlashcardAvatar';
+import { useFlashcardAvatar } from '../hooks/useFlashcardAvatar';
 import { crispService } from '../utils/crispService';
 import { chatMemoryService } from '../utils/chatMemoryService';
 import { ttsService } from '../utils/ttsService';
 
+interface Resource {
+  id: string;
+  title: string;
+  type: string;
+  url?: string;
+}
+
+interface UserProfile {
+  id: string;
+  name: string;
+  preferences?: Record<string, unknown>;
+}
+
 interface StepsViewProps {
   steps: string[];
-  resources?: any[];
+  resources?: Resource[];
   onBack: () => void;
-  onResourceClick?: (resource: any) => void;
+  onResourceClick?: (resource: Resource) => void;
   userName?: string;
-  userProfile?: any;
+  userProfile?: UserProfile;
   originalQuestion?: string;
-  updateUserData?: (data: any) => Promise<void>;
+  updateUserData?: (data: Record<string, unknown>) => Promise<void>;
 }
 
 const StepsView: React.FC<StepsViewProps> = ({ 
@@ -30,7 +45,22 @@ const StepsView: React.FC<StepsViewProps> = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [playingStep, setPlayingStep] = useState<number | null>(null);
   const [hasCompletedSteps, setHasCompletedSteps] = useState(false);
-
+  
+  // Avatar integration
+  const { state: avatarState, actions: avatarActions } = useFlashcardAvatar(true);
+  
+  // Show avatar when steps are displayed
+  useEffect(() => {
+    if (steps.length > 0) {
+      avatarActions.showAvatar();
+    }
+    
+    return () => {
+      avatarActions.hideAvatar();
+    };
+  }, [steps.length, avatarActions]);
+  
+  // Auto-advance state management
   useEffect(() => {
     // Auto-advance to main view after completing all steps
     if (currentStep === steps.length - 1 && steps.length > 0) {
@@ -80,22 +110,10 @@ const StepsView: React.FC<StepsViewProps> = ({
     const cleanText = extractTextFromHTML(text);
     
     setPlayingStep(stepIndex);
+    setIsPlaying(true);
     
-    ttsService.speak(
-      cleanText,
-      { speed: 0.85 }, // Slightly slower for seniors
-      () => setIsPlaying(true), // onStart
-      () => { // onEnd
-        setIsPlaying(false);
-        setPlayingStep(null);
-      },
-      (error) => { // onError
-        console.error('TTS Error:', error);
-        setIsPlaying(false);
-        setPlayingStep(null);
-        alert('Sorry, text-to-speech is not available right now.');
-      }
-    );
+    // Use avatar for speech with lip sync
+    avatarActions.speakText(cleanText);
   };
 
   const extractTextFromHTML = (html: string) => {
@@ -119,6 +137,9 @@ const StepsView: React.FC<StepsViewProps> = ({
       ttsService.stop();
       setIsPlaying(false);
       setPlayingStep(null);
+      
+      // Avatar reaction for completing a step
+      avatarActions.onUserInteraction();
     }
   };
 
@@ -296,6 +317,17 @@ const StepsView: React.FC<StepsViewProps> = ({
           )}
         </div>
       </div>
+
+      {/* Flashcard Avatar - Only visible when steps are shown */}
+      <FlashcardAvatar
+        isVisible={avatarState.isVisible}
+        textToSpeak={avatarState.textToSpeak}
+        onSpeechComplete={() => {
+          setIsPlaying(false);
+          setPlayingStep(null);
+        }}
+        onUserInteraction={avatarActions.onUserInteraction}
+      />
     </div>
   );
 };

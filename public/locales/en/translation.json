@@ -522,6 +522,35 @@
       }
     }
   },
+  "avatar": {
+    "enable": "Enable AI Avatar",
+    "disable": "Disable Avatar",
+    "loading": "Loading avatar...",
+    "mute": "Mute Avatar",
+    "unmute": "Unmute Avatar",
+    "settings": "Avatar Settings",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "performance": "Performance Mode",
+    "performance": {
+      "high": "High Quality",
+      "medium": "Medium Quality",
+      "low": "Low Quality",
+      "off": "Avatar Off"
+    },
+    "error": {
+      "loadFailed": "Failed to load avatar. Please try again.",
+      "noWebGL": "Your device doesn't support 3D graphics.",
+      "audioFailed": "Could not access microphone for lip sync."
+    },
+    "status": {
+      "initializing": "Starting up avatar...",
+      "ready": "Avatar ready",
+      "processing": "Processing audio...",
+      "lipSyncActive": "Lip sync active",
+      "lipSyncInactive": "Lip sync inactive"
+    }
+  },
   "settings": {
     "customizePrefs": "Customize your preferences",
     "personalInfo": "Personal Information",
@@ -543,7 +572,85 @@
     "languagePreferences": "Language Preferences",
     "hideLanguages": "Hide",
     "modifyLanguages": "Modify Languages",
-    "defaultLanguage": "Default Language (entire website will use this language)",
+    "defaultLanguage": "Default Language (entire website will use this)",
+    "pwa": {
+      "install": {
+        "title": "Install TechStep",
+        "description": "Get quick access to your learning progress and use TechStep offline.",
+        "button": "Install App"
+      },
+      "update": {
+        "title": "Update Available",
+        "description": "A new version of TechStep is available with improvements and bug fixes.",
+        "button": "Update Now"
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline - Changes will sync when connected",
+        "syncing": "Syncing..."
+      },
+      "notifications": {
+        "title": "Learning Reminders",
+        "description": "Get gentle reminders to help you stay on track with your learning journey.",
+        "learning_reminders": "Learning Reminders",
+        "learning_reminders_desc": "Gentle nudges to continue your lessons",
+        "progress_updates": "Progress Updates",
+        "progress_updates_desc": "Celebrate your achievements",
+        "support_messages": "Support Messages",
+        "support_messages_desc": "Helpful tips and assistance",
+        "frequency": "Frequency",
+        "frequency.daily": "Daily",
+        "frequency.weekly": "Weekly",
+        "frequency.never": "Never",
+        "enable": "Enable Notifications",
+        "subscribing": "Setting up...",
+        "blocked": {
+          "title": "Notifications Blocked",
+          "description": "Notifications are currently blocked. To enable them, please allow notifications in your browser settings.",
+          "instructions": "Look for the notification icon in your address bar or check your browser's site settings."
+        },
+        "success": {
+          "title": "Notifications Enabled!",
+          "description": "You'll receive helpful reminders and updates based on your preferences."
+        }
+      }
+    },
+    "offline": {
+      "error": "Sync Error",
+      "offline": "Offline",
+      "online": "Online",
+      "syncing": "Syncing...",
+      "offline_desc": "Changes will sync when connected",
+      "syncing_desc": "Updating your data",
+      "online_desc": "All changes are saved",
+      "pending_operations": "{{count}} pending changes",
+      "last_sync": "Last sync: {{time}}",
+      "content_manager": {
+        "title": "Offline Content",
+        "description": "Download content to access when offline",
+        "online": "Connected - You can download new content",
+        "offline": "Offline - Using downloaded content only",
+        "no_content": "No Offline Content",
+        "no_content_desc": "Download courses and lessons to access them offline",
+        "downloaded": "Downloaded",
+        "available_offline": "Available offline",
+        "remove": "Remove from offline storage",
+        "suggestions": "Recommended Downloads",
+        "suggestion_1": "Computer Basics Course",
+        "suggestion_1_desc": "Essential skills for getting started with technology",
+        "popular": "Popular",
+        "download": "Download",
+        "type": {
+          "course": "Course",
+          "lesson": "Lesson",
+          "tutorial": "Tutorial",
+          "media": "Media"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Dismiss"
+    },
     "defaultLanguageDesc": "This will be the primary language for all interface elements and interactions.",
     "otherLanguages": "Other languages you'd like to use:",
     "default": "Default",
@@ -601,12 +708,119 @@
     },
     "highContrast": "High Contrast Mode",
     "highContrastDesc": "Increase text and element contrast for better visibility",
-    "learningPreferences": "Learning & Content Preferences"
+    "learningPreferences": "Learning & Content Preferences",
+    "dataPortability": "Data & Privacy Rights",
+    "dataRights": "Your Data Rights",
+    "dataRightsDesc": "You have complete control over your personal data. Export, manage sharing preferences, or delete your data at any time."
+  },
+  "dataPortability": {
+    "title": "Data Portability & User Rights",
+    "tabs": {
+      "overview": "Overview",
+      "sharing": "Data Sharing",
+      "export": "Export Data",
+      "delete": "Delete Data",
+      "ai": "AI Transparency"
+    },
+    "overview": {
+      "title": "Your Data Rights",
+      "description": "You have complete control over your personal data. You can view, export, correct, or delete your information at any time within 30 days.",
+      "dataWeCollect": "Data We Collect",
+      "profileInfo": "Profile information (name, email, preferences)",
+      "learningProgress": "Learning progress and achievements",
+      "aiHistory": "AI conversation history",
+      "analytics": "Usage analytics (anonymized)",
+      "howWeUse": "How We Use Your Data",
+      "personalized": "Provide personalized learning experience",
+      "improveAI": "Improve AI assistant responses",
+      "trackProgress": "Track your progress and achievements",
+      "security": "Ensure platform security and performance",
+      "rightsTitle": "Your Rights Under GDPR & CCPA",
+      "rightAccess": "Right to Access:",
+      "accessDesc": "View all your personal data",
+      "rightPortability": "Right to Portability:",
+      "portabilityDesc": "Export your data",
+      "rightRectification": "Right to Rectification:",
+      "rectificationDesc": "Correct inaccurate data",
+      "rightErasure": "Right to Erasure:",
+      "erasureDesc": "Delete your personal data"
+    },
+    "sharing": {
+      "title": "Data Sharing Preferences",
+      "description": "Control how your data is shared and used. All sharing is optional and can be changed at any time.",
+      "dataTypes": "Data Type Sharing",
+      "thirdParty": "Third-Party Sharing",
+      "special": "Special Categories",
+      "analytics": "Analytics Sharing",
+      "analyticsDesc": "Share anonymized usage data to improve the platform",
+      "research": "Research Sharing",
+      "researchDesc": "Contribute anonymized data to senior learning research"
+    },
+    "export": {
+      "title": "Export Your Data",
+      "description": "Download a copy of all your personal data. We'll prepare your data and send you a download link within 30 days.",
+      "chooseFormat": "Choose Export Format",
+      "included": "What's Included:",
+      "profile": "Profile information and preferences",
+      "progress": "Learning progress and achievements",
+      "conversations": "AI conversation history",
+      "support": "Support ticket history",
+      "consent": "Consent and privacy settings",
+      "request": "Request Data Export",
+      "requesting": "Requesting Export...",
+      "requests": "Export Requests",
+      "requested": "Requested",
+      "download": "Download"
+    },
+    "delete": {
+      "title": "Delete Your Data",
+      "description": "Permanently delete all your personal data. This action cannot be undone and will close your account within 30 days.",
+      "whatDeleted": "What Will Be Deleted:",
+      "profile": "Your profile and account information",
+      "progress": "All learning progress and achievements",
+      "conversations": "AI conversation history",
+      "preferences": "Preferences and settings",
+      "analytics": "Usage analytics linked to your account",
+      "important": "Important Notes:",
+      "legal": "Some data may be retained for legal compliance (support tickets, billing records)",
+      "research": "Anonymized data used for research may be retained",
+      "verification": "You will receive email verification before deletion",
+      "timeframe": "Deletion will be completed within 30 days",
+      "request": "Request Data Deletion",
+      "confirm": "Are you sure you want to delete all your data?",
+      "type": "Type \"DELETE MY DATA\" to confirm this action:",
+      "placeholder": "Type DELETE MY DATA",
+      "confirmButton": "Confirm Deletion",
+      "processing": "Processing...",
+      "cancel": "Cancel",
+      "requests": "Deletion Requests",
+      "complete": "Complete Data Deletion",
+      "requested": "Requested",
+      "scheduled": "Scheduled",
+      "awaitingVerification": "Awaiting verification"
+    },
+    "ai": {
+      "title": "AI Data Usage Transparency",
+      "description": "See exactly how your data is used by our AI assistant and control your AI data preferences.",
+      "stats": "AI Data Usage Stats",
+      "conversationsAnalyzed": "Conversations Analyzed:",
+      "dataPoints": "Data Points Used:",
+      "trainingContribution": "Training Contribution:",
+      "lastProcessed": "Last Processed:",
+      "optOut": "AI Opt-Out Options",
+      "stopTraining": "Stop AI Training",
+      "stopTrainingDesc": "Prevent your data from improving AI responses",
+      "deleteHistory": "Delete Conversation History",
+      "deleteHistoryDesc": "Remove all stored AI conversations",
+      "anonymize": "Anonymize My Data",
+      "anonymizeDesc": "Convert data to anonymous form"
+    }
   },
   "common": {
     "settings": "Settings",
     "signOut": "Sign Out",
-    "close": "Close"
+    "close": "Close",
+    "comingSoon": "Coming Soon"
   },
   "tips": {
     "connectWifi": "Connect to Wi-Fi",
@@ -668,6 +882,10 @@
     "translating": "Translating...",
     "detecting": "Detecting language...",
     "error": "Translation failed"
+  },
+  "languageSelector": {
+    "choosePrompt": "Choose your preferred language",
+    "moreComingSoon": "More languages coming soon"
   },
   "auth": {
     "backToHome": "Back to Home",
@@ -797,7 +1015,91 @@
     "next": "Next",
     "settingUp": "Setting up...",
     "completeSetup": "Complete Setup",
-    "errorSaving": "Could not save your preferences. Please try again."
+    "errorSaving": "Could not save your preferences. Please try again.",
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next",
+      "skip": "Skip",
+      "complete": "Complete",
+      "processing": "Processing...",
+      "gotIt": "Got it!",
+      "skipAll": "Skip All",
+      "cancel": "Cancel"
+    },
+    "progress": {
+      "label": "Onboarding Progress: Step {{current}} of {{total}}",
+      "stepOf": "Step {{current}} of {{total}}",
+      "step": "Step",
+      "stepCompleted": "{{step}} - Completed",
+      "stepCurrent": "{{step}} - Current step",
+      "stepUpcoming": "{{step}} - Upcoming"
+    },
+    "tooltip": {
+      "helpfulTip": "Helpful Tip"
+    },
+    "flow": {
+      "title": "Welcome! Let's Get Started"
+    },
+    "accessibility": {
+      "helpfulTip": "Helpful tip",
+      "tooltipAppeared": "Tooltip appeared with content: {{content}}",
+      "skippingStep": "Skipping current step",
+      "movingToNextStep": "Moving to next step",
+      "movingToPreviousStep": "Moving to previous step",
+      "completingOnboarding": "Completing onboarding process",
+      "stepChanged": "Now on step {{step}} of {{total}}: {{title}}",
+      "skippingOnboarding": "Skipping entire onboarding process",
+      "cancellingOnboarding": "Cancelling onboarding process",
+      "errorCompleting": "Error completing onboarding. Please try again.",
+      "goToPreviousStep": "Go to previous step",
+      "skipThisStep": "Skip this step",
+      "completeOnboarding": "Complete onboarding",
+      "continueToNextStep": "Continue to next step",
+      "closeTooltip": "Close tooltip",
+      "skipTooltip": "Skip this tip",
+      "continueFromTooltip": "Continue from tooltip",
+      "skipEntireOnboarding": "Skip entire onboarding",
+      "cancelOnboarding": "Cancel onboarding",
+      "keyboardInstructions": "Use Tab to navigate, Enter to select, and Escape to close dialogs"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "validAgeRequired": "Please enter a valid age between 18 and 120",
+      "languageRequired": "Please select at least one language",
+      "deviceRequired": "Please select your primary device",
+      "experienceRequired": "Please select your tech experience level",
+      "concernsOptional": "You can select concerns to help us personalize your experience",
+      "assistiveNeedsRequired": "Please select your accessibility needs or choose 'None needed'",
+      "communicationStyleRequired": "Please select your preferred communication style"
+    },
+    "restart": {
+      "confirmMessage": "Are you sure you want to restart the onboarding process? This will reset all your preferences."
+    },
+    "step1": {
+      "tooltip": "Tell us a bit about yourself so we can personalize your learning experience."
+    },
+    "step2": {
+      "tooltip": "Choose the languages you're comfortable with for voice input and text interactions."
+    },
+    "step3": {
+      "tooltip": "Knowing your primary device helps us provide more relevant instructions."
+    },
+    "step4": {
+      "tooltip": "Be honest about your comfort level - this helps us explain things at the right pace."
+    },
+    "step5": {
+      "tooltip": "Select topics that worry you most so we can prioritize help in these areas."
+    },
+    "step6": {
+      "tooltip": "Let us know about any accessibility features you need for a comfortable experience."
+    },
+    "step7": {
+      "tooltip": "Choose how you prefer to learn so we can adjust our teaching style."
+    },
+    "step8": {
+      "tooltip": "Set up your perfect learning environment with these final preferences."
+    }
   },
   "error": {
     "askQuestionFirst": "Please ask a question first",
@@ -950,6 +1252,71 @@
     "footer": {
       "thankYou": "Thank you for trusting TechStep with your information. We're committed to keeping it safe and using it only to help you succeed with technology.",
       "backToHome": "Back to Home"
+    }
+  },
+  "languageSelector": {
+    "choosePrompt": "Choose your preferred language"
+  },
+  "multimodal": {
+    "tabsLabel": "Choose how to communicate",
+    "tabs": {
+      "chat": "Chat",
+      "voice": "Voice", 
+      "image": "Image",
+      "chatAria": "Text chat input",
+      "voiceAria": "Voice input",
+      "imageAria": "Image input"
+    },
+    "chat": {
+      "placeholder": "Type your question here... Press Enter to send",
+      "ariaLabel": "Type your question",
+      "sendButton": "Send message",
+      "send": "Send"
+    },
+    "voice": {
+      "recording": "Recording... Tap to stop",
+      "processing": "Processing your voice...",
+      "instructions": "Tap the microphone to start recording",
+      "startRecording": "Start recording",
+      "stopRecording": "Stop recording"
+    },
+    "image": {
+      "takePhoto": "Take a photo",
+      "camera": "Take Photo",
+      "upload": "Upload Image",
+      "uploadAria": "Select image file",
+      "instructions": "Share a photo and I'll help explain what you see",
+      "formats": "Supports JPG, PNG, GIF (max 10MB)",
+      "previewAlt": "Selected image preview",
+      "remove": "Remove image",
+      "contextLabel": "What would you like to know about this image?",
+      "contextPlaceholder": "Optional: Ask a specific question about the image",
+      "cancel": "Cancel",
+      "submit": "Submit image",
+      "send": "Send",
+      "invalidType": "Please select a valid image file.",
+      "tooLarge": "Image file is too large. Please select a file under 10MB.",
+      "cameraError": "Could not access camera. Please check permissions."
+    }
+  },
+  "ai": {
+    "title": "AI Helper",
+    "subtitle": "Here to help you learn",
+    "emergency": "Emergency Support",
+    "emergencyAria": "Get emergency support",
+    "expand": "Expand",
+    "minimize": "Minimize", 
+    "close": "Close AI Assistant",
+    "thinking": "AI is thinking...",
+    "escalated": "You're now connected with our support team",
+    "callSupport": "Call Support: 1-800-SENIOR-HELP",
+    "minimized": "AI Helper",
+    "welcome": {
+      "tutorial": "Hello! I see you're working on \"{{tutorial}}\". I'm here to help you with any questions. You can type, speak, or show me images - whatever feels most comfortable for you!",
+      "general": "Hello! I'm your AI assistant, here to help you learn technology step by step. You can ask me questions by typing, speaking, or showing me images. What would you like to know?"
+    },
+    "error": {
+      "general": "I'm sorry, I'm having trouble right now. Let me connect you with our support team who can help you immediately."
     }
   }
 }

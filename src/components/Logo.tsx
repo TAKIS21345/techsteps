@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+// Logo component
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg';

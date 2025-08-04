@@ -30,6 +30,8 @@ import Logo from '../components/Logo';
 import AIToolsModal from '../components/AIToolsModal';
 import StepsView from '../components/StepsView';
 import ClarificationModal from '../components/ClarificationModal';
+import AvatarSystem from '../components/ai/avatar/AvatarSystem';
+
 import LanguageNotificationBanner from '../components/LanguageNotificationBanner';
 import { speechService } from '../utils/speechService';
 import { crispService } from '../utils/crispService';
@@ -49,8 +51,18 @@ const DashboardPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [originalQuestion, setOriginalQuestion] = useState('');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  
+  // Avatar system state
+  const [avatarEnabled, setAvatarEnabled] = useState(false);
+  const [avatarPerformanceMode, setAvatarPerformanceMode] = useState<'high' | 'medium' | 'low' | 'off'>('medium');
+  const [avatarEmotionalState, setAvatarEmotionalState] = useState({
+    primary: 'neutral' as 'neutral' | 'happy' | 'concerned' | 'encouraging' | 'thinking',
+    intensity: 0.5,
+    duration: 1000
+  });
+  const [audioStream, setAudioStream] = useState<MediaStream | null>(null);
 
-  const { logout } = useAuth();
+  const { logout, user: authUser } = useAuth();
   const { userData, addQuestionToHistory, markQuestionCompleted, updateUserData } = useUser();
   const { t, i18n } = useTranslation();
 
@@ -64,14 +76,9 @@ const DashboardPage: React.FC = () => {
       const userInfo: any = {};
       // Try to get email from AuthContext's user if available
       let email = undefined;
-      try {
-        // Try to get the user from AuthContext
-        const auth = require('../contexts/AuthContext');
-        const authUser = auth?.useAuth?.().user;
-        if (authUser && typeof authUser.email === 'string' && authUser.email.trim()) {
-          email = authUser.email;
-        }
-      } catch {}
+      if (authUser && typeof authUser.email === 'string' && authUser.email.trim()) {
+        email = authUser.email;
+      }
       // Fallback: try userData.email if it exists
       if (!email && (userData as any).email && typeof (userData as any).email === 'string' && (userData as any).email.trim()) {
         email = (userData as any).email;
@@ -545,19 +552,46 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
       // Stop recording
       speechService.stopRecording();
       setSpeechStatus('processing');
+      setAvatarEmotionalState({ primary: 'thinking', intensity: 0.7, duration: 2000 });
+      
+      // Stop audio stream for avatar
+      if (audioStream) {
+        audioStream.getTracks().forEach(track => track.stop());
+        setAudioStream(null);
+      }
     } else {
       // Start recording with AssemblyAI
       setSpeechStatus('recording');
+      setAvatarEmotionalState({ primary: 'encouraging', intensity: 0.8, duration: 5000 });
+      
+      // Get audio stream for avatar lip sync
+      if (avatarEnabled) {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+          .then(stream => {
+            setAudioStream(stream);
+          })
+          .catch(error => {
+            console.warn('Could not get audio stream for avatar:', error);
+          });
+      }
       
       speechService.startRecording(
         // onTranscript
         (transcript: string) => {
           setQuestion(transcript);
           setSpeechStatus('complete');
+          setAvatarEmotionalState({ primary: 'happy', intensity: 0.9, duration: 3000 });
+          
+          // Stop audio stream
+          if (audioStream) {
+            audioStream.getTracks().forEach(track => track.stop());
+            setAudioStream(null);
+          }
           
           // Auto-clear status after 2 seconds
           setTimeout(() => {
             setSpeechStatus('idle');
+            setAvatarEmotionalState({ primary: 'neutral', intensity: 0.5, duration: 1000 });
           }, 2000);
         },
         // onError
@@ -565,10 +599,18 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
           console.error('Speech recognition error:', error);
           alert(error);
           setSpeechStatus('error');
+          setAvatarEmotionalState({ primary: 'concerned', intensity: 0.6, duration: 3000 });
+          
+          // Stop audio stream
+          if (audioStream) {
+            audioStream.getTracks().forEach(track => track.stop());
+            setAudioStream(null);
+          }
           
           // Auto-clear status after 3 seconds
           setTimeout(() => {
             setSpeechStatus('idle');
+            setAvatarEmotionalState({ primary: 'neutral', intensity: 0.5, duration: 1000 });
           }, 3000);
         },
         // onStatusChange
@@ -577,6 +619,19 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         }
       );
     }
+  };
+
+  // Avatar control functions
+  const handleToggleAvatar = (enabled: boolean) => {
+    setAvatarEnabled(enabled);
+    if (!enabled && audioStream) {
+      audioStream.getTracks().forEach(track => track.stop());
+      setAudioStream(null);
+    }
+  };
+
+  const handleAvatarPerformanceChange = (mode: string) => {
+    setAvatarPerformanceMode(mode as 'high' | 'medium' | 'low' | 'off');
   };
 
   const handleBackToMain = () => {
@@ -871,20 +926,27 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
                   </div>
                 </Link>
 
-                <Link 
-                  to="/learning"
-                  className="block w-full p-4 text-left rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200 group"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200">
-                      <BookOpen className="w-5 h-5 text-green-600" />
+                <div className="relative">
+                  <button
+                    disabled
+                    className="block w-full p-4 text-left rounded-xl border border-gray-200 bg-gray-50 cursor-not-allowed opacity-75"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                          <BookOpen className="w-5 h-5 text-gray-500" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-gray-600">{t('learning.title')}</h4>
+                          <p className="text-sm text-gray-500">{t('learning.structuredCourses')}</p>
+                        </div>
+                      </div>
+                      <div className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
+                        {t('common.comingSoon', 'Coming Soon')}
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium text-gray-800">{t('learning.title')}</h4>
-                      <p className="text-sm text-gray-600">{t('learning.structuredCourses')}</p>
-                    </div>
-                  </div>
-                </Link>
+                  </button>
+                </div>
 
                 <button
                   onClick={() => {
@@ -994,6 +1056,16 @@ For articles, use real website domains like aarp.org, seniorplanet.org, etc.`
         clarificationQuestions={clarificationQuestions}
         onSubmitClarification={handleClarificationSubmit}
         loading={loading}
+      />
+
+      {/* Avatar System */}
+      <AvatarSystem
+        isActive={avatarEnabled}
+        audioStream={audioStream}
+        emotionalState={avatarEmotionalState}
+        performanceMode={avatarPerformanceMode}
+        onPerformanceChange={handleAvatarPerformanceChange}
+        onToggleAvatar={handleToggleAvatar}
       />
     </div>
   );

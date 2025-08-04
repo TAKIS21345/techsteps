@@ -939,5 +939,8 @@
       "thankYou": "Gracias por confiar tu información a TechStep. Estamos comprometidos a mantenerla segura y usarla solo para ayudarte a tener éxito con la tecnología.",
       "backToHome": "Volver al Inicio"
     }
+  },
+  "languageSelector": {
+    "choosePrompt": "Elige tu idioma preferido"
   }
 }

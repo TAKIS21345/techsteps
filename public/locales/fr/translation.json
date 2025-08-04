@@ -499,5 +499,8 @@
   "error": {
     "askQuestionFirst": "Veuillez d'abord poser une question",
     "couldntGetAnswer": "Désolé, je n'ai pas pu obtenir de réponse maintenant. Veuillez réessayer."
+  },
+  "languageSelector": {
+    "choosePrompt": "Choisissez votre langue préférée"
   }
 }

@@ -1,3 +1,7 @@
+/* Import performance optimizations */
+@import './performance.css';
+@import './cultural.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -146,6 +150,8 @@ body {
 .focus-visible {
   @apply outline-none ring-2 ring-blue-500 ring-offset-2;
 }
+
+/* Removed conflicting underline animation - using the one in index.css instead */
 
 /* Enhanced button animations */
 .btn-primary:active {

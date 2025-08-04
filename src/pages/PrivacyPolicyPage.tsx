@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, Cookie, Eye, Lock, Users, FileText, Heart } from 'lucide-react';
 import Logo from '../components/Logo';
@@ -7,6 +7,11 @@ import { useTranslation } from 'react-i18next';
 const PrivacyPolicyPage: React.FC = () => {
   const { t } = useTranslation();
   const currentDate = new Date().toLocaleDateString();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Upload, Camera, Brain, Loader2 } from 'lucide-react';
 import { ttsService } from '../utils/ttsService';
 import { useTranslation } from 'react-i18next';
+
 import DOMPurify from 'dompurify';
 
 interface AIToolsModalProps {
