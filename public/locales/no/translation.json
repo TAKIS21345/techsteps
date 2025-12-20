@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Laget med ❤️ for seniorer overalt.",
       "trustedBy": "Klarert av",
-      "trustedByCount": "50 000+ seniorer"
+      "trustedByCount": "50 000+ seniorer",
+      "communityTitle": "Fellesskap",
+      "legalTitle": "Juridisk og støtte",
+      "contactEmail": "Kontakt: E-post: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Grunnleggende om datamaskiner og enheter",
       "description": "Det helt grunnleggende for å komme i gang med teknologi.",
       "modules": {
-        "turnOnDevice": { "title": "Slå på en enhet", "description": "Lær å slå på datamaskiner og smarttelefoner." },
-        "mouseTouchscreen": { "title": "Bruke mus/berøringsskjerm", "description": "Mestre peking, klikking og trykking." },
-        "keyboardTyping": { "title": "Grunnleggende om tastatur/skriving", "description": "Bli komfortabel med det grunnleggende om skriving." },
-        "filesFolders": { "title": "Forstå filer og mapper", "description": "Lær hvordan digital informasjon er organisert." }
+        "turnOnDevice": {
+          "title": "Slå på en enhet",
+          "description": "Lær å slå på datamaskiner og smarttelefoner."
+        },
+        "mouseTouchscreen": {
+          "title": "Bruke mus/berøringsskjerm",
+          "description": "Mestre peking, klikking og trykking.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Let’s Play: Grunnleggende mus og berøringsskjerm</h3><p>Klar til å utforske? Musen og berøringsskjermen er dine tryllestaver for den digitale verden!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Mouse Fun:</h4><ul class=\"space-y-2\"><li>• <b>Pekk</b>: Beveg musen og se pilen og se pilen for å følge deg</b></b> <b></b> <b></b>-knappen! velge ting. Prøv å klikke på en knapp nedenfor!</li><li>• <b>Dobbeltklikk</b>: Trykk raskt to ganger for å åpne filer eller programmer.</li><li>• <b>Høyreklikk</b>: Trykk på høyre knapp for en hemmelig meny.</li><li>• <b>Rull</b>: Rull hjulet for å flytte opp og ned på en side.</li></ul></ul5/div-> rounded-lg\"><h4 class=\"font-medium mb-2\">Berøringsskjerm-triks:</h4><ul class=\"space-y-2\"><li>• <b>Trykk</b>: Berør skjermen forsiktig for å velge.</li><li>• <b>Sveip</b>: Skyv fingeren for å bla eller bytte skjerm.</li><li>• <b>Pinch for å zoome inn sammen og</b>. ut.</li><li>• <b>Langt trykk</b>: Hold fingeren nede for flere alternativer (for eksempel høyreklikk!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Prøv det!</h4><ul class=\"space-y-2\" mo lik skjermen din og se hva som endres på skjermen din <li>• Beveg og se hva som endrer på skjermen din. på enheten din for å utforske.</li></ul></div></div>",
+          "keyPoints": [
+            "Musepekeren følger hånden din!",
+            "Venstreklikk er hovedhandlingen din.",
+            "Berøringsskjermer lar deg trykke, sveipe og zoome!"
+          ],
+          "practiceExercise": "Prøv å klikke, dobbeltklikke og høyreklikke på skrivebordet. På en berøringsskjerm, trykk og sveip for å flytte mellom skjermer.",
+          "animationDesc": "Se hvordan du klikker, dobbeltklikker og sveiper på en berøringsskjerm."
+        },
+        "keyboardTyping": {
+          "title": "Grunnleggende om tastatur/skriving",
+          "description": "Bli komfortabel med det grunnleggende om skriving."
+        },
+        "filesFolders": {
+          "title": "Forstå filer og mapper",
+          "description": "Lær hvordan digital informasjon er organisert."
+        }
       }
     },
     "onlineWorld": {
       "title": "Den online verden",
       "description": "Koble til og utforske internett trygt.",
       "modules": {
-        "webBrowsers": { "title": "Forstå nettlesere", "description": "Naviger på internett med Chrome, Edge eller Safari." },
-        "searchEffectively": { "title": "Hvordan søke effektivt", "description": "Finn det du trenger online ved hjelp av søkemotorer." },
-        "introEmail": { "title": "Introduksjon til e-post", "description": "Lær å sende og motta elektronisk post." },
-        "virusSafety": { "title": "Hold deg trygg mot virus", "description": "Beskytt enheten din mot skadelig programvare." }
+        "webBrowsers": {
+          "title": "Forstå nettlesere",
+          "description": "Naviger på internett med Chrome, Edge eller Safari."
+        },
+        "searchEffectively": {
+          "title": "Hvordan søke effektivt",
+          "description": "Finn det du trenger online ved hjelp av søkemotorer."
+        },
+        "introEmail": {
+          "title": "Introduksjon til e-post",
+          "description": "Lær å sende og motta elektronisk post."
+        },
+        "virusSafety": {
+          "title": "Hold deg trygg mot virus",
+          "description": "Beskytt enheten din mot skadelig programvare."
+        }
       }
     },
     "digitalLife": {
       "title": "Hverdagslig digitalt liv",
       "description": "Kommuniser, del og administrer din digitale tilstedeværelse.",
       "modules": {
-        "masteringEmail": { "title": "Mestre e-post", "description": "Vedlegg, mapper og e-postetikette." },
-        "videoCalling": { "title": "Videosamtaler med familie og venner", "description": "Koble deg ansikt til ansikt med dine kjære." },
-        "introSocialMedia": { "title": "Introduksjon til sosiale medier", "description": "Forstå plattformer som Facebook." },
-        "sharingPhotos": { "title": "Dele bilder trygt", "description": "Del minnene dine uten å gå på kompromiss med personvernet." }
+        "masteringEmail": {
+          "title": "Mestre e-post",
+          "description": "Vedlegg, mapper og e-postetikette."
+        },
+        "videoCalling": {
+          "title": "Videosamtaler med familie og venner",
+          "description": "Koble deg ansikt til ansikt med dine kjære."
+        },
+        "introSocialMedia": {
+          "title": "Introduksjon til sosiale medier",
+          "description": "Forstå plattformer som Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Dele bilder trygt",
+          "description": "Del minnene dine uten å gå på kompromiss med personvernet."
+        }
       }
     },
     "advancedSkills": {
       "title": "Avanserte og kreative ferdigheter",
       "description": "Utover det grunnleggende: utforsk mer av hva teknologien har å tilby.",
       "modules": {
-        "onlineShopping": { "title": "Introduksjon til netthandel", "description": "Handle trygt og praktisk på nettet." },
-        "onlineMaps": { "title": "Bruke online kart og navigasjon", "description": "Finn veien med digitale kart." },
-        "photoEditing": { "title": "Grunnleggende bilderedigering", "description": "Forbedre dine digitale bilder." },
-        "productivityTools": { "title": "Introduksjon til produktivitetsverktøy", "description": "Bruke verktøy som Google Docs eller Microsoft Word-grunnleggende." }
+        "onlineShopping": {
+          "title": "Introduksjon til netthandel",
+          "description": "Handle trygt og praktisk på nettet."
+        },
+        "onlineMaps": {
+          "title": "Bruke online kart og navigasjon",
+          "description": "Finn veien med digitale kart."
+        },
+        "photoEditing": {
+          "title": "Grunnleggende bilderedigering",
+          "description": "Forbedre dine digitale bilder."
+        },
+        "productivityTools": {
+          "title": "Introduksjon til produktivitetsverktøy",
+          "description": "Bruke verktøy som Google Docs eller Microsoft Word-grunnleggende."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Tilgjengelighet og brukervennlighet",
+      "description": "Gjør enheten din enklere å se, høre og kontrollere.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Bruke en skjermforstørrelsesglass",
+          "description": "Gjør tekst og bilder større på skjermen."
+        },
+        "voiceCommands": {
+          "title": "Talekommandoer og diktering",
+          "description": "Kontroller enheten og skriv med stemmen."
+        },
+        "highContrast": {
+          "title": "Høy kontrast og fargeinnstillinger",
+          "description": "Juster farger for bedre synlighet."
+        },
+        "assistiveTouch": {
+          "title": "Hjelpende berøring og snarveier",
+          "description": "Bruk verktøy på skjermen for enklere navigering."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Helse, sikkerhet og personvern",
+      "description": "Hold deg trygg, sunn og privat mens du bruker teknologi.",
+      "modules": {
+        "privacySettings": {
+          "title": "Personverninnstillinger",
+          "description": "Beskytt din personlige informasjon på nettet."
+        },
+        "scamAwareness": {
+          "title": "Svindelbevissthet",
+          "description": "Finn og unngå vanlige nettsvindel."
+        },
+        "healthApps": {
+          "title": "Bruke helseapper",
+          "description": "Spor din helse og velvære med apper."
+        },
+        "emergencyContacts": {
+          "title": "Sette opp nødkontakter",
+          "description": "Legg til nødkontakter på enheten din."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Teknisk nybegynner", "description": "Fullført Grunnleggende om datamaskiner og enheter." },
-    "onlineWorld": { "name": "Online-utforsker", "description": "Fullført Den online verden-stien." },
-    "digitalLife": { "name": "Digital kommunikator", "description": "Fullført Hverdagslig digitalt liv-stien." },
-    "advancedSkills": { "name": "Teknisk virtuos", "description": "Fullført Avanserte og kreative ferdigheter-stien." }
+    "fundamentals": {
+      "name": "Teknisk nybegynner",
+      "description": "Fullført Grunnleggende om datamaskiner og enheter."
+    },
+    "onlineWorld": {
+      "name": "Online-utforsker",
+      "description": "Fullført Den online verden-stien."
+    },
+    "digitalLife": {
+      "name": "Digital kommunikator",
+      "description": "Fullført Hverdagslig digitalt liv-stien."
+    },
+    "advancedSkills": {
+      "name": "Teknisk virtuos",
+      "description": "Fullført Avanserte og kreative ferdigheter-stien."
+    },
+    "accessibility": {
+      "name": "Tilgjengelighetsmester",
+      "description": "Fullført vei for tilgjengelighet og brukervennlighet."
+    },
+    "healthAndSafety": {
+      "name": "Sikkerhetsvakt",
+      "description": "Fullført helse-, sikkerhets- og personvernvei."
+    }
   },
   "skillAssessmentModal": {
     "title": "Rask ferdighetssjekk",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Tilpass preferansene dine",
-    "personalInfo": "Personlig informasjon",
+    "personalInfo": {
+      "title": "Personlig informasjon",
+      "firstName": "Fornavn",
+      "firstNamePlaceholder": "Skriv inn fornavnet ditt",
+      "lastName": "Etternavn",
+      "lastNamePlaceholder": "Skriv inn etternavnet ditt",
+      "age": "Age",
+      "techExperience": "Teknisk erfaringsnivå",
+      "techExperienceBeginner": "Nybegynner - Jeg er ny på teknologi",
+      "techExperienceSome": "Litt erfaring - jeg kan det grunnleggende",
+      "techExperienceComfortable": "Komfortabel - jeg er ganske god med teknologi"
+    },
     "firstName": "Fornavn",
     "firstNamePlaceholder": "Ditt fornavn",
     "primaryDevice": "Hovedenhet",
     "devices": {
+      "title": "Primær enhet(er)",
+      "description": "Velg alle enhetene du bruker regelmessig",
       "windowsComputer": "Windows-datamaskin",
-      "macComputer": "Mac (Apple-datamaskin)",
+      "macComputer": "Mac-datamaskin",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android-telefon eller -nettbrett"
+      "androidPhone": "Android-telefon",
+      "androidTablet": "Android-nettbrett",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Tilgjengelighet",
     "textToSpeech": "Tekst-til-tale",
@@ -531,7 +670,7 @@
     "signOutDesc": "Logg ut av kontoen din",
     "cancel": "Avbryt",
     "saving": "Lagrer...",
-    "saved": "Lagret!",
+    "saved": "Lagret",
     "saveChanges": "Lagre endringer",
     "errorSaving": "Kunne ikke lagre innstillingene. Prøv igjen.",
     "lastName": "Etternavn",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Høykontrastmodus",
     "highContrastDesc": "Øk tekst- og elementkontrast for bedre synlighet",
-    "learningPreferences": "Lærings- og innholdspreferanser"
+    "learningPreferences": "Lærings- og innholdspreferanser",
+    "title": "Innstillinger",
+    "audio": {
+      "title": "Lyd og tale",
+      "autoTTS": "Automatisk tekst-til-tale",
+      "autoTTSDesc": "Les AI-meldinger automatisk høyt"
+    },
+    "display": {
+      "title": "Skjerminnstillinger",
+      "textSize": "Tekststørrelse",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Stor",
+      "textSizeExtraLarge": "Ekstra stor",
+      "theme": "Fargetema",
+      "themeLight": "Lys",
+      "themeDark": "Dark",
+      "themeHighContrast": "Høy kontrast"
+    },
+    "language": {
+      "title": "Språkpreferanse",
+      "interfaceLanguage": "Grensesnittspråk",
+      "description": "Dette påvirker grensesnittspråket og stemmen for tekst-til-tale"
+    },
+    "pwa": {
+      "install": {
+        "title": "Installer TechStep",
+        "description": "Få rask tilgang til læringsfremgangen din og bruk TechStep offline.",
+        "button": "Installer appen"
+      },
+      "update": {
+        "title": "Oppdatering tilgjengelig",
+        "description": "En ny versjon av TechStep er tilgjengelig med forbedringer og feilrettinger.",
+        "button": "Oppdater nå"
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Frakoblet - Endringer vil synkroniseres når du er tilkoblet",
+        "syncing": "Synkroniserer..."
+      },
+      "notifications": {
+        "title": "Læringspåminnelser",
+        "description": "Få milde påminnelser for å hjelpe deg med å holde deg på sporet med læringsreisen.",
+        "learning_reminders": "Læringspåminnelser",
+        "learning_reminders_desc": "Milde dytt for å fortsette leksjonene dine",
+        "progress_updates": "Fremdriftsoppdateringer",
+        "progress_updates_desc": "Feir prestasjonene dine",
+        "support_messages": "Støttemeldinger",
+        "support_messages_desc": "Nyttige tips og hjelp",
+        "frequency": "Hyppighet",
+        "enable": "Aktiver varsler",
+        "subscribing": "Konfigurerer...",
+        "blocked": {
+          "title": "Varsler blokkert",
+          "description": "Varsler er for øyeblikket blokkert. For å aktivere dem, vennligst tillat varsler i nettleserinnstillingene.",
+          "instructions": "Se etter varslingsikonet i adressefeltet eller sjekk nettleserens nettstedinnstillinger."
+        },
+        "success": {
+          "title": "Varsler aktivert!",
+          "description": "Du vil motta nyttige påminnelser og oppdateringer basert på dine preferanser."
+        }
+      }
+    },
+    "offline": {
+      "error": "Synkroniseringsfeil",
+      "offline": "Frakoblet",
+      "online": "Online",
+      "syncing": "Synkroniserer...",
+      "offline_desc": "Endringer vil synkroniseres når du er tilkoblet",
+      "syncing_desc": "Oppdaterer dataene dine",
+      "online_desc": "Alle endringer lagres",
+      "pending_operations": "{{count}} ventende endringer",
+      "last_sync": "Siste synkronisering: {{time}}",
+      "content_manager": {
+        "title": "Frakoblet innhold",
+        "description": "Last ned innhold for tilgang når du er frakoblet",
+        "online": "Tilkoblet – Du kan laste ned nytt innhold",
+        "offline": "Frakoblet – Bruker kun nedlastet innhold",
+        "no_content": "Ikke frakoblet innhold",
+        "no_content_desc": "Last ned kurs og leksjoner for å få tilgang til dem offline",
+        "downloaded": "Lastet ned",
+        "available_offline": "Tilgjengelig offline",
+        "remove": "Fjern fra lagring uten nett",
+        "suggestions": "Anbefalte nedlastinger",
+        "suggestion_1": "Grunnleggende datakurs",
+        "suggestion_1_desc": "Viktige ferdigheter for å komme i gang med teknologi",
+        "popular": "Populær",
+        "download": "Last ned",
+        "type": {
+          "course": "Kurs",
+          "lesson": "Lekse",
+          "tutorial": "Opplæring",
+          "media": "Media"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Avskjedige"
+    },
+    "dataPortability": "Data- og personvernrettigheter",
+    "dataRights": "Dine datarettigheter",
+    "dataRightsDesc": "Du har full kontroll over dine personlige data. Eksporter, administrer delingspreferanser eller slett dataene dine når som helst."
   },
   "common": {
     "settings": "Innstillinger",
     "signOut": "Logg ut",
-    "close": "Lukk"
+    "close": "Lukk",
+    "friend": "venn",
+    "comingSoon": "Kommer snart"
   },
   "tips": {
     "connectWifi": "Koble til Wi-Fi",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Ditt fornavn",
       "lastName": "Etternavn",
       "lastNamePlaceholder": "Ditt etternavn",
-      "age": "Alder (hjelper meg med å justere forklaringene mine)"
+      "age": "Alder (hjelper meg med å justere forklaringene mine)",
+      "tooltip": "Fortell oss litt om deg selv slik at vi kan tilpasse læringsopplevelsen din."
     },
     "step2": {
       "title": "Velg dine foretrukne språk",
@@ -679,7 +921,8 @@
       "selected_plural": "Valgt: {{count}} språk",
       "noLanguagesFound": "Ingen språk funnet som samsvarer med \"{{search}}\"",
       "languageRequired": "Språkvalg kreves",
-      "languageRequiredDesc": "Vennligst velg minst ett språk for å fortsette. Dette sikrer den beste opplevelsen for stemmeinndata og tekstinteraksjoner."
+      "languageRequiredDesc": "Vennligst velg minst ett språk for å fortsette. Dette sikrer den beste opplevelsen for stemmeinndata og tekstinteraksjoner.",
+      "tooltip": "Velg språkene du er komfortabel med for taleinndata og tekstinteraksjoner."
     },
     "step3": {
       "title": "Hvilken enhet bruker du mest?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Android-telefon eller -nettbrett",
         "smarttv": "Smart-TV",
         "multipledevices": "Flere enheter"
-      }
+      },
+      "tooltip": "Å kjenne til den primære enheten din hjelper oss med å gi mer relevante instruksjoner."
     },
     "step4": {
       "title": "Hvor komfortabel er du med teknologi?",
@@ -702,7 +946,8 @@
       "some": "Noe erfaring",
       "someDesc": "Jeg kan utføre grunnleggende oppgaver, men trenger hjelp med nye ting",
       "comfortable": "Komfortabel",
-      "comfortableDesc": "Jeg kan finne ut av de fleste ting, men trenger noen ganger veiledning"
+      "comfortableDesc": "Jeg kan finne ut av de fleste ting, men trenger noen ganger veiledning",
+      "tooltip": "Vær ærlig om komfortnivået ditt – dette hjelper oss å forklare ting i riktig tempo."
     },
     "step5": {
       "title": "Hvilke tekniske emner bekymrer deg mest?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Enhetsinnstillinger",
         "onlineShopping": "Netthandel",
         "healthApps": "Helseapper og -portaler"
-      }
+      },
+      "tooltip": "Velg emner som bekymrer deg mest, slik at vi kan prioritere hjelp på disse områdene."
     },
     "step6": {
       "title": "Trenger du noen tilgjengelighetsfunksjoner?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Langsommere forklaringer",
         "visualSteps": "Visuelle trinnindikatorer",
         "noneNeeded": "Ingen nødvendig"
-      }
+      },
+      "tooltip": "Gi oss beskjed om eventuelle tilgjengelighetsfunksjoner du trenger for en komfortabel opplevelse."
     },
     "step7": {
       "title": "Hvordan foretrekker du å lære?",
@@ -743,7 +990,8 @@
       "detailed": "Detaljerte forklaringer",
       "detailedDesc": "Forklar hvorfor jeg gjør hvert trinn",
       "visual": "Visuell læring",
-      "visualDesc": "Vis meg bilder og videoer når det er mulig"
+      "visualDesc": "Vis meg bilder og videoer når det er mulig",
+      "tooltip": "Velg hvordan du foretrekker å lære, slik at vi kan justere undervisningsstilen vår."
     },
     "step8": {
       "title": "Siste finpuss",
@@ -757,17 +1005,110 @@
       "textSize": "Tekststørrelsespreferanse",
       "textSizeNormal": "Normal",
       "textSizeLarge": "Stor",
-      "textSizeExtraLarge": "Ekstra stor"
+      "textSizeExtraLarge": "Ekstra stor",
+      "tooltip": "Sett opp det perfekte læringsmiljøet med disse siste preferansene.",
+      "privacy": {
+        "title": "Ditt personvern er vår prioritet",
+        "items": [
+          "Vi vil ALDRI selge dine personopplysninger",
+          "All data forblir kryptert og sikker",
+          "Du kan endre disse innstillingene når som helst",
+          "Du kan slette dataene dine når som helst"
+        ]
+      },
+      "personalization": {
+        "title": "Personlig opplevelse",
+        "description": "Tillat oss å bruke interaksjonsdataene dine for å gi bedre, mer relevant hjelp og forslag skreddersydd til dine behov.",
+        "note": "Dette hjelper oss å forstå hvilke emner du er mest interessert i og gir mer relevante veiledninger."
+      },
+      "history": {
+        "title": "Bruk samtalehistorikk",
+        "description": "Husk våre tidligere samtaler for å gi bedre kontekst og unngå å gjenta informasjon du allerede vet.",
+        "note": "Dette hjelper meg å huske det vi har diskutert før og bygge videre på tidligere samtaler."
+      },
+      "learningPrefs": {
+        "title": "Bruk læringsinnstillinger",
+        "description": "Husk din foretrukne læringsstil, kommunikasjonspreferanser og tilgjengelighetsbehov for å gi konsistente opplevelser.",
+        "note": "Dette inkluderer din foretrukne forklaringsstil, språkinnstillinger og tilgjengelighetspreferanser."
+      },
+      "noSelection": {
+        "title": "Ingen personalisering valgt",
+        "success": "Stor! Vi bruker de valgte dataene dine for å gi en bedre opplevelse.",
+        "default": "Det er helt greit! Du vil fortsatt få full tilgang til alle funksjoner, bare uten personlige anbefalinger."
+      }
     },
     "back": "Tilbake",
     "next": "Neste",
     "settingUp": "Setter opp...",
     "completeSetup": "Fullfør oppsett",
-    "errorSaving": "Kunne ikke lagre preferansene dine. Prøv igjen."
+    "errorSaving": "Kunne ikke lagre preferansene dine. Prøv igjen.",
+    "buttons": {
+      "previous": "Tidligere",
+      "next": "Neste",
+      "skip": "Hopp over",
+      "complete": "Fullstendig",
+      "processing": "Behandling...",
+      "gotIt": "Skjønner det!",
+      "skipAll": "Hopp over alle",
+      "cancel": "Kansellere"
+    },
+    "progress": {
+      "label": "Onboarding fremgang: Trinn {{current}} av {{total}}",
+      "stepOf": "Trinn {{current}} av {{total}}",
+      "step": "Skritt",
+      "stepCompleted": "{{trinn}} – Fullført",
+      "stepCurrent": "{{trinn}} – Nåværende trinn",
+      "stepUpcoming": "{{trinn}} – Kommende"
+    },
+    "tooltip": {
+      "helpfulTip": "Nyttig tips"
+    },
+    "flow": {
+      "title": "Velkomst! La oss komme i gang"
+    },
+    "accessibility": {
+      "helpfulTip": "Nyttig tips",
+      "tooltipAppeared": "Verktøytips dukket opp med innhold: {{content}}",
+      "skippingStep": "Hopp over gjeldende trinn",
+      "movingToNextStep": "Går til neste trinn",
+      "movingToPreviousStep": "Går til forrige trinn",
+      "completingOnboarding": "Fullfører onboarding-prosess",
+      "stepChanged": "Nå på trinn {{trinn}} av {{total}}: {{title}}",
+      "skippingOnboarding": "Hopp over hele ombordstigningsprosessen",
+      "cancellingOnboarding": "Kansellerer onboarding-prosessen",
+      "errorCompleting": "Feil ved fullføring av onboarding. Vennligst prøv igjen.",
+      "goToPreviousStep": "Gå til forrige trinn",
+      "skipThisStep": "Hopp over dette trinnet",
+      "completeOnboarding": "Fullfør onboarding",
+      "continueToNextStep": "Fortsett til neste trinn",
+      "closeTooltip": "Lukk verktøytips",
+      "skipTooltip": "Hopp over dette tipset",
+      "continueFromTooltip": "Fortsett fra verktøytips",
+      "skipEntireOnboarding": "Hopp over hele ombordstigningen",
+      "cancelOnboarding": "Avbryt onboarding",
+      "keyboardInstructions": "Bruk Tab for å navigere, Enter for å velge og Escape for å lukke dialoger"
+    },
+    "validation": {
+      "firstNameRequired": "Fornavn er påkrevd",
+      "lastNameRequired": "Etternavn er påkrevd",
+      "validAgeRequired": "Vennligst oppgi en gyldig alder mellom 18 og 120",
+      "languageRequired": "Vennligst velg minst ett språk",
+      "deviceRequired": "Velg din primære enhet",
+      "experienceRequired": "Velg ditt tekniske erfaringsnivå",
+      "concernsOptional": "Du kan velge bekymringer for å hjelpe oss med å tilpasse opplevelsen din",
+      "assistiveNeedsRequired": "Vennligst velg dine tilgjengelighetsbehov eller velg \"Ingen nødvendig\"",
+      "communicationStyleRequired": "Velg din foretrukne kommunikasjonsstil"
+    },
+    "restart": {
+      "confirmMessage": "Er du sikker på at du vil starte innføringsprosessen på nytt? Dette vil tilbakestille alle dine preferanser."
+    }
   },
   "error": {
     "askQuestionFirst": "Vennligst still et spørsmål først",
-    "couldntGetAnswer": "Beklager, jeg kunne ikke få et svar akkurat nå. Prøv igjen."
+    "couldntGetAnswer": "Beklager, jeg kunne ikke få et svar akkurat nå. Prøv igjen.",
+    "notifications": {
+      "dismiss": "Avskjedige"
+    }
   },
   "learningPage": {
     "headerTitle": "Læringssenter",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "Moduler for stien: {{pathTitle}}",
     "moduleContentTitle": "Innhold for modul: {{moduleTitle}} vil komme her.",
     "loadingCenter": "Laster læringssenter...",
-    "moduleTimeLabel": "Tid: "
+    "moduleTimeLabel": "Tid: ",
+    "startOrContinueCourse": "Start eller fortsett kurs",
+    "lessonsHeader": "Leksjoner",
+    "lessonContentPlaceholder": "Ingen innhold tilgjengelig for {{lessonTitle}} ennå.",
+    "noLessonAvailable": "Ingen leksjon tilgjengelig."
   },
   "languageSelector": {
     "choosePrompt": "Velg ditt foretrukne språk for grensesnittet",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Gjennomgå",
     "congratulations": "Gratulerer!",
     "courseComplete": "Du har fullført {{courseTitle}}-kurset!",
-    "downloadCertificate": "Last ned sertifikat"
+    "downloadCertificate": "Last ned sertifikat",
+    "previousLesson": "Forrige leksjon",
+    "nextLesson": "Neste leksjon",
+    "markAsComplete": "Merk som fullført",
+    "completed": "Fullført",
+    "removeBookmark": "Fjern bokmerke",
+    "addBookmark": "Legg til bokmerke"
   },
   "lessonView": {
     "readAloud": "Les leksjonen høyt",
@@ -939,5 +1290,461 @@
       "thankYou": "Takk for at du stoler på TechStep med informasjonen din. Vi er forpliktet til å holde den trygg og bruke den kun til å hjelpe deg med å lykkes med teknologi.",
       "backToHome": "Tilbake til hjemmesiden"
     }
+  },
+  "avatar": {
+    "enable": "Aktiver AI Avatar",
+    "disable": "Deaktiver Avatar",
+    "loading": "Laster inn avatar ...",
+    "mute": "Demp Avatar",
+    "unmute": "Slå på lyden for Avatar",
+    "settings": "Avatarinnstillinger",
+    "fullscreen": "Fullskjerm",
+    "exitFullscreen": "Avslutt fullskjerm",
+    "performance": {
+      "high": "Høy kvalitet",
+      "medium": "Middels kvalitet",
+      "low": "Lav kvalitet",
+      "off": "Avatar av"
+    },
+    "error": {
+      "loadFailed": "Kunne ikke laste avataren. Vennligst prøv igjen.",
+      "noWebGL": "Enheten din støtter ikke 3D-grafikk.",
+      "audioFailed": "Kunne ikke få tilgang til mikrofonen for leppesynkronisering."
+    },
+    "status": {
+      "initializing": "Starter opp avatar...",
+      "ready": "Klar til å hjelpe",
+      "thinking": "Tenker...",
+      "speaking": "Snakker...",
+      "listening": "Lytter...",
+      "celebrating": "Spent på å hjelpe!",
+      "error": "Noe gikk galt",
+      "processing": "Behandler lyd...",
+      "lipSyncActive": "Leppesynkronisering aktiv",
+      "lipSyncInactive": "Leppesynkronisering inaktiv"
+    },
+    "greeting": {
+      "morning": "God morgen, {{name}}! Klar for å lære noe nytt i dag?",
+      "afternoon": "God ettermiddag, {{name}}! Hvordan kan jeg hjelpe deg i dag?",
+      "evening": "God kveld, {{name}}! Hva vil du utforske?"
+    },
+    "companion": {
+      "title": "Din AI-hjelper",
+      "ready": "Jeg er her for å hjelpe deg med teknologi!"
+    },
+    "actions": {
+      "chat": "Chat",
+      "voice": "Stemme",
+      "camera": "Kamera",
+      "help": "Hjelp"
+    },
+    "suggestions": {
+      "title": "Raske spørsmål"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Hvordan kobler jeg til WiFi?",
+    "makeTextBigger": "Hvordan gjør jeg tekst større på skjermen min?",
+    "takeScreenshot": "Hvordan tar jeg et skjermbilde?",
+    "videoCall": "Hvordan foretar jeg en videosamtale?",
+    "iphoneSettings": "Hvordan endrer jeg iPhone-innstillinger?",
+    "androidSettings": "Hvordan endrer jeg Android-innstillinger?",
+    "windowsSettings": "Hvordan endrer jeg Windows-innstillinger?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Hvordan kan jeg hjelpe deg i dag?",
+      "subtitle": "Spør meg om noe om teknologi!"
+    },
+    "input": {
+      "placeholder": "Send melding til AI-assistent...",
+      "helper": "Trykk Enter for å sende, Shift+Enter for ny linje"
+    },
+    "greeting": {
+      "morning": "God morgen",
+      "afternoon": "God ettermiddag",
+      "evening": "God kveld"
+    },
+    "error": {
+      "general": "Beklager, jeg har problemer akkurat nå. Prøv igjen om et øyeblikk."
+    }
+  },
+  "flashcards": {
+    "title": "Trinn-for-trinn guide",
+    "progress": "Trinn {{current}} av {{total}}",
+    "instructions": "Instruksjoner:",
+    "markCompleted": "Merk som fullført"
+  },
+  "dataPortability": {
+    "title": "Dataportabilitet og brukerrettigheter",
+    "tabs": {
+      "overview": "Oversikt",
+      "sharing": "Datadeling",
+      "export": "Eksporter data",
+      "delete": "Slett data",
+      "ai": "AI-gjennomsiktighet"
+    },
+    "overview": {
+      "title": "Dine datarettigheter",
+      "description": "Du har full kontroll over dine personlige data. Du kan se, eksportere, korrigere eller slette informasjonen din når som helst innen 30 dager.",
+      "dataWeCollect": "Data vi samler inn",
+      "profileInfo": "Profilinformasjon (navn, e-post, preferanser)",
+      "learningProgress": "Læringsfremgang og prestasjoner",
+      "aiHistory": "AI-samtalehistorikk",
+      "analytics": "Bruksanalyse (anonymisert)",
+      "howWeUse": "Hvordan vi bruker dataene dine",
+      "personalized": "Gi personlig læringsopplevelse",
+      "improveAI": "Forbedre svarene fra AI-assistenten",
+      "trackProgress": "Spor fremgang og prestasjoner",
+      "security": "Sikre plattformsikkerhet og ytelse",
+      "rightsTitle": "Dine rettigheter under GDPR og CCPA",
+      "rightAccess": "Rett til tilgang:",
+      "accessDesc": "Se alle dine personlige data",
+      "rightPortability": "Rett til portabilitet:",
+      "portabilityDesc": "Eksporter dataene dine",
+      "rightRectification": "Rett til retting:",
+      "rectificationDesc": "Korriger unøyaktige data",
+      "rightErasure": "Rett til sletting:",
+      "erasureDesc": "Slett dine personlige data"
+    },
+    "sharing": {
+      "title": "Preferanser for datadeling",
+      "description": "Kontroller hvordan dataene dine deles og brukes. All deling er valgfri og kan endres når som helst.",
+      "dataTypes": "Datatypedeling",
+      "thirdParty": "Tredjepartsdeling",
+      "special": "Spesielle kategorier",
+      "analytics": "Analytics-deling",
+      "analyticsDesc": "Del anonymiserte bruksdata for å forbedre plattformen",
+      "research": "Forskningsdeling",
+      "researchDesc": "Bidra med anonymiserte data til seniorlæringsforskning"
+    },
+    "export": {
+      "title": "Eksporter dataene dine",
+      "description": "Last ned en kopi av alle dine personlige data. Vi forbereder dataene dine og sender deg en nedlastingslenke innen 30 dager.",
+      "chooseFormat": "Velg Eksporter format",
+      "included": "Hva er inkludert:",
+      "profile": "Profilinformasjon og preferanser",
+      "progress": "Læringsfremgang og prestasjoner",
+      "conversations": "AI-samtalehistorikk",
+      "support": "Support billetthistorikk",
+      "consent": "Innstillinger for samtykke og personvern",
+      "request": "Be om dataeksport",
+      "requesting": "Ber om eksport...",
+      "requests": "Eksportforespørsler",
+      "requested": "Forespurt",
+      "download": "Last ned"
+    },
+    "delete": {
+      "title": "Slett dataene dine",
+      "description": "Slett alle dine personlige data permanent. Denne handlingen kan ikke angres og vil stenge kontoen din innen 30 dager.",
+      "whatDeleted": "Hva vil bli slettet:",
+      "profile": "Din profil og kontoinformasjon",
+      "progress": "All læringsfremgang og prestasjoner",
+      "conversations": "AI-samtalehistorikk",
+      "preferences": "Preferanser og innstillinger",
+      "analytics": "Bruksanalyse knyttet til kontoen din",
+      "important": "Viktige merknader:",
+      "legal": "Noen data kan beholdes for lovlig overholdelse (støttebilletter, faktureringsoppføringer)",
+      "research": "Anonymiserte data som brukes til forskning kan beholdes",
+      "verification": "Du vil motta e-postbekreftelse før sletting",
+      "timeframe": "Slettingen vil bli fullført innen 30 dager",
+      "request": "Be om sletting av data",
+      "confirm": "Er du sikker på at du vil slette alle dataene dine?",
+      "type": "Skriv \"DELETE MY DATA\" for å bekrefte denne handlingen:",
+      "placeholder": "Skriv SLETT DATA",
+      "confirmButton": "Bekreft sletting",
+      "processing": "Behandling...",
+      "cancel": "Kansellere",
+      "requests": "Forespørsler om sletting",
+      "complete": "Fullfør sletting av data",
+      "requested": "Forespurt",
+      "scheduled": "Planlagt",
+      "awaitingVerification": "Venter på bekreftelse"
+    },
+    "ai": {
+      "title": "AI-databruk åpenhet",
+      "description": "Se nøyaktig hvordan dataene dine brukes av AI-assistenten vår, og kontroller AI-datapreferansene dine.",
+      "stats": "AI-databruksstatistikk",
+      "conversationsAnalyzed": "Samtaler analysert:",
+      "dataPoints": "Datapunkter som brukes:",
+      "trainingContribution": "Treningsbidrag:",
+      "lastProcessed": "Sist behandlet:",
+      "optOut": "AI Opt-out-alternativer",
+      "stopTraining": "Stopp AI-trening",
+      "stopTrainingDesc": "Forhindre dataene dine fra å forbedre AI-svarene",
+      "deleteHistory": "Slett samtalehistorikk",
+      "deleteHistoryDesc": "Fjern alle lagrede AI-samtaler",
+      "anonymize": "Anonymiser mine data",
+      "anonymizeDesc": "Konverter data til anonym form"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Velg hvordan du vil kommunisere",
+    "tabs": {
+      "chat": "Chat",
+      "voice": "Stemme",
+      "image": "Bilde",
+      "chatAria": "Inndata for tekstchat",
+      "voiceAria": "Stemmeinngang",
+      "imageAria": "Bildeinngang"
+    },
+    "chat": {
+      "placeholder": "Skriv inn spørsmålet ditt her... Trykk Enter for å sende",
+      "ariaLabel": "Skriv inn spørsmålet ditt",
+      "sendButton": "Send melding",
+      "send": "Sende"
+    },
+    "voice": {
+      "recording": "Opptak... Trykk for å stoppe",
+      "processing": "Behandler stemmen din ...",
+      "instructions": "Trykk på mikrofonen for å starte opptaket",
+      "startRecording": "Start opptaket",
+      "stopRecording": "Stopp opptaket"
+    },
+    "image": {
+      "takePhoto": "Ta et bilde",
+      "camera": "Ta bilde",
+      "upload": "Last opp bilde",
+      "uploadAria": "Velg bildefil",
+      "instructions": "Del et bilde, så skal jeg hjelpe deg med å forklare hva du ser",
+      "formats": "Støtter JPG, PNG, GIF (maks 10MB)",
+      "previewAlt": "Forhåndsvisning av valgt bilde",
+      "remove": "Fjern bildet",
+      "contextLabel": "Hva vil du vite om dette bildet?",
+      "contextPlaceholder": "Valgfritt: Still et spesifikt spørsmål om bildet",
+      "cancel": "Kansellere",
+      "submit": "Send inn bilde",
+      "send": "Sende",
+      "invalidType": "Velg en gyldig bildefil.",
+      "tooLarge": "Bildefilen er for stor. Velg en fil under 10 MB.",
+      "cameraError": "Fikk ikke tilgang til kameraet. Vennligst sjekk tillatelser."
+    }
+  },
+  "ai": {
+    "title": "AI-hjelper",
+    "subtitle": "Her for å hjelpe deg å lære",
+    "emergency": "Nødstøtte",
+    "emergencyAria": "Få nødhjelp",
+    "expand": "Utvide",
+    "minimize": "Minimer",
+    "close": "Lukk AI Assistant",
+    "thinking": "AI tenker...",
+    "escalated": "Du er nå koblet til supportteamet vårt",
+    "callSupport": "Ring Support: 1-800-SENIOR-HELP",
+    "minimized": "AI-hjelper",
+    "welcome": {
+      "tutorial": "Hallo! Jeg ser at du jobber med «{{tutorial}}». Jeg er her for å hjelpe deg med eventuelle spørsmål. Du kan skrive, snakke eller vise meg bilder - det som føles mest behagelig for deg!",
+      "general": "Hallo! Jeg er din AI-assistent, her for å hjelpe deg å lære teknologi trinn for trinn. Du kan stille meg spørsmål ved å skrive, snakke eller vise meg bilder. Hva vil du vite?"
+    },
+    "error": {
+      "general": "Beklager, jeg har problemer akkurat nå. La meg koble deg til vårt supportteam som kan hjelpe deg umiddelbart."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Fellesskapsforum",
+      "subtitle": "Ta kontakt med andre elever, still spørsmål og del dine erfaringer",
+      "backToHome": "Tilbake til Hjemmet",
+      "newPost": "Nytt innlegg"
+    },
+    "sidebar": {
+      "categories": "Kategorier",
+      "topics": {
+        "all": "Alle emner",
+        "general": "Generell hjelp",
+        "mobile": "Mobile enheter",
+        "computer": "Datamaskiner",
+        "apps": "Apper og programvare",
+        "internet": "Internett og e-post",
+        "safety": "Online sikkerhet"
+      },
+      "guidelines": {
+        "title": "Retningslinjer for fellesskapet",
+        "items": [
+          "Vær respektfull og snill",
+          "Ingen spam eller upassende innhold",
+          "Hjelp andre når du kan",
+          "Hold deg til emnet",
+          "Rapporter eventuelle problemer"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Søk etter innlegg..."
+    },
+    "createPost": {
+      "title": "Opprett nytt innlegg",
+      "categoryLabel": "Kategori",
+      "titleLabel": "Tittel",
+      "contentLabel": "Innhold",
+      "titlePlaceholder": "Hva er spørsmålet eller emnet ditt?",
+      "contentPlaceholder": "Beskriv spørsmålet ditt eller del tankene dine...",
+      "submit": "Stolpe",
+      "cancel": "Kansellere",
+      "profanityAlert": "Innlegget ditt inneholder upassende innhold. Vennligst revider og prøv igjen."
+    },
+    "posts": {
+      "empty": "Ingen innlegg funnet. Vær den første til å starte en samtale!",
+      "replies": "{{count}} svar",
+      "timeAgo": {
+        "justNow": "Akkurat nå",
+        "oneHour": "1 time siden",
+        "hours": "For {{count}} timer siden",
+        "oneDay": "1 dag siden",
+        "days": "For {{count}} dager siden"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "subtitle": "Vi vil gjerne høre fra deg! Send oss ​​en melding så svarer vi så snart som mulig.",
+    "backToHome": "Tilbake til Hjemmet",
+    "form": {
+      "fasterResponse": "📧 Dette skjemaet vil bli besvart raskere enn andre kontaktmetoder!",
+      "name": "Fullt navn *",
+      "namePlaceholder": "Skriv inn ditt fulle navn",
+      "email": "E-postadresse *",
+      "emailPlaceholder": "Skriv inn e-postadressen din",
+      "subject": "Emne *",
+      "subjectPlaceholder": "Velg et emne",
+      "subjects": {
+        "general": "Generell henvendelse",
+        "techSupport": "Teknisk støtte",
+        "account": "Kontohjelp",
+        "feature": "Funksjonsforespørsel",
+        "bug": "Feilrapport",
+        "feedback": "Tilbakemelding",
+        "other": "Annen"
+      },
+      "message": "Melding *",
+      "messagePlaceholder": "Vennligst beskriv din forespørsel i detalj...",
+      "submit": "Send melding",
+      "sending": "Sender...",
+      "success": "E-postklienten din skal ha åpnet. Hvis ikke, vennligst kopier informasjonen og send oss ​​en e-post direkte.",
+      "error": "Det oppstod en feil. Send oss ​​en e-post direkte på taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Ta kontakt",
+      "emailLabel": "E-post",
+      "responseData": "Vi svarer vanligvis innen 24 timer"
+    },
+    "reasons": {
+      "title": "Hvorfor kontakte oss?",
+      "items": [
+        "Få hjelp med tekniske problemer",
+        "Be om nye funksjoner",
+        "Del tilbakemeldinger og forslag",
+        "Rapporter feil eller problemer",
+        "Generelle henvendelser"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Vilkår for bruk",
+    "backToHome": "Tilbake til Hjemmet",
+    "lastUpdated": "Sist oppdatert: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Aksept av vilkår",
+        "content": "Ved å få tilgang til og bruke tjenesten vår godtar du og godtar å være bundet av vilkårene og bestemmelsen i denne avtalen."
+      },
+      "license": {
+        "title": "Bruk lisens",
+        "content": "Tillatelse er gitt til midlertidig bruk av tjenesten vår kun for personlig, ikke-kommersiell forbigående visning."
+      },
+      "conduct": {
+        "title": "Brukeratferd",
+        "content": "Du godtar å bruke tjenesten vår på en måte som er i samsvar med alle gjeldende lover og forskrifter og i samsvar med disse vilkårene."
+      },
+      "liability": {
+        "title": "Ansvarsbegrensning",
+        "content": "Under ingen omstendigheter skal vårt selskap eller dets leverandører holdes ansvarlig for eventuelle skader som oppstår som følge av bruk eller manglende evne til å bruke tjenesten vår."
+      },
+      "contact": {
+        "title": "Kontaktinformasjon",
+        "content": "Hvis du har spørsmål om disse vilkårene for bruk, vennligst kontakt oss på:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Tilgjengelighetserklæring",
+    "subtitle": "Vi er forpliktet til å gjøre plattformen vår tilgjengelig for alle, uavhengig av evner eller teknologi.",
+    "backToHome": "Tilbake til Hjemmet",
+    "commitment": {
+      "title": "Vårt engasjement",
+      "content": "Vi mener teknologi bør være tilgjengelig for alle. Plattformen vår er designet med seniorer i tankene, og inneholder funksjoner som gjør læringsteknologi enklere og mer komfortabel for brukere på alle nivåer."
+    },
+    "features": {
+      "title": "Tilgjengelighetsfunksjoner",
+      "visual": {
+        "title": "Visuell tilgjengelighet",
+        "items": [
+          "Fargeoppsett med høy kontrast",
+          "Store, lesbare fonter",
+          "Skjermleserkompatibilitet",
+          "Støtte for tastaturnavigasjon",
+          "Alternativ tekst til bilder"
+        ]
+      },
+      "audio": {
+        "title": "Lydtilgjengelighet",
+        "items": [
+          "Teksting for videoer",
+          "Lydbeskrivelser",
+          "Volumkontroller",
+          "Visuelle indikatorer for lydsignaler",
+          "Tekstalternativer til lydinnhold"
+        ]
+      },
+      "motor": {
+        "title": "Motorisk tilgjengelighet",
+        "items": [
+          "Store klikkbare områder",
+          "Kun tastaturnavigasjon",
+          "Justerbare tidsbegrensninger",
+          "Stemmekontrollkompatibilitet",
+          "Forenklede interaksjoner"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitiv tilgjengelighet",
+        "items": [
+          "Enkelt, tydelig språk",
+          "Konsekvent navigering",
+          "Alternativer for redusert bevegelse",
+          "Tydelige instruksjoner",
+          "Feilforebygging og gjenoppretting"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Overholdelse av standarder",
+      "content": "Vår plattform tar sikte på å samsvare med Web Content Accessibility Guidelines (WCAG) 2.1 nivå AA-standarder. Vi tester jevnlig plattformen vår med hjelpeteknologier og gjennomfører tilgjengelighetsrevisjoner."
+    },
+    "feedback": {
+      "title": "Tilbakemelding og støtte",
+      "content": "Vi jobber kontinuerlig med å forbedre tilgjengeligheten. Hvis du støter på noen barrierer eller har forslag til forbedringer, ikke nøl med å kontakte oss.",
+      "emailLabel": "E-post",
+      "subjectLabel": "Tema",
+      "subjectValue": "Tilbakemelding om tilgjengelighet"
+    },
+    "assistive": {
+      "title": "Hjelpemidler",
+      "content": "Plattformen vår er designet for å fungere med vanlige hjelpeteknologier, inkludert:",
+      "items": [
+        "Skjermlesere (JAWS, NVDA, VoiceOver)",
+        "Programvare for talegjenkjenning",
+        "Verktøy for skjermforstørrelse",
+        "Alternative tastaturer",
+        "Bytt navigasjonsenhet",
+        "Øyesporingssystemer"
+      ]
+    },
+    "help": {
+      "title": "Trenger du hjelp?",
+      "content": "Hvis du trenger hjelp til å bruke plattformen vår eller har tilgjengelighetsrelaterte spørsmål, er vi her for å hjelpe.",
+      "contact": "Kontakt kundestøtte"
+    },
+    "lastUpdated": "Sist oppdatert: {{date}}"
   }
 }

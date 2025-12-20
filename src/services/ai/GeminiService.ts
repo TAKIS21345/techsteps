@@ -1,11 +1,11 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
-import { 
-  AIService, 
-  AIResponse, 
-  ConversationContext, 
-  PageContext, 
+import {
+  AIService,
+  AIResponse,
+  ConversationContext,
+  PageContext,
   HelpContent,
-  AIMessage 
+  AIMessage
 } from '../../types/services';
 import { DEFAULT_GEMINI_CONFIG } from './config';
 
@@ -14,7 +14,7 @@ export class GeminiService implements AIService {
   private conversationHistory: Map<string, AIMessage[]> = new Map();
   private failureCount: Map<string, number> = new Map();
   private readonly MAX_FAILURES = DEFAULT_GEMINI_CONFIG.escalationThreshold;
-  
+
   private readonly SENIOR_SYSTEM_PROMPT = `You are a patient, warm, and encouraging AI assistant designed specifically for senior learners who are learning technology. Your responses should be:
 
 1. Written in simple, clear language without technical jargon
@@ -36,7 +36,12 @@ Always prioritize the user's comfort and confidence. If a question is too comple
     if (!key) {
       throw new Error('Google Gemini API key is required');
     }
-    
+
+    if (key === 'YOUR_ACTUAL_GEMINI_API_KEY_HERE') {
+      throw new Error('Please replace YOUR_ACTUAL_GEMINI_API_KEY_HERE with your actual Gemini API key in the .env file');
+    }
+
+    console.log('Initializing Gemini service with API key:', key.substring(0, 10) + '...');
     this.genAI = new GoogleGenerativeAI(key);
   }
 
@@ -44,12 +49,12 @@ Always prioritize the user's comfort and confidence. If a question is too comple
     const startTime = Date.now();
     const conversationId = this.getConversationId(context);
     const interactionId = `${conversationId}-${Date.now()}`;
-    
+
     try {
       // Use the message directly (simplified for now)
       const sanitizedMessage = message;
       const anonymizedContext = context;
-      
+
       // Get the generative model with safety settings
       const model = this.genAI.getGenerativeModel({
         model: DEFAULT_GEMINI_CONFIG.model,
@@ -81,20 +86,20 @@ Always prioritize the user's comfort and confidence. If a question is too comple
 
       // Build the prompt with context and history
       const fullPrompt = this.buildFullPrompt(sanitizedMessage, anonymizedContext);
-      
+
       // Generate response
       const result = await model.generateContent(fullPrompt);
       const response = result.response;
       const responseText = response.text();
-      
+
       const processingTime = Date.now() - startTime;
 
       // Simple confidence calculation
       const confidence = responseText.length > 50 ? 0.8 : 0.6;
-      
+
       // Update conversation history
       this.updateConversationHistory(conversationId, message, responseText);
-      
+
       // Reset failure count on success
       this.failureCount.set(conversationId, 0);
 
@@ -116,13 +121,19 @@ Always prioritize the user's comfort and confidence. If a question is too comple
 
     } catch (error) {
       console.error('Gemini Service Error:', error);
-      
+
+      // Check for API key related errors
+      const errorMessage = (error as Error).message;
+      if (errorMessage.includes('API_KEY_INVALID') || errorMessage.includes('403') || errorMessage.includes('401')) {
+        console.error('Invalid Gemini API key detected. Please check your VITE_GEMINI_API_KEY in the .env file.');
+      }
+
       // Increment failure count
       const currentFailures = this.failureCount.get(conversationId) || 0;
       this.failureCount.set(conversationId, currentFailures + 1);
-      
+
       const processingTime = Date.now() - startTime;
-      
+
       // Return fallback response
       return this.getFallbackResponse(error as Error, context, conversationId);
     }
@@ -132,14 +143,14 @@ Always prioritize the user's comfort and confidence. If a question is too comple
     try {
       // Convert audio blob to base64 for Gemini
       const audioBase64 = await this.blobToBase64(audioBlob);
-      
+
       // Get the generative model that supports multimodal input
       const model = this.genAI.getGenerativeModel({
-        model: "gemini-1.5-flash", // Use multimodal model for audio
+        model: "gemini-2.0-flash-exp", // Use multimodal model for audio
       });
 
       const prompt = this.buildSystemPrompt(context) + "\n\nPlease respond to this voice message from a senior learner:";
-      
+
       const result = await model.generateContent([
         prompt,
         {
@@ -151,7 +162,7 @@ Always prioritize the user's comfort and confidence. If a question is too comple
       ]);
 
       const response = result.response.text();
-      
+
       // Update conversation history
       const conversationId = this.getConversationId(context);
       this.updateConversationHistory(conversationId, "[Voice message]", response);
@@ -163,7 +174,7 @@ Always prioritize the user's comfort and confidence. If a question is too comple
         requiresHumanEscalation: false,
         metadata: {
           processingTime: 0,
-          model: "gemini-1.5-flash",
+          model: "gemini-2.0-flash-exp",
           tokens: this.estimateTokens(response),
           sources: []
         }
@@ -178,14 +189,14 @@ Always prioritize the user's comfort and confidence. If a question is too comple
     try {
       // Convert image file to base64 for Gemini
       const imageBase64 = await this.fileToBase64(imageFile);
-      
+
       // Get the generative model that supports multimodal input
       const model = this.genAI.getGenerativeModel({
-        model: "gemini-1.5-flash", // Use multimodal model for images
+        model: "gemini-2.0-flash-exp", // Use multimodal model for images
       });
 
       const prompt = this.buildSystemPrompt(context) + "\n\nPlease help this senior learner with what you see in this image. Provide clear, step-by-step guidance:";
-      
+
       const result = await model.generateContent([
         prompt,
         {
@@ -197,7 +208,7 @@ Always prioritize the user's comfort and confidence. If a question is too comple
       ]);
 
       const response = result.response.text();
-      
+
       // Update conversation history
       const conversationId = this.getConversationId(context);
       this.updateConversationHistory(conversationId, "[Image shared]", response);
@@ -209,7 +220,7 @@ Always prioritize the user's comfort and confidence. If a question is too comple
         requiresHumanEscalation: false,
         metadata: {
           processingTime: 0,
-          model: "gemini-1.5-flash",
+          model: "gemini-2.0-flash-exp",
           tokens: this.estimateTokens(response),
           sources: []
         }
@@ -233,6 +244,7 @@ Always prioritize the user's comfort and confidence. If a question is too comple
 3. Contain simple, actionable instructions
 4. Be encouraging and supportive
 5. Include an audioScript field optimized for text-to-speech
+6. Include clear, actionable instructions
 
 Response to format:
 ${response}
@@ -246,15 +258,19 @@ Format as JSON array with this structure:
     "content": "Clear instructions",
     "instructions": ["Action 1", "Action 2"],
     "audioScript": "Step 1: Step Title. Clear instructions. Action 1. Action 2.",
-    "estimatedDuration": 60
+    "estimatedDuration": 60,
+
   }
 ]
 
-Make sure the audioScript field combines the title, content, and instructions in a natural way that sounds good when read aloud by text-to-speech.`;
+IMPORTANT GUIDELINES:
+- Make instructions clear and easy to follow
+- Use encouraging and supportive language
+- Break down complex tasks into simple steps`;
 
       const result = await model.generateContent(prompt);
       const flashcardText = result.response.text();
-      
+
       // Try to parse as JSON, fallback to manual parsing if needed
       try {
         const parsed = JSON.parse(flashcardText);
@@ -273,15 +289,15 @@ Make sure the audioScript field combines the title, content, and instructions in
   }
 
   // Core Gemini service methods
-  
+
   async escalateToHuman(conversationId: string, reason: string): Promise<void> {
     try {
       // Simple escalation - just log and clear conversation
       console.log(`Escalating conversation ${conversationId} to human support. Reason: ${reason}`);
-      
+
       this.conversationHistory.delete(conversationId);
       this.failureCount.delete(conversationId);
-      
+
       // In a real implementation, this would create a support ticket
       console.log(`Successfully escalated conversation ${conversationId} to human support.`);
     } catch (error) {
@@ -341,9 +357,9 @@ Make sure the audioScript field combines the title, content, and instructions in
   private buildFullPrompt(message: string, context: ConversationContext): string {
     const systemPrompt = this.buildSystemPrompt(context);
     const history = this.conversationHistory.get(this.getConversationId(context)) || [];
-    
+
     let prompt = systemPrompt + '\n\n';
-    
+
     // Add recent conversation history
     if (history.length > 0) {
       prompt += 'Recent conversation:\n';
@@ -352,39 +368,39 @@ Make sure the audioScript field combines the title, content, and instructions in
       });
       prompt += '\n';
     }
-    
+
     prompt += `User: ${message}`;
-    
+
     return prompt;
   }
 
   private buildSystemPrompt(context: ConversationContext): string {
     let prompt = this.SENIOR_SYSTEM_PROMPT;
-    
+
     if (context.currentPage) {
       prompt += `\n\nThe user is currently on the page: ${context.currentPage}`;
     }
-    
+
     if (context.currentTutorial) {
       prompt += `\nThey are working on the tutorial: ${context.currentTutorial}`;
     }
-    
+
     if (context.userSkillLevel) {
       prompt += `\nTheir skill level is: ${context.userSkillLevel}`;
     }
-    
+
     if (context.failureCount > 0) {
       prompt += `\n\nIMPORTANT: This user has had ${context.failureCount} previous unsuccessful interactions. Be extra patient and consider offering human support if this interaction doesn't go well.`;
     }
-    
+
     return prompt;
   }
 
   private shouldEscalate(response: string, context: ConversationContext, conversationId: string): boolean {
     const failures = this.failureCount.get(conversationId) || 0;
-    
+
     if (failures >= this.MAX_FAILURES) return true;
-    
+
     const escalationTriggers = [
       'i cannot help',
       'i don\'t understand',
@@ -394,15 +410,15 @@ Make sure the audioScript field combines the title, content, and instructions in
       'i\'m not sure how to help',
       'this is beyond my capabilities'
     ];
-    
-    return escalationTriggers.some(trigger => 
+
+    return escalationTriggers.some(trigger =>
       response.toLowerCase().includes(trigger)
     );
   }
 
   private generateSuggestedActions(response: string, context: ConversationContext) {
     const actions = [];
-    
+
     if (response.toLowerCase().includes('tutorial') && context.currentTutorial) {
       actions.push({
         type: 'tutorial' as const,
@@ -410,13 +426,13 @@ Make sure the audioScript field combines the title, content, and instructions in
         data: { tutorialId: context.currentTutorial }
       });
     }
-    
+
     actions.push({
       type: 'help' as const,
       label: 'Get More Help',
       data: { page: context.currentPage }
     });
-    
+
     if (context.failureCount > 1) {
       actions.push({
         type: 'contact' as const,
@@ -424,22 +440,27 @@ Make sure the audioScript field combines the title, content, and instructions in
         data: { reason: 'ai_assistance_needed' }
       });
     }
-    
+
     return actions;
   }
 
   private getFallbackResponse(error: Error, context: ConversationContext, conversationId: string): AIResponse {
     const failures = this.failureCount.get(conversationId) || 0;
     const shouldEscalate = failures >= this.MAX_FAILURES;
-    
+    const errorMessage = error.message;
+
     let content: string;
-    if (shouldEscalate) {
+
+    // Check for API key related errors
+    if (errorMessage.includes('API_KEY_INVALID') || errorMessage.includes('403') || errorMessage.includes('401')) {
+      content = "I'm having trouble connecting to my AI service due to an API key issue. Please check that your Gemini API key is properly configured in the .env file.";
+    } else if (shouldEscalate) {
       content = "I'm sorry, I'm having trouble right now. Let me connect you with our support team who can help you immediately.";
       this.escalateToHuman(conversationId, `Gemini service error after ${failures} failures: ${error.message}`);
     } else {
       content = "I apologize, but I'm having a small technical difficulty. Please try asking your question again, or I can connect you with our helpful support team.";
     }
-    
+
     return {
       content,
       confidence: 0.1,
@@ -484,31 +505,31 @@ Make sure the audioScript field combines the title, content, and instructions in
       'profile': ['Account Settings', 'Privacy Settings', 'Accessibility Options'],
       'help': ['Common Questions', 'Contact Support', 'Video Guides']
     };
-    
+
     return topicMap[pageContext.section] || ['Getting Started', 'Common Questions'];
   }
 
   private updateConversationHistory(conversationId: string, userMessage: string, aiResponse: string): void {
     const history = this.conversationHistory.get(conversationId) || [];
-    
+
     history.push({
       id: `${Date.now()}-user`,
       content: userMessage,
       sender: 'user',
       timestamp: new Date()
     });
-    
+
     history.push({
       id: `${Date.now()}-ai`,
       content: aiResponse,
       sender: 'ai',
       timestamp: new Date()
     });
-    
+
     if (history.length > 20) {
       history.splice(0, history.length - 20);
     }
-    
+
     this.conversationHistory.set(conversationId, history);
   }
 
@@ -554,7 +575,7 @@ Make sure the audioScript field combines the title, content, and instructions in
   private parseFlashcardsManually(response: string): any[] {
     // Fallback manual parsing if JSON parsing fails
     const steps = response.split(/\d+\./).filter(step => step.trim().length > 0);
-    
+
     return steps.map((step, index) => {
       const stepData = {
         id: `step-${index + 1}`,
@@ -564,7 +585,7 @@ Make sure the audioScript field combines the title, content, and instructions in
         instructions: [step.trim()],
         estimatedDuration: 60
       };
-      
+
       return {
         ...stepData,
         audioScript: this.generateAudioScript(stepData)
@@ -578,14 +599,14 @@ Make sure the audioScript field combines the title, content, and instructions in
       `Step ${step.stepNumber}: ${step.title}`,
       step.content
     ];
-    
+
     if (step.instructions && step.instructions.length > 0) {
       parts.push('Here are the instructions:');
       step.instructions.forEach((instruction: string, index: number) => {
         parts.push(`${index + 1}. ${instruction}`);
       });
     }
-    
+
     return parts.join('. ');
   }
 

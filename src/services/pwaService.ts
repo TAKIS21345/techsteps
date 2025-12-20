@@ -310,7 +310,7 @@ class PWAService {
         subscription = await registration.pushManager.subscribe({
           userVisibleOnly: true,
           applicationServerKey: this.urlBase64ToUint8Array(
-            process.env.VITE_VAPID_PUBLIC_KEY || ''
+            import.meta.env.VITE_VAPID_PUBLIC_KEY || ''
           ),
         });
       }

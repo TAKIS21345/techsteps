@@ -11,17 +11,15 @@ import ContactUs from './pages/ContactUs';
 import Accessibility from './pages/Accessibility';
 import Community from './pages/Community';
 import LearningCenterPage from './pages/LearningCenterPage';
-import AvatarDemo from './components/ai/avatar/AvatarDemo';
-import AvatarTestPage from './pages/AvatarTestPage';
-import AvatarMovementDemoPage from './pages/AvatarMovementDemoPage';
-import GoogleTTSTestPage from './pages/GoogleTTSTestPage';
-// import StreamingLipSyncTestPage from './pages/StreamingLipSyncTestPage';
-import ProtectedRoute from './components/ProtectedRoute';
-import PublicRoute from './components/PublicRoute';
+import ChatDashboard from './pages/ChatDashboard';
+
+
+import ProtectedRoute from './components/routing/ProtectedRoute';
+import PublicRoute from './components/routing/PublicRoute';
 import { PWAProvider } from './components/pwa/PWAProvider';
 // Main App component
 import { CookieManager } from './utils/cookieManager';
-// import { errorLogger } from './utils/errorLogger';
+// import { errorLogger } from './utils/errors/errorLogger';
 import { performanceMonitor } from './utils/performanceMonitor';
 import { useTranslationAnimation } from './contexts/TranslationAnimationContext';
 import { useUser } from './contexts/UserContext';
@@ -38,7 +36,7 @@ function App() {
   // Get authentication and user status
   const { user, loading: authLoading } = useAuth();
   const { hasCompletedOnboarding, loading: userLoading } = useUser();
-  
+
   // Initialize performance optimizations
   usePerformanceOptimization({
     enableImageLazyLoading: true,
@@ -50,7 +48,7 @@ function App() {
   useEffect(() => {
     // Initialize performance monitoring
     performanceMonitor.measureLandingPageLoad();
-    
+
     // Clear any console errors from development
     // Temporarily disabled to fix React hooks issue
     // errorLogger.clearConsoleErrors();
@@ -109,71 +107,62 @@ function App() {
                     <Route path="/" element={
                       (authLoading || userLoading) ? <div className="min-h-screen flex items-center justify-center">
                         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
-                      </div> : 
-                      user && hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> :
-                      user && !hasCompletedOnboarding ? <Navigate to="/onboarding" replace /> :
-                      <LandingPage />
+                      </div> :
+                        user && hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> :
+                          user && !hasCompletedOnboarding ? <Navigate to="/onboarding" replace /> :
+                            <LandingPage />
                     } />
-                    <Route 
-                      path="/auth" 
+                    <Route
+                      path="/auth"
                       element={
                         <PublicRoute>
                           <AuthPage />
                         </PublicRoute>
-                      } 
+                      }
                     />
-                    <Route 
-                      path="/onboarding" 
+                    <Route
+                      path="/onboarding"
                       element={
                         <ProtectedRoute requiresOnboarding={false}>
                           {userLoading ? null : hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <OnboardingPage />}
                         </ProtectedRoute>
-                      } 
+                      }
                     />
-                    <Route 
-                      path="/dashboard" 
+                    <Route
+                      path="/dashboard"
                       element={
                         <ProtectedRoute>
                           <DashboardPage />
                         </ProtectedRoute>
-                      } 
+                      }
                     />
-                    <Route 
-                      path="/settings" 
+                    <Route
+                      path="/settings"
                       element={
                         <ProtectedRoute>
                           <SettingsPage />
                         </ProtectedRoute>
-                      } 
+                      }
                     />
-                    <Route 
-                      path="/learning" 
+                    <Route
+                      path="/learning"
                       element={
                         <ProtectedRoute>
                           <LearningCenterPage />
                         </ProtectedRoute>
-                      } 
+                      }
                     />
-                    <Route 
-                      path="/avatar-demo" 
-                      element={<AvatarDemo />} 
+                    <Route
+                      path="/chat"
+                      element={
+                        <ProtectedRoute>
+                          <ChatDashboard />
+                        </ProtectedRoute>
+                      }
                     />
-                    <Route 
-                      path="/avatar-test" 
-                      element={<AvatarTestPage />} 
-                    />
-                    <Route 
-                      path="/avatar-movement-demo" 
-                      element={<AvatarMovementDemoPage />} 
-                    />
-                    <Route 
-                      path="/google-tts-test" 
-                      element={<GoogleTTSTestPage />} 
-                    />
-                    {/* <Route 
-                      path="/streaming-lipsync-test" 
-                      element={<StreamingLipSyncTestPage />} 
-                    /> */}
+
+
+
                     <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                     <Route path="/terms-of-service" element={<TermsOfService />} />
                     <Route path="/contact" element={<ContactUs />} />

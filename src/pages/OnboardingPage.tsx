@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import { ChevronLeft, ChevronRight, Search, Globe, Check, AlertTriangle } from 'lucide-react';
-import Logo from '../components/Logo';
+import Logo from '../components/layout/Logo';
 import { useTranslation } from 'react-i18next';
 import Cookies from 'js-cookie';
 
@@ -29,6 +29,11 @@ const OnboardingPage: React.FC = () => {
       highContrast: false,
       videoRecommendations: true,
       speechLanguages: [i18n.language] as string[]
+    },
+    dataPersonalization: {
+      allowPersonalization: false,
+      useConversationHistory: false,
+      usePreferences: false
     }
   });
   const [loading, setLoading] = useState(false);
@@ -91,7 +96,7 @@ const OnboardingPage: React.FC = () => {
     setFormData(prev => {
       const currentLanguages = prev.selectedLanguages;
       let newLanguages: string[];
-      
+
       if (currentLanguages.includes(languageCode)) {
         // Don't allow removing the last language
         if (currentLanguages.length === 1) {
@@ -101,7 +106,7 @@ const OnboardingPage: React.FC = () => {
       } else {
         newLanguages = [...currentLanguages, languageCode];
       }
-      
+
       return {
         ...prev,
         selectedLanguages: newLanguages,
@@ -253,11 +258,10 @@ const OnboardingPage: React.FC = () => {
                   key={lang.code}
                   type="button"
                   onClick={() => handleLanguageToggle(lang.code)}
-                  className={`p-3 sm:p-4 text-left border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors ${
-                    formData.selectedLanguages.includes(lang.code)
-                      ? 'bg-blue-50 border-l-4 border-l-blue-500'
-                      : ''
-                  }`}
+                  className={`p-3 sm:p-4 text-left border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors ${formData.selectedLanguages.includes(lang.code)
+                    ? 'bg-blue-50 border-l-4 border-l-blue-500'
+                    : ''
+                    }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -322,11 +326,10 @@ const OnboardingPage: React.FC = () => {
             <button
               key={deviceKey}
               onClick={() => setFormData(prev => ({ ...prev, os: t(`onboarding.step3.devices.${deviceKey}`) }))}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
-                formData.os === t(`onboarding.step3.devices.${deviceKey}`)
-                  ? 'border-blue-500 bg-blue-50 text-blue-700'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
+              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${formData.os === t(`onboarding.step3.devices.${deviceKey}`)
+                ? 'border-blue-500 bg-blue-50 text-blue-700'
+                : 'border-gray-200 hover:border-gray-300'
+                }`}
             >
               {t(`onboarding.step3.devices.${deviceKey}`)}
             </button>
@@ -347,11 +350,10 @@ const OnboardingPage: React.FC = () => {
             <button
               key={level.value}
               onClick={() => setFormData(prev => ({ ...prev, techExperience: level.value as any }))}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${
-                formData.techExperience === level.value 
-                  ? 'border-blue-500 bg-blue-50 text-blue-700' 
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
+              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${formData.techExperience === level.value
+                ? 'border-blue-500 bg-blue-50 text-blue-700'
+                : 'border-gray-200 hover:border-gray-300'
+                }`}
             >
               <div className="font-medium">{level.label}</div>
               <div className="text-sm text-gray-600 mt-1">{level.desc}</div>
@@ -392,11 +394,10 @@ const OnboardingPage: React.FC = () => {
                   };
                 });
               }}
-              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
-                formData.primaryConcerns.includes(`onboarding.step5.concerns.${concern}`) // Check against the key
-                  ? 'border-blue-500 bg-blue-50 text-blue-700' 
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
+              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${formData.primaryConcerns.includes(`onboarding.step5.concerns.${concern}`) // Check against the key
+                ? 'border-blue-500 bg-blue-50 text-blue-700'
+                : 'border-gray-200 hover:border-gray-300'
+                }`}
             >
               {t(`onboarding.step5.concerns.${concern}`)} {/* Display translated text */}
             </button>
@@ -438,11 +439,10 @@ const OnboardingPage: React.FC = () => {
                     return { ...prev, assistiveNeeds: newNeeds };
                   });
                 }}
-                className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${
-                  formData.assistiveNeeds.includes(`onboarding.step6.needs.${need}`) // Check against the key
-                    ? 'border-blue-500 bg-blue-50 text-blue-700' 
-                    : 'border-gray-200 hover:border-gray-300'
-                }`}
+                className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${formData.assistiveNeeds.includes(`onboarding.step6.needs.${need}`) // Check against the key
+                  ? 'border-blue-500 bg-blue-50 text-blue-700'
+                  : 'border-gray-200 hover:border-gray-300'
+                  }`}
               >
                 {t(`onboarding.step6.needs.${need}`)} {/* Display translated text */}
               </button>
@@ -464,11 +464,10 @@ const OnboardingPage: React.FC = () => {
             <button
               key={style.value}
               onClick={() => setFormData(prev => ({ ...prev, communicationStyle: style.value as any }))}
-              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left ${
-                formData.communicationStyle === style.value 
-                  ? 'border-blue-500 bg-blue-50 text-blue-700' 
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
+              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left ${formData.communicationStyle === style.value
+                ? 'border-blue-500 bg-blue-50 text-blue-700'
+                : 'border-gray-200 hover:border-gray-300'
+                }`}
             >
               <div className="font-medium text-sm sm:text-base">{style.label}</div>
               <div className="text-xs sm:text-sm text-gray-600 mt-1">{style.desc}</div>
@@ -478,8 +477,135 @@ const OnboardingPage: React.FC = () => {
       )
     },
     {
-      title: t('onboarding.step8.title'),
-      subtitle: t('onboarding.step8.subtitle'),
+      title: t('onboarding.step8.title', 'Data Personalization'),
+      subtitle: t('onboarding.step8.subtitle', 'Help us personalize your experience while keeping your privacy secure'),
+      content: (
+        <div className="space-y-6">
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check className="w-4 h-4 text-green-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-green-800 mb-2">{t('onboarding.step8.privacy.title')}</h3>
+                <ul className="text-sm text-green-700 space-y-1">
+                  {(t('onboarding.step8.privacy.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start justify-between">
+                <div className="flex-1 pr-4">
+                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.personalization.title')}</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {t('onboarding.step8.personalization.description')}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    {t('onboarding.step8.personalization.note')}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setFormData(prev => ({
+                    ...prev,
+                    dataPersonalization: {
+                      ...prev.dataPersonalization,
+                      allowPersonalization: !prev.dataPersonalization.allowPersonalization
+                    }
+                  }))}
+                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.allowPersonalization ? 'bg-blue-600' : 'bg-gray-300'
+                    }`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.allowPersonalization ? 'translate-x-7' : 'translate-x-0.5'
+                    }`} />
+                </button>
+              </div>
+            </div>
+
+            <div className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start justify-between">
+                <div className="flex-1 pr-4">
+                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.history.title')}</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {t('onboarding.step8.history.description')}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    {t('onboarding.step8.history.note')}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setFormData(prev => ({
+                    ...prev,
+                    dataPersonalization: {
+                      ...prev.dataPersonalization,
+                      useConversationHistory: !prev.dataPersonalization.useConversationHistory
+                    }
+                  }))}
+                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.useConversationHistory ? 'bg-blue-600' : 'bg-gray-300'
+                    }`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.useConversationHistory ? 'translate-x-7' : 'translate-x-0.5'
+                    }`} />
+                </button>
+              </div>
+            </div>
+
+            <div className="border border-gray-200 rounded-xl p-4">
+              <div className="flex items-start justify-between">
+                <div className="flex-1 pr-4">
+                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.learningPrefs.title')}</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {t('onboarding.step8.learningPrefs.description')}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    {t('onboarding.step8.learningPrefs.note')}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setFormData(prev => ({
+                    ...prev,
+                    dataPersonalization: {
+                      ...prev.dataPersonalization,
+                      usePreferences: !prev.dataPersonalization.usePreferences
+                    }
+                  }))}
+                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.usePreferences ? 'bg-blue-600' : 'bg-gray-300'
+                    }`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.usePreferences ? 'translate-x-7' : 'translate-x-0.5'
+                    }`} />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <AlertTriangle className="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h4 className="font-medium text-blue-800 mb-1">{t('onboarding.step8.noSelection.title')}</h4>
+                <p className="text-sm text-blue-700">
+                  {formData.dataPersonalization.allowPersonalization ||
+                    formData.dataPersonalization.useConversationHistory ||
+                    formData.dataPersonalization.usePreferences
+                    ? t('onboarding.step8.noSelection.success')
+                    : t('onboarding.step8.noSelection.default')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      title: t('onboarding.step9.title'),
+      subtitle: t('onboarding.step9.subtitle'),
       content: (
         <div className="space-y-4 sm:space-y-6">
           <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
@@ -488,17 +614,15 @@ const OnboardingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
             </div>
             <button
-              onClick={() => setFormData(prev => ({ 
-                ...prev, 
+              onClick={() => setFormData(prev => ({
+                ...prev,
                 preferences: { ...prev.preferences, textToSpeech: !prev.preferences.textToSpeech }
               }))}
-              className={`w-12 h-6 rounded-full transition-colors ${
-                formData.preferences.textToSpeech ? 'bg-blue-600' : 'bg-gray-300'
-              }`}
+              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.textToSpeech ? 'bg-blue-600' : 'bg-gray-300'
+                }`}
             >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                formData.preferences.textToSpeech ? 'translate-x-7' : 'translate-x-0.5'
-              }`} />
+              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.textToSpeech ? 'translate-x-7' : 'translate-x-0.5'
+                }`} />
             </button>
           </div>
 
@@ -508,17 +632,15 @@ const OnboardingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
             </div>
             <button
-              onClick={() => setFormData(prev => ({ 
-                ...prev, 
+              onClick={() => setFormData(prev => ({
+                ...prev,
                 preferences: { ...prev.preferences, voiceInput: !prev.preferences.voiceInput }
               }))}
-              className={`w-12 h-6 rounded-full transition-colors ${
-                formData.preferences.voiceInput ? 'bg-blue-600' : 'bg-gray-300'
-              }`}
+              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.voiceInput ? 'bg-blue-600' : 'bg-gray-300'
+                }`}
             >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                formData.preferences.voiceInput ? 'translate-x-7' : 'translate-x-0.5'
-              }`} />
+              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.voiceInput ? 'translate-x-7' : 'translate-x-0.5'
+                }`} />
             </button>
           </div>
 
@@ -528,17 +650,15 @@ const OnboardingPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
             </div>
             <button
-              onClick={() => setFormData(prev => ({ 
-                ...prev, 
+              onClick={() => setFormData(prev => ({
+                ...prev,
                 preferences: { ...prev.preferences, videoRecommendations: !prev.preferences.videoRecommendations }
               }))}
-              className={`w-12 h-6 rounded-full transition-colors ${
-                formData.preferences.videoRecommendations ? 'bg-blue-600' : 'bg-gray-300'
-              }`}
+              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.videoRecommendations ? 'bg-blue-600' : 'bg-gray-300'
+                }`}
             >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                formData.preferences.videoRecommendations ? 'translate-x-7' : 'translate-x-0.5'
-              }`} />
+              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.videoRecommendations ? 'translate-x-7' : 'translate-x-0.5'
+                }`} />
             </button>
           </div>
 
@@ -548,8 +668,8 @@ const OnboardingPage: React.FC = () => {
             </label>
             <select
               value={formData.preferences.fontSize}
-              onChange={(e) => setFormData(prev => ({ 
-                ...prev, 
+              onChange={(e) => setFormData(prev => ({
+                ...prev,
                 preferences: { ...prev.preferences, fontSize: e.target.value as any }
               }))}
               className="input-field"
@@ -581,6 +701,8 @@ const OnboardingPage: React.FC = () => {
       case 6:
         return formData.communicationStyle.length > 0;
       case 7:
+        return true; // Data personalization step is optional
+      case 8:
         return true;
       default:
         return false;
@@ -593,7 +715,7 @@ const OnboardingPage: React.FC = () => {
       setShowLanguageWarning(true);
       return;
     }
-    
+
     setShowLanguageWarning(false);
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -617,7 +739,13 @@ const OnboardingPage: React.FC = () => {
       }
       const finalData = {
         ...formData,
-        onboardingCompleted: true // Set the flag
+        preferences: {
+          autoTextToSpeech: formData.preferences.textToSpeech,
+          textSize: (formData.preferences.fontSize === 'normal' ? 'normal' : 'large') as 'normal' | 'large' | 'extra-large' | 'small',
+          theme: formData.preferences.theme as 'light' | 'high-contrast' | 'dark',
+          language: 'en'
+        },
+        onboardingCompleted: true
       };
       await updateUserData(finalData);
       sessionStorage.setItem('onboardingJustCompleted', 'true'); // Keep this to prevent immediate assessment modal
@@ -675,13 +803,12 @@ const OnboardingPage: React.FC = () => {
             {steps.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentStep 
-                    ? 'bg-blue-600' 
-                    : index < currentStep 
-                      ? 'bg-green-500' 
-                      : 'bg-gray-300'
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${index === currentStep
+                  ? 'bg-blue-600'
+                  : index < currentStep
+                    ? 'bg-green-500'
+                    : 'bg-gray-300'
+                  }`}
               />
             ))}
           </div>

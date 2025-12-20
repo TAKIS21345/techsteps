@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -7,14 +6,13 @@ import {
   CheckCircle,
   Heart
 } from 'lucide-react';
-import React, { lazy, Suspense, useEffect } from 'react';
-import Logo from '../components/Logo';
-import LanguageSelector from '../components/LanguageSelector';
-import LazySection from '../components/LazySection';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
+import Logo from '../components/layout/Logo';
+import LanguageSelector from '../components/layout/LanguageSelector';
+import LazySection from '../components/common/LazySection';
 // Lazy load HeroAnimation for better performance
 const HeroAnimation = lazy(() => import('../components/animations/HeroAnimation'));
 const CursorTrail = lazy(() => import('../components/animations/CursorTrail'));
-
 
 import { performanceMonitor } from '../utils/performanceMonitor';
 import { useTranslation, useRTLStyles } from '../hooks/useTranslation';
@@ -54,10 +52,6 @@ const LandingPage: React.FC = () => {
     performanceMonitor.measureLandingPageLoad();
   }, []);
 
-
-
-
-
   const popularQuestions = [
     t('questions.connectWifi'),
     t('questions.makeTextBigger'),
@@ -69,7 +63,7 @@ const LandingPage: React.FC = () => {
     t('questions.joinZoom')
   ];
 
-
+  const [loadedSections, setLoadedSections] = useState<number[]>([0]);
 
   return (
     <div className="min-h-screen">
@@ -81,10 +75,10 @@ const LandingPage: React.FC = () => {
             <div className="flex items-center h-full">
               <Logo size="md" />
             </div>
-            
+
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center h-full">
-              <button 
+              <button
                 className="text-gray-600 hover:text-gray-800 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center"
                 onClick={() => {
                   const mobileMenu = document.getElementById('mobile-menu');
@@ -99,27 +93,27 @@ const LandingPage: React.FC = () => {
                 </svg>
               </button>
             </div>
-            
+
             {/* Desktop Menu */}
             <div className={`hidden lg:flex items-center h-full space-x-6 ${isRTL ? 'space-x-reverse' : ''}`}>
-              <a 
-                href="#features" 
+              <a
+                href="#features"
                 className="text-gray-600 hover:text-gray-800 font-medium transition-colors whitespace-nowrap text-sm flex items-center h-full"
               >
                 {t('nav.features')}
               </a>
-              
+
               <div className="flex items-center h-full">
                 <LanguageSelector showLabel={false} />
               </div>
-              
+
               <Link
                 to="/auth"
                 className="text-gray-600 hover:text-gray-800 font-medium transition-colors px-3 py-2 rounded-md hover:bg-gray-100 whitespace-nowrap text-sm flex items-center"
               >
                 {t('nav.signIn')}
               </Link>
-              
+
               <Link
                 to="/auth"
                 className="btn-primary text-sm px-6 py-2.5 whitespace-nowrap font-medium flex items-center"
@@ -129,7 +123,7 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Mobile Menu */}
         <div id="mobile-menu" className="hidden lg:hidden">
           <div className="container mx-auto px-4 sm:px-6">
@@ -158,99 +152,114 @@ const LandingPage: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-16 md:py-20 relative overflow-hidden" data-hero-section>
-        {/* Background decoration */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
-        </div>
-        
+      <LazySection
+        sectionIndex={0}
+        canLoad={loadedSections.includes(0)}
+        onLoadComplete={() =>
+          setLoadedSections((prev) =>
+            prev.includes(1) ? prev : [...prev, 1]
+          )
+        }
+      >
+        <section className="container mx-auto px-4 sm:px-6 py-16 md:py-20 relative overflow-hidden" data-hero-section>
+          {/* Background decoration */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
+          </div>
 
+          {/* Cursor Trail Effect */}
+          <Suspense fallback={null}>
+            <CursorTrail />
+          </Suspense>
 
-        {/* Cursor Trail Effect */}
-        <Suspense fallback={null}>
-          <CursorTrail />
-        </Suspense>
-        
-        <div className="max-w-6xl mx-auto animate-fade-in" dir={direction}>
-          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-col-dense' : ''}`}>
-            {/* Text Content - Order changes based on RTL */}
-            <div className={`text-center lg:text-start ${isRTL ? 'lg:col-start-2' : ''}`}>
-              <h1 className="font-bold text-gray-800 mb-6 leading-tight" style={{ fontSize: 'clamp(42px, 5vw, 72px)' }}>
-                {t('landing.hero.title')}
-                <div className="block mt-4">
-                  <span className="gradient-text glow-text relative inline-block">
-                    {t('landing.hero.titleHighlight')}
-                    <div 
-                      className={`absolute -bottom-2 h-2 animate-underline-expand ${isRTL ? 'right-0' : 'left-0'}`}
-                      style={{
-                        background: 'linear-gradient(90deg, transparent 0%, #3b82f6 30%, #8b5cf6 50%, #3b82f6 70%, transparent 100%)',
-                        backgroundSize: '200% 100%'
-                      }}
-                    ></div>
-                  </span>
+          <div className="max-w-6xl mx-auto animate-fade-in" dir={direction}>
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-col-dense' : ''}`}>
+              {/* Text Content - Order changes based on RTL */}
+              <div className={`text-center lg:text-start ${isRTL ? 'lg:col-start-2' : ''}`}>
+                <h1 className="font-bold text-gray-800 mb-6 leading-tight" style={{ fontSize: 'clamp(42px, 5vw, 72px)' }}>
+                  {t('landing.hero.title')}
+                  <div className="block mt-4">
+                    <span className="gradient-text glow-text relative inline-block">
+                      {t('landing.hero.titleHighlight')}
+                      <div
+                        className={`absolute -bottom-2 h-2 animate-underline-expand ${isRTL ? 'right-0' : 'left-0'}`}
+                        style={{
+                          background: 'linear-gradient(90deg, transparent 0%, #3b82f6 30%, #8b5cf6 50%, #3b82f6 70%, transparent 100%)',
+                          backgroundSize: '200% 100%'
+                        }}
+                      ></div>
+                    </span>
+                  </div>
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                  {t('landing.hero.subtitle')}
+                </p>
+
+                <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
+                  <div className="relative hero-outline-anim">
+                    <Link
+                      to="/auth"
+                      className="btn-primary text-base sm:text-lg md:text-xl px-12 py-4 sm:px-16 sm:py-5 md:px-20 md:py-6 inline-flex items-center shadow-2xl hover:shadow-3xl transform hover:scale-105 w-full sm:w-auto relative z-10"
+                    >
+                      {t('landing.hero.startLearningButton')}
+                      <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'mr-3 rtl-flip' : 'ml-3'}`} />
+                    </Link>
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ padding: '-2px' }}>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="calc(100% - 2px)"
+                        height="calc(100% - 2px)"
+                        rx="12"
+                        ry="12"
+                        fill="none"
+                        stroke="rgba(59, 130, 246, 0.6)"
+                        strokeWidth="2"
+                        strokeDasharray="20 200"
+                        strokeDashoffset="0"
+                        className="hero-outline-path"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                {t('landing.hero.subtitle')}
-              </p>
 
-              <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
-                <div className="relative hero-outline-anim">
-                  <Link
-                    to="/auth"
-                    className="btn-primary text-base sm:text-lg md:text-xl px-12 py-4 sm:px-16 sm:py-5 md:px-20 md:py-6 inline-flex items-center shadow-2xl hover:shadow-3xl transform hover:scale-105 w-full sm:w-auto relative z-10"
-                  >
-                    {t('landing.hero.startLearningButton')}
-                    <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'mr-3 rtl-flip' : 'ml-3'}`} />
-                  </Link>
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ padding: '-2px' }}>
-                    <rect
-                      x="1"
-                      y="1"
-                      width="calc(100% - 2px)"
-                      height="calc(100% - 2px)"
-                      rx="12"
-                      ry="12"
-                      fill="none"
-                      stroke="rgba(59, 130, 246, 0.6)"
-                      strokeWidth="2"
-                      strokeDasharray="20 200"
-                      strokeDashoffset="0"
-                      className="hero-outline-path"
-                    />
-                  </svg>
+                <div className={`flex flex-wrap justify-center lg:justify-start items-center text-sm text-gray-500 mb-8 ${isRTL ? 'space-x-reverse space-x-2 sm:space-x-4' : 'space-x-2 sm:space-x-4'}`}>
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{t('landing.hero.freeForever')}</span>
+                  <span className="mx-2">•</span>
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{t('landing.hero.noCreditCard')}</span>
+                  <span className="mx-2">•</span>
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span>{t('landing.hero.available247')}</span>
                 </div>
               </div>
 
-              <div className={`flex flex-wrap justify-center lg:justify-start items-center text-sm text-gray-500 mb-8 ${isRTL ? 'space-x-reverse space-x-2 sm:space-x-4' : 'space-x-2 sm:space-x-4'}`}>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t('landing.hero.freeForever')}</span>
-                <span className="mx-2">•</span>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t('landing.hero.noCreditCard')}</span>
-                <span className="mx-2">•</span>
-                <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>{t('landing.hero.available247')}</span>
+              {/* Hero Animation - Order changes based on RTL */}
+              <div className={`flex justify-center lg:justify-end ${isRTL ? 'lg:col-start-1 lg:justify-start' : ''}`}>
+                <Suspense fallback={
+                  <div className="w-full max-w-lg h-96 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl animate-pulse flex items-center justify-center">
+                    <div className="w-16 h-16 bg-blue-200 rounded-full animate-bounce"></div>
+                  </div>
+                }>
+                  <HeroAnimation className="w-full max-w-lg" />
+                </Suspense>
               </div>
-            </div>
-
-            {/* Hero Animation - Order changes based on RTL */}
-            <div className={`flex justify-center lg:justify-end ${isRTL ? 'lg:col-start-1 lg:justify-start' : ''}`}>
-              <Suspense fallback={
-                <div className="w-full max-w-lg h-96 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl animate-pulse flex items-center justify-center">
-                  <div className="w-16 h-16 bg-blue-200 rounded-full animate-bounce"></div>
-                </div>
-              }>
-                <HeroAnimation className="w-full max-w-lg" />
-              </Suspense>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </LazySection>
 
       {/* Features Section */}
       <LazySection
+        sectionIndex={1}
+        canLoad={loadedSections.includes(1)}
+        onLoadComplete={() =>
+          setLoadedSections((prev) =>
+            prev.includes(2) ? prev : [...prev, 2]
+          )
+        }
         fallback={
           <section className="py-16 sm:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6">
@@ -282,6 +291,13 @@ const LandingPage: React.FC = () => {
 
       {/* Popular Questions */}
       <LazySection
+        sectionIndex={2}
+        canLoad={loadedSections.includes(2)}
+        onLoadComplete={() =>
+          setLoadedSections((prev) =>
+            prev.includes(3) ? prev : [...prev, 3]
+          )
+        }
         fallback={<SectionLoadingFallback className="bg-gray-50" />}
         className="bg-gray-50"
       >
@@ -326,7 +342,16 @@ const LandingPage: React.FC = () => {
       </LazySection>
 
       {/* CTA Section */}
-      <LazySection className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden">
+      <LazySection
+        sectionIndex={3}
+        canLoad={loadedSections.includes(3)}
+        onLoadComplete={() =>
+          setLoadedSections((prev) =>
+            prev.includes(4) ? prev : [...prev, 4]
+          )
+        }
+        className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden"
+      >
         <section className="py-16 sm:py-24">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -351,11 +376,11 @@ const LandingPage: React.FC = () => {
             <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 items-center justify-center sm:space-x-4 md:space-x-6 text-blue-100 text-sm sm:text-base">
               <div className="flex items-center">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span>{t('landing.hero.noCreditCard')}</span> {/* Reusing key */}
+                <span>{t('landing.hero.noCreditCard')}</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span>{t('landing.hero.freeForever')}</span> {/* Reusing key */}
+                <span>{t('landing.hero.freeForever')}</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
@@ -367,36 +392,45 @@ const LandingPage: React.FC = () => {
       </LazySection>
 
       {/* Footer */}
-      <LazySection className="bg-gray-900 text-white">
+      <LazySection
+        sectionIndex={4}
+        canLoad={loadedSections.includes(4)}
+        onLoadComplete={() =>
+          setLoadedSections((prev) =>
+            prev.includes(5) ? prev : [...prev, 5]
+          )
+        }
+        className="bg-gray-900 text-white"
+      >
         <footer className="py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
               <div className="col-span-1 sm:col-span-2 md:col-span-1">
                 <Logo size="sm" />
                 <p className="text-gray-400 mt-4 leading-relaxed text-sm">
-                  Making technology accessible and easy to learn for everyone.
+                  {t('landing.footer.description')}
                 </p>
                 <div className="mt-4 text-gray-400 text-sm">
-                  <p><strong>Contact:</strong></p>
-                  <p>Email: taksh.nahata37@gmail.com</p>
+                  <p><strong>{t('landing.footer.contactEmail').split(':')[0]}:</strong></p>
+                  <p>{t('landing.footer.contactEmail').split(': ')[1]}</p>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-base">Community</h4>
+                <h4 className="font-semibold mb-4 text-base">{t('landing.footer.communityTitle')}</h4>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li><Link to="/community" className="hover:text-white transition-colors">Community Forum</Link></li>
-                  <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-                  <li><Link to="/auth" className="hover:text-white transition-colors">Getting Started</Link></li>
+                  <li><Link to="/community" className="hover:text-white transition-colors">{t('landing.footer.supportItems.2')}</Link></li>
+                  <li><Link to="/contact" className="hover:text-white transition-colors">{t('landing.footer.supportItems.3')}</Link></li>
+                  <li><Link to="/auth" className="hover:text-white transition-colors">{t('landing.footer.supportItems.1')}</Link></li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-base">Legal & Support</h4>
+                <h4 className="font-semibold mb-4 text-base">{t('landing.footer.legalTitle')}</h4>
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                  <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                  <li><Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link></li>
+                  <li><Link to="/privacy-policy" className="hover:text-white transition-colors">{t('landing.footer.companyItems.1')}</Link></li>
+                  <li><Link to="/terms-of-service" className="hover:text-white transition-colors">{t('landing.footer.companyItems.2')}</Link></li>
+                  <li><Link to="/accessibility" className="hover:text-white transition-colors">{t('landing.footer.companyItems.3')}</Link></li>
                 </ul>
               </div>
             </div>
@@ -418,8 +452,6 @@ const LandingPage: React.FC = () => {
           </div>
         </footer>
       </LazySection>
-      
-
     </div>
   );
 };

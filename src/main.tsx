@@ -18,15 +18,7 @@ import { AccessibilityProvider } from './contexts/AccessibilityContext';
 //   errorLogger.logError(error, 'Security services initialization failed');
 // });
 
-// Optimized loading component for faster initial render
-const Loading = () => (
-  <div className="loading-fallback min-h-screen flex items-center justify-center bg-gray-50">
-    <div className="text-center">
-      <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-gray-600 text-lg">Loading TechStep...</p>
-    </div>
-  </div>
-);
+import TileWaveLoader from './components/layout/TileWaveLoader';
 
 // Initialize performance monitoring before app starts
 const appStartTime = performance.now();
@@ -34,7 +26,7 @@ const appStartTime = performance.now();
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary onError={(error, errorInfo) => console.error('React Error:', error, errorInfo)}>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<TileWaveLoader />}>
         <AccessibilityProvider>
           <TranslationAnimationProvider>
             <AuthProvider>
@@ -53,7 +45,7 @@ createRoot(document.getElementById('root')!).render(
 window.addEventListener('load', () => {
   const appLoadTime = performance.now() - appStartTime;
   console.log(`App initialized in ${appLoadTime.toFixed(2)}ms`);
-  
+
   if (appLoadTime > 3000) {
     console.warn('Slow app initialization detected, consider optimizations for senior users');
   }

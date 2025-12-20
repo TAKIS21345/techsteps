@@ -16,12 +16,12 @@ const Accessibility: React.FC = () => {
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-4">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t('accessibilityPage.backToHome')}
           </Link>
         </div>
       </div>
@@ -33,9 +33,9 @@ const Accessibility: React.FC = () => {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Heart className="w-8 h-8 text-blue-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Accessibility Statement</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('accessibilityPage.title')}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to making our platform accessible to everyone, regardless of ability or technology.
+              {t('accessibilityPage.subtitle')}
             </p>
           </div>
 
@@ -43,130 +43,115 @@ const Accessibility: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
                 <Settings className="w-6 h-6 mr-3 text-blue-600" />
-                Our Commitment
+                {t('accessibilityPage.commitment.title')}
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We believe technology should be accessible to everyone. Our platform is designed with seniors in mind, 
-                incorporating features that make learning technology easier and more comfortable for users of all abilities.
+                {t('accessibilityPage.commitment.content')}
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
                 <Eye className="w-6 h-6 mr-3 text-green-600" />
-                Accessibility Features
+                {t('accessibilityPage.features.title')}
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-blue-50 rounded-lg p-6">
                   <div className="flex items-center mb-3">
                     <Eye className="w-5 h-5 text-blue-600 mr-2" />
-                    <h3 className="font-semibold text-blue-900">Visual Accessibility</h3>
+                    <h3 className="font-semibold text-blue-900">{t('accessibilityPage.features.visual.title')}</h3>
                   </div>
                   <ul className="space-y-2 text-blue-800 text-sm">
-                    <li>• High contrast color schemes</li>
-                    <li>• Large, readable fonts</li>
-                    <li>• Screen reader compatibility</li>
-                    <li>• Keyboard navigation support</li>
-                    <li>• Alternative text for images</li>
+                    {(t('accessibilityPage.features.visual.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="bg-green-50 rounded-lg p-6">
                   <div className="flex items-center mb-3">
                     <Ear className="w-5 h-5 text-green-600 mr-2" />
-                    <h3 className="font-semibold text-green-900">Audio Accessibility</h3>
+                    <h3 className="font-semibold text-green-900">{t('accessibilityPage.features.audio.title')}</h3>
                   </div>
                   <ul className="space-y-2 text-green-800 text-sm">
-                    <li>• Closed captions for videos</li>
-                    <li>• Audio descriptions</li>
-                    <li>• Volume controls</li>
-                    <li>• Visual indicators for audio cues</li>
-                    <li>• Text alternatives to audio content</li>
+                    {(t('accessibilityPage.features.audio.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="bg-purple-50 rounded-lg p-6">
                   <div className="flex items-center mb-3">
                     <Hand className="w-5 h-5 text-purple-600 mr-2" />
-                    <h3 className="font-semibold text-purple-900">Motor Accessibility</h3>
+                    <h3 className="font-semibold text-purple-900">{t('accessibilityPage.features.motor.title')}</h3>
                   </div>
                   <ul className="space-y-2 text-purple-800 text-sm">
-                    <li>• Large clickable areas</li>
-                    <li>• Keyboard-only navigation</li>
-                    <li>• Adjustable time limits</li>
-                    <li>• Voice control compatibility</li>
-                    <li>• Simplified interactions</li>
+                    {(t('accessibilityPage.features.motor.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
 
                 <div className="bg-orange-50 rounded-lg p-6">
                   <div className="flex items-center mb-3">
                     <Brain className="w-5 h-5 text-orange-600 mr-2" />
-                    <h3 className="font-semibold text-orange-900">Cognitive Accessibility</h3>
+                    <h3 className="font-semibold text-orange-900">{t('accessibilityPage.features.cognitive.title')}</h3>
                   </div>
                   <ul className="space-y-2 text-orange-800 text-sm">
-                    <li>• Simple, clear language</li>
-                    <li>• Consistent navigation</li>
-                    <li>• Reduced motion options</li>
-                    <li>• Clear instructions</li>
-                    <li>• Error prevention and recovery</li>
+                    {(t('accessibilityPage.features.cognitive.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Standards Compliance</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.standards.title')}</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Our platform aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. 
-                We regularly test our platform with assistive technologies and conduct accessibility audits.
+                {t('accessibilityPage.standards.content')}
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Feedback and Support</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.feedback.title')}</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We're continuously working to improve accessibility. If you encounter any barriers or have suggestions 
-                for improvement, please don't hesitate to contact us.
+                {t('accessibilityPage.feedback.content')}
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-gray-700 mb-2">
-                  <strong>Email:</strong> taksh.nahata37@gmail.com
+                  <strong>{t('accessibilityPage.feedback.emailLabel')}:</strong> taksh.nahata37@gmail.com
                 </p>
                 <p className="text-gray-700">
-                  <strong>Subject:</strong> Accessibility Feedback
+                  <strong>{t('accessibilityPage.feedback.subjectLabel')}:</strong> {t('accessibilityPage.feedback.subjectValue')}
                 </p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Assistive Technologies</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.assistive.title')}</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Our platform is designed to work with common assistive technologies including:
+                {t('accessibilityPage.assistive.content')}
               </p>
               <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
-                <li>• Screen readers (JAWS, NVDA, VoiceOver)</li>
-                <li>• Voice recognition software</li>
-                <li>• Screen magnification tools</li>
-                <li>• Alternative keyboards</li>
-                <li>• Switch navigation devices</li>
-                <li>• Eye-tracking systems</li>
+                {(t('accessibilityPage.assistive.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                  <li key={idx}>• {item}</li>
+                ))}
               </ul>
             </section>
 
             <section>
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                <h3 className="font-semibold text-blue-900 mb-2">Need Help?</h3>
+                <h3 className="font-semibold text-blue-900 mb-2">{t('accessibilityPage.help.title')}</h3>
                 <p className="text-blue-800 mb-4">
-                  If you need assistance using our platform or have accessibility-related questions, 
-                  we're here to help.
+                  {t('accessibilityPage.help.content')}
                 </p>
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/contact"
                   className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
-                  Contact Support
+                  {t('accessibilityPage.help.contact')}
                   <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
                 </Link>
               </div>
@@ -174,7 +159,7 @@ const Accessibility: React.FC = () => {
 
             <section>
               <p className="text-sm text-gray-500">
-                Last updated: {new Date().toLocaleDateString()}
+                {t('accessibilityPage.lastUpdated', { date: new Date().toLocaleDateString() })}
               </p>
             </section>
           </div>

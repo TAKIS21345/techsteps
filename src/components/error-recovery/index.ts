@@ -2,9 +2,9 @@
 // Centralized exports for all error recovery functionality
 
 // Core error recovery utilities
-export { errorRecovery } from '../../utils/errorRecovery';
-export { errorMessageTranslator } from '../../utils/errorMessages';
-export { globalErrorHandler, handleError } from '../../utils/globalErrorHandler';
+export { errorRecovery } from '../../utils/errors/errorRecovery';
+export { errorMessageTranslator } from '../../utils/errors/errorMessages';
+export { globalErrorHandler, handleError } from '../../utils/errors/globalErrorHandler';
 
 // React hooks
 export { useErrorRecovery } from '../../hooks/useErrorRecovery';
@@ -12,11 +12,11 @@ export { useUserFriendlyError } from './UserFriendlyError';
 export { useErrorNotifications } from './ErrorNotificationSystem';
 
 // Context and providers
-export { 
-  ErrorRecoveryProvider, 
-  useErrorRecoveryContext, 
+export {
+  ErrorRecoveryProvider,
+  useErrorRecoveryContext,
   withErrorRecovery,
-  ErrorRecoveryBoundary 
+  ErrorRecoveryBoundary
 } from '../../contexts/ErrorRecoveryContext';
 
 // UI Components
@@ -37,21 +37,21 @@ export {
 } from './FallbackStates';
 
 // Types
-export type { 
+export type {
   RetryConfig,
   SessionData,
   QueuedAction,
-  RecoveryStrategy 
-} from '../../utils/errorRecovery';
+  RecoveryStrategy
+} from '../../utils/errors/errorRecovery';
 
 export type {
   ErrorSeverity,
   UserFriendlyError,
   ErrorAction,
   ErrorPattern
-} from '../../utils/errorMessages';
+} from '../../utils/errors/errorMessages';
 
 export type {
   ErrorHandlerOptions,
   ErrorNotification
-} from '../../utils/globalErrorHandler';
+} from '../../utils/errors/globalErrorHandler';

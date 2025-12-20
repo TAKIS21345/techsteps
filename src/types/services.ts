@@ -63,7 +63,20 @@ export interface FlashcardStep {
   icon?: string;
   audioScript?: string;
   estimatedDuration: number;
+  methodGroup?: string; // For grouping steps by method (e.g., "Method 1: Using Settings", "Method 2: Using Control Panel")
+  methodStepCount?: number; // Total steps in this method group
 }
+
+export interface FlashcardMethod {
+  id: string;
+  title: string;
+  description?: string;
+  steps: FlashcardStep[];
+  difficulty?: 'easy' | 'medium' | 'hard';
+  estimatedTotalTime?: number;
+}
+
+
 
 // Content Management Service Interface
 export interface ContentService {

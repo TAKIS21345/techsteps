@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, Cookie, Eye, Lock, Users, FileText, Heart } from 'lucide-react';
-import Logo from '../components/Logo';
+import Logo from '../components/layout/Logo';
 import { useTranslation } from 'react-i18next';
 
 const PrivacyPolicyPage: React.FC = () => {
@@ -65,7 +65,7 @@ const PrivacyPolicyPage: React.FC = () => {
                   {t('privacyPolicy.cookies.whatAreCookiesText')}
                 </p>
               </div>
-              
+
               <h3 className="text-lg font-semibold text-gray-800 mb-3">{t('privacyPolicy.cookies.weUseCookiesForTitle')}</h3>
               <ul className="space-y-3 mb-6">
                 {(t('privacyPolicy.cookies.uses', { returnObjects: true }) as string[]).map((item, index) => (
@@ -91,7 +91,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <Eye className="w-6 h-6 mr-3 text-blue-500" />
                 {t('privacyPolicy.informationCollected.title')}
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-6">
                   <h3 className="font-semibold text-gray-800 mb-3">{t('privacyPolicy.informationCollected.youGiveUsTitle')}</h3>
@@ -101,7 +101,7 @@ const PrivacyPolicyPage: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="bg-gray-50 rounded-lg p-6">
                   <h3 className="font-semibold text-gray-800 mb-3">{t('privacyPolicy.informationCollected.weCollectTitle')}</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -118,7 +118,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <Lock className="w-6 h-6 mr-3 text-green-500" />
                 {t('privacyPolicy.howWeProtect.title')}
               </h2>
-              
+
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                 <ul className="space-y-3 text-green-800">
                   {(t('privacyPolicy.howWeProtect.protections', { returnObjects: true }) as string[]).map((item, index) => (
@@ -136,7 +136,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <Users className="w-6 h-6 mr-3 text-purple-500" />
                 {t('privacyPolicy.sharingInformation.title')}
               </h2>
-              
+
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
                 <h3 className="font-semibold text-purple-800 mb-3">{t('privacyPolicy.sharingInformation.neverSell')}</h3>
                 <p className="text-purple-700 mb-4">
@@ -144,7 +144,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 </p>
                 <ul className="space-y-2 text-purple-700">
                   {(t('privacyPolicy.sharingInformation.sharingSituations', { returnObjects: true }) as string[]).map((item, index) => (
-                     <li key={index} dangerouslySetInnerHTML={{ __html: `• ${item}` }} />
+                    <li key={index} dangerouslySetInnerHTML={{ __html: `• ${item}` }} />
                   ))}
                 </ul>
               </div>
@@ -155,7 +155,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <FileText className="w-6 h-6 mr-3 text-indigo-500" />
                 {t('privacyPolicy.yourRights.title')}
               </h2>
-              
+
               <div className="space-y-4">
                 <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
                   <h3 className="font-semibold text-indigo-800 mb-2">{t('privacyPolicy.yourRights.youCanAlwaysTitle')}</h3>
@@ -165,7 +165,7 @@ const PrivacyPolicyPage: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                   <h3 className="font-semibold text-yellow-800 mb-2">{t('privacyPolicy.yourRights.noteDeletingCookiesTitle')}</h3>
                   <p className="text-yellow-700">
@@ -177,7 +177,7 @@ const PrivacyPolicyPage: React.FC = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.thirdPartyServices.title')}</h2>
-              
+
               <div className="bg-gray-50 rounded-lg p-6">
                 <p className="text-gray-700 mb-4">
                   {t('privacyPolicy.thirdPartyServices.weUseTrustedServices')}
@@ -195,7 +195,7 @@ const PrivacyPolicyPage: React.FC = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.changesToPolicy.title')}</h2>
-              
+
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <p className="text-blue-700">
                   {t('privacyPolicy.changesToPolicy.text')}
@@ -205,7 +205,7 @@ const PrivacyPolicyPage: React.FC = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('privacyPolicy.contactUs.title')}</h2>
-              
+
               <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                 <p className="text-green-700 mb-4">
                   {t('privacyPolicy.contactUs.questions')}
@@ -214,8 +214,8 @@ const PrivacyPolicyPage: React.FC = () => {
                   <p><strong>{t('privacyPolicy.contactUs.email').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.email').split(': ')[1]}</p>
                   <p><strong>{t('privacyPolicy.contactUs.phone').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.phone').split(': ')[1]}</p>
                   <p><strong>{t('privacyPolicy.contactUs.mailLine1').split(': ')[0]}:</strong> {t('privacyPolicy.contactUs.mailLine1').split(': ')[1]}<br />
-                     {t('privacyPolicy.contactUs.mailLine2')}<br />
-                     {t('privacyPolicy.contactUs.mailLine3')}</p>
+                    {t('privacyPolicy.contactUs.mailLine2')}<br />
+                    {t('privacyPolicy.contactUs.mailLine3')}</p>
                 </div>
               </div>
             </section>

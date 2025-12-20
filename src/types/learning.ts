@@ -2,9 +2,13 @@
 import { Tutorial, LearningProgress, BadgeProgress } from './core';
 
 export interface SkillAssessmentResult {
-  q1ComfortLevel: 'new' | 'basics' | 'confident';
-  q2EmailSent: boolean;
-  q3SmartphoneUsed: boolean;
+  skillLevel: 'Beginner' | 'Intermediate' | 'Advanced';
+  recommendedStartingPathId: string;
+  completedAt: Date;
+  // Optional legacy fields if needed
+  q1ComfortLevel?: 'new' | 'basics' | 'confident';
+  q2EmailSent?: boolean;
+  q3SmartphoneUsed?: boolean;
 }
 
 // Legacy Module interface - maps to Tutorial in core types

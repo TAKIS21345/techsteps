@@ -44,28 +44,63 @@ export const SUPPORTED_LANGUAGES = {
 };
 
 // Translation validation and reporting system
+const MAX_REPORTS = 50; // Limit to prevent localStorage overflow
+const reportedKeys = new Set<string>(); // Track already reported keys
+
 export const translationReporting = {
   reportIssue: (language: string, key: string, issue: string) => {
-    console.warn(`Translation issue reported for ${language}:${key} - ${issue}`);
-    // In production, this would send to a reporting service
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const reports = JSON.parse(localStorage.getItem('translation-reports') || '[]');
-      reports.push({
-        language,
-        key,
-        issue,
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent
-      });
-      localStorage.setItem('translation-reports', JSON.stringify(reports));
+    const reportKey = `${language}:${key}`;
+    
+    // Only report each key once per session
+    if (reportedKeys.has(reportKey)) {
+      return;
+    }
+    
+    reportedKeys.add(reportKey);
+    console.warn(`Translation issue: ${language}:${key} - ${issue}`);
+    
+    // Only store in development mode and with a limit
+    if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined' && window.localStorage) {
+      try {
+        const reports = JSON.parse(localStorage.getItem('translation-reports') || '[]');
+        
+        // Keep only the most recent reports
+        if (reports.length >= MAX_REPORTS) {
+          reports.shift(); // Remove oldest report
+        }
+        
+        reports.push({
+          language,
+          key,
+          issue,
+          timestamp: new Date().toISOString()
+        });
+        
+        localStorage.setItem('translation-reports', JSON.stringify(reports));
+      } catch (e) {
+        // If localStorage is full, clear old reports
+        console.warn('localStorage full, clearing translation reports');
+        localStorage.removeItem('translation-reports');
+      }
     }
   },
   
   getReports: () => {
     if (typeof window !== 'undefined' && window.localStorage) {
-      return JSON.parse(localStorage.getItem('translation-reports') || '[]');
+      try {
+        return JSON.parse(localStorage.getItem('translation-reports') || '[]');
+      } catch (e) {
+        return [];
+      }
     }
     return [];
+  },
+  
+  clearReports: () => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.removeItem('translation-reports');
+      reportedKeys.clear();
+    }
   }
 };
 
@@ -110,12 +145,14 @@ i18n
         cache: 'default'
       }
     },
-    // Missing key handler for translation validation
-    missingKeyHandler: (lng, ns, key) => {
-      translationReporting.reportIssue(lng, key, 'Missing translation key');
-    },
-    // Save missing translations for reporting
-    saveMissing: process.env.NODE_ENV === 'development',
+    // Missing key handler for translation validation (development only)
+    missingKeyHandler: process.env.NODE_ENV === 'development' 
+      ? (lng, ns, key) => {
+          translationReporting.reportIssue(lng, key, 'Missing translation key');
+        }
+      : undefined,
+    // Save missing translations for reporting (development only)
+    saveMissing: false,
     // Namespace configuration
     defaultNS: 'translation',
     ns: ['translation'],

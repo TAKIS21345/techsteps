@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Được làm bằng ❤️ cho người cao tuổi ở mọi nơi.",
       "trustedBy": "Được tin dùng bởi",
-      "trustedByCount": "hơn 50,000 người cao tuổi"
+      "trustedByCount": "hơn 50,000 người cao tuổi",
+      "communityTitle": "Cộng đồng",
+      "legalTitle": "Pháp lý & Hỗ trợ",
+      "contactEmail": "Liên hệ: Email: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Kiến thức cơ bản về máy tính & thiết bị",
       "description": "Những kiến thức cơ bản nhất để bạn bắt đầu với công nghệ.",
       "modules": {
-        "turnOnDevice": { "title": "Bật thiết bị", "description": "Học cách bật máy tính và điện thoại thông minh." },
-        "mouseTouchscreen": { "title": "Sử dụng chuột/màn hình cảm ứng", "description": "Làm chủ việc trỏ, nhấp và chạm." },
-        "keyboardTyping": { "title": "Cơ bản về bàn phím/gõ phím", "description": "Làm quen với những điều cần thiết khi gõ phím." },
-        "filesFolders": { "title": "Hiểu về tệp & thư mục", "description": "Tìm hiểu cách tổ chức thông tin kỹ thuật số." }
+        "turnOnDevice": {
+          "title": "Bật thiết bị",
+          "description": "Học cách bật máy tính và điện thoại thông minh."
+        },
+        "mouseTouchscreen": {
+          "title": "Sử dụng chuột/màn hình cảm ứng",
+          "description": "Làm chủ việc trỏ, nhấp và chạm.",
+          "duration": "15 phút",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Cùng chơi: Thông tin cơ bản về chuột và màn hình cảm ứng</h3><p>Bạn đã sẵn sàng khám phá chưa? Chuột và màn hình cảm ứng của bạn là cây đũa thần cho thế giới kỹ thuật số!</p><div class=\"bg- yellow-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Mouse Fun:</h4><ul class=\"space-y-2\"><li>Ã <b>Điểm</b>: Di chuyển chuột và xem mũi tên theo bạn!</li><li>PORT <b>Nhấp chuột</b>: Nhấn nút bên trái để chọn mọi thứ. Hãy thử nhấp vào nút bên dưới!</li><li>PORT <b>Nhấp đúp</b>: Nhấn nhanh hai lần để mở tệp hoặc chương trình.</li><li>Ã <b>Nhấp chuột phải</b>: Nhấn nút bên phải để hiển thị menu bí mật.</li><li>Ã <b>Cuộn</b>: Cuộn bánh xe để di chuyển lên và xuống một trang.</li></ul></div><div class=\"bg-blue-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Thủ thuật trên màn hình cảm ứng:</h4><ul class=\"space-y-2\"><li>Ã <b>Chạm</b>: Chạm nhẹ vào màn hình để chọn.</li><li>Ã <b>Vuốt</b>: Trượt ngón tay để cuộn hoặc chuyển đổi màn hình.</li><li>Ã <b>Chụm</b>: Di chuyển hai ngón tay lại gần hoặc xa nhau để phóng to và thu nhỏ.</li><li>Ã <b>Nhấn và giữ</b>: Giữ ngón tay của bạn xuống để có thêm tùy chọn (như nhấp chuột phải!).</li></ul></div><div class=\"bg-green-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Hãy dùng thử!</h4><ul class=\"space-y-2\"><li>© Di chuyển chuột và xem những thay đổi nào trên màn hình.</li><li>→ Nhấn và vuốt trên thiết bị của bạn để khám phá.</li></ul></div></div>",
+          "keyPoints": [
+            "Con trỏ chuột theo bàn tay của bạn!",
+            "Nhấp chuột trái là hành động chính của bạn.",
+            "Màn hình cảm ứng cho phép bạn chạm, vuốt và thu phóng!"
+          ],
+          "practiceExercise": "Hãy thử nhấp, nhấp đúp và nhấp chuột phải vào màn hình của bạn. Trên màn hình cảm ứng, chạm và vuốt để di chuyển giữa các màn hình.",
+          "animationDesc": "Xem cách nhấp, nhấp đúp và vuốt trên màn hình cảm ứng."
+        },
+        "keyboardTyping": {
+          "title": "Cơ bản về bàn phím/gõ phím",
+          "description": "Làm quen với những điều cần thiết khi gõ phím."
+        },
+        "filesFolders": {
+          "title": "Hiểu về tệp & thư mục",
+          "description": "Tìm hiểu cách tổ chức thông tin kỹ thuật số."
+        }
       }
     },
     "onlineWorld": {
       "title": "Thế giới trực tuyến",
       "description": "Kết nối và khám phá internet một cách an toàn.",
       "modules": {
-        "webBrowsers": { "title": "Hiểu về trình duyệt web", "description": "Điều hướng internet với Chrome, Edge hoặc Safari." },
-        "searchEffectively": { "title": "Cách tìm kiếm hiệu quả", "description": "Tìm những gì bạn cần trực tuyến bằng các công cụ tìm kiếm." },
-        "introEmail": { "title": "Giới thiệu về Email", "description": "Học cách gửi và nhận thư điện tử." },
-        "virusSafety": { "title": "Giữ an toàn khỏi vi-rút", "description": "Bảo vệ thiết bị của bạn khỏi phần mềm độc hại." }
+        "webBrowsers": {
+          "title": "Hiểu về trình duyệt web",
+          "description": "Điều hướng internet với Chrome, Edge hoặc Safari."
+        },
+        "searchEffectively": {
+          "title": "Cách tìm kiếm hiệu quả",
+          "description": "Tìm những gì bạn cần trực tuyến bằng các công cụ tìm kiếm."
+        },
+        "introEmail": {
+          "title": "Giới thiệu về Email",
+          "description": "Học cách gửi và nhận thư điện tử."
+        },
+        "virusSafety": {
+          "title": "Giữ an toàn khỏi vi-rút",
+          "description": "Bảo vệ thiết bị của bạn khỏi phần mềm độc hại."
+        }
       }
     },
     "digitalLife": {
       "title": "Cuộc sống số hàng ngày",
       "description": "Giao tiếp, chia sẻ và quản lý sự hiện diện kỹ thuật số của bạn.",
       "modules": {
-        "masteringEmail": { "title": "Làm chủ Email", "description": "Tệp đính kèm, thư mục và nghi thức email." },
-        "videoCalling": { "title": "Gọi video cho gia đình và bạn bè", "description": "Kết nối trực tiếp với những người thân yêu." },
-        "introSocialMedia": { "title": "Giới thiệu về mạng xã hội", "description": "Hiểu các nền tảng như Facebook." },
-        "sharingPhotos": { "title": "Chia sẻ ảnh an toàn", "description": "Chia sẻ những kỷ niệm của bạn mà không ảnh hưởng đến quyền riêng tư." }
+        "masteringEmail": {
+          "title": "Làm chủ Email",
+          "description": "Tệp đính kèm, thư mục và nghi thức email."
+        },
+        "videoCalling": {
+          "title": "Gọi video cho gia đình và bạn bè",
+          "description": "Kết nối trực tiếp với những người thân yêu."
+        },
+        "introSocialMedia": {
+          "title": "Giới thiệu về mạng xã hội",
+          "description": "Hiểu các nền tảng như Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Chia sẻ ảnh an toàn",
+          "description": "Chia sẻ những kỷ niệm của bạn mà không ảnh hưởng đến quyền riêng tư."
+        }
       }
     },
     "advancedSkills": {
       "title": "Kỹ năng nâng cao & sáng tạo",
       "description": "Ngoài những điều cơ bản: khám phá thêm những gì công nghệ mang lại.",
       "modules": {
-        "onlineShopping": { "title": "Giới thiệu về mua sắm trực tuyến", "description": "Mua sắm an toàn và thuận tiện trực tuyến." },
-        "onlineMaps": { "title": "Sử dụng bản đồ và điều hướng trực tuyến", "description": "Tìm đường của bạn với bản đồ kỹ thuật số." },
-        "photoEditing": { "title": "Chỉnh sửa ảnh cơ bản", "description": "Nâng cao ảnh kỹ thuật số của bạn." },
-        "productivityTools": { "title": "Giới thiệu về các công cụ năng suất", "description": "Sử dụng các công cụ như Google Docs hoặc các kiến thức cơ bản về Microsoft Word." }
+        "onlineShopping": {
+          "title": "Giới thiệu về mua sắm trực tuyến",
+          "description": "Mua sắm an toàn và thuận tiện trực tuyến."
+        },
+        "onlineMaps": {
+          "title": "Sử dụng bản đồ và điều hướng trực tuyến",
+          "description": "Tìm đường của bạn với bản đồ kỹ thuật số."
+        },
+        "photoEditing": {
+          "title": "Chỉnh sửa ảnh cơ bản",
+          "description": "Nâng cao ảnh kỹ thuật số của bạn."
+        },
+        "productivityTools": {
+          "title": "Giới thiệu về các công cụ năng suất",
+          "description": "Sử dụng các công cụ như Google Docs hoặc các kiến thức cơ bản về Microsoft Word."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Khả năng tiếp cận và dễ sử dụng",
+      "description": "Làm cho thiết bị của bạn dễ nhìn, nghe và điều khiển hơn.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Sử dụng kính lúp màn hình",
+          "description": "Làm cho văn bản và hình ảnh lớn hơn trên màn hình của bạn."
+        },
+        "voiceCommands": {
+          "title": "Lệnh thoại & Đọc chính tả",
+          "description": "Điều khiển thiết bị của bạn và gõ bằng giọng nói của bạn."
+        },
+        "highContrast": {
+          "title": "Cài đặt màu sắc và độ tương phản cao",
+          "description": "Điều chỉnh màu sắc để hiển thị tốt hơn."
+        },
+        "assistiveTouch": {
+          "title": "Phím tắt và cảm ứng hỗ trợ",
+          "description": "Sử dụng các công cụ trên màn hình để điều hướng dễ dàng hơn."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Sức khỏe, An toàn & Quyền riêng tư",
+      "description": "Giữ an toàn, lành mạnh và riêng tư khi sử dụng công nghệ.",
+      "modules": {
+        "privacySettings": {
+          "title": "Cài đặt quyền riêng tư",
+          "description": "Bảo vệ thông tin cá nhân của bạn trực tuyến."
+        },
+        "scamAwareness": {
+          "title": "Nhận thức về Lừa đảo",
+          "description": "Phát hiện và tránh các trò lừa đảo trực tuyến phổ biến."
+        },
+        "healthApps": {
+          "title": "Sử dụng ứng dụng sức khỏe",
+          "description": "Theo dõi sức khỏe và thể trạng của bạn bằng các ứng dụng."
+        },
+        "emergencyContacts": {
+          "title": "Thiết lập liên hệ khẩn cấp",
+          "description": "Thêm liên hệ khẩn cấp vào thiết bị của bạn."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Người mới bắt đầu công nghệ", "description": "Đã hoàn thành Kiến thức cơ bản về máy tính & thiết bị." },
-    "onlineWorld": { "name": "Nhà thám hiểm trực tuyến", "description": "Đã hoàn thành lộ trình Thế giới trực tuyến." },
-    "digitalLife": { "name": "Người giao tiếp kỹ thuật số", "description": "Đã hoàn thành lộ trình Cuộc sống số hàng ngày." },
-    "advancedSkills": { "name": "Bậc thầy công nghệ", "description": "Đã hoàn thành lộ trình Kỹ năng nâng cao & sáng tạo." }
+    "fundamentals": {
+      "name": "Người mới bắt đầu công nghệ",
+      "description": "Đã hoàn thành Kiến thức cơ bản về máy tính & thiết bị."
+    },
+    "onlineWorld": {
+      "name": "Nhà thám hiểm trực tuyến",
+      "description": "Đã hoàn thành lộ trình Thế giới trực tuyến."
+    },
+    "digitalLife": {
+      "name": "Người giao tiếp kỹ thuật số",
+      "description": "Đã hoàn thành lộ trình Cuộc sống số hàng ngày."
+    },
+    "advancedSkills": {
+      "name": "Bậc thầy công nghệ",
+      "description": "Đã hoàn thành lộ trình Kỹ năng nâng cao & sáng tạo."
+    },
+    "accessibility": {
+      "name": "Nhà vô địch về khả năng tiếp cận",
+      "description": "Đã hoàn thành đường dẫn Trợ năng & Dễ sử dụng."
+    },
+    "healthAndSafety": {
+      "name": "Người giám hộ an toàn",
+      "description": "Đã hoàn thành lộ trình Sức khỏe, An toàn & Quyền riêng tư."
+    }
   },
   "skillAssessmentModal": {
     "title": "Kiểm tra kỹ năng nhanh",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Tùy chỉnh sở thích của bạn",
-    "personalInfo": "Thông tin cá nhân",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "firstName": "Tên",
     "firstNamePlaceholder": "Tên của bạn",
     "primaryDevice": "Thiết bị chính",
     "devices": {
-      "windowsComputer": "Máy tính Windows",
-      "macComputer": "Máy tính Mac (Apple)",
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Điện thoại hoặc máy tính bảng Android"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Khả năng tiếp cận",
     "textToSpeech": "Chuyển văn bản thành giọng nói",
@@ -530,9 +669,9 @@
     "signOut": "Đăng xuất",
     "signOutDesc": "Đăng xuất khỏi tài khoản của bạn",
     "cancel": "Hủy",
-    "saving": "Đang lưu...",
-    "saved": "Đã lưu!",
-    "saveChanges": "Lưu thay đổi",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveChanges": "Save Changes",
     "errorSaving": "Không thể lưu cài đặt. Vui lòng thử lại.",
     "lastName": "Họ",
     "lastNamePlaceholder": "Họ của bạn",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Chế độ tương phản cao",
     "highContrastDesc": "Tăng độ tương phản của văn bản và các yếu tố để có khả năng hiển thị tốt hơn",
-    "learningPreferences": "Sở thích học tập & nội dung"
+    "learningPreferences": "Sở thích học tập & nội dung",
+    "title": "Settings",
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "pwa": {
+      "install": {
+        "title": "Cài đặt TechStep",
+        "description": "Truy cập nhanh vào tiến độ học tập của bạn và sử dụng TechStep ngoại tuyến.",
+        "button": "Cài đặt ứng dụng"
+      },
+      "update": {
+        "title": "Cập nhật có sẵn",
+        "description": "Đã có phiên bản mới của TechStep với các cải tiến và sửa lỗi.",
+        "button": "Cập nhật ngay"
+      },
+      "status": {
+        "online": "Trực tuyến",
+        "offline": "Ngoại tuyến - Các thay đổi sẽ đồng bộ khi được kết nối",
+        "syncing": "Đang đồng bộ hóa..."
+      },
+      "notifications": {
+        "title": "Nhắc nhở học tập",
+        "description": "Nhận lời nhắc nhẹ nhàng để giúp bạn đi đúng hướng trong hành trình học tập của mình.",
+        "learning_reminders": "Nhắc nhở học tập",
+        "learning_reminders_desc": "Nhẹ nhàng huých để tiếp tục bài học của bạn",
+        "progress_updates": "Cập nhật tiến độ",
+        "progress_updates_desc": "Ăn mừng thành tích của bạn",
+        "support_messages": "Tin nhắn hỗ trợ",
+        "support_messages_desc": "Lời khuyên và trợ giúp hữu ích",
+        "frequency": "Tính thường xuyên",
+        "enable": "Bật thông báo",
+        "subscribing": "Đang thiết lập...",
+        "blocked": {
+          "title": "Thông báo bị chặn",
+          "description": "Thông báo hiện đang bị chặn. Để kích hoạt chúng, vui lòng cho phép thông báo trong cài đặt trình duyệt của bạn.",
+          "instructions": "Tìm biểu tượng thông báo trong thanh địa chỉ hoặc kiểm tra cài đặt trang web trên trình duyệt của bạn."
+        },
+        "success": {
+          "title": "Đã bật thông báo!",
+          "description": "Bạn sẽ nhận được lời nhắc và cập nhật hữu ích dựa trên sở thích của bạn."
+        }
+      }
+    },
+    "offline": {
+      "error": "Lỗi đồng bộ hóa",
+      "offline": "Ngoại tuyến",
+      "online": "Trực tuyến",
+      "syncing": "Đang đồng bộ hóa...",
+      "offline_desc": "Các thay đổi sẽ đồng bộ hóa khi được kết nối",
+      "syncing_desc": "Đang cập nhật dữ liệu của bạn",
+      "online_desc": "Tất cả các thay đổi được lưu",
+      "pending_operations": "{{count}} những thay đổi đang chờ xử lý",
+      "last_sync": "Đồng bộ hóa lần cuối: {{time}}",
+      "content_manager": {
+        "title": "Nội dung ngoại tuyến",
+        "description": "Tải xuống nội dung để truy cập khi ngoại tuyến",
+        "online": "Đã kết nối - Bạn có thể tải xuống nội dung mới",
+        "offline": "Ngoại tuyến - Chỉ sử dụng nội dung đã tải xuống",
+        "no_content": "Không có nội dung ngoại tuyến",
+        "no_content_desc": "Tải xuống các khóa học và bài học để truy cập ngoại tuyến",
+        "downloaded": "Đã tải xuống",
+        "available_offline": "Có sẵn ngoại tuyến",
+        "remove": "Xóa khỏi bộ nhớ ngoại tuyến",
+        "suggestions": "Tải xuống được đề xuất",
+        "suggestion_1": "Khóa học cơ bản về máy tính",
+        "suggestion_1_desc": "Những kỹ năng cần thiết để bắt đầu làm quen với công nghệ",
+        "popular": "Phổ biến",
+        "download": "Tải xuống",
+        "type": {
+          "course": "Khóa học",
+          "lesson": "Bài học",
+          "tutorial": "Hướng dẫn",
+          "media": "Phương tiện truyền thông"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Miễn nhiệm"
+    },
+    "dataPortability": "Quyền dữ liệu và quyền riêng tư",
+    "dataRights": "Quyền dữ liệu của bạn",
+    "dataRightsDesc": "Bạn có toàn quyền kiểm soát dữ liệu cá nhân của mình. Xuất, quản lý tùy chọn chia sẻ hoặc xóa dữ liệu của bạn bất kỳ lúc nào."
   },
   "common": {
     "settings": "Cài đặt",
     "signOut": "Đăng xuất",
-    "close": "Đóng"
+    "close": "Đóng",
+    "friend": "friend",
+    "comingSoon": "Sắp ra mắt"
   },
   "tips": {
     "connectWifi": "Kết nối Wi-Fi",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Tên của bạn",
       "lastName": "Họ",
       "lastNamePlaceholder": "Họ của bạn",
-      "age": "Tuổi (giúp tôi điều chỉnh lời giải thích của mình)"
+      "age": "Tuổi (giúp tôi điều chỉnh lời giải thích của mình)",
+      "tooltip": "Hãy cho chúng tôi biết một chút về bản thân bạn để chúng tôi có thể cá nhân hóa trải nghiệm học tập của bạn."
     },
     "step2": {
       "title": "Chọn ngôn ngữ ưa thích của bạn",
@@ -679,7 +921,8 @@
       "selected_plural": "Đã chọn: {{count}} ngôn ngữ",
       "noLanguagesFound": "Không tìm thấy ngôn ngữ nào khớp với \"{{search}}\"",
       "languageRequired": "Yêu cầu lựa chọn ngôn ngữ",
-      "languageRequiredDesc": "Vui lòng chọn ít nhất một ngôn ngữ để tiếp tục. Điều này đảm bảo trải nghiệm tốt nhất cho việc nhập liệu bằng giọng nói và tương tác văn bản."
+      "languageRequiredDesc": "Vui lòng chọn ít nhất một ngôn ngữ để tiếp tục. Điều này đảm bảo trải nghiệm tốt nhất cho việc nhập liệu bằng giọng nói và tương tác văn bản.",
+      "tooltip": "Chọn ngôn ngữ mà bạn cảm thấy thoải mái khi nhập bằng giọng nói và tương tác văn bản."
     },
     "step3": {
       "title": "Bạn sử dụng thiết bị nào nhiều nhất?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Điện thoại hoặc máy tính bảng Android",
         "smarttv": "TV thông minh",
         "multipledevices": "Nhiều thiết bị"
-      }
+      },
+      "tooltip": "Việc biết thiết bị chính của bạn sẽ giúp chúng tôi cung cấp hướng dẫn phù hợp hơn."
     },
     "step4": {
       "title": "Bạn cảm thấy thoải mái với công nghệ như thế nào?",
@@ -702,7 +946,8 @@
       "some": "Có kinh nghiệm",
       "someDesc": "Tôi có thể thực hiện các tác vụ cơ bản nhưng cần trợ giúp với những điều mới",
       "comfortable": "Thoải mái",
-      "comfortableDesc": "Tôi có thể tự tìm hiểu hầu hết mọi thứ nhưng đôi khi cần hướng dẫn"
+      "comfortableDesc": "Tôi có thể tự tìm hiểu hầu hết mọi thứ nhưng đôi khi cần hướng dẫn",
+      "tooltip": "Hãy trung thực về mức độ thoải mái của bạn - điều này giúp chúng tôi giải thích mọi thứ theo đúng tiến độ."
     },
     "step5": {
       "title": "Chủ đề công nghệ nào khiến bạn lo lắng nhất?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Cài đặt thiết bị",
         "onlineShopping": "Mua sắm trực tuyến",
         "healthApps": "Ứng dụng & Cổng thông tin sức khỏe"
-      }
+      },
+      "tooltip": "Chọn những chủ đề khiến bạn lo lắng nhất để chúng tôi có thể ưu tiên trợ giúp trong những lĩnh vực này."
     },
     "step6": {
       "title": "Bạn có cần bất kỳ tính năng trợ năng nào không?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Giải thích chậm hơn",
         "visualSteps": "Chỉ báo các bước trực quan",
         "noneNeeded": "Không cần"
-      }
+      },
+      "tooltip": "Hãy cho chúng tôi biết về bất kỳ tính năng trợ năng nào bạn cần để có trải nghiệm thoải mái."
     },
     "step7": {
       "title": "Bạn thích học theo cách nào?",
@@ -743,7 +990,8 @@
       "detailed": "Giải thích chi tiết",
       "detailedDesc": "Giải thích tại sao tôi lại thực hiện mỗi bước",
       "visual": "Học bằng hình ảnh",
-      "visualDesc": "Cho tôi xem hình ảnh và video khi có thể"
+      "visualDesc": "Cho tôi xem hình ảnh và video khi có thể",
+      "tooltip": "Chọn cách bạn muốn học để chúng tôi có thể điều chỉnh phong cách giảng dạy của mình."
     },
     "step8": {
       "title": "Những tinh chỉnh cuối cùng",
@@ -757,17 +1005,110 @@
       "textSize": "Sở thích kích thước văn bản",
       "textSizeNormal": "Bình thường",
       "textSizeLarge": "Lớn",
-      "textSizeExtraLarge": "Rất lớn"
+      "textSizeExtraLarge": "Rất lớn",
+      "tooltip": "Thiết lập môi trường học tập hoàn hảo của bạn với những ưu tiên cuối cùng này.",
+      "privacy": {
+        "title": "Quyền riêng tư của bạn là ưu tiên của chúng tôi",
+        "items": [
+          "Chúng tôi KHÔNG BAO GIỜ bán dữ liệu cá nhân của bạn",
+          "Tất cả dữ liệu luôn được mã hóa và bảo mật",
+          "Bạn có thể thay đổi các cài đặt này bất cứ lúc nào",
+          "Bạn có thể xóa dữ liệu của mình bất cứ lúc nào"
+        ]
+      },
+      "personalization": {
+        "title": "Trải nghiệm cá nhân hóa",
+        "description": "Cho phép chúng tôi sử dụng dữ liệu tương tác của bạn để cung cấp trợ giúp và đề xuất tốt hơn, phù hợp hơn, phù hợp với nhu cầu của bạn.",
+        "note": "Điều này giúp chúng tôi hiểu những chủ đề bạn quan tâm nhất và cung cấp các hướng dẫn phù hợp hơn."
+      },
+      "history": {
+        "title": "Sử dụng Lịch sử hội thoại",
+        "description": "Hãy ghi nhớ những cuộc trò chuyện trước đây của chúng ta để cung cấp ngữ cảnh rõ ràng hơn và tránh lặp lại những thông tin bạn đã biết.",
+        "note": "Điều này giúp tôi nhớ những gì chúng ta đã thảo luận trước đây và xây dựng dựa trên những cuộc trò chuyện trước đó."
+      },
+      "learningPrefs": {
+        "title": "Sử dụng Tùy chọn Học tập",
+        "description": "Hãy ghi nhớ phong cách học tập ưa thích, sở thích giao tiếp và nhu cầu tiếp cận của bạn để mang lại trải nghiệm nhất quán.",
+        "note": "Điều này bao gồm kiểu giải thích ưa thích của bạn, cài đặt ngôn ngữ và tùy chọn trợ năng."
+      },
+      "noSelection": {
+        "title": "Không có cá nhân hóa nào được chọn",
+        "success": "Tuyệt vời! Chúng tôi sẽ sử dụng dữ liệu đã chọn của bạn để cung cấp trải nghiệm tốt hơn.",
+        "default": "Điều đó hoàn toàn ổn! Bạn vẫn sẽ có quyền truy cập đầy đủ vào tất cả các tính năng mà không cần đề xuất được cá nhân hóa."
+      }
     },
     "back": "Quay lại",
     "next": "Tiếp theo",
     "settingUp": "Đang thiết lập...",
     "completeSetup": "Hoàn tất thiết lập",
-    "errorSaving": "Không thể lưu sở thích của bạn. Vui lòng thử lại."
+    "errorSaving": "Không thể lưu sở thích của bạn. Vui lòng thử lại.",
+    "buttons": {
+      "previous": "Trước",
+      "next": "Kế tiếp",
+      "skip": "Nhảy",
+      "complete": "Hoàn thành",
+      "processing": "Xử lý...",
+      "gotIt": "Hiểu rồi!",
+      "skipAll": "Bỏ qua tất cả",
+      "cancel": "Hủy bỏ"
+    },
+    "progress": {
+      "label": "Tiến trình giới thiệu: Bước {{current}} trong tổng số {{total}}",
+      "stepOf": "Bước {{current}} trong tổng số {{total}}",
+      "step": "Bước chân",
+      "stepCompleted": "{{bước}} - Đã hoàn thành",
+      "stepCurrent": "{{bước}} - Bước hiện tại",
+      "stepUpcoming": "{{bước}} - Sắp tới"
+    },
+    "tooltip": {
+      "helpfulTip": "Lời khuyên hữu ích"
+    },
+    "flow": {
+      "title": "Chào mừng! Hãy bắt đầu"
+    },
+    "accessibility": {
+      "helpfulTip": "Lời khuyên hữu ích",
+      "tooltipAppeared": "Chú giải công cụ đã xuất hiện với nội dung: {{content}}",
+      "skippingStep": "Bỏ qua bước hiện tại",
+      "movingToNextStep": "Chuyển sang bước tiếp theo",
+      "movingToPreviousStep": "Chuyển sang bước trước",
+      "completingOnboarding": "Hoàn tất quá trình nhập môn",
+      "stepChanged": "Bây giờ ở bước {{step}} của {{total}}: {{title}}",
+      "skippingOnboarding": "Bỏ qua toàn bộ quá trình giới thiệu",
+      "cancellingOnboarding": "Hủy quá trình giới thiệu",
+      "errorCompleting": "Lỗi khi hoàn tất quá trình giới thiệu. Vui lòng thử lại.",
+      "goToPreviousStep": "Chuyển đến bước trước",
+      "skipThisStep": "Bỏ qua bước này",
+      "completeOnboarding": "Hoàn tất quá trình giới thiệu",
+      "continueToNextStep": "Tiếp tục bước tiếp theo",
+      "closeTooltip": "Đóng chú giải công cụ",
+      "skipTooltip": "Bỏ qua mẹo này",
+      "continueFromTooltip": "Tiếp tục từ chú giải công cụ",
+      "skipEntireOnboarding": "Bỏ qua toàn bộ quá trình giới thiệu",
+      "cancelOnboarding": "Hủy quá trình giới thiệu",
+      "keyboardInstructions": "Sử dụng Tab để điều hướng, Enter để chọn và Escape để đóng hộp thoại"
+    },
+    "validation": {
+      "firstNameRequired": "Tên là bắt buộc",
+      "lastNameRequired": "Họ là bắt buộc",
+      "validAgeRequired": "Vui lòng nhập độ tuổi hợp lệ từ 18 đến 120",
+      "languageRequired": "Vui lòng chọn ít nhất một ngôn ngữ",
+      "deviceRequired": "Vui lòng chọn thiết bị chính của bạn",
+      "experienceRequired": "Vui lòng chọn mức độ kinh nghiệm công nghệ của bạn",
+      "concernsOptional": "Bạn có thể chọn mối quan tâm để giúp chúng tôi cá nhân hóa trải nghiệm của bạn",
+      "assistiveNeedsRequired": "Vui lòng chọn nhu cầu tiếp cận của bạn hoặc chọn 'Không cần thiết'",
+      "communicationStyleRequired": "Vui lòng chọn phong cách giao tiếp ưa thích của bạn"
+    },
+    "restart": {
+      "confirmMessage": "Bạn có chắc chắn muốn khởi động lại quá trình giới thiệu không? Điều này sẽ thiết lập lại tất cả các tùy chọn của bạn."
+    }
   },
   "error": {
     "askQuestionFirst": "Vui lòng đặt câu hỏi trước",
-    "couldntGetAnswer": "Xin lỗi, hiện tại tôi không thể nhận được câu trả lời. Vui lòng thử lại."
+    "couldntGetAnswer": "Xin lỗi, hiện tại tôi không thể nhận được câu trả lời. Vui lòng thử lại.",
+    "notifications": {
+      "dismiss": "Miễn nhiệm"
+    }
   },
   "learningPage": {
     "headerTitle": "Trung tâm học tập",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "Các mô-đun cho lộ trình: {{pathTitle}}",
     "moduleContentTitle": "Nội dung cho mô-đun: {{moduleTitle}} sẽ ở đây.",
     "loadingCenter": "Đang tải Trung tâm học tập...",
-    "moduleTimeLabel": "Thời gian: "
+    "moduleTimeLabel": "Thời gian: ",
+    "startOrContinueCourse": "Bắt đầu hoặc tiếp tục khóa học",
+    "lessonsHeader": "Bài học",
+    "lessonContentPlaceholder": "Chưa có nội dung nào cho {{lessonTitle}}.",
+    "noLessonAvailable": "Không có bài học nào."
   },
   "languageSelector": {
     "choosePrompt": "Chọn ngôn ngữ ưa thích của bạn cho giao diện",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Xem lại",
     "congratulations": "Chúc mừng!",
     "courseComplete": "Bạn đã hoàn thành khóa học {{courseTitle}}!",
-    "downloadCertificate": "Tải xuống chứng chỉ"
+    "downloadCertificate": "Tải xuống chứng chỉ",
+    "previousLesson": "Bài học trước",
+    "nextLesson": "Bài học tiếp theo",
+    "markAsComplete": "Đánh dấu là hoàn thành",
+    "completed": "Hoàn thành",
+    "removeBookmark": "Xóa dấu trang",
+    "addBookmark": "Thêm dấu trang"
   },
   "lessonView": {
     "readAloud": "Đọc to bài học",
@@ -939,5 +1290,461 @@
       "thankYou": "Cảm ơn bạn đã tin tưởng TechStep với thông tin của mình. Chúng tôi cam kết giữ an toàn và chỉ sử dụng nó để giúp bạn thành công với công nghệ.",
       "backToHome": "Quay lại trang chủ"
     }
+  },
+  "avatar": {
+    "enable": "Kích hoạt hình đại diện AI",
+    "disable": "Tắt hình đại diện",
+    "loading": "Đang tải hình đại diện...",
+    "mute": "Tắt hình đại diện",
+    "unmute": "Bật tiếng hình đại diện",
+    "settings": "Cài đặt hình đại diện",
+    "fullscreen": "Toàn màn hình",
+    "exitFullscreen": "Thoát toàn màn hình",
+    "performance": {
+      "high": "Chất lượng cao",
+      "medium": "Chất lượng trung bình",
+      "low": "Chất lượng thấp",
+      "off": "Tắt hình đại diện"
+    },
+    "error": {
+      "loadFailed": "Không tải được hình đại diện. Vui lòng thử lại.",
+      "noWebGL": "Thiết bị của bạn không hỗ trợ đồ họa 3D.",
+      "audioFailed": "Không thể truy cập micrô để hát nhép."
+    },
+    "status": {
+      "initializing": "Đang khởi động hình đại diện...",
+      "ready": "Sẵn sàng giúp đỡ",
+      "thinking": "Đang suy nghĩ...",
+      "speaking": "Đang nói...",
+      "listening": "Đang nghe...",
+      "celebrating": "Vui mừng được giúp đỡ!",
+      "error": "Đã xảy ra lỗi",
+      "processing": "Đang xử lý âm thanh...",
+      "lipSyncActive": "Đồng bộ hóa môi đang hoạt động",
+      "lipSyncInactive": "Đồng bộ hóa môi không hoạt động"
+    },
+    "greeting": {
+      "morning": "Chào buổi sáng, {{name}}! Sẵn sàng để học điều gì đó mới ngày hôm nay?",
+      "afternoon": "Chào buổi chiều, {{name}}! Hôm nay tôi có thể giúp gì cho bạn?",
+      "evening": "Chào buổi tối, {{name}}! Bạn muốn khám phá điều gì?"
+    },
+    "companion": {
+      "title": "Người trợ giúp AI của bạn",
+      "ready": "Tôi ở đây để giúp bạn về công nghệ!"
+    },
+    "actions": {
+      "chat": "Trò chuyện",
+      "voice": "Tiếng nói",
+      "camera": "Máy ảnh",
+      "help": "Giúp đỡ"
+    },
+    "suggestions": {
+      "title": "Câu hỏi nhanh"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Làm cách nào để kết nối với WiFi?",
+    "makeTextBigger": "Làm cách nào để phóng to văn bản trên màn hình?",
+    "takeScreenshot": "Làm cách nào để chụp ảnh màn hình?",
+    "videoCall": "Làm cách nào để thực hiện cuộc gọi video?",
+    "iphoneSettings": "Làm cách nào để thay đổi cài đặt iPhone?",
+    "androidSettings": "Làm cách nào để thay đổi cài đặt Android?",
+    "windowsSettings": "Làm cách nào để thay đổi cài đặt Windows?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Hôm nay tôi có thể giúp gì cho bạn?",
+      "subtitle": "Hãy hỏi tôi bất cứ điều gì về công nghệ!"
+    },
+    "input": {
+      "placeholder": "Trợ lý AI nhắn tin...",
+      "helper": "Nhấn Enter để gửi, Shift+Enter để gửi dòng mới"
+    },
+    "greeting": {
+      "morning": "Chào buổi sáng",
+      "afternoon": "Chào buổi chiều",
+      "evening": "Buổi tối vui vẻ"
+    },
+    "error": {
+      "general": "Tôi xin lỗi, hiện tại tôi đang gặp rắc rối. Vui lòng thử lại sau giây lát."
+    }
+  },
+  "flashcards": {
+    "title": "Hướng dẫn từng bước",
+    "progress": "Bước {{current}} trong tổng số {{total}}",
+    "instructions": "Hướng dẫn:",
+    "markCompleted": "Đánh dấu là đã hoàn thành"
+  },
+  "dataPortability": {
+    "title": "Khả năng di chuyển dữ liệu và quyền người dùng",
+    "tabs": {
+      "overview": "Tổng quan",
+      "sharing": "Chia sẻ dữ liệu",
+      "export": "Xuất dữ liệu",
+      "delete": "Xóa dữ liệu",
+      "ai": "Tính minh bạch của AI"
+    },
+    "overview": {
+      "title": "Quyền dữ liệu của bạn",
+      "description": "Bạn có toàn quyền kiểm soát dữ liệu cá nhân của mình. Bạn có thể xem, xuất, sửa hoặc xóa thông tin của mình bất kỳ lúc nào trong vòng 30 ngày.",
+      "dataWeCollect": "Dữ liệu chúng tôi thu thập",
+      "profileInfo": "Thông tin hồ sơ (tên, email, sở thích)",
+      "learningProgress": "Tiến độ học tập và thành tích",
+      "aiHistory": "Lịch sử hội thoại AI",
+      "analytics": "Phân tích sử dụng (ẩn danh)",
+      "howWeUse": "Cách chúng tôi sử dụng dữ liệu của bạn",
+      "personalized": "Cung cấp trải nghiệm học tập được cá nhân hóa",
+      "improveAI": "Cải thiện phản hồi của trợ lý AI",
+      "trackProgress": "Theo dõi tiến trình và thành tích của bạn",
+      "security": "Đảm bảo tính bảo mật và hiệu suất của nền tảng",
+      "rightsTitle": "Quyền của bạn theo GDPR & CCPA",
+      "rightAccess": "Quyền truy cập:",
+      "accessDesc": "Xem tất cả dữ liệu cá nhân của bạn",
+      "rightPortability": "Quyền di chuyển:",
+      "portabilityDesc": "Xuất dữ liệu của bạn",
+      "rightRectification": "Quyền cải chính:",
+      "rectificationDesc": "Chỉnh sửa dữ liệu không chính xác",
+      "rightErasure": "Quyền xóa:",
+      "erasureDesc": "Xóa dữ liệu cá nhân của bạn"
+    },
+    "sharing": {
+      "title": "Tùy chọn chia sẻ dữ liệu",
+      "description": "Kiểm soát cách dữ liệu của bạn được chia sẻ và sử dụng. Tất cả việc chia sẻ là tùy chọn và có thể được thay đổi bất cứ lúc nào.",
+      "dataTypes": "Chia sẻ kiểu dữ liệu",
+      "thirdParty": "Chia sẻ của bên thứ ba",
+      "special": "Danh mục đặc biệt",
+      "analytics": "Chia sẻ phân tích",
+      "analyticsDesc": "Chia sẻ dữ liệu sử dụng ẩn danh để cải thiện nền tảng",
+      "research": "Chia sẻ nghiên cứu",
+      "researchDesc": "Đóng góp dữ liệu ẩn danh cho nghiên cứu học tập cấp cao"
+    },
+    "export": {
+      "title": "Xuất dữ liệu của bạn",
+      "description": "Tải xuống bản sao của tất cả dữ liệu cá nhân của bạn. Chúng tôi sẽ chuẩn bị dữ liệu của bạn và gửi cho bạn liên kết tải xuống trong vòng 30 ngày.",
+      "chooseFormat": "Chọn định dạng xuất",
+      "included": "Bao gồm những gì:",
+      "profile": "Thông tin hồ sơ và sở thích",
+      "progress": "Tiến độ học tập và thành tích",
+      "conversations": "Lịch sử hội thoại AI",
+      "support": "Lịch sử vé hỗ trợ",
+      "consent": "Cài đặt đồng ý và quyền riêng tư",
+      "request": "Yêu cầu xuất dữ liệu",
+      "requesting": "Yêu cầu xuất khẩu...",
+      "requests": "Yêu cầu xuất khẩu",
+      "requested": "Đã yêu cầu",
+      "download": "Tải xuống"
+    },
+    "delete": {
+      "title": "Xóa dữ liệu của bạn",
+      "description": "Xóa vĩnh viễn tất cả dữ liệu cá nhân của bạn. Hành động này không thể hoàn tác và sẽ đóng tài khoản của bạn trong vòng 30 ngày.",
+      "whatDeleted": "Nội dung nào sẽ bị xóa:",
+      "profile": "Thông tin hồ sơ và tài khoản của bạn",
+      "progress": "Tất cả tiến độ học tập và thành tích",
+      "conversations": "Lịch sử hội thoại AI",
+      "preferences": "Tùy chọn và cài đặt",
+      "analytics": "Phân tích sử dụng được liên kết với tài khoản của bạn",
+      "important": "Lưu ý quan trọng:",
+      "legal": "Một số dữ liệu có thể được giữ lại để tuân thủ pháp luật (phiếu hỗ trợ, hồ sơ thanh toán)",
+      "research": "Dữ liệu ẩn danh được sử dụng cho nghiên cứu có thể được giữ lại",
+      "verification": "Bạn sẽ nhận được xác minh email trước khi xóa",
+      "timeframe": "Việc xóa sẽ hoàn tất trong vòng 30 ngày",
+      "request": "Yêu cầu xóa dữ liệu",
+      "confirm": "Bạn có chắc chắn muốn xóa tất cả dữ liệu của mình không?",
+      "type": "Nhập \"XÓA DỮ LIỆU CỦA TÔI\" để xác nhận hành động này:",
+      "placeholder": "Nhập XÓA DỮ LIỆU CỦA TÔI",
+      "confirmButton": "Xác nhận xóa",
+      "processing": "Xử lý...",
+      "cancel": "Hủy bỏ",
+      "requests": "Yêu cầu xóa",
+      "complete": "Xóa dữ liệu hoàn tất",
+      "requested": "Đã yêu cầu",
+      "scheduled": "Đã lên lịch",
+      "awaitingVerification": "Đang chờ xác minh"
+    },
+    "ai": {
+      "title": "Tính minh bạch trong việc sử dụng dữ liệu AI",
+      "description": "Xem chính xác cách trợ lý AI của chúng tôi sử dụng dữ liệu của bạn và kiểm soát các tùy chọn dữ liệu AI của bạn.",
+      "stats": "Thống kê sử dụng dữ liệu AI",
+      "conversationsAnalyzed": "Cuộc trò chuyện được phân tích:",
+      "dataPoints": "Điểm dữ liệu được sử dụng:",
+      "trainingContribution": "Đóng góp đào tạo:",
+      "lastProcessed": "Xử lý lần cuối:",
+      "optOut": "Tùy chọn từ chối AI",
+      "stopTraining": "Dừng đào tạo AI",
+      "stopTrainingDesc": "Ngăn chặn dữ liệu của bạn cải thiện phản hồi AI",
+      "deleteHistory": "Xóa lịch sử cuộc trò chuyện",
+      "deleteHistoryDesc": "Xóa tất cả các cuộc hội thoại AI được lưu trữ",
+      "anonymize": "Ẩn danh dữ liệu của tôi",
+      "anonymizeDesc": "Chuyển đổi dữ liệu sang dạng ẩn danh"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Chọn cách giao tiếp",
+    "tabs": {
+      "chat": "Trò chuyện",
+      "voice": "Tiếng nói",
+      "image": "Hình ảnh",
+      "chatAria": "Nhập trò chuyện bằng văn bản",
+      "voiceAria": "Nhập bằng giọng nói",
+      "imageAria": "Đầu vào hình ảnh"
+    },
+    "chat": {
+      "placeholder": "Nhập câu hỏi của bạn vào đây... Nhấn Enter để gửi",
+      "ariaLabel": "Nhập câu hỏi của bạn",
+      "sendButton": "Gửi tin nhắn",
+      "send": "Gửi"
+    },
+    "voice": {
+      "recording": "Đang ghi... Nhấn để dừng",
+      "processing": "Đang xử lý giọng nói của bạn...",
+      "instructions": "Nhấn vào micrô để bắt đầu ghi âm",
+      "startRecording": "Bắt đầu ghi",
+      "stopRecording": "Dừng ghi"
+    },
+    "image": {
+      "takePhoto": "Chụp ảnh",
+      "camera": "Chụp ảnh",
+      "upload": "Tải hình ảnh lên",
+      "uploadAria": "Chọn tập tin hình ảnh",
+      "instructions": "Hãy chia sẻ một bức ảnh và tôi sẽ giúp giải thích những gì bạn nhìn thấy",
+      "formats": "Hỗ trợ JPG, PNG, GIF (tối đa 10MB)",
+      "previewAlt": "Xem trước hình ảnh đã chọn",
+      "remove": "Xóa hình ảnh",
+      "contextLabel": "Bạn muốn biết gì về hình ảnh này?",
+      "contextPlaceholder": "Tùy chọn: Đặt câu hỏi cụ thể về hình ảnh",
+      "cancel": "Hủy bỏ",
+      "submit": "Gửi hình ảnh",
+      "send": "Gửi",
+      "invalidType": "Vui lòng chọn một tập tin hình ảnh hợp lệ.",
+      "tooLarge": "Tệp hình ảnh quá lớn. Vui lòng chọn tệp dưới 10 MB.",
+      "cameraError": "Không thể truy cập máy ảnh. Vui lòng kiểm tra quyền."
+    }
+  },
+  "ai": {
+    "title": "Người trợ giúp AI",
+    "subtitle": "Ở đây để giúp bạn học",
+    "emergency": "Hỗ trợ khẩn cấp",
+    "emergencyAria": "Nhận hỗ trợ khẩn cấp",
+    "expand": "Mở rộng",
+    "minimize": "Giảm thiểu",
+    "close": "Đóng Trợ lý AI",
+    "thinking": "AI đang suy nghĩ...",
+    "escalated": "Bây giờ bạn đã kết nối với nhóm hỗ trợ của chúng tôi",
+    "callSupport": "Hỗ trợ cuộc gọi: 1-800-SENIOR-HELP",
+    "minimized": "Người trợ giúp AI",
+    "welcome": {
+      "tutorial": "Xin chào! Tôi thấy bạn đang làm việc trên \"{{tutorial}}\". Tôi ở đây để giúp bạn giải đáp mọi thắc mắc. Bạn có thể gõ, nói hoặc cho tôi xem hình ảnh - bất cứ điều gì bạn cảm thấy thoải mái nhất!",
+      "general": "Xin chào! Tôi là trợ lý AI của bạn, ở đây để giúp bạn tìm hiểu công nghệ từng bước. Bạn có thể đặt câu hỏi cho tôi bằng cách gõ, nói hoặc cho tôi xem hình ảnh. Bạn muốn biết điều gì?"
+    },
+    "error": {
+      "general": "Tôi xin lỗi, hiện tại tôi đang gặp rắc rối. Hãy để tôi kết nối bạn với nhóm hỗ trợ của chúng tôi, những người có thể giúp bạn ngay lập tức."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Diễn đàn cộng đồng",
+      "subtitle": "Kết nối với những người học khác, đặt câu hỏi và chia sẻ kinh nghiệm của bạn",
+      "backToHome": "Quay lại trang chủ",
+      "newPost": "Bài đăng mới"
+    },
+    "sidebar": {
+      "categories": "Thể loại",
+      "topics": {
+        "all": "Tất cả chủ đề",
+        "general": "Trợ giúp chung",
+        "mobile": "Thiết bị di động",
+        "computer": "Máy tính",
+        "apps": "Ứng dụng & Phần mềm",
+        "internet": "Internet & Email",
+        "safety": "An toàn trực tuyến"
+      },
+      "guidelines": {
+        "title": "Nguyên tắc cộng đồng",
+        "items": [
+          "Hãy tôn trọng và tử tế",
+          "Không có thư rác hoặc nội dung không phù hợp",
+          "Giúp đỡ người khác khi bạn có thể",
+          "Đi đúng chủ đề",
+          "Báo cáo mọi vấn đề"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Tìm kiếm bài viết..."
+    },
+    "createPost": {
+      "title": "Tạo bài đăng mới",
+      "categoryLabel": "Loại",
+      "titleLabel": "Tiêu đề",
+      "contentLabel": "Nội dung",
+      "titlePlaceholder": "Câu hỏi hoặc chủ đề của bạn là gì?",
+      "contentPlaceholder": "Mô tả câu hỏi của bạn hoặc chia sẻ suy nghĩ của bạn...",
+      "submit": "Bưu kiện",
+      "cancel": "Hủy bỏ",
+      "profanityAlert": "Bài đăng của bạn chứa nội dung không phù hợp. Vui lòng sửa lại và thử lại."
+    },
+    "posts": {
+      "empty": "Không tìm thấy bài viết nào Hãy là người đầu tiên bắt đầu cuộc trò chuyện!",
+      "replies": "{{đếm}} câu trả lời",
+      "timeAgo": {
+        "justNow": "Vừa rồi",
+        "oneHour": "1 giờ trước",
+        "hours": "{{count}} giờ trước",
+        "oneDay": "1 ngày trước",
+        "days": "{{count}} ngày trước"
+      }
+    }
+  },
+  "contact": {
+    "title": "Liên hệ với chúng tôi",
+    "subtitle": "Chúng tôi rất muốn nghe ý kiến ​​từ bạn! Gửi tin nhắn cho chúng tôi và chúng tôi sẽ trả lời sớm nhất có thể.",
+    "backToHome": "Quay lại trang chủ",
+    "form": {
+      "fasterResponse": "📧 Hình thức này sẽ được trả lời nhanh hơn các phương thức liên hệ khác!",
+      "name": "Tên đầy đủ *",
+      "namePlaceholder": "Nhập tên đầy đủ của bạn",
+      "email": "Địa chỉ email *",
+      "emailPlaceholder": "Nhập địa chỉ email của bạn",
+      "subject": "Chủ thể *",
+      "subjectPlaceholder": "Chọn một chủ đề",
+      "subjects": {
+        "general": "Điều tra chung",
+        "techSupport": "Hỗ trợ kỹ thuật",
+        "account": "Trợ giúp tài khoản",
+        "feature": "Yêu cầu tính năng",
+        "bug": "Báo cáo lỗi",
+        "feedback": "Nhận xét",
+        "other": "Khác"
+      },
+      "message": "Tin nhắn *",
+      "messagePlaceholder": "Vui lòng mô tả chi tiết yêu cầu của bạn...",
+      "submit": "Gửi tin nhắn",
+      "sending": "Đang gửi...",
+      "success": "Ứng dụng email của bạn lẽ ra đã được mở. Nếu không, vui lòng sao chép thông tin và gửi email trực tiếp cho chúng tôi.",
+      "error": "Đã xảy ra lỗi. Vui lòng gửi email trực tiếp cho chúng tôi theo địa chỉ taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Liên hệ",
+      "emailLabel": "E-mail",
+      "responseData": "Chúng tôi thường trả lời trong vòng 24 giờ"
+    },
+    "reasons": {
+      "title": "Tại sao liên hệ với chúng tôi?",
+      "items": [
+        "Nhận trợ giúp về các vấn đề kỹ thuật",
+        "Yêu cầu tính năng mới",
+        "Chia sẻ phản hồi và đề xuất",
+        "Báo cáo lỗi hoặc sự cố",
+        "Thắc mắc chung"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Điều khoản dịch vụ",
+    "backToHome": "Quay lại trang chủ",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Chấp nhận các điều khoản",
+        "content": "Bằng cách truy cập và sử dụng dịch vụ của chúng tôi, bạn chấp nhận và đồng ý bị ràng buộc bởi các điều khoản và quy định của thỏa thuận này."
+      },
+      "license": {
+        "title": "Giấy phép sử dụng",
+        "content": "Quyền được cấp để tạm thời sử dụng dịch vụ của chúng tôi chỉ cho mục đích xem tạm thời, phi thương mại, cá nhân."
+      },
+      "conduct": {
+        "title": "Hành vi của người dùng",
+        "content": "Bạn đồng ý sử dụng dịch vụ của chúng tôi theo cách phù hợp với tất cả các luật và quy định hiện hành cũng như tuân theo các điều khoản này."
+      },
+      "liability": {
+        "title": "Giới hạn trách nhiệm pháp lý",
+        "content": "Trong mọi trường hợp, công ty của chúng tôi hoặc nhà cung cấp của công ty sẽ không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng hoặc không thể sử dụng dịch vụ của chúng tôi."
+      },
+      "contact": {
+        "title": "Thông tin liên hệ",
+        "content": "Nếu bạn có bất kỳ câu hỏi nào về các Điều khoản dịch vụ này, vui lòng liên hệ với chúng tôi tại:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Tuyên bố về khả năng truy cập",
+    "subtitle": "Chúng tôi cam kết làm cho nền tảng của chúng tôi có thể truy cập được cho mọi người, bất kể khả năng hay công nghệ.",
+    "backToHome": "Quay lại trang chủ",
+    "commitment": {
+      "title": "Cam kết của chúng tôi",
+      "content": "Chúng tôi tin rằng mọi người đều có thể tiếp cận công nghệ. Nền tảng của chúng tôi được thiết kế dành cho người cao tuổi, kết hợp các tính năng giúp công nghệ học tập trở nên dễ dàng và thoải mái hơn cho người dùng ở mọi khả năng."
+    },
+    "features": {
+      "title": "Tính năng trợ năng",
+      "visual": {
+        "title": "Khả năng tiếp cận trực quan",
+        "items": [
+          "Phối màu tương phản cao",
+          "Phông chữ lớn, dễ đọc",
+          "Khả năng tương thích của trình đọc màn hình",
+          "Hỗ trợ điều hướng bàn phím",
+          "Văn bản thay thế cho hình ảnh"
+        ]
+      },
+      "audio": {
+        "title": "Khả năng truy cập âm thanh",
+        "items": [
+          "Phụ đề chi tiết cho video",
+          "Mô tả âm thanh",
+          "Điều khiển âm lượng",
+          "Chỉ báo trực quan cho tín hiệu âm thanh",
+          "Văn bản thay thế cho nội dung âm thanh"
+        ]
+      },
+      "motor": {
+        "title": "Khả năng tiếp cận động cơ",
+        "items": [
+          "Khu vực có thể nhấp lớn",
+          "Điều hướng chỉ bằng bàn phím",
+          "Giới hạn thời gian có thể điều chỉnh",
+          "Khả năng tương thích điều khiển bằng giọng nói",
+          "Tương tác đơn giản hóa"
+        ]
+      },
+      "cognitive": {
+        "title": "Khả năng tiếp cận nhận thức",
+        "items": [
+          "Ngôn ngữ đơn giản, rõ ràng",
+          "Điều hướng nhất quán",
+          "Tùy chọn chuyển động giảm",
+          "Xóa hướng dẫn",
+          "Phòng ngừa và phục hồi lỗi"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Tuân thủ tiêu chuẩn",
+      "content": "Nền tảng của chúng tôi nhằm mục đích tuân thủ các tiêu chuẩn AA cấp độ 2.1 của Nguyên tắc truy cập nội dung web (WCAG). Chúng tôi thường xuyên kiểm tra nền tảng của mình bằng các công nghệ hỗ trợ và tiến hành kiểm tra khả năng tiếp cận."
+    },
+    "feedback": {
+      "title": "Phản hồi và hỗ trợ",
+      "content": "Chúng tôi liên tục làm việc để cải thiện khả năng tiếp cận. Nếu bạn gặp phải bất kỳ rào cản nào hoặc có đề xuất cải tiến, vui lòng liên hệ với chúng tôi.",
+      "emailLabel": "E-mail",
+      "subjectLabel": "Chủ thể",
+      "subjectValue": "Phản hồi về khả năng truy cập"
+    },
+    "assistive": {
+      "title": "Công nghệ hỗ trợ",
+      "content": "Nền tảng của chúng tôi được thiết kế để hoạt động với các công nghệ hỗ trợ phổ biến bao gồm:",
+      "items": [
+        "Trình đọc màn hình (JAWS, NVDA, VoiceOver)",
+        "Phần mềm nhận dạng giọng nói",
+        "Công cụ phóng to màn hình",
+        "Bàn phím thay thế",
+        "Chuyển đổi thiết bị định vị",
+        "Hệ thống theo dõi mắt"
+      ]
+    },
+    "help": {
+      "title": "Cần trợ giúp?",
+      "content": "Nếu bạn cần hỗ trợ khi sử dụng nền tảng của chúng tôi hoặc có câu hỏi liên quan đến khả năng truy cập, chúng tôi sẵn sàng trợ giúp.",
+      "contact": "Liên hệ hỗ trợ"
+    },
+    "lastUpdated": "Cập nhật lần cuối: {{date}}"
   }
 }

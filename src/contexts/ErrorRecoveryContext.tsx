@@ -3,7 +3,7 @@
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { useErrorRecovery } from '../hooks/useErrorRecovery';
-import { globalErrorHandler, ErrorNotification } from '../utils/globalErrorHandler';
+import { globalErrorHandler, ErrorNotification } from '../utils/errors/globalErrorHandler';
 import { ErrorNotificationSystem } from '../components/error-recovery/ErrorNotificationSystem';
 import { NetworkStatusMonitor } from '../components/error-recovery/NetworkStatusMonitor';
 import { EmergencySupport } from '../components/error-recovery/FallbackStates';
@@ -13,24 +13,24 @@ interface ErrorRecoveryContextType {
   hasError: boolean;
   lastError: Error | null;
   isRecovering: boolean;
-  
+
   // Network state
   isOffline: boolean;
   queuedActionCount: number;
-  
+
   // Session state
   hasSessionData: boolean;
-  
+
   // Notifications
   notifications: ErrorNotification[];
-  
+
   // Actions
   showEmergencySupport: (reason?: string) => void;
   hideEmergencySupport: () => void;
   handleError: (error: Error | string, context?: any) => void;
   clearError: () => void;
   retryLastOperation: () => Promise<void>;
-  
+
   // Recovery actions
   restoreSession: () => Promise<boolean>;
   clearSession: () => void;
@@ -131,24 +131,24 @@ export const ErrorRecoveryProvider: React.FC<ErrorRecoveryProviderProps> = ({
     hasError: recovery.lastError !== null,
     lastError: recovery.lastError,
     isRecovering: recovery.isRecovering,
-    
+
     // Network state
     isOffline: recovery.isOffline,
     queuedActionCount: recovery.queuedActionCount,
-    
+
     // Session state
     hasSessionData: recovery.hasSessionData,
-    
+
     // Notifications
     notifications,
-    
+
     // Actions
     showEmergencySupport,
     hideEmergencySupport,
     handleError,
     clearError: recovery.clearError,
     retryLastOperation,
-    
+
     // Recovery actions
     restoreSession: recovery.restoreSession,
     clearSession: recovery.clearSession,
@@ -158,24 +158,24 @@ export const ErrorRecoveryProvider: React.FC<ErrorRecoveryProviderProps> = ({
   return (
     <ErrorRecoveryContext.Provider value={contextValue}>
       {children}
-      
+
       {/* Error Notifications - Subtle bottom-left corner */}
       {enableNotifications && (
-        <ErrorNotificationSystem 
+        <ErrorNotificationSystem
           maxNotifications={maxNotifications}
           position="bottom-left"
         />
       )}
-      
 
-      
+
+
       {/* Network Status Monitor */}
       {enableNetworkMonitor && (recovery.isOffline || recovery.queuedActionCount > 0) && (
         <div className="fixed bottom-4 left-4 right-4 z-30">
           <NetworkStatusMonitor showDetails={true} />
         </div>
       )}
-      
+
       {/* Emergency Support Modal */}
       {showEmergencyModal && (
         <EmergencySupport
@@ -202,10 +202,10 @@ export function withErrorRecovery<P extends object>(
 ) {
   return function ErrorRecoveryWrappedComponent(props: P) {
     const errorRecovery = useErrorRecoveryContext();
-    
+
     return (
-      <Component 
-        {...props} 
+      <Component
+        {...props}
         errorRecovery={errorRecovery}
       />
     );
@@ -255,7 +255,7 @@ export class ErrorRecoveryBoundary extends React.Component<
   render() {
     if (this.state.hasError && this.state.error) {
       const FallbackComponent = this.props.fallback;
-      
+
       if (FallbackComponent) {
         return (
           <ErrorRecoveryContext.Consumer>
@@ -263,7 +263,7 @@ export class ErrorRecoveryBoundary extends React.Component<
               <FallbackComponent
                 error={this.state.error!}
                 resetError={this.resetError}
-                showEmergencySupport={context?.showEmergencySupport || (() => {})}
+                showEmergencySupport={context?.showEmergencySupport || (() => { })}
               />
             )}
           </ErrorRecoveryContext.Consumer>

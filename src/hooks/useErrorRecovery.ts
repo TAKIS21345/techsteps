@@ -1,6 +1,6 @@
 // React hook for integrating error recovery framework
 import React, { useEffect, useState, useCallback } from 'react';
-import { errorRecovery, RetryConfig } from '../utils/errorRecovery';
+import { errorRecovery, RetryConfig } from '../utils/errors/errorRecovery';
 import { ErrorContext } from '../types/core';
 
 export interface UseErrorRecoveryOptions {
@@ -64,16 +64,16 @@ export function useErrorRecovery(options: UseErrorRecoveryOptions = {}) {
     config?: Partial<RetryConfig>
   ): Promise<T> => {
     setState(prev => ({ ...prev, isRecovering: true }));
-    
+
     try {
       const result = await errorRecovery.retryWithBackoff(operation, config);
       setState(prev => ({ ...prev, isRecovering: false, lastError: null }));
       return result;
     } catch (error) {
-      setState(prev => ({ 
-        ...prev, 
-        isRecovering: false, 
-        lastError: error as Error 
+      setState(prev => ({
+        ...prev,
+        isRecovering: false,
+        lastError: error as Error
       }));
       throw error;
     }
@@ -81,22 +81,22 @@ export function useErrorRecovery(options: UseErrorRecoveryOptions = {}) {
 
   // Attempt error recovery
   const attemptRecovery = useCallback(async (
-    error: Error, 
+    error: Error,
     context: ErrorContext
   ): Promise<boolean> => {
     setState(prev => ({ ...prev, isRecovering: true, lastError: error }));
-    
+
     try {
       const success = await errorRecovery.attemptRecovery(error, context);
-      setState(prev => ({ 
-        ...prev, 
+      setState(prev => ({
+        ...prev,
         isRecovering: false,
         lastError: success ? null : error
       }));
       return success;
     } catch (recoveryError) {
-      setState(prev => ({ 
-        ...prev, 
+      setState(prev => ({
+        ...prev,
         isRecovering: false,
         lastError: recoveryError as Error
       }));
@@ -106,8 +106,8 @@ export function useErrorRecovery(options: UseErrorRecoveryOptions = {}) {
 
   // Queue action for offline processing
   const queueAction = useCallback((
-    type: string, 
-    payload: any, 
+    type: string,
+    payload: any,
     maxRetries?: number
   ) => {
     errorRecovery.queueAction(type, payload, maxRetries);
@@ -135,18 +135,18 @@ export function useErrorRecovery(options: UseErrorRecoveryOptions = {}) {
   // Restore session data
   const restoreSession = useCallback(async (): Promise<boolean> => {
     setState(prev => ({ ...prev, isRecovering: true }));
-    
+
     try {
       const success = await errorRecovery.restoreSession();
-      setState(prev => ({ 
-        ...prev, 
+      setState(prev => ({
+        ...prev,
         isRecovering: false,
         hasSessionData: errorRecovery.hasSessionData()
       }));
       return success;
     } catch (error) {
-      setState(prev => ({ 
-        ...prev, 
+      setState(prev => ({
+        ...prev,
         isRecovering: false,
         lastError: error as Error
       }));
@@ -171,7 +171,7 @@ export function useErrorRecovery(options: UseErrorRecoveryOptions = {}) {
   return {
     // State
     ...state,
-    
+
     // Actions
     retryOperation,
     attemptRecovery,
@@ -191,7 +191,7 @@ export function withErrorRecovery<P extends object>(
 ) {
   return function ErrorRecoveryWrapper(props: P) {
     const recovery = useErrorRecovery(options);
-    
+
     return React.createElement(Component, {
       ...props,
       errorRecovery: recovery
@@ -200,21 +200,21 @@ export function withErrorRecovery<P extends object>(
 }
 
 // Error boundary with recovery capabilities
-export function ErrorRecoveryBoundary({ 
-  children, 
+export function ErrorRecoveryBoundary({
+  children,
   fallback: Fallback,
   onError
 }: {
   children: React.ReactNode;
-  fallback?: React.ComponentType<{ 
-    error: Error; 
+  fallback?: React.ComponentType<{
+    error: Error;
     resetError: () => void;
     recovery: ReturnType<typeof useErrorRecovery>;
   }>;
   onError?: (error: Error, errorInfo: React.ErrorInfo) => void;
 }) {
   const recovery = useErrorRecovery();
-  
+
   return React.createElement(
     ErrorBoundaryWithRecovery,
     {
@@ -267,7 +267,7 @@ class ErrorBoundaryWithRecovery extends React.Component<
   render() {
     if (this.state.hasError && this.state.error) {
       const FallbackComponent = this.props.fallback;
-      
+
       if (FallbackComponent) {
         return React.createElement(FallbackComponent, {
           error: this.state.error,
@@ -277,7 +277,7 @@ class ErrorBoundaryWithRecovery extends React.Component<
       }
 
       // Default fallback
-      return React.createElement('div', 
+      return React.createElement('div',
         { className: 'error-recovery-fallback' },
         React.createElement('h2', null, 'Something went wrong'),
         React.createElement('button', { onClick: this.resetError }, 'Try again')

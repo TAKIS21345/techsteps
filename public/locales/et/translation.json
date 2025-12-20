@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Tehtud ❤️ seenioridele kõikjal.",
       "trustedBy": "Usaldavad",
-      "trustedByCount": "50,000+ seeniori"
+      "trustedByCount": "50,000+ seeniori",
+      "communityTitle": "kogukond",
+      "legalTitle": "Õigusabi ja tugi",
+      "contactEmail": "Kontakt: E-post: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Arvuti ja seadmete põhitõed",
       "description": "Kõige põhilisemad teadmised tehnoloogiaga alustamiseks.",
       "modules": {
-        "turnOnDevice": { "title": "Seadme sisselülitamine", "description": "Õppige arvuteid ja nutitelefone sisse lülitama." },
-        "mouseTouchscreen": { "title": "Hiire/puuteekraani kasutamine", "description": "Õppige osutama, klõpsama ja koputama." },
-        "keyboardTyping": { "title": "Klaviatuuri/trükkimise põhitõed", "description": "Saage tuttavaks trükkimise põhitõdedega." },
-        "filesFolders": { "title": "Failide ja kaustade mõistmine", "description": "Õppige, kuidas digitaalne teave on korraldatud." }
+        "turnOnDevice": {
+          "title": "Seadme sisselülitamine",
+          "description": "Õppige arvuteid ja nutitelefone sisse lülitama."
+        },
+        "mouseTouchscreen": {
+          "title": "Hiire/puuteekraani kasutamine",
+          "description": "Õppige osutama, klõpsama ja koputama.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Mängime: hiire ja puuteekraani põhitõed</h3><p>Kas olete avastamiseks valmis? Teie hiir ja puuteekraan on teie võlukepid digimaailma jaoks!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Hiirerõõm:</h4><ul class=\"space-y-2\"><li>• <b>Punkt</b>: liigutage hiirt</b>: liigutage hiirt ja jälgige <blic:</blic>. vasak nupp asjade valimiseks. Proovige klõpsata alloleval nupul!</li><li>• <b>Topeltklõps</b>: vajutage failide või programmide avamiseks kiiresti kaks korda.</li><li>• <b>Paremklõps</b>: vajutage parempoolset nuppu salamenüü kuvamiseks.</li><li>• <b>Kerimine</b>: leheküljel üles-alla liikumiseks kerige ratast. rounded-lg\"><h4 class=\"font-medium mb-2\">Puuteekraani nipid:</h4><ul class=\"space-y-2\"><li>• <b>Puudutamine</b>: puudutage valimiseks õrnalt ekraani.</li><li>• <b>Pühkimine</b>: libistage oma sõrme ekraanide kerimiseks või vahetamiseks.</b>>Puutamine</li>• <b:>Puutage</b> sisse ja välja.</li><li>• <b>Pikk vajutus</b>: hoidke sõrme all, et näha rohkem valikuid (nt paremklõps!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Proovige järele!</h4><ul class=\"space-y-2\" muudatusi teie moosil ekraanil.</li><li>• Uurimiseks puudutage oma seadet ja pühkige seda.</li></ul></div></div>",
+          "keyPoints": [
+            "Hiirekursor järgib teie kätt!",
+            "Vasak klõps on teie peamine toiming.",
+            "Puuteekraanid võimaldavad teil puudutada, pühkida ja suumida!"
+          ],
+          "practiceExercise": "Proovige klõpsata, topeltklõpsata ja paremklõpsata oma töölaual. Puuteekraanil puudutage ja pühkige ekraanide vahel liikumiseks.",
+          "animationDesc": "Vaadake, kuidas puuteekraanil klõpsata, topeltklõpsata ja pühkida."
+        },
+        "keyboardTyping": {
+          "title": "Klaviatuuri/trükkimise põhitõed",
+          "description": "Saage tuttavaks trükkimise põhitõdedega."
+        },
+        "filesFolders": {
+          "title": "Failide ja kaustade mõistmine",
+          "description": "Õppige, kuidas digitaalne teave on korraldatud."
+        }
       }
     },
     "onlineWorld": {
       "title": "Veebimaailm",
       "description": "Ühenduse loomine ja interneti turvaline avastamine.",
       "modules": {
-        "webBrowsers": { "title": "Veebibrauserite mõistmine", "description": "Navigeerige internetis Chrome'i, Edge'i või Safari abil." },
-        "searchEffectively": { "title": "Kuidas tõhusalt otsida", "description": "Leidke otsingumootorite abil veebist vajalikku teavet." },
-        "introEmail": { "title": "E-posti sissejuhatus", "description": "Õppige saatma ja vastu võtma elektroonilist kirja." },
-        "virusSafety": { "title": "Viiruste eest kaitsmine", "description": "Kaitske oma seadet kahjuliku tarkvara eest." }
+        "webBrowsers": {
+          "title": "Veebibrauserite mõistmine",
+          "description": "Navigeerige internetis Chrome'i, Edge'i või Safari abil."
+        },
+        "searchEffectively": {
+          "title": "Kuidas tõhusalt otsida",
+          "description": "Leidke otsingumootorite abil veebist vajalikku teavet."
+        },
+        "introEmail": {
+          "title": "E-posti sissejuhatus",
+          "description": "Õppige saatma ja vastu võtma elektroonilist kirja."
+        },
+        "virusSafety": {
+          "title": "Viiruste eest kaitsmine",
+          "description": "Kaitske oma seadet kahjuliku tarkvara eest."
+        }
       }
     },
     "digitalLife": {
       "title": "Igapäevane digitaalelu",
       "description": "Suhelge, jagage ja hallake oma digitaalset kohalolekut.",
       "modules": {
-        "masteringEmail": { "title": "E-posti valdamine", "description": "Manused, kaustad ja e-posti etikett." },
-        "videoCalling": { "title": "Videokõned pere ja sõpradega", "description": "Looge silmast silma ühendus oma lähedastega." },
-        "introSocialMedia": { "title": "Sotsiaalmeedia sissejuhatus", "description": "Platvormide nagu Facebook mõistmine." },
-        "sharingPhotos": { "title": "Fotode turvaline jagamine", "description": "Jagage oma mälestusi privaatsust kahjustamata." }
+        "masteringEmail": {
+          "title": "E-posti valdamine",
+          "description": "Manused, kaustad ja e-posti etikett."
+        },
+        "videoCalling": {
+          "title": "Videokõned pere ja sõpradega",
+          "description": "Looge silmast silma ühendus oma lähedastega."
+        },
+        "introSocialMedia": {
+          "title": "Sotsiaalmeedia sissejuhatus",
+          "description": "Platvormide nagu Facebook mõistmine."
+        },
+        "sharingPhotos": {
+          "title": "Fotode turvaline jagamine",
+          "description": "Jagage oma mälestusi privaatsust kahjustamata."
+        }
       }
     },
     "advancedSkills": {
       "title": "Edasijõudnute ja loomingulised oskused",
       "description": "Põhitõdedest kaugemale: avastage rohkem tehnoloogia pakutavast.",
       "modules": {
-        "onlineShopping": { "title": "Veebipoodlemise sissejuhatus", "description": "Ostke turvaliselt ja mugavalt veebis." },
-        "onlineMaps": { "title": "Veebikaartide ja navigeerimise kasutamine", "description": "Leidke oma tee digitaalsete kaartide abil." },
-        "photoEditing": { "title": "Põhiline fototöötlus", "description": "Täiustage oma digitaalseid fotosid." },
-        "productivityTools": { "title": "Sissejuhatus tootlikkuse tööriistadesse", "description": "Tööriistade nagu Google Docs või Microsoft Word põhitõdede kasutamine." }
+        "onlineShopping": {
+          "title": "Veebipoodlemise sissejuhatus",
+          "description": "Ostke turvaliselt ja mugavalt veebis."
+        },
+        "onlineMaps": {
+          "title": "Veebikaartide ja navigeerimise kasutamine",
+          "description": "Leidke oma tee digitaalsete kaartide abil."
+        },
+        "photoEditing": {
+          "title": "Põhiline fototöötlus",
+          "description": "Täiustage oma digitaalseid fotosid."
+        },
+        "productivityTools": {
+          "title": "Sissejuhatus tootlikkuse tööriistadesse",
+          "description": "Tööriistade nagu Google Docs või Microsoft Word põhitõdede kasutamine."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Juurdepääsetavus ja kasutuslihtsus",
+      "description": "Muutke oma seade paremini nähtavaks, kuuldavaks ja juhitavaks.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Ekraani suurendaja kasutamine",
+          "description": "Suurendage oma ekraanil teksti ja pilte."
+        },
+        "voiceCommands": {
+          "title": "Häälkäsklused ja dikteerimine",
+          "description": "Juhtige oma seadet ja sisestage oma häälega."
+        },
+        "highContrast": {
+          "title": "Kõrge kontrasti ja värvi sätted",
+          "description": "Parema nähtavuse tagamiseks reguleerige värve."
+        },
+        "assistiveTouch": {
+          "title": "Abistavad puute- ja otseteed",
+          "description": "Kasutage navigeerimise hõlbustamiseks ekraanil kuvatavaid tööriistu."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Tervis, ohutus ja privaatsus",
+      "description": "Olge tehnoloogiat kasutades turvaline, terve ja privaatne.",
+      "modules": {
+        "privacySettings": {
+          "title": "Privaatsusseaded",
+          "description": "Kaitske oma isikuandmeid võrgus."
+        },
+        "scamAwareness": {
+          "title": "Kelmuse teadlikkus",
+          "description": "Tuvastage ja vältige levinud võrgupettusi."
+        },
+        "healthApps": {
+          "title": "Terviserakenduste kasutamine",
+          "description": "Jälgige oma tervist ja heaolu rakenduste abil."
+        },
+        "emergencyContacts": {
+          "title": "Hädaabikontaktide seadistamine",
+          "description": "Lisage oma seadmesse hädaabikontaktid."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Tehnikaga alustaja", "description": "Lõpetas arvuti ja seadmete põhitõed." },
-    "onlineWorld": { "name": "Veebiavastaja", "description": "Lõpetas veebimaailma tee." },
-    "digitalLife": { "name": "Digitaalne suhtleja", "description": "Lõpetas igapäevase digitaalelu tee." },
-    "advancedSkills": { "name": "Tehnikavirtuoos", "description": "Lõpetas edasijõudnute ja loominguliste oskuste tee." }
+    "fundamentals": {
+      "name": "Tehnikaga alustaja",
+      "description": "Lõpetas arvuti ja seadmete põhitõed."
+    },
+    "onlineWorld": {
+      "name": "Veebiavastaja",
+      "description": "Lõpetas veebimaailma tee."
+    },
+    "digitalLife": {
+      "name": "Digitaalne suhtleja",
+      "description": "Lõpetas igapäevase digitaalelu tee."
+    },
+    "advancedSkills": {
+      "name": "Tehnikavirtuoos",
+      "description": "Lõpetas edasijõudnute ja loominguliste oskuste tee."
+    },
+    "accessibility": {
+      "name": "Ligipääsetavuse meister",
+      "description": "Lõpetatud juurdepääsetavuse ja kasutusmugavuse tee."
+    },
+    "healthAndSafety": {
+      "name": "Ohutuse eestkostja",
+      "description": "Tervise, ohutuse ja privaatsuse tee on lõpetatud."
+    }
   },
   "skillAssessmentModal": {
     "title": "Kiire oskuste kontroll",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Kohandage oma eelistusi",
-    "personalInfo": "Isiklik teave",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "firstName": "Eesnimi",
     "firstNamePlaceholder": "Teie eesnimi",
     "primaryDevice": "Peamine seade",
     "devices": {
-      "windowsComputer": "Windowsi arvuti",
-      "macComputer": "Mac (Apple'i arvuti)",
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android-telefon või -tahvelarvuti"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Ligipääsetavus",
     "textToSpeech": "Tekst kõneks",
@@ -530,9 +669,9 @@
     "signOut": "Logi välja",
     "signOutDesc": "Logige oma kontolt välja",
     "cancel": "Tühista",
-    "saving": "Salvestan...",
-    "saved": "Salvestatud!",
-    "saveChanges": "Salvesta muudatused",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveChanges": "Save Changes",
     "errorSaving": "Seadete salvestamine ebaõnnestus. Palun proovige uuesti.",
     "lastName": "Perekonnanimi",
     "lastNamePlaceholder": "Teie perekonnanimi",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Kõrge kontrastsuse režiim",
     "highContrastDesc": "Suurendage teksti ja elementide kontrastsust parema nähtavuse tagamiseks",
-    "learningPreferences": "Õppimise ja sisu eelistused"
+    "learningPreferences": "Õppimise ja sisu eelistused",
+    "title": "Settings",
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "pwa": {
+      "install": {
+        "title": "Installige TechStep",
+        "description": "Hankige kiire juurdepääs oma õppimise edenemisele ja kasutage TechStepi võrguühenduseta.",
+        "button": "Installige rakendus"
+      },
+      "update": {
+        "title": "Värskendus on saadaval",
+        "description": "Saadaval on TechStepi uus versioon koos täiustuste ja veaparandustega.",
+        "button": "Värskenda kohe"
+      },
+      "status": {
+        "online": "Internetis",
+        "offline": "Võrguühenduseta – muudatused sünkroonitakse ühenduse loomisel",
+        "syncing": "Sünkroonimine..."
+      },
+      "notifications": {
+        "title": "Õppimise meeldetuletused",
+        "description": "Hankige õrnaid meeldetuletusi, mis aitavad teil õppimise teekonnal õigel teel püsida.",
+        "learning_reminders": "Õppimise meeldetuletused",
+        "learning_reminders_desc": "Õrnad tõuked õppetundide jätkamiseks",
+        "progress_updates": "Edenemise värskendused",
+        "progress_updates_desc": "Tähistage oma saavutusi",
+        "support_messages": "Tugisõnumid",
+        "support_messages_desc": "Kasulikud nõuanded ja abi",
+        "frequency": "Sagedus",
+        "enable": "Luba märguanded",
+        "subscribing": "Seadistamine...",
+        "blocked": {
+          "title": "Märguanded on blokeeritud",
+          "description": "Teavitused on praegu blokeeritud. Nende lubamiseks lubage oma brauseri seadetes märguanded.",
+          "instructions": "Otsige oma aadressiribalt teavitusikooni või kontrollige oma brauseri saidi seadeid."
+        },
+        "success": {
+          "title": "Märguanded lubatud!",
+          "description": "Saate kasulikke meeldetuletusi ja värskendusi vastavalt teie eelistustele."
+        }
+      }
+    },
+    "offline": {
+      "error": "Sünkroonimisviga",
+      "offline": "Võrguühenduseta",
+      "online": "Internetis",
+      "syncing": "Sünkroonimine...",
+      "offline_desc": "Muudatused sünkroonitakse ühenduse loomisel",
+      "syncing_desc": "Teie andmete värskendamine",
+      "online_desc": "Kõik muudatused salvestatakse",
+      "pending_operations": "{{count}} ootel muudatust",
+      "last_sync": "Viimane sünkroonimine: {{time}}",
+      "content_manager": {
+        "title": "Võrguühenduseta sisu",
+        "description": "Laadige alla võrguühenduseta juurdepääsemiseks sisu",
+        "online": "Ühendatud – saate alla laadida uut sisu",
+        "offline": "Võrguühenduseta – ainult allalaaditud sisu kasutamine",
+        "no_content": "Võrguühenduseta sisu puudub",
+        "no_content_desc": "Laadige alla kursused ja õppetunnid, et neile võrguühenduseta juurde pääseda",
+        "downloaded": "Alla laaditud",
+        "available_offline": "Saadaval võrguühenduseta",
+        "remove": "Eemaldage võrguühenduseta salvestusruumist",
+        "suggestions": "Soovitatavad allalaadimised",
+        "suggestion_1": "Arvutialuste kursus",
+        "suggestion_1_desc": "Olulised oskused tehnoloogiaga alustamiseks",
+        "popular": "Populaarne",
+        "download": "Laadi alla",
+        "type": {
+          "course": "Kursus",
+          "lesson": "Õppetund",
+          "tutorial": "Õpetus",
+          "media": "Meedia"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Loobu"
+    },
+    "dataPortability": "Andmed ja privaatsusõigused",
+    "dataRights": "Teie andmete õigused",
+    "dataRightsDesc": "Teil on täielik kontroll oma isikuandmete üle. Eksportige, hallake jagamise eelistusi või kustutage oma andmeid igal ajal."
   },
   "common": {
     "settings": "Seaded",
     "signOut": "Logi välja",
-    "close": "Sulge"
+    "close": "Sulge",
+    "friend": "friend",
+    "comingSoon": "Varsti"
   },
   "tips": {
     "connectWifi": "Ühenda Wi-Fi-ga",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Sinu eesnimi",
       "lastName": "Perekonnanimi",
       "lastNamePlaceholder": "Sinu perekonnanimi",
-      "age": "Vanus (aitab mul selgitusi kohandada)"
+      "age": "Vanus (aitab mul selgitusi kohandada)",
+      "tooltip": "Rääkige meile natuke endast, et saaksime teie õppimiskogemust isikupärastada."
     },
     "step2": {
       "title": "Vali oma eelistatud keeled",
@@ -679,7 +921,8 @@
       "selected_plural": "Valitud: {{count}} keelt",
       "noLanguagesFound": "Ei leitud keeli, mis vastaksid otsingule \"{{search}}\"",
       "languageRequired": "Keele valik on kohustuslik",
-      "languageRequiredDesc": "Palun vali jätkamiseks vähemalt üks keel. See tagab parima kogemuse häälsisestuse ja tekstisuhtluse jaoks."
+      "languageRequiredDesc": "Palun vali jätkamiseks vähemalt üks keel. See tagab parima kogemuse häälsisestuse ja tekstisuhtluse jaoks.",
+      "tooltip": "Valige häälsisestuse ja tekstiga suhtlemiseks sobivad keeled."
     },
     "step3": {
       "title": "Millist seadet sa kõige rohkem kasutad?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Android-telefon või -tahvelarvuti",
         "smarttv": "Nutiteler",
         "multipledevices": "Mitu seadet"
-      }
+      },
+      "tooltip": "Peamise seadme tundmine aitab meil pakkuda asjakohasemaid juhiseid."
     },
     "step4": {
       "title": "Kui mugavalt sa end tehnoloogiaga tunned?",
@@ -702,7 +946,8 @@
       "some": "Mõningane kogemus",
       "someDesc": "Saan hakkama põhiülesannetega, kuid vajan abi uute asjadega",
       "comfortable": "Mugav",
-      "comfortableDesc": "Saan enamiku asjadega ise hakkama, kuid vajan mõnikord juhendamist"
+      "comfortableDesc": "Saan enamiku asjadega ise hakkama, kuid vajan mõnikord juhendamist",
+      "tooltip": "Olge oma mugavuse taseme osas aus – see aitab meil asju õiges tempos selgitada."
     },
     "step5": {
       "title": "Millised tehnoloogiateemad teevad sulle kõige rohkem muret?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Seadme seaded",
         "onlineShopping": "Veebipoodlemine",
         "healthApps": "Terviserakendused ja -portaalid"
-      }
+      },
+      "tooltip": "Valige teemad, mis teid kõige rohkem murettekitavad, et saaksime nendes valdkondades abi eelistada."
     },
     "step6": {
       "title": "Kas vajad ligipääsetavusfunktsioone?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Aeglasemad selgitused",
         "visualSteps": "Visuaalsed sammude indikaatorid",
         "noneNeeded": "Pole vaja"
-      }
+      },
+      "tooltip": "Andke meile teada kõigist juurdepääsetavuse funktsioonidest, mida vajate mugavaks kasutuskogemuseks."
     },
     "step7": {
       "title": "Kuidas sa eelistad õppida?",
@@ -743,7 +990,8 @@
       "detailed": "Detailne selgitus",
       "detailedDesc": "Selgita, miks ma iga sammu teen",
       "visual": "Visuaalne õppimine",
-      "visualDesc": "Näita mulle pilte ja videoid, kui võimalik"
+      "visualDesc": "Näita mulle pilte ja videoid, kui võimalik",
+      "tooltip": "Valige, kuidas eelistate õppida, et saaksime oma õpetamisstiili kohandada."
     },
     "step8": {
       "title": "Viimased lihvid",
@@ -757,17 +1005,110 @@
       "textSize": "Teksti suuruse eelistus",
       "textSizeNormal": "Normaalne",
       "textSizeLarge": "Suur",
-      "textSizeExtraLarge": "Eriti suur"
+      "textSizeExtraLarge": "Eriti suur",
+      "tooltip": "Seadistage nende lõplike eelistustega oma täiuslik õpikeskkond.",
+      "privacy": {
+        "title": "Teie privaatsus on meie prioriteet",
+        "items": [
+          "Me EI müü KUNAGI teie isikuandmeid",
+          "Kõik andmed jäävad krüpteerituks ja turvaliseks",
+          "Saate neid seadeid igal ajal muuta",
+          "Saate oma andmed igal ajal kustutada"
+        ]
+      },
+      "personalization": {
+        "title": "Isikupärastatud kogemus",
+        "description": "Lubage meil kasutada teie suhtlusandmeid, et pakkuda teie vajadustele kohandatud paremat, asjakohasemat abi ja soovitusi.",
+        "note": "See aitab meil mõista, millised teemad teid kõige rohkem huvitavad, ja pakkuda asjakohasemaid õpetusi."
+      },
+      "history": {
+        "title": "Kasutage vestluste ajalugu",
+        "description": "Pidage meeles meie eelnevaid vestlusi, et pakkuda paremat konteksti ja vältida juba tuttava teabe kordamist.",
+        "note": "See aitab mul meeles pidada, mida oleme varem arutanud, ja tugineda varasematele vestlustele."
+      },
+      "learningPrefs": {
+        "title": "Kasutage õppeeelistused",
+        "description": "Pidage meeles, et teie eelistatud õppimisstiil, suhtluseelistused ja juurdepääsetavus on järjepidevate kogemuste pakkumiseks.",
+        "note": "See hõlmab teie eelistatud selgitusstiili, keeleseadeid ja juurdepääsetavuse eelistusi."
+      },
+      "noSelection": {
+        "title": "Isikupärastamist pole valitud",
+        "success": "Suurepärane! Kasutame teie valitud andmeid parema kasutuskogemuse pakkumiseks.",
+        "default": "See on täiesti hea! Saate endiselt täieliku juurdepääsu kõigile funktsioonidele, ilma isikupärastatud soovitusteta."
+      }
     },
     "back": "Tagasi",
     "next": "Järgmine",
     "settingUp": "Seadistan...",
     "completeSetup": "Lõpeta seadistamine",
-    "errorSaving": "Sinu eelistuste salvestamine ebaõnnestus. Palun proovi uuesti."
+    "errorSaving": "Sinu eelistuste salvestamine ebaõnnestus. Palun proovi uuesti.",
+    "buttons": {
+      "previous": "Eelmine",
+      "next": "Edasi",
+      "skip": "Jäta vahele",
+      "complete": "Täielik",
+      "processing": "Töötlemine...",
+      "gotIt": "Selge!",
+      "skipAll": "Jäta kõik vahele",
+      "cancel": "Tühista"
+    },
+    "progress": {
+      "label": "Sissevõtmise edenemine: {{current}}. samm {{total}}-st",
+      "stepOf": "Samm {{current}}/{{total}}",
+      "step": "Samm",
+      "stepCompleted": "{{step}} – lõpetatud",
+      "stepCurrent": "{{step}} – praegune samm",
+      "stepUpcoming": "{{step}} – tulemas"
+    },
+    "tooltip": {
+      "helpfulTip": "Kasulik näpunäide"
+    },
+    "flow": {
+      "title": "Tere tulemast! Alustame"
+    },
+    "accessibility": {
+      "helpfulTip": "Kasulik näpunäide",
+      "tooltipAppeared": "Tööriistavihje ilmus järgmise sisuga: {{content}}",
+      "skippingStep": "Praeguse sammu vahelejätmine",
+      "movingToNextStep": "Liikumine järgmise sammu juurde",
+      "movingToPreviousStep": "Eelmise sammu juurde liikumine",
+      "completingOnboarding": "Sissetulekuprotsessi lõpuleviimine",
+      "stepChanged": "Nüüd sammul {{step}}/{{total}}: {{title}}",
+      "skippingOnboarding": "Kogu liitumisprotsessi vahelejätmine",
+      "cancellingOnboarding": "Registreerimisprotsessi tühistamine",
+      "errorCompleting": "Viga liitumise lõpetamisel. Palun proovi uuesti.",
+      "goToPreviousStep": "Mine eelmise sammu juurde",
+      "skipThisStep": "Jätke see samm vahele",
+      "completeOnboarding": "Täielik sisseelamine",
+      "continueToNextStep": "Jätkake järgmise sammuga",
+      "closeTooltip": "Sule tööriistavihje",
+      "skipTooltip": "Jäta see näpunäide vahele",
+      "continueFromTooltip": "Jätka tööriistavihjest",
+      "skipEntireOnboarding": "Jäta kogu liitumine vahele",
+      "cancelOnboarding": "Tühista liitumine",
+      "keyboardInstructions": "Kasutage navigeerimiseks tabeldusklahvi, valimiseks sisestusklahvi ja dialoogide sulgemiseks paoklahvi"
+    },
+    "validation": {
+      "firstNameRequired": "Eesnimi on kohustuslik",
+      "lastNameRequired": "Perekonnanimi on kohustuslik",
+      "validAgeRequired": "Sisestage kehtiv vanus vahemikus 18–120",
+      "languageRequired": "Valige vähemalt üks keel",
+      "deviceRequired": "Valige oma peamine seade",
+      "experienceRequired": "Valige oma tehnilise kogemuse tase",
+      "concernsOptional": "Saate valida murekohad, mis aitavad meil teie kogemust isikupärastada",
+      "assistiveNeedsRequired": "Valige oma juurdepääsetavuse vajadused või valige \"Pole vaja\"",
+      "communicationStyleRequired": "Valige eelistatud suhtlusstiil"
+    },
+    "restart": {
+      "confirmMessage": "Kas olete kindel, et soovite liitumisprotsessi uuesti alustada? See lähtestab kõik teie eelistused."
+    }
   },
   "error": {
     "askQuestionFirst": "Palun esita esmalt küsimus",
-    "couldntGetAnswer": "Vabandust, ma ei saanud praegu vastust. Palun proovi uuesti."
+    "couldntGetAnswer": "Vabandust, ma ei saanud praegu vastust. Palun proovi uuesti.",
+    "notifications": {
+      "dismiss": "Loobu"
+    }
   },
   "learningPage": {
     "headerTitle": "Õppekeskus",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "Moodulid rajale: {{pathTitle}}",
     "moduleContentTitle": "Mooduli sisu: {{moduleTitle}} kuvatakse siin.",
     "loadingCenter": "Laen õppekeskust...",
-    "moduleTimeLabel": "Aeg: "
+    "moduleTimeLabel": "Aeg: ",
+    "startOrContinueCourse": "Kursuse alustamine või jätkamine",
+    "lessonsHeader": "Õppetunnid",
+    "lessonContentPlaceholder": "Mängu {{lessonTitle}} jaoks pole veel sisu saadaval.",
+    "noLessonAvailable": "Õppetundi pole saadaval."
   },
   "languageSelector": {
     "choosePrompt": "Vali liidese jaoks eelistatud keel",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Korda",
     "congratulations": "Palju õnne!",
     "courseComplete": "Oled lõpetanud {{courseTitle}} kursuse!",
-    "downloadCertificate": "Laadi alla sertifikaat"
+    "downloadCertificate": "Laadi alla sertifikaat",
+    "previousLesson": "Eelmine õppetund",
+    "nextLesson": "Järgmine õppetund",
+    "markAsComplete": "Märgi lõpetatuks",
+    "completed": "Lõpetatud",
+    "removeBookmark": "Eemalda järjehoidja",
+    "addBookmark": "Lisa järjehoidja"
   },
   "lessonView": {
     "readAloud": "Loe õppetund ette",
@@ -939,5 +1290,461 @@
       "thankYou": "Täname, et usaldasite TechStepile oma teabe. Oleme pühendunud selle turvalisuse tagamisele ja kasutame seda ainult selleks, et aidata teil tehnoloogiaga edukalt toime tulla.",
       "backToHome": "Tagasi avalehele"
     }
+  },
+  "avatar": {
+    "enable": "Lubage AI Avatar",
+    "disable": "Keela Avatar",
+    "loading": "Avatari laadimine...",
+    "mute": "Summuta Avatar",
+    "unmute": "Tühista Avatari vaigistus",
+    "settings": "Avatari seaded",
+    "fullscreen": "Täisekraan",
+    "exitFullscreen": "Välju täisekraanilt",
+    "performance": {
+      "high": "Kõrge kvaliteet",
+      "medium": "Keskmine kvaliteet",
+      "low": "Madal kvaliteet",
+      "off": "Avatar väljas"
+    },
+    "error": {
+      "loadFailed": "Avatari laadimine ebaõnnestus. Palun proovi uuesti.",
+      "noWebGL": "Teie seade ei toeta 3D-graafikat.",
+      "audioFailed": "Huulte sünkroonimiseks ei pääsenud mikrofonile juurde."
+    },
+    "status": {
+      "initializing": "Avatari käivitamine...",
+      "ready": "Valmis aitama",
+      "thinking": "Mõeldes...",
+      "speaking": "Rääkides...",
+      "listening": "Kuulan...",
+      "celebrating": "Aitame põnevusega!",
+      "error": "Midagi läks valesti",
+      "processing": "Heli töötlemine...",
+      "lipSyncActive": "Huulte sünkroonimine aktiivne",
+      "lipSyncInactive": "Huulte sünkroonimine pole aktiivne"
+    },
+    "greeting": {
+      "morning": "Tere hommikust, {{name}}! Kas olete täna valmis midagi uut õppima?",
+      "afternoon": "Tere pärastlõunast, {{name}}! Kuidas saan teid täna aidata?",
+      "evening": "Tere õhtust, {{name}}! Mida tahaksid uurida?"
+    },
+    "companion": {
+      "title": "Teie AI-abiline",
+      "ready": "Olen siin, et aidata teid tehnoloogia vallas!"
+    },
+    "actions": {
+      "chat": "Vestlus",
+      "voice": "Hääl",
+      "camera": "Kaamera",
+      "help": "Abi"
+    },
+    "suggestions": {
+      "title": "Kiired küsimused"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Kuidas ma saan WiFi-ga ühenduse luua?",
+    "makeTextBigger": "Kuidas ma saan ekraanil teksti suuremaks muuta?",
+    "takeScreenshot": "Kuidas teha ekraanipilti?",
+    "videoCall": "Kuidas ma saan videokõnet teha?",
+    "iphoneSettings": "Kuidas iPhone'i seadeid muuta?",
+    "androidSettings": "Kuidas muuta Androidi seadeid?",
+    "windowsSettings": "Kuidas Windowsi sätteid muuta?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Kuidas saan teid täna aidata?",
+      "subtitle": "Küsige minult midagi tehnoloogia kohta!"
+    },
+    "input": {
+      "placeholder": "Sõnum AI assistendile...",
+      "helper": "Saatmiseks vajutage sisestusklahvi, uue rea jaoks tõstuklahvi + sisestusklahvi"
+    },
+    "greeting": {
+      "morning": "Tere hommikust",
+      "afternoon": "Tere pärastlõunast",
+      "evening": "Tere õhtust"
+    },
+    "error": {
+      "general": "Vabandust, mul on praegu probleeme. Proovige hetke pärast uuesti."
+    }
+  },
+  "flashcards": {
+    "title": "Üksikasjalik juhend",
+    "progress": "Samm {{current}}/{{total}}",
+    "instructions": "Juhised:",
+    "markCompleted": "Märgi lõpetatuks"
+  },
+  "dataPortability": {
+    "title": "Andmete teisaldatavus ja kasutajaõigused",
+    "tabs": {
+      "overview": "Ülevaade",
+      "sharing": "Andmete jagamine",
+      "export": "Ekspordi andmed",
+      "delete": "Kustuta andmed",
+      "ai": "AI läbipaistvus"
+    },
+    "overview": {
+      "title": "Teie andmete õigused",
+      "description": "Teil on täielik kontroll oma isikuandmete üle. Saate oma teavet igal ajal 30 päeva jooksul vaadata, eksportida, parandada või kustutada.",
+      "dataWeCollect": "Andmed, mida me kogume",
+      "profileInfo": "Profiili teave (nimi, e-posti aadress, eelistused)",
+      "learningProgress": "Õppimise edusammud ja saavutused",
+      "aiHistory": "AI vestluste ajalugu",
+      "analytics": "Kasutusanalüütika (anonüümseks muudetud)",
+      "howWeUse": "Kuidas me teie andmeid kasutame",
+      "personalized": "Pakkuge isikupärastatud õppimiskogemust",
+      "improveAI": "Parandage tehisintellekti assistendi vastuseid",
+      "trackProgress": "Jälgige oma edusamme ja saavutusi",
+      "security": "Tagada platvormi turvalisus ja jõudlus",
+      "rightsTitle": "Teie õigused GDPRi ja CCPA alusel",
+      "rightAccess": "Juurdepääsuõigus:",
+      "accessDesc": "Vaadake kõiki oma isikuandmeid",
+      "rightPortability": "Teisaldatavuse õigus:",
+      "portabilityDesc": "Eksportige oma andmed",
+      "rightRectification": "Õigus parandusele:",
+      "rectificationDesc": "Parandage ebatäpsed andmed",
+      "rightErasure": "Õigus kustutada:",
+      "erasureDesc": "Kustutage oma isikuandmed"
+    },
+    "sharing": {
+      "title": "Andmete jagamise eelistused",
+      "description": "Kontrollige, kuidas teie andmeid jagatakse ja kasutatakse. Kogu jagamine on valikuline ja seda saab igal ajal muuta.",
+      "dataTypes": "Andmetüübi jagamine",
+      "thirdParty": "Kolmanda osapoole jagamine",
+      "special": "Erikategooriad",
+      "analytics": "Analyticsi jagamine",
+      "analyticsDesc": "Jagage platvormi täiustamiseks anonüümseid kasutusandmeid",
+      "research": "Uuringute jagamine",
+      "researchDesc": "Andke anonüümseks muudetud andmetele vanemõppe uurimistöö"
+    },
+    "export": {
+      "title": "Eksportige oma andmed",
+      "description": "Laadige alla kõigi oma isikuandmete koopia. Valmistame teie andmed ette ja saadame teile allalaadimislingi 30 päeva jooksul.",
+      "chooseFormat": "Valige Ekspordivorming",
+      "included": "Mida sisaldab:",
+      "profile": "Profiili teave ja eelistused",
+      "progress": "Õppimise edusammud ja saavutused",
+      "conversations": "AI vestluste ajalugu",
+      "support": "Toetage piletite ajalugu",
+      "consent": "Nõusoleku ja privaatsusseaded",
+      "request": "Taotle andmete eksporti",
+      "requesting": "Ekspordi taotlemine...",
+      "requests": "Eksporditaotlused",
+      "requested": "Soovitud",
+      "download": "Laadi alla"
+    },
+    "delete": {
+      "title": "Kustutage oma andmed",
+      "description": "Kustutage jäädavalt kõik oma isikuandmed. Seda toimingut ei saa tagasi võtta ja see suleb teie konto 30 päeva jooksul.",
+      "whatDeleted": "Mis kustutatakse:",
+      "profile": "Teie profiil ja kontoteave",
+      "progress": "Kõik õppimise edusammud ja saavutused",
+      "conversations": "AI vestluste ajalugu",
+      "preferences": "Eelistused ja seaded",
+      "analytics": "Teie kontoga lingitud kasutusanalüütika",
+      "important": "Olulised märkused:",
+      "legal": "Mõnda teavet võidakse säilitada seadusliku täitmise tagamiseks (tugipiletid, arveldusdokumendid)",
+      "research": "Uurimiseks kasutatud anonüümseid andmeid võidakse säilitada",
+      "verification": "Enne kustutamist saate e-posti teel kinnituse",
+      "timeframe": "Kustutamine viiakse lõpule 30 päeva jooksul",
+      "request": "Taotle andmete kustutamist",
+      "confirm": "Kas olete kindel, et soovite kõik oma andmed kustutada?",
+      "type": "Selle toimingu kinnitamiseks tippige \"KUJUTA MINU ANDMED\":",
+      "placeholder": "Tippige KUSTUTA MINU ANDMED",
+      "confirmButton": "Kinnitage kustutamine",
+      "processing": "Töötlemine...",
+      "cancel": "Tühista",
+      "requests": "Kustutamistaotlused",
+      "complete": "Täielik andmete kustutamine",
+      "requested": "Soovitud",
+      "scheduled": "Planeeritud",
+      "awaitingVerification": "Ootab kinnitamist"
+    },
+    "ai": {
+      "title": "AI andmete kasutamise läbipaistvus",
+      "description": "Vaadake täpselt, kuidas meie AI-assistent teie andmeid kasutab, ja kontrollige oma tehisintellekti andmete eelistusi.",
+      "stats": "AI andmekasutuse statistika",
+      "conversationsAnalyzed": "Analüüsitud vestlused:",
+      "dataPoints": "Kasutatud andmepunktid:",
+      "trainingContribution": "Koolituspanus:",
+      "lastProcessed": "Viimati töödeldud:",
+      "optOut": "AI loobumisvalikud",
+      "stopTraining": "Lõpetage AI koolitus",
+      "stopTrainingDesc": "Takistage oma andmetel tehisintellekti vastuseid parandamast",
+      "deleteHistory": "Kustutage vestluste ajalugu",
+      "deleteHistoryDesc": "Eemaldage kõik salvestatud AI-vestlused",
+      "anonymize": "Muuda minu andmed anonüümseks",
+      "anonymizeDesc": "Teisendage andmed anonüümseks vormiks"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Valige, kuidas suhelda",
+    "tabs": {
+      "chat": "Vestlus",
+      "voice": "Hääl",
+      "image": "Pilt",
+      "chatAria": "Tekstivestluse sisestus",
+      "voiceAria": "Häälsisend",
+      "imageAria": "Pildi sisend"
+    },
+    "chat": {
+      "placeholder": "Sisestage oma küsimus siia... Saatmiseks vajutage sisestusklahvi",
+      "ariaLabel": "Sisestage oma küsimus",
+      "sendButton": "Saada sõnum",
+      "send": "Saada"
+    },
+    "voice": {
+      "recording": "Salvestamine... Puudutage peatamiseks",
+      "processing": "Teie hääle töötlemine...",
+      "instructions": "Salvestamise alustamiseks puudutage mikrofoni",
+      "startRecording": "Alustage salvestamist",
+      "stopRecording": "Lõpetage salvestamine"
+    },
+    "image": {
+      "takePhoto": "Tehke foto",
+      "camera": "Pildista",
+      "upload": "Laadi pilt üles",
+      "uploadAria": "Valige pildifail",
+      "instructions": "Jaga pilti ja ma aitan seletada, mida näed",
+      "formats": "Toetab JPG, PNG, GIF (max 10 MB)",
+      "previewAlt": "Valitud pildi eelvaade",
+      "remove": "Eemalda pilt",
+      "contextLabel": "Mida sa selle pildi kohta teada tahaksid?",
+      "contextPlaceholder": "Valikuline: esitage pildi kohta konkreetne küsimus",
+      "cancel": "Tühista",
+      "submit": "Saada pilt",
+      "send": "Saada",
+      "invalidType": "Valige sobiv pildifail.",
+      "tooLarge": "Pildifail on liiga suur. Valige fail, mis on väiksem kui 10 MB.",
+      "cameraError": "Kaamerale ei pääsenud juurde. Kontrollige õigusi."
+    }
+  },
+  "ai": {
+    "title": "AI abimees",
+    "subtitle": "Siin, et aidata teil õppida",
+    "emergency": "Hädaabi",
+    "emergencyAria": "Hankige hädaabi",
+    "expand": "Laienda",
+    "minimize": "Minimeeri",
+    "close": "Sulgege AI-assistent",
+    "thinking": "AI mõtleb...",
+    "escalated": "Olete nüüd ühendatud meie tugitiimiga",
+    "callSupport": "Helistage klienditoele: 1-800-SENIOR-HELP",
+    "minimized": "AI abimees",
+    "welcome": {
+      "tutorial": "Tere! Näen, et töötate kallal \"{{tutorial}}\". Olen siin, et aidata teid kõigi küsimuste korral. Võite trükkida, rääkida või mulle pilte näidata – mis iganes teile kõige mugavam tundub!",
+      "general": "Tere! Olen teie tehisintellekti assistent, kes aitab teil samm-sammult tehnoloogiat õppida. Saate mulle küsimusi esitada, kirjutades, rääkides või näidates mulle pilte. Mida sa teada tahaksid?"
+    },
+    "error": {
+      "general": "Vabandust, mul on praegu probleeme. Lubage mul ühendada teid meie tugimeeskonnaga, kes saab teid kohe aidata."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Kogukonna foorum",
+      "subtitle": "Võtke ühendust teiste õppijatega, esitage küsimusi ja jagage oma kogemusi",
+      "backToHome": "Tagasi avalehele",
+      "newPost": "Uus postitus"
+    },
+    "sidebar": {
+      "categories": "Kategooriad",
+      "topics": {
+        "all": "Kõik teemad",
+        "general": "Üldine abi",
+        "mobile": "Mobiilseadmed",
+        "computer": "Arvutid",
+        "apps": "Rakendused ja tarkvara",
+        "internet": "Internet ja e-post",
+        "safety": "Interneti-turvalisus"
+      },
+      "guidelines": {
+        "title": "kogukonna juhised",
+        "items": [
+          "Ole lugupidav ja lahke",
+          "Ei mingit rämpsposti ega sobimatut sisu",
+          "Aidake teisi, kui saate",
+          "Püsi teemas",
+          "Teatage probleemidest"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Otsi postitusi..."
+    },
+    "createPost": {
+      "title": "Loo uus postitus",
+      "categoryLabel": "Kategooria",
+      "titleLabel": "Pealkiri",
+      "contentLabel": "Sisu",
+      "titlePlaceholder": "Mis on teie küsimus või teema?",
+      "contentPlaceholder": "Kirjeldage oma küsimust või jagage oma mõtteid...",
+      "submit": "Postita",
+      "cancel": "Tühista",
+      "profanityAlert": "Teie postitus sisaldab sobimatut sisu. Vaadake üle ja proovige uuesti."
+    },
+    "posts": {
+      "empty": "Ühtegi postitust ei leitud. Olge esimene, kes vestlust alustab!",
+      "replies": "{{count}} vastust",
+      "timeAgo": {
+        "justNow": "Just praegu",
+        "oneHour": "1 tund tagasi",
+        "hours": "{{count}} tundi tagasi",
+        "oneDay": "1 päev tagasi",
+        "days": "{{count}} päeva tagasi"
+      }
+    }
+  },
+  "contact": {
+    "title": "Võtke meiega ühendust",
+    "subtitle": "Soovime sinust kuulda! Saatke meile sõnum ja me vastame esimesel võimalusel.",
+    "backToHome": "Tagasi avalehele",
+    "form": {
+      "fasterResponse": "📧 Ankeedile vastatakse kiiremini kui teistel kontaktimeetoditel!",
+      "name": "Täisnimi *",
+      "namePlaceholder": "Sisestage oma täisnimi",
+      "email": "e-posti aadress*",
+      "emailPlaceholder": "Sisestage oma e-posti aadress",
+      "subject": "Teema *",
+      "subjectPlaceholder": "Valige teema",
+      "subjects": {
+        "general": "Üldine päring",
+        "techSupport": "Tehniline tugi",
+        "account": "Konto abi",
+        "feature": "Funktsiooni taotlus",
+        "bug": "Veaaruanne",
+        "feedback": "Tagasiside",
+        "other": "muud"
+      },
+      "message": "sõnum*",
+      "messagePlaceholder": "Palun kirjeldage oma päringut üksikasjalikult...",
+      "submit": "Saada sõnum",
+      "sending": "Saatmine...",
+      "success": "Teie e-posti klient oleks pidanud avama. Kui ei, siis kopeerige teave ja saatke meile otse e-kiri.",
+      "error": "Tekkis viga. Palun saatke meile otse taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Võtke ühendust",
+      "emailLabel": "Meil",
+      "responseData": "Tavaliselt vastame 24 tunni jooksul"
+    },
+    "reasons": {
+      "title": "Miks meiega ühendust võtta?",
+      "items": [
+        "Hankige tehniliste probleemide korral abi",
+        "Taotlege uusi funktsioone",
+        "Jagage tagasisidet ja soovitusi",
+        "Teatage vigadest või probleemidest",
+        "Üldised päringud"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Kasutustingimused",
+    "backToHome": "Tagasi avalehele",
+    "lastUpdated": "Viimati värskendatud: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Tingimustega nõustumine",
+        "content": "Meie teenusele juurde pääsedes ja seda kasutades nõustute selle lepingu tingimuste ja sätetega ning nõustute nendega."
+      },
+      "license": {
+        "title": "Kasutage litsentsi",
+        "content": "Luba antakse ajutiselt kasutada meie teenust ainult isiklikuks, mitteäriliseks ajutiseks vaatamiseks."
+      },
+      "conduct": {
+        "title": "Kasutaja käitumine",
+        "content": "Nõustute kasutama meie teenust viisil, mis on kooskõlas kõigi kohaldatavate seaduste ja määrustega ning kooskõlas käesolevate tingimustega."
+      },
+      "liability": {
+        "title": "Vastutuse piirang",
+        "content": "Meie ettevõte või selle tarnijad ei vastuta mitte mingil juhul kahjude eest, mis tulenevad meie teenuse kasutamisest või suutmatusest kasutada."
+      },
+      "contact": {
+        "title": "Kontaktandmed",
+        "content": "Kui teil on nende teenusetingimuste kohta küsimusi, võtke meiega ühendust aadressil:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Juurdepääsetavuse avaldus",
+    "subtitle": "Oleme pühendunud sellele, et muuta meie platvorm kõigile kättesaadavaks, olenemata võimetest või tehnoloogiast.",
+    "backToHome": "Tagasi avalehele",
+    "commitment": {
+      "title": "Meie pühendumus",
+      "content": "Usume, et tehnoloogia peaks olema kõigile kättesaadav. Meie platvorm on loodud eakaid silmas pidades ning sisaldab funktsioone, mis muudavad õppimistehnoloogia kõigi võimetega kasutajatele lihtsamaks ja mugavamaks."
+    },
+    "features": {
+      "title": "Juurdepääsetavusfunktsioonid",
+      "visual": {
+        "title": "Visuaalne juurdepääsetavus",
+        "items": [
+          "Suure kontrastsusega värvilahendused",
+          "Suured, loetavad fondid",
+          "Ekraanilugeja ühilduvus",
+          "Klaviatuuri navigeerimise tugi",
+          "Alternatiivne tekst piltidele"
+        ]
+      },
+      "audio": {
+        "title": "Heli juurdepääsetavus",
+        "items": [
+          "Videote subtiitrid",
+          "Helikirjeldused",
+          "Helitugevuse regulaatorid",
+          "Helisignaalide visuaalsed indikaatorid",
+          "Teksti alternatiivid helisisule"
+        ]
+      },
+      "motor": {
+        "title": "Mootori juurdepääsetavus",
+        "items": [
+          "Suured klõpsatavad alad",
+          "Ainult klaviatuuriga navigeerimine",
+          "Reguleeritavad ajapiirangud",
+          "Hääljuhtimise ühilduvus",
+          "Lihtsustatud interaktsioonid"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitiivne juurdepääsetavus",
+        "items": [
+          "Lihtne, selge keel",
+          "Järjepidev navigeerimine",
+          "Vähendatud liikumisvalikud",
+          "Selged juhised",
+          "Vigade ennetamine ja taastamine"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Standardite järgimine",
+      "content": "Meie platvormi eesmärk on järgida Web Content Accessibility Guidelines (WCAG) 2.1 AA-taseme standardeid. Testime oma platvormi regulaarselt abitehnoloogiatega ja viime läbi juurdepääsetavuse auditeid."
+    },
+    "feedback": {
+      "title": "Tagasiside ja tugi",
+      "content": "Töötame pidevalt juurdepääsetavuse parandamiseks. Kui teil on takistusi või teil on parendusettepanekuid, võtke meiega kindlasti ühendust.",
+      "emailLabel": "Meil",
+      "subjectLabel": "Teema",
+      "subjectValue": "Juurdepääsetavuse tagasiside"
+    },
+    "assistive": {
+      "title": "Abistavad tehnoloogiad",
+      "content": "Meie platvorm on loodud töötama tavaliste abitehnoloogiatega, sealhulgas:",
+      "items": [
+        "Ekraanilugerid (JAWS, NVDA, VoiceOver)",
+        "Hääletuvastustarkvara",
+        "Ekraani suurendamise tööriistad",
+        "Alternatiivsed klaviatuurid",
+        "Navigeerimisseadmete vahetamine",
+        "Silmade jälgimise süsteemid"
+      ]
+    },
+    "help": {
+      "title": "Kas vajate abi?",
+      "content": "Kui vajate meie platvormi kasutamisel abi või teil on juurdepääsetavuse kohta küsimusi, oleme valmis teid aitama.",
+      "contact": "Võtke ühendust tugiteenusega"
+    },
+    "lastUpdated": "Viimati värskendatud: {{date}}"
   }
 }

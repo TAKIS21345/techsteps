@@ -10,11 +10,11 @@ interface Post {
   author: string;
   timestamp: Date;
   likes: number;
-  replies: Reply[];
+  replies: PostReply[];
   category: string;
 }
 
-interface Reply {
+interface PostReply {
   id: string;
   content: string;
   author: string;
@@ -37,7 +37,7 @@ const Community: React.FC = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Load posts from localStorage if available
     const savedPosts = localStorage.getItem('communityPosts');
     if (savedPosts) {
@@ -54,13 +54,13 @@ const Community: React.FC = () => {
   }, []);
 
   const categories = [
-    { id: 'all', name: 'All Topics', icon: '📋' },
-    { id: 'general', name: 'General Help', icon: '❓' },
-    { id: 'mobile', name: 'Mobile Devices', icon: '📱' },
-    { id: 'computer', name: 'Computers', icon: '💻' },
-    { id: 'apps', name: 'Apps & Software', icon: '📱' },
-    { id: 'internet', name: 'Internet & Email', icon: '🌐' },
-    { id: 'safety', name: 'Online Safety', icon: '🔒' }
+    { id: 'all', name: t('community.sidebar.topics.all'), icon: '📋' },
+    { id: 'general', name: t('community.sidebar.topics.general'), icon: '❓' },
+    { id: 'mobile', name: t('community.sidebar.topics.mobile'), icon: '📱' },
+    { id: 'computer', name: t('community.sidebar.topics.computer'), icon: '💻' },
+    { id: 'apps', name: t('community.sidebar.topics.apps'), icon: '📱' },
+    { id: 'internet', name: t('community.sidebar.topics.internet'), icon: '🌐' },
+    { id: 'safety', name: t('community.sidebar.topics.safety'), icon: '🔒' }
   ];
 
   // Profanity filter - simple word list
@@ -72,10 +72,13 @@ const Community: React.FC = () => {
 
   const handleNewPost = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Check for profanity
     if (profanityFilter(newPost.title) || profanityFilter(newPost.content)) {
-      alert('Your post contains inappropriate content. Please revise and try again.');
+      if (profanityFilter(newPost.title) || profanityFilter(newPost.content)) {
+        alert(t('community.createPost.profanityAlert'));
+        return;
+      }
       return;
     }
 
@@ -115,7 +118,7 @@ const Community: React.FC = () => {
 
   const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.content.toLowerCase().includes(searchTerm.toLowerCase());
+      post.content.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -123,14 +126,14 @@ const Community: React.FC = () => {
   const formatTimeAgo = (date: Date) => {
     const now = new Date();
     const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
-    
-    if (diffInHours < 1) return 'Just now';
-    if (diffInHours === 1) return '1 hour ago';
-    if (diffInHours < 24) return `${diffInHours} hours ago`;
-    
+
+    if (diffInHours < 1) return t('community.posts.timeAgo.justNow');
+    if (diffInHours === 1) return t('community.posts.timeAgo.oneHour');
+    if (diffInHours < 24) return t('community.posts.timeAgo.hours', { count: diffInHours });
+
     const diffInDays = Math.floor(diffInHours / 24);
-    if (diffInDays === 1) return '1 day ago';
-    return `${diffInDays} days ago`;
+    if (diffInDays === 1) return t('community.posts.timeAgo.oneDay');
+    return t('community.posts.timeAgo.days', { count: diffInDays });
   };
 
   return (
@@ -139,19 +142,19 @@ const Community: React.FC = () => {
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
+              {t('community.header.backToHome')}
             </Link>
             <button
               onClick={() => setShowNewPostForm(true)}
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center"
             >
               <Plus className="w-4 h-4 mr-2" />
-              New Post
+              {t('community.header.newPost')}
             </button>
           </div>
         </div>
@@ -165,9 +168,9 @@ const Community: React.FC = () => {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Users className="w-8 h-8 text-blue-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Community Forum</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('community.header.title')}</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Connect with other learners, ask questions, and share your experiences
+              {t('community.header.subtitle')}
             </p>
           </div>
 
@@ -175,17 +178,16 @@ const Community: React.FC = () => {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Categories</h3>
+                <h3 className="font-semibold text-gray-900 mb-4">{t('community.sidebar.categories')}</h3>
                 <div className="space-y-2">
                   {categories.map(category => (
                     <button
                       key={category.id}
                       onClick={() => setSelectedCategory(category.id)}
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center ${
-                        selectedCategory === category.id
-                          ? 'bg-blue-100 text-blue-800'
-                          : 'hover:bg-gray-100 text-gray-700'
-                      }`}
+                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center ${selectedCategory === category.id
+                        ? 'bg-blue-100 text-blue-800'
+                        : 'hover:bg-gray-100 text-gray-700'
+                        }`}
                     >
                       <span className="mr-2">{category.icon}</span>
                       {category.name}
@@ -195,13 +197,11 @@ const Community: React.FC = () => {
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-6 border border-green-200">
-                <h3 className="font-semibold text-green-900 mb-2">Community Guidelines</h3>
+                <h3 className="font-semibold text-green-900 mb-2">{t('community.sidebar.guidelines.title')}</h3>
                 <ul className="text-sm text-green-800 space-y-1">
-                  <li>• Be respectful and kind</li>
-                  <li>• No spam or inappropriate content</li>
-                  <li>• Help others when you can</li>
-                  <li>• Stay on topic</li>
-                  <li>• Report any issues</li>
+                  {(t('community.sidebar.guidelines.items', { returnObjects: true }) as string[]).map((item, idx) => (
+                    <li key={idx}>• {item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -213,8 +213,9 @@ const Community: React.FC = () => {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <input
+
                     type="text"
-                    placeholder="Search posts..."
+                    placeholder={t('community.search.placeholder')}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -225,10 +226,10 @@ const Community: React.FC = () => {
               {/* New Post Form */}
               {showNewPostForm && (
                 <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Create New Post</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('community.createPost.title')}</h3>
                   <form onSubmit={handleNewPost} className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">{t('community.createPost.categoryLabel')}</label>
                       <select
                         value={newPost.category}
                         onChange={(e) => setNewPost({ ...newPost, category: e.target.value })}
@@ -240,25 +241,25 @@ const Community: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">{t('community.createPost.titleLabel')}</label>
                       <input
                         type="text"
                         required
                         value={newPost.title}
                         onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="What's your question or topic?"
+                        placeholder={t('community.createPost.titlePlaceholder')}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">{t('community.createPost.contentLabel')}</label>
                       <textarea
                         required
                         rows={4}
                         value={newPost.content}
                         onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Describe your question or share your thoughts..."
+                        placeholder={t('community.createPost.contentPlaceholder')}
                       />
                     </div>
                     <div className="flex space-x-3">
@@ -266,14 +267,14 @@ const Community: React.FC = () => {
                         type="submit"
                         className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                       >
-                        Post
+                        {t('community.createPost.submit')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setShowNewPostForm(false)}
                         className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors"
                       >
-                        Cancel
+                        {t('community.createPost.cancel')}
                       </button>
                     </div>
                   </form>
@@ -285,7 +286,7 @@ const Community: React.FC = () => {
                 {filteredPosts.length === 0 ? (
                   <div className="bg-white rounded-lg shadow-sm p-8 text-center">
                     <MessageSquare className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">No posts found. Be the first to start a conversation!</p>
+                    <p className="text-gray-600">{t('community.posts.empty')}</p>
                   </div>
                 ) : (
                   filteredPosts.map(post => (
@@ -308,9 +309,9 @@ const Community: React.FC = () => {
                           <Flag className="w-4 h-4" />
                         </button>
                       </div>
-                      
+
                       <p className="text-gray-700 mb-4">{post.content}</p>
-                      
+
                       <div className="flex items-center justify-between border-t pt-4">
                         <button
                           onClick={() => handleLike(post.id)}
@@ -321,7 +322,7 @@ const Community: React.FC = () => {
                         </button>
                         <div className="flex items-center text-gray-500">
                           <Reply className="w-4 h-4 mr-1" />
-                          <span>{post.replies.length} replies</span>
+                          <span>{t('community.posts.replies', { count: post.replies.length })}</span>
                         </div>
                       </div>
 

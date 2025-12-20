@@ -35,34 +35,32 @@ interface ChatMemory {
 }
 
 interface UserData {
+  // Essential user information
   firstName: string;
   lastName: string;
   age: number;
-  os: string;
+  primaryDevices: string[]; // Changed from 'os' to support multiple devices
   techExperience: 'beginner' | 'some' | 'comfortable';
-  primaryConcerns: string[];
-  assistiveNeeds: string[];
-  communicationStyle: 'simple' | 'detailed' | 'visual';
-  selectedLanguages?: string[];
+
+  // Core preferences that impact the website
+  preferences: {
+    autoTextToSpeech: boolean; // Auto TTS after each AI message
+    textSize: 'small' | 'normal' | 'large' | 'extra-large';
+    theme: 'light' | 'dark' | 'high-contrast';
+    language: string; // Primary language preference
+    seniorMode?: boolean; // Toggle for senior-friendly UI adjustments
+  };
+
+  // System fields
+  onboardingCompleted?: boolean;
   stats?: UserStats;
   chatMemory?: ChatMemory[];
-  learningProgress?: UserProgress[]; // Old V1 progress
-  skillLevel?: 'Beginner' | 'Intermediate' | 'Advanced'; // Potentially superseded by new assessment
-  // New V2 Learning Center fields
+  learningProgress?: UserProgress[];
+  skillLevel?: 'Beginner' | 'Intermediate' | 'Advanced';
   skillAssessmentResult?: SkillAssessmentResult;
   recommendedStartingPathId?: string;
-  userLearningProgress?: NewUserLearningProgress; // V2 progress
-  earnedBadges?: string[]; // Array of badge IDs
-  onboardingCompleted?: boolean; // Added for robust onboarding check
-  preferences?: {
-    theme: 'light' | 'dark';
-    textToSpeech: boolean;
-    voiceInput: boolean;
-    fontSize: 'normal' | 'large' | 'extra-large';
-    highContrast: boolean;
-    videoRecommendations: boolean;
-    speechLanguages?: string[];
-  };
+  userLearningProgress?: NewUserLearningProgress;
+  earnedBadges?: string[];
   createdAt?: Date;
 }
 
@@ -111,20 +109,15 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Centralized function to apply preferences to DOM
   function applyPreferencesToDOM(preferences?: UserData['preferences']) {
     if (!preferences) return;
-    const body = document.body;
-    // Theme
-    body.classList.remove('theme-light', 'theme-dark');
-    if (preferences.theme === 'dark') body.classList.add('theme-dark');
-    else body.classList.add('theme-light');
-    // Font size
-    body.classList.remove('font-normal', 'font-large', 'font-extralarge');
-    if (preferences.fontSize === 'large') body.classList.add('font-large');
-    else if (preferences.fontSize === 'extra-large') body.classList.add('font-extralarge');
-    else body.classList.add('font-normal');
-    // High contrast
-    if (preferences.highContrast) body.classList.add('high-contrast');
-    else body.classList.remove('high-contrast');
-    // Add more settings as needed
+    const root = document.documentElement;
+
+    // Apply theme to root element
+    root.classList.remove('light', 'dark', 'high-contrast');
+    root.classList.add(preferences.theme);
+
+    // Apply text size to root element
+    const textSize = preferences.textSize;
+    root.style.fontSize = textSize === 'large' ? '18px' : textSize === 'extra-large' ? '20px' : '16px';
   }
 
   useEffect(() => {
@@ -240,7 +233,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const markQuestionCompleted = async (question: string) => {
     if (!user || !userData?.stats) return;
 
-    const updatedHistory = userData.stats.questionHistory.map(q => 
+    const updatedHistory = userData.stats.questionHistory.map(q =>
       q.question === question ? { ...q, completed: true, stepsCompleted: q.totalSteps } : q
     );
 
@@ -252,7 +245,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
       stepsCompleted: userData.stats.stepsCompleted + stepsToAdd
     });
   };
-  
+
   const hasCompletedOnboarding = !!userData?.onboardingCompleted;
 
   const markModuleAsComplete = async (moduleId: string, pathId: string, allLearningPaths: NewLearningPath[]) => {

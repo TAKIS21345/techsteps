@@ -2,8 +2,8 @@
 // Displays error notifications in a senior-friendly way
 
 import React, { useEffect, useState } from 'react';
-import { globalErrorHandler, ErrorNotification } from '../../utils/globalErrorHandler';
-import { UserFriendlyErrorDisplay } from './UserFriendlyError';
+import { globalErrorHandler, ErrorNotification } from '../../utils/errors/globalErrorHandler';
+// import { UserFriendlyErrorDisplay } from './UserFriendlyError';
 import { Card } from '../design-system/Card';
 import { Button } from '../design-system/Button';
 import { Icon } from '../design-system/Icon';
@@ -72,7 +72,7 @@ export const ErrorNotificationSystem: React.FC<ErrorNotificationSystemProps> = (
   }
 
   return (
-    <div 
+    <div
       className={`fixed z-50 ${getPositionClasses()} max-w-xs w-full space-y-2 ${className}`}
       role="alert"
       aria-live="polite"
@@ -151,25 +151,25 @@ const ErrorNotificationCard: React.FC<ErrorNotificationCardProps> = ({
   };
 
   return (
-    <Card 
-      variant="outlined" 
-      padding="sm" 
+    <Card
+      variant="outlined"
+      padding="sm"
       className={`${getSeverityColor()} border-l-2 shadow-sm`}
     >
       <div className="flex items-start space-x-2">
-        <Icon 
-          name={error.icon as any} 
-          size="sm" 
+        <Icon
+          name={error.icon as any}
+          size="sm"
           color={getSeverityIconColor() as any}
           className="shrink-0 mt-0.5"
         />
-        
+
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between mb-1">
             <Typography variant="body-sm" className="font-medium pr-2 text-xs">
               {error.title}
             </Typography>
-            
+
             <div className="flex items-center space-x-1 shrink-0">
               <Button
                 variant="ghost"

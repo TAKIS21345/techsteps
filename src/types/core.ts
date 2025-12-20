@@ -65,6 +65,7 @@ export interface UIPreferences {
   reducedMotion: boolean;
   keyboardNavigation: boolean;
   screenReaderOptimized: boolean;
+  seniorMode: boolean;
 }
 
 // Accessibility Types

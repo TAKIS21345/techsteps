@@ -14,7 +14,7 @@ export interface GeminiConfig {
 
 export const DEFAULT_GEMINI_CONFIG: GeminiConfig = {
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-  model: 'gemini-1.5-flash',
+  model: 'gemini-2.0-flash-exp',
   maxTokens: 1000,
   temperature: 0.7,
   topK: 40,

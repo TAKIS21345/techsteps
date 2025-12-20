@@ -41,15 +41,15 @@ const ContactUs: React.FC = () => {
         `Subject: ${formData.subject}\n\n` +
         `Message:\n${formData.message}`
       );
-      
+
       const mailtoLink = `mailto:taksh.nahata37@gmail.com?subject=${subject}&body=${body}`;
-      
+
       // Open email client
       window.location.href = mailtoLink;
-      
+
       // Show success message
       setSubmitStatus('success');
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -70,12 +70,12 @@ const ContactUs: React.FC = () => {
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-4">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t('contact.backToHome')}
           </Link>
         </div>
       </div>
@@ -87,9 +87,9 @@ const ContactUs: React.FC = () => {
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-8 h-8 text-blue-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('contact.title')}</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We'd love to hear from you! Send us a message and we'll respond as soon as possible.
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -98,14 +98,14 @@ const ContactUs: React.FC = () => {
             <div className="bg-white rounded-lg shadow-sm p-8">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                 <p className="text-blue-800 font-medium text-center">
-                  📧 This form will be answered faster than other contact methods!
+                  {t('contact.form.fasterResponse')}
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type="text"
@@ -115,13 +115,13 @@ const ContactUs: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                    placeholder="Enter your full name"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="email"
@@ -131,13 +131,13 @@ const ContactUs: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                    placeholder="Enter your email address"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
+                    {t('contact.form.subject')}
                   </label>
                   <select
                     id="subject"
@@ -147,20 +147,20 @@ const ContactUs: React.FC = () => {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Account Help">Account Help</option>
-                    <option value="Feature Request">Feature Request</option>
-                    <option value="Bug Report">Bug Report</option>
-                    <option value="Feedback">Feedback</option>
-                    <option value="Other">Other</option>
+                    <option value="">{t('contact.form.subjectPlaceholder')}</option>
+                    <option value="General Inquiry">{t('contact.form.subjects.general')}</option>
+                    <option value="Technical Support">{t('contact.form.subjects.techSupport')}</option>
+                    <option value="Account Help">{t('contact.form.subjects.account')}</option>
+                    <option value="Feature Request">{t('contact.form.subjects.feature')}</option>
+                    <option value="Bug Report">{t('contact.form.subjects.bug')}</option>
+                    <option value="Feedback">{t('contact.form.subjects.feedback')}</option>
+                    <option value="Other">{t('contact.form.subjects.other')}</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id="message"
@@ -170,21 +170,21 @@ const ContactUs: React.FC = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-vertical"
-                    placeholder="Please describe your inquiry in detail..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                   />
                 </div>
 
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                    <p className="text-green-800">Your email client should have opened. If not, please copy the information and email us directly.</p>
+                    <p className="text-green-800">{t('contact.form.success')}</p>
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center">
                     <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
-                    <p className="text-red-800">There was an error. Please email us directly at taksh.nahata37@gmail.com</p>
+                    <p className="text-red-800">{t('contact.form.error')}</p>
                   </div>
                 )}
 
@@ -196,12 +196,12 @@ const ContactUs: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
+                      {t('contact.form.sending')}
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      {t('contact.form.submit')}
                     </>
                   )}
                 </button>
@@ -211,45 +211,31 @@ const ContactUs: React.FC = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="bg-white rounded-lg shadow-sm p-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
-                
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">{t('contact.info.title')}</h2>
+
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                       <Mail className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900 mb-1">Email</h3>
+                      <h3 className="font-medium text-gray-900 mb-1">{t('contact.info.emailLabel')}</h3>
                       <p className="text-gray-600">taksh.nahata37@gmail.com</p>
-                      <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
+                      <p className="text-sm text-gray-500 mt-1">{t('contact.info.responseData')}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8 border border-blue-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Contact Us?</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('contact.reasons.title')}</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Get help with technical issues</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Request new features</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Share feedback and suggestions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Report bugs or issues</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>General inquiries</span>
-                  </li>
+                  {(t('contact.reasons.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

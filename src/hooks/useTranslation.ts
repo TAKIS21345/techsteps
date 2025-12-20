@@ -4,7 +4,7 @@ import { SUPPORTED_LANGUAGES, isRTL, getLanguageDirection } from '../i18n';
 import { translationValidationService } from '../services/translationValidation';
 
 export interface ExtendedTranslationHook {
-  t: (key: string, defaultValue?: string, options?: any) => string;
+  t: (key: string, defaultValueOrOptions?: string | object, options?: any) => any;
   i18n: any;
   ready: boolean;
   currentLanguage: string;
@@ -13,7 +13,7 @@ export interface ExtendedTranslationHook {
   languageInfo: typeof SUPPORTED_LANGUAGES[keyof typeof SUPPORTED_LANGUAGES] | undefined;
   changeLanguage: (language: string) => Promise<void>;
   reportTranslationIssue: (key: string, issue: string) => void;
-  getSafeTranslation: (key: string, fallback: string, options?: any) => string;
+  getSafeTranslation: (key: string, fallback: string, options?: any) => any;
 }
 
 /**
@@ -28,10 +28,10 @@ export const useTranslation = (namespace?: string): ExtendedTranslationHook => {
   const direction = getLanguageDirection(currentLanguage);
 
   // Enhanced translation function with fallback and validation
-  const getSafeTranslation = (key: string, fallback: string, options?: any): string => {
+  const getSafeTranslation = (key: string, fallback: string, options?: any): any => {
     try {
       const translation = originalT(key, fallback, options);
-      
+
       // Check if translation is missing or empty
       if (!translation || translation === key) {
         // Report missing translation
@@ -52,8 +52,18 @@ export const useTranslation = (namespace?: string): ExtendedTranslationHook => {
   };
 
   // Wrapper for the original t function with validation
-  const t = (key: string, defaultValue?: string, options?: any): string => {
-    return getSafeTranslation(key, defaultValue || key, options);
+  const t = (key: string, defaultValueOrOptions?: string | object, options?: any): any => {
+    let defaultValue: string | undefined;
+    let actualOptions = options;
+
+    if (typeof defaultValueOrOptions === 'object') {
+      actualOptions = defaultValueOrOptions;
+      defaultValue = undefined;
+    } else {
+      defaultValue = defaultValueOrOptions as string;
+    }
+
+    return getSafeTranslation(key, defaultValue || key, actualOptions);
   };
 
   // Enhanced language change function
@@ -61,12 +71,12 @@ export const useTranslation = (namespace?: string): ExtendedTranslationHook => {
     try {
       await i18n.changeLanguage(language);
       setCurrentLanguage(language);
-      
+
       // Update document attributes
       const newDirection = getLanguageDirection(language);
       document.documentElement.dir = newDirection;
       document.documentElement.lang = language;
-      
+
       // Update page title if it exists
       const titleElement = document.querySelector('title');
       if (titleElement) {
@@ -153,9 +163,9 @@ export const useRTLStyles = () => {
   // Transform helpers for RTL
   const getTransform = (transform: string) => {
     if (!isRTL) return transform;
-    
+
     // Flip translateX values
-    return transform.replace(/translateX\(([^)]+)\)/g, (match, value) => {
+    return transform.replace(/translateX\(([^)]+)\)/g, (_match, value) => {
       if (value.includes('-')) {
         return `translateX(${value.replace('-', '')})`;
       } else {

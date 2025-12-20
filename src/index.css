@@ -8,21 +8,117 @@
 /* Senior-friendly base styles */
 @layer base {
   html {
-    font-size: 18px; /* Minimum font size for seniors */
+    /* Default browser font size (usually 16px) */
+    /* font-size: 18px; REMOVED: Now controlled by SettingsPage via inline styles */
   }
-  
+
+  /* Senior Mode Overrides */
+  :root.senior-mode body {
+    line-height: 1.8;
+    /* Even looser for seniors */
+  }
+
+  :root:not(.senior-mode) body {
+    line-height: 1.6;
+    /* Standard modern line height */
+  }
+
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
+    /* Increased for better readability */
     color: theme('colors.neutral.900');
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  
-  /* Ensure minimum touch targets */
-  button, [role="button"], input, select, textarea {
+
+  /* Theme System */
+  :root.light {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+  }
+
+  :root.dark {
+    --bg-primary: #1f2937;
+    --bg-secondary: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-color: #4b5563;
+  }
+
+  :root.high-contrast {
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffff00;
+    --text-secondary: #ffffff;
+    --border-color: #ffff00;
+  }
+
+  /* Apply theme colors */
+  .light body,
+  .dark body,
+  .high-contrast body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .light .bg-white,
+  .dark .bg-white,
+  .high-contrast .bg-white {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .light .bg-gray-50,
+  .dark .bg-gray-50,
+  .high-contrast .bg-gray-50 {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .light .text-gray-900,
+  .dark .text-gray-900,
+  .high-contrast .text-gray-900 {
+    color: var(--text-primary) !important;
+  }
+
+  .light .text-gray-600,
+  .light .text-gray-700,
+  .dark .text-gray-600,
+  .dark .text-gray-700,
+  .high-contrast .text-gray-600,
+  .high-contrast .text-gray-700 {
+    color: var(--text-secondary) !important;
+  }
+
+  .light .border-gray-200,
+  .dark .border-gray-200,
+  .high-contrast .border-gray-200 {
+    border-color: var(--border-color) !important;
+  }
+
+  /* Ensure minimum touch targets - Good practice for everyone, but critical for seniors */
+  :root.senior-mode button,
+  :root.senior-mode [role="button"],
+  :root.senior-mode input,
+  :root.senior-mode select,
+  :root.senior-mode textarea {
+    min-height: 48px;
+    /* Enhanced from 44px */
+    min-width: 48px;
+  }
+
+  /* Standard accessible targets for everyone else */
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     :root {
@@ -30,10 +126,13 @@
       --tw-prose-headings: theme('colors.neutral.900');
     }
   }
-  
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -46,15 +145,35 @@
   .focus-senior {
     @apply focus:outline-none focus:ring-3 focus:ring-primary-500 focus:ring-offset-3 focus:ring-offset-white;
   }
-  
+
   .touch-target {
     @apply min-h-touch min-w-touch;
   }
-  
+
   .button-target {
     @apply min-h-button min-w-button;
   }
-  
+
+  /* Glassmorphism Utilities */
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-2xl border border-white/50 shadow-xl shadow-indigo-100/40;
+  }
+
+  .glass-button {
+    @apply bg-white/30 hover:bg-white/50 backdrop-blur-md border border-white/40 transition-all duration-300 active:scale-95;
+  }
+
+  .glass-input {
+    @apply bg-white/50 focus:bg-white/80 backdrop-blur-md border border-white/40 transition-all duration-300 focus:ring-2 focus:ring-indigo-400/50 shadow-inner;
+  }
+
+  /* Text Rendering Optimization */
+  .text-optimize-legibility {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   /* Animated underline and text glow for hero title */
   .animate-underline-expand {
     animation: underlineContinuous 4s ease-in-out infinite;
@@ -63,13 +182,13 @@
     width: 100%;
     animation-fill-mode: both;
   }
-  
+
   .glow-text {
     position: relative;
     animation: textGlow 4s ease-in-out infinite;
     animation-fill-mode: both;
   }
-  
+
   .glow-text::before {
     content: '';
     position: absolute;
@@ -77,101 +196,108 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      transparent 30%, 
-      rgba(59, 130, 246, 0.3) 45%, 
-      rgba(139, 92, 246, 0.4) 50%, 
-      rgba(59, 130, 246, 0.3) 55%, 
-      transparent 70%, 
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        transparent 30%,
+        rgba(59, 130, 246, 0.3) 45%,
+        rgba(139, 92, 246, 0.4) 50%,
+        rgba(59, 130, 246, 0.3) 55%,
+        transparent 70%,
+        transparent 100%);
     background-size: 200% 100%;
     animation: glowSlide 4s ease-in-out infinite;
     pointer-events: none;
     mix-blend-mode: screen;
   }
-  
+
   @keyframes underlineContinuous {
     0% {
       background-position: 200% 0;
       opacity: 0.7;
     }
+
     50% {
       background-position: 0% 0;
       opacity: 1;
     }
+
     100% {
       background-position: -100% 0;
       opacity: 0.7;
     }
   }
-  
+
   @keyframes textGlow {
     0% {
       filter: brightness(1);
       text-shadow: none;
     }
+
     50% {
       filter: brightness(1.2);
       text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
     }
+
     100% {
       filter: brightness(1);
       text-shadow: none;
     }
   }
-  
+
   @keyframes glowSlide {
     0% {
       background-position: 200% 0;
       opacity: 0;
     }
+
     50% {
       background-position: 0% 0;
       opacity: 1;
     }
+
     100% {
       background-position: -100% 0;
       opacity: 0;
     }
   }
-  
+
   /* Hero button outline animation */
   .hero-outline-anim {
     position: relative;
   }
-  
+
   .hero-outline-path {
     animation: heroOutlineTravel 2.5s ease-in-out infinite;
   }
-  
+
   @keyframes heroOutlineTravel {
     0% {
       stroke-dashoffset: 0;
     }
+
     100% {
       stroke-dashoffset: -220;
     }
   }
-  
+
   /* Scroll-triggered animations */
   .animate-fade-in-up {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   /* Reduced motion support for underline */
   @media (prefers-reduced-motion: reduce) {
     .animate-underline-expand {
@@ -180,37 +306,37 @@
       background-position: 0% 0;
       opacity: 1;
     }
-    
+
     .glow-text {
       animation: none;
       filter: brightness(1);
       text-shadow: none;
     }
   }
-  
+
   /* Low-end device optimizations */
   .low-end-device * {
     will-change: auto !important;
   }
-  
+
   .low-end-device .shadow-senior,
   .low-end-device .shadow-senior-md,
   .low-end-device .shadow-senior-lg,
   .low-end-device .shadow-senior-xl {
     box-shadow: none !important;
   }
-  
+
   .low-end-device .transition-all {
     transition: none !important;
   }
-  
+
   .low-end-device .animate-underline-expand {
     animation: none !important;
     width: 100% !important;
     background-position: 0% 0 !important;
     opacity: 1 !important;
   }
-  
+
   .low-end-device .glow-text {
     animation: none !important;
     filter: brightness(1) !important;

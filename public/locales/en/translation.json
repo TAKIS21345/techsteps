@@ -103,6 +103,9 @@
         "24/7 Availability"
       ],
       "supportTitle": "Support",
+      "communityTitle": "Community",
+      "legalTitle": "Legal & Support",
+      "contactEmail": "Contact: Email: taksh.nahata37@gmail.com",
       "supportItems": [
         "Help Center",
         "Getting Started",
@@ -203,7 +206,10 @@
       "title": "Computer & Device Fundamentals",
       "description": "The very basics to get you started with technology.",
       "modules": {
-        "turnOnDevice": { "title": "Turning on a Device", "description": "Learn to power up computers and smartphones." },
+        "turnOnDevice": {
+          "title": "Turning on a Device",
+          "description": "Learn to power up computers and smartphones."
+        },
         "mouseTouchscreen": {
           "title": "Using a Mouse/Touchscreen",
           "description": "Master pointing, clicking, and tapping.",
@@ -217,68 +223,152 @@
           "practiceExercise": "Try clicking, double-clicking, and right-clicking on your desktop. On a touchscreen, tap and swipe to move between screens.",
           "animationDesc": "Watch how to click, double-click, and swipe on a touchscreen."
         },
-        "keyboardTyping": { "title": "Keyboard/Typing Basics", "description": "Get comfortable with typing essentials." },
-        "filesFolders": { "title": "Understanding Files & Folders", "description": "Learn how digital information is organized." }
+        "keyboardTyping": {
+          "title": "Keyboard/Typing Basics",
+          "description": "Get comfortable with typing essentials."
+        },
+        "filesFolders": {
+          "title": "Understanding Files & Folders",
+          "description": "Learn how digital information is organized."
+        }
       }
     },
     "onlineWorld": {
       "title": "The Online World",
       "description": "Getting connected and exploring the internet safely.",
       "modules": {
-        "webBrowsers": { "title": "Understanding Web Browsers", "description": "Navigate the internet with Chrome, Edge, or Safari." },
-        "searchEffectively": { "title": "How to Search Effectively", "description": "Find what you need online using search engines." },
-        "introEmail": { "title": "Introduction to Email", "description": "Learn to send and receive electronic mail." },
-        "virusSafety": { "title": "Staying Safe from Viruses", "description": "Protect your device from harmful software." }
+        "webBrowsers": {
+          "title": "Understanding Web Browsers",
+          "description": "Navigate the internet with Chrome, Edge, or Safari."
+        },
+        "searchEffectively": {
+          "title": "How to Search Effectively",
+          "description": "Find what you need online using search engines."
+        },
+        "introEmail": {
+          "title": "Introduction to Email",
+          "description": "Learn to send and receive electronic mail."
+        },
+        "virusSafety": {
+          "title": "Staying Safe from Viruses",
+          "description": "Protect your device from harmful software."
+        }
       }
     },
     "digitalLife": {
       "title": "Everyday Digital Life",
       "description": "Communicate, share, and manage your digital presence.",
       "modules": {
-        "masteringEmail": { "title": "Mastering Email", "description": "Attachments, folders, and email etiquette." },
-        "videoCalling": { "title": "Video Calling Family & Friends", "description": "Connect face-to-face with loved ones." },
-        "introSocialMedia": { "title": "Introduction to Social Media", "description": "Understanding platforms like Facebook." },
-        "sharingPhotos": { "title": "Sharing Photos Safely", "description": "Share your memories without compromising privacy." }
+        "masteringEmail": {
+          "title": "Mastering Email",
+          "description": "Attachments, folders, and email etiquette."
+        },
+        "videoCalling": {
+          "title": "Video Calling Family & Friends",
+          "description": "Connect face-to-face with loved ones."
+        },
+        "introSocialMedia": {
+          "title": "Introduction to Social Media",
+          "description": "Understanding platforms like Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Sharing Photos Safely",
+          "description": "Share your memories without compromising privacy."
+        }
       }
     },
     "advancedSkills": {
       "title": "Advanced & Creative Skills",
       "description": "Beyond the basics: explore more of what technology offers.",
       "modules": {
-        "onlineShopping": { "title": "Introduction to Online Shopping", "description": "Shop safely and conveniently online." },
-        "onlineMaps": { "title": "Using Online Maps & Navigation", "description": "Find your way with digital maps." },
-        "photoEditing": { "title": "Basic Photo Editing", "description": "Enhance your digital photos." },
-        "productivityTools": { "title": "Intro to Productivity Tools", "description": "Using tools like Google Docs or Microsoft Word basics." }
+        "onlineShopping": {
+          "title": "Introduction to Online Shopping",
+          "description": "Shop safely and conveniently online."
+        },
+        "onlineMaps": {
+          "title": "Using Online Maps & Navigation",
+          "description": "Find your way with digital maps."
+        },
+        "photoEditing": {
+          "title": "Basic Photo Editing",
+          "description": "Enhance your digital photos."
+        },
+        "productivityTools": {
+          "title": "Intro to Productivity Tools",
+          "description": "Using tools like Google Docs or Microsoft Word basics."
+        }
       }
     },
     "accessibility": {
       "title": "Accessibility & Ease of Use",
       "description": "Make your device easier to see, hear, and control.",
       "modules": {
-        "screenMagnifier": { "title": "Using a Screen Magnifier", "description": "Make text and images bigger on your screen." },
-        "voiceCommands": { "title": "Voice Commands & Dictation", "description": "Control your device and type with your voice." },
-        "highContrast": { "title": "High Contrast & Color Settings", "description": "Adjust colors for better visibility." },
-        "assistiveTouch": { "title": "Assistive Touch & Shortcuts", "description": "Use on-screen tools for easier navigation." }
+        "screenMagnifier": {
+          "title": "Using a Screen Magnifier",
+          "description": "Make text and images bigger on your screen."
+        },
+        "voiceCommands": {
+          "title": "Voice Commands & Dictation",
+          "description": "Control your device and type with your voice."
+        },
+        "highContrast": {
+          "title": "High Contrast & Color Settings",
+          "description": "Adjust colors for better visibility."
+        },
+        "assistiveTouch": {
+          "title": "Assistive Touch & Shortcuts",
+          "description": "Use on-screen tools for easier navigation."
+        }
       }
     },
     "healthAndSafety": {
       "title": "Health, Safety & Privacy",
       "description": "Stay safe, healthy, and private while using technology.",
       "modules": {
-        "privacySettings": { "title": "Privacy Settings", "description": "Protect your personal information online." },
-        "scamAwareness": { "title": "Scam Awareness", "description": "Spot and avoid common online scams." },
-        "healthApps": { "title": "Using Health Apps", "description": "Track your health and wellness with apps." },
-        "emergencyContacts": { "title": "Setting Up Emergency Contacts", "description": "Add emergency contacts to your device." }
+        "privacySettings": {
+          "title": "Privacy Settings",
+          "description": "Protect your personal information online."
+        },
+        "scamAwareness": {
+          "title": "Scam Awareness",
+          "description": "Spot and avoid common online scams."
+        },
+        "healthApps": {
+          "title": "Using Health Apps",
+          "description": "Track your health and wellness with apps."
+        },
+        "emergencyContacts": {
+          "title": "Setting Up Emergency Contacts",
+          "description": "Add emergency contacts to your device."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Tech Starter", "description": "Completed Computer & Device Fundamentals." },
-    "onlineWorld": { "name": "Online Explorer", "description": "Completed The Online World path." },
-    "digitalLife": { "name": "Digital Communicator", "description": "Completed Everyday Digital Life path." },
-    "advancedSkills": { "name": "Tech Virtuoso", "description": "Completed Advanced & Creative Skills path." },
-    "accessibility": { "name": "Accessibility Champion", "description": "Completed Accessibility & Ease of Use path." },
-    "healthAndSafety": { "name": "Safety Guardian", "description": "Completed Health, Safety & Privacy path." }
+    "fundamentals": {
+      "name": "Tech Starter",
+      "description": "Completed Computer & Device Fundamentals."
+    },
+    "onlineWorld": {
+      "name": "Online Explorer",
+      "description": "Completed The Online World path."
+    },
+    "digitalLife": {
+      "name": "Digital Communicator",
+      "description": "Completed Everyday Digital Life path."
+    },
+    "advancedSkills": {
+      "name": "Tech Virtuoso",
+      "description": "Completed Advanced & Creative Skills path."
+    },
+    "accessibility": {
+      "name": "Accessibility Champion",
+      "description": "Completed Accessibility & Ease of Use path."
+    },
+    "healthAndSafety": {
+      "name": "Safety Guardian",
+      "description": "Completed Health, Safety & Privacy path."
+    }
   },
   "skillAssessmentModal": {
     "title": "Quick Skill Check",
@@ -531,7 +621,6 @@
     "settings": "Avatar Settings",
     "fullscreen": "Fullscreen",
     "exitFullscreen": "Exit Fullscreen",
-    "performance": "Performance Mode",
     "performance": {
       "high": "High Quality",
       "medium": "Medium Quality",
@@ -545,25 +634,118 @@
     },
     "status": {
       "initializing": "Starting up avatar...",
-      "ready": "Avatar ready",
+      "ready": "Ready to help",
+      "thinking": "Thinking...",
+      "speaking": "Speaking...",
+      "listening": "Listening...",
+      "celebrating": "Excited to help!",
+      "error": "Something went wrong",
       "processing": "Processing audio...",
       "lipSyncActive": "Lip sync active",
       "lipSyncInactive": "Lip sync inactive"
+    },
+    "greeting": {
+      "morning": "Good morning, {{name}}! Ready to learn something new today?",
+      "afternoon": "Good afternoon, {{name}}! How can I help you today?",
+      "evening": "Good evening, {{name}}! What would you like to explore?"
+    },
+    "companion": {
+      "title": "Your AI Helper",
+      "ready": "I'm here to help you with technology!"
+    },
+    "actions": {
+      "chat": "Chat",
+      "voice": "Voice",
+      "camera": "Camera",
+      "help": "Help"
+    },
+    "suggestions": {
+      "title": "Quick Questions"
     }
   },
+  "suggestions": {
+    "connectWifi": "How do I connect to WiFi?",
+    "makeTextBigger": "How do I make text bigger on my screen?",
+    "takeScreenshot": "How do I take a screenshot?",
+    "videoCall": "How do I make a video call?",
+    "iphoneSettings": "How do I change iPhone settings?",
+    "androidSettings": "How do I change Android settings?",
+    "windowsSettings": "How do I change Windows settings?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "How can I help you today?",
+      "subtitle": "Ask me anything about technology!"
+    },
+    "input": {
+      "placeholder": "Message AI assistant...",
+      "helper": "Press Enter to send, Shift+Enter for new line"
+    },
+    "greeting": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "error": {
+      "general": "I'm sorry, I'm having trouble right now. Please try again in a moment."
+    }
+  },
+  "flashcards": {
+    "title": "Step-by-Step Guide",
+    "progress": "Step {{current}} of {{total}}",
+    "instructions": "Instructions:",
+    "markCompleted": "Mark as Completed"
+  },
   "settings": {
-    "customizePrefs": "Customize your preferences",
-    "personalInfo": "Personal Information",
-    "firstName": "First Name",
-    "firstNamePlaceholder": "Your first name",
-    "primaryDevice": "Primary Device",
+    "title": "Settings",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "devices": {
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
       "windowsComputer": "Windows Computer",
-      "macComputer": "Mac (Apple Computer)",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android Phone or Tablet"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "customizePrefs": "Customize your preferences",
     "accessibility": "Accessibility",
     "textToSpeech": "Text-to-Speech",
     "textToSpeechDesc": "Have answers read aloud to you",
@@ -671,9 +853,6 @@
     "signOut": "Sign Out",
     "signOutDesc": "Sign out of your account",
     "cancel": "Cancel",
-    "saving": "Saving...",
-    "saved": "Saved!",
-    "saveChanges": "Save Changes",
     "errorSaving": "Could not save settings. Please try again.",
     "lastName": "Last Name",
     "lastNamePlaceholder": "Your last name",
@@ -820,7 +999,8 @@
     "settings": "Settings",
     "signOut": "Sign Out",
     "close": "Close",
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "friend": "friend"
   },
   "tips": {
     "connectWifi": "Connect to Wi-Fi",
@@ -884,8 +1064,7 @@
     "error": "Translation failed"
   },
   "languageSelector": {
-    "choosePrompt": "Choose your preferred language",
-    "moreComingSoon": "More languages coming soon"
+    "choosePrompt": "Choose your preferred language"
   },
   "auth": {
     "backToHome": "Back to Home",
@@ -908,108 +1087,57 @@
   },
   "onboarding": {
     "step1": {
-      "title": "Let's get to know you",
-      "subtitle": "Help me personalize your experience",
-      "firstName": "First Name",
-      "firstNamePlaceholder": "Your first name",
-      "lastName": "Last Name",
-      "lastNamePlaceholder": "Your last name",
-      "age": "Age (helps me adjust my explanations)"
+      "tooltip": "Tell us a bit about yourself so we can personalize your learning experience."
     },
     "step2": {
-      "title": "Choose your preferred languages",
-      "subtitle": "Select the languages you'd like to use for communication and voice input",
-      "languageSelection": "Language Selection",
-      "languageDescription": "Choose the languages you're comfortable with. This will:",
-      "speechToText": "Configure speech-to-text to understand your voice in these languages",
-      "textInteractions": "Enable text interactions in your chosen languages",
-      "interfaceOptions": "Customize interface options for better accessibility",
-      "searchLanguages": "Search languages...",
-      "selectAll": "Select All",
-      "deselectAll": "Deselect All",
-      "selected": "Selected: {{count}} language",
-      "selected_plural": "Selected: {{count}} languages",
-      "noLanguagesFound": "No languages found matching \"{{search}}\"",
-      "languageRequired": "Language Selection Required",
-      "languageRequiredDesc": "Please select at least one language to continue. This ensures the best experience for voice input and text interactions."
+      "tooltip": "Choose the languages you're comfortable with for voice input and text interactions."
     },
     "step3": {
-      "title": "What device do you use most?",
-      "subtitle": "This helps me give you better instructions",
-      "devices": {
-        "windowscomputer": "Windows Computer",
-        "macapplecomputer": "Mac (Apple Computer)",
-        "iphone": "iPhone",
-        "ipad": "iPad",
-        "androidphoneortablet": "Android Phone or Tablet",
-        "smarttv": "Smart TV",
-        "multipledevices": "Multiple devices"
-      }
+      "tooltip": "Knowing your primary device helps us provide more relevant instructions."
     },
     "step4": {
-      "title": "How comfortable are you with technology?",
-      "subtitle": "Be honest - this helps me explain things at the right level",
-      "beginner": "Beginner",
-      "beginnerDesc": "I need step-by-step help with most things",
-      "some": "Some Experience",
-      "someDesc": "I can do basic tasks but need help with new things",
-      "comfortable": "Comfortable",
-      "comfortableDesc": "I can figure out most things but sometimes need guidance"
+      "tooltip": "Be honest about your comfort level - this helps us explain things at the right pace."
     },
     "step5": {
-      "title": "What tech topics worry you most?",
-      "subtitle": "Select all that apply - I'll prioritize help in these areas",
-      "concerns": {
-        "onlineSafety": "Online Safety & Scams",
-        "passwordManagement": "Password Management",
-        "videoCalling": "Video Calling Family",
-        "socialMedia": "Social Media",
-        "onlineBanking": "Online Banking",
-        "emailMessaging": "Email & Messaging",
-        "photoStorage": "Photo Storage & Sharing",
-        "appDownloads": "App Downloads & Updates",
-        "wifiInternet": "Wi-Fi & Internet Issues",
-        "deviceSettings": "Device Settings",
-        "onlineShopping": "Online Shopping",
-        "healthApps": "Health Apps & Portals"
-      }
+      "tooltip": "Select topics that worry you most so we can prioritize help in these areas."
     },
     "step6": {
-      "title": "Do you need any accessibility features?",
-      "subtitle": "I want to make sure you can use this comfortably",
-      "needs": {
-        "largerText": "Larger text and buttons",
-        "highContrast": "High contrast colors",
-        "voiceCommands": "Voice commands",
-        "screenReader": "Screen reader support",
-        "slowerExplanations": "Slower explanations",
-        "visualSteps": "Visual step indicators",
-        "noneNeeded": "None needed"
-      }
+      "tooltip": "Let us know about any accessibility features you need for a comfortable experience."
     },
     "step7": {
-      "title": "How do you prefer to learn?",
-      "subtitle": "I'll adjust my teaching style to match your preference",
-      "simple": "Simple & Quick",
-      "simpleDesc": "Just tell me what to do, step by step",
-      "detailed": "Detailed Explanations",
-      "detailedDesc": "Explain why I'm doing each step",
-      "visual": "Visual Learning",
-      "visualDesc": "Show me pictures and videos when possible"
+      "tooltip": "Choose how you prefer to learn so we can adjust our teaching style."
     },
     "step8": {
-      "title": "Final touches",
-      "subtitle": "Set up your perfect learning environment",
-      "textToSpeech": "Text-to-Speech",
-      "textToSpeechDesc": "Have answers read aloud",
-      "voiceInput": "Voice Input",
-      "voiceInputDesc": "Ask questions by speaking",
-      "videoRecommendations": "Video Recommendations",
-      "videoRecommendationsDesc": "Show helpful videos and articles",
-      "textSize": "Text Size Preference",
-      "textSizeNormal": "Normal",
-      "textSizeLarge": "Large",
-      "textSizeExtraLarge": "Extra Large"
+      "tooltip": "Set up your perfect learning environment with these final preferences.",
+      "privacy": {
+        "title": "Your Privacy is Our Priority",
+        "items": [
+          "We will NEVER sell your personal data",
+          "All data stays encrypted and secure",
+          "You can change these settings anytime",
+          "You can delete your data at any time"
+        ]
+      },
+      "personalization": {
+        "title": "Personalized Experience",
+        "description": "Allow us to use your interaction data to provide better, more relevant help and suggestions tailored to your needs.",
+        "note": "This helps us understand what topics you're most interested in and provide more relevant tutorials."
+      },
+      "history": {
+        "title": "Use Conversation History",
+        "description": "Remember our previous conversations to provide better context and avoid repeating information you already know.",
+        "note": "This helps me remember what we've discussed before and build on previous conversations."
+      },
+      "learningPrefs": {
+        "title": "Use Learning Preferences",
+        "description": "Remember your preferred learning style, communication preferences, and accessibility needs to provide consistent experiences.",
+        "note": "This includes your preferred explanation style, language settings, and accessibility preferences."
+      },
+      "noSelection": {
+        "title": "No Personalization Selected",
+        "success": "Great! We'll use your selected data to provide a better experience.",
+        "default": "That's perfectly fine! You'll still get full access to all features, just without personalized recommendations."
+      }
     },
     "back": "Back",
     "next": "Next",
@@ -1075,35 +1203,14 @@
     },
     "restart": {
       "confirmMessage": "Are you sure you want to restart the onboarding process? This will reset all your preferences."
-    },
-    "step1": {
-      "tooltip": "Tell us a bit about yourself so we can personalize your learning experience."
-    },
-    "step2": {
-      "tooltip": "Choose the languages you're comfortable with for voice input and text interactions."
-    },
-    "step3": {
-      "tooltip": "Knowing your primary device helps us provide more relevant instructions."
-    },
-    "step4": {
-      "tooltip": "Be honest about your comfort level - this helps us explain things at the right pace."
-    },
-    "step5": {
-      "tooltip": "Select topics that worry you most so we can prioritize help in these areas."
-    },
-    "step6": {
-      "tooltip": "Let us know about any accessibility features you need for a comfortable experience."
-    },
-    "step7": {
-      "tooltip": "Choose how you prefer to learn so we can adjust our teaching style."
-    },
-    "step8": {
-      "tooltip": "Set up your perfect learning environment with these final preferences."
     }
   },
   "error": {
     "askQuestionFirst": "Please ask a question first",
-    "couldntGetAnswer": "Sorry, I couldn't get an answer right now. Please try again."
+    "couldntGetAnswer": "Sorry, I couldn't get an answer right now. Please try again.",
+    "notifications": {
+      "dismiss": "Dismiss"
+    }
   },
   "learningPage": {
     "startOrContinueCourse": "Start or Continue Course",
@@ -1254,14 +1361,11 @@
       "backToHome": "Back to Home"
     }
   },
-  "languageSelector": {
-    "choosePrompt": "Choose your preferred language"
-  },
   "multimodal": {
     "tabsLabel": "Choose how to communicate",
     "tabs": {
       "chat": "Chat",
-      "voice": "Voice", 
+      "voice": "Voice",
       "image": "Image",
       "chatAria": "Text chat input",
       "voiceAria": "Voice input",
@@ -1305,7 +1409,7 @@
     "emergency": "Emergency Support",
     "emergencyAria": "Get emergency support",
     "expand": "Expand",
-    "minimize": "Minimize", 
+    "minimize": "Minimize",
     "close": "Close AI Assistant",
     "thinking": "AI is thinking...",
     "escalated": "You're now connected with our support team",
@@ -1318,5 +1422,218 @@
     "error": {
       "general": "I'm sorry, I'm having trouble right now. Let me connect you with our support team who can help you immediately."
     }
+  },
+  "community": {
+    "header": {
+      "title": "Community Forum",
+      "subtitle": "Connect with other learners, ask questions, and share your experiences",
+      "backToHome": "Back to Home",
+      "newPost": "New Post"
+    },
+    "sidebar": {
+      "categories": "Categories",
+      "topics": {
+        "all": "All Topics",
+        "general": "General Help",
+        "mobile": "Mobile Devices",
+        "computer": "Computers",
+        "apps": "Apps & Software",
+        "internet": "Internet & Email",
+        "safety": "Online Safety"
+      },
+      "guidelines": {
+        "title": "Community Guidelines",
+        "items": [
+          "Be respectful and kind",
+          "No spam or inappropriate content",
+          "Help others when you can",
+          "Stay on topic",
+          "Report any issues"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Search posts..."
+    },
+    "createPost": {
+      "title": "Create New Post",
+      "categoryLabel": "Category",
+      "titleLabel": "Title",
+      "contentLabel": "Content",
+      "titlePlaceholder": "What's your question or topic?",
+      "contentPlaceholder": "Describe your question or share your thoughts...",
+      "submit": "Post",
+      "cancel": "Cancel",
+      "profanityAlert": "Your post contains inappropriate content. Please revise and try again."
+    },
+    "posts": {
+      "empty": "No posts found. Be the first to start a conversation!",
+      "replies": "{{count}} replies",
+      "timeAgo": {
+        "justNow": "Just now",
+        "oneHour": "1 hour ago",
+        "hours": "{{count}} hours ago",
+        "oneDay": "1 day ago",
+        "days": "{{count}} days ago"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you! Send us a message and we'll respond as soon as possible.",
+    "backToHome": "Back to Home",
+    "form": {
+      "fasterResponse": "📧 This form will be answered faster than other contact methods!",
+      "name": "Full Name *",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address *",
+      "emailPlaceholder": "Enter your email address",
+      "subject": "Subject *",
+      "subjectPlaceholder": "Select a subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "techSupport": "Technical Support",
+        "account": "Account Help",
+        "feature": "Feature Request",
+        "bug": "Bug Report",
+        "feedback": "Feedback",
+        "other": "Other"
+      },
+      "message": "Message *",
+      "messagePlaceholder": "Please describe your inquiry in detail...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your email client should have opened. If not, please copy the information and email us directly.",
+      "error": "There was an error. Please email us directly at taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Get in Touch",
+      "emailLabel": "Email",
+      "responseData": "We typically respond within 24 hours"
+    },
+    "reasons": {
+      "title": "Why Contact Us?",
+      "items": [
+        "Get help with technical issues",
+        "Request new features",
+        "Share feedback and suggestions",
+        "Report bugs or issues",
+        "General inquiries"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "backToHome": "Back to Home",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing and using our service, you accept and agree to be bound by the terms and provision of this agreement."
+      },
+      "license": {
+        "title": "Use License",
+        "content": "Permission is granted to temporarily use our service for personal, non-commercial transitory viewing only."
+      },
+      "conduct": {
+        "title": "User Conduct",
+        "content": "You agree to use our service in a manner consistent with all applicable laws and regulations and in accordance with these terms."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "In no event shall our company or its suppliers be liable for any damages arising out of the use or inability to use our service."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "If you have any questions about these Terms of Service, please contact us at:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Accessibility Statement",
+    "subtitle": "We're committed to making our platform accessible to everyone, regardless of ability or technology.",
+    "backToHome": "Back to Home",
+    "commitment": {
+      "title": "Our Commitment",
+      "content": "We believe technology should be accessible to everyone. Our platform is designed with seniors in mind, incorporating features that make learning technology easier and more comfortable for users of all abilities."
+    },
+    "features": {
+      "title": "Accessibility Features",
+      "visual": {
+        "title": "Visual Accessibility",
+        "items": [
+          "High contrast color schemes",
+          "Large, readable fonts",
+          "Screen reader compatibility",
+          "Keyboard navigation support",
+          "Alternative text for images"
+        ]
+      },
+      "audio": {
+        "title": "Audio Accessibility",
+        "items": [
+          "Closed captions for videos",
+          "Audio descriptions",
+          "Volume controls",
+          "Visual indicators for audio cues",
+          "Text alternatives to audio content"
+        ]
+      },
+      "motor": {
+        "title": "Motor Accessibility",
+        "items": [
+          "Large clickable areas",
+          "Keyboard-only navigation",
+          "Adjustable time limits",
+          "Voice control compatibility",
+          "Simplified interactions"
+        ]
+      },
+      "cognitive": {
+        "title": "Cognitive Accessibility",
+        "items": [
+          "Simple, clear language",
+          "Consistent navigation",
+          "Reduced motion options",
+          "Clear instructions",
+          "Error prevention and recovery"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Standards Compliance",
+      "content": "Our platform aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. We regularly test our platform with assistive technologies and conduct accessibility audits."
+    },
+    "feedback": {
+      "title": "Feedback and Support",
+      "content": "We're continuously working to improve accessibility. If you encounter any barriers or have suggestions for improvement, please don't hesitate to contact us.",
+      "emailLabel": "Email",
+      "subjectLabel": "Subject",
+      "subjectValue": "Accessibility Feedback"
+    },
+    "assistive": {
+      "title": "Assistive Technologies",
+      "content": "Our platform is designed to work with common assistive technologies including:",
+      "items": [
+        "Screen readers (JAWS, NVDA, VoiceOver)",
+        "Voice recognition software",
+        "Screen magnification tools",
+        "Alternative keyboards",
+        "Switch navigation devices",
+        "Eye-tracking systems"
+      ]
+    },
+    "help": {
+      "title": "Need Help?",
+      "content": "If you need assistance using our platform or have accessibility-related questions, we're here to help.",
+      "contact": "Contact Support"
+    },
+    "lastUpdated": "Last updated: {{date}}"
+  },
+  "assessmentView": {
+    "headerTitle": "Skill Assessment",
+    "questionProgress": "Question {{current}} of {{total}}",
+    "skipAssessment": "Skip Assessment",
+    "chooseBestOption": "Choose the option that best describes you"
   }
 }

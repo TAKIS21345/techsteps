@@ -3,6 +3,34 @@ import { MessageSquare, Headphones, Camera, Users, Shield, Zap, LucideIcon } fro
 import { motion, useMotionValue, animate, MotionValue } from 'framer-motion';
 import { useAccessibility } from '../../contexts/AccessibilityContext';
 import { useTranslation, useRTLStyles } from '../../hooks/useTranslation';
+
+// Simple mobile feature card component
+interface MobileFeatureCardProps {
+  feature: { title: string };
+  icon: LucideIcon;
+  color: string;
+  index: number;
+}
+
+const MobileFeatureCard: React.FC<MobileFeatureCardProps> = ({
+  feature,
+  icon: Icon,
+  color,
+  index
+}) => {
+  return (
+    <div className="bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300">
+      <div
+        className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-${color}-100`}
+      >
+        <Icon className={`w-8 h-8 text-${color}-600`} />
+      </div>
+      <h3 className="text-lg font-semibold text-gray-900 leading-tight">{feature.title}</h3>
+    </div>
+  );
+};
+
+// Desktop animated feature card component
 interface FeatureCardProps {
   feature: { title: string };
   icon: LucideIcon;
@@ -126,7 +154,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           }}
         >
           <div
-            className="backdrop-blur-md border shadow-xl rounded-2xl text-center hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center"
+            className="backdrop-blur-md border shadow-xl rounded-2xl text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center"
             style={{
               background: 'rgba(255, 255, 255, 0.25)',
               backdropFilter: 'blur(20px)',
@@ -138,7 +166,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             }}
           >
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+              className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 mx-auto"
               style={{
                 background: `rgba(${getColorRGB(color)}, 0.15)`,
                 backdropFilter: 'blur(10px)',
@@ -153,7 +181,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
                 }}
               />
             </div>
-            <h3 className="text-xs font-semibold text-gray-900 leading-tight text-center px-1">{feature.title}</h3>
+            <h3 className="text-xs font-semibold text-gray-900 leading-tight text-center px-1 flex-1 flex items-center justify-center">{feature.title}</h3>
           </div>
         </motion.div>
       </motion.div>
@@ -174,7 +202,18 @@ const getColorRGB = (color: string): string => {
   return colorMap[color] || '37, 99, 235';
 };
 
-// Abstract background component
+// Simple background for mobile
+const SimpleBackground: React.FC = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 -right-20 w-96 h-96 bg-gradient-to-br from-pink-400/15 to-orange-500/15 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 left-1/3 w-72 h-72 bg-gradient-to-br from-green-400/15 to-teal-500/15 rounded-full blur-3xl"></div>
+    </div>
+  );
+};
+
+// Abstract background component for desktop
 const AbstractBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -267,9 +306,10 @@ const FeatureSection: React.FC = () => {
   const { isRTL, direction } = useRTLStyles();
   const { isReducedMotion } = useAccessibility();
   const [containerSize, setContainerSize] = useState({ width: 900, height: 600 });
+  const [isMobile, setIsMobile] = useState(false);
 
   // Get features data - handle both array and object formats
-  const featuresData = t('landing.featuresSection.items');
+  const featuresData = t('landing.featuresSection.items', { returnObjects: true });
   let features: { title: string }[] = [];
 
   if (Array.isArray(featuresData)) {
@@ -288,6 +328,7 @@ const FeatureSection: React.FC = () => {
       { title: 'Instant Answers' }
     ];
   }
+
   const icons = [MessageSquare, Headphones, Camera, Users, Shield, Zap];
   const colors = ["blue", "green", "purple", "orange", "red", "yellow"];
 
@@ -296,12 +337,14 @@ const FeatureSection: React.FC = () => {
   // Shared progress MotionValue (0→1)
   const progress = useMotionValue(0);
 
-  // Update container size on resize
+  // Update container size and mobile state on resize
   useEffect(() => {
     const updateSize = () => {
       const width = Math.min(window.innerWidth * 0.85, 900);
       const height = Math.min(window.innerHeight * 0.7, 600);
+      const mobile = window.innerWidth < 768; // md breakpoint
       setContainerSize({ width, height });
+      setIsMobile(mobile);
     };
 
     updateSize();
@@ -310,7 +353,7 @@ const FeatureSection: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isReducedMotion) return;
+    if (isReducedMotion || isMobile) return;
 
     // Animate progress 0→1 continuously around the rope
     const controls = animate(progress, 1, {
@@ -320,9 +363,9 @@ const FeatureSection: React.FC = () => {
       repeatType: 'loop'
     });
     return () => controls.stop();
-  }, [progress, isReducedMotion]);
+  }, [progress, isReducedMotion, isMobile]);
 
-  // Calculate responsive dimensions
+  // Calculate responsive dimensions for desktop
   const centerX = containerSize.width / 2;
   const centerY = containerSize.height / 2;
   const headerWidth = Math.min(450, containerSize.width * 0.6);
@@ -335,6 +378,51 @@ const FeatureSection: React.FC = () => {
   const pathHeight = headerHeight + margin * 2;
   const corner = 30;
 
+  // Mobile layout
+  if (isMobile) {
+    return (
+      <section
+        id="features"
+        className="py-16 sm:py-20 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        }}
+      >
+        {/* Simple background for mobile */}
+        <SimpleBackground />
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/10" />
+
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              {t('landing.featuresSection.title')}
+            </h2>
+            <p className="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
+              {t('landing.featuresSection.subtitle')}
+            </p>
+          </div>
+
+          {/* Mobile grid layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {features.map((feature, idx) => (
+              <MobileFeatureCard
+                key={idx}
+                feature={feature}
+                icon={icons[idx]}
+                color={colors[idx]}
+                index={idx}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop layout with animations
   return (
     <section
       id="features"

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './index.html', 
+    './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     // Exclude test files and node_modules for faster builds
     '!./src/**/*.test.{js,ts,jsx,tsx}',
@@ -11,6 +11,12 @@ export default {
   mode: 'jit',
   theme: {
     extend: {
+      // Font family configuration
+      fontFamily: {
+        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+        'display': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'body': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
       // Senior-friendly design tokens
       colors: {
         // High contrast color palette with 4.5:1 minimum ratios
@@ -109,7 +115,7 @@ export default {
         '12xl': ['96px', { lineHeight: '0.85' }],
         '13xl': ['112px', { lineHeight: '0.8' }],
         '14xl': ['128px', { lineHeight: '0.8' }],
-      },      
+      },
       // Generous spacing for senior-friendly UI
       spacing: {
         '18': '4.5rem',   // 72px
@@ -160,7 +166,7 @@ export default {
         '3': '3px',
         '4': '4px',
       },
-      // Animations for error notifications
+      // Animations for error notifications and avatar companion
       keyframes: {
         'slide-in-right': {
           '0%': { transform: 'translateX(100%)', opacity: '0' },
@@ -170,16 +176,96 @@ export default {
           '0%': { transform: 'translateX(0)', opacity: '1' },
           '100%': { transform: 'translateX(100%)', opacity: '0' },
         },
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-down': {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'sway': {
+          '0%': { transform: 'rotate(45deg) translateX(0px)' },
+          '25%': { transform: 'rotate(45deg) translateX(-2px)' },
+          '75%': { transform: 'rotate(45deg) translateX(2px)' },
+          '100%': { transform: 'rotate(45deg) translateX(0px)' },
+        },
+        'spin-diagonal': {
+          '0%': { transform: 'rotate(45deg)' },
+          '100%': { transform: 'rotate(405deg)' },
+        },
+        'intro-spin': {
+          '0%': { transform: 'rotate(45deg) scale(3)' },
+          '50%': { transform: 'rotate(765deg) scale(3)' },
+          '100%': { transform: 'rotate(45deg) scale(1)' },
+        },
+        'intro-move': {
+          '0%': { transform: 'translate(-50%, -50%) rotate(45deg) scale(1)' },
+          '100%': { transform: 'translate(0, 0) rotate(45deg) scale(1)' },
+        },
+        'avatar-breathe': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+        'avatar-excited': {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(-2deg)' },
+          '75%': { transform: 'scale(1.1) rotate(2deg)' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.1)' },
+        },
+        'avatar-intro': {
+          '0%': { transform: 'scale(2) rotate(0deg)', opacity: '0' },
+          '20%': { transform: 'scale(2) rotate(0deg)', opacity: '1' },
+          '60%': { transform: 'scale(2) rotate(360deg)', opacity: '1' },
+          '100%': { transform: 'scale(1) rotate(360deg)', opacity: '1' },
+        },
+        'avatar-slide-to-position': {
+          '0%': { transform: 'translate(0, 0) scale(1)' },
+          '100%': { transform: 'translate(-50vw, 50vh) scale(0.6)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'pulse-slow': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '.5' },
+        },
       },
       animation: {
         'slide-in-right': 'slide-in-right 0.3s ease-out',
         'slide-out-right': 'slide-out-right 0.3s ease-in',
+        'fade-in': 'fade-in 0.5s ease-out',
+        'slide-down': 'slide-down 0.3s ease-out',
+        'spin-slow': 'spin-slow 2s linear infinite',
+        'sway': 'sway 3s ease-in-out infinite',
+        'spin-diagonal': 'spin-diagonal 1s linear infinite',
+        'intro-spin': 'intro-spin 2s ease-out',
+        'intro-move': 'intro-move 1s ease-out',
+        'avatar-breathe': 'avatar-breathe 3s ease-in-out infinite',
+        'avatar-excited': 'avatar-excited 0.6s ease-in-out',
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+        'avatar-intro': 'avatar-intro 3s ease-in-out forwards',
+        'avatar-slide-to-position': 'avatar-slide-to-position 1s ease-in-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%)',
       },
     },
   },
   plugins: [
     // Custom plugin for senior-friendly utilities
-    function({ addUtilities, theme, addBase }) {
+    function ({ addUtilities, theme, addBase }) {
       // RTL base styles
       addBase({
         '[dir="rtl"]': {

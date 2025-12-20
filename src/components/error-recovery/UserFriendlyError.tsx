@@ -2,7 +2,7 @@
 // Shows errors in plain language with clear action steps for senior users
 
 import React, { useState } from 'react';
-import { UserFriendlyError, errorMessageTranslator } from '../../utils/errorMessages';
+import { errorMessageTranslator } from '../../utils/errors/errorMessages';
 import { Typography } from '../design-system/Typography';
 import { Card } from '../design-system/Card';
 import { Button } from '../design-system/Button';
@@ -67,31 +67,31 @@ export const UserFriendlyErrorDisplay: React.FC<UserFriendlyErrorProps> = ({
   };
 
   return (
-    <Card 
-      variant="outlined" 
-      padding="lg" 
+    <Card
+      variant="outlined"
+      padding="lg"
       className={`${className} ${severityColor} border-l-4`}
     >
       <div className="flex items-start space-x-4">
-        <Icon 
-          name={friendlyError.icon as any} 
-          size="lg" 
+        <Icon
+          name={friendlyError.icon as any}
+          size="lg"
           color={iconColor}
           className="shrink-0 mt-1"
         />
-        
+
         <div className="flex-1 min-w-0">
           {/* Error Header */}
           <div className="flex items-center justify-between mb-2">
             <Typography variant="h4" className="font-semibold">
               {friendlyError.title}
             </Typography>
-            
+
             <div className="flex items-center space-x-2">
               <span className={`px-2 py-1 text-xs font-medium rounded-full ${severityColor}`}>
                 {getSeverityLabel(friendlyError.severity)}
               </span>
-              
+
               {onDismiss && (
                 <Button
                   variant="ghost"
@@ -125,10 +125,10 @@ export const UserFriendlyErrorDisplay: React.FC<UserFriendlyErrorProps> = ({
                   className="sm:w-auto w-full"
                 >
                   {action.icon && (
-                    <Icon 
-                      name={action.icon as any} 
-                      size="sm" 
-                      className="mr-2" 
+                    <Icon
+                      name={action.icon as any}
+                      size="sm"
+                      className="mr-2"
                     />
                   )}
                   {action.label}
@@ -147,7 +147,7 @@ export const UserFriendlyErrorDisplay: React.FC<UserFriendlyErrorProps> = ({
                 </Typography>
               </div>
               <Typography variant="body-sm" className="text-neutral-700">
-                {t('error.support_message', 
+                {t('error.support_message',
                   'If this problem continues, our support team is here to help. We can walk you through the solution step by step.'
                 )}
               </Typography>
@@ -163,17 +163,17 @@ export const UserFriendlyErrorDisplay: React.FC<UserFriendlyErrorProps> = ({
                 onClick={() => setShowDetails(!showDetails)}
                 className="mb-2"
               >
-                <Icon 
-                  name={showDetails ? 'ChevronUp' : 'ChevronDown'} 
-                  size="sm" 
-                  className="mr-1" 
+                <Icon
+                  name={showDetails ? 'ChevronUp' : 'ChevronDown'}
+                  size="sm"
+                  className="mr-1"
                 />
-                {showDetails ? 
-                  t('error.hide_details', 'Hide Technical Details') : 
+                {showDetails ?
+                  t('error.hide_details', 'Hide Technical Details') :
                   t('error.show_details', 'Show Technical Details')
                 }
               </Button>
-              
+
               {showDetails && (
                 <div className="bg-gray-100 rounded-lg p-3 mt-2">
                   <Typography variant="body-sm" className="font-mono text-gray-700 whitespace-pre-wrap">
@@ -188,7 +188,7 @@ export const UserFriendlyErrorDisplay: React.FC<UserFriendlyErrorProps> = ({
           <div className="mt-4 pt-4 border-t border-gray-200">
             <Typography variant="body-sm" className="text-neutral-600">
               <Icon name="Info" size="sm" className="inline mr-1" />
-              {t('error.tip', 
+              {t('error.tip',
                 'Tip: If you\'re unsure about any of these steps, don\'t hesitate to ask for help. We\'re here to support you.'
               )}
             </Typography>
