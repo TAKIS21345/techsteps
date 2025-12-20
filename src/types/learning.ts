@@ -1,9 +1,17 @@
+// Legacy learning types - extending core types for backward compatibility
+import { Tutorial, LearningProgress, BadgeProgress } from './core';
+
 export interface SkillAssessmentResult {
-  q1ComfortLevel: 'new' | 'basics' | 'confident';
-  q2EmailSent: boolean;
-  q3SmartphoneUsed: boolean;
+  skillLevel: 'Beginner' | 'Intermediate' | 'Advanced';
+  recommendedStartingPathId: string;
+  completedAt: Date;
+  // Optional legacy fields if needed
+  q1ComfortLevel?: 'new' | 'basics' | 'confident';
+  q2EmailSent?: boolean;
+  q3SmartphoneUsed?: boolean;
 }
 
+// Legacy Module interface - maps to Tutorial in core types
 export interface Module {
   id: string; // e.g., "turn-on-pc"
   titleKey: string; // For i18n, e.g., "learningPaths.fundamentals.modules.turnOnPc.title"
@@ -26,6 +34,7 @@ export interface LearningPath {
   sortOrder: number; // To maintain a specific order of paths
 }
 
+// Legacy UserLearningProgress - simplified version of core LearningProgress
 export interface UserLearningProgress {
   completedModules: Record<string, boolean>; // { [moduleId: string]: true }
   earnedBadges: Record<string, boolean>; // { [badgeId: string]: true }

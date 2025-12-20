@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Radīts ar ❤️ senioriem visur.",
       "trustedBy": "Uzticas",
-      "trustedByCount": "50 000+ seniori"
+      "trustedByCount": "50 000+ seniori",
+      "communityTitle": "kopiena",
+      "legalTitle": "Juridiskais un atbalsts",
+      "contactEmail": "Sazināties: E-pasts: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Datora un ierīču pamati",
       "description": "Paši pamati, lai sāktu darbu ar tehnoloģijām.",
       "modules": {
-        "turnOnDevice": { "title": "Ierīces ieslēgšana", "description": "Uzziniet, kā ieslēgt datorus un viedtālruņus." },
-        "mouseTouchscreen": { "title": "Peles/skārienekrāna lietošana", "description": "Apgūstiet rādīšanu, klikšķināšanu un pieskaršanos." },
-        "keyboardTyping": { "title": "Klaviatūras/rakstīšanas pamati", "description": "Iepazīstieties ar rakstīšanas pamatiem." },
-        "filesFolders": { "title": "Izpratne par failiem un mapēm", "description": "Uzziniet, kā tiek organizēta digitālā informācija." }
+        "turnOnDevice": {
+          "title": "Ierīces ieslēgšana",
+          "description": "Uzziniet, kā ieslēgt datorus un viedtālruņus."
+        },
+        "mouseTouchscreen": {
+          "title": "Peles/skārienekrāna lietošana",
+          "description": "Apgūstiet rādīšanu, klikšķināšanu un pieskaršanos.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Spēlēsim: peles un skārienekrāna pamatinformācija</h3><p>Vai esat gatavs izpētīt? Jūsu pele un skārienekrāns ir jūsu burvju nūjiņas digitālajai pasaulei!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Peles izklaide:</h4><ul class=\"space-y-2\"><li>• <b>Punkts</b>: pārvietojiet peli. <><> Nospiediet, sekojiet bultiņai!</li>C sekojiet!</li>C kreiso pogu, lai atlasītu lietas. Mēģiniet noklikšķināt uz tālāk esošās pogas!</li><li>• <b>Dubultklikšķis</b>: ātri nospiediet divreiz, lai atvērtu failus vai programmas.</li><li>• <b>Labais klikšķis</b>: nospiediet labo pogu, lai atvērtu slepeno izvēlni.</li><li>• <b>Ritināšana</b>: ritiniet riteni, lai pārvietotos uz augšu un uz leju lapā.</li></ulv->blu5=\"vgg></ulv class/d\" rounded-lg\"><h4 class=\"font-medium mb-2\">Skārienjutīga ekrāna triki:</h4><ul class=\"space-y-2\"><li>• <b>Pieskarieties</b>: viegli pieskarieties ekrānam, lai atlasītu.</li><li>• <b>Vilkšana</b>: velciet ar pirkstu, lai ritinātu vai pārslēgtu ekrānus kopā.</b>>Pārvietot abās daļās a)• <b:><li>• iekšā un ārā.</li><li>• <b>Ilga nospiešana</b>: turiet pirkstu nospiestu, lai skatītu citas opcijas (piemēram, ar peles labo pogu noklikšķiniet!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Izmēģiniet to!</h4><ul class=\"space-y-2\" </h4><ul class=\"space-y-2\" ekrāns.</li><li>• Pieskarieties un velciet savā ierīcē, lai izpētītu.</li></ul></div></div>",
+          "keyPoints": [
+            "Peles rādītājs seko jūsu rokai!",
+            "Kreisais klikšķis ir jūsu galvenā darbība.",
+            "Skārienekrāni ļauj pieskarties, vilkt un tuvināt!"
+          ],
+          "practiceExercise": "Mēģiniet noklikšķināt, veikt dubultklikšķi un ar peles labo pogu noklikšķināt uz darbvirsmas. Skārienekrānā pieskarieties un velciet, lai pārvietotos starp ekrāniem.",
+          "animationDesc": "Skatieties, kā skārienekrānā noklikšķināt, veikt dubultklikšķi un vilkt."
+        },
+        "keyboardTyping": {
+          "title": "Klaviatūras/rakstīšanas pamati",
+          "description": "Iepazīstieties ar rakstīšanas pamatiem."
+        },
+        "filesFolders": {
+          "title": "Izpratne par failiem un mapēm",
+          "description": "Uzziniet, kā tiek organizēta digitālā informācija."
+        }
       }
     },
     "onlineWorld": {
       "title": "Tiešsaistes pasaule",
       "description": "Pieslēgšanās un droša interneta izpēte.",
       "modules": {
-        "webBrowsers": { "title": "Izpratne par tīmekļa pārlūkprogrammām", "description": "Pārvietojieties internetā ar Chrome, Edge vai Safari." },
-        "searchEffectively": { "title": "Kā efektīvi meklēt", "description": "Atrodiet nepieciešamo tiešsaistē, izmantojot meklētājprogrammas." },
-        "introEmail": { "title": "Ievads e-pastā", "description": "Uzziniet, kā sūtīt un saņemt elektronisko pastu." },
-        "virusSafety": { "title": "Aizsardzība pret vīrusiem", "description": "Aizsargājiet savu ierīci no kaitīgas programmatūras." }
+        "webBrowsers": {
+          "title": "Izpratne par tīmekļa pārlūkprogrammām",
+          "description": "Pārvietojieties internetā ar Chrome, Edge vai Safari."
+        },
+        "searchEffectively": {
+          "title": "Kā efektīvi meklēt",
+          "description": "Atrodiet nepieciešamo tiešsaistē, izmantojot meklētājprogrammas."
+        },
+        "introEmail": {
+          "title": "Ievads e-pastā",
+          "description": "Uzziniet, kā sūtīt un saņemt elektronisko pastu."
+        },
+        "virusSafety": {
+          "title": "Aizsardzība pret vīrusiem",
+          "description": "Aizsargājiet savu ierīci no kaitīgas programmatūras."
+        }
       }
     },
     "digitalLife": {
       "title": "Ikdienas digitālā dzīve",
       "description": "Sazinieties, kopīgojiet un pārvaldiet savu digitālo klātbūtni.",
       "modules": {
-        "masteringEmail": { "title": "E-pasta apgūšana", "description": "Pielikumi, mapes un e-pasta etiķete." },
-        "videoCalling": { "title": "Videozvani ģimenei un draugiem", "description": "Sazinieties aci pret aci ar mīļajiem." },
-        "introSocialMedia": { "title": "Ievads sociālajos medijos", "description": "Izpratne par platformām, piemēram, Facebook." },
-        "sharingPhotos": { "title": "Droša fotoattēlu kopīgošana", "description": "Kopīgojiet savas atmiņas, neapdraudot privātumu." }
+        "masteringEmail": {
+          "title": "E-pasta apgūšana",
+          "description": "Pielikumi, mapes un e-pasta etiķete."
+        },
+        "videoCalling": {
+          "title": "Videozvani ģimenei un draugiem",
+          "description": "Sazinieties aci pret aci ar mīļajiem."
+        },
+        "introSocialMedia": {
+          "title": "Ievads sociālajos medijos",
+          "description": "Izpratne par platformām, piemēram, Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Droša fotoattēlu kopīgošana",
+          "description": "Kopīgojiet savas atmiņas, neapdraudot privātumu."
+        }
       }
     },
     "advancedSkills": {
       "title": "Progresīvas un radošas prasmes",
       "description": "Ārpus pamatiem: izpētiet vairāk, ko piedāvā tehnoloģijas.",
       "modules": {
-        "onlineShopping": { "title": "Ievads tiešsaistes iepirkšanās", "description": "Iepērcieties droši un ērti tiešsaistē." },
-        "onlineMaps": { "title": "Tiešsaistes karšu un navigācijas izmantošana", "description": "Atrodiet ceļu ar digitālajām kartēm." },
-        "photoEditing": { "title": "Pamata fotoattēlu rediģēšana", "description": "Uzlabojiet savus digitālos fotoattēlus." },
-        "productivityTools": { "title": "Ievads produktivitātes rīkos", "description": "Izmantojot tādus rīkus kā Google Docs vai Microsoft Word pamati." }
+        "onlineShopping": {
+          "title": "Ievads tiešsaistes iepirkšanās",
+          "description": "Iepērcieties droši un ērti tiešsaistē."
+        },
+        "onlineMaps": {
+          "title": "Tiešsaistes karšu un navigācijas izmantošana",
+          "description": "Atrodiet ceļu ar digitālajām kartēm."
+        },
+        "photoEditing": {
+          "title": "Pamata fotoattēlu rediģēšana",
+          "description": "Uzlabojiet savus digitālos fotoattēlus."
+        },
+        "productivityTools": {
+          "title": "Ievads produktivitātes rīkos",
+          "description": "Izmantojot tādus rīkus kā Google Docs vai Microsoft Word pamati."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Pieejamība un ērta lietošana",
+      "description": "Padariet savu ierīci vieglāk redzamu, dzirdamu un vadāmu.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Ekrāna lupas izmantošana",
+          "description": "Palieliniet tekstu un attēlus ekrānā."
+        },
+        "voiceCommands": {
+          "title": "Balss komandas un diktāts",
+          "description": "Kontrolējiet ierīci un rakstiet ar balsi."
+        },
+        "highContrast": {
+          "title": "Augsta kontrasta un krāsu iestatījumi",
+          "description": "Pielāgojiet krāsas, lai nodrošinātu labāku redzamību."
+        },
+        "assistiveTouch": {
+          "title": "Palīgpieskāriens un īsceļi",
+          "description": "Izmantojiet ekrāna rīkus, lai atvieglotu navigāciju."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Veselība, drošība un privātums",
+      "description": "Esiet drošs, vesels un privāts, izmantojot tehnoloģijas.",
+      "modules": {
+        "privacySettings": {
+          "title": "Privātuma iestatījumi",
+          "description": "Aizsargājiet savu personisko informāciju tiešsaistē."
+        },
+        "scamAwareness": {
+          "title": "Krāpniecības izpratne",
+          "description": "Atklājiet un izvairieties no izplatītām tiešsaistes krāpniecībām."
+        },
+        "healthApps": {
+          "title": "Veselības lietotņu izmantošana",
+          "description": "Sekojiet savai veselībai un labsajūtai, izmantojot lietotnes."
+        },
+        "emergencyContacts": {
+          "title": "Ārkārtas kontaktpersonu iestatīšana",
+          "description": "Pievienojiet savai ierīcei ārkārtas kontaktpersonas."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Tehnoloģiju iesācējs", "description": "Pabeigti datora un ierīču pamati." },
-    "onlineWorld": { "name": "Tiešsaistes pētnieks", "description": "Pabeigts Tiešsaistes pasaules ceļš." },
-    "digitalLife": { "name": "Digitālais komunikators", "description": "Pabeigts Ikdienas digitālās dzīves ceļš." },
-    "advancedSkills": { "name": "Tehnoloģiju virtuozs", "description": "Pabeigts Progresīvo un radošo prasmju ceļš." }
+    "fundamentals": {
+      "name": "Tehnoloģiju iesācējs",
+      "description": "Pabeigti datora un ierīču pamati."
+    },
+    "onlineWorld": {
+      "name": "Tiešsaistes pētnieks",
+      "description": "Pabeigts Tiešsaistes pasaules ceļš."
+    },
+    "digitalLife": {
+      "name": "Digitālais komunikators",
+      "description": "Pabeigts Ikdienas digitālās dzīves ceļš."
+    },
+    "advancedSkills": {
+      "name": "Tehnoloģiju virtuozs",
+      "description": "Pabeigts Progresīvo un radošo prasmju ceļš."
+    },
+    "accessibility": {
+      "name": "Pieejamības čempions",
+      "description": "Pabeigts pieejamības un lietošanas ērtuma ceļš."
+    },
+    "healthAndSafety": {
+      "name": "Drošības sargs",
+      "description": "Pabeigts veselības, drošības un privātuma ceļš."
+    }
   },
   "skillAssessmentModal": {
     "title": "Ātrā prasmju pārbaude",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Pielāgojiet savas preferences",
-    "personalInfo": "Personiskā informācija",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "firstName": "Vārds",
     "firstNamePlaceholder": "Jūsu vārds",
     "primaryDevice": "Galvenā ierīce",
     "devices": {
-      "windowsComputer": "Windows dators",
-      "macComputer": "Mac (Apple dators)",
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android tālrunis vai planšetdators"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Pieejamība",
     "textToSpeech": "Teksta pārvēršana runā",
@@ -530,9 +669,9 @@
     "signOut": "Izrakstīties",
     "signOutDesc": "Izrakstīties no sava konta",
     "cancel": "Atcelt",
-    "saving": "Saglabā...",
-    "saved": "Saglabāts!",
-    "saveChanges": "Saglabāt izmaiņas",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveChanges": "Save Changes",
     "errorSaving": "Nevarēja saglabāt iestatījumus. Lūdzu, mēģiniet vēlreiz.",
     "lastName": "Uzvārds",
     "lastNamePlaceholder": "Jūsu uzvārds",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Augsta kontrasta režīms",
     "highContrastDesc": "Palielināt teksta un elementu kontrastu labākai redzamībai",
-    "learningPreferences": "Mācīšanās un satura preferences"
+    "learningPreferences": "Mācīšanās un satura preferences",
+    "title": "Settings",
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "pwa": {
+      "install": {
+        "title": "Instalējiet programmu TechStep",
+        "description": "Iegūstiet ātru piekļuvi mācību procesam un izmantojiet TechStep bezsaistē.",
+        "button": "Instalējiet lietotni"
+      },
+      "update": {
+        "title": "Pieejams atjauninājums",
+        "description": "Ir pieejama jauna TechStep versija ar uzlabojumiem un kļūdu labojumiem.",
+        "button": "Atjaunināt tūlīt"
+      },
+      "status": {
+        "online": "Tiešsaistē",
+        "offline": "Bezsaistē — izmaiņas tiks sinhronizētas, kad būs izveidots savienojums",
+        "syncing": "Sinhronizē..."
+      },
+      "notifications": {
+        "title": "Mācīšanās atgādinājumi",
+        "description": "Saņemiet maigus atgādinājumus, lai palīdzētu jums sekot līdzi mācību ceļam.",
+        "learning_reminders": "Mācīšanās atgādinājumi",
+        "learning_reminders_desc": "Viegli pamudinājumi, lai turpinātu nodarbības",
+        "progress_updates": "Progresa atjauninājumi",
+        "progress_updates_desc": "Sviniet savus sasniegumus",
+        "support_messages": "Atbalsta ziņojumi",
+        "support_messages_desc": "Noderīgi padomi un palīdzība",
+        "frequency": "Biežums",
+        "enable": "Iespējot paziņojumus",
+        "subscribing": "Notiek iestatīšana...",
+        "blocked": {
+          "title": "Paziņojumi bloķēti",
+          "description": "Paziņojumi pašlaik ir bloķēti. Lai tos iespējotu, pārlūkprogrammas iestatījumos atļaujiet paziņojumus.",
+          "instructions": "Adreses joslā meklējiet paziņojumu ikonu vai pārbaudiet pārlūkprogrammas vietnes iestatījumus."
+        },
+        "success": {
+          "title": "Paziņojumi iespējoti!",
+          "description": "Jūs saņemsiet noderīgus atgādinājumus un atjauninājumus, pamatojoties uz jūsu vēlmēm."
+        }
+      }
+    },
+    "offline": {
+      "error": "Sinhronizācijas kļūda",
+      "offline": "Bezsaistē",
+      "online": "Tiešsaistē",
+      "syncing": "Sinhronizē...",
+      "offline_desc": "Izmaiņas tiks sinhronizētas, kad būs izveidots savienojums",
+      "syncing_desc": "Jūsu datu atjaunināšana",
+      "online_desc": "Visas izmaiņas tiek saglabātas",
+      "pending_operations": "{{count}} neapstiprinātas izmaiņas",
+      "last_sync": "Pēdējā sinhronizācija: {{time}}",
+      "content_manager": {
+        "title": "Bezsaistes saturs",
+        "description": "Lejupielādējiet saturu, lai piekļūtu bezsaistē",
+        "online": "Savienots — varat lejupielādēt jaunu saturu",
+        "offline": "Bezsaistē — tiek izmantots tikai lejupielādētais saturs",
+        "no_content": "Nav bezsaistes satura",
+        "no_content_desc": "Lejupielādējiet kursus un nodarbības, lai piekļūtu tiem bezsaistē",
+        "downloaded": "Lejupielādēts",
+        "available_offline": "Pieejams bezsaistē",
+        "remove": "Noņemt no bezsaistes krātuves",
+        "suggestions": "Ieteicamās lejupielādes",
+        "suggestion_1": "Datora pamatu kurss",
+        "suggestion_1_desc": "Būtiskas prasmes, lai sāktu darbu ar tehnoloģijām",
+        "popular": "Populārs",
+        "download": "Lejupielādēt",
+        "type": {
+          "course": "Kurss",
+          "lesson": "Nodarbība",
+          "tutorial": "Apmācība",
+          "media": "Plašsaziņas līdzekļi"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Atlaist"
+    },
+    "dataPortability": "Datu un privātuma tiesības",
+    "dataRights": "Jūsu datu tiesības",
+    "dataRightsDesc": "Jums ir pilnīga kontrole pār saviem personas datiem. Jebkurā laikā eksportējiet, pārvaldiet koplietošanas preferences vai dzēsiet savus datus."
   },
   "common": {
     "settings": "Iestatījumi",
     "signOut": "Izrakstīties",
-    "close": "Aizvērt"
+    "close": "Aizvērt",
+    "friend": "friend",
+    "comingSoon": "Drīzumā"
   },
   "tips": {
     "connectWifi": "Pieslēgties Wi-Fi",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Jūsu vārds",
       "lastName": "Uzvārds",
       "lastNamePlaceholder": "Jūsu uzvārds",
-      "age": "Vecums (palīdz man pielāgot manus skaidrojumus)"
+      "age": "Vecums (palīdz man pielāgot manus skaidrojumus)",
+      "tooltip": "Pastāstiet mums mazliet par sevi, lai mēs varētu personalizēt jūsu mācību pieredzi."
     },
     "step2": {
       "title": "Izvēlieties vēlamās valodas",
@@ -679,7 +921,8 @@
       "selected_plural": "Atlasītas: {{count}} valodas",
       "noLanguagesFound": "Nav atrasta neviena valoda, kas atbilstu \"{{search}}\"",
       "languageRequired": "Nepieciešama valodas izvēle",
-      "languageRequiredDesc": "Lūdzu, atlasiet vismaz vienu valodu, lai turpinātu. Tas nodrošina vislabāko pieredzi balss ievadei un teksta mijiedarbībai."
+      "languageRequiredDesc": "Lūdzu, atlasiet vismaz vienu valodu, lai turpinātu. Tas nodrošina vislabāko pieredzi balss ievadei un teksta mijiedarbībai.",
+      "tooltip": "Izvēlieties valodas, kuras vēlaties izmantot balss ievadei un teksta mijiedarbībai."
     },
     "step3": {
       "title": "Kuru ierīci jūs lietojat visbiežāk?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Android tālrunis vai planšetdators",
         "smarttv": "Viedais TV",
         "multipledevices": "Vairākas ierīces"
-      }
+      },
+      "tooltip": "Zinot savu galveno ierīci, mēs varam sniegt atbilstošākus norādījumus."
     },
     "step4": {
       "title": "Cik ērti jūs jūtaties ar tehnoloģijām?",
@@ -702,7 +946,8 @@
       "some": "Neliela pieredze",
       "someDesc": "Varu veikt pamata uzdevumus, bet nepieciešama palīdzība ar jaunām lietām",
       "comfortable": "Ērti",
-      "comfortableDesc": "Varu izdomāt lielāko daļu lietu, bet dažreiz nepieciešami norādījumi"
+      "comfortableDesc": "Varu izdomāt lielāko daļu lietu, bet dažreiz nepieciešami norādījumi",
+      "tooltip": "Esiet godīgs par savu komforta līmeni — tas mums palīdz izskaidrot lietas pareizajā tempā."
     },
     "step5": {
       "title": "Kuras tehnoloģiju tēmas jūs visvairāk uztrauc?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Ierīces iestatījumi",
         "onlineShopping": "Iepirkšanās tiešsaistē",
         "healthApps": "Veselības lietotnes un portāli"
-      }
+      },
+      "tooltip": "Atlasiet tēmas, kas jūs visvairāk uztrauc, lai mēs varētu noteikt palīdzības prioritāti šajās jomās."
     },
     "step6": {
       "title": "Vai jums nepieciešamas kādas pieejamības funkcijas?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Lēnāki skaidrojumi",
         "visualSteps": "Vizuāli soļu indikatori",
         "noneNeeded": "Nav nepieciešams"
-      }
+      },
+      "tooltip": "Informējiet mūs par visām pieejamības funkcijām, kas nepieciešamas ērtai pieredzei."
     },
     "step7": {
       "title": "Kā jūs dodat priekšroku mācīties?",
@@ -743,7 +990,8 @@
       "detailed": "Detalizēti skaidrojumi",
       "detailedDesc": "Izskaidrojiet, kāpēc es veicu katru soli",
       "visual": "Vizuāla mācīšanās",
-      "visualDesc": "Rādiet man attēlus un video, kad iespējams"
+      "visualDesc": "Rādiet man attēlus un video, kad iespējams",
+      "tooltip": "Izvēlieties, kā vēlaties mācīties, lai mēs varētu pielāgot savu mācīšanas stilu."
     },
     "step8": {
       "title": "Pēdējie pieskārieni",
@@ -757,17 +1005,110 @@
       "textSize": "Teksta lieluma preference",
       "textSizeNormal": "Normāls",
       "textSizeLarge": "Liels",
-      "textSizeExtraLarge": "Ļoti liels"
+      "textSizeExtraLarge": "Ļoti liels",
+      "tooltip": "Iestatiet savu ideālo mācību vidi, izmantojot šīs pēdējās preferences.",
+      "privacy": {
+        "title": "Jūsu privātums ir mūsu prioritāte",
+        "items": [
+          "Mēs NEKAD nepārdosim jūsu personas datus",
+          "Visi dati paliek šifrēti un droši",
+          "Šos iestatījumus varat mainīt jebkurā laikā",
+          "Savus datus varat dzēst jebkurā laikā"
+        ]
+      },
+      "personalization": {
+        "title": "Personalizēta pieredze",
+        "description": "Ļaujiet mums izmantot jūsu mijiedarbības datus, lai sniegtu labāku, atbilstošāku palīdzību un ieteikumus, kas pielāgoti jūsu vajadzībām.",
+        "note": "Tas palīdz mums saprast, kuras tēmas jūs visvairāk interesē, un nodrošināt atbilstošākas apmācības."
+      },
+      "history": {
+        "title": "Izmantojiet sarunu vēsturi",
+        "description": "Atcerieties mūsu iepriekšējās sarunas, lai nodrošinātu labāku kontekstu un izvairītos no jau zināmas informācijas atkārtošanas.",
+        "note": "Tas man palīdz atcerēties iepriekš apspriesto un balstīties uz iepriekšējām sarunām."
+      },
+      "learningPrefs": {
+        "title": "Izmantojiet mācību preferences",
+        "description": "Atcerieties, ka vēlamais mācīšanās stils, saziņas preferences un pieejamība ir nepieciešama, lai nodrošinātu konsekventu pieredzi.",
+        "note": "Tas ietver jūsu vēlamo skaidrojuma stilu, valodas iestatījumus un pieejamības preferences."
+      },
+      "noSelection": {
+        "title": "Personalizācija nav atlasīta",
+        "success": "Lieliski! Mēs izmantosim jūsu atlasītos datus, lai nodrošinātu labāku pieredzi.",
+        "default": "Tas ir pilnīgi labi! Jūs joprojām saņemsiet pilnu piekļuvi visām funkcijām, tikai bez personalizētiem ieteikumiem."
+      }
     },
     "back": "Atpakaļ",
     "next": "Tālāk",
     "settingUp": "Iestata...",
     "completeSetup": "Pabeigt iestatīšanu",
-    "errorSaving": "Nevarēja saglabāt jūsu preferences. Lūdzu, mēģiniet vēlreiz."
+    "errorSaving": "Nevarēja saglabāt jūsu preferences. Lūdzu, mēģiniet vēlreiz.",
+    "buttons": {
+      "previous": "Iepriekšējais",
+      "next": "Tālāk",
+      "skip": "Izlaist",
+      "complete": "Pabeigts",
+      "processing": "Notiek apstrāde...",
+      "gotIt": "Sapratu!",
+      "skipAll": "Izlaist visu",
+      "cancel": "Atcelt"
+    },
+    "progress": {
+      "label": "Ieslēgšanās process: {{current}}. darbība no {{total}}",
+      "stepOf": "{{current}}. darbība no {{total}}",
+      "step": "Solis",
+      "stepCompleted": "{{solis}} — pabeigts",
+      "stepCurrent": "{{solis}} — pašreizējais solis",
+      "stepUpcoming": "{{step}} — drīzumā"
+    },
+    "tooltip": {
+      "helpfulTip": "Noderīgs padoms"
+    },
+    "flow": {
+      "title": "Laipni lūdzam! Sāksim"
+    },
+    "accessibility": {
+      "helpfulTip": "Noderīgs padoms",
+      "tooltipAppeared": "Parādījās rīka padoms ar šādu saturu: {{content}}",
+      "skippingStep": "Pašreizējā soļa izlaišana",
+      "movingToNextStep": "Pāreja uz nākamo soli",
+      "movingToPreviousStep": "Pāriet uz iepriekšējo darbību",
+      "completingOnboarding": "Ieslēgšanās procesa pabeigšana",
+      "stepChanged": "Tagad {{step}}. darbībai no {{total}}: {{title}}",
+      "skippingOnboarding": "Visa pievienošanās procesa izlaišana",
+      "cancellingOnboarding": "Ieslēgšanās procesa atcelšana",
+      "errorCompleting": "Pabeidzot pievienošanos, radās kļūda. Lūdzu, mēģiniet vēlreiz.",
+      "goToPreviousStep": "Pārejiet uz iepriekšējo darbību",
+      "skipThisStep": "Izlaidiet šo soli",
+      "completeOnboarding": "Pabeigt iestāšanos",
+      "continueToNextStep": "Turpiniet uz nākamo darbību",
+      "closeTooltip": "Aizvērt rīka padomu",
+      "skipTooltip": "Izlaidiet šo padomu",
+      "continueFromTooltip": "Turpināt no rīka padoma",
+      "skipEntireOnboarding": "Izlaist visu iestāšanos",
+      "cancelOnboarding": "Atcelt pievienošanos",
+      "keyboardInstructions": "Izmantojiet Tab, lai pārvietotos, Enter, lai atlasītu, un Escape, lai aizvērtu dialoglodziņus"
+    },
+    "validation": {
+      "firstNameRequired": "Jānorāda vārds",
+      "lastNameRequired": "Jānorāda uzvārds",
+      "validAgeRequired": "Lūdzu, ievadiet derīgu vecumu no 18 līdz 120 gadiem",
+      "languageRequired": "Lūdzu, atlasiet vismaz vienu valodu",
+      "deviceRequired": "Lūdzu, atlasiet savu primāro ierīci",
+      "experienceRequired": "Lūdzu, atlasiet savu tehniskās pieredzes līmeni",
+      "concernsOptional": "Varat atlasīt problēmas, lai palīdzētu mums personalizēt jūsu pieredzi",
+      "assistiveNeedsRequired": "Lūdzu, atlasiet savas pieejamības vajadzības vai izvēlieties “Nav nepieciešams”",
+      "communicationStyleRequired": "Lūdzu, izvēlieties sev vēlamo saziņas stilu"
+    },
+    "restart": {
+      "confirmMessage": "Vai tiešām vēlaties atsākt pievienošanās procesu? Tas atiestatīs visas jūsu preferences."
+    }
   },
   "error": {
     "askQuestionFirst": "Lūdzu, vispirms uzdodiet jautājumu",
-    "couldntGetAnswer": "Atvainojiet, šobrīd nevarēju saņemt atbildi. Lūdzu, mēģiniet vēlreiz."
+    "couldntGetAnswer": "Atvainojiet, šobrīd nevarēju saņemt atbildi. Lūdzu, mēģiniet vēlreiz.",
+    "notifications": {
+      "dismiss": "Atlaist"
+    }
   },
   "learningPage": {
     "headerTitle": "Mācību centrs",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "Moduļi ceļam: {{pathTitle}}",
     "moduleContentTitle": "Saturs modulim: {{moduleTitle}} būs šeit.",
     "loadingCenter": "Ielādē Mācību centru...",
-    "moduleTimeLabel": "Laiks: "
+    "moduleTimeLabel": "Laiks: ",
+    "startOrContinueCourse": "Sākt vai turpināt kursu",
+    "lessonsHeader": "Nodarbības",
+    "lessonContentPlaceholder": "Vēl nav pieejams saturs priekš {{lessonTitle}}.",
+    "noLessonAvailable": "Nav pieejama nodarbība."
   },
   "languageSelector": {
     "choosePrompt": "Izvēlieties vēlamo valodu saskarnei",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Pārskatīt",
     "congratulations": "Apsveicam!",
     "courseComplete": "Jūs esat pabeidzis {{courseTitle}} kursu!",
-    "downloadCertificate": "Lejupielādēt sertifikātu"
+    "downloadCertificate": "Lejupielādēt sertifikātu",
+    "previousLesson": "Iepriekšējā nodarbība",
+    "nextLesson": "Nākamā nodarbība",
+    "markAsComplete": "Atzīmēt kā pabeigtu",
+    "completed": "Pabeigts",
+    "removeBookmark": "Noņemt grāmatzīmi",
+    "addBookmark": "Pievienot grāmatzīmi"
   },
   "lessonView": {
     "readAloud": "Nolasīt nodarbību skaļi",
@@ -939,5 +1290,461 @@
       "thankYou": "Paldies, ka uzticaties TechStep ar savu informāciju. Mēs esam apņēmušies to aizsargāt un izmantot tikai, lai palīdzētu jums gūt panākumus ar tehnoloģijām.",
       "backToHome": "Atpakaļ uz sākumu"
     }
+  },
+  "avatar": {
+    "enable": "Iespējot AI iemiesojumu",
+    "disable": "Atspējot iemiesojumu",
+    "loading": "Notiek iemiesojuma ielāde...",
+    "mute": "Izslēgt iemiesojumu",
+    "unmute": "Ieslēgt iemiesojumu",
+    "settings": "Iemiesojuma iestatījumi",
+    "fullscreen": "Pilnekrāna režīms",
+    "exitFullscreen": "Iziet pilnekrāna režīmā",
+    "performance": {
+      "high": "Augsta kvalitāte",
+      "medium": "Vidēja kvalitāte",
+      "low": "Zema kvalitāte",
+      "off": "Iemiesojums izslēgts"
+    },
+    "error": {
+      "loadFailed": "Neizdevās ielādēt iemiesojumu. Lūdzu, mēģiniet vēlreiz.",
+      "noWebGL": "Jūsu ierīce neatbalsta 3D grafiku.",
+      "audioFailed": "Nevarēja piekļūt mikrofonam lūpu sinhronizēšanai."
+    },
+    "status": {
+      "initializing": "Notiek iemiesojuma palaišana...",
+      "ready": "Gatavs palīdzēt",
+      "thinking": "Domājot...",
+      "speaking": "Runā...",
+      "listening": "Klausos...",
+      "celebrating": "Ar prieku palīdzēt!",
+      "error": "Kaut kas nogāja greizi",
+      "processing": "Notiek audio apstrāde...",
+      "lipSyncActive": "Aktīva lūpu sinhronizācija",
+      "lipSyncInactive": "Lūpu sinhronizācija neaktīva"
+    },
+    "greeting": {
+      "morning": "Labrīt, {{name}}! Vai esat gatavs šodien iemācīties kaut ko jaunu?",
+      "afternoon": "Labdien, {{name}}! Kā es varu jums palīdzēt šodien?",
+      "evening": "Labvakar, {{name}}! Ko jūs vēlētos izpētīt?"
+    },
+    "companion": {
+      "title": "Jūsu AI palīgs",
+      "ready": "Es esmu šeit, lai palīdzētu jums ar tehnoloģijām!"
+    },
+    "actions": {
+      "chat": "Tērzēšana",
+      "voice": "Balss",
+      "camera": "Kamera",
+      "help": "Palīdzība"
+    },
+    "suggestions": {
+      "title": "Ātri jautājumi"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Kā izveidot savienojumu ar WiFi?",
+    "makeTextBigger": "Kā palielināt tekstu ekrānā?",
+    "takeScreenshot": "Kā uzņemt ekrānuzņēmumu?",
+    "videoCall": "Kā veikt videozvanu?",
+    "iphoneSettings": "Kā mainīt iPhone iestatījumus?",
+    "androidSettings": "Kā mainīt Android iestatījumus?",
+    "windowsSettings": "Kā mainīt Windows iestatījumus?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Kā es varu jums palīdzēt šodien?",
+      "subtitle": "Jautājiet man kaut ko par tehnoloģijām!"
+    },
+    "input": {
+      "placeholder": "Ziņojums AI palīgam...",
+      "helper": "Nospiediet Enter, lai nosūtītu, vai Shift+Enter, lai skatītu jaunu rindiņu"
+    },
+    "greeting": {
+      "morning": "Labrīt",
+      "afternoon": "Laba pēcpusdiena",
+      "evening": "Labvakar"
+    },
+    "error": {
+      "general": "Atvainojiet, šobrīd man ir problēmas. Lūdzu, pēc brīža mēģiniet vēlreiz."
+    }
+  },
+  "flashcards": {
+    "title": "Soli pa solim ceļvedis",
+    "progress": "{{current}}. darbība no {{total}}",
+    "instructions": "Norādījumi:",
+    "markCompleted": "Atzīmēt kā pabeigtu"
+  },
+  "dataPortability": {
+    "title": "Datu pārnesamība un lietotāja tiesības",
+    "tabs": {
+      "overview": "Pārskats",
+      "sharing": "Datu koplietošana",
+      "export": "Eksportēt datus",
+      "delete": "Dzēst datus",
+      "ai": "AI caurspīdīgums"
+    },
+    "overview": {
+      "title": "Jūsu datu tiesības",
+      "description": "Jums ir pilnīga kontrole pār saviem personas datiem. Jūs varat skatīt, eksportēt, labot vai dzēst savu informāciju jebkurā laikā 30 dienu laikā.",
+      "dataWeCollect": "Mūsu apkopotie dati",
+      "profileInfo": "Profila informācija (vārds, e-pasts, preferences)",
+      "learningProgress": "Mācību progress un sasniegumi",
+      "aiHistory": "AI sarunu vēsture",
+      "analytics": "Lietojuma analīze (anonimizēta)",
+      "howWeUse": "Kā mēs izmantojam jūsu datus",
+      "personalized": "Nodrošiniet personalizētu mācību pieredzi",
+      "improveAI": "Uzlabojiet AI palīga atbildes",
+      "trackProgress": "Sekojiet savam progresam un sasniegumiem",
+      "security": "Nodrošiniet platformas drošību un veiktspēju",
+      "rightsTitle": "Jūsu tiesības saskaņā ar GDPR un CCPA",
+      "rightAccess": "Piekļuves tiesības:",
+      "accessDesc": "Skatiet visus savus personas datus",
+      "rightPortability": "Tiesības uz pārnesamību:",
+      "portabilityDesc": "Eksportējiet savus datus",
+      "rightRectification": "Tiesības uz labošanu:",
+      "rectificationDesc": "Izlabojiet neprecīzos datus",
+      "rightErasure": "Tiesības uz dzēšanu:",
+      "erasureDesc": "Izdzēsiet savus personas datus"
+    },
+    "sharing": {
+      "title": "Datu koplietošanas preferences",
+      "description": "Kontrolējiet, kā jūsu dati tiek kopīgoti un izmantoti. Kopīgošana nav obligāta, un to var mainīt jebkurā laikā.",
+      "dataTypes": "Datu veidu koplietošana",
+      "thirdParty": "Trešās puses kopīgošana",
+      "special": "Īpašās kategorijas",
+      "analytics": "Analytics koplietošana",
+      "analyticsDesc": "Kopīgojiet anonimizētus lietošanas datus, lai uzlabotu platformu",
+      "research": "Pētījumu koplietošana",
+      "researchDesc": "Sniedziet anonimizētus datus vecāko klašu izpētē"
+    },
+    "export": {
+      "title": "Eksportējiet savus datus",
+      "description": "Lejupielādējiet visu savu personas datu kopiju. Mēs sagatavosim jūsu datus un nosūtīsim jums lejupielādes saiti 30 dienu laikā.",
+      "chooseFormat": "Izvēlieties Eksporta formātu",
+      "included": "Kas ir iekļauts:",
+      "profile": "Profila informācija un preferences",
+      "progress": "Mācību progress un sasniegumi",
+      "conversations": "AI sarunu vēsture",
+      "support": "Atbalsta biļešu vēsturi",
+      "consent": "Piekrišanas un konfidencialitātes iestatījumi",
+      "request": "Pieprasīt datu eksportēšanu",
+      "requesting": "Notiek eksportēšanas pieprasījums...",
+      "requests": "Eksporta pieprasījumi",
+      "requested": "Pieprasīts",
+      "download": "Lejupielādēt"
+    },
+    "delete": {
+      "title": "Dzēsiet savus datus",
+      "description": "Neatgriezeniski dzēst visus savus personas datus. Šo darbību nevar atsaukt, un jūsu konts tiks slēgts 30 dienu laikā.",
+      "whatDeleted": "Kas tiks dzēsts:",
+      "profile": "Jūsu profils un konta informācija",
+      "progress": "Visi mācību panākumi un sasniegumi",
+      "conversations": "AI sarunu vēsture",
+      "preferences": "Preferences un iestatījumi",
+      "analytics": "Ar jūsu kontu saistīta lietojuma analīze",
+      "important": "Svarīgas piezīmes:",
+      "legal": "Daži dati var tikt saglabāti, lai nodrošinātu atbilstību tiesību aktiem (atbalsta biļetes, norēķinu ieraksti)",
+      "research": "Anonimizētos datus, ko izmanto pētniecībai, var saglabāt",
+      "verification": "Pirms dzēšanas jūs saņemsit e-pasta apstiprinājumu",
+      "timeframe": "Dzēšana tiks pabeigta 30 dienu laikā",
+      "request": "Pieprasīt datu dzēšanu",
+      "confirm": "Vai tiešām vēlaties dzēst visus savus datus?",
+      "type": "Ierakstiet \"DZĒST MANU DATU\", lai apstiprinātu šo darbību:",
+      "placeholder": "Ierakstiet DZĒST MANU DATU",
+      "confirmButton": "Apstipriniet dzēšanu",
+      "processing": "Notiek apstrāde...",
+      "cancel": "Atcelt",
+      "requests": "Dzēšanas pieprasījumi",
+      "complete": "Pabeigt datu dzēšanu",
+      "requested": "Pieprasīts",
+      "scheduled": "Plānots",
+      "awaitingVerification": "Gaida verifikāciju"
+    },
+    "ai": {
+      "title": "AI datu izmantošanas caurspīdīgums",
+      "description": "Uzziniet, kā mūsu AI palīgs izmanto jūsu datus, un kontrolējiet savas AI datu preferences.",
+      "stats": "AI datu lietojuma statistika",
+      "conversationsAnalyzed": "Analizētās sarunas:",
+      "dataPoints": "Izmantotie datu punkti:",
+      "trainingContribution": "Apmācības ieguldījums:",
+      "lastProcessed": "Pēdējo reizi apstrādāts:",
+      "optOut": "AI atteikšanās iespējas",
+      "stopTraining": "Pārtrauciet AI apmācību",
+      "stopTrainingDesc": "Neļaujiet saviem datiem uzlabot AI atbildes",
+      "deleteHistory": "Dzēst sarunu vēsturi",
+      "deleteHistoryDesc": "Noņemiet visas saglabātās AI sarunas",
+      "anonymize": "Anonimizēt manus datus",
+      "anonymizeDesc": "Konvertējiet datus anonīmā formā"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Izvēlieties, kā sazināties",
+    "tabs": {
+      "chat": "Tērzēšana",
+      "voice": "Balss",
+      "image": "Attēls",
+      "chatAria": "Teksta tērzēšanas ievade",
+      "voiceAria": "Balss ievade",
+      "imageAria": "Attēla ievade"
+    },
+    "chat": {
+      "placeholder": "Ierakstiet savu jautājumu šeit... Lai nosūtītu, nospiediet taustiņu Enter",
+      "ariaLabel": "Ierakstiet savu jautājumu",
+      "sendButton": "Nosūtīt ziņu",
+      "send": "Sūtīt"
+    },
+    "voice": {
+      "recording": "Notiek ierakstīšana... Pieskarieties, lai apturētu",
+      "processing": "Notiek jūsu balss apstrāde...",
+      "instructions": "Pieskarieties mikrofonam, lai sāktu ierakstīšanu",
+      "startRecording": "Sāciet ierakstīšanu",
+      "stopRecording": "Pārtraukt ierakstīšanu"
+    },
+    "image": {
+      "takePhoto": "Uzņemiet fotoattēlu",
+      "camera": "Uzņemiet fotoattēlu",
+      "upload": "Augšupielādēt attēlu",
+      "uploadAria": "Izvēlieties attēla failu",
+      "instructions": "Kopīgojiet fotoattēlu, un es palīdzēšu izskaidrot to, ko redzat",
+      "formats": "Atbalsta JPG, PNG, GIF (maks. 10 MB)",
+      "previewAlt": "Atlasītā attēla priekšskatījums",
+      "remove": "Noņemt attēlu",
+      "contextLabel": "Ko jūs vēlētos uzzināt par šo attēlu?",
+      "contextPlaceholder": "Neobligāti: uzdodiet konkrētu jautājumu par attēlu",
+      "cancel": "Atcelt",
+      "submit": "Iesniegt attēlu",
+      "send": "Sūtīt",
+      "invalidType": "Lūdzu, atlasiet derīgu attēla failu.",
+      "tooLarge": "Attēla fails ir pārāk liels. Lūdzu, atlasiet failu, kas ir mazāks par 10 MB.",
+      "cameraError": "Nevarēja piekļūt kamerai. Lūdzu, pārbaudiet atļaujas."
+    }
+  },
+  "ai": {
+    "title": "AI palīgs",
+    "subtitle": "Šeit, lai palīdzētu jums mācīties",
+    "emergency": "Ārkārtas atbalsts",
+    "emergencyAria": "Saņemiet ārkārtas atbalstu",
+    "expand": "Izvērst",
+    "minimize": "Minimizēt",
+    "close": "Aizveriet AI palīgu",
+    "thinking": "AI domā...",
+    "escalated": "Tagad esat savienots ar mūsu atbalsta komandu",
+    "callSupport": "Zvaniet atbalsta dienestam: 1-800-SENIOR-HELP",
+    "minimized": "AI palīgs",
+    "welcome": {
+      "tutorial": "Sveiki! Es redzu, ka strādājat pie \"{{tutorial}}\". Es esmu šeit, lai palīdzētu jums ar visiem jautājumiem. Varat rakstīt, runāt vai rādīt man attēlus — to, kas jums šķiet ērtākais!",
+      "general": "Sveiki! Es esmu jūsu AI palīgs, lai palīdzētu jums soli pa solim apgūt tehnoloģijas. Varat man uzdot jautājumus, rakstot, runājot vai rādot attēlus. Ko jūs vēlētos uzzināt?"
+    },
+    "error": {
+      "general": "Atvainojiet, šobrīd man ir problēmas. Ļaujiet man sazināties ar mūsu atbalsta komandu, kas var jums nekavējoties palīdzēt."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Kopienas forums",
+      "subtitle": "Sazinieties ar citiem skolēniem, uzdodiet jautājumus un dalieties pieredzē",
+      "backToHome": "Atpakaļ uz sākumlapu",
+      "newPost": "Jauna ziņa"
+    },
+    "sidebar": {
+      "categories": "Kategorijas",
+      "topics": {
+        "all": "Visas tēmas",
+        "general": "Vispārējā palīdzība",
+        "mobile": "Mobilās ierīces",
+        "computer": "Datori",
+        "apps": "Lietotnes un programmatūra",
+        "internet": "Internets un e-pasts",
+        "safety": "Tiešsaistes drošība"
+      },
+      "guidelines": {
+        "title": "kopienas vadlīnijas",
+        "items": [
+          "Esiet cieņpilns un laipns",
+          "Nav surogātpasta vai nepiemērota satura",
+          "Palīdziet citiem, kad varat",
+          "Palieciet pie tēmas",
+          "Ziņojiet par visām problēmām"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Meklēt ziņas..."
+    },
+    "createPost": {
+      "title": "Izveidot jaunu ziņu",
+      "categoryLabel": "Kategorija",
+      "titleLabel": "Nosaukums",
+      "contentLabel": "Saturs",
+      "titlePlaceholder": "Kāds ir tavs jautājums vai tēma?",
+      "contentPlaceholder": "Aprakstiet savu jautājumu vai dalieties savās domās...",
+      "submit": "Post",
+      "cancel": "Atcelt",
+      "profanityAlert": "Jūsu ziņā ir nepiemērots saturs. Lūdzu, pārskatiet un mēģiniet vēlreiz."
+    },
+    "posts": {
+      "empty": "Nav atrasta neviena ziņa. Esi pirmais, kas uzsāk sarunu!",
+      "replies": "{{count}} atbildes",
+      "timeAgo": {
+        "justNow": "Tikai tagad",
+        "oneHour": "pirms 1 stundas",
+        "hours": "pirms {{count}} stundām",
+        "oneDay": "pirms 1 dienas",
+        "days": "pirms {{count}} dienām"
+      }
+    }
+  },
+  "contact": {
+    "title": "Sazinieties ar mums",
+    "subtitle": "Mēs labprāt dzirdētu no jums! Nosūtiet mums ziņu, un mēs atbildēsim pēc iespējas ātrāk.",
+    "backToHome": "Atpakaļ uz sākumlapu",
+    "form": {
+      "fasterResponse": "📧 Šī anketa tiks atbildēta ātrāk nekā citi saziņas veidi!",
+      "name": "Pilns vārds*",
+      "namePlaceholder": "Ievadiet savu pilno vārdu",
+      "email": "E-pasta adrese*",
+      "emailPlaceholder": "Ievadiet savu e-pasta adresi",
+      "subject": "Tēma*",
+      "subjectPlaceholder": "Izvēlieties tēmu",
+      "subjects": {
+        "general": "Vispārēja aptauja",
+        "techSupport": "Tehniskais atbalsts",
+        "account": "Konta palīdzība",
+        "feature": "Funkcijas pieprasījums",
+        "bug": "Kļūdu ziņojums",
+        "feedback": "Atsauksmes",
+        "other": "Cits"
+      },
+      "message": "Ziņa*",
+      "messagePlaceholder": "Lūdzu, detalizēti aprakstiet savu pieprasījumu...",
+      "submit": "Nosūtīt ziņu",
+      "sending": "Notiek sūtīšana...",
+      "success": "Jūsu e-pasta klientam bija jābūt atvērtam. Ja nē, lūdzu, kopējiet informāciju un nosūtiet mums tieši e-pastu.",
+      "error": "Radās kļūda. Lūdzu, rakstiet mums tieši uz taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Sazinieties",
+      "emailLabel": "E-pasts",
+      "responseData": "Mēs parasti atbildam 24 stundu laikā"
+    },
+    "reasons": {
+      "title": "Kāpēc sazināties ar mums?",
+      "items": [
+        "Saņemiet palīdzību tehnisko problēmu risināšanā",
+        "Pieprasīt jaunas funkcijas",
+        "Kopīgojiet atsauksmes un ieteikumus",
+        "Ziņojiet par kļūdām vai problēmām",
+        "Vispārīgi jautājumi"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Pakalpojuma noteikumi",
+    "backToHome": "Atpakaļ uz sākumlapu",
+    "lastUpdated": "Pēdējo reizi atjaunināts: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Noteikumu pieņemšana",
+        "content": "Piekļūstot mūsu pakalpojumam un izmantojot to, jūs piekrītat šī līguma noteikumiem un nosacījumiem un piekrītat tiem."
+      },
+      "license": {
+        "title": "Izmantojiet licenci",
+        "content": "Tiek piešķirta atļauja īslaicīgi izmantot mūsu pakalpojumu tikai personiskai, nekomerciālai īslaicīgai apskatei."
+      },
+      "conduct": {
+        "title": "Lietotāja uzvedība",
+        "content": "Jūs piekrītat izmantot mūsu pakalpojumu saskaņā ar visiem piemērojamajiem likumiem un noteikumiem un saskaņā ar šiem noteikumiem."
+      },
+      "liability": {
+        "title": "Atbildības ierobežojums",
+        "content": "Mūsu uzņēmums vai tā piegādātāji nekādā gadījumā nav atbildīgi par zaudējumiem, kas radušies mūsu pakalpojuma izmantošanas vai nespējas izmantot."
+      },
+      "contact": {
+        "title": "Kontaktinformācija",
+        "content": "Ja jums ir kādi jautājumi par šiem pakalpojumu sniegšanas noteikumiem, lūdzu, sazinieties ar mums:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Pieejamības paziņojums",
+    "subtitle": "Mēs esam apņēmušies padarīt mūsu platformu pieejamu ikvienam neatkarīgi no iespējām vai tehnoloģijām.",
+    "backToHome": "Atpakaļ uz sākumlapu",
+    "commitment": {
+      "title": "Mūsu apņemšanās",
+      "content": "Mēs uzskatām, ka tehnoloģijām jābūt pieejamām ikvienam. Mūsu platforma ir izstrādāta, domājot par senioriem, ietverot funkcijas, kas padara mācību tehnoloģiju vieglāku un ērtāku visu spēju lietotājiem."
+    },
+    "features": {
+      "title": "Pieejamības līdzekļi",
+      "visual": {
+        "title": "Vizuālā pieejamība",
+        "items": [
+          "Augsta kontrasta krāsu shēmas",
+          "Lieli, lasāmi fonti",
+          "Saderība ar ekrāna lasītāju",
+          "Tastatūras navigācijas atbalsts",
+          "Alternatīvs teksts attēliem"
+        ]
+      },
+      "audio": {
+        "title": "Audio pieejamība",
+        "items": [
+          "Videoklipu subtitri",
+          "Audio apraksti",
+          "Skaļuma regulatori",
+          "Vizuālie indikatori audio norādēm",
+          "Teksta alternatīvas audio saturam"
+        ]
+      },
+      "motor": {
+        "title": "Motora pieejamība",
+        "items": [
+          "Lieli noklikšķināmi apgabali",
+          "Navigācija tikai ar tastatūru",
+          "Regulējami laika ierobežojumi",
+          "Balss vadības saderība",
+          "Vienkāršota mijiedarbība"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitīvā pieejamība",
+        "items": [
+          "Vienkārša, skaidra valoda",
+          "Konsekventa navigācija",
+          "Samazinātas kustības iespējas",
+          "Skaidri norādījumi",
+          "Kļūdu novēršana un atkopšana"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Atbilstība standartiem",
+      "content": "Mūsu platformas mērķis ir nodrošināt atbilstību tīmekļa satura pieejamības vadlīniju (WCAG) 2.1. līmeņa AA standartiem. Mēs regulāri pārbaudām savu platformu ar palīgtehnoloģijām un veicam pieejamības auditus."
+    },
+    "feedback": {
+      "title": "Atsauksmes un atbalsts",
+      "content": "Mēs nepārtraukti strādājam, lai uzlabotu pieejamību. Ja jums rodas kādi šķēršļi vai jums ir ieteikumi uzlabojumiem, lūdzu, nevilcinieties sazināties ar mums.",
+      "emailLabel": "E-pasts",
+      "subjectLabel": "Priekšmets",
+      "subjectValue": "Pieejamības atsauksmes"
+    },
+    "assistive": {
+      "title": "Palīgtehnoloģijas",
+      "content": "Mūsu platforma ir paredzēta darbam ar izplatītām palīgtehnoloģijām, tostarp:",
+      "items": [
+        "Ekrāna lasītāji (JAWS, NVDA, VoiceOver)",
+        "Balss atpazīšanas programmatūra",
+        "Ekrāna palielināšanas rīki",
+        "Alternatīvās tastatūras",
+        "Pārslēdziet navigācijas ierīces",
+        "Acu izsekošanas sistēmas"
+      ]
+    },
+    "help": {
+      "title": "Vai nepieciešama palīdzība?",
+      "content": "Ja jums nepieciešama palīdzība, izmantojot mūsu platformu, vai jums ir jautājumi par pieejamību, mēs esam gatavi jums palīdzēt.",
+      "contact": "Sazinieties ar atbalsta dienestu"
+    },
+    "lastUpdated": "Pēdējo reizi atjaunināts: {{date}}"
   }
 }

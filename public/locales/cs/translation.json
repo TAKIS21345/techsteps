@@ -8,7 +8,8 @@
       "firstNamePlaceholder": "Vaše křestní jméno",
       "lastName": "Příjmení",
       "lastNamePlaceholder": "Vaše příjmení",
-      "age": "Věk (pomáhá mi přizpůsobit vysvětlení)"
+      "age": "Věk (pomáhá mi přizpůsobit vysvětlení)",
+      "tooltip": "Řekněte nám něco o sobě, abychom vám mohli přizpůsobit vaše učení."
     },
     "step2": {
       "title": "Vyberte si preferované jazyky",
@@ -25,7 +26,8 @@
       "selected_plural": "Vybráno: {{count}} jazyků",
       "noLanguagesFound": "Nebyly nalezeny žádné jazyky odpovídající \"{{search}}\"",
       "languageRequired": "Je vyžadován výběr jazyka",
-      "languageRequiredDesc": "Prosím, vyberte alespoň jeden jazyk pro pokračování. Tím zajistíte nejlepší zážitek pro hlasové zadávání a textové interakce."
+      "languageRequiredDesc": "Prosím, vyberte alespoň jeden jazyk pro pokračování. Tím zajistíte nejlepší zážitek pro hlasové zadávání a textové interakce.",
+      "tooltip": "Vyberte si jazyky, které vám vyhovují pro hlasový vstup a textové interakce."
     },
     "step3": {
       "title": "Jaké zařízení používáte nejčastěji?",
@@ -38,7 +40,8 @@
         "androidphoneortablet": "Telefon nebo tablet s Androidem",
         "smarttv": "Chytrá televize",
         "multipledevices": "Více zařízení"
-      }
+      },
+      "tooltip": "Znalost vašeho primárního zařízení nám pomáhá poskytovat relevantnější pokyny."
     },
     "step4": {
       "title": "Jak se cítíte s technologiemi?",
@@ -48,7 +51,8 @@
       "some": "Nějaké zkušenosti",
       "someDesc": "Zvládnu základní úkoly, ale potřebuji pomoc s novými věcmi",
       "comfortable": "Cítím se pohodlně",
-      "comfortableDesc": "Většinu věcí zvládnu sám, ale občas potřebuji radu"
+      "comfortableDesc": "Většinu věcí zvládnu sám, ale občas potřebuji radu",
+      "tooltip": "Buďte upřímní ohledně své úrovně pohodlí – to nám pomáhá vysvětlit věci správným tempem."
     },
     "step5": {
       "title": "Jaká technická témata vás nejvíce znepokojují?",
@@ -66,7 +70,8 @@
         "deviceSettings": "Nastavení zařízení",
         "onlineShopping": "Online nakupování",
         "healthApps": "Zdravotní aplikace a portály"
-      }
+      },
+      "tooltip": "Vyberte témata, která vás nejvíce znepokojují, abychom mohli upřednostnit pomoc v těchto oblastech."
     },
     "step6": {
       "title": "Potřebujete nějaké funkce usnadnění?",
@@ -79,7 +84,8 @@
         "slowerExplanations": "Pomalejší vysvětlení",
         "visualSteps": "Vizuální ukazatele kroků",
         "noneNeeded": "Žádné nejsou potřeba"
-      }
+      },
+      "tooltip": "Dejte nám vědět o všech funkcích usnadnění, které potřebujete pro pohodlný zážitek."
     },
     "step7": {
       "title": "Jak se nejraději učíte?",
@@ -89,7 +95,8 @@
       "detailed": "Podrobná vysvětlení",
       "detailedDesc": "Vysvětlete mi, proč dělám každý krok",
       "visual": "Vizuální učení",
-      "visualDesc": "Ukazujte mi obrázky a videa, když je to možné"
+      "visualDesc": "Ukazujte mi obrázky a videa, když je to možné",
+      "tooltip": "Vyberte si, jak se chcete učit, abychom mohli upravit náš styl výuky."
     },
     "step8": {
       "title": "Poslední úpravy",
@@ -103,13 +110,103 @@
       "textSize": "Preferovaná velikost textu",
       "textSizeNormal": "Normální",
       "textSizeLarge": "Velká",
-      "textSizeExtraLarge": "Extra velká"
+      "textSizeExtraLarge": "Extra velká",
+      "tooltip": "Nastavte si své dokonalé učební prostředí s těmito konečnými preferencemi.",
+      "privacy": {
+        "title": "Vaše soukromí je naší prioritou",
+        "items": [
+          "Vaše osobní údaje NIKDY neprodáme",
+          "Všechna data zůstávají šifrovaná a bezpečná",
+          "Tato nastavení můžete kdykoli změnit",
+          "Svá data můžete kdykoli smazat"
+        ]
+      },
+      "personalization": {
+        "title": "Personalizované zkušenosti",
+        "description": "Umožněte nám používat vaše údaje o interakci k poskytování lepší a relevantnější pomoci a návrhů přizpůsobených vašim potřebám.",
+        "note": "Pomůže nám to pochopit, která témata vás nejvíce zajímají, a poskytnout vám relevantnější výukové programy."
+      },
+      "history": {
+        "title": "Použijte historii konverzace",
+        "description": "Pamatujte si naše předchozí konverzace, abyste poskytli lepší kontext a vyhli se opakování informací, které již znáte.",
+        "note": "To mi pomáhá zapamatovat si, o čem jsme již diskutovali, a navázat na předchozí rozhovory."
+      },
+      "learningPrefs": {
+        "title": "Použijte Předvolby učení",
+        "description": "Pamatujte, že váš preferovaný styl učení, komunikační preference a dostupnost musí poskytovat konzistentní zkušenosti.",
+        "note": "To zahrnuje preferovaný styl vysvětlení, jazyková nastavení a předvolby usnadnění."
+      },
+      "noSelection": {
+        "title": "Není vybrána žádná personalizace",
+        "success": "Velký! Vaše vybraná data použijeme k lepšímu zážitku.",
+        "default": "To je naprosto v pořádku! Stále budete mít plný přístup ke všem funkcím, jen bez personalizovaných doporučení."
+      }
     },
     "back": "Zpět",
     "next": "Další",
     "settingUp": "Nastavování...",
     "completeSetup": "Dokončit nastavení",
-    "errorSaving": "Vaše preference se nepodařilo uložit. Zkuste to prosím znovu."
+    "errorSaving": "Vaše preference se nepodařilo uložit. Zkuste to prosím znovu.",
+    "buttons": {
+      "previous": "Předchozí",
+      "next": "Další",
+      "skip": "Přeskočit",
+      "complete": "Kompletní",
+      "processing": "Zpracovává se...",
+      "gotIt": "Rozumím!",
+      "skipAll": "Přeskočit vše",
+      "cancel": "Zrušit"
+    },
+    "progress": {
+      "label": "Průběh registrace: Krok {{current}} z {{total}}",
+      "stepOf": "Krok {{current}} z {{total}}",
+      "step": "Krok",
+      "stepCompleted": "{{step}} – Dokončeno",
+      "stepCurrent": "{{step}} - Aktuální krok",
+      "stepUpcoming": "{{step}} – Nadcházející"
+    },
+    "tooltip": {
+      "helpfulTip": "Užitečný tip"
+    },
+    "flow": {
+      "title": "Vítejte! Pojďme začít"
+    },
+    "accessibility": {
+      "helpfulTip": "Užitečný tip",
+      "tooltipAppeared": "Popisek se objevil s obsahem: {{content}}",
+      "skippingStep": "Přeskočení aktuálního kroku",
+      "movingToNextStep": "Přechod k dalšímu kroku",
+      "movingToPreviousStep": "Přechod na předchozí krok",
+      "completingOnboarding": "Dokončení procesu onboardingu",
+      "stepChanged": "Nyní v kroku {{step}} z {{total}}: {{title}}",
+      "skippingOnboarding": "Přeskočení celého procesu registrace",
+      "cancellingOnboarding": "Zrušení procesu registrace",
+      "errorCompleting": "Chyba při dokončení registrace. Zkuste to prosím znovu.",
+      "goToPreviousStep": "Přejděte na předchozí krok",
+      "skipThisStep": "Tento krok přeskočte",
+      "completeOnboarding": "Kompletní onboarding",
+      "continueToNextStep": "Pokračujte dalším krokem",
+      "closeTooltip": "Zavřít popisek",
+      "skipTooltip": "Přeskočte tento tip",
+      "continueFromTooltip": "Pokračujte od popisku",
+      "skipEntireOnboarding": "Přeskočit celou registraci",
+      "cancelOnboarding": "Zrušit registraci",
+      "keyboardInstructions": "Použijte Tab pro navigaci, Enter pro výběr a Escape pro zavření dialogů"
+    },
+    "validation": {
+      "firstNameRequired": "Jméno je povinné",
+      "lastNameRequired": "Příjmení je povinné",
+      "validAgeRequired": "Zadejte prosím platný věk mezi 18 a 120",
+      "languageRequired": "Vyberte prosím alespoň jeden jazyk",
+      "deviceRequired": "Vyberte prosím své primární zařízení",
+      "experienceRequired": "Vyberte prosím úroveň svých technických zkušeností",
+      "concernsOptional": "Můžete si vybrat obavy, které nám pomohou personalizovat vaše zkušenosti",
+      "assistiveNeedsRequired": "Vyberte prosím své potřeby přístupnosti nebo zvolte „Není potřeba“",
+      "communicationStyleRequired": "Vyberte prosím preferovaný styl komunikace"
+    },
+    "restart": {
+      "confirmMessage": "Opravdu chcete restartovat proces registrace? Tím se resetují všechny vaše předvolby."
+    }
   },
   "nav": {
     "features": "Funkce",
@@ -230,7 +327,10 @@
       ],
       "copyright": "© 2025 TechStep. Vytvořeno s ❤️ pro seniory všude.",
       "trustedBy": "Důvěřuje nám",
-      "trustedByCount": "50 000+ seniorů"
+      "trustedByCount": "50 000+ seniorů",
+      "communityTitle": "Společenství",
+      "legalTitle": "Právní a podpora",
+      "contactEmail": "Kontakt: E-mail: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -315,48 +415,169 @@
       "title": "Základy počítačů a zařízení",
       "description": "Úplné základy, které vás uvedou do světa technologií.",
       "modules": {
-        "turnOnDevice": { "title": "Zapnutí zařízení", "description": "Naučte se zapínat počítače a chytré telefony." },
-        "mouseTouchscreen": { "title": "Používání myši/dotykové obrazovky", "description": "Ovládněte ukazování, klikání a klepání." },
-        "keyboardTyping": { "title": "Základy klávesnice/psaní", "description": "Osvojte si základy psaní." },
-        "filesFolders": { "title": "Porozumění souborům a složkám", "description": "Naučte se, jak jsou organizovány digitální informace." }
+        "turnOnDevice": {
+          "title": "Zapnutí zařízení",
+          "description": "Naučte se zapínat počítače a chytré telefony."
+        },
+        "mouseTouchscreen": {
+          "title": "Používání myši/dotykové obrazovky",
+          "description": "Ovládněte ukazování, klikání a klepání.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Let’s Play: Základy myši a dotykové obrazovky</h3><p>Jste připraveni prozkoumat? Vaše myš a dotyková obrazovka jsou vaší kouzelnou hůlkou pro digitální svět!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Zábava s myší:</h4><ul class=\"space-y-2\"><li>• <b>Ukazatel</b>: Pohybujte myší a sledujte šipku: <b> klikněte levým tlačítkem a vyberte vás!</li> věci. Zkuste kliknout na tlačítko níže!</li><li>• <b>Dvojité kliknutí</b>: Dvojím rychlým stisknutím otevřete soubory nebo programy.</li><li>• <b>Kliknutí pravým tlačítkem</b>: Stisknutím pravého tlačítka zobrazíte tajnou nabídku.</li><li>• <b>Posouvání</b>: Otáčením kolečka se můžete po stránce pohybovat nahoru a dolů.</li></ul></div-5dive class. rounded-lg\"><h4 class=\"font-medium mb-2\">Triky s dotykovou obrazovkou:</h4><ul class=\"space-y-2\"><li>• <b>Klepnutím</b>: Výběr provedete jemným dotykem na obrazovku.</li><li>• <b>Přejetí</b>: Posouváním prstu můžete posouvat nebo přepínat obrazovky.</li>Posouváním prstů k sobě nebo přiblížením dvěma prsty</b><b>. ven.</li><li>• <b>Dlouhé stisknutí</b>: Podržením prstu zobrazíte další možnosti (např. kliknutí pravým tlačítkem!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Vyzkoušejte to!</h4><ul class=\"space-y-2\"><li> on Klepněte na obrazovku a uvidíte, co se změní swi. zařízení k prozkoumání.</li></ul></div></div>",
+          "keyPoints": [
+            "Ukazatel myši sleduje vaši ruku!",
+            "Kliknutí levým tlačítkem je vaší hlavní akcí.",
+            "Dotykové obrazovky vám umožňují klepat, přejíždět a přibližovat!"
+          ],
+          "practiceExercise": "Zkuste kliknout, dvakrát kliknout a kliknout pravým tlačítkem na plochu. Na dotykové obrazovce můžete klepnutím a přejetím přecházet mezi obrazovkami.",
+          "animationDesc": "Podívejte se, jak klikat, dvakrát klikat a přejíždět na dotykové obrazovce."
+        },
+        "keyboardTyping": {
+          "title": "Základy klávesnice/psaní",
+          "description": "Osvojte si základy psaní."
+        },
+        "filesFolders": {
+          "title": "Porozumění souborům a složkám",
+          "description": "Naučte se, jak jsou organizovány digitální informace."
+        }
       }
     },
     "onlineWorld": {
       "title": "Online svět",
       "description": "Připojení a bezpečné prozkoumávání internetu.",
       "modules": {
-        "webBrowsers": { "title": "Porozumění webovým prohlížečům", "description": "Procházejte internet pomocí Chrome, Edge nebo Safari." },
-        "searchEffectively": { "title": "Jak efektivně vyhledávat", "description": "Najděte, co potřebujete online, pomocí vyhledávačů." },
-        "introEmail": { "title": "Úvod do e-mailu", "description": "Naučte se odesílat a přijímat elektronickou poštu." },
-        "virusSafety": { "title": "Ochrana před viry", "description": "Chraňte své zařízení před škodlivým softwarem." }
+        "webBrowsers": {
+          "title": "Porozumění webovým prohlížečům",
+          "description": "Procházejte internet pomocí Chrome, Edge nebo Safari."
+        },
+        "searchEffectively": {
+          "title": "Jak efektivně vyhledávat",
+          "description": "Najděte, co potřebujete online, pomocí vyhledávačů."
+        },
+        "introEmail": {
+          "title": "Úvod do e-mailu",
+          "description": "Naučte se odesílat a přijímat elektronickou poštu."
+        },
+        "virusSafety": {
+          "title": "Ochrana před viry",
+          "description": "Chraňte své zařízení před škodlivým softwarem."
+        }
       }
     },
     "digitalLife": {
       "title": "Každodenní digitální život",
       "description": "Komunikujte, sdílejte a spravujte svou digitální přítomnost.",
       "modules": {
-        "masteringEmail": { "title": "Ovládání e-mailu", "description": "Přílohy, složky a e-mailová etiketa." },
-        "videoCalling": { "title": "Videohovory s rodinou a přáteli", "description": "Spojte se tváří v tvář se svými blízkými." },
-        "introSocialMedia": { "title": "Úvod do sociálních sítí", "description": "Porozumění platformám jako je Facebook." },
-        "sharingPhotos": { "title": "Bezpečné sdílení fotografií", "description": "Sdílejte své vzpomínky bez ohrožení soukromí." }
+        "masteringEmail": {
+          "title": "Ovládání e-mailu",
+          "description": "Přílohy, složky a e-mailová etiketa."
+        },
+        "videoCalling": {
+          "title": "Videohovory s rodinou a přáteli",
+          "description": "Spojte se tváří v tvář se svými blízkými."
+        },
+        "introSocialMedia": {
+          "title": "Úvod do sociálních sítí",
+          "description": "Porozumění platformám jako je Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Bezpečné sdílení fotografií",
+          "description": "Sdílejte své vzpomínky bez ohrožení soukromí."
+        }
       }
     },
     "advancedSkills": {
       "title": "Pokročilé a kreativní dovednosti",
       "description": "Za hranicemi základů: prozkoumejte více z toho, co technologie nabízí.",
       "modules": {
-        "onlineShopping": { "title": "Úvod do online nakupování", "description": "Nakupujte bezpečně a pohodlně online." },
-        "onlineMaps": { "title": "Používání online map a navigace", "description": "Najděte si cestu pomocí digitálních map." },
-        "photoEditing": { "title": "Základní úpravy fotografií", "description": "Vylepšete své digitální fotografie." },
-        "productivityTools": { "title": "Úvod do nástrojů produktivity", "description": "Používání nástrojů jako jsou základy Google Docs nebo Microsoft Word." }
+        "onlineShopping": {
+          "title": "Úvod do online nakupování",
+          "description": "Nakupujte bezpečně a pohodlně online."
+        },
+        "onlineMaps": {
+          "title": "Používání online map a navigace",
+          "description": "Najděte si cestu pomocí digitálních map."
+        },
+        "photoEditing": {
+          "title": "Základní úpravy fotografií",
+          "description": "Vylepšete své digitální fotografie."
+        },
+        "productivityTools": {
+          "title": "Úvod do nástrojů produktivity",
+          "description": "Používání nástrojů jako jsou základy Google Docs nebo Microsoft Word."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Dostupnost a snadné použití",
+      "description": "Usnadněte si vidění, poslech a ovládání zařízení.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Použití lupy obrazovky",
+          "description": "Zvětšete text a obrázky na obrazovce."
+        },
+        "voiceCommands": {
+          "title": "Hlasové příkazy a diktování",
+          "description": "Ovládejte své zařízení a pište hlasem."
+        },
+        "highContrast": {
+          "title": "Vysoký kontrast a nastavení barev",
+          "description": "Upravte barvy pro lepší viditelnost."
+        },
+        "assistiveTouch": {
+          "title": "Pomocný dotyk a zkratky",
+          "description": "Pro snadnější navigaci použijte nástroje na obrazovce."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Zdraví, bezpečnost a soukromí",
+      "description": "Při používání technologií zůstaňte v bezpečí, zdraví a soukromí.",
+      "modules": {
+        "privacySettings": {
+          "title": "Nastavení soukromí",
+          "description": "Chraňte své osobní údaje online."
+        },
+        "scamAwareness": {
+          "title": "Povědomí o podvodech",
+          "description": "Odhalte a vyhněte se běžným online podvodům."
+        },
+        "healthApps": {
+          "title": "Používání aplikací pro zdraví",
+          "description": "Sledujte své zdraví a kondici pomocí aplikací."
+        },
+        "emergencyContacts": {
+          "title": "Nastavení nouzových kontaktů",
+          "description": "Přidejte nouzové kontakty do svého zařízení."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Technický startér", "description": "Dokončen kurz Základy počítačů a zařízení." },
-    "onlineWorld": { "name": "Online průzkumník", "description": "Dokončena cesta Online svět." },
-    "digitalLife": { "name": "Digitální komunikátor", "description": "Dokončena cesta Každodenní digitální život." },
-    "advancedSkills": { "name": "Technický virtuóz", "description": "Dokončena cesta Pokročilé a kreativní dovednosti." }
+    "fundamentals": {
+      "name": "Technický startér",
+      "description": "Dokončen kurz Základy počítačů a zařízení."
+    },
+    "onlineWorld": {
+      "name": "Online průzkumník",
+      "description": "Dokončena cesta Online svět."
+    },
+    "digitalLife": {
+      "name": "Digitální komunikátor",
+      "description": "Dokončena cesta Každodenní digitální život."
+    },
+    "advancedSkills": {
+      "name": "Technický virtuóz",
+      "description": "Dokončena cesta Pokročilé a kreativní dovednosti."
+    },
+    "accessibility": {
+      "name": "Šampion v přístupnosti",
+      "description": "Dokončená cesta k usnadnění a snadnému použití."
+    },
+    "healthAndSafety": {
+      "name": "Bezpečnostní strážce",
+      "description": "Dokončená cesta pro zdraví, bezpečnost a soukromí."
+    }
   },
   "skillAssessmentModal": {
     "title": "Rychlá kontrola dovedností",
@@ -602,16 +823,31 @@
   },
   "settings": {
     "customizePrefs": "Přizpůsobte si své preference",
-    "personalInfo": "Osobní údaje",
+    "personalInfo": {
+      "title": "Osobní údaje",
+      "firstName": "Křestní jméno",
+      "firstNamePlaceholder": "Zadejte své křestní jméno",
+      "lastName": "Příjmení",
+      "lastNamePlaceholder": "Zadejte své příjmení",
+      "age": "Age",
+      "techExperience": "Úroveň technické zkušenosti",
+      "techExperienceBeginner": "Začátečník – v technologii jsem nováček",
+      "techExperienceSome": "Nějaké zkušenosti – základy znám",
+      "techExperienceComfortable": "Pohodlné - jsem docela dobrý s technikou"
+    },
     "firstName": "Křestní jméno",
     "firstNamePlaceholder": "Vaše křestní jméno",
     "primaryDevice": "Primární zařízení",
     "devices": {
-      "windowsComputer": "Počítač s Windows",
-      "macComputer": "Mac (počítač Apple)",
+      "title": "Primární zařízení",
+      "description": "Vyberte všechna zařízení, která pravidelně používáte",
+      "windowsComputer": "Počítač se systémem Windows",
+      "macComputer": "Počítač Mac",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Telefon nebo tablet s Androidem"
+      "androidPhone": "Telefon Android",
+      "androidTablet": "Tablet Android",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Přístupnost",
     "textToSpeech": "Převod textu na řeč",
@@ -643,7 +879,7 @@
     "signOutDesc": "Odhlásit se z vašeho účtu",
     "cancel": "Zrušit",
     "saving": "Ukládání...",
-    "saved": "Uloženo!",
+    "saved": "Uloženo",
     "saveChanges": "Uložit změny",
     "errorSaving": "Nastavení se nepodařilo uložit. Zkuste to prosím znovu.",
     "lastName": "Příjmení",
@@ -679,12 +915,114 @@
     },
     "highContrast": "Režim vysokého kontrastu",
     "highContrastDesc": "Zvyšte kontrast textu a prvků pro lepší viditelnost",
-    "learningPreferences": "Preference učení a obsahu"
+    "learningPreferences": "Preference učení a obsahu",
+    "title": "Nastavení",
+    "audio": {
+      "title": "Zvuk a řeč",
+      "autoTTS": "Automatický převod textu na řeč",
+      "autoTTSDesc": "Automaticky číst zprávy AI nahlas"
+    },
+    "display": {
+      "title": "Nastavení zobrazení",
+      "textSize": "Velikost textu",
+      "textSizeNormal": "Normální",
+      "textSizeLarge": "Velký",
+      "textSizeExtraLarge": "Extra velké",
+      "theme": "Barevný motiv",
+      "themeLight": "Světlo",
+      "themeDark": "Dark",
+      "themeHighContrast": "Vysoký kontrast"
+    },
+    "language": {
+      "title": "Jazyková preference",
+      "interfaceLanguage": "Jazyk rozhraní",
+      "description": "To ovlivní jazyk rozhraní a hlas pro převod textu na řeč"
+    },
+    "pwa": {
+      "install": {
+        "title": "Nainstalujte TechStep",
+        "description": "Získejte rychlý přístup ke svému pokroku v učení a používejte TechStep offline.",
+        "button": "Nainstalujte aplikaci"
+      },
+      "update": {
+        "title": "Aktualizace k dispozici",
+        "description": "K dispozici je nová verze TechStep s vylepšeními a opravami chyb.",
+        "button": "Aktualizovat nyní"
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline – změny se po připojení synchronizují",
+        "syncing": "Synchronizace..."
+      },
+      "notifications": {
+        "title": "Připomenutí učení",
+        "description": "Získejte jemná připomenutí, která vám pomohou zůstat na správné cestě za učením.",
+        "learning_reminders": "Připomenutí učení",
+        "learning_reminders_desc": "Jemné šťouchnutí, abyste mohli pokračovat ve svých lekcích",
+        "progress_updates": "Aktualizace průběhu",
+        "progress_updates_desc": "Oslavte své úspěchy",
+        "support_messages": "Zprávy podpory",
+        "support_messages_desc": "Užitečné tipy a pomoc",
+        "frequency": "Frekvence",
+        "enable": "Povolit oznámení",
+        "subscribing": "Nastavování...",
+        "blocked": {
+          "title": "Oznámení zablokována",
+          "description": "Oznámení jsou aktuálně blokována. Chcete-li je povolit, povolte upozornění v nastavení prohlížeče.",
+          "instructions": "Hledejte ikonu oznámení v adresním řádku nebo zkontrolujte nastavení webu v prohlížeči."
+        },
+        "success": {
+          "title": "Upozornění povolena!",
+          "description": "Budete dostávat užitečná připomenutí a aktualizace na základě vašich preferencí."
+        }
+      }
+    },
+    "offline": {
+      "error": "Chyba synchronizace",
+      "offline": "Offline",
+      "online": "Online",
+      "syncing": "Synchronizace...",
+      "offline_desc": "Změny se synchronizují po připojení",
+      "syncing_desc": "Aktualizace dat",
+      "online_desc": "Všechny změny se uloží",
+      "pending_operations": "{{count}} nevyřízených změn",
+      "last_sync": "Poslední synchronizace: {{time}}",
+      "content_manager": {
+        "title": "Obsah offline",
+        "description": "Stáhněte si obsah, abyste k němu měli přístup offline",
+        "online": "Připojeno – můžete si stáhnout nový obsah",
+        "offline": "Offline – pouze pomocí staženého obsahu",
+        "no_content": "Žádný obsah offline",
+        "no_content_desc": "Stáhněte si kurzy a lekce, abyste k nim měli přístup offline",
+        "downloaded": "Staženo",
+        "available_offline": "Dostupné offline",
+        "remove": "Odebrat z úložiště offline",
+        "suggestions": "Doporučené stahování",
+        "suggestion_1": "Kurz základů počítače",
+        "suggestion_1_desc": "Základní dovednosti pro začátek s technologií",
+        "popular": "Populární",
+        "download": "Stáhnout",
+        "type": {
+          "course": "Kurs",
+          "lesson": "Lekce",
+          "tutorial": "Konzultace",
+          "media": "Média"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Propustit"
+    },
+    "dataPortability": "Data a práva na ochranu osobních údajů",
+    "dataRights": "Vaše práva na údaje",
+    "dataRightsDesc": "Nad svými osobními údaji máte úplnou kontrolu. Data můžete kdykoli exportovat, spravovat předvolby sdílení nebo je smazat."
   },
   "common": {
     "settings": "Nastavení",
     "signOut": "Odhlásit se",
-    "close": "Zavřít"
+    "close": "Zavřít",
+    "friend": "přítel",
+    "comingSoon": "Již brzy"
   },
   "tips": {
     "connectWifi": "Připojit se k Wi-Fi",
@@ -768,7 +1106,10 @@
   },
   "error": {
     "askQuestionFirst": "Nejprve prosím položte otázku",
-    "couldntGetAnswer": "Omlouvám se, právě teď nemohu získat odpověď. Zkuste to prosím znovu."
+    "couldntGetAnswer": "Omlouvám se, právě teď nemohu získat odpověď. Zkuste to prosím znovu.",
+    "notifications": {
+      "dismiss": "Propustit"
+    }
   },
   "learningPage": {
     "headerTitle": "Vzdělávací centrum",
@@ -803,7 +1144,11 @@
     "moduleListTitle": "Moduly pro cestu: {{pathTitle}}",
     "moduleContentTitle": "Obsah pro modul: {{moduleTitle}} bude zde.",
     "loadingCenter": "Načítání vzdělávacího centra...",
-    "moduleTimeLabel": "Čas: "
+    "moduleTimeLabel": "Čas: ",
+    "startOrContinueCourse": "Spustit nebo pokračovat v kurzu",
+    "lessonsHeader": "Lekce",
+    "lessonContentPlaceholder": "Pro {{lessonTitle}} zatím není dostupný žádný obsah.",
+    "noLessonAvailable": "Není k dispozici žádná lekce."
   },
   "languageSelector": {
     "choosePrompt": "Vyberte si preferovaný jazyk pro rozhraní",
@@ -822,7 +1167,13 @@
     "reviewLesson": "Zkontrolovat",
     "congratulations": "Gratulujeme!",
     "courseComplete": "Dokončili jste kurz {{courseTitle}}!",
-    "downloadCertificate": "Stáhnout certifikát"
+    "downloadCertificate": "Stáhnout certifikát",
+    "previousLesson": "Předchozí lekce",
+    "nextLesson": "Další lekce",
+    "markAsComplete": "Označit jako dokončené",
+    "completed": "Dokončeno",
+    "removeBookmark": "Odebrat záložku",
+    "addBookmark": "Přidat záložku"
   },
   "lessonView": {
     "readAloud": "Přečíst lekci nahlas",
@@ -933,12 +1284,468 @@
       "email": "E-mail: privacy@techstep.com",
       "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
       "mailLine1": "Pošta: TechStep Privacy Team",
-      "mailLine2": "123 Tech Support Lane",
-      "mailLine3": "Helpful City, HC 12345"
+      "mailLine2": "123 Pruh technické podpory",
+      "mailLine3": "Užitečné město, HC 12345"
     },
     "footer": {
       "thankYou": "Děkujeme, že jste svěřili své informace společnosti TechStep. Jsme odhodláni je chránit a používat je pouze k tomu, abychom vám pomohli uspět s technologiemi.",
       "backToHome": "Zpět na domovskou stránku"
     }
+  },
+  "avatar": {
+    "enable": "Povolit AI Avatar",
+    "disable": "Zakázat Avatar",
+    "loading": "Načítání avatara...",
+    "mute": "Mute Avatar",
+    "unmute": "Zapnout zvuk avatara",
+    "settings": "Nastavení avatara",
+    "fullscreen": "Celá obrazovka",
+    "exitFullscreen": "Ukončete celou obrazovku",
+    "performance": {
+      "high": "Vysoká kvalita",
+      "medium": "Střední kvalita",
+      "low": "Nízká kvalita",
+      "off": "Avatar je vypnutý"
+    },
+    "error": {
+      "loadFailed": "Avatar se nepodařilo načíst. Zkuste to prosím znovu.",
+      "noWebGL": "Vaše zařízení nepodporuje 3D grafiku.",
+      "audioFailed": "Nelze získat přístup k mikrofonu pro synchronizaci rtů."
+    },
+    "status": {
+      "initializing": "Spouštění avatara...",
+      "ready": "Připraveni pomoci",
+      "thinking": "Myslící...",
+      "speaking": "Mluvení...",
+      "listening": "Naslouchání...",
+      "celebrating": "Rádi vám pomůžeme!",
+      "error": "Něco se pokazilo",
+      "processing": "Zpracování zvuku...",
+      "lipSyncActive": "Synchronizace rtů je aktivní",
+      "lipSyncInactive": "Synchronizace rtů je neaktivní"
+    },
+    "greeting": {
+      "morning": "Dobré ráno, {{name}}! Jste připraveni se dnes naučit něco nového?",
+      "afternoon": "Dobré odpoledne, {{name}}! Jak vám dnes mohu pomoci?",
+      "evening": "Dobrý večer, {{name}}! Co byste chtěli prozkoumat?"
+    },
+    "companion": {
+      "title": "Váš pomocník AI",
+      "ready": "Jsem tu, abych vám pomohl s technologií!"
+    },
+    "actions": {
+      "chat": "Povídání",
+      "voice": "Hlas",
+      "camera": "Fotoaparát",
+      "help": "Pomoc"
+    },
+    "suggestions": {
+      "title": "Rychlé otázky"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Jak se připojím k WiFi?",
+    "makeTextBigger": "Jak zvětším text na obrazovce?",
+    "takeScreenshot": "Jak pořídím snímek obrazovky?",
+    "videoCall": "Jak mohu uskutečnit videohovor?",
+    "iphoneSettings": "Jak změním nastavení iPhone?",
+    "androidSettings": "Jak změním nastavení systému Android?",
+    "windowsSettings": "Jak změním nastavení systému Windows?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Jak vám dnes mohu pomoci?",
+      "subtitle": "Zeptejte se mě na cokoliv o technologii!"
+    },
+    "input": {
+      "placeholder": "Asistent AI zpráv...",
+      "helper": "Stiskněte Enter pro odeslání, Shift+Enter pro nový řádek"
+    },
+    "greeting": {
+      "morning": "Dobré ráno",
+      "afternoon": "Dobré odpoledne",
+      "evening": "Dobrý večer"
+    },
+    "error": {
+      "general": "Omlouvám se, mám teď potíže. Zkuste to prosím znovu za chvíli."
+    }
+  },
+  "flashcards": {
+    "title": "Průvodce krok za krokem",
+    "progress": "Krok {{current}} z {{total}}",
+    "instructions": "Instrukce:",
+    "markCompleted": "Označit jako dokončené"
+  },
+  "dataPortability": {
+    "title": "Přenositelnost dat a uživatelská práva",
+    "tabs": {
+      "overview": "Přehled",
+      "sharing": "Sdílení dat",
+      "export": "Export dat",
+      "delete": "Smazat data",
+      "ai": "Transparentnost AI"
+    },
+    "overview": {
+      "title": "Vaše práva na údaje",
+      "description": "Nad svými osobními údaji máte úplnou kontrolu. Své informace můžete zobrazit, exportovat, opravit nebo smazat kdykoli do 30 dnů.",
+      "dataWeCollect": "Údaje, které shromažďujeme",
+      "profileInfo": "Informace o profilu (jméno, e-mail, předvolby)",
+      "learningProgress": "Pokrok v učení a úspěchy",
+      "aiHistory": "Historie konverzace AI",
+      "analytics": "Analýza využití (anonymizovaná)",
+      "howWeUse": "Jak používáme vaše data",
+      "personalized": "Poskytujte personalizovanou vzdělávací zkušenost",
+      "improveAI": "Vylepšete reakce asistenta AI",
+      "trackProgress": "Sledujte svůj pokrok a úspěchy",
+      "security": "Zajistěte bezpečnost a výkon platformy",
+      "rightsTitle": "Vaše práva podle GDPR a CCPA",
+      "rightAccess": "Právo na přístup:",
+      "accessDesc": "Zobrazit všechna vaše osobní data",
+      "rightPortability": "Právo na přenositelnost:",
+      "portabilityDesc": "Exportujte svá data",
+      "rightRectification": "Právo na opravu:",
+      "rectificationDesc": "Opravte nepřesné údaje",
+      "rightErasure": "Právo na vymazání:",
+      "erasureDesc": "Smažte své osobní údaje"
+    },
+    "sharing": {
+      "title": "Předvolby sdílení dat",
+      "description": "Kontrolujte, jak jsou vaše data sdílena a používána. Veškeré sdílení je volitelné a lze jej kdykoli změnit.",
+      "dataTypes": "Sdílení datových typů",
+      "thirdParty": "Sdílení třetí stranou",
+      "special": "Speciální kategorie",
+      "analytics": "Sdílení Analytics",
+      "analyticsDesc": "Sdílejte anonymizovaná data o používání za účelem vylepšení platformy",
+      "research": "Sdílení výzkumu",
+      "researchDesc": "Přispějte anonymizovanými daty do výzkumu vzdělávání seniorů"
+    },
+    "export": {
+      "title": "Exportujte svá data",
+      "description": "Stáhněte si kopii všech vašich osobních údajů. Vaše data připravíme a do 30 dnů vám zašleme odkaz ke stažení.",
+      "chooseFormat": "Vyberte Formát exportu",
+      "included": "Co je zahrnuto:",
+      "profile": "Informace o profilu a preference",
+      "progress": "Pokrok v učení a úspěchy",
+      "conversations": "Historie konverzace AI",
+      "support": "Podpora historie tiketů",
+      "consent": "Nastavení souhlasu a soukromí",
+      "request": "Žádost o export dat",
+      "requesting": "Žádost o export...",
+      "requests": "Exportní požadavky",
+      "requested": "Vyžádáno",
+      "download": "Stáhnout"
+    },
+    "delete": {
+      "title": "Smažte svá data",
+      "description": "Trvale smažte všechny vaše osobní údaje. Tuto akci nelze vrátit zpět a váš účet bude uzavřen do 30 dnů.",
+      "whatDeleted": "Co bude smazáno:",
+      "profile": "Informace o vašem profilu a účtu",
+      "progress": "Všechny pokroky v učení a úspěchy",
+      "conversations": "Historie konverzace AI",
+      "preferences": "Předvolby a nastavení",
+      "analytics": "Analýza využití propojená s vaším účtem",
+      "important": "Důležité poznámky:",
+      "legal": "Některá data mohou být uchovávána pro účely souladu s právními předpisy (tickety podpory, fakturační záznamy)",
+      "research": "Anonymizovaná data použitá pro výzkum mohou být uchována",
+      "verification": "Před smazáním obdržíte ověření e-mailem",
+      "timeframe": "Smazání bude dokončeno do 30 dnů",
+      "request": "Žádost o vymazání dat",
+      "confirm": "Opravdu chcete smazat všechna svá data?",
+      "type": "Pro potvrzení této akce zadejte „DELETE MY DATA“:",
+      "placeholder": "Zadejte DELETE MY DATA",
+      "confirmButton": "Potvrďte smazání",
+      "processing": "Zpracovává se...",
+      "cancel": "Zrušit",
+      "requests": "Žádosti o smazání",
+      "complete": "Dokončete smazání dat",
+      "requested": "Vyžádáno",
+      "scheduled": "Naplánováno",
+      "awaitingVerification": "Čeká na ověření"
+    },
+    "ai": {
+      "title": "Transparentnost využití dat AI",
+      "description": "Podívejte se, jak přesně vaše data používá náš asistent AI, a ovládejte své předvolby dat AI.",
+      "stats": "Statistiky využití dat AI",
+      "conversationsAnalyzed": "Analyzované konverzace:",
+      "dataPoints": "Použité datové body:",
+      "trainingContribution": "Příspěvek na školení:",
+      "lastProcessed": "Naposledy zpracováno:",
+      "optOut": "Možnosti odhlášení AI",
+      "stopTraining": "Zastavte školení AI",
+      "stopTrainingDesc": "Zabraňte tomu, aby vaše data vylepšovala reakce AI",
+      "deleteHistory": "Smazat historii konverzace",
+      "deleteHistoryDesc": "Odstraňte všechny uložené konverzace AI",
+      "anonymize": "Anonymizovat moje data",
+      "anonymizeDesc": "Převést data do anonymní podoby"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Vyberte způsob komunikace",
+    "tabs": {
+      "chat": "Povídání",
+      "voice": "Hlas",
+      "image": "Obraz",
+      "chatAria": "Vstup textového chatu",
+      "voiceAria": "Hlasový vstup",
+      "imageAria": "Vstup obrazu"
+    },
+    "chat": {
+      "placeholder": "Sem napište svůj dotaz... Pro odeslání stiskněte Enter",
+      "ariaLabel": "Napište svou otázku",
+      "sendButton": "Odeslat zprávu",
+      "send": "Poslat"
+    },
+    "voice": {
+      "recording": "Nahrávání... Klepnutím zastavíte",
+      "processing": "Zpracovává se váš hlas...",
+      "instructions": "Klepnutím na mikrofon zahájíte nahrávání",
+      "startRecording": "Spusťte nahrávání",
+      "stopRecording": "Zastavit nahrávání"
+    },
+    "image": {
+      "takePhoto": "Pořiďte fotku",
+      "camera": "Vyfotit",
+      "upload": "Nahrát obrázek",
+      "uploadAria": "Vyberte soubor obrázku",
+      "instructions": "Sdílejte fotku a já vám pomohu vysvětlit, co vidíte",
+      "formats": "Podporuje JPG, PNG, GIF (max 10 MB)",
+      "previewAlt": "Náhled vybraného obrázku",
+      "remove": "Odebrat obrázek",
+      "contextLabel": "Co byste chtěli vědět o tomto obrázku?",
+      "contextPlaceholder": "Volitelné: Zeptejte se na konkrétní otázku ohledně obrázku",
+      "cancel": "Zrušit",
+      "submit": "Odeslat obrázek",
+      "send": "Poslat",
+      "invalidType": "Vyberte prosím platný soubor obrázku.",
+      "tooLarge": "Soubor obrázku je příliš velký. Vyberte soubor menší než 10 MB.",
+      "cameraError": "Nelze získat přístup k fotoaparátu. Zkontrolujte prosím oprávnění."
+    }
+  },
+  "ai": {
+    "title": "Pomocník AI",
+    "subtitle": "Zde vám pomůže učit se",
+    "emergency": "Nouzová podpora",
+    "emergencyAria": "Získejte nouzovou podporu",
+    "expand": "Rozšířit",
+    "minimize": "Minimalizovat",
+    "close": "Zavřete asistenta AI",
+    "thinking": "AI přemýšlí...",
+    "escalated": "Nyní jste připojeni k našemu týmu podpory",
+    "callSupport": "Zavolejte podporu: 1-800-SENIOR-HELP",
+    "minimized": "Pomocník AI",
+    "welcome": {
+      "tutorial": "Ahoj! Vidím, že pracujete na „{{tutorial}}“. Jsem tu, abych vám pomohl s případnými dotazy. Můžete psát, mluvit nebo mi ukazovat obrázky – cokoli, co vám vyhovuje!",
+      "general": "Ahoj! Jsem váš asistent umělé inteligence, který vám pomůže naučit se technologii krok za krokem. Můžete mi klást otázky psaním, mluvením nebo ukazováním obrázků. co byste chtěli vědět?"
+    },
+    "error": {
+      "general": "Omlouvám se, mám teď potíže. Dovolte mi, abych vás spojil s naším týmem podpory, který vám může okamžitě pomoci."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Komunitní fórum",
+      "subtitle": "Spojte se s ostatními studenty, ptejte se a sdílejte své zkušenosti",
+      "backToHome": "Zpět na domovskou stránku",
+      "newPost": "Nový příspěvek"
+    },
+    "sidebar": {
+      "categories": "Kategorie",
+      "topics": {
+        "all": "Všechna témata",
+        "general": "Obecná nápověda",
+        "mobile": "Mobilní zařízení",
+        "computer": "Počítače",
+        "apps": "Aplikace a software",
+        "internet": "Internet a e-mail",
+        "safety": "Online bezpečnost"
+      },
+      "guidelines": {
+        "title": "Pokyny pro komunitu",
+        "items": [
+          "Buďte ohleduplní a laskaví",
+          "Žádný spam nebo nevhodný obsah",
+          "Pomozte ostatním, když můžete",
+          "Držte se tématu",
+          "Nahlaste jakékoli problémy"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Hledat příspěvky..."
+    },
+    "createPost": {
+      "title": "Vytvořit nový příspěvek",
+      "categoryLabel": "Kategorie",
+      "titleLabel": "Titul",
+      "contentLabel": "Obsah",
+      "titlePlaceholder": "Jaká je vaše otázka nebo téma?",
+      "contentPlaceholder": "Popište svou otázku nebo se podělte o své myšlenky...",
+      "submit": "Zveřejnit",
+      "cancel": "Zrušit",
+      "profanityAlert": "Váš příspěvek obsahuje nevhodný obsah. Upravte je a zkuste to znovu."
+    },
+    "posts": {
+      "empty": "Nebyly nalezeny žádné příspěvky. Buďte první, kdo zahájí konverzaci!",
+      "replies": "{{count}} odpovědí",
+      "timeAgo": {
+        "justNow": "Právě teď",
+        "oneHour": "před 1 hodinou",
+        "hours": "před {{count}} hodinami",
+        "oneDay": "před 1 dnem",
+        "days": "před {{count}} dny"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "subtitle": "Rádi bychom od vás slyšeli! Pošlete nám zprávu a my vám odpovíme co nejdříve.",
+    "backToHome": "Zpět na domovskou stránku",
+    "form": {
+      "fasterResponse": "📧 Tento formulář bude zodpovězen rychleji než jiné způsoby kontaktu!",
+      "name": "Celé jméno *",
+      "namePlaceholder": "Zadejte své celé jméno",
+      "email": "E-mailová adresa *",
+      "emailPlaceholder": "Zadejte svou e-mailovou adresu",
+      "subject": "Předmět *",
+      "subjectPlaceholder": "Vyberte předmět",
+      "subjects": {
+        "general": "Obecný dotaz",
+        "techSupport": "Technická podpora",
+        "account": "Nápověda k účtu",
+        "feature": "Žádost o funkci",
+        "bug": "Zpráva o chybě",
+        "feedback": "Zpětná vazba",
+        "other": "Ostatní"
+      },
+      "message": "Zpráva *",
+      "messagePlaceholder": "Popište prosím podrobně svůj dotaz...",
+      "submit": "Odeslat zprávu",
+      "sending": "Odesílání...",
+      "success": "Váš e-mailový klient by se měl otevřít. Pokud ne, zkopírujte prosím informace a pošlete nám přímo e-mail.",
+      "error": "Došlo k chybě. Napište nám prosím přímo na taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Kontaktujte nás",
+      "emailLabel": "E-mail",
+      "responseData": "Obvykle odpovídáme do 24 hodin"
+    },
+    "reasons": {
+      "title": "Proč nás kontaktovat?",
+      "items": [
+        "Získejte pomoc s technickými problémy",
+        "Vyžádejte si nové funkce",
+        "Sdílejte zpětnou vazbu a návrhy",
+        "Hlásit chyby nebo problémy",
+        "Obecné dotazy"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Podmínky služby",
+    "backToHome": "Zpět na domovskou stránku",
+    "lastUpdated": "Poslední aktualizace: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Přijetí podmínek",
+        "content": "Přístupem a používáním naší služby přijímáte a souhlasíte s tím, že budete vázáni podmínkami a ustanoveními této smlouvy."
+      },
+      "license": {
+        "title": "Použít licenci",
+        "content": "Je uděleno povolení dočasně používat naši službu pouze pro osobní, nekomerční přechodné prohlížení."
+      },
+      "conduct": {
+        "title": "Chování uživatele",
+        "content": "Souhlasíte s tím, že budete naši službu používat způsobem, který je v souladu se všemi platnými zákony a předpisy a v souladu s těmito podmínkami."
+      },
+      "liability": {
+        "title": "Omezení odpovědnosti",
+        "content": "Naše společnost ani její dodavatelé v žádném případě nenesou odpovědnost za jakékoli škody vzniklé používáním nebo nemožností využívat naši službu."
+      },
+      "contact": {
+        "title": "Kontaktní informace",
+        "content": "Máte-li jakékoli dotazy týkající se těchto podmínek služby, kontaktujte nás na adrese:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Prohlášení o přístupnosti",
+    "subtitle": "Jsme odhodláni zpřístupnit naši platformu všem bez ohledu na schopnosti nebo technologii.",
+    "backToHome": "Zpět na domovskou stránku",
+    "commitment": {
+      "title": "Náš závazek",
+      "content": "Věříme, že technologie by měla být dostupná všem. Naše platforma je navržena s ohledem na seniory a zahrnuje funkce, které usnadňují a zpříjemňují výuku technologií pro uživatele všech schopností."
+    },
+    "features": {
+      "title": "Funkce usnadnění",
+      "visual": {
+        "title": "Vizuální přístupnost",
+        "items": [
+          "Vysoce kontrastní barevná schémata",
+          "Velké, čitelné písmo",
+          "Kompatibilita čtečky obrazovky",
+          "Podpora navigace pomocí klávesnice",
+          "Alternativní text pro obrázky"
+        ]
+      },
+      "audio": {
+        "title": "Přístupnost zvuku",
+        "items": [
+          "Skryté titulky pro videa",
+          "Zvukové popisy",
+          "Ovládání hlasitosti",
+          "Vizuální indikátory pro zvukové podněty",
+          "Textové alternativy k audio obsahu"
+        ]
+      },
+      "motor": {
+        "title": "Motorová dostupnost",
+        "items": [
+          "Velké klikací plochy",
+          "Navigace pouze pomocí klávesnice",
+          "Nastavitelné časové limity",
+          "Kompatibilita hlasového ovládání",
+          "Zjednodušené interakce"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitivní přístupnost",
+        "items": [
+          "Jednoduchý, jasný jazyk",
+          "Konzistentní navigace",
+          "Snížené možnosti pohybu",
+          "Jasné pokyny",
+          "Prevence a obnova chyb"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Soulad se standardy",
+      "content": "Naše platforma si klade za cíl odpovídat standardům Web Content Accessibility Guidelines (WCAG) 2.1 úrovně AA. Pravidelně testujeme naši platformu pomocí asistenčních technologií a provádíme audity přístupnosti."
+    },
+    "feedback": {
+      "title": "Zpětná vazba a podpora",
+      "content": "Neustále pracujeme na zlepšení dostupnosti. Pokud narazíte na nějaké překážky nebo máte návrhy na zlepšení, neváhejte nás kontaktovat.",
+      "emailLabel": "E-mail",
+      "subjectLabel": "Podrobit",
+      "subjectValue": "Zpětná vazba k usnadnění"
+    },
+    "assistive": {
+      "title": "Asistenční technologie",
+      "content": "Naše platforma je navržena pro práci s běžnými asistenčními technologiemi, včetně:",
+      "items": [
+        "Čtečky obrazovky (JAWS, NVDA, VoiceOver)",
+        "Software pro rozpoznávání hlasu",
+        "Nástroje pro zvětšení obrazovky",
+        "Alternativní klávesnice",
+        "Přepněte navigační zařízení",
+        "Systémy sledování očí"
+      ]
+    },
+    "help": {
+      "title": "Potřebujete pomoc?",
+      "content": "Pokud potřebujete pomoc s používáním naší platformy nebo máte otázky týkající se přístupnosti, jsme tu, abychom vám pomohli.",
+      "contact": "Kontaktujte podporu"
+    },
+    "lastUpdated": "Poslední aktualizace: {{date}}"
   }
 }

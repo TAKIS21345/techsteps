@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Met ❤️ gemaakt voor senioren overal.",
       "trustedBy": "Vertrouwd door",
-      "trustedByCount": "50.000+ senioren"
+      "trustedByCount": "50.000+ senioren",
+      "communityTitle": "Gemeenschap",
+      "legalTitle": "Juridisch en ondersteuning",
+      "contactEmail": "Contactpersoon: E-mail: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Basisprincipes van computer en apparaat",
       "description": "De absolute basisprincipes om u op weg te helpen met technologie.",
       "modules": {
-        "turnOnDevice": { "title": "Een apparaat aanzetten", "description": "Leer hoe u computers en smartphones aanzet." },
-        "mouseTouchscreen": { "title": "Een muis/touchscreen gebruiken", "description": "Beheers aanwijzen, klikken en tikken." },
-        "keyboardTyping": { "title": "Basisprincipes van toetsenbord/typen", "description": "Raak vertrouwd met de basisprincipes van typen." },
-        "filesFolders": { "title": "Bestanden en mappen begrijpen", "description": "Leer hoe digitale informatie wordt georganiseerd." }
+        "turnOnDevice": {
+          "title": "Een apparaat aanzetten",
+          "description": "Leer hoe u computers en smartphones aanzet."
+        },
+        "mouseTouchscreen": {
+          "title": "Een muis/touchscreen gebruiken",
+          "description": "Beheers aanwijzen, klikken en tikken.",
+          "duration": "15 minuten",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Laten we spelen: de basisprincipes van muis en touchscreen</h3><p>Klaar om te verkennen? Je muis en touchscreen zijn je toverstafjes voor de digitale wereld!</p><div class=\"bg-gold-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Muisplezier:</h4><ul class=\"space-y-2\"><li>• <b>Punt</b>: beweeg de muis en zie hoe de pijl je volgt!</li><li>• <b>Klik</b>: druk op de linkerknop om dingen te selecteren. Probeer op een onderstaande knop te klikken!</li><li>• <b>Dubbelklik</b>: druk snel twee keer om bestanden of programma's te openen.</li><li>• <b>Klik met de rechtermuisknop</b>: druk op de rechterknop voor een geheim menu.</li><li>• <b>Scroll</b>: Rol aan het wiel om een pagina omhoog en omlaag te gaan.</li></ul></div><div class=\"bg-blue-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Touchscreen-trucs:</h4><ul class=\"space-y-2\"><li>• <b>Tikken</b>: raak het scherm voorzichtig aan om te selecteren.</li><li>• <b>Vegen</b>: schuif met uw vinger om te bladeren of van scherm te wisselen.</li><li>• <b>Knijpen</b>: beweeg twee vingers naar elkaar toe of uit elkaar om in en uit te zoomen.</li><li>• <b>Lang indrukken</b>: houd uw vinger vast omlaag voor meer opties (zoals klikken met de rechtermuisknop!).</li></ul></div><div class=\"bg-green-50 p-4 round-lg\"><h4 class=\"font-medium mb-2\">Probeer het uit!</h4><ul class=\"space-y-2\"><li>• Beweeg uw muis en kijk wat er op het scherm verandert.</li><li>• Tik en veeg op uw apparaat om te verkennen.</li></ul></div></div>",
+          "keyPoints": [
+            "De muisaanwijzer volgt uw hand!",
+            "Links klikken is uw hoofdactie.",
+            "Met touchscreens kun je tikken, vegen en zoomen!"
+          ],
+          "practiceExercise": "Probeer te klikken, dubbelklikken en met de rechtermuisknop te klikken op uw bureaublad. Op een touchscreen tikt en veegt u om tussen schermen te schakelen.",
+          "animationDesc": "Bekijk hoe u klikt, dubbelklikt en veegt op een touchscreen."
+        },
+        "keyboardTyping": {
+          "title": "Basisprincipes van toetsenbord/typen",
+          "description": "Raak vertrouwd met de basisprincipes van typen."
+        },
+        "filesFolders": {
+          "title": "Bestanden en mappen begrijpen",
+          "description": "Leer hoe digitale informatie wordt georganiseerd."
+        }
       }
     },
     "onlineWorld": {
       "title": "De online wereld",
       "description": "Verbinding maken en veilig het internet verkennen.",
       "modules": {
-        "webBrowsers": { "title": "Webbrowsers begrijpen", "description": "Navigeer op internet met Chrome, Edge of Safari." },
-        "searchEffectively": { "title": "Hoe effectief te zoeken", "description": "Vind wat u online nodig heeft met behulp van zoekmachines." },
-        "introEmail": { "title": "Inleiding tot e-mail", "description": "Leer elektronische post verzenden en ontvangen." },
-        "virusSafety": { "title": "Veilig blijven voor virussen", "description": "Bescherm uw apparaat tegen schadelijke software." }
+        "webBrowsers": {
+          "title": "Webbrowsers begrijpen",
+          "description": "Navigeer op internet met Chrome, Edge of Safari."
+        },
+        "searchEffectively": {
+          "title": "Hoe effectief te zoeken",
+          "description": "Vind wat u online nodig heeft met behulp van zoekmachines."
+        },
+        "introEmail": {
+          "title": "Inleiding tot e-mail",
+          "description": "Leer elektronische post verzenden en ontvangen."
+        },
+        "virusSafety": {
+          "title": "Veilig blijven voor virussen",
+          "description": "Bescherm uw apparaat tegen schadelijke software."
+        }
       }
     },
     "digitalLife": {
       "title": "Dagelijks digitaal leven",
       "description": "Communiceer, deel en beheer uw digitale aanwezigheid.",
       "modules": {
-        "masteringEmail": { "title": "E-mail beheersen", "description": "Bijlagen, mappen en e-mailetiquette." },
-        "videoCalling": { "title": "Videobellen met familie en vrienden", "description": "Maak face-to-face contact met dierbaren." },
-        "introSocialMedia": { "title": "Inleiding tot sociale media", "description": "Platforms zoals Facebook begrijpen." },
-        "sharingPhotos": { "title": "Foto's veilig delen", "description": "Deel uw herinneringen zonder de privacy in gevaar te brengen." }
+        "masteringEmail": {
+          "title": "E-mail beheersen",
+          "description": "Bijlagen, mappen en e-mailetiquette."
+        },
+        "videoCalling": {
+          "title": "Videobellen met familie en vrienden",
+          "description": "Maak face-to-face contact met dierbaren."
+        },
+        "introSocialMedia": {
+          "title": "Inleiding tot sociale media",
+          "description": "Platforms zoals Facebook begrijpen."
+        },
+        "sharingPhotos": {
+          "title": "Foto's veilig delen",
+          "description": "Deel uw herinneringen zonder de privacy in gevaar te brengen."
+        }
       }
     },
     "advancedSkills": {
       "title": "Geavanceerde en creatieve vaardigheden",
       "description": "Naast de basis: ontdek meer van wat technologie te bieden heeft.",
       "modules": {
-        "onlineShopping": { "title": "Inleiding tot online winkelen", "description": "Winkel veilig en gemakkelijk online." },
-        "onlineMaps": { "title": "Online kaarten en navigatie gebruiken", "description": "Vind uw weg met digitale kaarten." },
-        "photoEditing": { "title": "Basis fotobewerking", "description": "Verbeter uw digitale foto's." },
-        "productivityTools": { "title": "Inleiding tot productiviteitstools", "description": "Tools zoals de basisprincipes van Google Docs of Microsoft Word gebruiken." }
+        "onlineShopping": {
+          "title": "Inleiding tot online winkelen",
+          "description": "Winkel veilig en gemakkelijk online."
+        },
+        "onlineMaps": {
+          "title": "Online kaarten en navigatie gebruiken",
+          "description": "Vind uw weg met digitale kaarten."
+        },
+        "photoEditing": {
+          "title": "Basis fotobewerking",
+          "description": "Verbeter uw digitale foto's."
+        },
+        "productivityTools": {
+          "title": "Inleiding tot productiviteitstools",
+          "description": "Tools zoals de basisprincipes van Google Docs of Microsoft Word gebruiken."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Toegankelijkheid en gebruiksgemak",
+      "description": "Maak uw apparaat gemakkelijker te zien, horen en bedienen.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Een schermvergroter gebruiken",
+          "description": "Maak tekst en afbeeldingen groter op uw scherm."
+        },
+        "voiceCommands": {
+          "title": "Spraakopdrachten en dicteren",
+          "description": "Bedien uw apparaat en typ met uw stem."
+        },
+        "highContrast": {
+          "title": "Hoog contrast en kleurinstellingen",
+          "description": "Pas de kleuren aan voor een betere zichtbaarheid."
+        },
+        "assistiveTouch": {
+          "title": "Assisterende aanraking en snelkoppelingen",
+          "description": "Gebruik hulpmiddelen op het scherm voor eenvoudiger navigatie."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Gezondheid, veiligheid en privacy",
+      "description": "Blijf veilig, gezond en privé terwijl u technologie gebruikt.",
+      "modules": {
+        "privacySettings": {
+          "title": "Privacy-instellingen",
+          "description": "Bescherm uw persoonlijke gegevens online."
+        },
+        "scamAwareness": {
+          "title": "Bewustzijn van oplichting",
+          "description": "Ontdek en vermijd veelvoorkomende online oplichting."
+        },
+        "healthApps": {
+          "title": "Gezondheidsapps gebruiken",
+          "description": "Volg uw gezondheid en welzijn met apps."
+        },
+        "emergencyContacts": {
+          "title": "Noodcontacten instellen",
+          "description": "Voeg noodcontacten toe aan uw apparaat."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Tech Starter", "description": "Basisprincipes van computer en apparaat voltooid." },
-    "onlineWorld": { "name": "Online ontdekkingsreiziger", "description": "Het pad 'De online wereld' voltooid." },
-    "digitalLife": { "name": "Digitale communicator", "description": "Het pad 'Dagelijks digitaal leven' voltooid." },
-    "advancedSkills": { "name": "Tech Virtuoso", "description": "Het pad 'Geavanceerde en creatieve vaardigheden' voltooid." }
+    "fundamentals": {
+      "name": "Tech-starter",
+      "description": "Basisprincipes van computer en apparaat voltooid."
+    },
+    "onlineWorld": {
+      "name": "Online ontdekkingsreiziger",
+      "description": "Het pad 'De online wereld' voltooid."
+    },
+    "digitalLife": {
+      "name": "Digitale communicator",
+      "description": "Het pad 'Dagelijks digitaal leven' voltooid."
+    },
+    "advancedSkills": {
+      "name": "Tech Virtuoos",
+      "description": "Het pad 'Geavanceerde en creatieve vaardigheden' voltooid."
+    },
+    "accessibility": {
+      "name": "Toegankelijkheidskampioen",
+      "description": "Het pad voor toegankelijkheid en gebruiksgemak voltooid."
+    },
+    "healthAndSafety": {
+      "name": "Veiligheidsbewaker",
+      "description": "Het gezondheids-, veiligheids- en privacypad voltooid."
+    }
   },
   "skillAssessmentModal": {
     "title": "Snelle vaardigheidscontrole",
@@ -293,7 +417,7 @@
           "deviceBasics": {
             "title": "Basisprincipes van het apparaat",
             "description": "Leer hoe u uw apparaat veilig aan- en uitzet",
-            "duration": "15 min",
+            "duration": "15 minuten",
             "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Uw apparaat aan- en uitzetten</h3><p>Elk apparaat heeft een aan/uit-knop. Laten we leren hoe we deze veilig kunnen gebruiken.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Voor computers:</h4><ul class=\"space-y-2\"><li>• Zoek naar een ronde knop met een aan/uit-symbool (⏻)</li><li>• Druk er eenmaal op om in te schakelen</li><li>• Om uit te schakelen: Gebruik het menu Start en vervolgens \"Afsluiten\"</li><li>• Druk nooit alleen op de aan/uit-knop om uit te schakelen!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Voor telefoons/tablets:</h4><ul class=\"space-y-2\"><li>• De aan/uit-knop bevindt zich meestal aan de zijkant</li><li>• Houd 2-3 seconden ingedrukt om in te schakelen</li><li>• Om uit te schakelen: Houd ingedrukt en schuif vervolgens om uit te schakelen</li></ul></div></div>",
             "keyPoints": [
               "Gebruik altijd de juiste afsluitprocedures",
@@ -319,7 +443,7 @@
           "internetSafety": {
             "title": "Basisprincipes van internetveiligheid",
             "description": "Blijf veilig online met deze essentiële tips",
-            "duration": "25 min",
+            "duration": "25 minuten",
             "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Veilig online blijven</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Waarschuwingssignalen van oplichting:</h4><ul class=\"space-y-2 text-red-700\"><li>• Dringende berichten waarin om geld wordt gevraagd</li><li>• Verzoeken om wachtwoorden of persoonlijke informatie</li><li>• Berichten \"U heeft gewonnen\" waarvoor u niet heeft meegedaan</li><li>• Verdachte links of bijlagen</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Tips voor veilig browsen:</h4><ul class=\"space-y-2\"><li>• Zoek naar \"https://\" in webadressen</li><li>• Download alleen van officiële app-winkels</li><li>• Houd uw software up-to-date</li><li>• Gebruik sterke, unieke wachtwoorden</li></ul></div></div>",
             "keyPoints": [
               "Geef nooit persoonlijke informatie aan vreemden",
@@ -350,7 +474,7 @@
           "socialMedia": {
             "title": "Basisprincipes van sociale media",
             "description": "Maak contact met vrienden en familie op Facebook en andere platforms",
-            "duration": "35 min",
+            "duration": "35 minuten",
             "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Aan de slag met sociale media</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Basisprincipes van Facebook:</h4><ul class=\"space-y-2\"><li>• Maak een profiel aan met uw echte naam</li><li>• Voeg een leuke profielfoto toe</li><li>• Stuur vriendschapsverzoeken naar mensen die u kent</li><li>• Deel updates, foto's en herinneringen</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Privacy-instellingen:</h4><ul class=\"space-y-2\"><li>• Accepteer alleen vrienden die u daadwerkelijk kent</li><li>• Stel berichten in op \"Alleen vrienden\"</li><li>• Deel geen persoonlijke informatie openbaar</li><li>• Controleer wat anderen over u kunnen zien</li></ul></div></div>",
             "keyPoints": [
               "Privacy-instellingen zijn erg belangrijk",
@@ -381,7 +505,7 @@
           "onlineBanking": {
             "title": "Beveiliging van online bankieren",
             "description": "Beheer uw financiën veilig online",
-            "duration": "45 min",
+            "duration": "45 minuten",
             "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Veilig online bankieren</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Essentiële beveiliging:</h4><ul class=\"space-y-2 text-red-700\"><li>• Typ altijd rechtstreeks het webadres van uw bank in</li><li>• Zoek naar het slotpictogram in uw browser</li><li>• Bankier nooit op openbare Wi-Fi</li><li>• Log volledig uit als u klaar bent</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Wat u online kunt doen:</h4><ul class=\"space-y-2\"><li>• Rekeningsaldi controleren</li><li>• Transactiegeschiedenis bekijken</li><li>• Geld overmaken tussen rekeningen</li><li>• Rekeningen elektronisch betalen</li></ul></div></div>",
             "keyPoints": [
               "Beveiliging is de hoogste prioriteit",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Pas uw voorkeuren aan",
-    "personalInfo": "Persoonlijke informatie",
+    "personalInfo": {
+      "title": "Persoonlijke informatie",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer uw voornaam in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer uw achternaam in",
+      "age": "Age",
+      "techExperience": "Niveau technische ervaring",
+      "techExperienceBeginner": "Beginner - Ik ben nieuw op het gebied van technologie",
+      "techExperienceSome": "Enige ervaring - Ik ken de basis",
+      "techExperienceComfortable": "Comfortabel - Ik ben redelijk goed met technologie"
+    },
     "firstName": "Voornaam",
     "firstNamePlaceholder": "Uw voornaam",
     "primaryDevice": "Primair apparaat",
     "devices": {
+      "title": "Primaire apparaat(en)",
+      "description": "Selecteer alle apparaten die u regelmatig gebruikt",
       "windowsComputer": "Windows-computer",
-      "macComputer": "Mac (Apple-computer)",
+      "macComputer": "Mac-computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android-telefoon of -tablet"
+      "androidPhone": "Android-telefoon",
+      "androidTablet": "Android-tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Toegankelijkheid",
     "textToSpeech": "Tekst-naar-spraak",
@@ -526,12 +665,12 @@
     "noLanguagesFound": "Geen talen gevonden die overeenkomen met \"{{search}}\"",
     "languageRequired": "Minstens één taal vereist",
     "languageRequiredDesc": "Selecteer ten minste één taal om een goede werking van spraakinvoer en tekstinteracties te garanderen.",
-    "account": "Account",
+    "account": "Rekening",
     "signOut": "Uitloggen",
     "signOutDesc": "Uitloggen bij uw account",
     "cancel": "Annuleren",
-    "saving": "Opslaan...",
-    "saved": "Opgeslagen!",
+    "saving": "Besparing...",
+    "saved": "Opgeslagen",
     "saveChanges": "Wijzigingen opslaan",
     "errorSaving": "Kon de instellingen niet opslaan. Probeer het opnieuw.",
     "lastName": "Achternaam",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Modus met hoog contrast",
     "highContrastDesc": "Verhoog het contrast van tekst en elementen voor betere zichtbaarheid",
-    "learningPreferences": "Leer- en inhoudsvoorkeuren"
+    "learningPreferences": "Leer- en inhoudsvoorkeuren",
+    "title": "Instellingen",
+    "audio": {
+      "title": "Audio en spraak",
+      "autoTTS": "Automatische tekst-naar-spraak",
+      "autoTTSDesc": "Lees AI-berichten automatisch voor"
+    },
+    "display": {
+      "title": "Weergave-instellingen",
+      "textSize": "Tekstgrootte",
+      "textSizeNormal": "Normaal",
+      "textSizeLarge": "Groot",
+      "textSizeExtraLarge": "Extra groot",
+      "theme": "Kleur thema",
+      "themeLight": "Licht",
+      "themeDark": "Dark",
+      "themeHighContrast": "Hoog contrast"
+    },
+    "language": {
+      "title": "Taalvoorkeur",
+      "interfaceLanguage": "Interfacetaal",
+      "description": "Dit heeft invloed op de interfacetaal en stem voor tekst-naar-spraak"
+    },
+    "pwa": {
+      "install": {
+        "title": "Installeer TechStep",
+        "description": "Krijg snel toegang tot uw leervoortgang en gebruik TechStep offline.",
+        "button": "Installeer app"
+      },
+      "update": {
+        "title": "Update beschikbaar",
+        "description": "Er is een nieuwe versie van TechStep beschikbaar met verbeteringen en bugfixes.",
+        "button": "Nu bijwerken"
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline - Wijzigingen worden gesynchroniseerd wanneer er verbinding is",
+        "syncing": "Synchroniseren..."
+      },
+      "notifications": {
+        "title": "Herinneringen leren",
+        "description": "Ontvang vriendelijke herinneringen om u te helpen op koers te blijven tijdens uw leertraject.",
+        "learning_reminders": "Herinneringen leren",
+        "learning_reminders_desc": "Zachte duwtjes om door te gaan met je lessen",
+        "progress_updates": "Voortgangsupdates",
+        "progress_updates_desc": "Vier je prestaties",
+        "support_messages": "Ondersteuningsberichten",
+        "support_messages_desc": "Handige tips en hulp",
+        "frequency": "Frequentie",
+        "enable": "Meldingen inschakelen",
+        "subscribing": "Instellen...",
+        "blocked": {
+          "title": "Meldingen geblokkeerd",
+          "description": "Meldingen zijn momenteel geblokkeerd. Om ze in te schakelen, moet u meldingen toestaan ​​in uw browserinstellingen.",
+          "instructions": "Zoek naar het meldingspictogram in uw adresbalk of controleer de site-instellingen van uw browser."
+        },
+        "success": {
+          "title": "Meldingen ingeschakeld!",
+          "description": "U ontvangt nuttige herinneringen en updates op basis van uw voorkeuren."
+        }
+      }
+    },
+    "offline": {
+      "error": "Synchronisatiefout",
+      "offline": "Offline",
+      "online": "Online",
+      "syncing": "Synchroniseren...",
+      "offline_desc": "Wijzigingen worden gesynchroniseerd wanneer er verbinding is",
+      "syncing_desc": "Uw gegevens bijwerken",
+      "online_desc": "Alle wijzigingen worden opgeslagen",
+      "pending_operations": "{{count}} openstaande wijzigingen",
+      "last_sync": "Laatste synchronisatie: {{time}}",
+      "content_manager": {
+        "title": "Offline inhoud",
+        "description": "Download inhoud voor toegang wanneer u offline bent",
+        "online": "Verbonden - U kunt nieuwe inhoud downloaden",
+        "offline": "Offline - Alleen gedownloade inhoud gebruiken",
+        "no_content": "Geen offline inhoud",
+        "no_content_desc": "Download cursussen en lessen om ze offline te openen",
+        "downloaded": "Gedownload",
+        "available_offline": "Offline beschikbaar",
+        "remove": "Verwijderen uit offline opslag",
+        "suggestions": "Aanbevolen downloads",
+        "suggestion_1": "Basiscursus computer",
+        "suggestion_1_desc": "Essentiële vaardigheden om aan de slag te gaan met technologie",
+        "popular": "Populair",
+        "download": "Downloaden",
+        "type": {
+          "course": "Cursus",
+          "lesson": "Les",
+          "tutorial": "Handleiding",
+          "media": "Media"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Afwijzen"
+    },
+    "dataPortability": "Gegevens- en privacyrechten",
+    "dataRights": "Uw gegevensrechten",
+    "dataRightsDesc": "U heeft volledige controle over uw persoonlijke gegevens. Exporteer, beheer deelvoorkeuren of verwijder uw gegevens op elk gewenst moment."
   },
   "common": {
     "settings": "Instellingen",
     "signOut": "Uitloggen",
-    "close": "Sluiten"
+    "close": "Sluiten",
+    "friend": "vriend",
+    "comingSoon": "Binnenkort beschikbaar"
   },
   "tips": {
     "connectWifi": "Verbinding maken met Wi-Fi",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Uw voornaam",
       "lastName": "Achternaam",
       "lastNamePlaceholder": "Uw achternaam",
-      "age": "Leeftijd (helpt me mijn uitleg aan te passen)"
+      "age": "Leeftijd (helpt me mijn uitleg aan te passen)",
+      "tooltip": "Vertel ons iets over uzelf, zodat we uw leerervaring kunnen personaliseren."
     },
     "step2": {
       "title": "Kies uw voorkeurstalen",
@@ -679,7 +921,8 @@
       "selected_plural": "Geselecteerd: {{count}} talen",
       "noLanguagesFound": "Geen talen gevonden die overeenkomen met \"{{search}}\"",
       "languageRequired": "Taalselectie vereist",
-      "languageRequiredDesc": "Selecteer ten minste één taal om door te gaan. Dit zorgt voor de beste ervaring voor spraakinvoer en tekstinteracties."
+      "languageRequiredDesc": "Selecteer ten minste één taal om door te gaan. Dit zorgt voor de beste ervaring voor spraakinvoer en tekstinteracties.",
+      "tooltip": "Kies de talen waarmee u vertrouwd bent voor spraakinvoer en tekstinteracties."
     },
     "step3": {
       "title": "Welk apparaat gebruikt u het meest?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Android-telefoon of -tablet",
         "smarttv": "Smart TV",
         "multipledevices": "Meerdere apparaten"
-      }
+      },
+      "tooltip": "Als we weten wat uw primaire apparaat is, kunnen we relevantere instructies geven."
     },
     "step4": {
       "title": "Hoe comfortabel bent u met technologie?",
@@ -702,7 +946,8 @@
       "some": "Enige ervaring",
       "someDesc": "Ik kan basistaken uitvoeren, maar heb hulp nodig bij nieuwe dingen",
       "comfortable": "Comfortabel",
-      "comfortableDesc": "Ik kan de meeste dingen zelf uitzoeken, maar heb soms begeleiding nodig"
+      "comfortableDesc": "Ik kan de meeste dingen zelf uitzoeken, maar heb soms begeleiding nodig",
+      "tooltip": "Wees eerlijk over uw comfortniveau. Dit helpt ons de zaken in het juiste tempo uit te leggen."
     },
     "step5": {
       "title": "Welke technische onderwerpen maken u het meest zorgen?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Apparaatinstellingen",
         "onlineShopping": "Online winkelen",
         "healthApps": "Gezondheidsapps en -portalen"
-      }
+      },
+      "tooltip": "Selecteer onderwerpen waar u zich het meeste zorgen over maakt, zodat we voorrang kunnen geven aan hulp op deze gebieden."
     },
     "step6": {
       "title": "Heeft u toegankelijkheidsfuncties nodig?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Langzamere uitleg",
         "visualSteps": "Visuele stapindicatoren",
         "noneNeeded": "Geen nodig"
-      }
+      },
+      "tooltip": "Laat ons weten welke toegankelijkheidsfuncties u nodig heeft voor een comfortabele ervaring."
     },
     "step7": {
       "title": "Hoe leert u het liefst?",
@@ -743,7 +990,8 @@
       "detailed": "Gedetailleerde uitleg",
       "detailedDesc": "Leg uit waarom ik elke stap doe",
       "visual": "Visueel leren",
-      "visualDesc": "Toon me foto's en video's indien mogelijk"
+      "visualDesc": "Toon me foto's en video's indien mogelijk",
+      "tooltip": "Kies hoe jij het liefst leert, zodat wij onze lesstijl kunnen aanpassen."
     },
     "step8": {
       "title": "Laatste aanpassingen",
@@ -757,17 +1005,110 @@
       "textSize": "Voorkeur voor tekstgrootte",
       "textSizeNormal": "Normaal",
       "textSizeLarge": "Groot",
-      "textSizeExtraLarge": "Extra groot"
+      "textSizeExtraLarge": "Extra groot",
+      "tooltip": "Creëer jouw perfecte leeromgeving met deze laatste voorkeuren.",
+      "privacy": {
+        "title": "Uw privacy is onze prioriteit",
+        "items": [
+          "Wij zullen NOOIT uw persoonlijke gegevens verkopen",
+          "Alle gegevens blijven gecodeerd en veilig",
+          "U kunt deze instellingen op elk gewenst moment wijzigen",
+          "U kunt uw gegevens op elk gewenst moment verwijderen"
+        ]
+      },
+      "personalization": {
+        "title": "Gepersonaliseerde ervaring",
+        "description": "Sta ons toe uw interactiegegevens te gebruiken om betere, relevantere hulp en suggesties te bieden die zijn afgestemd op uw behoeften.",
+        "note": "Hierdoor kunnen we beter begrijpen in welke onderwerpen u het meest geïnteresseerd bent, en kunnen we u relevantere tutorials bieden."
+      },
+      "history": {
+        "title": "Gebruik gespreksgeschiedenis",
+        "description": "Onthoud onze eerdere gesprekken om een ​​betere context te bieden en te voorkomen dat u informatie herhaalt die u al kent.",
+        "note": "Dit helpt mij herinneren wat we eerder hebben besproken en kan voortbouwen op eerdere gesprekken."
+      },
+      "learningPrefs": {
+        "title": "Gebruik leervoorkeuren",
+        "description": "Onthoud uw favoriete leerstijl, communicatievoorkeuren en toegankelijkheidsbehoeften om consistente ervaringen te bieden.",
+        "note": "Dit omvat uw favoriete uitlegstijl, taalinstellingen en toegankelijkheidsvoorkeuren."
+      },
+      "noSelection": {
+        "title": "Geen personalisatie geselecteerd",
+        "success": "Geweldig! We gebruiken uw geselecteerde gegevens om u een betere ervaring te bieden.",
+        "default": "Dat is prima! Je krijgt nog steeds volledige toegang tot alle functies, alleen zonder persoonlijke aanbevelingen."
+      }
     },
     "back": "Terug",
     "next": "Volgende",
     "settingUp": "Instellen...",
     "completeSetup": "Installatie voltooien",
-    "errorSaving": "Kon uw voorkeuren niet opslaan. Probeer het opnieuw."
+    "errorSaving": "Kon uw voorkeuren niet opslaan. Probeer het opnieuw.",
+    "buttons": {
+      "previous": "Vorig",
+      "next": "Volgende",
+      "skip": "Overslaan",
+      "complete": "Compleet",
+      "processing": "Verwerken...",
+      "gotIt": "Begrepen!",
+      "skipAll": "Alles overslaan",
+      "cancel": "Annuleren"
+    },
+    "progress": {
+      "label": "Onboardingvoortgang: stap {{current}} van {{total}}",
+      "stepOf": "Stap {{current}} van {{total}}",
+      "step": "Stap",
+      "stepCompleted": "{{stap}} - Voltooid",
+      "stepCurrent": "{{step}} - Huidige stap",
+      "stepUpcoming": "{{step}} - Binnenkort beschikbaar"
+    },
+    "tooltip": {
+      "helpfulTip": "Handige tip"
+    },
+    "flow": {
+      "title": "Welkom! Laten we aan de slag gaan"
+    },
+    "accessibility": {
+      "helpfulTip": "Handige tip",
+      "tooltipAppeared": "Tooltip verscheen met inhoud: {{content}}",
+      "skippingStep": "Huidige stap overslaan",
+      "movingToNextStep": "Op weg naar de volgende stap",
+      "movingToPreviousStep": "Naar de vorige stap gaan",
+      "completingOnboarding": "Het onboardingproces voltooien",
+      "stepChanged": "Nu bij stap {{step}} van {{total}}: {{title}}",
+      "skippingOnboarding": "Het hele onboardingproces overslaan",
+      "cancellingOnboarding": "Onboardingproces annuleren",
+      "errorCompleting": "Fout bij het voltooien van de onboarding. Probeer het opnieuw.",
+      "goToPreviousStep": "Ga naar de vorige stap",
+      "skipThisStep": "Sla deze stap over",
+      "completeOnboarding": "Volledige onboarding",
+      "continueToNextStep": "Ga door naar de volgende stap",
+      "closeTooltip": "Knopinfo sluiten",
+      "skipTooltip": "Sla deze tip over",
+      "continueFromTooltip": "Ga verder vanaf tooltip",
+      "skipEntireOnboarding": "Sla de volledige onboarding over",
+      "cancelOnboarding": "Onboarding annuleren",
+      "keyboardInstructions": "Gebruik Tab om te navigeren, Enter om te selecteren en Escape om dialoogvensters te sluiten"
+    },
+    "validation": {
+      "firstNameRequired": "Voornaam is vereist",
+      "lastNameRequired": "Achternaam is vereist",
+      "validAgeRequired": "Voer een geldige leeftijd in tussen 18 en 120 jaar",
+      "languageRequired": "Selecteer minimaal één taal",
+      "deviceRequired": "Selecteer uw primaire apparaat",
+      "experienceRequired": "Selecteer uw technische ervaringsniveau",
+      "concernsOptional": "U kunt problemen selecteren om ons te helpen uw ervaring te personaliseren",
+      "assistiveNeedsRequired": "Selecteer uw toegankelijkheidsbehoeften of kies 'Geen nodig'",
+      "communicationStyleRequired": "Selecteer uw gewenste communicatiestijl"
+    },
+    "restart": {
+      "confirmMessage": "Weet u zeker dat u het onboardingproces opnieuw wilt starten? Hiermee worden al uw voorkeuren opnieuw ingesteld."
+    }
   },
   "error": {
     "askQuestionFirst": "Stel eerst een vraag",
-    "couldntGetAnswer": "Sorry, ik kon op dit moment geen antwoord krijgen. Probeer het opnieuw."
+    "couldntGetAnswer": "Sorry, ik kon op dit moment geen antwoord krijgen. Probeer het opnieuw.",
+    "notifications": {
+      "dismiss": "Afwijzen"
+    }
   },
   "learningPage": {
     "headerTitle": "Leercentrum",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "Modules voor pad: {{pathTitle}}",
     "moduleContentTitle": "Inhoud voor module: {{moduleTitle}} komt hier.",
     "loadingCenter": "Leercentrum laden...",
-    "moduleTimeLabel": "Tijd: "
+    "moduleTimeLabel": "Tijd: ",
+    "startOrContinueCourse": "Cursus starten of voortzetten",
+    "lessonsHeader": "Lessen",
+    "lessonContentPlaceholder": "Er is nog geen inhoud beschikbaar voor {{lessonTitle}}.",
+    "noLessonAvailable": "Geen les beschikbaar."
   },
   "languageSelector": {
     "choosePrompt": "Kies uw voorkeurstaal voor de interface",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Beoordelen",
     "congratulations": "Gefeliciteerd!",
     "courseComplete": "U heeft de cursus {{courseTitle}} voltooid!",
-    "downloadCertificate": "Certificaat downloaden"
+    "downloadCertificate": "Certificaat downloaden",
+    "previousLesson": "Vorige les",
+    "nextLesson": "Volgende les",
+    "markAsComplete": "Markeer als voltooid",
+    "completed": "Voltooid",
+    "removeBookmark": "Bladwijzer verwijderen",
+    "addBookmark": "Voeg bladwijzer toe"
   },
   "lessonView": {
     "readAloud": "Les hardop voorlezen",
@@ -932,12 +1283,468 @@
       "email": "E-mail: privacy@techstep.com",
       "phone": "Telefoon: 1-800-TECH-HELP (1-800-832-4435)",
       "mailLine1": "Post: TechStep Privacy Team",
-      "mailLine2": "123 Tech Support Lane",
-      "mailLine3": "Helpful City, HC 12345"
+      "mailLine2": "123 Technische ondersteuningsstraat",
+      "mailLine3": "Behulpzame stad, HC 12345"
     },
     "footer": {
       "thankYou": "Bedankt dat u TechStep uw informatie toevertrouwt. We zijn toegewijd om deze veilig te houden en alleen te gebruiken om u te helpen slagen met technologie.",
       "backToHome": "Terug naar startpagina"
     }
+  },
+  "avatar": {
+    "enable": "Schakel AI-avatar in",
+    "disable": "Schakel Avatar uit",
+    "loading": "Avatar laden...",
+    "mute": "Avatar dempen",
+    "unmute": "Dempen van avatar opheffen",
+    "settings": "Avatar-instellingen",
+    "fullscreen": "Volledig scherm",
+    "exitFullscreen": "Sluit Volledig scherm af",
+    "performance": {
+      "high": "Hoge kwaliteit",
+      "medium": "Middelmatige kwaliteit",
+      "low": "Lage kwaliteit",
+      "off": "Avatar uit"
+    },
+    "error": {
+      "loadFailed": "Kan avatar niet laden. Probeer het opnieuw.",
+      "noWebGL": "Uw apparaat ondersteunt geen 3D-afbeeldingen.",
+      "audioFailed": "Geen toegang tot de microfoon voor lipsynchronisatie."
+    },
+    "status": {
+      "initializing": "Avatar opstarten...",
+      "ready": "Klaar om te helpen",
+      "thinking": "Denken...",
+      "speaking": "Spreken...",
+      "listening": "Luisteren...",
+      "celebrating": "Enthousiast om te helpen!",
+      "error": "Er is iets misgegaan",
+      "processing": "Audio verwerken...",
+      "lipSyncActive": "Lipsynchronisatie actief",
+      "lipSyncInactive": "Lipsynchronisatie inactief"
+    },
+    "greeting": {
+      "morning": "Goedemorgen, {{naam}}! Klaar om vandaag iets nieuws te leren?",
+      "afternoon": "Goedemiddag, {{naam}}! Hoe kan ik je vandaag helpen?",
+      "evening": "Goedenavond, {{name}}! Wat zou je willen ontdekken?"
+    },
+    "companion": {
+      "title": "Uw AI-helper",
+      "ready": "Ik ben hier om je te helpen met technologie!"
+    },
+    "actions": {
+      "chat": "Chatten",
+      "voice": "Stem",
+      "camera": "Camera",
+      "help": "Hulp"
+    },
+    "suggestions": {
+      "title": "Snelle vragen"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Hoe maak ik verbinding met WiFi?",
+    "makeTextBigger": "Hoe maak ik tekst groter op mijn scherm?",
+    "takeScreenshot": "Hoe maak ik een screenshot?",
+    "videoCall": "Hoe voer ik een videogesprek?",
+    "iphoneSettings": "Hoe wijzig ik de iPhone-instellingen?",
+    "androidSettings": "Hoe wijzig ik de Android-instellingen?",
+    "windowsSettings": "Hoe wijzig ik de Windows-instellingen?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Hoe kan ik je vandaag helpen?",
+      "subtitle": "Vraag mij alles over technologie!"
+    },
+    "input": {
+      "placeholder": "Bericht AI-assistent...",
+      "helper": "Druk op Enter om te verzenden, Shift+Enter voor een nieuwe regel"
+    },
+    "greeting": {
+      "morning": "Goedemorgen",
+      "afternoon": "Goedemiddag",
+      "evening": "Goedeavond"
+    },
+    "error": {
+      "general": "Het spijt me, ik heb momenteel problemen. Probeer het over enkele ogenblikken opnieuw."
+    }
+  },
+  "flashcards": {
+    "title": "Stapsgewijze handleiding",
+    "progress": "Stap {{current}} van {{total}}",
+    "instructions": "Instructies:",
+    "markCompleted": "Markeer als voltooid"
+  },
+  "dataPortability": {
+    "title": "Gegevensportabiliteit en gebruikersrechten",
+    "tabs": {
+      "overview": "Overzicht",
+      "sharing": "Gegevens delen",
+      "export": "Gegevens exporteren",
+      "delete": "Gegevens verwijderen",
+      "ai": "AI-transparantie"
+    },
+    "overview": {
+      "title": "Uw gegevensrechten",
+      "description": "U heeft volledige controle over uw persoonlijke gegevens. U kunt uw gegevens op elk gewenst moment binnen 30 dagen inzien, exporteren, corrigeren of verwijderen.",
+      "dataWeCollect": "Gegevens die we verzamelen",
+      "profileInfo": "Profielinformatie (naam, e-mailadres, voorkeuren)",
+      "learningProgress": "Leervoortgang en prestaties",
+      "aiHistory": "AI-gespreksgeschiedenis",
+      "analytics": "Gebruiksanalyse (geanonimiseerd)",
+      "howWeUse": "Hoe wij uw gegevens gebruiken",
+      "personalized": "Bied gepersonaliseerde leerervaring",
+      "improveAI": "Verbeter de reacties van AI-assistenten",
+      "trackProgress": "Volg uw voortgang en prestaties",
+      "security": "Zorg voor platformbeveiliging en -prestaties",
+      "rightsTitle": "Uw rechten onder AVG en CCPA",
+      "rightAccess": "Recht op toegang:",
+      "accessDesc": "Bekijk al uw persoonlijke gegevens",
+      "rightPortability": "Recht op portabiliteit:",
+      "portabilityDesc": "Exporteer uw gegevens",
+      "rightRectification": "Recht op rectificatie:",
+      "rectificationDesc": "Corrigeer onjuiste gegevens",
+      "rightErasure": "Recht op verwijdering:",
+      "erasureDesc": "Verwijder uw persoonlijke gegevens"
+    },
+    "sharing": {
+      "title": "Voorkeuren voor het delen van gegevens",
+      "description": "Bepaal hoe uw gegevens worden gedeeld en gebruikt. Het delen van gegevens is optioneel en kan op elk moment worden gewijzigd.",
+      "dataTypes": "Gegevenstype delen",
+      "thirdParty": "Delen met derden",
+      "special": "Speciale categorieën",
+      "analytics": "Analytics delen",
+      "analyticsDesc": "Deel geanonimiseerde gebruiksgegevens om het platform te verbeteren",
+      "research": "Onderzoek delen",
+      "researchDesc": "Draag geanonimiseerde gegevens bij aan onderzoek naar onderwijs voor senioren"
+    },
+    "export": {
+      "title": "Exporteer uw gegevens",
+      "description": "Download een kopie van al uw persoonlijke gegevens. Wij bereiden uw gegevens voor en sturen u binnen 30 dagen een downloadlink.",
+      "chooseFormat": "Kies Exportformaat",
+      "included": "Wat is inbegrepen:",
+      "profile": "Profielinformatie en voorkeuren",
+      "progress": "Leervoortgang en prestaties",
+      "conversations": "AI-gespreksgeschiedenis",
+      "support": "Ondersteuning ticketgeschiedenis",
+      "consent": "Toestemmings- en privacy-instellingen",
+      "request": "Gegevensexport aanvragen",
+      "requesting": "Exporteren aanvragen...",
+      "requests": "Exportverzoeken",
+      "requested": "Gevraagd",
+      "download": "Downloaden"
+    },
+    "delete": {
+      "title": "Verwijder uw gegevens",
+      "description": "Verwijder definitief al uw persoonlijke gegevens. Deze actie kan niet ongedaan worden gemaakt en uw account wordt binnen 30 dagen gesloten.",
+      "whatDeleted": "Wat wordt verwijderd:",
+      "profile": "Uw profiel- en accountgegevens",
+      "progress": "Alle leervoortgangen en prestaties",
+      "conversations": "AI-gespreksgeschiedenis",
+      "preferences": "Voorkeuren en instellingen",
+      "analytics": "Gebruiksanalyses gekoppeld aan uw account",
+      "important": "Belangrijke opmerkingen:",
+      "legal": "Sommige gegevens kunnen worden bewaard voor wettelijke naleving (ondersteuningstickets, factuurgegevens)",
+      "research": "Geanonimiseerde gegevens die voor onderzoek worden gebruikt, kunnen worden bewaard",
+      "verification": "U ontvangt een e-mailverificatie voordat u deze verwijdert",
+      "timeframe": "De verwijdering wordt binnen 30 dagen voltooid",
+      "request": "Verzoek om gegevensverwijdering",
+      "confirm": "Weet u zeker dat u al uw gegevens wilt verwijderen?",
+      "type": "Typ \"VERWIJDER MIJN GEGEVENS\" om deze actie te bevestigen:",
+      "placeholder": "Typ MIJN GEGEVENS VERWIJDEREN",
+      "confirmButton": "Bevestig verwijdering",
+      "processing": "Verwerken...",
+      "cancel": "Annuleren",
+      "requests": "Verwijderingsverzoeken",
+      "complete": "Voltooi het verwijderen van gegevens",
+      "requested": "Gevraagd",
+      "scheduled": "Gepland",
+      "awaitingVerification": "In afwachting van verificatie"
+    },
+    "ai": {
+      "title": "Transparantie van AI-gegevensgebruik",
+      "description": "Bekijk precies hoe uw gegevens worden gebruikt door onze AI-assistent en beheer uw AI-gegevensvoorkeuren.",
+      "stats": "Statistieken van AI-gegevensgebruik",
+      "conversationsAnalyzed": "Gesprekken geanalyseerd:",
+      "dataPoints": "Gebruikte datapunten:",
+      "trainingContribution": "Trainingsbijdrage:",
+      "lastProcessed": "Laatst verwerkt:",
+      "optOut": "AI-opt-outopties",
+      "stopTraining": "Stop met AI-training",
+      "stopTrainingDesc": "Voorkom dat uw gegevens de AI-reacties verbeteren",
+      "deleteHistory": "Gespreksgeschiedenis verwijderen",
+      "deleteHistoryDesc": "Verwijder alle opgeslagen AI-gesprekken",
+      "anonymize": "Anonimiseer mijn gegevens",
+      "anonymizeDesc": "Converteer gegevens naar een anonieme vorm"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Kies hoe u wilt communiceren",
+    "tabs": {
+      "chat": "Chatten",
+      "voice": "Stem",
+      "image": "Afbeelding",
+      "chatAria": "Tekstchat-invoer",
+      "voiceAria": "Spraakinvoer",
+      "imageAria": "Beeldinvoer"
+    },
+    "chat": {
+      "placeholder": "Typ hier uw vraag... Druk op Enter om te verzenden",
+      "ariaLabel": "Typ uw vraag",
+      "sendButton": "Bericht verzenden",
+      "send": "Versturen"
+    },
+    "voice": {
+      "recording": "Opnemen... Tik om te stoppen",
+      "processing": "Je stem verwerken...",
+      "instructions": "Tik op de microfoon om de opname te starten",
+      "startRecording": "Begin met opnemen",
+      "stopRecording": "Stop met opnemen"
+    },
+    "image": {
+      "takePhoto": "Maak een foto",
+      "camera": "Maak een foto",
+      "upload": "Afbeelding uploaden",
+      "uploadAria": "Selecteer afbeeldingsbestand",
+      "instructions": "Deel een foto en ik zal helpen uitleggen wat je ziet",
+      "formats": "Ondersteunt JPG, PNG, GIF (max. 10 MB)",
+      "previewAlt": "Geselecteerd afbeeldingsvoorbeeld",
+      "remove": "Afbeelding verwijderen",
+      "contextLabel": "Wat wil je weten over dit beeld?",
+      "contextPlaceholder": "Optioneel: Stel een specifieke vraag over de afbeelding",
+      "cancel": "Annuleren",
+      "submit": "Afbeelding indienen",
+      "send": "Versturen",
+      "invalidType": "Selecteer een geldig afbeeldingsbestand.",
+      "tooLarge": "Afbeeldingsbestand is te groot. Selecteer een bestand kleiner dan 10 MB.",
+      "cameraError": "Kan geen toegang krijgen tot de camera. Controleer de machtigingen."
+    }
+  },
+  "ai": {
+    "title": "AI-helper",
+    "subtitle": "Hier om u te helpen leren",
+    "emergency": "Noodhulp",
+    "emergencyAria": "Krijg noodhulp",
+    "expand": "Uitbreiden",
+    "minimize": "Minimaliseer",
+    "close": "Sluit AI-assistent",
+    "thinking": "AI denkt...",
+    "escalated": "U bent nu verbonden met ons ondersteuningsteam",
+    "callSupport": "Bel ondersteuning: 1-800-SENIOR-HELP",
+    "minimized": "AI-helper",
+    "welcome": {
+      "tutorial": "Hallo! Ik zie dat je bezig bent met \"{{tutorial}}\". Ik ben hier om je te helpen met eventuele vragen. Je kunt typen, spreken of afbeeldingen laten zien - wat voor jou het prettigst voelt!",
+      "general": "Hallo! Ik ben uw AI-assistent, hier om u te helpen technologie stap voor stap te leren. U kunt mij vragen stellen door te typen, te spreken of afbeeldingen te tonen. Wat zou je willen weten?"
+    },
+    "error": {
+      "general": "Het spijt me, ik heb momenteel problemen. Ik wil u in contact brengen met ons ondersteuningsteam, dat u onmiddellijk kan helpen."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Gemeenschapsforum",
+      "subtitle": "Maak contact met andere leerlingen, stel vragen en deel uw ervaringen",
+      "backToHome": "Terug naar Thuis",
+      "newPost": "Nieuw bericht"
+    },
+    "sidebar": {
+      "categories": "Categorieën",
+      "topics": {
+        "all": "Alle onderwerpen",
+        "general": "Algemene hulp",
+        "mobile": "Mobiele apparaten",
+        "computer": "Computers",
+        "apps": "Apps en software",
+        "internet": "Internet en e-mail",
+        "safety": "Online-veiligheid"
+      },
+      "guidelines": {
+        "title": "Gemeenschapsrichtlijnen",
+        "items": [
+          "Wees respectvol en vriendelijk",
+          "Geen spam of ongepaste inhoud",
+          "Help anderen wanneer je kunt",
+          "Blijf bij het onderwerp",
+          "Meld eventuele problemen"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Berichten zoeken..."
+    },
+    "createPost": {
+      "title": "Nieuw bericht maken",
+      "categoryLabel": "Categorie",
+      "titleLabel": "Titel",
+      "contentLabel": "Inhoud",
+      "titlePlaceholder": "Wat is je vraag of onderwerp?",
+      "contentPlaceholder": "Beschrijf uw vraag of deel uw mening...",
+      "submit": "Na",
+      "cancel": "Annuleren",
+      "profanityAlert": "Je bericht bevat ongepaste inhoud. Gelieve te herzien en opnieuw te proberen."
+    },
+    "posts": {
+      "empty": "Geen berichten gevonden. Wees de eerste die een gesprek begint!",
+      "replies": "{{count}} antwoorden",
+      "timeAgo": {
+        "justNow": "Zojuist",
+        "oneHour": "1 uur geleden",
+        "hours": "{{count}} uur geleden",
+        "oneDay": "1 dag geleden",
+        "days": "{{count}} dagen geleden"
+      }
+    }
+  },
+  "contact": {
+    "title": "Neem contact met ons op",
+    "subtitle": "Wij horen graag van u! Stuur ons een bericht en wij reageren zo snel mogelijk.",
+    "backToHome": "Terug naar Thuis",
+    "form": {
+      "fasterResponse": "📧 Dit formulier wordt sneller beantwoord dan andere contactmethoden!",
+      "name": "Volledige naam *",
+      "namePlaceholder": "Voer uw volledige naam in",
+      "email": "E-mailadres *",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "subject": "Onderwerp *",
+      "subjectPlaceholder": "Selecteer een onderwerp",
+      "subjects": {
+        "general": "Algemeen onderzoek",
+        "techSupport": "Technische ondersteuning",
+        "account": "Accounthulp",
+        "feature": "Functieverzoek",
+        "bug": "Bugrapport",
+        "feedback": "Feedback",
+        "other": "Ander"
+      },
+      "message": "Bericht *",
+      "messagePlaceholder": "Beschrijf uw vraag in detail...",
+      "submit": "Bericht verzenden",
+      "sending": "Verzenden...",
+      "success": "Uw e-mailclient zou moeten zijn geopend. Als dit niet het geval is, kopieert u de informatie en stuurt u ons rechtstreeks een e-mail.",
+      "error": "Er is een fout opgetreden. Stuur ons een rechtstreekse e-mail op taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Neem contact op",
+      "emailLabel": "E-mail",
+      "responseData": "Wij reageren doorgaans binnen 24 uur"
+    },
+    "reasons": {
+      "title": "Waarom contact met ons opnemen?",
+      "items": [
+        "Krijg hulp bij technische problemen",
+        "Vraag nieuwe functies aan",
+        "Deel feedback en suggesties",
+        "Rapporteer bugs of problemen",
+        "Algemene vragen"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Servicevoorwaarden",
+    "backToHome": "Terug naar Thuis",
+    "lastUpdated": "Laatst bijgewerkt: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptatie van voorwaarden",
+        "content": "Door toegang te krijgen tot en gebruik te maken van onze service, accepteert u en gaat u ermee akkoord gebonden te zijn aan de voorwaarden en bepalingen van deze overeenkomst."
+      },
+      "license": {
+        "title": "Gebruik licentie",
+        "content": "Er wordt toestemming verleend om onze service tijdelijk uitsluitend te gebruiken voor persoonlijke, niet-commerciële, tijdelijke weergave."
+      },
+      "conduct": {
+        "title": "Gebruikersgedrag",
+        "content": "U gaat ermee akkoord onze service te gebruiken op een manier die consistent is met alle toepasselijke wet- en regelgeving en in overeenstemming met deze voorwaarden."
+      },
+      "liability": {
+        "title": "Beperking van aansprakelijkheid",
+        "content": "In geen geval zijn ons bedrijf of haar leveranciers aansprakelijk voor enige schade die voortvloeit uit het gebruik of de onmogelijkheid om onze service te gebruiken."
+      },
+      "contact": {
+        "title": "Contactgegevens",
+        "content": "Als u vragen heeft over deze Servicevoorwaarden, kunt u contact met ons opnemen via:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Toegankelijkheidsverklaring",
+    "subtitle": "We streven ernaar ons platform voor iedereen toegankelijk te maken, ongeacht vaardigheden of technologie.",
+    "backToHome": "Terug naar Thuis",
+    "commitment": {
+      "title": "Onze inzet",
+      "content": "Wij vinden dat technologie voor iedereen toegankelijk moet zijn. Ons platform is ontworpen met senioren in gedachten en bevat functies die leertechnologie eenvoudiger en comfortabeler maken voor gebruikers van alle niveaus."
+    },
+    "features": {
+      "title": "Toegankelijkheidsfuncties",
+      "visual": {
+        "title": "Visuele toegankelijkheid",
+        "items": [
+          "Kleurenschema's met hoog contrast",
+          "Grote, leesbare lettertypen",
+          "Compatibiliteit met schermlezers",
+          "Ondersteuning voor toetsenbordnavigatie",
+          "Alternatieve tekst voor afbeeldingen"
+        ]
+      },
+      "audio": {
+        "title": "Audiotoegankelijkheid",
+        "items": [
+          "Ondertiteling voor video's",
+          "Audiobeschrijvingen",
+          "Volumeregeling",
+          "Visuele indicatoren voor audiosignalen",
+          "Tekstalternatieven voor audio-inhoud"
+        ]
+      },
+      "motor": {
+        "title": "Motortoegankelijkheid",
+        "items": [
+          "Grote klikbare gebieden",
+          "Navigatie met alleen toetsenbord",
+          "Instelbare tijdslimieten",
+          "Compatibiliteit met stembediening",
+          "Vereenvoudigde interacties"
+        ]
+      },
+      "cognitive": {
+        "title": "Cognitieve toegankelijkheid",
+        "items": [
+          "Eenvoudige, duidelijke taal",
+          "Consistente navigatie",
+          "Verminderde bewegingsopties",
+          "Duidelijke instructies",
+          "Foutpreventie en herstel"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Naleving van normen",
+      "content": "Ons platform streeft ernaar te voldoen aan de Web Content Accessibility Guidelines (WCAG) 2.1 Level AA-normen. We testen ons platform regelmatig met ondersteunende technologieën en voeren toegankelijkheidsaudits uit."
+    },
+    "feedback": {
+      "title": "Feedback en ondersteuning",
+      "content": "Wij werken continu aan het verbeteren van de toegankelijkheid. Mocht u belemmeringen tegenkomen of suggesties voor verbetering hebben, neem dan gerust contact met ons op.",
+      "emailLabel": "E-mail",
+      "subjectLabel": "Onderwerp",
+      "subjectValue": "Toegankelijkheidsfeedback"
+    },
+    "assistive": {
+      "title": "Hulptechnologieën",
+      "content": "Ons platform is ontworpen om te werken met veelgebruikte ondersteunende technologieën, waaronder:",
+      "items": [
+        "Schermlezers (JAWS, NVDA, VoiceOver)",
+        "Spraakherkenningssoftware",
+        "Hulpmiddelen voor schermvergroting",
+        "Alternatieve toetsenborden",
+        "Wissel van navigatieapparaat",
+        "Eye-trackingsystemen"
+      ]
+    },
+    "help": {
+      "title": "Hulp nodig?",
+      "content": "Als u hulp nodig heeft bij het gebruik van ons platform of als u vragen heeft over toegankelijkheid, staan ​​wij voor u klaar.",
+      "contact": "Neem contact op met ondersteuning"
+    },
+    "lastUpdated": "Laatst bijgewerkt: {{date}}"
   }
 }

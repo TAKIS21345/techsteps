@@ -1,0 +1,1636 @@
+{
+  "settings": {
+    "title": "設定",
+    "saveChanges": "変更を保存",
+    "saving": "保存中...",
+    "saved": "保存しました",
+    "personalInfo": {
+      "title": "個人情報",
+      "firstName": "名",
+      "firstNamePlaceholder": "名を入力してください",
+      "lastName": "姓",
+      "lastNamePlaceholder": "姓を入力してください",
+      "age": "年齢",
+      "techExperience": "技術経験レベル",
+      "techExperienceBeginner": "初心者 - テクノロジーは初めてです",
+      "techExperienceSome": "少し経験あり - 基本は知っています",
+      "techExperienceComfortable": "快適 - テクノロジーは得意です"
+    },
+    "devices": {
+      "title": "主要デバイス",
+      "description": "定期的に使用するすべてのデバイスを選択してください",
+      "windowsComputer": "Windows コンピューター",
+      "macComputer": "Mac コンピューター",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidPhone": "Android スマートフォン",
+      "androidTablet": "Android タブレット",
+      "chromebook": "Chromebook"
+    },
+    "audio": {
+      "title": "オーディオと音声",
+      "autoTTS": "自動テキスト読み上げ",
+      "autoTTSDesc": "AI メッセージを自動的に読み上げる"
+    },
+    "display": {
+      "title": "表示設定",
+      "textSize": "テキストサイズ",
+      "textSizeNormal": "標準",
+      "textSizeLarge": "大",
+      "textSizeExtraLarge": "特大",
+      "theme": "カラーテーマ",
+      "themeLight": "ライト",
+      "themeDark": "ダーク",
+      "themeHighContrast": "ハイコントラスト"
+    },
+    "language": {
+      "title": "言語設定",
+      "interfaceLanguage": "インターフェース言語",
+      "description": "これはインターフェース言語とテキスト読み上げの音声に影響します"
+    },
+    "customizePrefs": "好みに合わせてカスタマイズする",
+    "accessibility": "アクセシビリティ",
+    "textToSpeech": "テキスト読み上げ",
+    "textToSpeechDesc": "答えを読み上げてもらいます",
+    "voiceInput": "音声入力",
+    "voiceInputDesc": "話して質問する",
+    "languagePreferences": "言語設定",
+    "hideLanguages": "隠れる",
+    "modifyLanguages": "言語の変更",
+    "defaultLanguage": "デフォルト言語 (Web サイト全体でこれが使用されます)",
+    "pwa": {
+      "install": {
+        "title": "TechStep をインストールする",
+        "description": "学習の進捗状況にすばやくアクセスし、TechStep をオフラインで使用します。",
+        "button": "アプリをインストールする"
+      },
+      "update": {
+        "title": "利用可能なアップデート",
+        "description": "改良とバグ修正が施された TechStep の新しいバージョンが利用可能です。",
+        "button": "今すぐアップデート"
+      },
+      "status": {
+        "online": "オンライン",
+        "offline": "オフライン - 接続時に変更が同期されます",
+        "syncing": "同期中..."
+      },
+      "notifications": {
+        "title": "学習リマインダー",
+        "description": "学習を順調に進めるために、優しいリマインダーを受け取ります。",
+        "learning_reminders": "学習リマインダー",
+        "learning_reminders_desc": "レッスンを続けるための優しい後押し",
+        "progress_updates": "進捗状況の最新情報",
+        "progress_updates_desc": "あなたの功績を祝いましょう",
+        "support_messages": "応援メッセージ",
+        "support_messages_desc": "役立つヒントと支援",
+        "frequency": "頻度",
+        "enable": "通知を有効にする",
+        "subscribing": "セットアップ中...",
+        "blocked": {
+          "title": "通知がブロックされました",
+          "description": "現在、通知はブロックされています。 有効にするには、ブラウザの設定で通知を許可してください。",
+          "instructions": "アドレス バーで通知アイコンを探すか、ブラウザのサイト設定を確認してください。"
+        },
+        "success": {
+          "title": "通知が有効になりました!",
+          "description": "あなたの設定に基づいて、役立つリマインダーや最新情報が届きます。"
+        }
+      }
+    },
+    "offline": {
+      "error": "同期エラー",
+      "offline": "オフライン",
+      "online": "オンライン",
+      "syncing": "同期中...",
+      "offline_desc": "接続すると変更が同期されます",
+      "syncing_desc": "データを更新する",
+      "online_desc": "すべての変更が保存されます",
+      "pending_operations": "{{count}} 件の保留中の変更",
+      "last_sync": "最終同期: {{time}}",
+      "content_manager": {
+        "title": "オフラインコンテンツ",
+        "description": "オフライン時にアクセスできるコンテンツをダウンロードする",
+        "online": "接続済み - 新しいコンテンツをダウンロードできます",
+        "offline": "オフライン - ダウンロードしたコンテンツのみを使用します",
+        "no_content": "オフラインコンテンツなし",
+        "no_content_desc": "コースとレッスンをダウンロードしてオフラインでアクセスする",
+        "downloaded": "ダウンロード済み",
+        "available_offline": "オフラインで利用可能",
+        "remove": "オフラインストレージから削除する",
+        "suggestions": "推奨されるダウンロード",
+        "suggestion_1": "パソコン基礎コース",
+        "suggestion_1_desc": "テクノロジーを始めるための必須スキル",
+        "popular": "人気のある",
+        "download": "ダウンロード",
+        "type": {
+          "course": "コース",
+          "lesson": "レッスン",
+          "tutorial": "チュートリアル",
+          "media": "メディア"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "却下する"
+    },
+    "defaultLanguageDesc": "これは、すべてのインターフェイス要素と対話の主要言語になります。",
+    "otherLanguages": "使用したいその他の言語:",
+    "default": "デフォルト",
+    "languageConfiguration": "言語設定",
+    "languageConfigurationDesc": "選択した言語は次の目的で使用されます。",
+    "speechToText": "音声テキスト認識と処理",
+    "multilingualText": "多言語テキストによる対話と応答",
+    "interfaceLanguage": "インターフェイス言語のオプションとアクセシビリティ",
+    "searchLanguages": "言語を検索...",
+    "selectAll": "すべて選択",
+    "deselectAll": "すべての選択を解除",
+    "selectedLanguages": "選択済み: {{count}} 言語",
+    "selectedLanguages_plural": "選択済み: {{count}} 言語",
+    "noLanguagesFound": "「{{search}}」に一致する言語は見つかりませんでした",
+    "languageRequired": "少なくとも 1 つの言語が必要です",
+    "languageRequiredDesc": "音声入力とテキスト対話が適切に機能するようにするには、少なくとも 1 つの言語を選択してください。",
+    "account": "アカウント",
+    "signOut": "サインアウト",
+    "signOutDesc": "アカウントからサインアウトする",
+    "cancel": "キャンセル",
+    "errorSaving": "設定を保存できませんでした。 もう一度試してください。",
+    "lastName": "苗字",
+    "lastNamePlaceholder": "あなたの姓",
+    "age": "年",
+    "techExperience": "技術経験レベル",
+    "techExperienceOptions": {
+      "beginner": "初心者 (ほとんどのことについて段階的なサポートが必要です)",
+      "some": "ある程度の経験（基本的な作業はできるが、新しいことについてはサポートが必要）",
+      "comfortable": "快適（ほとんどのことは理解できますが、時には指導が必要です）"
+    },
+    "primaryConcerns": "興味/関心のある主な技術トピック",
+    "assistiveNeeds": "アクセシビリティのニーズ",
+    "communicationStyle": "推奨される説明スタイル",
+    "communicationStyleOptions": {
+      "simple": "シンプル＆クイック（手順だけ）",
+      "detailed": "詳細 (「理由」の説明)",
+      "visual": "ビジュアル (可能な場合は写真/ビデオを表示)"
+    },
+    "videoRecommendations": "ビデオの推奨事項",
+    "videoRecommendationsDesc": "手順に沿って役立つビデオや記事を表示する",
+    "fontSize": "優先テキストサイズ",
+    "fontSizeOptions": {
+      "normal": "普通",
+      "large": "大きい",
+      "extraLarge": "特大"
+    },
+    "displayPreferences": "表示とテーマ",
+    "theme": "カラーテーマ",
+    "themeOptions": {
+      "light": "ライト",
+      "dark": "暗い"
+    },
+    "highContrast": "ハイコントラストモード",
+    "highContrastDesc": "テキストと要素のコントラストを高めて視認性を向上させます",
+    "learningPreferences": "学習とコンテンツの設定",
+    "dataPortability": "データとプライバシーの権利",
+    "dataRights": "あなたのデータの権利",
+    "dataRightsDesc": "あなたは自分の個人データを完全に管理することができます。 いつでもデータをエクスポート、共有設定の管理、削除できます。"
+  },
+  "common": {
+    "friend": "友達",
+    "settings": "設定",
+    "signOut": "サインアウト",
+    "close": "近い",
+    "comingSoon": "近日公開"
+  },
+  "chat": {
+    "greeting": {
+      "morning": "おはようございます",
+      "afternoon": "こんにちは",
+      "evening": "こんばんは"
+    },
+    "welcome": {
+      "title": "今日はどのようにお手伝いできますか?",
+      "subtitle": "テクノロジーのことなら何でも聞いてください！"
+    },
+    "input": {
+      "placeholder": "メッセージAIアシスタント...",
+      "helper": "Enter を押して送信し、Shift+Enter を押して改行します"
+    },
+    "error": {
+      "general": "申し訳ありませんが、現在問題が発生しています。 しばらくしてからもう一度お試しください。"
+    }
+  },
+  "error": {
+    "notifications": {
+      "dismiss": "閉じる"
+    },
+    "askQuestionFirst": "まずは質問してください",
+    "couldntGetAnswer": "申し訳ありませんが、今は答えられませんでした。 もう一度試してください。"
+  },
+  "nav": {
+    "features": "特徴",
+    "reviews": "レビュー",
+    "signIn": "サインイン",
+    "getStarted": "始めましょう"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "世界中の高齢者から信頼される",
+      "title": "テクノロジーが生み出した",
+      "titleHighlight": "シンプル＆クリア",
+      "subtitle": "まるで患者の友人がそばにいるかのような、個別化された段階的なガイダンスを通じて、自信を持ってテクノロジーをマスターできます。",
+      "startLearningButton": "無料で学習を始めましょう",
+      "watchDemoButton": "デモを見る",
+      "freeForever": "永久無料",
+      "noCreditCard": "クレジットカードは必要ありません",
+      "available247": "24時間365日利用可能"
+    },
+    "featuresSection": {
+      "title": "特徴",
+      "subtitle": "これらは、成長を支援するために提供される機能のほんの一部です。",
+      "items": [
+        {
+          "title": "Step-by-Step Guidance",
+          "description": "Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues."
+        },
+        {
+          "title": "Voice Support",
+          "description": "Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most."
+        },
+        {
+          "title": "Photo Explainer",
+          "description": "Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it."
+        },
+        {
+          "title": "Senior-Friendly Design",
+          "description": "Large text, intuitive interface, and patient explanations designed specifically with seniors in mind."
+        },
+        {
+          "title": "Safe & Secure",
+          "description": "Your personal information is protected with enterprise-grade security. No data shared with third parties."
+        },
+        {
+          "title": "Instant Answers",
+          "description": "Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Popular Questions We Help With",
+      "subtitle": "See what other seniors are asking about",
+      "askYourQuestionButton": "Ask Your Question Now"
+    },
+    "testimonialsSection": {
+      "title": "What Our Community Says",
+      "subtitle": "技術的なサポートが簡単になったことに気づいた何千人もの高齢者に加わりましょう",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Finally, someone who explains technology in a way I can understand! The step-by-step instructions helped me set up my new phone perfectly. I feel so much more confident now!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "The voice feature is amazing! I can just ask my questions out loud and get clear answers. It's like having a tech-savvy grandchild available 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "I love the photo feature! I took a picture of a confusing cable and instantly knew what it was for. This app has made me much more confident with technology.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "年齢 {{年齢}}"
+    },
+    "ctaSection": {
+      "title": "テクノロジーをマスターする準備はできていますか?",
+      "subtitle": "テクノロジーをシンプルで親しみやすいものにした、権限のあるシニアのコミュニティに参加してください。 明確で役立つ回答を今すぐ入手しましょう - 完全に無料です!",
+      "getStartedButton": "今すぐ無料で始めましょう",
+      "setupInMinutes": "2分でセットアップ"
+    },
+    "footer": {
+      "description": "世界中の高齢者がテクノロジーを利用でき、理解できるようにします。",
+      "featuresTitle": "特徴",
+      "featuresItems": [
+        "ステップバイステップのヘルプ",
+        "音声サポート",
+        "写真解説者",
+        "年中無休の可用性"
+      ],
+      "supportTitle": "サポート",
+      "communityTitle": "コミュニティ",
+      "legalTitle": "法務とサポート",
+      "contactEmail": "連絡先：メール：taksh.nahata37@gmail.com",
+      "supportItems": [
+        "ヘルプセンター",
+        "はじめる",
+        "コミュニティ",
+        "お問い合わせ"
+      ],
+      "companyTitle": "会社",
+      "companyItems": [
+        "私たちについて",
+        "プライバシーポリシー",
+        "利用規約",
+        "アクセシビリティ"
+      ],
+      "copyright": "© 2025 テックステップ。 世界中の高齢者向けに❤️で作られています。",
+      "trustedBy": "信頼されている",
+      "trustedByCount": "50,000人以上の高齢者"
+    }
+  },
+  "dashboard": {
+    "welcome": "テックステップへようこそ",
+    "welcomeUser": "おかえりなさい、{{name}}!",
+    "ready": "何か新しいことを学ぶ準備はできましたか?",
+    "getHelp": "すぐにヘルプを入手",
+    "askQuestion": "技術的な質問があれば質問して、ステップバイステップのガイダンスを得てください",
+    "placeholder": "今日は何を手伝ってほしいですか?",
+    "getSteps": "ステップバイステップのヘルプを入手する",
+    "gettingSteps": "歩数を取得しています...",
+    "craftingSteps": "パーソナライズされたステップを作成中...",
+    "takesAMoment": "これには少し時間がかかる場合があります",
+    "quickTips": "あなたのための簡単なヒント",
+    "popularQuestions": "今日のよくある質問",
+    "quickActions": "クイックアクション",
+    "recentActivity": "最近の活動",
+    "yourProgress": "あなたの進歩",
+    "needHelp": "助けが必要ですか?",
+    "helpingHand": "私たちはあなたの成功をお手伝いします",
+    "chatHuman": "人間とチャットする",
+    "browseGuides": "ビデオガイドを閲覧する",
+    "browseTips": "ヒントを参照する",
+    "commonSolutions": "共通の解決策を見つける",
+    "stepsCompleted": "{{count}} ステップが完了しました",
+    "needMoreInfo": "より良くサポートするためにもう少し情報が必要です"
+  },
+  "aiTools": {
+    "title": "AIヘルパーツール",
+    "description": "写真解説者兼技術翻訳者"
+  },
+  "aiToolsModal": {
+    "header": "AIヘルパーツール",
+    "tabs": {
+      "photoExplainer": "写真解説者",
+      "techWordBuster": "テックワードバスター"
+    },
+    "photoExplainer": {
+      "title": "写真解説者",
+      "description": "ケーブル、ボタン、デバイスの写真をアップロードすると、すぐに説明が表示されます。",
+      "uploadButton": "画像をアップロードする",
+      "questionLabel": "写真について質問する（任意）",
+      "questionPlaceholder": "このケーブルは何のためにあるのでしょうか?",
+      "explainButton": "写真の説明",
+      "analyzingButton": "分析中...",
+      "alertNoPhoto": "最初に写真をアップロードするか、API 設定を確認してください。",
+      "errorResponse": "<p class=\"text-red-600\">申し訳ありませんが、画像を分析できませんでした。 もう一度試してください。</p>",
+      "readResponseButton": "🔊 応答を読み上げる",
+      "previewAlt": "プレビュー"
+    },
+    "techWordBuster": {
+      "title": "テックワードバスター",
+      "description": "技術用語に混乱していませんか? 現実世界の例えを使って、シンプルでわかりやすい説明が得られます。",
+      "inputLabel": "技術的な単語またはフレーズを入力してください",
+      "inputPlaceholder": "例: クラウド ストレージ、WiFi、Bluetooth",
+      "explainButton": "これを明確にしてください",
+      "explainingButton": "説明中...",
+      "alertNoTerm": "最初に技術用語を入力するか、API 構成を確認してください。",
+      "errorResponse": "<p class=\"text-red-600\">申し訳ありませんが、その用語を説明できませんでした。 もう一度試してください。</p>",
+      "readExplanationButton": "🔊 説明を声に出して読む"
+    },
+    "apiErrorNoExplanation": "説明は受けられなかった"
+  },
+  "clarificationModal": {
+    "headerTitle": "もう少し情報が必要です",
+    "yourQuestionLabel": "あなたの質問:",
+    "tellMeMorePrompt": "最善のサポートを提供するために、もう少し詳しく教えていただけますか?",
+    "forExampleLabel": "例えば：",
+    "textareaPlaceholder": "詳細を教えてください...",
+    "textareaSrLabel": "質問の詳細を入力してください",
+    "skipButton": "今のところスキップしてください",
+    "submitButton": "より良い助けを得る",
+    "loadingButton": "助けを求めています..."
+  },
+  "languageNotificationBanner": {
+    "title": "言語設定を完了する",
+    "description": "音声入力とテキストの対話をより良くするために、優先言語を設定します。",
+    "buttonText": "セットアップを完了する"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "コンピューターとデバイスの基礎",
+      "description": "テクノロジーを始めるための非常に基本的な内容です。",
+      "modules": {
+        "turnOnDevice": {
+          "title": "デバイスの電源を入れる",
+          "description": "パソコンやスマートフォンの電源の入れ方を学びましょう。"
+        },
+        "mouseTouchscreen": {
+          "title": "マウス/タッチスクリーンの使用",
+          "description": "ポインティング、クリック、タップをマスターしましょう。",
+          "duration": "15分",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">遊んでみましょう: マウスとタッチスクリーンの基本</h3><p>探索する準備はできましたか? マウスとタッチスクリーンはデジタル世界の魔法の杖です!</p><div class=\"bg- yellow-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">マウスの楽しみ:</h4><ul class=\"space-y-2\"><li>• <b>ポイント</b>: マウスを動かして矢印が追ってくるのを見てください!</li><li>• <b>クリック</b>: 左ボタンを押して項目を選択します。 下のボタンをクリックしてみてください。</li><li>• <b>ダブルクリック</b>: 素早く 2 回押してファイルまたはプログラムを開きます。</li><li>• <b>右クリック</b>: 右ボタンを押すとシークレット メニューが表示されます。</li><li>• <b>スクロール</b>: ホイールを回転してページを上下に移動します。</li></ul></div><div class=\"bg-blue-50 p-4 Rounded-lg\"><h4 class=\"font-medium mb-2\">タッチスクリーンのトリック:</h4><ul class=\"space-y-2\"><li>• <b>タップ</b>: 画面に軽くタッチして選択します。</li><li>• <b>スワイプ</b>: 指をスライドさせてスクロールまたは画面を切り替えます。</li><li>• <b>ピンチ</b>: 2 本の指を近づけたり離したりしてズームインし、 </li><li>• <b>長押し</b>: 指を押し続けると、その他のオプション (右クリックなど) が表示されます。</li></ul></div><div class=\"bg-green-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">試してみましょう!</h4><ul class=\"space-y-2\"><li>• マウスを動かして、画面上の変化を確認してください。</li><li>• デバイスをタップしてスワイプして探索してください。</li></ul></div></div>",
+          "keyPoints": [
+            "マウスポインタが手を追従します!",
+            "左クリックが主な操作です。",
+            "タッチスクリーンを使用すると、タップ、スワイプ、ズームが可能です。"
+          ],
+          "practiceExercise": "デスクトップ上でクリック、ダブルクリック、右クリックを試してみてください。 タッチスクリーンでは、タップしてスワイプして画面間を移動します。",
+          "animationDesc": "タッチスクリーン上でクリック、ダブルクリック、スワイプする方法をご覧ください。"
+        },
+        "keyboardTyping": {
+          "title": "キーボード/タイピングの基本",
+          "description": "必須の入力を快適にしましょう。"
+        },
+        "filesFolders": {
+          "title": "ファイルとフォルダーを理解する",
+          "description": "デジタル情報がどのように整理されるかを学びます。"
+        }
+      }
+    },
+    "onlineWorld": {
+      "title": "オンラインの世界",
+      "description": "安全に接続してインターネットを探索します。",
+      "modules": {
+        "webBrowsers": {
+          "title": "Web ブラウザを理解する",
+          "description": "Chrome、Edge、または Safari を使用してインターネットを操作します。"
+        },
+        "searchEffectively": {
+          "title": "効果的な検索方法",
+          "description": "検索エンジンを使用してオンラインで必要なものを見つけます。"
+        },
+        "introEmail": {
+          "title": "電子メールの概要",
+          "description": "電子メールの送受信について学びます。"
+        },
+        "virusSafety": {
+          "title": "ウイルスから身を守る",
+          "description": "有害なソフトウェアからデバイスを保護します。"
+        }
+      }
+    },
+    "digitalLife": {
+      "title": "日常のデジタルライフ",
+      "description": "デジタル プレゼンスをコミュニケーション、共有、管理します。",
+      "modules": {
+        "masteringEmail": {
+          "title": "メールを使いこなす",
+          "description": "添付ファイル、フォルダー、電子メールのエチケット。"
+        },
+        "videoCalling": {
+          "title": "家族や友達とビデオ通話",
+          "description": "愛する人たちと顔を合わせてつながりましょう。"
+        },
+        "introSocialMedia": {
+          "title": "ソーシャルメディアの概要",
+          "description": "Facebook のようなプラットフォームを理解する。"
+        },
+        "sharingPhotos": {
+          "title": "写真を安全に共有する",
+          "description": "プライバシーを損なうことなく思い出を共有できます。"
+        }
+      }
+    },
+    "advancedSkills": {
+      "title": "高度で創造的なスキル",
+      "description": "基本を超えて: テクノロジーが提供するものをさらに探索してください。",
+      "modules": {
+        "onlineShopping": {
+          "title": "オンラインショッピングの紹介",
+          "description": "安全かつ便利なオンラインショッピング。"
+        },
+        "onlineMaps": {
+          "title": "オンラインマップとナビゲーションの使用",
+          "description": "デジタルマップで道を見つけてください。"
+        },
+        "photoEditing": {
+          "title": "基本的な写真編集",
+          "description": "デジタル写真を強化します。"
+        },
+        "productivityTools": {
+          "title": "生産性向上ツールの概要",
+          "description": "Google ドキュメントや Microsoft Word などのツールの基本的な使用。"
+        }
+      }
+    },
+    "accessibility": {
+      "title": "アクセシビリティと使いやすさ",
+      "description": "デバイスを見やすく、聞き取り、制御しやすくします。",
+      "modules": {
+        "screenMagnifier": {
+          "title": "拡大鏡の使用",
+          "description": "画面上のテキストと画像を大きくします。"
+        },
+        "voiceCommands": {
+          "title": "音声コマンドとディクテーション",
+          "description": "デバイスを制御し、音声で入力します。"
+        },
+        "highContrast": {
+          "title": "ハイコントラストとカラー設定",
+          "description": "視認性を高めるために色を調整します。"
+        },
+        "assistiveTouch": {
+          "title": "補助タッチとショートカット",
+          "description": "画面上のツールを使用すると、ナビゲーションが簡単になります。"
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "健康、安全、プライバシー",
+      "description": "テクノロジーを使用しながら、安全、健康、プライバシーを保ちます。",
+      "modules": {
+        "privacySettings": {
+          "title": "プライバシー設定",
+          "description": "オンラインでの個人情報を保護します。"
+        },
+        "scamAwareness": {
+          "title": "詐欺に対する認識",
+          "description": "よくあるオンライン詐欺を見つけて回避します。"
+        },
+        "healthApps": {
+          "title": "ヘルスケアアプリの使用",
+          "description": "アプリで健康状態を追跡しましょう。"
+        },
+        "emergencyContacts": {
+          "title": "緊急連絡先を設定する",
+          "description": "緊急連絡先をデバイスに追加します。"
+        }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": {
+      "name": "テックスターター",
+      "description": "コンピュータとデバイスの基礎を完了している。"
+    },
+    "onlineWorld": {
+      "name": "オンラインエクスプローラー",
+      "description": "「オンライン ワールド」パスを完了しました。"
+    },
+    "digitalLife": {
+      "name": "デジタルコミュニケーター",
+      "description": "「日常デジタル ライフ」パスを完了しました。"
+    },
+    "advancedSkills": {
+      "name": "技術の名手",
+      "description": "高度なクリエイティブ スキル パスを完了しました。"
+    },
+    "accessibility": {
+      "name": "アクセシビリティチャンピオン",
+      "description": "アクセシビリティと使いやすさのパスを完了しました。"
+    },
+    "healthAndSafety": {
+      "name": "セーフティガーディアン",
+      "description": "健康、安全、プライバシーに関するパスを完了しました。"
+    }
+  },
+  "skillAssessmentModal": {
+    "title": "クイックスキルチェック",
+    "introduction": "あなたにとって最適なスタート地点を見つけましょう!",
+    "nextButton": "次",
+    "finishButton": "私の出発点を示す",
+    "questionProgress": "{{total}} 件中 {{current}} 件の質問"
+  },
+  "assessment": {
+    "q1": {
+      "text": "あなたはコンピュータにどれくらい慣れていますか?",
+      "options": {
+        "new": "真新しい",
+        "basics": "いくつかの基本的なことは知っています",
+        "confident": "私はかなり自信があります"
+      }
+    },
+    "q2": {
+      "text": "以前にメールを送信したことがありますか?",
+      "options": {
+        "yes": "はい",
+        "no": "いいえ"
+      }
+    },
+    "q3": {
+      "text": "スマートフォンを通話以外にも使用したことがありますか?",
+      "options": {
+        "yes": "はい",
+        "no": "いいえ"
+      }
+    }
+  },
+  "learning": {
+    "title": "ラーニングセンター",
+    "structuredCourses": "構造化されたコースとチュートリアル",
+    "skillsAssessment": "スキル評価",
+    "questionNumber": "{{total}} 件中 {{current}} 件の質問",
+    "resetAnimation": "リセット",
+    "showAnimation": "アニメーションを表示する",
+    "courses": {
+      "beginner": {
+        "title": "テクノロジーの入門",
+        "description": "完全な初心者に最適です。 基本を段階的に学びましょう。",
+        "estimatedTime": "2～3時間",
+        "lessons": {
+          "deviceBasics": {
+            "title": "デバイスの基本",
+            "description": "デバイスの電源を安全にオンまたはオフにする方法を学びます",
+            "duration": "15分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">デバイスの電源のオンとオフ</h3><p>すべてのデバイスには電源ボタンがあります。 安全に使用する方法を学びましょう。</p><div class=\"bg-blue-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">コンピュータの場合:</h4><ul class=\"space-y-2\"><li>• 電源記号 (⏻) の付いた丸いボタンを探します</li><li>• 電源を 1 回押すとオンになります。</li><li>• オフにするには: [スタート] メニューを使用して、[シャット] down\"</li><li>• 電源ボタンを押すだけで電源を切らないでください。</li></ul></div><div class=\"bg-green-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">携帯電話/タブレットの場合:</h4><ul class=\"space-y-2\"><li>• 電源ボタンは通常側面にあります</li><li>• 電源を入れるには、2 ～ 3 秒間長押しします。 オン</li><li>• オフにするには: 長押しし、スライドして電源をオフにします。</li></ul></div></div>",
+            "keyPoints": [
+              "常に適切なシャットダウン手順を使用してください",
+              "電源ボタンの位置はデバイスによって異なります",
+              "絶対に必要な場合を除き、強制的に電源を切らないでください"
+            ],
+            "practiceExercise": "適切な方法でデバイスの電源を 3 回オンまたはオフにする練習をしてください。",
+            "animationDesc": "電源ボタンの正しい押し方を確認する"
+          },
+          "mouseKeyboard": {
+            "title": "マウスとキーボードの使用",
+            "description": "コンピューターの入力デバイスの基本をマスターする",
+            "duration": "20分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">マウスとキーボードの基本</h3><div class=\"bg-purple-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">マウスの基本:</h4><ul class=\"space-y-2\"><li>• 左クリック: 項目を選択し、プログラムを開く</li><li>• 右クリック: 開く より多くのオプションを含むメニュー</li><li>• ダブルクリック: ファイルとプログラムを開く</li><li>• スクロールホイール: ページ上で上下に移動</li></ul></div><div class=\"bg-orange-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">キーボードの基本:</h4><ul class=\"space-y-2\"><li>• スペースバー: 間にスペースを追加します 単語</li><li>• Enter: 新しい行を開始するか、確認します</li><li>• Backspace: カーソルの前の文字を削除します</li><li>• Shift: 大文字にします</li></ul></div></div>",
+            "keyPoints": [
+              "左クリックがメインツールです",
+              "右クリックすると便利なメニューが開きます",
+              "練習すれば完璧になる"
+            ],
+            "practiceExercise": "単純なテキスト プログラムを開いて名前を入力し、バックスペースを使用して名前を削除します。",
+            "animationDesc": "クリック、ダブルクリック、右クリックの方法をご覧ください。"
+          },
+          "internetSafety": {
+            "title": "インターネットの安全性の基礎",
+            "description": "これらの重要なヒントを参考にオンラインでの安全を確保しましょう",
+            "duration": "25分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">オンラインでの安全を保つ</h3><div class=\"bg-red-50 p-4rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">詐欺の警告兆候:</h4><ul class=\"space-y-2 text-red-700\"><li>• 金銭を要求する緊急メッセージ</li><li>• パスワードまたは個人情報の要求</li><li>• 入力していない「当選しました」メッセージ</li><li>• 不審なリンクまたは添付ファイル</li></ul></div><div class=\"bg-green-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">セーフ ブラウジング ヒント:</h4><ul class=\"space-y-2\"><li>• Web アドレスで「https://」を探します</li><li>• 公式アプリ ストアからのみダウンロードしてください</li><li>• ソフトウェアを常に最新の状態に保ちます</li><li>• 強力で固有のパスワードを使用してください</li></ul></div></div>",
+            "keyPoints": [
+              "見知らぬ人に個人情報を決して与えないでください",
+              "迷ったら信頼できる人に聞く",
+              "正規の企業は電子メールでパスワードを要求しません"
+            ],
+            "practiceExercise": "レッスンからオンライン詐欺の 3 つの警告サインを特定します。"
+          }
+        }
+      },
+      "intermediate": {
+        "title": "家族や友人とのつながり",
+        "description": "ソーシャル メディア、ビデオ通話、メッセージングを安全に使用する方法を学びます。",
+        "estimatedTime": "3～4時間",
+        "lessons": {
+          "videoCalls": {
+            "title": "家族とのビデオ通話",
+            "description": "どこにいても愛する人と顔を合わせてつながる",
+            "duration": "30分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">ビデオ通話の発信</h3><div class=\"bg-blue-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">人気のビデオ通話アプリ:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): 内蔵、 非常に簡単</li><li>• <strong>WhatsApp</strong>: すべての電話で動作します</li><li>• <strong>Zoom</strong>: グループ通話に最適</li><li>• <strong>Skype</strong>: コンピュータと電話で動作します</li></ul></div><div class=\"bg-green-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">電話をかける前に:</h4><ul class=\"space-y-2\"><li>• インターネット接続を確認する</li><li>• 適切な照明を見つける（窓に面する）</li><li>• カメラとマイクをテストする</li><li>• 相手の連絡先を準備しておく</li></ul></div></div>",
+            "keyPoints": [
+              "適切な照明は大きな違いを生みます",
+              "重要な通話の前にセットアップをテストする",
+              "ほとんどのアプリは一度学習すれば同じように動作します"
+            ],
+            "practiceExercise": "家族や友人にビデオ通話をテストしてみます。"
+          },
+          "socialMedia": {
+            "title": "ソーシャルメディアの基本",
+            "description": "Facebook やその他のプラットフォームで友人や家族とつながりましょう",
+            "duration": "35分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">ソーシャル メディア入門</h3><div class=\"bg-purple-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">Facebook の基本:</h4><ul class=\"space-y-2\"><li>• 本名でプロフィールを作成する</li><li>• 素敵なプロフィールを追加する 写真</li><li>• 知り合いに友達リクエストを送信する</li><li>• 最新情報、写真、思い出を共有する</li></ul></div><div class=\"bg- yellow-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">プライバシー設定:</h4><ul class=\"space-y-2\"><li>• 実際に知っている友達のみを受け入れる</li><li>• 投稿を「友達」に設定する のみ」</li><li>• 個人情報を公に共有しない</li><li>• 他の人があなたについてどのような情報を見ることができるかを確認してください</li></ul></div></div>",
+            "keyPoints": [
+              "プライバシー設定は非常に重要です",
+              "知っている人とのみつながりましょう",
+              "投稿する前に考えてください - オンラインのままです"
+            ],
+            "practiceExercise": "投稿のプライバシー設定を「友達のみ」に設定します。"
+          }
+        }
+      },
+      "advanced": {
+        "title": "デジタルライフマスター",
+        "description": "自信を持ってデジタル生活を送るための高度なスキル。",
+        "estimatedTime": "4～5時間",
+        "lessons": {
+          "smartHome": {
+            "title": "スマートホームデバイス",
+            "description": "音声コマンドとアプリで家をコントロール",
+            "duration": "40分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">スマートホームの基本</h3><div class=\"bg-indigo-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">人気のスマート デバイス:</h4><ul class=\"space-y-2\"><li>• <strong>スマート スピーカー</strong>: Alexa、Google ホーム</li><li>• <strong>スマート サーモスタット</strong>: 温度をリモートで制御</li><li>• <strong>スマート ライト</strong>: 暗くしたり、色を変えたり、スケジュールを設定</li><li>• <strong>スマート ドアベル</strong>: 玄関に誰がいるかを確認</li></ul></div><div class=\"bg-green-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">はじめに:</h4><ul class=\"space-y-2\"><li>• 1 台のデバイスから始めて学習します</li><li>• デバイスのアプリをダウンロードします</li><li>• 設定手順にステップバイステップで従う</li><li>• 基本的な音声コマンドを練習します</li></ul></div></div>",
+            "keyPoints": [
+              "1台のデバイスで簡単に始められる",
+              "音声コマンドで作業が楽になります",
+              "ほとんどのデバイスには便利なアプリが入っています"
+            ],
+            "practiceExercise": "スマート デバイスをお持ちの場合は、3 つの異なる音声コマンドを練習してください。"
+          },
+          "onlineBanking": {
+            "title": "オンラインバンキングのセキュリティ",
+            "description": "オンラインで安全に家計を管理",
+            "duration": "45分",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">安全なオンライン バンキング</h3><div class=\"bg-red-50 p-4rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">セキュリティの基本:</h4><ul class=\"space-y-2 text-red-700\"><li>• 常に銀行の Web アドレスを直接入力してください</li><li>• ブラウザで鍵のアイコンを探してください</li><li>• 公共 Wi-Fi では絶対に銀行を利用しない</li><li>• 終了したら完全にログアウトしてください</li></ul></div><div class=\"bg-blue-50 p-4rounded-lg\"><h4 class=\"font-medium mb-2\">できること オンライン:</h4><ul class=\"space-y-2\"><li>• アカウント残高を確認する</li><li>• 取引履歴を表示する</li><li>• アカウント間で送金する</li><li>• 電子的に請求書を支払う</li></ul></div></div>",
+            "keyPoints": [
+              "セキュリティは最優先事項です",
+              "銀行が電子メールでパスワードを要求することはありません",
+              "オンラインバンキングは安全に利用できればとても便利です"
+            ],
+            "practiceExercise": "銀行の Web サイトにアクセスし、ログインの練習をしてください (まだ取引は行わないでください)。"
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "コンピューターや携帯電話の電源を入れたり切ったりすることにどの程度慣れていますか?",
+          "options": {
+            "0": "やったことがない",
+            "1": "毎回助けが必要",
+            "2": "たまにはやってもいいよ",
+            "3": "とても快適"
+          }
+        },
+        "1": {
+          "question": "どのくらいの頻度でインターネットを使いますか?",
+          "options": {
+            "0": "一度もない",
+            "1": "めったに",
+            "2": "時々",
+            "3": "毎日"
+          }
+        },
+        "2": {
+          "question": "メールを送ったことがありますか?",
+          "options": {
+            "0": "一度もない",
+            "1": "たくさんの助けを借りて",
+            "2": "数回",
+            "3": "定期的に"
+          }
+        },
+        "3": {
+          "question": "アプリのダウンロードはどれくらい快適ですか?",
+          "options": {
+            "0": "試したことがない",
+            "1": "とても緊張しています",
+            "2": "助けを借りて",
+            "3": "自信を持って"
+          }
+        },
+        "4": {
+          "question": "ビデオ通話（FaceTime、Zoomなど）を使用していますか?",
+          "options": {
+            "0": "一度もない",
+            "1": "一度試してみた",
+            "2": "時々",
+            "3": "定期的に"
+          }
+        },
+        "5": {
+          "question": "オンラインショッピングについてどう思いますか？",
+          "options": {
+            "0": "怖すぎる",
+            "1": "とても緊張しています",
+            "2": "試してみたい",
+            "3": "オンラインで頻繁に買い物をする"
+          }
+        },
+        "6": {
+          "question": "ソーシャルメディア（Facebookなど）を利用したことがありますか？",
+          "options": {
+            "0": "一度もない",
+            "1": "見たよ",
+            "2": "アカウントをお持ちです",
+            "3": "定期的に使用する"
+          }
+        },
+        "7": {
+          "question": "パスワードをどの程度使い慣れていますか?",
+          "options": {
+            "0": "とても混乱しています",
+            "1": "助けが必要です",
+            "2": "基本を理解する",
+            "3": "それらをうまく管理してください"
+          }
+        },
+        "8": {
+          "question": "写真やファイルをバックアップしていますか?",
+          "options": {
+            "0": "方法がわかりません",
+            "1": "誰かが私を助けてくれる",
+            "2": "時々",
+            "3": "定期的に"
+          }
+        },
+        "9": {
+          "question": "新しいテクノロジーはどうやって学ぶのですか？",
+          "options": {
+            "0": "避けてください",
+            "1": "助けを求めてください",
+            "2": "慎重に試してみてください",
+            "3": "自信を持って探索しましょう"
+          }
+        }
+      }
+    }
+  },
+  "avatar": {
+    "enable": "AI アバターを有効にする",
+    "disable": "アバターを無効にする",
+    "loading": "アバターを読み込んでいます...",
+    "mute": "ミュートアバター",
+    "unmute": "アバターのミュートを解除する",
+    "settings": "アバター設定",
+    "fullscreen": "全画面表示",
+    "exitFullscreen": "全画面表示を終了する",
+    "performance": {
+      "high": "高品質",
+      "medium": "中品質",
+      "low": "低品質",
+      "off": "アバターオフ"
+    },
+    "error": {
+      "loadFailed": "アバターの読み込みに失敗しました。 もう一度試してください。",
+      "noWebGL": "お使いのデバイスは 3D グラフィックスをサポートしていません。",
+      "audioFailed": "リップシンク用のマイクにアクセスできませんでした。"
+    },
+    "status": {
+      "initializing": "アバターを起動しています...",
+      "ready": "お手伝いする準備ができています",
+      "thinking": "考え...",
+      "speaking": "話し中...",
+      "listening": "リスニング...",
+      "celebrating": "お手伝いできることに興奮しています!",
+      "error": "何か問題が発生しました",
+      "processing": "音声を処理しています...",
+      "lipSyncActive": "リップシンク有効",
+      "lipSyncInactive": "リップシンクが無効です"
+    },
+    "greeting": {
+      "morning": "おはようございます、{{name}}さん！ 今日何か新しいことを学ぶ準備はできましたか?",
+      "afternoon": "こんにちは、{{name}}! 今日はどのようにお手伝いできますか?",
+      "evening": "こんばんは、{{name}}さん！ 何を調べてみたいですか?"
+    },
+    "companion": {
+      "title": "あなたの AI ヘルパー",
+      "ready": "私はテクノロジーであなたを助けるためにここにいます！"
+    },
+    "actions": {
+      "chat": "チャット",
+      "voice": "声",
+      "camera": "カメラ",
+      "help": "ヘルプ"
+    },
+    "suggestions": {
+      "title": "簡単な質問"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "WiFiに接続するにはどうすればよいですか?",
+    "makeTextBigger": "画面上のテキストを大きくするにはどうすればよいですか?",
+    "takeScreenshot": "スクリーンショットを撮るにはどうすればよいですか?",
+    "videoCall": "ビデオ通話をするにはどうすればよいですか?",
+    "iphoneSettings": "iPhoneの設定を変更するにはどうすればよいですか?",
+    "androidSettings": "Android の設定を変更するにはどうすればよいですか?",
+    "windowsSettings": "Windows の設定を変更するにはどうすればよいですか?"
+  },
+  "flashcards": {
+    "title": "ステップバイステップガイド",
+    "progress": "ステップ {{current}} / {{total}}",
+    "instructions": "説明書：",
+    "markCompleted": "完了としてマークする"
+  },
+  "dataPortability": {
+    "title": "データのポータビリティとユーザーの権利",
+    "tabs": {
+      "overview": "概要",
+      "sharing": "データ共有",
+      "export": "データのエクスポート",
+      "delete": "データの削除",
+      "ai": "AIの透明性"
+    },
+    "overview": {
+      "title": "あなたのデータの権利",
+      "description": "あなたは自分の個人データを完全に管理することができます。 30 日以内であれば、いつでも自分の情報を表示、エクスポート、修正、削除できます。",
+      "dataWeCollect": "当社が収集するデータ",
+      "profileInfo": "プロフィール情報 (名前、メールアドレス、設定)",
+      "learningProgress": "学習の進捗と成果",
+      "aiHistory": "AIの会話履歴",
+      "analytics": "使用状況分析 (匿名化)",
+      "howWeUse": "データの使用方法",
+      "personalized": "パーソナライズされた学習体験を提供する",
+      "improveAI": "AI アシスタントの応答を改善する",
+      "trackProgress": "進捗状況と成果を追跡する",
+      "security": "プラットフォームのセキュリティとパフォーマンスを確保する",
+      "rightsTitle": "GDPR および CCPA に基づくあなたの権利",
+      "rightAccess": "アクセスする権利:",
+      "accessDesc": "すべての個人データを表示する",
+      "rightPortability": "ポータビリティの権利:",
+      "portabilityDesc": "データをエクスポートする",
+      "rightRectification": "是正する権利:",
+      "rectificationDesc": "不正確なデータを修正する",
+      "rightErasure": "消去する権利:",
+      "erasureDesc": "個人データを削除する"
+    },
+    "sharing": {
+      "title": "データ共有設定",
+      "description": "データの共有方法と使用方法を制御します。 すべての共有はオプションであり、いつでも変更できます。",
+      "dataTypes": "データ型の共有",
+      "thirdParty": "サードパーティの共有",
+      "special": "特別なカテゴリ",
+      "analytics": "分析の共有",
+      "analyticsDesc": "プラットフォームを改善するために匿名化された使用状況データを共有する",
+      "research": "研究の共有",
+      "researchDesc": "匿名化されたデータをシニアの学習研究に貢献する"
+    },
+    "export": {
+      "title": "データをエクスポートする",
+      "description": "すべての個人データのコピーをダウンロードします。 データを準備し、30 日以内にダウンロード リンクをお送りします。",
+      "chooseFormat": "エクスポート形式の選択",
+      "included": "含まれるもの:",
+      "profile": "プロフィール情報と設定",
+      "progress": "学習の進捗と成果",
+      "conversations": "AIの会話履歴",
+      "support": "サポートチケット履歴",
+      "consent": "同意とプライバシーの設定",
+      "request": "データのエクスポートをリクエストする",
+      "requesting": "エクスポートをリクエスト中...",
+      "requests": "エクスポートリクエスト",
+      "requested": "リクエスト済み",
+      "download": "ダウンロード"
+    },
+    "delete": {
+      "title": "データを削除する",
+      "description": "すべての個人データを完全に削除します。 この操作は元に戻すことができず、30 日以内にアカウントが閉鎖されます。",
+      "whatDeleted": "削除されるもの:",
+      "profile": "あなたのプロフィールとアカウント情報",
+      "progress": "すべての学習の進捗状況と成果",
+      "conversations": "AIの会話履歴",
+      "preferences": "環境設定と設定",
+      "analytics": "アカウントにリンクされた使用状況分析",
+      "important": "重要な注意事項:",
+      "legal": "一部のデータは法的遵守のために保持される場合があります (サポート チケット、請求記録)",
+      "research": "研究に使用される匿名化されたデータは保持される場合があります",
+      "verification": "削除前に電子メールによる確認が送信されます",
+      "timeframe": "削除は30日以内に完了します",
+      "request": "データ削除のリクエスト",
+      "confirm": "すべてのデータを削除してもよろしいですか?",
+      "type": "「DELETE MY DATA」と入力してこの操作を確認します。",
+      "placeholder": "「データを削除」と入力してください",
+      "confirmButton": "削除の確認",
+      "processing": "処理...",
+      "cancel": "キャンセル",
+      "requests": "削除リクエスト",
+      "complete": "データの完全削除",
+      "requested": "リクエスト済み",
+      "scheduled": "予定されている",
+      "awaitingVerification": "検証待ち"
+    },
+    "ai": {
+      "title": "AI データ使用の透明性",
+      "description": "AI アシスタントによってデータがどのように使用されるかを正確に確認し、AI データの設定を制御します。",
+      "stats": "AIデータ使用統計",
+      "conversationsAnalyzed": "分析された会話:",
+      "dataPoints": "使用されるデータポイント:",
+      "trainingContribution": "トレーニングへの貢献:",
+      "lastProcessed": "最終処理:",
+      "optOut": "AI オプトアウト オプション",
+      "stopTraining": "AIトレーニングを停止する",
+      "stopTrainingDesc": "データによる AI 応答の改善を阻止する",
+      "deleteHistory": "会話履歴を削除する",
+      "deleteHistoryDesc": "保存されているすべての AI 会話を削除する",
+      "anonymize": "私のデータを匿名化する",
+      "anonymizeDesc": "データを匿名形式に変換する"
+    }
+  },
+  "tips": {
+    "connectWifi": "Wi-Fiに接続する",
+    "connectWifiDesc": "安全かつ簡単にオンラインに接続する",
+    "videoCall": "ビデオ通話をかける",
+    "videoCallDesc": "家族と対面でつながる",
+    "screenshot": "スクリーンショットを撮る",
+    "screenshotDesc": "画面上の内容をキャプチャする",
+    "updateApps": "アプリを更新する",
+    "updateAppsDesc": "アプリを最新かつ安全に保つ"
+  },
+  "category": {
+    "internet": "インターネット",
+    "communication": "コミュニケーション",
+    "basicSkills": "基本スキル",
+    "maintenance": "メンテナンス"
+  },
+  "questions": {
+    "makeTextBigger": "文字を大きくするにはどうすればよいですか?",
+    "connectWifi": "Wi-Fiに接続するにはどうすればよいですか?",
+    "takeScreenshot": "スクリーンショットを撮るにはどうすればよいですか?",
+    "makeVideoCall": "ビデオ通話をするにはどうすればよいですか?",
+    "backupPhotos": "写真をバックアップするにはどうすればよいですか?",
+    "updateApps": "アプリを更新するにはどうすればよいですか?",
+    "onlineBanking": "オンラインバンキングを安全に利用するにはどうすればよいですか?",
+    "joinZoom": "Zoom ミーティングに参加するにはどうすればよいですか?"
+  },
+  "achievements": {
+    "gettingStarted": "はじめる",
+    "gettingStartedDesc": "最初の質問をしました",
+    "questionExplorer": "質問エクスプローラー",
+    "questionExplorerDesc": "5つの質問をしました",
+    "stepMaster": "ステップマスター",
+    "stepMasterDesc": "25 ステップを完了しました"
+  },
+  "stats": {
+    "seniorsHelped": "先輩が手伝ってくれました",
+    "questionsAnswered": "回答された質問",
+    "successRate": "成功率",
+    "alwaysAvailable": "いつでも利用可能"
+  },
+  "time": {
+    "now": "ちょうど今",
+    "hourAgo": "1時間前",
+    "hoursAgo": "{{count}} 時間前",
+    "dayAgo": "1日前",
+    "daysAgo": "{{count}} 日前"
+  },
+  "voice": {
+    "startInput": "音声入力を開始する",
+    "stopRecording": "録音を停止する",
+    "processing": "処理...",
+    "recognized": "音声認識",
+    "failed": "音声入力に失敗しました"
+  },
+  "language": {
+    "select": "言語の選択",
+    "translate": "翻訳する",
+    "translating": "翻訳中...",
+    "detecting": "言語を検出中...",
+    "error": "翻訳に失敗しました"
+  },
+  "languageSelector": {
+    "choosePrompt": "好みの言語を選択してください"
+  },
+  "auth": {
+    "backToHome": "ホームに戻る",
+    "createAccount": "アカウントを作成する",
+    "welcomeBack": "おかえり",
+    "joinFamily": "力強いシニアのファミリーに加わりましょう",
+    "welcomeBackDesc": "サインインしてテクノロジーの旅を続けてください",
+    "email": "電子メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力してください",
+    "confirmPassword": "パスワードを認証する",
+    "confirmPasswordPlaceholder": "パスワードを確認してください",
+    "passwordsNoMatch": "パスワードが一致しません",
+    "passwordTooShort": "パスワードは6文字以上である必要があります",
+    "creatingAccount": "アカウントを作成しています...",
+    "signingIn": "サインイン中...",
+    "alreadyHaveAccount": "すでにアカウントをお持ちですか? サインイン",
+    "dontHaveAccount": "アカウントをお持ちでない場合は、 サインアップ"
+  },
+  "onboarding": {
+    "step1": {
+      "tooltip": "あなたの学習体験をカスタマイズできるように、あなた自身について少し教えてください。"
+    },
+    "step2": {
+      "tooltip": "音声入力とテキストの対話に使いやすい言語を選択してください。"
+    },
+    "step3": {
+      "tooltip": "プライマリ デバイスを把握していれば、より関連性の高い手順を提供できるようになります。"
+    },
+    "step4": {
+      "tooltip": "自分の快適さのレベルについて正直に言ってください。そうすることで、適切なペースで説明することができます。"
+    },
+    "step5": {
+      "tooltip": "最も心配なトピックを選択して、これらの分野のサポートを優先できるようにします。"
+    },
+    "step6": {
+      "tooltip": "快適な体験のために必要なアクセシビリティ機能についてお知らせください。"
+    },
+    "step7": {
+      "tooltip": "好みの学習方法を選択して、指導スタイルを調整します。"
+    },
+    "step8": {
+      "tooltip": "これらの最終設定を使用して、完璧な学習環境をセットアップします。",
+      "privacy": {
+        "title": "あなたのプライバシーは私たちの最優先事項です",
+        "items": [
+          "私たちはあなたの個人データを決して販売しません",
+          "すべてのデータは暗号化され安全に保たれます",
+          "これらの設定はいつでも変更できます",
+          "データはいつでも削除できます"
+        ]
+      },
+      "personalization": {
+        "title": "パーソナライズされたエクスペリエンス",
+        "description": "お客様のインタラクション データを使用して、お客様のニーズに合わせた、より適切で関連性の高いヘルプと提案を提供できるようにします。",
+        "note": "これは、お客様がどのトピックに最も興味を持っているかを理解し、より関連性の高いチュートリアルを提供するのに役立ちます。"
+      },
+      "history": {
+        "title": "会話履歴を使用する",
+        "description": "より適切なコンテキストを提供し、すでに知っている情報の繰り返しを避けるために、以前の会話を思い出してください。",
+        "note": "これにより、以前に話し合った内容を思い出し、以前の会話に基づいて進めることができます。"
+      },
+      "learningPrefs": {
+        "title": "学習設定を使用する",
+        "description": "一貫したエクスペリエンスを提供するには、好みの学習スタイル、コミュニケーションの好み、アクセシビリティのニーズを忘れないでください。",
+        "note": "これには、好みの説明スタイル、言語設定、アクセシビリティ設定が含まれます。"
+      },
+      "noSelection": {
+        "title": "パーソナライゼーションが選択されていません",
+        "success": "素晴らしい！ より良いエクスペリエンスを提供するために、選択したデータを使用します。",
+        "default": "それは全く問題ありません! パーソナライズされた推奨事項がない限り、すべての機能に完全にアクセスできます。"
+      }
+    },
+    "back": "戻る",
+    "next": "次",
+    "settingUp": "セットアップ中...",
+    "completeSetup": "セットアップを完了する",
+    "errorSaving": "設定を保存できませんでした。 もう一度試してください。",
+    "buttons": {
+      "previous": "前の",
+      "next": "次",
+      "skip": "スキップ",
+      "complete": "完了",
+      "processing": "処理...",
+      "gotIt": "わかった！",
+      "skipAll": "すべてスキップ",
+      "cancel": "キャンセル"
+    },
+    "progress": {
+      "label": "オンボーディングの進行状況: ステップ {{current}} / {{total}}",
+      "stepOf": "ステップ {{current}} / {{total}}",
+      "step": "ステップ",
+      "stepCompleted": "{{ステップ}} - 完了しました",
+      "stepCurrent": "{{ステップ}} - 現在のステップ",
+      "stepUpcoming": "{{ステップ}} - 今後の予定"
+    },
+    "tooltip": {
+      "helpfulTip": "役立つヒント"
+    },
+    "flow": {
+      "title": "いらっしゃいませ！ 始めましょう"
+    },
+    "accessibility": {
+      "helpfulTip": "役立つヒント",
+      "tooltipAppeared": "ツールヒントがコンテンツとともに表示されました: {{content}}",
+      "skippingStep": "現在のステップをスキップします",
+      "movingToNextStep": "次のステップに進む",
+      "movingToPreviousStep": "前のステップに移動する",
+      "completingOnboarding": "オンボーディングプロセスの完了",
+      "stepChanged": "{{total}} のステップ {{step}} に進みます: {{title}}",
+      "skippingOnboarding": "オンボーディングプロセス全体をスキップする",
+      "cancellingOnboarding": "オンボーディングプロセスのキャンセル",
+      "errorCompleting": "オンボーディング完了時にエラーが発生しました。 もう一度試してください。",
+      "goToPreviousStep": "前のステップに戻る",
+      "skipThisStep": "このステップをスキップしてください",
+      "completeOnboarding": "完全なオンボーディング",
+      "continueToNextStep": "次のステップに進む",
+      "closeTooltip": "ツールチップを閉じる",
+      "skipTooltip": "このヒントはスキップしてください",
+      "continueFromTooltip": "ツールチップから続ける",
+      "skipEntireOnboarding": "オンボーディング全体をスキップする",
+      "cancelOnboarding": "オンボーディングをキャンセルする",
+      "keyboardInstructions": "Tab を使用して移動し、Enter を使用して選択し、Esc を使用してダイアログを閉じます"
+    },
+    "validation": {
+      "firstNameRequired": "名は必須です",
+      "lastNameRequired": "姓は必須です",
+      "validAgeRequired": "18 ～ 120 歳の有効な年齢を入力してください",
+      "languageRequired": "少なくとも 1 つの言語を選択してください",
+      "deviceRequired": "プライマリデバイスを選択してください",
+      "experienceRequired": "技術経験レベルを選択してください",
+      "concernsOptional": "懸念事項を選択して、エクスペリエンスをパーソナライズすることができます",
+      "assistiveNeedsRequired": "アクセシビリティのニーズを選択するか、「不要」を選択してください",
+      "communicationStyleRequired": "ご希望のコミュニケーションスタイルを選択してください"
+    },
+    "restart": {
+      "confirmMessage": "オンボーディング プロセスを再開してもよろしいですか? これにより、すべての設定がリセットされます。"
+    }
+  },
+  "learningPage": {
+    "startOrContinueCourse": "コースを開始または継続する",
+    "progressLabel": "進捗",
+    "completedOutOfTotal": "{{total}} 件中 {{completed}} 件が完了しました",
+    "lessonsHeader": "レッスン",
+    "moduleTimeLabel": "時間：",
+    "lessonContentPlaceholder": "{{lessonTitle}} で利用できるコンテンツはまだありません。",
+    "loadingCenter": "ラーニング センターを読み込んでいます...",
+    "progressComplete": "{{value}}% 完了",
+    "noPathsAvailable": "利用可能な学習パスはありません。",
+    "featuresGridTitle": "特徴",
+    "heroTitle": "ラーニング センターへようこそ",
+    "heroSubtitle": "ステップバイステップのコース、インタラクティブなデモ、誰もが楽しめる実践的なスキル。",
+    "recommendedStart": "推奨スタート",
+    "loadingPaths": "コースを読み込み中...",
+    "moduleListTitle": "{{pathTitle}} のレッスン:",
+    "noLessonAvailable": "受講可能なレッスンはありません。",
+    "retakeAssessment": "スキル評価の再受験"
+  },
+  "courseView": {
+    "previousLesson": "前のレッスン",
+    "nextLesson": "次のレッスン",
+    "markAsComplete": "完了としてマーク",
+    "completed": "完了",
+    "reviewLesson": "レッスンの復習",
+    "startLesson": "レッスンを開始する",
+    "removeBookmark": "ブックマークを削除",
+    "addBookmark": "ブックマークを追加",
+    "congratulations": "おめでとう！",
+    "courseComplete": "コース: {{courseTitle}} を完了しました。",
+    "downloadCertificate": "証明書のダウンロード"
+  },
+  "lessonView": {
+    "readAloud": "レッスンを声に出して読む",
+    "interactiveDemoHeader": "インタラクティブなデモ",
+    "practiceExerciseHeader": "練習問題",
+    "markAsComplete": "完了としてマーク",
+    "repeatLesson": "リピートレッスン",
+    "keyPointsHeader": "重要なポイント",
+    "takeItWithYouHeader": "持って行ってください",
+    "downloadSummaryButton": "ダウンロードの概要",
+    "downloadSummaryDescription": "このレッスンの印刷可能な概要を入手する",
+    "needHelpHeader": "助けが必要ですか?",
+    "askAQuestionButton": "質問する",
+    "chatWithHelperButton": "ヘルパーとチャットする"
+  },
+  "privacyPolicy": {
+    "headerTitle": "プライバシーポリシー",
+    "pageTitle": "プライバシーポリシー",
+    "lastUpdated": "最終更新日: {{date}}",
+    "ourPromise": {
+      "title": "あなたへの約束",
+      "text": "Senior Tech Helper では、お客様のプライバシーが貴重であることを理解しています。 当社はお客様の個人情報を保護し、その使用方法について完全に透明性を保つことに取り組んでいます。 このポリシーでは、すべてをシンプルかつ明確な言葉で説明します。"
+    },
+    "cookies": {
+      "title": "クッキーの使用方法",
+      "whatAreCookiesTitle": "クッキーとは何ですか?",
+      "whatAreCookiesText": "Cookie は、お客様の設定を記憶し、エクスペリエンスを向上させるのに役立つ小さなテキスト ファイルです。 これらは、どこから中断したかを思い出すのに役立つブックマークのようなものだと考えてください。",
+      "weUseCookiesForTitle": "当社は以下の目的でのみ Cookie を使用します。",
+      "uses": [
+        "選択したテキスト サイズ、音声設定、アクセシビリティ オプションなどの設定を記憶します。",
+        "サインインしたままにする: 毎回パスワードを入力する必要がありません",
+        "ヘルプの改善: どの機能があなたのような高齢者にとって最も役立つかを理解する"
+      ],
+      "whatWeDontDoTitle": "Cookie に関して私たちがしてはいけないこと:",
+      "donts": [
+        "他のウェブサイト全体であなたを追跡する",
+        "自分の情報を誰にでも販売する",
+        "データを広告主と共有する",
+        "マーケティング目的で使用する"
+      ]
+    },
+    "informationCollected": {
+      "title": "当社が収集する情報",
+      "youGiveUsTitle": "あなたが私たちに提供する情報:",
+      "youGiveUsList": [
+        "お名前とメールアドレス",
+        "デバイスの種類 (iPhone、Windows など)",
+        "あなたの技術経験レベル",
+        "アクセシビリティの設定",
+        "AI ヘルパーに寄せられる質問"
+      ],
+      "weCollectTitle": "当社が自動的に収集する情報:",
+      "weCollectList": [
+        "アプリの使用方法 (どの機能が最も役立つか)",
+        "技術情報（ブラウザの種類、デバイス）",
+        "エラーレポート (問題を迅速に解決するため)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "お客様の情報をどのように保護するか",
+      "protections": [
+        "暗号化: すべてのデータは暗号化 (スクランブル) されているため、当社だけが読み取ることができます。",
+        "安全なサーバー: あなたの情報は、保護されたプロ仕様のサーバーに保存されます。",
+        "アクセス制限: 重要なチームメンバーのみがあなたのデータにアクセスできます",
+        "定期的なセキュリティチェック: セキュリティ上の脅威がないか常に監視します。"
+      ]
+    },
+    "sharingInformation": {
+      "title": "情報の共有",
+      "neverSell": "当社はお客様の個人情報を販売または貸与することは決してありません。",
+      "onlyShareInSituations": "当社は、次のような非常に限られた状況でのみお客様の情報を共有します。",
+      "sharingSituations": [
+        "あなたの許可を得た場合: あなたが私たちに何かを共有するよう具体的に依頼した場合",
+        "テクニカル サポートの場合: アプリの実行をサポートしてくれる信頼できるサービス プロバイダー (厳格なプライバシー契約に拘束されます)",
+        "法律で義務付けられている場合: 法的にそうする必要がある場合のみ"
+      ]
+    },
+    "yourRights": {
+      "title": "あなたの権利と選択",
+      "youCanAlwaysTitle": "いつでも次のことができます。",
+      "rightsList": [
+        "私たちがあなたについてどのような情報を持っているかを確認してください",
+        "間違った情報があれば修正を依頼してください",
+        "アカウントとデータの削除をリクエストします",
+        "ブラウザの設定で Cookie をオフにしてください",
+        "プライバシーに関するご質問がございましたらお問い合わせください"
+      ],
+      "noteDeletingCookiesTitle": "Cookie の削除に関する注意:",
+      "noteDeletingCookiesText": "Cookie を削除すると、環境設定を再度設定する必要があり、一部の機能が正常に動作しなくなる可能性があります。"
+    },
+    "thirdPartyServices": {
+      "title": "サードパーティのサービス",
+      "weUseTrustedServices": "当社では、機能を提供するために信頼できるサードパーティのサービスをいくつか使用しています。",
+      "servicesList": [
+        "Google AI (Gemini): 質問に答える AI アシスタントを強化します",
+        "Firebase: アカウント情報を安全に保存します",
+        "YouTube/教育サイト: 役立つビデオや記事をお勧めする場合があります。"
+      ],
+      "servicesOwnPolicies": "これらのサービスには独自のプライバシー ポリシーがあり、サービスが機能するために必要な最小限の情報のみを共有します。"
+    },
+    "changesToPolicy": {
+      "title": "このポリシーの変更",
+      "text": "このプライバシー ポリシーを更新する必要がある場合は、電子メールで通知し、アプリに通知を表示します。 私たちは常に、何が変化するのか、なぜ変化するのかをシンプルかつ明確な言葉で説明します。"
+    },
+    "contactUs": {
+      "title": "お問い合わせ",
+      "questions": "あなたのプライバシーまたはこのポリシーについて質問がありますか? TechStep チームがお手伝いします。",
+      "email": "電子メール:privacy@techstep.com",
+      "phone": "電話: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "メール: TechStep プライバシー チーム",
+      "mailLine2": "123 テクニカル サポート レーン",
+      "mailLine3": "役立つ都市、HC 12345"
+    },
+    "footer": {
+      "thankYou": "TechStep を信頼して情報を提供していただきありがとうございます。 私たちは、それを安全に保ち、テクノロジーで成功するためだけに使用することに全力で取り組んでいます。",
+      "backToHome": "ホームに戻る"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "コミュニケーション方法を選択する",
+    "tabs": {
+      "chat": "チャット",
+      "voice": "声",
+      "image": "画像",
+      "chatAria": "テキストチャット入力",
+      "voiceAria": "音声入力",
+      "imageAria": "画像入力"
+    },
+    "chat": {
+      "placeholder": "ここに質問を入力してください...Enter キーを押して送信してください",
+      "ariaLabel": "質問を入力してください",
+      "sendButton": "メッセージを送信する",
+      "send": "送信"
+    },
+    "voice": {
+      "recording": "録音...タップして停止します",
+      "processing": "音声を処理しています...",
+      "instructions": "マイクをタップして録音を開始します",
+      "startRecording": "録音を開始する",
+      "stopRecording": "録音を停止する"
+    },
+    "image": {
+      "takePhoto": "写真を撮ってください",
+      "camera": "写真を撮る",
+      "upload": "画像をアップロードする",
+      "uploadAria": "画像ファイルを選択",
+      "instructions": "写真を共有してください。何が見えているのか説明します",
+      "formats": "JPG、PNG、GIFをサポート（最大10MB）",
+      "previewAlt": "選択した画像のプレビュー",
+      "remove": "画像を削除",
+      "contextLabel": "この画像について何が知りたいですか?",
+      "contextPlaceholder": "オプション: 画像に関する具体的な質問をする",
+      "cancel": "キャンセル",
+      "submit": "画像を送信する",
+      "send": "送信",
+      "invalidType": "有効な画像ファイルを選択してください。",
+      "tooLarge": "画像ファイルが大きすぎます。 10MB以下のファイルを選択してください。",
+      "cameraError": "カメラにアクセスできませんでした。 権限を確認してください。"
+    }
+  },
+  "ai": {
+    "title": "AIヘルパー",
+    "subtitle": "学習をサポートするためにここにあります",
+    "emergency": "緊急サポート",
+    "emergencyAria": "緊急サポートを受ける",
+    "expand": "拡大する",
+    "minimize": "最小化する",
+    "close": "AI アシスタントを閉じる",
+    "thinking": "AIは考えています...",
+    "escalated": "弊社のサポートチームにつながりました",
+    "callSupport": "サポートに電話する: 1-800-SENIOR-HELP",
+    "minimized": "AIヘルパー",
+    "welcome": {
+      "tutorial": "こんにちは！ 「{{チュートリアル}}」に取り組んでいるようですね。 ご質問がございましたら、こちらでお手伝いいたします。 入力したり、話したり、画像を見せたりして、最も快適に感じられることを何でも行ってください。",
+      "general": "こんにちは！ 私はあなたの AI アシスタントです。あなたがテクノロジーを段階的に学ぶのをお手伝いします。 入力するか、話すか、画像を見せて質問することができます。 何を知りたいですか?"
+    },
+    "error": {
+      "general": "申し訳ありませんが、現在問題が発生しています。 すぐに対応できるサポート チームにおつなぎいたします。"
+    }
+  },
+  "community": {
+    "header": {
+      "title": "コミュニティフォーラム",
+      "subtitle": "他の学習者とつながり、質問し、経験を共有します",
+      "backToHome": "ホームに戻る",
+      "newPost": "新しい投稿"
+    },
+    "sidebar": {
+      "categories": "カテゴリー",
+      "topics": {
+        "all": "すべてのトピック",
+        "general": "一般的なヘルプ",
+        "mobile": "モバイルデバイス",
+        "computer": "コンピュータ",
+        "apps": "アプリとソフトウェア",
+        "internet": "インターネットと電子メール",
+        "safety": "オンラインの安全性"
+      },
+      "guidelines": {
+        "title": "コミュニティガイドライン",
+        "items": [
+          "敬意を持って親切にしましょう",
+          "スパムや不適切なコンテンツはありません",
+          "できる限り他の人を助ける",
+          "話題から逸れない",
+          "問題があれば報告してください"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "投稿を検索..."
+    },
+    "createPost": {
+      "title": "新しい投稿を作成する",
+      "categoryLabel": "カテゴリ",
+      "titleLabel": "タイトル",
+      "contentLabel": "コンテンツ",
+      "titlePlaceholder": "質問またはトピックは何ですか?",
+      "contentPlaceholder": "質問について説明したり、あなたの考えを共有したりしてください...",
+      "submit": "役職",
+      "cancel": "キャンセル",
+      "profanityAlert": "投稿には不適切な内容が含まれています。 見直して再試行してください。"
+    },
+    "posts": {
+      "empty": "投稿が見つかりませんでした。 まずは会話を始めましょう！",
+      "replies": "{{count}} 件の返信",
+      "timeAgo": {
+        "justNow": "ちょうど今",
+        "oneHour": "1時間前",
+        "hours": "{{count}} 時間前",
+        "oneDay": "1日前",
+        "days": "{{count}} 日前"
+      }
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ぜひご連絡ください。 メッセージをお送りください。できるだけ早くご返答いたします。",
+    "backToHome": "ホームに戻る",
+    "form": {
+      "fasterResponse": "📧 このフォームは他の連絡方法よりも早く回答されます。",
+      "name": "フルネーム *",
+      "namePlaceholder": "フルネームを入力してください",
+      "email": "電子メールアドレス *",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "subject": "主題 *",
+      "subjectPlaceholder": "件名を選択してください",
+      "subjects": {
+        "general": "一般的なお問い合わせ",
+        "techSupport": "テクニカルサポート",
+        "account": "アカウントヘルプ",
+        "feature": "機能リクエスト",
+        "bug": "バグレポート",
+        "feedback": "フィードバック",
+        "other": "他の"
+      },
+      "message": "メッセージ *",
+      "messagePlaceholder": "お問い合わせ内容を詳しくご記入ください...",
+      "submit": "メッセージを送信する",
+      "sending": "送信中...",
+      "success": "電子メール クライアントが開いているはずです。 そうでない場合は、情報をコピーして直接メールでご連絡ください。",
+      "error": "エラーが発生しました。 taksh.nahata37@gmail.com まで直接メールしてください。"
+    },
+    "info": {
+      "title": "連絡する",
+      "emailLabel": "電子メール",
+      "responseData": "通常 24 時間以内に返信いたします"
+    },
+    "reasons": {
+      "title": "お問い合わせいただく理由",
+      "items": [
+        "技術的な問題についてサポートを受ける",
+        "新機能をリクエストする",
+        "フィードバックや提案を共有する",
+        "バグや問題を報告する",
+        "一般的なお問い合わせ"
+      ]
+    }
+  },
+  "terms": {
+    "title": "利用規約",
+    "backToHome": "ホームに戻る",
+    "lastUpdated": "最終更新日: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "規約への同意",
+        "content": "当社のサービスにアクセスして使用することにより、お客様は本契約の条項および条項に拘束されることに同意したものとみなされます。"
+      },
+      "license": {
+        "title": "使用ライセンス",
+        "content": "個人的、非営利の一時的な閲覧のみを目的として当社のサービスを一時的に使用することが許可されています。"
+      },
+      "conduct": {
+        "title": "ユーザーの行為",
+        "content": "お客様は、適用されるすべての法律および規制に準拠した方法で、および本規約に従って当社のサービスを使用することに同意します。"
+      },
+      "liability": {
+        "title": "責任の制限",
+        "content": "当社およびその提供者は、いかなる場合においても、当社サービスの利用または利用不能から生じるいかなる損害についても責任を負わないものとします。"
+      },
+      "contact": {
+        "title": "連絡先",
+        "content": "これらの利用規約についてご質問がある場合は、以下までお問い合わせください。"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "アクセシビリティに関する声明",
+    "subtitle": "私たちは、能力やテクノロジーに関係なく、誰もがプラットフォームにアクセスできるようにすることに取り組んでいます。",
+    "backToHome": "ホームに戻る",
+    "commitment": {
+      "title": "私たちの取り組み",
+      "content": "私たちはテクノロジーは誰もがアクセスできるべきだと信じています。 当社のプラットフォームは高齢者を念頭に置いて設計されており、あらゆる能力のユーザーにとってテクノロジーをより簡単かつ快適に学習できる機能が組み込まれています。"
+    },
+    "features": {
+      "title": "アクセシビリティ機能",
+      "visual": {
+        "title": "視覚的なアクセシビリティ",
+        "items": [
+          "ハイコントラストの配色",
+          "大きくて読みやすいフォント",
+          "スクリーンリーダーの互換性",
+          "キーボードナビゲーションのサポート",
+          "画像の代替テキスト"
+        ]
+      },
+      "audio": {
+        "title": "オーディオのアクセシビリティ",
+        "items": [
+          "動画のクローズドキャプション",
+          "音声解説",
+          "ボリュームコントロール",
+          "オーディオキューの視覚的インジケーター",
+          "音声コンテンツの代替テキスト"
+        ]
+      },
+      "motor": {
+        "title": "モーターへのアクセス性",
+        "items": [
+          "広いクリック可能領域",
+          "キーボードのみのナビゲーション",
+          "調整可能な時間制限",
+          "音声コントロールの互換性",
+          "簡素化されたインタラクション"
+        ]
+      },
+      "cognitive": {
+        "title": "認知的アクセシビリティ",
+        "items": [
+          "シンプルで明確な言語",
+          "一貫したナビゲーション",
+          "モーションオプションの削減",
+          "明確な指示",
+          "エラーの防止と回復"
+        ]
+      }
+    },
+    "standards": {
+      "title": "規格への準拠",
+      "content": "当社のプラットフォームは、Web コンテンツ アクセシビリティ ガイドライン (WCAG) 2.1 レベル AA 標準に準拠することを目指しています。 当社は支援技術を使用してプラットフォームを定期的にテストし、アクセシビリティ監査を実施します。"
+    },
+    "feedback": {
+      "title": "フィードバックとサポート",
+      "content": "私たちはアクセシビリティの向上に継続的に取り組んでいます。 障壁に遭遇した場合、または改善のご提案がある場合は、お気軽にお問い合わせください。",
+      "emailLabel": "電子メール",
+      "subjectLabel": "主題",
+      "subjectValue": "アクセシビリティに関するフィードバック"
+    },
+    "assistive": {
+      "title": "支援技術",
+      "content": "当社のプラットフォームは、次のような一般的な支援技術と連携して動作するように設計されています。",
+      "items": [
+        "スクリーン リーダー (JAWS、NVDA、VoiceOver)",
+        "音声認識ソフトウェア",
+        "画面拡大ツール",
+        "代替キーボード",
+        "ナビゲーションデバイスを切り替える",
+        "視線追跡システム"
+      ]
+    },
+    "help": {
+      "title": "助けが必要ですか?",
+      "content": "当社のプラットフォームの使用についてサポートが必要な場合、またはアクセシビリティ関連の質問がある場合は、いつでもお手伝いいたします。",
+      "contact": "サポートに連絡する"
+    },
+    "lastUpdated": "最終更新日: {{date}}"
+  },
+  "assessmentView": {
+    "headerTitle": "スキル評価",
+    "questionProgress": "{{total}} 件中 {{current}} 件の質問",
+    "skipAssessment": "評価をスキップ",
+    "chooseBestOption": "あなたに最も近いオプションを選択してください"
+  }
+}

@@ -1,4 +1,1637 @@
 {
   "welcome": "Dobrodošli!",
-  "onboarding": {}
+  "onboarding": {
+    "step1": {
+      "tooltip": "Povejte nam nekaj o sebi, da bomo lahko prilagodili vašo učno izkušnjo."
+    },
+    "step2": {
+      "tooltip": "Izberite jezike, ki vam ustrezajo za glasovni vnos in interakcijo z besedilom."
+    },
+    "step3": {
+      "tooltip": "Poznavanje vaše primarne naprave nam pomaga zagotoviti ustreznejša navodila."
+    },
+    "step4": {
+      "tooltip": "Bodite iskreni glede ravni udobja – to nam pomaga razložiti stvari v pravem tempu."
+    },
+    "step5": {
+      "tooltip": "Izberite teme, ki vas najbolj skrbijo, da bomo lahko dali prednost pomoči na teh področjih."
+    },
+    "step6": {
+      "tooltip": "Sporočite nam vse funkcije dostopnosti, ki jih potrebujete za udobno izkušnjo."
+    },
+    "step7": {
+      "tooltip": "Izberite, kako se želite učiti, da bomo lahko prilagodili naš stil poučevanja."
+    },
+    "step8": {
+      "tooltip": "Nastavite svoje popolno učno okolje s temi zadnjimi nastavitvami.",
+      "privacy": {
+        "title": "Vaša zasebnost je naša prioriteta",
+        "items": [
+          "NIKOLI ne bomo prodali vaših osebnih podatkov",
+          "Vsi podatki ostanejo šifrirani in varni",
+          "Te nastavitve lahko kadar koli spremenite",
+          "Svoje podatke lahko kadar koli izbrišete"
+        ]
+      },
+      "personalization": {
+        "title": "Prilagojena izkušnja",
+        "description": "Dovolite nam, da uporabimo vaše podatke o interakciji za zagotavljanje boljše, ustreznejše pomoči in predlogov, prilagojenih vašim potrebam.",
+        "note": "To nam pomaga razumeti, katere teme vas najbolj zanimajo, in zagotovimo ustreznejše vadnice."
+      },
+      "history": {
+        "title": "Uporabite zgodovino pogovorov",
+        "description": "Spomnite se naših prejšnjih pogovorov, da zagotovite boljši kontekst in se izognete ponavljanju informacij, ki jih že poznate.",
+        "note": "To mi pomaga, da se spomnim, o čem smo že razpravljali, in nadgradim prejšnje pogovore."
+      },
+      "learningPrefs": {
+        "title": "Uporabite nastavitve učenja",
+        "description": "Zapomnite si, da je vaš želeni stil učenja, komunikacijske nastavitve in dostopnost potrebni za zagotavljanje doslednih izkušenj.",
+        "note": "To vključuje vaš želeni slog razlage, jezikovne nastavitve in nastavitve dostopnosti."
+      },
+      "noSelection": {
+        "title": "Prilagoditev ni izbrana",
+        "success": "odlično! Vaše izbrane podatke bomo uporabili za zagotavljanje boljše izkušnje.",
+        "default": "To je čisto v redu! Še vedno boste imeli popoln dostop do vseh funkcij, le brez prilagojenih priporočil."
+      }
+    },
+    "back": "Nazaj",
+    "next": "Naprej",
+    "settingUp": "Nastavitev ...",
+    "completeSetup": "Dokončajte namestitev",
+    "errorSaving": "Vaših nastavitev ni bilo mogoče shraniti. prosim poskusite ponovno",
+    "buttons": {
+      "previous": "Prejšnja",
+      "next": "Naprej",
+      "skip": "Preskoči",
+      "complete": "Popolna",
+      "processing": "Obdelava ...",
+      "gotIt": "Razumem!",
+      "skipAll": "Preskoči vse",
+      "cancel": "Prekliči"
+    },
+    "progress": {
+      "label": "Napredek vkrcanja: korak {{current}} od {{total}}",
+      "stepOf": "Korak {{current}} od {{total}}",
+      "step": "korak",
+      "stepCompleted": "{{step}} – Končano",
+      "stepCurrent": "{{step}} - trenutni korak",
+      "stepUpcoming": "{{step}} – Prihajajoče"
+    },
+    "tooltip": {
+      "helpfulTip": "Koristen nasvet"
+    },
+    "flow": {
+      "title": "Dobrodošli! Začnimo"
+    },
+    "accessibility": {
+      "helpfulTip": "Koristen nasvet",
+      "tooltipAppeared": "Prikazal se je opis orodja z vsebino: {{content}}",
+      "skippingStep": "Preskok trenutnega koraka",
+      "movingToNextStep": "Premik na naslednji korak",
+      "movingToPreviousStep": "Premik na prejšnji korak",
+      "completingOnboarding": "Dokončanje postopka vkrcanja",
+      "stepChanged": "Zdaj na koraku {{step}} od {{total}}: {{title}}",
+      "skippingOnboarding": "Preskok celotnega postopka vkrcanja",
+      "cancellingOnboarding": "Preklic postopka vkrcanja",
+      "errorCompleting": "Napaka pri dokončanju vkrcanja. prosim poskusite ponovno",
+      "goToPreviousStep": "Pojdite na prejšnji korak",
+      "skipThisStep": "Preskočite ta korak",
+      "completeOnboarding": "Popolna vključitev",
+      "continueToNextStep": "Nadaljujte z naslednjim korakom",
+      "closeTooltip": "Zapri opis orodja",
+      "skipTooltip": "Preskoči ta nasvet",
+      "continueFromTooltip": "Nadaljuj od opisa orodja",
+      "skipEntireOnboarding": "Preskoči celotno vkrcanje",
+      "cancelOnboarding": "Prekliči vkrcanje",
+      "keyboardInstructions": "Uporabite Tab za navigacijo, Enter za izbiro in Escape za zapiranje pogovornih oken"
+    },
+    "validation": {
+      "firstNameRequired": "Ime je obvezno",
+      "lastNameRequired": "Priimek je obvezen",
+      "validAgeRequired": "Vnesite veljavno starost med 18 in 120",
+      "languageRequired": "Izberite vsaj en jezik",
+      "deviceRequired": "Izberite svojo primarno napravo",
+      "experienceRequired": "Prosimo, izberite svojo raven tehničnih izkušenj",
+      "concernsOptional": "Izberete lahko pomisleke, da nam pomagate prilagoditi vašo izkušnjo",
+      "assistiveNeedsRequired": "Izberite svoje potrebe glede dostopnosti ali izberite »Ni potrebno«",
+      "communicationStyleRequired": "Izberite želeni komunikacijski slog"
+    },
+    "restart": {
+      "confirmMessage": "Ali ste prepričani, da želite znova začeti postopek vkrcanja? To bo ponastavilo vse vaše nastavitve."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
+    "devices": {
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
+      "iphone": "iPhone",
+      "ipad": "iPad",
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
+    },
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "customizePrefs": "Prilagodite svoje nastavitve",
+    "accessibility": "Dostopnost",
+    "textToSpeech": "Pretvorba besedila v govor",
+    "textToSpeechDesc": "Odgovore naj vam preberejo na glas",
+    "voiceInput": "Glasovni vnos",
+    "voiceInputDesc": "Postavljajte vprašanja z govorom",
+    "languagePreferences": "Jezikovne nastavitve",
+    "hideLanguages": "Skrij se",
+    "modifyLanguages": "Spremeni jezike",
+    "defaultLanguage": "Privzeti jezik (to bo uporabljalo celotno spletno mesto)",
+    "pwa": {
+      "install": {
+        "title": "Namestite TechStep",
+        "description": "Zagotovite si hiter dostop do svojega učnega napredka in uporabite TechStep brez povezave.",
+        "button": "Namestite aplikacijo"
+      },
+      "update": {
+        "title": "Posodobitev na voljo",
+        "description": "Na voljo je nova različica TechStep z izboljšavami in popravki napak.",
+        "button": "Posodobi zdaj"
+      },
+      "status": {
+        "online": "Na spletu",
+        "offline": "Brez povezave – spremembe se bodo sinhronizirale, ko bo vzpostavljena povezava",
+        "syncing": "Sinhronizacija ..."
+      },
+      "notifications": {
+        "title": "Opomniki za učenje",
+        "description": "Prejmite nežne opomnike, ki vam bodo pomagali ostati na pravi poti na vaši učni poti.",
+        "learning_reminders": "Opomniki za učenje",
+        "learning_reminders_desc": "Nežni dregljaji, da nadaljujete z lekcijo",
+        "progress_updates": "Posodobitve napredka",
+        "progress_updates_desc": "Proslavite svoje dosežke",
+        "support_messages": "Sporočila podpore",
+        "support_messages_desc": "Koristni nasveti in pomoč",
+        "frequency": "Pogostost",
+        "enable": "Omogoči obvestila",
+        "subscribing": "Nastavitev ...",
+        "blocked": {
+          "title": "Obvestila blokirana",
+          "description": "Obvestila so trenutno blokirana. Če jih želite omogočiti, dovolite obvestila v nastavitvah brskalnika.",
+          "instructions": "Poiščite ikono obvestila v naslovni vrstici ali preverite nastavitve spletnega mesta brskalnika."
+        },
+        "success": {
+          "title": "Obvestila omogočena!",
+          "description": "Prejeli boste koristne opomnike in posodobitve glede na vaše nastavitve."
+        }
+      }
+    },
+    "offline": {
+      "error": "Napaka pri sinhronizaciji",
+      "offline": "Brez povezave",
+      "online": "Na spletu",
+      "syncing": "Sinhronizacija ...",
+      "offline_desc": "Spremembe se bodo sinhronizirale, ko bo vzpostavljena povezava",
+      "syncing_desc": "Posodabljanje vaših podatkov",
+      "online_desc": "Vse spremembe so shranjene",
+      "pending_operations": "{{count}} sprememb v teku",
+      "last_sync": "Zadnja sinhronizacija: {{time}}",
+      "content_manager": {
+        "title": "Vsebina brez povezave",
+        "description": "Prenesite vsebino za dostop brez povezave",
+        "online": "Povezano - Prenesete lahko novo vsebino",
+        "offline": "Brez povezave – uporaba samo prenesene vsebine",
+        "no_content": "Ni vsebine brez povezave",
+        "no_content_desc": "Prenesite tečaje in lekcije za dostop brez povezave",
+        "downloaded": "Preneseno",
+        "available_offline": "Na voljo brez povezave",
+        "remove": "Odstrani iz pomnilnika brez povezave",
+        "suggestions": "Priporočeni prenosi",
+        "suggestion_1": "Osnove računalništva",
+        "suggestion_1_desc": "Bistvene veščine za začetek uporabe tehnologije",
+        "popular": "Priljubljeno",
+        "download": "Prenos",
+        "type": {
+          "course": "tečaj",
+          "lesson": "Lekcija",
+          "tutorial": "Vadnica",
+          "media": "Mediji"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Odpusti"
+    },
+    "defaultLanguageDesc": "To bo primarni jezik za vse elemente vmesnika in interakcije.",
+    "otherLanguages": "Drugi jeziki, ki jih želite uporabljati:",
+    "default": "Privzeto",
+    "languageConfiguration": "Konfiguracija jezika",
+    "languageConfigurationDesc": "Izbrani jeziki bodo uporabljeni za:",
+    "speechToText": "Prepoznavanje in obdelava govora v besedilo",
+    "multilingualText": "Večjezične besedilne interakcije in odgovori",
+    "interfaceLanguage": "Jezikovne možnosti vmesnika in dostopnost",
+    "searchLanguages": "Iskanje jezikov ...",
+    "selectAll": "Izberite Vse",
+    "deselectAll": "Prekliči izbiro vseh",
+    "selectedLanguages": "Izbrano: {{count}} jezik",
+    "selectedLanguages_plural": "Izbrano: {{count}} jezikov",
+    "noLanguagesFound": "Ni jezikov, ki bi ustrezali \"{{search}}\"",
+    "languageRequired": "Potreben je vsaj en jezik",
+    "languageRequiredDesc": "Izberite vsaj en jezik, da zagotovite pravilno delovanje glasovnega vnosa in besedilnih interakcij.",
+    "account": "Račun",
+    "signOut": "Odjava",
+    "signOutDesc": "Odjavite se iz svojega računa",
+    "cancel": "Prekliči",
+    "errorSaving": "Nastavitev ni bilo mogoče shraniti. prosim poskusite ponovno",
+    "lastName": "Priimek",
+    "lastNamePlaceholder": "Vaš priimek",
+    "age": "Starost",
+    "techExperience": "Raven tehnološke izkušnje",
+    "techExperienceOptions": {
+      "beginner": "Začetnik (rabim pomoč po korakih pri večini stvari)",
+      "some": "Nekaj ​​izkušenj (lahko opravljam osnovna opravila, vendar potrebujem pomoč pri novih stvareh)",
+      "comfortable": "Udobno (lahko ugotovim večino stvari, vendar včasih potrebujem vodstvo)"
+    },
+    "primaryConcerns": "Primarne tehnološke teme, ki vas zanimajo",
+    "assistiveNeeds": "Potrebe po dostopnosti",
+    "communicationStyle": "Prednostni slog razlage",
+    "communicationStyleOptions": {
+      "simple": "Preprosto in hitro (samo koraki)",
+      "detailed": "Podrobno (razložite \"zakaj\")",
+      "visual": "Vizualno (pokaži slike/videoposnetke, ko je to mogoče)"
+    },
+    "videoRecommendations": "Priporočila za video",
+    "videoRecommendationsDesc": "Pokažite uporabne videoposnetke in članke poleg korakov",
+    "fontSize": "Želena velikost besedila",
+    "fontSizeOptions": {
+      "normal": "normalno",
+      "large": "Velik",
+      "extraLarge": "Zelo velik"
+    },
+    "displayPreferences": "Zaslon in tema",
+    "theme": "Barvna tema",
+    "themeOptions": {
+      "light": "Svetloba",
+      "dark": "Temno"
+    },
+    "highContrast": "Način visokega kontrasta",
+    "highContrastDesc": "Povečajte kontrast besedila in elementov za boljšo vidljivost",
+    "learningPreferences": "Nastavitve učenja in vsebine",
+    "dataPortability": "Pravice do podatkov in zasebnosti",
+    "dataRights": "Vaše pravice do podatkov",
+    "dataRightsDesc": "Imate popoln nadzor nad svojimi osebnimi podatki. Izvozite, upravljajte nastavitve skupne rabe ali izbrišite svoje podatke kadar koli."
+  },
+  "common": {
+    "friend": "friend",
+    "settings": "nastavitve",
+    "signOut": "Odjava",
+    "close": "Zapri",
+    "comingSoon": "Kmalu na voljo"
+  },
+  "nav": {
+    "features": "Features",
+    "reviews": "Reviews",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "landing": {
+    "hero": {
+      "tagline": "Trusted by seniors worldwide",
+      "title": "Technology made",
+      "titleHighlight": "simple & clear",
+      "subtitle": "Master technology with confidence through personalized, step-by-step guidance that feels like having a patient friend by your side.",
+      "startLearningButton": "Start Learning Free",
+      "watchDemoButton": "Watch Demo",
+      "freeForever": "Free forever",
+      "noCreditCard": "No credit card required",
+      "available247": "Available 24/7"
+    },
+    "featuresSection": {
+      "title": "Features",
+      "subtitle": "These are just a few of the features offered to help you grow!",
+      "items": [
+        {
+          "title": "Step-by-Step Guidance",
+          "description": "Get clear, easy-to-follow instructions for any tech question. Each step is explained in simple terms with visual cues."
+        },
+        {
+          "title": "Voice Support",
+          "description": "Ask questions with your voice and have answers read aloud. Perfect for hands-free help when you need it most."
+        },
+        {
+          "title": "Photo Explainer",
+          "description": "Take a photo of any cable, button, or device and get an instant explanation of what it is and how to use it."
+        },
+        {
+          "title": "Senior-Friendly Design",
+          "description": "Large text, intuitive interface, and patient explanations designed specifically with seniors in mind."
+        },
+        {
+          "title": "Safe & Secure",
+          "description": "Your personal information is protected with enterprise-grade security. No data shared with third parties."
+        },
+        {
+          "title": "Instant Answers",
+          "description": "Get immediate help 24/7. No waiting on hold or scheduling appointments. Just ask and get answers."
+        }
+      ]
+    },
+    "popularQuestionsSection": {
+      "title": "Popular Questions We Help With",
+      "subtitle": "See what other seniors are asking about",
+      "askYourQuestionButton": "Ask Your Question Now"
+    },
+    "testimonialsSection": {
+      "title": "What Our Community Says",
+      "subtitle": "Join thousands of seniors who've found tech help made simple",
+      "testimonialContent": [
+        {
+          "name": "Margaret K.",
+          "age": 72,
+          "location": "Austin, TX",
+          "content": "Finally, someone who explains technology in a way I can understand! The step-by-step instructions helped me set up my new phone perfectly. I feel so much more confident now!",
+          "avatar": "M"
+        },
+        {
+          "name": "Robert H.",
+          "age": 68,
+          "location": "Seattle, WA",
+          "content": "The voice feature is amazing! I can just ask my questions out loud and get clear answers. It's like having a tech-savvy grandchild available 24/7.",
+          "avatar": "R"
+        },
+        {
+          "name": "Dorothy S.",
+          "age": 75,
+          "location": "Miami, FL",
+          "content": "I love the photo feature! I took a picture of a confusing cable and instantly knew what it was for. This app has made me much more confident with technology.",
+          "avatar": "D"
+        },
+        {
+          "name": "Frank M.",
+          "age": 70,
+          "location": "Denver, CO",
+          "content": "I was so frustrated with my smart TV until I found this helper. Now I can stream shows, adjust settings, and even video chat with my grandkids!",
+          "avatar": "F"
+        }
+      ],
+      "ageLabel": "starost {{age}}"
+    },
+    "ctaSection": {
+      "title": "Ste pripravljeni obvladati tehnologijo?",
+      "subtitle": "Pridružite se naši skupnosti opolnomočenih starejših, ki so tehnologijo naredili preprosto in dostopno. Začnite prejemati jasne, uporabne odgovore že danes – popolnoma brezplačno!",
+      "getStartedButton": "Začnite brezplačno še danes",
+      "setupInMinutes": "Nastavitev v 2 minutah"
+    },
+    "footer": {
+      "description": "Narediti tehnologijo dostopno in razumljivo za starejše povsod.",
+      "featuresTitle": "Lastnosti",
+      "featuresItems": [
+        "Pomoč po korakih",
+        "Glasovna podpora",
+        "Photo Explainer",
+        "Dosegljivost 24/7"
+      ],
+      "supportTitle": "Podpora",
+      "communityTitle": "Skupnost",
+      "legalTitle": "Pravna podpora",
+      "contactEmail": "Kontakt: E-pošta: taksh.nahata37@gmail.com",
+      "supportItems": [
+        "Center za pomoč",
+        "Kako začeti",
+        "Skupnost",
+        "Kontaktirajte nas"
+      ],
+      "companyTitle": "Podjetje",
+      "companyItems": [
+        "O nas",
+        "Politika zasebnosti",
+        "Pogoji storitve",
+        "Dostopnost"
+      ],
+      "copyright": "© 2025 TechStep. Narejeno z ❤️ za starejše povsod.",
+      "trustedBy": "Zaupa",
+      "trustedByCount": "50.000+ starejših"
+    }
+  },
+  "dashboard": {
+    "welcome": "Dobrodošli v TechStep",
+    "welcomeUser": "Dobrodošel nazaj, {{name}}!",
+    "ready": "Ste se pripravljeni naučiti nekaj novega?",
+    "getHelp": "Takojšnja pomoč",
+    "askQuestion": "Zastavite kakršno koli tehnično vprašanje in pridobite navodila po korakih",
+    "placeholder": "Pri čem bi danes potrebovali pomoč?",
+    "getSteps": "Pridobite pomoč po korakih",
+    "gettingSteps": "Pridobivanje korakov ...",
+    "craftingSteps": "Izdelava vaših prilagojenih korakov ...",
+    "takesAMoment": "To lahko traja nekaj trenutkov",
+    "quickTips": "Hitri nasveti za vas",
+    "popularQuestions": "Danes priljubljena vprašanja",
+    "quickActions": "Hitra dejanja",
+    "recentActivity": "Nedavna dejavnost",
+    "yourProgress": "Vaš napredek",
+    "needHelp": "Potrebujete pomoč?",
+    "helpingHand": "Tukaj smo, da vam pomagamo uspeti",
+    "chatHuman": "Klepetajte s človekom",
+    "browseGuides": "Brskajte po video vodnikih",
+    "browseTips": "Nasveti za brskanje",
+    "commonSolutions": "Poiščite skupne rešitve",
+    "stepsCompleted": "{{count}} opravljenih korakov",
+    "needMoreInfo": "Potrebujem nekaj več informacij, da vam bom bolje pomagal"
+  },
+  "aiTools": {
+    "title": "Pomožna orodja AI",
+    "description": "Razlagalec fotografij in tehnični prevajalec"
+  },
+  "aiToolsModal": {
+    "header": "Pomožna orodja AI",
+    "tabs": {
+      "photoExplainer": "Photo Explainer",
+      "techWordBuster": "Tech Word Buster"
+    },
+    "photoExplainer": {
+      "title": "Photo Explainer",
+      "description": "Naložite fotografijo katerega koli kabla, gumba ali naprave in prejmite takojšnjo razlago.",
+      "uploadButton": "Naloži sliko",
+      "questionLabel": "Zastavite vprašanje o fotografiji (neobvezno)",
+      "questionPlaceholder": "Za kaj je ta kabel?",
+      "explainButton": "Pojasni fotografijo",
+      "analyzingButton": "Analiziranje ...",
+      "alertNoPhoto": "Najprej naložite fotografijo ali preverite konfiguracijo API-ja.",
+      "errorResponse": "<p class=\"text-red-600\">Oprostite, slike nisem mogel analizirati. Poskusite znova.</p>",
+      "readResponseButton": "🔊 Preberite odgovor na glas",
+      "previewAlt": "Predogled"
+    },
+    "techWordBuster": {
+      "title": "Tech Word Buster",
+      "description": "Vas zmede tehnični izraz? Pridobite preprosto, lahko razumljivo razlago z analogijami iz resničnega sveta.",
+      "inputLabel": "Vnesite tehnično besedo ali frazo",
+      "inputPlaceholder": "npr. shranjevanje v oblaku, WiFi, Bluetooth",
+      "explainButton": "Naj bo to jasno",
+      "explainingButton": "Razlaga ...",
+      "alertNoTerm": "Najprej vnesite tehnični izraz ali preverite konfiguracijo API-ja.",
+      "errorResponse": "<p class=\"text-red-600\">Oprostite, tega izraza nisem mogel razložiti. Poskusite ponovno.</p>",
+      "readExplanationButton": "🔊 Preberite razlago na glas"
+    },
+    "apiErrorNoExplanation": "Prejetega pojasnila ni bilo"
+  },
+  "clarificationModal": {
+    "headerTitle": "Potrebujem malo več informacij",
+    "yourQuestionLabel": "Vaše vprašanje:",
+    "tellMeMorePrompt": "Ali mi lahko poveste kaj več, da bi vam kar najbolje pomagali?",
+    "forExampleLabel": "Na primer:",
+    "textareaPlaceholder": "Navedite več podrobnosti ...",
+    "textareaSrLabel": "Navedite več podrobnosti za svoje vprašanje",
+    "skipButton": "Preskoči za zdaj",
+    "submitButton": "Poiščite boljšo pomoč",
+    "loadingButton": "Pridobivanje pomoči ..."
+  },
+  "languageNotificationBanner": {
+    "title": "Dokončajte nastavitev jezika",
+    "description": "Konfigurirajte želene jezike za boljši glasovni vnos in besedilno interakcijo.",
+    "buttonText": "Dokončajte namestitev"
+  },
+  "learningPaths": {
+    "fundamentals": {
+      "title": "Osnove računalnika in naprav",
+      "description": "Osnove za začetek s tehnologijo.",
+      "modules": {
+        "turnOnDevice": {
+          "title": "Vklop naprave",
+          "description": "Naučite se vklopiti računalnike in pametne telefone."
+        },
+        "mouseTouchscreen": {
+          "title": "Uporaba miške/zaslona na dotik",
+          "description": "Obvladajte kazanje, klikanje in tapkanje.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Igrajmo se: Osnove miške in zaslona na dotik</h3><p>Ste pripravljeni na raziskovanje? Vaša miška in zaslon na dotik sta vaši čarobni palici za digitalni svet!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Zabava z miško:</h4><ul class=\"space-y-2\"><li>• <b>Točka</b>: premaknite miško in opazujte, kako vam puščica sledi!</li><li>• <b>Kliknite</b>: Pritisnite levi gumb za izbiro stvari. Poskusite klikniti spodnji gumb!</li><li>• <b>Dvojni klik</b>: Hitro pritisnite dvakrat, da odprete datoteke ali programe.</li><li>• <b>Desni klik</b>: Pritisnite desni gumb za skrivni meni.</li><li>• <b>Pomikanje</b>: Zavrtite kolesce za premikanje gor in dol po strani.</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Triki z zaslonom na dotik:</h4><ul class=\"space-y-2\"><li>• <b>Dotik</b>: nežno se dotaknite zaslona za izbiro.</li><li>• <b>Podrsanje</b>: podrsajte s prstom za pomikanje ali preklapljanje med zasloni.</li><li>• <b>Uščipnite</b>: premaknite dva prsta skupaj ali narazen, da povečava in pomanjšava.</li><li>• <b>Dolg pritisk</b>: držite prst navzdol za več možnosti (na primer desni klik!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Preizkusite!</h4><ul class=\"space-y-2\"><li>• Premaknite miško in poglejte, kaj se spremeni na zaslon.</li><li>• Za raziskovanje se dotaknite in povlecite po napravi.</li></ul></div></div>",
+          "keyPoints": [
+            "Kazalec miške sledi vaši roki!",
+            "Levi klik je vaše glavno dejanje.",
+            "Zasloni na dotik vam omogočajo tapkanje, vlečenje in povečavo!"
+          ],
+          "practiceExercise": "Poskusite klikniti, dvakrat klikniti in klikniti z desno miškino tipko na namizju. Na zaslonu na dotik tapnite in povlecite, da se premikate med zasloni.",
+          "animationDesc": "Oglejte si, kako klikati, dvoklikniti in podrsati po zaslonu na dotik."
+        },
+        "keyboardTyping": {
+          "title": "Osnove tipkovnice/tipkanja",
+          "description": "Poskrbite za udobno tipkanje."
+        },
+        "filesFolders": {
+          "title": "Razumevanje datotek in map",
+          "description": "Naučite se, kako so organizirane digitalne informacije."
+        }
+      }
+    },
+    "onlineWorld": {
+      "title": "Spletni svet",
+      "description": "Povezovanje in varno raziskovanje interneta.",
+      "modules": {
+        "webBrowsers": {
+          "title": "Razumevanje spletnih brskalnikov",
+          "description": "Krmarite po internetu s Chromom, Edgeom ali Safarijem."
+        },
+        "searchEffectively": {
+          "title": "Kako učinkovito iskati",
+          "description": "Poiščite, kar potrebujete, na spletu z uporabo iskalnikov."
+        },
+        "introEmail": {
+          "title": "Uvod v e-pošto",
+          "description": "Naučite se pošiljati in prejemati elektronsko pošto."
+        },
+        "virusSafety": {
+          "title": "Zaščita pred virusi",
+          "description": "Zaščitite svojo napravo pred škodljivo programsko opremo."
+        }
+      }
+    },
+    "digitalLife": {
+      "title": "Vsakdanje digitalno življenje",
+      "description": "Komunicirajte, delite in upravljajte svojo digitalno prisotnost.",
+      "modules": {
+        "masteringEmail": {
+          "title": "Obvladovanje e-pošte",
+          "description": "Priloge, mape in e-poštni bonton."
+        },
+        "videoCalling": {
+          "title": "Video klicanje družine in prijateljev",
+          "description": "Povežite se iz oči v oči z ljubljenimi."
+        },
+        "introSocialMedia": {
+          "title": "Uvod v socialne medije",
+          "description": "Razumevanje platform, kot je Facebook."
+        },
+        "sharingPhotos": {
+          "title": "Varno deljenje fotografij",
+          "description": "Delite svoje spomine brez ogrožanja zasebnosti."
+        }
+      }
+    },
+    "advancedSkills": {
+      "title": "Napredne in ustvarjalne spretnosti",
+      "description": "Poleg osnov: raziščite več o tem, kar ponuja tehnologija.",
+      "modules": {
+        "onlineShopping": {
+          "title": "Uvod v spletno nakupovanje",
+          "description": "Nakupujte varno in udobno na spletu."
+        },
+        "onlineMaps": {
+          "title": "Uporaba spletnih zemljevidov in navigacije",
+          "description": "Poiščite pot z digitalnimi zemljevidi."
+        },
+        "photoEditing": {
+          "title": "Osnovno urejanje fotografij",
+          "description": "Izboljšajte svoje digitalne fotografije."
+        },
+        "productivityTools": {
+          "title": "Uvod v orodja za produktivnost",
+          "description": "Uporaba orodij, kot so Google Dokumenti ali osnove Microsoft Worda."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Dostopnost in enostavna uporaba",
+      "description": "Naj bo vaša naprava lažje vidna, slišana in nadzorovana.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Uporaba lupe",
+          "description": "Povečajte besedilo in slike na zaslonu."
+        },
+        "voiceCommands": {
+          "title": "Glasovni ukazi in narekovanje",
+          "description": "Upravljajte svojo napravo in tipkajte z glasom."
+        },
+        "highContrast": {
+          "title": "Nastavitve visokega kontrasta in barv",
+          "description": "Prilagodite barve za boljšo vidljivost."
+        },
+        "assistiveTouch": {
+          "title": "Pomožni dotik in bližnjice",
+          "description": "Za lažjo navigacijo uporabite orodja na zaslonu."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Zdravje, varnost in zasebnost",
+      "description": "Med uporabo tehnologije ostanite varni, zdravi in ​​zasebni.",
+      "modules": {
+        "privacySettings": {
+          "title": "Nastavitve zasebnosti",
+          "description": "Zaščitite svoje osebne podatke na spletu."
+        },
+        "scamAwareness": {
+          "title": "Zavedanje prevare",
+          "description": "Odkrijte pogoste spletne prevare in se jim izognite."
+        },
+        "healthApps": {
+          "title": "Uporaba zdravstvenih aplikacij",
+          "description": "Spremljajte svoje zdravje in dobro počutje z aplikacijami."
+        },
+        "emergencyContacts": {
+          "title": "Nastavitev stikov za nujne primere",
+          "description": "V napravo dodajte stike za nujne primere."
+        }
+      }
+    }
+  },
+  "badges": {
+    "fundamentals": {
+      "name": "Tehnični začetnik",
+      "description": "Dokončane osnove računalništva in naprav."
+    },
+    "onlineWorld": {
+      "name": "Spletni raziskovalec",
+      "description": "Dokončana pot The Online World."
+    },
+    "digitalLife": {
+      "name": "Digitalni komunikator",
+      "description": "Dokončana pot vsakodnevnega digitalnega življenja."
+    },
+    "advancedSkills": {
+      "name": "Tehnični virtuoz",
+      "description": "Dokončana pot naprednih in ustvarjalnih veščin."
+    },
+    "accessibility": {
+      "name": "Šampion dostopnosti",
+      "description": "Dokončana pot dostopnosti in enostavne uporabe."
+    },
+    "healthAndSafety": {
+      "name": "Varuh varnosti",
+      "description": "Dokončana pot zdravja, varnosti in zasebnosti."
+    }
+  },
+  "skillAssessmentModal": {
+    "title": "Hitro preverjanje spretnosti",
+    "introduction": "Poiščimo najboljše mesto za začetek!",
+    "nextButton": "Naprej",
+    "finishButton": "Pokaži moje izhodišče",
+    "questionProgress": "Vprašanje {{current}} od {{total}}"
+  },
+  "assessment": {
+    "q1": {
+      "text": "Kako udobno se znajdete z računalniki?",
+      "options": {
+        "new": "Čisto nov",
+        "basics": "Poznam nekaj osnov",
+        "confident": "Precej sem samozavesten"
+      }
+    },
+    "q2": {
+      "text": "Ste že poslali e-pošto?",
+      "options": {
+        "yes": "ja",
+        "no": "št"
+      }
+    },
+    "q3": {
+      "text": "Ste pametni telefon uporabljali za kaj več kot le za klice?",
+      "options": {
+        "yes": "ja",
+        "no": "št"
+      }
+    }
+  },
+  "learning": {
+    "title": "Učni center",
+    "structuredCourses": "Strukturirani tečaji in vaje",
+    "skillsAssessment": "Ocena spretnosti",
+    "questionNumber": "Vprašanje {{current}} od {{total}}",
+    "resetAnimation": "Ponastavi",
+    "showAnimation": "Prikaži animacijo",
+    "courses": {
+      "beginner": {
+        "title": "Uvod v tehnologijo",
+        "description": "Popoln za popolne začetnike. Naučite se osnov korak za korakom.",
+        "estimatedTime": "2-3 ure",
+        "lessons": {
+          "deviceBasics": {
+            "title": "Osnove naprave",
+            "description": "Naučite se varno vklopiti in izklopiti svojo napravo",
+            "duration": "15 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Vklop in izklop vaše naprave</h3><p>Vsaka naprava ima gumb za vklop. Naučimo se, kako ga varno uporabljati.</p><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Za računalnike:</h4><ul class=\"space-y-2\"><li>• Poiščite okrogel gumb s simbolom za vklop (⏻)</li><li>• Pritisnite ga enkrat, da ga vklopite</li><li>• Za izklop: uporabite meni Start in nato »Zapri dol«</li><li>• Za izklop nikoli ne pritisnite samo gumba za vklop!</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Za telefone/tablične računalnike:</h4><ul class=\"space-y-2\"><li>• Gumb za vklop je običajno ob strani</li><li>• Pritisnite in držite 2-3 sekunde, da vklopite vklop</li><li>• Za izklop: pritisnite in pridržite, nato potisnite za izklop</li></ul></div></div>",
+            "keyPoints": [
+              "Vedno uporabite ustrezne postopke za zaustavitev",
+              "Lokacija gumba za vklop se razlikuje glede na napravo",
+              "Nikoli ne izklopite na silo, razen če je to nujno potrebno"
+            ],
+            "practiceExercise": "Vadite 3-krat vklop in izklop naprave z ustrezno metodo.",
+            "animationDesc": "Oglejte si, kako pravilno pritisnete gumb za vklop"
+          },
+          "mouseKeyboard": {
+            "title": "Uporaba miške in tipkovnice",
+            "description": "Obvladajte osnove računalniških vnosnih naprav",
+            "duration": "20 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Osnove miške in tipkovnice</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Osnove miške:</h4><ul class=\"space-y-2\"><li>• Levi klik: izberite elemente, odprite programe</li><li>• Desni klik: Odpiranje menijev z več možnostmi</li><li>• Dvojni klik: odpiranje datotek in programov</li><li>• Kolešček: premikanje gor in dol po straneh</li></ul></div><div class=\"bg-orange-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Osnove tipkovnice:</h4><ul class=\"space-y-2\"><li>• Preslednica: dodajte presledke med besede</li><li>• Enter: Začni novo vrstico ali potrdi</li><li>• Vračalka: Izbriši črko pred kazalcem</li><li>• Shift: Naredi velike črke</li></ul></div></div>",
+            "keyPoints": [
+              "Levi klik je vaše glavno orodje",
+              "Desni klik odpre uporabne menije",
+              "Vaja dela mojstra"
+            ],
+            "practiceExercise": "Odprite preprost besedilni program in vnesite svoje ime, nato pa ga izbrišite s vračalko.",
+            "animationDesc": "Oglejte si, kako klikati, dvoklikniti in klikniti z desno miškino tipko"
+          },
+          "internetSafety": {
+            "title": "Osnove internetne varnosti",
+            "description": "Ostanite varni v spletu s temi bistvenimi nasveti",
+            "duration": "25 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Ostanite varni v spletu</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Opozorilni znaki prevar:</h4><ul class=\"space-y-2 text-red-700\"><li>• Nujna sporočila, ki zahtevajo denar</li><li>• Zahteve za gesla ali osebne podatke</li><li>• \"Zmagali ste\" sporočila, ki jih niste vnesli</li><li>• Sumljive povezave ali priloge</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Varno Namigi za brskanje:</h4><ul class=\"space-y-2\"><li>• V spletnih naslovih poiščite »https://«</li><li>• Prenesite samo iz uradnih trgovin z aplikacijami</li><li>• Posodabljajte svojo programsko opremo</li><li>• Uporabljajte močna, edinstvena gesla</li></ul></div></div>",
+            "keyPoints": [
+              "Nikoli ne dajajte osebnih podatkov neznancem",
+              "Če ste v dvomih, vprašajte osebo, ki ji zaupate",
+              "Legitimna podjetja ne bodo zahtevala gesel po e-pošti"
+            ],
+            "practiceExercise": "Prepoznajte 3 opozorilne znake spletnih prevar iz lekcije."
+          }
+        }
+      },
+      "intermediate": {
+        "title": "Povezovanje z družino in prijatelji",
+        "description": "Naučite se varno uporabljati družbene medije, video klice in pošiljanje sporočil.",
+        "estimatedTime": "3-4 ure",
+        "lessons": {
+          "videoCalls": {
+            "title": "Video klici z družino",
+            "description": "Povežite se iz oči v oči z ljubljenimi kjer koli",
+            "duration": "30 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Opravljanje video klicev</h3><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Priljubljene aplikacije za videoklice:</h4><ul class=\"space-y-2\"><li>• <strong>FaceTime</strong> (iPhone/iPad): Vgrajeno, zelo enostavno</li><li>• <strong>WhatsApp</strong>: Deluje na vseh telefonih</li><li>• <strong>Zoom</strong>: Odlično za skupinske klice</li><li>• <strong>Skype</strong>: Deluje na računalnikih in telefonih</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Pred vašim klicem:</h4><ul class=\"space-y-2\"><li>• Preverite internetno povezavo</li><li>• Poiščite dobro osvetlitev (obrnite se proti oknu)</li><li>• Preizkusite kamero in mikrofon</li><li>• Pripravite kontakt osebe</li></ul></div></div>",
+            "keyPoints": [
+              "Dobra osvetlitev naredi veliko razliko",
+              "Preizkusite svojo nastavitev pred pomembnimi klici",
+              "Večina aplikacij deluje podobno, ko se eno naučite"
+            ],
+            "practiceExercise": "Opravite testni video klic družinskemu članu ali prijatelju."
+          },
+          "socialMedia": {
+            "title": "Osnove družbenih medijev",
+            "description": "Povežite se s prijatelji in družino na Facebooku in drugih platformah",
+            "duration": "35 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Kako začeti z družbenimi mediji</h3><div class=\"bg-purple-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Osnove Facebooka:</h4><ul class=\"space-y-2\"><li>• Ustvarite profil s svojim pravim imenom</li><li>• Dodajte lepo slika profila</li><li>• Pošljite prošnje za prijateljstvo osebam, ki jih poznate</li><li>• Delite posodobitve, fotografije in spomine</li></ul></div><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Nastavitve zasebnosti:</h4><ul class=\"space-y-2\"><li>• Sprejmite samo prijatelje, ki jih dejansko poznate</li><li>• Nastavite objave na »Samo prijatelji«</li><li>• Ne delite osebnih podatkov javno</li><li>• Preglejte, kaj lahko drugi vidijo o vas</li></ul></div></div>",
+            "keyPoints": [
+              "Nastavitve zasebnosti so zelo pomembne",
+              "Povežite se le z ljudmi, ki jih poznate",
+              "Premislite, preden objavite - ostane na spletu"
+            ],
+            "practiceExercise": "Za objave nastavite nastavitve zasebnosti na »Samo prijatelji«."
+          }
+        }
+      },
+      "advanced": {
+        "title": "Mojstrstvo digitalnega življenja",
+        "description": "Napredne veščine za samozavestno digitalno življenje.",
+        "estimatedTime": "4-5 ur",
+        "lessons": {
+          "smartHome": {
+            "title": "Naprave za pametni dom",
+            "description": "Nadzorujte svoj dom z glasovnimi ukazi in aplikacijami",
+            "duration": "40 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Osnove pametnega doma</h3><div class=\"bg-indigo-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Priljubljene pametne naprave:</h4><ul class=\"space-y-2\"><li>• <strong>Pametni zvočniki</strong>: Alexa, Google Home</li><li>• <strong>Pametni termostati</strong>: nadzorujte temperaturo na daljavo</li><li>• <strong>Pametne luči</strong>: zatemnite, spremenite barve, nastavite urnike</li><li>• <strong>Pametni zvonci</strong>: poglejte, kdo je pred vrati</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Kako začeti:</h4><ul class=\"space-y-2\"><li>• Začnite z eno napravo za učenje</li><li>• Prenesite aplikacijo za napravo</li><li>• Sledite navodilom za nastavitev korak za korakom</li><li>• Vadite osnovne glasovne ukaze</li></ul></div></div>",
+            "keyPoints": [
+              "Začnite preprosto z eno napravo",
+              "Glasovni ukazi olajšajo življenje",
+              "Večina naprav ima uporabne aplikacije"
+            ],
+            "practiceExercise": "Če imate pametno napravo, vadite 3 različne glasovne ukaze."
+          },
+          "onlineBanking": {
+            "title": "Varnost spletnega bančništva",
+            "description": "Upravljajte svoje finance varno na spletu",
+            "duration": "45 min",
+            "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Varno spletno bančništvo</h3><div class=\"bg-red-50 p-4 rounded-lg border border-red-200\"><h4 class=\"font-medium mb-2 text-red-800\">Security Essentials:</h4><ul class=\"space-y-2 text-red-700\"><li>• Spletni naslov vaše banke vedno vnesite neposredno</li><li>• V brskalniku poiščite ikono ključavnice</li><li>• Nikoli ne bančite prek javnega omrežja Wi-Fi</li><li>• Ko končate, se popolnoma odjavite</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Kaj lahko storite Na spletu:</h4><ul class=\"space-y-2\"><li>• Preverite stanja na računu</li><li>• Oglejte si zgodovino transakcij</li><li>• Prenesite denar med računi</li><li>• Elektronsko plačujte račune</li></ul></div></div>",
+            "keyPoints": [
+              "Varnost je glavna prioriteta",
+              "Vaša banka ne bo nikoli zahtevala gesel po e-pošti",
+              "Spletno bančništvo je zelo priročno, če ga izvajate varno"
+            ],
+            "practiceExercise": "Obiščite spletno mesto svoje banke in vadite prijavo (ne izvajajte še nobenih transakcij)."
+          }
+        }
+      }
+    },
+    "assessment": {
+      "questions": {
+        "0": {
+          "question": "Kako udobno vam je prižiganje in izklapljanje računalnika ali telefona?",
+          "options": {
+            "0": "Nikoli tega nisem naredil",
+            "1": "Vsakič potrebujem pomoč",
+            "2": "Včasih lahko",
+            "3": "Zelo udobno"
+          }
+        },
+        "1": {
+          "question": "Kako pogosto uporabljate internet?",
+          "options": {
+            "0": "Nikoli",
+            "1": "Redko",
+            "2": "včasih",
+            "3": "Dnevno"
+          }
+        },
+        "2": {
+          "question": "Ste že kdaj poslali e-pošto?",
+          "options": {
+            "0": "Nikoli",
+            "1": "Z veliko pomoči",
+            "2": "Nekajkrat",
+            "3": "Redno"
+          }
+        },
+        "3": {
+          "question": "Kako udobno se počutite pri nalaganju aplikacij?",
+          "options": {
+            "0": "Nikoli poskusil",
+            "1": "Zelo nervozen",
+            "2": "S pomočjo",
+            "3": "Samozavesten"
+          }
+        },
+        "4": {
+          "question": "Ali uporabljate video klice (FaceTime, Zoom itd.)?",
+          "options": {
+            "0": "Nikoli",
+            "1": "Poskusil enkrat",
+            "2": "včasih",
+            "3": "Redno"
+          }
+        },
+        "5": {
+          "question": "Kako se vam zdi spletno nakupovanje?",
+          "options": {
+            "0": "Preveč strašljivo",
+            "1": "Zelo nervozen",
+            "2": "Pripravljen poskusiti",
+            "3": "Pogosto nakupujte prek spleta"
+          }
+        },
+        "6": {
+          "question": "Ste uporabljali družbena omrežja (Facebook itd.)?",
+          "options": {
+            "0": "Nikoli",
+            "1": "Pogledal sem ga",
+            "2": "Imeti račun",
+            "3": "Uporabljajte ga redno"
+          }
+        },
+        "7": {
+          "question": "Kako zadovoljni ste z gesli?",
+          "options": {
+            "0": "Zelo zmeden",
+            "1": "Potrebujem pomoč",
+            "2": "Razumeti osnove",
+            "3": "Upravljajte jih dobro"
+          }
+        },
+        "8": {
+          "question": "Ali varnostno kopirate svoje fotografije in datoteke?",
+          "options": {
+            "0": "Ne vem kako",
+            "1": "Nekdo mi pomaga",
+            "2": "včasih",
+            "3": "Redno"
+          }
+        },
+        "9": {
+          "question": "Kako se učite nove tehnologije?",
+          "options": {
+            "0": "Izogibajte se temu",
+            "1": "Prosite za pomoč",
+            "2": "Previdno poskusite",
+            "3": "Samozavestno raziskujte"
+          }
+        }
+      }
+    }
+  },
+  "avatar": {
+    "enable": "Omogoči AI Avatar",
+    "disable": "Onemogoči Avatar",
+    "loading": "Nalaganje avatarja ...",
+    "mute": "Utišaj avatarja",
+    "unmute": "Vklopi zvok Avatarja",
+    "settings": "Nastavitve Avatarja",
+    "fullscreen": "Cel zaslon",
+    "exitFullscreen": "Izhod iz celotnega zaslona",
+    "performance": {
+      "high": "Visoka kakovost",
+      "medium": "Srednja kakovost",
+      "low": "Nizka kakovost",
+      "off": "Avatar izklopljen"
+    },
+    "error": {
+      "loadFailed": "Nalaganje avatarja ni uspelo. prosim poskusite ponovno",
+      "noWebGL": "Vaša naprava ne podpira 3D grafike.",
+      "audioFailed": "Ni bilo mogoče dostopati do mikrofona za sinhronizacijo ustnic."
+    },
+    "status": {
+      "initializing": "Zagon avatarja ...",
+      "ready": "Pripravljen pomagati",
+      "thinking": "Razmišljam ...",
+      "speaking": "govorim ...",
+      "listening": "Poslušanje ...",
+      "celebrating": "Z veseljem pomagam!",
+      "error": "Nekaj ​​je šlo narobe",
+      "processing": "Obdelava zvoka ...",
+      "lipSyncActive": "Sinhronizacija ustnic je aktivna",
+      "lipSyncInactive": "Sinhronizacija ustnic je neaktivna"
+    },
+    "greeting": {
+      "morning": "Dobro jutro, {{name}}! Ste pripravljeni, da se danes naučite nekaj novega?",
+      "afternoon": "Dober dan, {{name}}! Kako ti lahko danes pomagam?",
+      "evening": "Dober večer, {{name}}! Kaj bi radi raziskali?"
+    },
+    "companion": {
+      "title": "Vaš AI pomočnik",
+      "ready": "Tukaj sem, da vam pomagam s tehnologijo!"
+    },
+    "actions": {
+      "chat": "Klepetajte",
+      "voice": "Glas",
+      "camera": "Kamera",
+      "help": "pomoč"
+    },
+    "suggestions": {
+      "title": "Hitra vprašanja"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Kako se povežem z WiFi?",
+    "makeTextBigger": "Kako povečam besedilo na zaslonu?",
+    "takeScreenshot": "Kako naredim posnetek zaslona?",
+    "videoCall": "Kako opravim video klic?",
+    "iphoneSettings": "Kako spremenim nastavitve za iPhone?",
+    "androidSettings": "Kako spremenim nastavitve za Android?",
+    "windowsSettings": "Kako spremenim nastavitve sistema Windows?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Kako ti lahko danes pomagam?",
+      "subtitle": "Vprašajte me karkoli o tehnologiji!"
+    },
+    "input": {
+      "placeholder": "Pomočnik za sporočila AI ...",
+      "helper": "Pritisnite Enter za pošiljanje, Shift+Enter za novo vrstico"
+    },
+    "greeting": {
+      "morning": "dobro jutro",
+      "afternoon": "dober dan",
+      "evening": "dober večer"
+    },
+    "error": {
+      "general": "Oprostite, trenutno imam težave. Poskusite znova čez trenutek."
+    }
+  },
+  "flashcards": {
+    "title": "Vodnik po korakih",
+    "progress": "Korak {{current}} od {{total}}",
+    "instructions": "Navodila:",
+    "markCompleted": "Označi kot dokončano"
+  },
+  "dataPortability": {
+    "title": "Prenosljivost podatkov in pravice uporabnikov",
+    "tabs": {
+      "overview": "Pregled",
+      "sharing": "Skupna raba podatkov",
+      "export": "Izvoz podatkov",
+      "delete": "Izbriši podatke",
+      "ai": "Transparentnost AI"
+    },
+    "overview": {
+      "title": "Vaše pravice do podatkov",
+      "description": "Imate popoln nadzor nad svojimi osebnimi podatki. Svoje podatke si lahko ogledate, izvozite, popravite ali izbrišete kadar koli v 30 dneh.",
+      "dataWeCollect": "Podatki, ki jih zbiramo",
+      "profileInfo": "Podatki o profilu (ime, e-pošta, nastavitve)",
+      "learningProgress": "Učni napredek in dosežki",
+      "aiHistory": "Zgodovina pogovorov AI",
+      "analytics": "Analitika uporabe (anonimizirana)",
+      "howWeUse": "Kako uporabljamo vaše podatke",
+      "personalized": "Zagotovite prilagojeno učno izkušnjo",
+      "improveAI": "Izboljšajte odzive pomočnika AI",
+      "trackProgress": "Spremljajte svoj napredek in dosežke",
+      "security": "Zagotovite varnost in zmogljivost platforme",
+      "rightsTitle": "Vaše pravice v skladu z GDPR in CCPA",
+      "rightAccess": "Pravica do dostopa:",
+      "accessDesc": "Oglejte si vse svoje osebne podatke",
+      "rightPortability": "Pravica do prenosljivosti:",
+      "portabilityDesc": "Izvozite svoje podatke",
+      "rightRectification": "Pravica do popravka:",
+      "rectificationDesc": "Popravi netočne podatke",
+      "rightErasure": "Pravica do izbrisa:",
+      "erasureDesc": "Izbrišite svoje osebne podatke"
+    },
+    "sharing": {
+      "title": "Nastavitve skupne rabe podatkov",
+      "description": "Nadzirajte, kako se vaši podatki delijo in uporabljajo. Vsa skupna raba ni obvezna in jo je mogoče kadar koli spremeniti.",
+      "dataTypes": "Skupna raba vrste podatkov",
+      "thirdParty": "Skupna raba tretjih oseb",
+      "special": "Posebne kategorije",
+      "analytics": "Skupna raba analitike",
+      "analyticsDesc": "Delite anonimizirane podatke o uporabi za izboljšanje platforme",
+      "research": "Skupna raba raziskav",
+      "researchDesc": "Prispevajte anonimizirane podatke k raziskavam o izobraževanju starejših"
+    },
+    "export": {
+      "title": "Izvozite svoje podatke",
+      "description": "Prenesite kopijo vseh svojih osebnih podatkov. Vaše podatke bomo pripravili in vam v 30 dneh poslali povezavo za prenos.",
+      "chooseFormat": "Izberite Format izvoza",
+      "included": "Kaj je vključeno:",
+      "profile": "Informacije o profilu in nastavitve",
+      "progress": "Učni napredek in dosežki",
+      "conversations": "Zgodovina pogovorov AI",
+      "support": "Zgodovina vstopnic za podporo",
+      "consent": "Nastavitve soglasja in zasebnosti",
+      "request": "Zahtevaj izvoz podatkov",
+      "requesting": "Zahtevam izvoz ...",
+      "requests": "Izvozne zahteve",
+      "requested": "Zahtevano",
+      "download": "Prenos"
+    },
+    "delete": {
+      "title": "Izbrišite svoje podatke",
+      "description": "Trajno izbrišite vse svoje osebne podatke. Tega dejanja ni mogoče razveljaviti in vaš račun bo zaprt v 30 dneh.",
+      "whatDeleted": "Kaj bo izbrisano:",
+      "profile": "Vaš profil in podatki o računu",
+      "progress": "Ves učni napredek in dosežki",
+      "conversations": "Zgodovina pogovorov AI",
+      "preferences": "Nastavitve in nastavitve",
+      "analytics": "Analitika uporabe, povezana z vašim računom",
+      "important": "Pomembne opombe:",
+      "legal": "Nekateri podatki se lahko obdržijo zaradi zakonske skladnosti (podporne vozovnice, evidence obračunov)",
+      "research": "Anonimizirani podatki, ki se uporabljajo za raziskave, se lahko obdržijo",
+      "verification": "Pred izbrisom boste prejeli potrditev po e-pošti",
+      "timeframe": "Brisanje bo končano v 30 dneh",
+      "request": "Zahtevaj izbris podatkov",
+      "confirm": "Ali ste prepričani, da želite izbrisati vse svoje podatke?",
+      "type": "Vnesite \"IZBRIŠI MOJE PODATKE\", da potrdite to dejanje:",
+      "placeholder": "Vnesite IZBRIŠI MOJE PODATKE",
+      "confirmButton": "Potrdite izbris",
+      "processing": "Obdelava ...",
+      "cancel": "Prekliči",
+      "requests": "Zahteve za izbris",
+      "complete": "Popolni izbris podatkov",
+      "requested": "Zahtevano",
+      "scheduled": "Načrtovano",
+      "awaitingVerification": "Čakanje na preverjanje"
+    },
+    "ai": {
+      "title": "Transparentnost uporabe podatkov AI",
+      "description": "Oglejte si, kako točno vaše podatke uporablja naš pomočnik za umetno inteligenco, in nadzirajte svoje nastavitve podatkov o umetni inteligenci.",
+      "stats": "Statistika uporabe podatkov AI",
+      "conversationsAnalyzed": "Analizirani pogovori:",
+      "dataPoints": "Uporabljene podatkovne točke:",
+      "trainingContribution": "Prispevek k usposabljanju:",
+      "lastProcessed": "Nazadnje obdelano:",
+      "optOut": "Možnosti zavrnitve AI",
+      "stopTraining": "Ustavite usposabljanje AI",
+      "stopTrainingDesc": "Preprečite, da bi vaši podatki izboljšali odzive AI",
+      "deleteHistory": "Izbriši zgodovino pogovorov",
+      "deleteHistoryDesc": "Odstranite vse shranjene pogovore AI",
+      "anonymize": "Anonimiziraj moje podatke",
+      "anonymizeDesc": "Pretvori podatke v anonimno obliko"
+    }
+  },
+  "tips": {
+    "connectWifi": "Povežite se z Wi-Fi",
+    "connectWifiDesc": "Pojdite na splet varno in enostavno",
+    "videoCall": "Opravite video klic",
+    "videoCallDesc": "Povežite se z družino iz oči v oči",
+    "screenshot": "Naredite posnetek zaslona",
+    "screenshotDesc": "Posnemite, kar je na vašem zaslonu",
+    "updateApps": "Posodobite svoje aplikacije",
+    "updateAppsDesc": "Naj bodo vaše aplikacije posodobljene in varne"
+  },
+  "category": {
+    "internet": "Internet",
+    "communication": "Komunikacija",
+    "basicSkills": "Osnovne spretnosti",
+    "maintenance": "Vzdrževanje"
+  },
+  "questions": {
+    "makeTextBigger": "Kako povečam besedilo?",
+    "connectWifi": "Kako se povežem z Wi-Fi?",
+    "takeScreenshot": "Kako naredim posnetek zaslona?",
+    "makeVideoCall": "Kako opravim video klic?",
+    "backupPhotos": "Kako varnostno kopiram svoje fotografije?",
+    "updateApps": "Kako posodobim svoje aplikacije?",
+    "onlineBanking": "Kako varno uporabljam spletno bančništvo?",
+    "joinZoom": "Kako se pridružim sestanku Zoom?"
+  },
+  "achievements": {
+    "gettingStarted": "Kako začeti",
+    "gettingStartedDesc": "Zastavil vaše prvo vprašanje",
+    "questionExplorer": "Raziskovalec vprašanj",
+    "questionExplorerDesc": "Postavil 5 vprašanj",
+    "stepMaster": "Mojster korakov",
+    "stepMasterDesc": "Opravljenih 25 korakov"
+  },
+  "stats": {
+    "seniorsHelped": "Starejši so pomagali",
+    "questionsAnswered": "Odgovori na vprašanja",
+    "successRate": "Stopnja uspešnosti",
+    "alwaysAvailable": "Vedno na voljo"
+  },
+  "time": {
+    "now": "Pravkar",
+    "hourAgo": "pred 1 uro",
+    "hoursAgo": "Pred {{count}} urami",
+    "dayAgo": "pred 1 dnevom",
+    "daysAgo": "pred {{count}} dnevi"
+  },
+  "voice": {
+    "startInput": "Začni glasovni vnos",
+    "stopRecording": "Ustavi snemanje",
+    "processing": "Obdelava ...",
+    "recognized": "Glas prepoznan",
+    "failed": "Glasovni vnos ni uspel"
+  },
+  "language": {
+    "select": "Izberite Jezik",
+    "translate": "Prevajaj",
+    "translating": "Prevajanje ...",
+    "detecting": "Zaznavanje jezika ...",
+    "error": "Prevod ni uspel"
+  },
+  "languageSelector": {
+    "choosePrompt": "Izberite želeni jezik"
+  },
+  "auth": {
+    "backToHome": "Nazaj na dom",
+    "createAccount": "Ustvari račun",
+    "welcomeBack": "Dobrodošli nazaj",
+    "joinFamily": "Pridružite se naši družini opolnomočenih starejših",
+    "welcomeBackDesc": "Prijavite se, če želite nadaljevati svojo tehnično pot",
+    "email": "E-poštni naslov",
+    "emailPlaceholder": "Vnesite vaš email",
+    "password": "Geslo",
+    "passwordPlaceholder": "Vnesite vaše geslo",
+    "confirmPassword": "Potrdite geslo",
+    "confirmPasswordPlaceholder": "Potrdite svoje geslo",
+    "passwordsNoMatch": "Gesli se ne ujemata",
+    "passwordTooShort": "Geslo mora imeti vsaj 6 znakov",
+    "creatingAccount": "Ustvarjanje računa ...",
+    "signingIn": "Prijava ...",
+    "alreadyHaveAccount": "Že imate račun? Prijavite se",
+    "dontHaveAccount": "Nimate računa? Prijavite se"
+  },
+  "error": {
+    "askQuestionFirst": "Najprej postavite vprašanje",
+    "couldntGetAnswer": "Oprostite, trenutno nisem mogel dobiti odgovora. prosim poskusite ponovno",
+    "notifications": {
+      "dismiss": "Odpusti"
+    }
+  },
+  "learningPage": {
+    "startOrContinueCourse": "Začnite ali nadaljujte s tečajem",
+    "progressLabel": "Napredek",
+    "completedOutOfTotal": "{{completed}} od {{total}} dokončanih",
+    "lessonsHeader": "Lekcije",
+    "moduleTimeLabel": "Čas:",
+    "lessonContentPlaceholder": "Za {{lessonTitle}} še ni na voljo nobene vsebine.",
+    "loadingCenter": "Nalaganje učnega centra ...",
+    "progressComplete": "{{value}} % dokončano",
+    "noPathsAvailable": "Učne poti niso na voljo.",
+    "featuresGridTitle": "Lastnosti",
+    "heroTitle": "Dobrodošli v izobraževalnem centru",
+    "heroSubtitle": "Tečaji po korakih, interaktivne predstavitve in praktične spretnosti za vsakogar.",
+    "recommendedStart": "Priporočen začetek",
+    "loadingPaths": "Nalaganje tečajev ...",
+    "moduleListTitle": "Lekcije v {{pathTitle}}:",
+    "noLessonAvailable": "Lekcija ni na voljo.",
+    "retakeAssessment": "Ponovno opravite ocenjevanje spretnosti"
+  },
+  "courseView": {
+    "previousLesson": "Prejšnja lekcija",
+    "nextLesson": "Naslednja lekcija",
+    "markAsComplete": "Označi kot dokončano",
+    "completed": "Dokončano",
+    "reviewLesson": "Pregled lekcije",
+    "startLesson": "Začni lekcijo",
+    "removeBookmark": "Odstrani zaznamek",
+    "addBookmark": "Dodaj zaznamek",
+    "congratulations": "čestitke!",
+    "courseComplete": "Zaključili ste tečaj: {{courseTitle}}.",
+    "downloadCertificate": "Prenesite potrdilo"
+  },
+  "lessonView": {
+    "readAloud": "Preberi lekcijo na glas",
+    "interactiveDemoHeader": "Interaktivna predstavitev",
+    "practiceExerciseHeader": "Vaja Vaja",
+    "markAsComplete": "Označi kot dokončano",
+    "repeatLesson": "Ponovi lekcijo",
+    "keyPointsHeader": "Ključne točke",
+    "takeItWithYouHeader": "Vzemite ga s seboj",
+    "downloadSummaryButton": "Prenesi povzetek",
+    "downloadSummaryDescription": "Pridobite povzetek te lekcije za tiskanje",
+    "needHelpHeader": "Potrebujete pomoč?",
+    "askAQuestionButton": "Postavite vprašanje",
+    "chatWithHelperButton": "Klepetajte s pomočnikom"
+  },
+  "privacyPolicy": {
+    "headerTitle": "Politika zasebnosti",
+    "pageTitle": "Politika zasebnosti",
+    "lastUpdated": "Zadnja posodobitev: {{date}}",
+    "ourPromise": {
+      "title": "Naša obljuba vam",
+      "text": "Pri Senior Tech Helper se zavedamo, da je vaša zasebnost dragocena. Zavezani smo varovanju vaših osebnih podatkov in zagotavljanju popolne preglednosti glede njihove uporabe. Ta pravilnik vse pojasnjuje v preprostem in jasnem jeziku."
+    },
+    "cookies": {
+      "title": "Kako uporabljamo piškotke",
+      "whatAreCookiesTitle": "Kaj so piškotki?",
+      "whatAreCookiesText": "Piškotki so majhne besedilne datoteke, ki nam pomagajo zapomniti vaše nastavitve in izboljšati vašo izkušnjo. Pomislite nanje kot na zaznamke, ki nam pomagajo zapomniti, kje ste končali.",
+      "weUseCookiesForTitle": "Piškotke uporabljamo SAMO, da vam pomagamo:",
+      "uses": [
+        "Zapomnite si svoje nastavitve: velikost besedila, glasovne nastavitve in možnosti dostopnosti, ki ste jih izbrali",
+        "Naj ostanete prijavljeni: tako vam ni treba vsakič vnesti gesla",
+        "Izboljšajte našo pomoč: Razumevanje, katere funkcije so najbolj koristne za starejše, kot ste vi"
+      ],
+      "whatWeDontDoTitle": "Česa NE DELAMO s piškotki:",
+      "donts": [
+        "Spremlja vas na drugih spletnih mestih",
+        "Prodajte svoje podatke komurkoli",
+        "Delite svoje podatke z oglaševalci",
+        "Uporabite jih v marketinške namene"
+      ]
+    },
+    "informationCollected": {
+      "title": "Katere podatke zbiramo",
+      "youGiveUsTitle": "Informacije, ki nam jih posredujete:",
+      "youGiveUsList": [
+        "Vaše ime in e-poštni naslov",
+        "Vrsta vaše naprave (iPhone, Windows itd.)",
+        "Raven vaše tehnične izkušnje",
+        "Vaše nastavitve dostopnosti",
+        "Vprašanja, ki jih postavite našemu AI pomočniku"
+      ],
+      "weCollectTitle": "Podatki, ki jih samodejno zbiramo:",
+      "weCollectList": [
+        "Kako uporabljate našo aplikacijo (katere funkcije najbolj pomagajo)",
+        "Tehnični podatki (vrsta brskalnika, naprava)",
+        "Poročila o napakah (za hitro odpravljanje težav)"
+      ]
+    },
+    "howWeProtect": {
+      "title": "Kako varujemo vaše podatke",
+      "protections": [
+        "Šifriranje: Vsi vaši podatki so šifrirani (kodirani), tako da jih lahko beremo samo mi",
+        "Varni strežniki: vaši podatki so shranjeni na zaščitenih strežnikih profesionalnega razreda",
+        "Omejen dostop: do vaših podatkov lahko dostopajo samo člani naše ekipe",
+        "Redni varnostni pregledi: nenehno spremljamo morebitne varnostne grožnje"
+      ]
+    },
+    "sharingInformation": {
+      "title": "Deljenje vaših podatkov",
+      "neverSell": "NIKOLI ne bomo prodali ali dali v najem vaših osebnih podatkov.",
+      "onlyShareInSituations": "Vaše podatke delimo samo v teh zelo omejenih primerih:",
+      "sharingSituations": [
+        "Z vašim dovoljenjem: Če nas izrecno prosite, da nekaj delimo",
+        "Za tehnično podporo: Z zaupanja vrednimi ponudniki storitev, ki nam pomagajo zagnati aplikacijo (zavezujejo jih stroge pogodbe o zasebnosti)",
+        "Če to zahteva zakonodaja: samo, če to od nas zahteva zakon"
+      ]
+    },
+    "yourRights": {
+      "title": "Vaše pravice in izbire",
+      "youCanAlwaysTitle": "Vedno lahko:",
+      "rightsList": [
+        "Poglejte, katere podatke imamo o vas",
+        "Prosite nas, da popravimo napačne podatke",
+        "Zahtevajte, da izbrišemo vaš račun in podatke",
+        "V nastavitvah brskalnika izklopite piškotke",
+        "Za kakršna koli vprašanja glede zasebnosti nas kontaktirajte"
+      ],
+      "noteDeletingCookiesTitle": "Opomba o brisanju piškotkov:",
+      "noteDeletingCookiesText": "Če izbrišete naše piškotke, boste morali znova nastaviti svoje nastavitve in nekatere funkcije morda ne bodo delovale dobro."
+    },
+    "thirdPartyServices": {
+      "title": "Storitve tretjih oseb",
+      "weUseTrustedServices": "Za zagotavljanje naših funkcij uporabljamo nekatere zaupanja vredne storitve tretjih oseb:",
+      "servicesList": [
+        "Google AI (Gemini): Poganja našega AI pomočnika, ki odgovarja na vaša vprašanja",
+        "Firebase: Varno shranjuje podatke o vašem računu",
+        "YouTube/izobraževalna spletna mesta: morda priporočamo uporabne videoposnetke in članke"
+      ],
+      "servicesOwnPolicies": "Te storitve imajo svoje pravilnike o zasebnosti in delimo le minimalne podatke, ki so potrebni za njihovo delovanje."
+    },
+    "changesToPolicy": {
+      "title": "Spremembe tega pravilnika",
+      "text": "Če bomo morali posodobiti ta pravilnik o zasebnosti, vas bomo obvestili po e-pošti in prikazali obvestilo v aplikaciji. Vedno bomo v preprostem in jasnem jeziku razložili, kaj se spreminja in zakaj."
+    },
+    "contactUs": {
+      "title": "Kontaktirajte nas",
+      "questions": "Imate vprašanja o vaši zasebnosti ali tej politiki? Ekipa TechStep je tukaj, da vam pomaga!",
+      "email": "E-pošta: privacy@techstep.com",
+      "phone": "Telefon: 1-800-TECH-HELP (1-800-832-4435)",
+      "mailLine1": "Pošta: skupina za zasebnost TechStep",
+      "mailLine2": "123 Tehnična podpora Lane",
+      "mailLine3": "Ustrežljivo mesto, HC 12345"
+    },
+    "footer": {
+      "thankYou": "Hvala, ker ste podjetju TechStep zaupali svoje podatke. Zavezani smo k temu, da ga bomo varovali in ga uporabljali le za pomoč pri uspehu s tehnologijo.",
+      "backToHome": "Nazaj na dom"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Izberite način komuniciranja",
+    "tabs": {
+      "chat": "Klepetajte",
+      "voice": "Glas",
+      "image": "Slika",
+      "chatAria": "Vnos besedilnega klepeta",
+      "voiceAria": "Glasovni vnos",
+      "imageAria": "Vnos slike"
+    },
+    "chat": {
+      "placeholder": "Tukaj vnesite svoje vprašanje ... Za pošiljanje pritisnite Enter",
+      "ariaLabel": "Vnesite svoje vprašanje",
+      "sendButton": "Pošlji sporočilo",
+      "send": "Pošlji"
+    },
+    "voice": {
+      "recording": "Snemanje ... Tapnite za ustavitev",
+      "processing": "Obdelava vašega glasu ...",
+      "instructions": "Tapnite mikrofon, da začnete snemati",
+      "startRecording": "Začnite snemati",
+      "stopRecording": "Ustavi snemanje"
+    },
+    "image": {
+      "takePhoto": "Posnemite fotografijo",
+      "camera": "Posnemi fotografijo",
+      "upload": "Naloži sliko",
+      "uploadAria": "Izberite slikovno datoteko",
+      "instructions": "Delite fotografijo in pomagal vam bom razložiti, kaj vidite",
+      "formats": "Podpira JPG, PNG, GIF (največ 10 MB)",
+      "previewAlt": "Predogled izbrane slike",
+      "remove": "Odstrani sliko",
+      "contextLabel": "Kaj bi radi vedeli o tej sliki?",
+      "contextPlaceholder": "Izbirno: postavite določeno vprašanje o sliki",
+      "cancel": "Prekliči",
+      "submit": "Pošlji sliko",
+      "send": "Pošlji",
+      "invalidType": "Izberite veljavno slikovno datoteko.",
+      "tooLarge": "Slikovna datoteka je prevelika. Izberite datoteko manjšo od 10 MB.",
+      "cameraError": "Ni bilo mogoče dostopati do kamere. Preverite dovoljenja."
+    }
+  },
+  "ai": {
+    "title": "AI pomočnik",
+    "subtitle": "Tukaj, da vam pomagam pri učenju",
+    "emergency": "Podpora v sili",
+    "emergencyAria": "Poiščite nujno podporo",
+    "expand": "Razširi",
+    "minimize": "Zmanjšaj",
+    "close": "Zaprite AI Assistant",
+    "thinking": "AI razmišlja ...",
+    "escalated": "Zdaj ste povezani z našo skupino za podporo",
+    "callSupport": "Pokličite podporo: 1-800-SENIOR-HELP",
+    "minimized": "AI pomočnik",
+    "welcome": {
+      "tutorial": "pozdravljena Vidim, da delate na \"{{tutorial}}\". Tukaj sem, da vam pomagam pri kakršnih koli vprašanjih. Lahko tipkate, govorite ali mi prikazujete slike – karkoli se vam zdi najbolj udobno!",
+      "general": "pozdravljena Sem vaš pomočnik AI, tukaj, da vam pomagam pri učenju tehnologije korak za korakom. Vprašanja mi lahko postavljate tako, da vnašate, govorite ali mi prikazujete slike. Kaj bi radi vedeli?"
+    },
+    "error": {
+      "general": "Oprostite, trenutno imam težave. Naj vas povežem z našo ekipo za podporo, ki vam lahko takoj pomaga."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Forum skupnosti",
+      "subtitle": "Povežite se z drugimi učenci, postavljajte vprašanja in delite svoje izkušnje",
+      "backToHome": "Nazaj na dom",
+      "newPost": "Nova objava"
+    },
+    "sidebar": {
+      "categories": "kategorije",
+      "topics": {
+        "all": "Vse teme",
+        "general": "Splošna pomoč",
+        "mobile": "Mobilne naprave",
+        "computer": "Računalniki",
+        "apps": "Aplikacije in programska oprema",
+        "internet": "Internet in e-pošta",
+        "safety": "Spletna varnost"
+      },
+      "guidelines": {
+        "title": "Smernice skupnosti",
+        "items": [
+          "Bodite spoštljivi in ​​prijazni",
+          "Brez neželene ali neprimerne vsebine",
+          "Pomagajte drugim, ko lahko",
+          "Ostanite pri temi",
+          "Prijavite morebitne težave"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Iskanje objav ..."
+    },
+    "createPost": {
+      "title": "Ustvari novo objavo",
+      "categoryLabel": "Kategorija",
+      "titleLabel": "Naslov",
+      "contentLabel": "Vsebina",
+      "titlePlaceholder": "Kakšno je vaše vprašanje ali tema?",
+      "contentPlaceholder": "Opišite svoje vprašanje ali delite svoje misli ...",
+      "submit": "Objavi",
+      "cancel": "Prekliči",
+      "profanityAlert": "Vaša objava vsebuje neprimerno vsebino. Prosimo, popravite in poskusite znova."
+    },
+    "posts": {
+      "empty": "Ni objav. Bodite prvi, ki bo začel pogovor!",
+      "replies": "{{count}} odgovorov",
+      "timeAgo": {
+        "justNow": "Pravkar",
+        "oneHour": "pred 1 uro",
+        "hours": "Pred {{count}} urami",
+        "oneDay": "pred 1 dnevom",
+        "days": "pred {{count}} dnevi"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktirajte nas",
+    "subtitle": "Radi bi slišali vaše mnenje! Pošljite nam sporočilo in odgovorili vam bomo v najkrajšem možnem času.",
+    "backToHome": "Nazaj na dom",
+    "form": {
+      "fasterResponse": "📧 Na ta obrazec bomo odgovorili hitreje kot na druge kontaktne metode!",
+      "name": "Polno ime *",
+      "namePlaceholder": "Vnesite svoje polno ime",
+      "email": "E-poštni naslov *",
+      "emailPlaceholder": "Vnesite svoj elektronski naslov",
+      "subject": "Zadeva *",
+      "subjectPlaceholder": "Izberite predmet",
+      "subjects": {
+        "general": "Splošna poizvedba",
+        "techSupport": "Tehnična podpora",
+        "account": "Pomoč za račun",
+        "feature": "Zahteva po funkciji",
+        "bug": "Poročilo o napaki",
+        "feedback": "Povratne informacije",
+        "other": "drugo"
+      },
+      "message": "sporočilo *",
+      "messagePlaceholder": "Podrobno opišite svoje povpraševanje ...",
+      "submit": "Pošlji sporočilo",
+      "sending": "Pošiljanje ...",
+      "success": "Vaš e-poštni odjemalec bi se moral odpreti. Če ne, kopirajte informacije in nam neposredno pošljite e-pošto.",
+      "error": "Prišlo je do napake. Prosimo, pišite nam neposredno na taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Stopite v stik",
+      "emailLabel": "E-pošta",
+      "responseData": "Običajno odgovorimo v 24 urah"
+    },
+    "reasons": {
+      "title": "Zakaj kontaktirati nas?",
+      "items": [
+        "Poiščite pomoč pri tehničnih težavah",
+        "Zahtevajte nove funkcije",
+        "Delite povratne informacije in predloge",
+        "Prijavite napake ali težave",
+        "Splošna vprašanja"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Pogoji storitve",
+    "backToHome": "Nazaj na dom",
+    "lastUpdated": "Zadnja posodobitev: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Sprejem pogojev",
+        "content": "Z dostopom in uporabo naše storitve sprejemate in se strinjate, da vas zavezujejo pogoji in določbe te pogodbe."
+      },
+      "license": {
+        "title": "Uporabite licenco",
+        "content": "Dovoljenje je odobreno za začasno uporabo naše storitve samo za osebno, nekomercialno prehodno gledanje."
+      },
+      "conduct": {
+        "title": "Ravnanje uporabnika",
+        "content": "Strinjate se, da boste našo storitev uporabljali na način, ki je skladen z vsemi veljavnimi zakoni in predpisi ter v skladu s temi pogoji."
+      },
+      "liability": {
+        "title": "Omejitev odgovornosti",
+        "content": "V nobenem primeru naše podjetje ali njegovi dobavitelji ne bodo odgovorni za kakršno koli škodo, ki bi nastala zaradi uporabe ali nezmožnosti uporabe naše storitve."
+      },
+      "contact": {
+        "title": "Kontaktni podatki",
+        "content": "Če imate kakršna koli vprašanja o teh pogojih storitve, nas kontaktirajte na:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Izjava o dostopnosti",
+    "subtitle": "Zavezani smo k temu, da bo naša platforma dostopna vsem, ne glede na sposobnosti ali tehnologijo.",
+    "backToHome": "Nazaj na dom",
+    "commitment": {
+      "title": "Naša zaveza",
+      "content": "Verjamemo, da mora biti tehnologija dostopna vsem. Naša platforma je zasnovana z mislijo na starejše in vključuje funkcije, ki omogočajo lažjo in udobnejšo učno tehnologijo za uporabnike vseh sposobnosti."
+    },
+    "features": {
+      "title": "Funkcije dostopnosti",
+      "visual": {
+        "title": "Vizualna dostopnost",
+        "items": [
+          "Barvne sheme z visokim kontrastom",
+          "Velike, berljive pisave",
+          "Združljivost bralnika zaslona",
+          "Podpora za navigacijo s tipkovnico",
+          "Nadomestno besedilo za slike"
+        ]
+      },
+      "audio": {
+        "title": "Zvočna dostopnost",
+        "items": [
+          "Podnapisi za videoposnetke",
+          "Zvočni opisi",
+          "Kontrole glasnosti",
+          "Vizualni indikatorji za zvočne znake",
+          "Besedilne alternative zvočnim vsebinam"
+        ]
+      },
+      "motor": {
+        "title": "Motorna dostopnost",
+        "items": [
+          "Velika območja, ki jih je mogoče klikniti",
+          "Navigacija samo s tipkovnico",
+          "Nastavljive časovne omejitve",
+          "Združljivost glasovnega upravljanja",
+          "Poenostavljene interakcije"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitivna dostopnost",
+        "items": [
+          "Preprost, jasen jezik",
+          "Dosledna navigacija",
+          "Zmanjšane možnosti gibanja",
+          "Jasna navodila",
+          "Preprečevanje in obnovitev napak"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Skladnost s standardi",
+      "content": "Naša platforma želi biti v skladu s standardi AA ravni 2.1 Smernice za dostopnost spletne vsebine (WCAG). Svojo platformo redno testiramo s podpornimi tehnologijami in izvajamo revizije dostopnosti."
+    },
+    "feedback": {
+      "title": "Povratne informacije in podpora",
+      "content": "Nenehno si prizadevamo izboljšati dostopnost. Če naletite na kakršne koli ovire ali imate predloge za izboljšave, ne oklevajte in nas kontaktirajte.",
+      "emailLabel": "E-pošta",
+      "subjectLabel": "Predmet",
+      "subjectValue": "Povratne informacije o dostopnosti"
+    },
+    "assistive": {
+      "title": "Podporne tehnologije",
+      "content": "Naša platforma je zasnovana za delo z običajnimi podpornimi tehnologijami, vključno z:",
+      "items": [
+        "Bralniki zaslona (JAWS, NVDA, VoiceOver)",
+        "Programska oprema za prepoznavanje glasu",
+        "Orodja za povečavo zaslona",
+        "Alternativne tipkovnice",
+        "Preklopite navigacijske naprave",
+        "Sistemi za sledenje očem"
+      ]
+    },
+    "help": {
+      "title": "Potrebujete pomoč?",
+      "content": "Če potrebujete pomoč pri uporabi naše platforme ali imate vprašanja v zvezi z dostopnostjo, smo tukaj, da vam pomagamo.",
+      "contact": "Obrnite se na podporo"
+    },
+    "lastUpdated": "Zadnja posodobitev: {{date}}"
+  },
+  "assessmentView": {
+    "headerTitle": "Ocenjevanje spretnosti",
+    "questionProgress": "Vprašanje {{current}} od {{total}}",
+    "skipAssessment": "Preskoči ocenjevanje",
+    "chooseBestOption": "Izberite možnost, ki vas najbolje opisuje"
+  }
 }

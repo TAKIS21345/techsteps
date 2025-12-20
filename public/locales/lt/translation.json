@@ -8,7 +8,8 @@
       "firstNamePlaceholder": "Jūsų vardas",
       "lastName": "Pavardė",
       "lastNamePlaceholder": "Jūsų pavardė",
-      "age": "Amžius (padeda man pritaikyti paaiškinimus)"
+      "age": "Amžius (padeda man pritaikyti paaiškinimus)",
+      "tooltip": "Papasakokite šiek tiek apie save, kad galėtume pritaikyti jūsų mokymosi patirtį."
     },
     "step2": {
       "title": "Pasirinkite norimas kalbas",
@@ -25,7 +26,8 @@
       "selected_plural": "Pasirinkta kalbų: {{count}}",
       "noLanguagesFound": "Nerasta kalbų, atitinkančių „{{search}}“",
       "languageRequired": "Būtina pasirinkti kalbą",
-      "languageRequiredDesc": "Norėdami tęsti, pasirinkite bent vieną kalbą. Tai užtikrins geriausią balso įvesties ir tekstinio bendravimo patirtį."
+      "languageRequiredDesc": "Norėdami tęsti, pasirinkite bent vieną kalbą. Tai užtikrins geriausią balso įvesties ir tekstinio bendravimo patirtį.",
+      "tooltip": "Pasirinkite kalbas, kuriomis norite įvesti balsu ir bendrauti su tekstu."
     },
     "step3": {
       "title": "Kokį įrenginį naudojate dažniausiai?",
@@ -38,7 +40,8 @@
         "androidphoneortablet": "Android telefonas ar planšetė",
         "smarttv": "Išmanusis televizorius",
         "multipledevices": "Keli įrenginiai"
-      }
+      },
+      "tooltip": "Žinodami pagrindinį įrenginį galime pateikti tinkamesnes instrukcijas."
     },
     "step4": {
       "title": "Kaip patogiai jaučiatės su technologijomis?",
@@ -48,7 +51,8 @@
       "some": "Šiek tiek patirties",
       "someDesc": "Galiu atlikti pagrindines užduotis, bet reikia pagalbos su naujais dalykais",
       "comfortable": "Patogiai",
-      "comfortableDesc": "Daugumą dalykų galiu išsiaiškinti pats, bet kartais reikia patarimo"
+      "comfortableDesc": "Daugumą dalykų galiu išsiaiškinti pats, bet kartais reikia patarimo",
+      "tooltip": "Būkite sąžiningi dėl savo komforto lygio – tai padeda mums paaiškinti dalykus tinkamu tempu."
     },
     "step5": {
       "title": "Kokios technologijų temos Jums kelia daugiausiai nerimo?",
@@ -66,7 +70,8 @@
         "deviceSettings": "Įrenginio nustatymai",
         "onlineShopping": "Apsipirkimas internetu",
         "healthApps": "Sveikatos programėlės ir portalai"
-      }
+      },
+      "tooltip": "Pasirinkite temas, kurios jums rūpi labiausiai, kad galėtume teikti pirmenybę pagalbai šiose srityse."
     },
     "step6": {
       "title": "Ar Jums reikalingos prieinamumo funkcijos?",
@@ -79,7 +84,8 @@
         "slowerExplanations": "Lėtesni paaiškinimai",
         "visualSteps": "Vaizdiniai žingsnių indikatoriai",
         "noneNeeded": "Nereikalingos"
-      }
+      },
+      "tooltip": "Praneškite mums apie bet kokias pritaikymo neįgaliesiems funkcijas, kurių jums reikia patogiai patirčiai."
     },
     "step7": {
       "title": "Kaip Jums labiausiai patinka mokytis?",
@@ -89,7 +95,8 @@
       "detailed": "Išsamūs paaiškinimai",
       "detailedDesc": "Paaiškinkite, kodėl atlieku kiekvieną žingsnį",
       "visual": "Vizualus mokymasis",
-      "visualDesc": "Parodykite man paveikslėlius ir vaizdo įrašus, kai įmanoma"
+      "visualDesc": "Parodykite man paveikslėlius ir vaizdo įrašus, kai įmanoma",
+      "tooltip": "Pasirinkite, kaip norite mokytis, kad galėtume pakoreguoti mokymo stilių."
     },
     "step8": {
       "title": "Paskutiniai potėpiai",
@@ -103,13 +110,103 @@
       "textSize": "Pageidaujamas teksto dydis",
       "textSizeNormal": "Normalus",
       "textSizeLarge": "Didelis",
-      "textSizeExtraLarge": "Labai didelis"
+      "textSizeExtraLarge": "Labai didelis",
+      "tooltip": "Sukurkite tobulą mokymosi aplinką naudodami šias paskutines nuostatas.",
+      "privacy": {
+        "title": "Jūsų privatumas yra mūsų prioritetas",
+        "items": [
+          "Mes NIEKADA neparduosime jūsų asmens duomenų",
+          "Visi duomenys lieka užšifruoti ir saugūs",
+          "Šiuos nustatymus galite bet kada pakeisti",
+          "Savo duomenis galite ištrinti bet kuriuo metu"
+        ]
+      },
+      "personalization": {
+        "title": "Personalizuota patirtis",
+        "description": "Leiskite mums naudoti jūsų sąveikos duomenis, kad galėtume teikti geresnę, aktualesnę pagalbą ir pasiūlymus, pritaikytus jūsų poreikiams.",
+        "note": "Tai padeda mums suprasti, kokios temos jus labiausiai domina, ir pateikti aktualesnių mokymo programų."
+      },
+      "history": {
+        "title": "Naudokite pokalbių istoriją",
+        "description": "Prisiminkite mūsų ankstesnius pokalbius, kad pateiktumėte geresnį kontekstą ir nekartotumėte jau žinomos informacijos.",
+        "note": "Tai padeda man prisiminti, ką aptarėme anksčiau, ir remtis ankstesniais pokalbiais."
+      },
+      "learningPrefs": {
+        "title": "Naudokite mokymosi nuostatas",
+        "description": "Atminkite, kad pageidaujamas mokymosi stilius, bendravimo nuostatos ir prieinamumas turi būti nuoseklūs.",
+        "note": "Tai apima pageidaujamą paaiškinimo stilių, kalbos nustatymus ir pritaikymo neįgaliesiems nuostatas."
+      },
+      "noSelection": {
+        "title": "Nepasirinktas joks personalizavimas",
+        "success": "Puiku! Naudosime jūsų pasirinktus duomenis, kad suteiktume geresnę patirtį.",
+        "default": "Tai visiškai gerai! Vis tiek gausite visišką prieigą prie visų funkcijų, tik be suasmenintų rekomendacijų."
+      }
     },
     "back": "Atgal",
     "next": "Toliau",
     "settingUp": "Nustatoma...",
     "completeSetup": "Užbaigti sąranką",
-    "errorSaving": "Nepavyko išsaugoti Jūsų nustatymų. Bandykite dar kartą."
+    "errorSaving": "Nepavyko išsaugoti Jūsų nustatymų. Bandykite dar kartą.",
+    "buttons": {
+      "previous": "Ankstesnis",
+      "next": "Kitas",
+      "skip": "Praleisti",
+      "complete": "Užbaigti",
+      "processing": "Apdorojama...",
+      "gotIt": "Supratau!",
+      "skipAll": "Praleisti viską",
+      "cancel": "Atšaukti"
+    },
+    "progress": {
+      "label": "Prisijungimo eiga: {{current}} veiksmas iš {{total}}",
+      "stepOf": "{{current}} veiksmas iš {{total}}",
+      "step": "Žingsnis",
+      "stepCompleted": "{{step}} – baigta",
+      "stepCurrent": "{{step}} – dabartinis veiksmas",
+      "stepUpcoming": "{{step}} – būsimas"
+    },
+    "tooltip": {
+      "helpfulTip": "Naudingas patarimas"
+    },
+    "flow": {
+      "title": "Sveiki atvykę! Pradėkime"
+    },
+    "accessibility": {
+      "helpfulTip": "Naudingas patarimas",
+      "tooltipAppeared": "Pasirodė patarimas su turiniu: {{content}}",
+      "skippingStep": "Praleidžiamas dabartinis veiksmas",
+      "movingToNextStep": "Perėjimas prie kito žingsnio",
+      "movingToPreviousStep": "Perėjimas prie ankstesnio žingsnio",
+      "completingOnboarding": "Prisijungimo proceso užbaigimas",
+      "stepChanged": "Dabar {{step}} veiksmas iš {{total}}: {{title}}",
+      "skippingOnboarding": "Praleidžiamas visas prisijungimo procesas",
+      "cancellingOnboarding": "Prisijungimo procesas atšaukiamas",
+      "errorCompleting": "Klaida užbaigiant prisijungimą. Bandykite dar kartą.",
+      "goToPreviousStep": "Eikite į ankstesnį veiksmą",
+      "skipThisStep": "Praleiskite šį veiksmą",
+      "completeOnboarding": "Užbaigti priėmimą",
+      "continueToNextStep": "Tęskite kitą veiksmą",
+      "closeTooltip": "Uždaryti patarimą",
+      "skipTooltip": "Praleiskite šį patarimą",
+      "continueFromTooltip": "Tęsti nuo patarimo",
+      "skipEntireOnboarding": "Praleiskite visą priėmimą",
+      "cancelOnboarding": "Atšaukti prisijungimą",
+      "keyboardInstructions": "Naudokite Tab, kad naršytumėte, Enter, kad pasirinktumėte, ir Escape, kad uždarytumėte dialogo langus"
+    },
+    "validation": {
+      "firstNameRequired": "Vardas būtinas",
+      "lastNameRequired": "Būtina nurodyti pavardę",
+      "validAgeRequired": "Įveskite tinkamą amžių nuo 18 iki 120 metų",
+      "languageRequired": "Pasirinkite bent vieną kalbą",
+      "deviceRequired": "Pasirinkite pagrindinį įrenginį",
+      "experienceRequired": "Pasirinkite savo techninės patirties lygį",
+      "concernsOptional": "Galite pasirinkti problemas, kurios padės mums suasmeninti jūsų patirtį",
+      "assistiveNeedsRequired": "Pasirinkite pritaikymo neįgaliesiems poreikius arba pasirinkite „Nereikia“",
+      "communicationStyleRequired": "Pasirinkite pageidaujamą bendravimo stilių"
+    },
+    "restart": {
+      "confirmMessage": "Ar tikrai norite iš naujo pradėti prisijungimo procesą? Tai iš naujo nustatys visas nuostatas."
+    }
   },
   "nav": {
     "features": "Funkcijos",
@@ -230,7 +327,10 @@
       ],
       "copyright": "© 2025 TechStep. Sukurta su ❤️ senjorams visur.",
       "trustedBy": "Pasitiki",
-      "trustedByCount": "50 000+ senjorų"
+      "trustedByCount": "50 000+ senjorų",
+      "communityTitle": "bendruomenė",
+      "legalTitle": "Teisė ir palaikymas",
+      "contactEmail": "Susisiekite: El. paštas: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -315,48 +415,169 @@
       "title": "Kompiuterio ir įrenginio pagrindai",
       "description": "Pirmieji žingsniai, padėsiantys Jums pradėti naudotis technologijomis.",
       "modules": {
-        "turnOnDevice": { "title": "Įrenginio įjungimas", "description": "Išmokite įjungti kompiuterius ir išmaniuosius telefonus." },
-        "mouseTouchscreen": { "title": "Pelės / jutiklinio ekrano naudojimas", "description": "Įvaldykite žymėjimą, spustelėjimą ir bakstelėjimą." },
-        "keyboardTyping": { "title": "Klaviatūros / spausdinimo pagrindai", "description": "Susipažinkite su spausdinimo pagrindais." },
-        "filesFolders": { "title": "Failų ir aplankų supratimas", "description": "Sužinokite, kaip organizuojama skaitmeninė informacija." }
+        "turnOnDevice": {
+          "title": "Įrenginio įjungimas",
+          "description": "Išmokite įjungti kompiuterius ir išmaniuosius telefonus."
+        },
+        "mouseTouchscreen": {
+          "title": "Pelės / jutiklinio ekrano naudojimas",
+          "description": "Įvaldykite žymėjimą, spustelėjimą ir bakstelėjimą.",
+          "duration": "15 min",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Žaiskime: pelės ir jutiklinio ekrano pagrindai</h3><p>Pasiruošę tyrinėti? Jūsų pelė ir jutiklinis ekranas yra jūsų stebuklingos lazdelės skaitmeniniame pasaulyje!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Pelės pramogos:</h4><ul class=\"space-y-2\"><li>• <b>Taškas</b>: judinkite pelę <><blick> ir žiūrėkite, kaip rodoma <li>blic>. kairįjį mygtuką norėdami pasirinkti dalykus. Pabandykite spustelėti toliau esantį mygtuką!</li><li>• <b>Dvigubas spustelėjimas</b>: greitai paspauskite du kartus, kad atidarytumėte failus ar programas.</li><li>• <b>Dešiniuoju pelės mygtuku</b>: paspauskite dešinįjį mygtuką, kad atidarytumėte slaptą meniu.</li><li>• <b>Slinkimas</b>: pasukite ratuką, kad judėtumėte aukštyn ir žemyn puslapyje.</li></ulv-4-blu/5=\"vgg></ulv-4-5 rounded-lg\"><h4 class=\"font-medium mb-2\">Jutiklinio ekrano gudrybės:</h4><ul class=\"space-y-2\"><li>• <b>Palieskite</b>: švelniai palieskite ekraną, kad pasirinktumėte.</li><li>• <b>Perbraukimas</b>: slinkite pirštu, kad slinktumėte arba perjungtumėte ekranus kartu.</li>><li>• b:><Pinch a</b> įeikite ir išeikite.</li><li>• <b>Ilgas paspaudimas</b>: laikykite nuspaudę pirštą, kad pamatytumėte daugiau parinkčių (pvz., dešiniuoju pelės mygtuku spustelėkite!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Išbandykite!</h4><ul class=\"space-y-2\" ><use> ir žr. ekrane.</li><li>• Norėdami naršyti, palieskite ir perbraukite įrenginį.</li></ul></div></div>",
+          "keyPoints": [
+            "Pelės žymeklis seka tavo ranką!",
+            "Kairiuoju pelės mygtuku spustelėkite jūsų pagrindinį veiksmą.",
+            "Jutikliniai ekranai leidžia bakstelėti, braukti ir keisti mastelį!"
+          ],
+          "practiceExercise": "Pabandykite spustelėti, dukart spustelėti ir dešiniuoju pelės klavišu spustelėti darbalaukį. Jutikliniame ekrane bakstelėkite ir braukite, kad pereitumėte iš vieno ekrano į kitą.",
+          "animationDesc": "Žiūrėkite, kaip jutikliniame ekrane spustelėti, dukart spustelėti ir perbraukti."
+        },
+        "keyboardTyping": {
+          "title": "Klaviatūros / spausdinimo pagrindai",
+          "description": "Susipažinkite su spausdinimo pagrindais."
+        },
+        "filesFolders": {
+          "title": "Failų ir aplankų supratimas",
+          "description": "Sužinokite, kaip organizuojama skaitmeninė informacija."
+        }
       }
     },
     "onlineWorld": {
       "title": "Internetinis pasaulis",
       "description": "Prisijungimas ir saugus interneto naršymas.",
       "modules": {
-        "webBrowsers": { "title": "Interneto naršyklių supratimas", "description": "Naršykite internete su „Chrome“, „Edge“ ar „Safari“." },
-        "searchEffectively": { "title": "Kaip efektyviai ieškoti", "description": "Raskite, ko Jums reikia, internete naudodami paieškos sistemas." },
-        "introEmail": { "title": "Įvadas į el. paštą", "description": "Išmokite siųsti ir gauti elektroninius laiškus." },
-        "virusSafety": { "title": "Apsauga nuo virusų", "description": "Apsaugokite savo įrenginį nuo kenkėjiškos programinės įrangos." }
+        "webBrowsers": {
+          "title": "Interneto naršyklių supratimas",
+          "description": "Naršykite internete su „Chrome“, „Edge“ ar „Safari“."
+        },
+        "searchEffectively": {
+          "title": "Kaip efektyviai ieškoti",
+          "description": "Raskite, ko Jums reikia, internete naudodami paieškos sistemas."
+        },
+        "introEmail": {
+          "title": "Įvadas į el. paštą",
+          "description": "Išmokite siųsti ir gauti elektroninius laiškus."
+        },
+        "virusSafety": {
+          "title": "Apsauga nuo virusų",
+          "description": "Apsaugokite savo įrenginį nuo kenkėjiškos programinės įrangos."
+        }
       }
     },
     "digitalLife": {
       "title": "Kasdienis skaitmeninis gyvenimas",
       "description": "Bendraukite, dalinkitės ir valdykite savo skaitmeninį buvimą.",
       "modules": {
-        "masteringEmail": { "title": "El. pašto įvaldymas", "description": "Priedai, aplankai ir el. pašto etiketas." },
-        "videoCalling": { "title": "Vaizdo skambučiai su šeima ir draugais", "description": "Bendraukite akis į akį su artimaisiais." },
-        "introSocialMedia": { "title": "Įvadas į socialinius tinklus", "description": "Supraskite platformas, tokias kaip „Facebook“." },
-        "sharingPhotos": { "title": "Saugus nuotraukų dalijimasis", "description": "Dalinkitės savo prisiminimais, nepakenkdami privatumui." }
+        "masteringEmail": {
+          "title": "El. pašto įvaldymas",
+          "description": "Priedai, aplankai ir el. pašto etiketas."
+        },
+        "videoCalling": {
+          "title": "Vaizdo skambučiai su šeima ir draugais",
+          "description": "Bendraukite akis į akį su artimaisiais."
+        },
+        "introSocialMedia": {
+          "title": "Įvadas į socialinius tinklus",
+          "description": "Supraskite platformas, tokias kaip „Facebook“."
+        },
+        "sharingPhotos": {
+          "title": "Saugus nuotraukų dalijimasis",
+          "description": "Dalinkitės savo prisiminimais, nepakenkdami privatumui."
+        }
       }
     },
     "advancedSkills": {
       "title": "Pažangūs ir kūrybiniai įgūdžiai",
       "description": "Daugiau nei pagrindai: atraskite, ką dar siūlo technologijos.",
       "modules": {
-        "onlineShopping": { "title": "Įvadas į apsipirkimą internetu", "description": "Apsipirkite saugiai ir patogiai internetu." },
-        "onlineMaps": { "title": "Internetinių žemėlapių ir navigacijos naudojimas", "description": "Raskite kelią su skaitmeniniais žemėlapiais." },
-        "photoEditing": { "title": "Pagrindinis nuotraukų redagavimas", "description": "Patobulinkite savo skaitmenines nuotraukas." },
-        "productivityTools": { "title": "Įvadas į produktyvumo įrankius", "description": "Naudokitės įrankiais, tokiais kaip „Google Docs“ ar „Microsoft Word“ pagrindai." }
+        "onlineShopping": {
+          "title": "Įvadas į apsipirkimą internetu",
+          "description": "Apsipirkite saugiai ir patogiai internetu."
+        },
+        "onlineMaps": {
+          "title": "Internetinių žemėlapių ir navigacijos naudojimas",
+          "description": "Raskite kelią su skaitmeniniais žemėlapiais."
+        },
+        "photoEditing": {
+          "title": "Pagrindinis nuotraukų redagavimas",
+          "description": "Patobulinkite savo skaitmenines nuotraukas."
+        },
+        "productivityTools": {
+          "title": "Įvadas į produktyvumo įrankius",
+          "description": "Naudokitės įrankiais, tokiais kaip „Google Docs“ ar „Microsoft Word“ pagrindai."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Prieinamumas ir paprastas naudojimas",
+      "description": "Kad jūsų įrenginys būtų lengviau matomas, girdimas ir valdomas.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Ekrano didintuvo naudojimas",
+          "description": "Padidinkite tekstą ir vaizdus ekrane."
+        },
+        "voiceCommands": {
+          "title": "Balso komandos ir diktavimas",
+          "description": "Valdykite įrenginį ir rašykite balsu."
+        },
+        "highContrast": {
+          "title": "Didelio kontrasto ir spalvų nustatymai",
+          "description": "Sureguliuokite spalvas, kad būtų geriau matoma."
+        },
+        "assistiveTouch": {
+          "title": "Pagalbiniai lietimai ir spartieji klavišai",
+          "description": "Norėdami lengviau naršyti, naudokite ekrane pateikiamus įrankius."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Sveikata, sauga ir privatumas",
+      "description": "Naudodami technologijas būkite saugūs, sveiki ir privatūs.",
+      "modules": {
+        "privacySettings": {
+          "title": "Privatumo nustatymai",
+          "description": "Apsaugokite savo asmeninę informaciją internete."
+        },
+        "scamAwareness": {
+          "title": "Sukčiavimo suvokimas",
+          "description": "Pastebėkite ir venkite įprastų internetinių sukčių."
+        },
+        "healthApps": {
+          "title": "Sveikatos programų naudojimas",
+          "description": "Stebėkite savo sveikatą ir savijautą naudodami programas."
+        },
+        "emergencyContacts": {
+          "title": "Neatidėliotinos pagalbos kontaktų nustatymas",
+          "description": "Pridėkite avarinių kontaktų prie savo įrenginio."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Technologijų pradedantysis", "description": "Pabaigėte Kompiuterio ir įrenginio pagrindų kursą." },
-    "onlineWorld": { "name": "Internetinis tyrinėtojas", "description": "Pabaigėte Internetinio pasaulio kursą." },
-    "digitalLife": { "name": "Skaitmeninis komunikatorius", "description": "Pabaigėte Kasdienio skaitmeninio gyvenimo kursą." },
-    "advancedSkills": { "name": "Technologijų virtuozas", "description": "Pabaigėte Pažangių ir kūrybinių įgūdžių kursą." }
+    "fundamentals": {
+      "name": "Technologijų pradedantysis",
+      "description": "Pabaigėte Kompiuterio ir įrenginio pagrindų kursą."
+    },
+    "onlineWorld": {
+      "name": "Internetinis tyrinėtojas",
+      "description": "Pabaigėte Internetinio pasaulio kursą."
+    },
+    "digitalLife": {
+      "name": "Skaitmeninis komunikatorius",
+      "description": "Pabaigėte Kasdienio skaitmeninio gyvenimo kursą."
+    },
+    "advancedSkills": {
+      "name": "Technologijų virtuozas",
+      "description": "Pabaigėte Pažangių ir kūrybinių įgūdžių kursą."
+    },
+    "accessibility": {
+      "name": "Prieinamumo čempionas",
+      "description": "Užbaigtas pasiekiamumo ir naudojimo paprastumo kelias."
+    },
+    "healthAndSafety": {
+      "name": "Saugumo sargas",
+      "description": "Baigtas sveikatos, saugos ir privatumo kelias."
+    }
   },
   "skillAssessmentModal": {
     "title": "Greitas įgūdžių patikrinimas",
@@ -602,16 +823,31 @@
   },
   "settings": {
     "customizePrefs": "Tinkinti savo nustatymus",
-    "personalInfo": "Asmeninė informacija",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "firstName": "Vardas",
     "firstNamePlaceholder": "Jūsų vardas",
     "primaryDevice": "Pagrindinis įrenginys",
     "devices": {
-      "windowsComputer": "Windows kompiuteris",
-      "macComputer": "Mac (Apple kompiuteris)",
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android telefonas ar planšetė"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Prieinamumas",
     "textToSpeech": "Teksto skaitymas balsu",
@@ -642,9 +878,9 @@
     "signOut": "Atsijungti",
     "signOutDesc": "Atsijungti nuo savo paskyros",
     "cancel": "Atšaukti",
-    "saving": "Saugoma...",
-    "saved": "Išsaugota!",
-    "saveChanges": "Išsaugoti pakeitimus",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveChanges": "Save Changes",
     "errorSaving": "Nepavyko išsaugoti nustatymų. Bandykite dar kartą.",
     "lastName": "Pavardė",
     "lastNamePlaceholder": "Jūsų pavardė",
@@ -679,12 +915,114 @@
     },
     "highContrast": "Didelio kontrasto režimas",
     "highContrastDesc": "Padidinti teksto ir elementų kontrastą geresniam matomumui",
-    "learningPreferences": "Mokymosi ir turinio nustatymai"
+    "learningPreferences": "Mokymosi ir turinio nustatymai",
+    "title": "Settings",
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "pwa": {
+      "install": {
+        "title": "Įdiekite „TechStep“.",
+        "description": "Greitai pasiekite mokymosi pažangą ir naudokite „TechStep“ neprisijungę.",
+        "button": "Įdiegti programą"
+      },
+      "update": {
+        "title": "Galimas atnaujinimas",
+        "description": "Yra nauja TechStep versija su patobulinimais ir klaidų pataisymais.",
+        "button": "Atnaujinkite dabar"
+      },
+      "status": {
+        "online": "Prisijungę",
+        "offline": "Neprisijungus – prisijungus pakeitimai bus sinchronizuojami",
+        "syncing": "Sinchronizuojama..."
+      },
+      "notifications": {
+        "title": "Mokymosi priminimai",
+        "description": "Gaukite švelnius priminimus, kurie padės tęsti mokymosi kelią.",
+        "learning_reminders": "Mokymosi priminimai",
+        "learning_reminders_desc": "Švelnūs stumtelėjimai tęsti pamokas",
+        "progress_updates": "Pažangos atnaujinimai",
+        "progress_updates_desc": "Švęskite savo pasiekimus",
+        "support_messages": "Palaikymo žinutės",
+        "support_messages_desc": "Naudingi patarimai ir pagalba",
+        "frequency": "Dažnis",
+        "enable": "Įgalinti pranešimus",
+        "subscribing": "Nustatoma...",
+        "blocked": {
+          "title": "Pranešimai užblokuoti",
+          "description": "Pranešimai šiuo metu užblokuoti. Norėdami juos įjungti, naršyklės nustatymuose leiskite pranešimus.",
+          "instructions": "Adreso juostoje ieškokite pranešimo piktogramos arba patikrinkite naršyklės svetainės nustatymus."
+        },
+        "success": {
+          "title": "Pranešimai įjungti!",
+          "description": "Gausite naudingų priminimų ir atnaujinimų pagal jūsų pageidavimus."
+        }
+      }
+    },
+    "offline": {
+      "error": "Sinchronizavimo klaida",
+      "offline": "Neprisijungus",
+      "online": "Prisijungę",
+      "syncing": "Sinchronizuojama...",
+      "offline_desc": "Prisijungus pakeitimai bus sinchronizuojami",
+      "syncing_desc": "Jūsų duomenų atnaujinimas",
+      "online_desc": "Visi pakeitimai išsaugomi",
+      "pending_operations": "Laukiančių pakeitimų: {{count}}",
+      "last_sync": "Paskutinis sinchronizavimas: {{time}}",
+      "content_manager": {
+        "title": "Turinys neprisijungus",
+        "description": "Atsisiųskite turinį, kad galėtumėte pasiekti neprisijungę",
+        "online": "Prisijungta – galite atsisiųsti naujo turinio",
+        "offline": "Neprisijungus – naudojamas tik atsisiųstas turinys",
+        "no_content": "Nėra turinio neprisijungus",
+        "no_content_desc": "Atsisiųskite kursus ir pamokas, kad galėtumėte juos pasiekti neprisijungę",
+        "downloaded": "Atsisiųsta",
+        "available_offline": "Galima neprisijungus",
+        "remove": "Pašalinti iš saugyklos neprisijungus",
+        "suggestions": "Rekomenduojami atsisiuntimai",
+        "suggestion_1": "Kompiuterių pagrindų kursas",
+        "suggestion_1_desc": "Būtini įgūdžiai norint pradėti naudotis technologijomis",
+        "popular": "Populiarus",
+        "download": "Atsisiųsti",
+        "type": {
+          "course": "Kursas",
+          "lesson": "Pamoka",
+          "tutorial": "Pamoka",
+          "media": "Žiniasklaida"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Atsisakyti"
+    },
+    "dataPortability": "Duomenų ir privatumo teisės",
+    "dataRights": "Jūsų duomenų teisės",
+    "dataRightsDesc": "Jūs visiškai kontroliuojate savo asmens duomenis. Eksportuokite, tvarkykite bendrinimo nuostatas arba ištrinkite duomenis bet kuriuo metu."
   },
   "common": {
     "settings": "Nustatymai",
     "signOut": "Atsijungti",
-    "close": "Uždaryti"
+    "close": "Uždaryti",
+    "friend": "friend",
+    "comingSoon": "Netrukus"
   },
   "tips": {
     "connectWifi": "Prisijungti prie „Wi-Fi“",
@@ -768,7 +1106,10 @@
   },
   "error": {
     "askQuestionFirst": "Pirmiausia užduokite klausimą",
-    "couldntGetAnswer": "Atsiprašome, šiuo metu nepavyko gauti atsakymo. Bandykite dar kartą."
+    "couldntGetAnswer": "Atsiprašome, šiuo metu nepavyko gauti atsakymo. Bandykite dar kartą.",
+    "notifications": {
+      "dismiss": "Atsisakyti"
+    }
   },
   "learningPage": {
     "headerTitle": "Mokymosi centras",
@@ -803,7 +1144,11 @@
     "moduleListTitle": "Moduliai keliui: {{pathTitle}}",
     "moduleContentTitle": "Modulio turinys: {{moduleTitle}} bus čia.",
     "loadingCenter": "Įkeliamas mokymosi centras...",
-    "moduleTimeLabel": "Laikas: "
+    "moduleTimeLabel": "Laikas: ",
+    "startOrContinueCourse": "Pradėti arba tęsti kursą",
+    "lessonsHeader": "Pamokos",
+    "lessonContentPlaceholder": "Kol kas nėra {{lessonTitle}} turinio.",
+    "noLessonAvailable": "Pamokos nėra."
   },
   "languageSelector": {
     "choosePrompt": "Pasirinkite norimą sąsajos kalbą",
@@ -822,7 +1167,13 @@
     "reviewLesson": "Peržiūrėti",
     "congratulations": "Sveikiname!",
     "courseComplete": "Jūs baigėte kursą „{{courseTitle}}“!",
-    "downloadCertificate": "Atsisiųsti sertifikatą"
+    "downloadCertificate": "Atsisiųsti sertifikatą",
+    "previousLesson": "Ankstesnė pamoka",
+    "nextLesson": "Kita pamoka",
+    "markAsComplete": "Pažymėti kaip užbaigtą",
+    "completed": "Baigta",
+    "removeBookmark": "Pašalinti žymę",
+    "addBookmark": "Pridėti žymę"
   },
   "lessonView": {
     "readAloud": "Perskaityti pamoką garsiai",
@@ -940,5 +1291,461 @@
       "thankYou": "Dėkojame, kad patikėjote savo informaciją „TechStep“. Mes įsipareigojame ją saugoti ir naudoti tik tam, kad padėtume Jums sėkmingai naudotis technologijomis.",
       "backToHome": "Grįžti į pradinį puslapį"
     }
+  },
+  "avatar": {
+    "enable": "Įgalinti AI avatarą",
+    "disable": "Išjungti avatarą",
+    "loading": "Įkeliamas pseudoportretas...",
+    "mute": "Nutildyti avatarą",
+    "unmute": "Įjungti avatarą",
+    "settings": "Avataro nustatymai",
+    "fullscreen": "Visas ekranas",
+    "exitFullscreen": "Išeikite iš viso ekrano",
+    "performance": {
+      "high": "Aukštos kokybės",
+      "medium": "Vidutinė kokybė",
+      "low": "Žemos kokybės",
+      "off": "Avataras išjungtas"
+    },
+    "error": {
+      "loadFailed": "Nepavyko įkelti avataro. Bandykite dar kartą.",
+      "noWebGL": "Jūsų įrenginys nepalaiko 3D grafikos.",
+      "audioFailed": "Nepavyko pasiekti mikrofono lūpų sinchronizavimui."
+    },
+    "status": {
+      "initializing": "Paleidžiamas avataras...",
+      "ready": "Pasiruošę padėti",
+      "thinking": "Galvoju...",
+      "speaking": "Kalbėdamas...",
+      "listening": "Klausau...",
+      "celebrating": "Džiaugiamės galėdami padėti!",
+      "error": "Kažkas nutiko",
+      "processing": "Apdorojamas garsas...",
+      "lipSyncActive": "Aktyvus lūpų sinchronizavimas",
+      "lipSyncInactive": "Lūpų sinchronizavimas neaktyvus"
+    },
+    "greeting": {
+      "morning": "Labas rytas, {{name}}! Pasiruošę šiandien išmokti ko nors naujo?",
+      "afternoon": "Laba diena, {{name}}! Kaip aš galiu tau padėti šiandien?",
+      "evening": "Labas vakaras, {{name}}! Ką norėtumėte ištirti?"
+    },
+    "companion": {
+      "title": "Jūsų AI pagalbininkas",
+      "ready": "Esu čia, kad padėčiau jums su technologijomis!"
+    },
+    "actions": {
+      "chat": "Pokalbis",
+      "voice": "Balsas",
+      "camera": "Fotoaparatas",
+      "help": "Pagalba"
+    },
+    "suggestions": {
+      "title": "Greiti klausimai"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Kaip prisijungti prie WiFi?",
+    "makeTextBigger": "Kaip padidinti tekstą ekrane?",
+    "takeScreenshot": "Kaip padaryti ekrano kopiją?",
+    "videoCall": "Kaip atlikti vaizdo skambutį?",
+    "iphoneSettings": "Kaip pakeisti iPhone nustatymus?",
+    "androidSettings": "Kaip pakeisti „Android“ nustatymus?",
+    "windowsSettings": "Kaip pakeisti „Windows“ nustatymus?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Kaip aš galiu tau padėti šiandien?",
+      "subtitle": "Paklauskite manęs apie technologijas!"
+    },
+    "input": {
+      "placeholder": "Pranešimas AI asistentui...",
+      "helper": "Norėdami išsiųsti, paspauskite Enter, o naujai eilutei – Shift+Enter"
+    },
+    "greeting": {
+      "morning": "Labas rytas",
+      "afternoon": "Laba diena",
+      "evening": "Labas vakaras"
+    },
+    "error": {
+      "general": "Atsiprašau, dabar turiu problemų. Po akimirkos bandykite dar kartą."
+    }
+  },
+  "flashcards": {
+    "title": "Žingsnis po žingsnio vadovas",
+    "progress": "{{current}} veiksmas iš {{total}}",
+    "instructions": "Instrukcijos:",
+    "markCompleted": "Pažymėti kaip užbaigtą"
+  },
+  "dataPortability": {
+    "title": "Duomenų perkeliamumas ir vartotojo teisės",
+    "tabs": {
+      "overview": "Apžvalga",
+      "sharing": "Duomenų bendrinimas",
+      "export": "Eksportuoti duomenis",
+      "delete": "Ištrinti duomenis",
+      "ai": "AI skaidrumas"
+    },
+    "overview": {
+      "title": "Jūsų duomenų teisės",
+      "description": "Jūs visiškai kontroliuojate savo asmens duomenis. Savo informaciją galite peržiūrėti, eksportuoti, taisyti arba ištrinti bet kuriuo metu per 30 dienų.",
+      "dataWeCollect": "Mūsų renkami duomenys",
+      "profileInfo": "Profilio informacija (vardas, el. pašto adresas, nuostatos)",
+      "learningProgress": "Mokymosi pažanga ir pasiekimai",
+      "aiHistory": "AI pokalbių istorija",
+      "analytics": "Naudojimo analizė (anonimizuota)",
+      "howWeUse": "Kaip mes naudojame jūsų duomenis",
+      "personalized": "Suteikite individualizuotą mokymosi patirtį",
+      "improveAI": "Pagerinkite AI asistento atsakymus",
+      "trackProgress": "Stebėkite savo pažangą ir pasiekimus",
+      "security": "Užtikrinkite platformos saugumą ir našumą",
+      "rightsTitle": "Jūsų teisės pagal BDAR ir CCPA",
+      "rightAccess": "Prieigos teisė:",
+      "accessDesc": "Peržiūrėkite visus savo asmeninius duomenis",
+      "rightPortability": "Teisė į perkeliamumą:",
+      "portabilityDesc": "Eksportuokite savo duomenis",
+      "rightRectification": "Teisė į ištaisymą:",
+      "rectificationDesc": "Ištaisykite netikslius duomenis",
+      "rightErasure": "Teisė į ištrynimą:",
+      "erasureDesc": "Ištrinkite savo asmeninius duomenis"
+    },
+    "sharing": {
+      "title": "Duomenų bendrinimo nuostatos",
+      "description": "Valdykite, kaip jūsų duomenys bendrinami ir naudojami. Visas bendrinimas yra neprivalomas ir gali būti bet kada pakeistas.",
+      "dataTypes": "Duomenų tipo bendrinimas",
+      "thirdParty": "Trečiųjų šalių bendrinimas",
+      "special": "Specialios kategorijos",
+      "analytics": "„Analytics“ bendrinimas",
+      "analyticsDesc": "Bendrinkite anoniminius naudojimo duomenis, kad pagerintumėte platformą",
+      "research": "Dalijimasis tyrimais",
+      "researchDesc": "Pateikite anoniminius duomenis vyresnio amžiaus mokymosi tyrimams"
+    },
+    "export": {
+      "title": "Eksportuokite savo duomenis",
+      "description": "Atsisiųskite visų savo asmeninių duomenų kopiją. Mes paruošime jūsų duomenis ir atsiųsime atsisiuntimo nuorodą per 30 dienų.",
+      "chooseFormat": "Pasirinkite Eksportavimo formatas",
+      "included": "Kas įtraukta:",
+      "profile": "Profilio informacija ir nuostatos",
+      "progress": "Mokymosi pažanga ir pasiekimai",
+      "conversations": "AI pokalbių istorija",
+      "support": "Palaikykite bilietų istoriją",
+      "consent": "Sutikimo ir privatumo nustatymai",
+      "request": "Pateikite duomenų eksportavimo užklausą",
+      "requesting": "Prašoma eksportuoti...",
+      "requests": "Eksporto užklausos",
+      "requested": "Paprašyta",
+      "download": "Atsisiųsti"
+    },
+    "delete": {
+      "title": "Ištrinkite savo duomenis",
+      "description": "Visam laikui ištrinti visus savo asmeninius duomenis. Šio veiksmo anuliuoti negalima, todėl paskyra bus uždaryta per 30 dienų.",
+      "whatDeleted": "Kas bus ištrinta:",
+      "profile": "Jūsų profilis ir paskyros informacija",
+      "progress": "Visa mokymosi pažanga ir pasiekimai",
+      "conversations": "AI pokalbių istorija",
+      "preferences": "Parinktys ir nustatymai",
+      "analytics": "Su paskyra susieta naudojimo analizė",
+      "important": "Svarbios pastabos:",
+      "legal": "Kai kurie duomenys gali būti saugomi, kad būtų laikomasi teisės aktų (palaikymo bilietai, atsiskaitymo įrašai)",
+      "research": "Anonimizuoti duomenys, naudojami tyrimams, gali būti saugomi",
+      "verification": "Prieš ištrindami gausite patvirtinimą el. paštu",
+      "timeframe": "Ištrynimas bus baigtas per 30 dienų",
+      "request": "Prašyti duomenų ištrynimo",
+      "confirm": "Ar tikrai norite ištrinti visus savo duomenis?",
+      "type": "Įveskite „IŠTRINTI MANO DUOMENYS“, kad patvirtintumėte šį veiksmą:",
+      "placeholder": "Įveskite IŠTRINTI MANO DUOMENYS",
+      "confirmButton": "Patvirtinkite ištrynimą",
+      "processing": "Apdorojama...",
+      "cancel": "Atšaukti",
+      "requests": "Ištrynimo prašymai",
+      "complete": "Užbaigti duomenų ištrynimą",
+      "requested": "Paprašyta",
+      "scheduled": "Suplanuota",
+      "awaitingVerification": "Laukiama patvirtinimo"
+    },
+    "ai": {
+      "title": "AI duomenų naudojimo skaidrumas",
+      "description": "Sužinokite, kaip tiksliai jūsų duomenis naudoja mūsų AI asistentas, ir valdykite savo AI duomenų nuostatas.",
+      "stats": "AI duomenų naudojimo statistika",
+      "conversationsAnalyzed": "Analizuojami pokalbiai:",
+      "dataPoints": "Naudojami duomenų taškai:",
+      "trainingContribution": "Mokymų indėlis:",
+      "lastProcessed": "Paskutinį kartą apdorota:",
+      "optOut": "AI atsisakymo parinktys",
+      "stopTraining": "Sustabdykite AI mokymą",
+      "stopTrainingDesc": "Neleiskite savo duomenims pagerinti AI atsakymų",
+      "deleteHistory": "Ištrinti pokalbių istoriją",
+      "deleteHistoryDesc": "Pašalinkite visus saugomus AI pokalbius",
+      "anonymize": "Anonimizuoti mano duomenis",
+      "anonymizeDesc": "Konvertuoti duomenis į anoniminę formą"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Pasirinkite, kaip bendrauti",
+    "tabs": {
+      "chat": "Pokalbis",
+      "voice": "Balsas",
+      "image": "Vaizdas",
+      "chatAria": "Teksto pokalbio įvestis",
+      "voiceAria": "Balso įvestis",
+      "imageAria": "Vaizdo įvestis"
+    },
+    "chat": {
+      "placeholder": "Įveskite savo klausimą čia... Paspauskite Enter, kad išsiųstumėte",
+      "ariaLabel": "Įveskite savo klausimą",
+      "sendButton": "Siųsti žinutę",
+      "send": "Siųsti"
+    },
+    "voice": {
+      "recording": "Įrašymas... Bakstelėkite, kad sustabdytumėte",
+      "processing": "Apdorojamas jūsų balsas...",
+      "instructions": "Bakstelėkite mikrofoną, kad pradėtumėte įrašymą",
+      "startRecording": "Pradėkite įrašymą",
+      "stopRecording": "Sustabdykite įrašymą"
+    },
+    "image": {
+      "takePhoto": "Nufotografuokite",
+      "camera": "Fotografuoti",
+      "upload": "Įkelti paveikslėlį",
+      "uploadAria": "Pasirinkite vaizdo failą",
+      "instructions": "Pasidalinkite nuotrauka ir aš padėsiu paaiškinti, ką matote",
+      "formats": "Palaiko JPG, PNG, GIF (maks. 10 MB)",
+      "previewAlt": "Pasirinkto vaizdo peržiūra",
+      "remove": "Pašalinti vaizdą",
+      "contextLabel": "Ką norėtumėte sužinoti apie šį vaizdą?",
+      "contextPlaceholder": "Pasirenkama: užduokite konkretų klausimą apie vaizdą",
+      "cancel": "Atšaukti",
+      "submit": "Pateikite vaizdą",
+      "send": "Siųsti",
+      "invalidType": "Pasirinkite tinkamą vaizdo failą.",
+      "tooLarge": "Vaizdo failas per didelis. Pasirinkite failą, kurio dydis mažesnis nei 10 MB.",
+      "cameraError": "Nepavyko pasiekti kameros. Patikrinkite leidimus."
+    }
+  },
+  "ai": {
+    "title": "AI pagalbininkas",
+    "subtitle": "Čia padės jums išmokti",
+    "emergency": "Neatidėliotina pagalba",
+    "emergencyAria": "Gaukite skubią pagalbą",
+    "expand": "Išskleisti",
+    "minimize": "Sumažinti",
+    "close": "Uždarykite AI asistentą",
+    "thinking": "AI galvoja...",
+    "escalated": "Dabar esate prisijungę prie mūsų palaikymo komandos",
+    "callSupport": "Skambinkite pagalbos telefonu: 1-800-SENIOR-HELP",
+    "minimized": "AI pagalbininkas",
+    "welcome": {
+      "tutorial": "Sveiki! Matau, kad dirbate su „{{tutorial}}“. Esu čia, kad padėčiau iškilus bet kokiems klausimams. Galite rašyti, kalbėti arba rodyti man vaizdus – taip, kaip jums patogiausia!",
+      "general": "Sveiki! Esu jūsų AI padėjėjas, padėsiu jums žingsnis po žingsnio išmokti technologijų. Galite užduoti man klausimų rašydami, kalbėdami arba rodydami vaizdus. Ką norėtumėte sužinoti?"
+    },
+    "error": {
+      "general": "Atsiprašau, dabar turiu problemų. Leiskite susisiekti su mūsų palaikymo komanda, kuri gali jums nedelsiant padėti."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Bendruomenės forumas",
+      "subtitle": "Susisiekite su kitais besimokančiaisiais, užduokite klausimų ir pasidalykite savo patirtimi",
+      "backToHome": "Grįžti į pagrindinį puslapį",
+      "newPost": "Naujas įrašas"
+    },
+    "sidebar": {
+      "categories": "Kategorijos",
+      "topics": {
+        "all": "Visos temos",
+        "general": "Bendroji pagalba",
+        "mobile": "Mobilieji įrenginiai",
+        "computer": "Kompiuteriai",
+        "apps": "Programos ir programinė įranga",
+        "internet": "Internetas ir el. paštas",
+        "safety": "Saugumas internete"
+      },
+      "guidelines": {
+        "title": "bendruomenės gairės",
+        "items": [
+          "Būkite pagarbus ir malonus",
+          "Jokio šlamšto ar netinkamo turinio",
+          "Padėkite kitiems, kai galite",
+          "Laikykitės temos",
+          "Praneškite apie bet kokias problemas"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Ieškoti įrašų..."
+    },
+    "createPost": {
+      "title": "Sukurti naują įrašą",
+      "categoryLabel": "Kategorija",
+      "titleLabel": "Pavadinimas",
+      "contentLabel": "Turinys",
+      "titlePlaceholder": "Koks tavo klausimas ar tema?",
+      "contentPlaceholder": "Aprašykite savo klausimą arba pasidalykite mintimis...",
+      "submit": "Įrašas",
+      "cancel": "Atšaukti",
+      "profanityAlert": "Jūsų įraše yra netinkamo turinio. Peržiūrėkite ir bandykite dar kartą."
+    },
+    "posts": {
+      "empty": "Nerasta jokių pranešimų. Būkite pirmas, pradėjęs pokalbį!",
+      "replies": "{{count}} atsakymų",
+      "timeAgo": {
+        "justNow": "Tik dabar",
+        "oneHour": "prieš 1 val",
+        "hours": "Prieš {{count}} val",
+        "oneDay": "prieš 1 dieną",
+        "days": "Prieš {{count}} dienų"
+      }
+    }
+  },
+  "contact": {
+    "title": "Susisiekite su mumis",
+    "subtitle": "Mes norėtume išgirsti iš jūsų! Parašykite mums žinutę ir mes kuo greičiau atsakysime.",
+    "backToHome": "Grįžti į pagrindinį puslapį",
+    "form": {
+      "fasterResponse": "📧 Į šią formą atsakysime greičiau nei kitais susisiekimo būdais!",
+      "name": "Visas vardas*",
+      "namePlaceholder": "Įveskite savo vardą ir pavardę",
+      "email": "El. pašto adresas*",
+      "emailPlaceholder": "Įveskite savo el. pašto adresą",
+      "subject": "Tema*",
+      "subjectPlaceholder": "Pasirinkite temą",
+      "subjects": {
+        "general": "Bendra apklausa",
+        "techSupport": "Techninė pagalba",
+        "account": "Paskyros pagalba",
+        "feature": "Funkcijos užklausa",
+        "bug": "Pranešimas apie klaidas",
+        "feedback": "Atsiliepimai",
+        "other": "Kita"
+      },
+      "message": "žinutė*",
+      "messagePlaceholder": "Prašome išsamiai apibūdinti savo užklausą...",
+      "submit": "Siųsti žinutę",
+      "sending": "Siunčiama...",
+      "success": "Jūsų el. pašto programa turėjo būti atidaryta. Jei ne, nukopijuokite informaciją ir atsiųskite mums tiesiogiai el.",
+      "error": "Įvyko klaida. Rašykite mums tiesiogiai adresu taksh.nahata37@gmail.com"
+    },
+    "info": {
+      "title": "Susisiekite",
+      "emailLabel": "El. paštas",
+      "responseData": "Paprastai atsakome per 24 valandas"
+    },
+    "reasons": {
+      "title": "Kodėl susisiekite su mumis?",
+      "items": [
+        "Gaukite pagalbos dėl techninių problemų",
+        "Prašyti naujų funkcijų",
+        "Pasidalykite atsiliepimais ir pasiūlymais",
+        "Praneškite apie klaidas ar problemas",
+        "Bendrieji paklausimai"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Paslaugų teikimo sąlygos",
+    "backToHome": "Grįžti į pagrindinį puslapį",
+    "lastUpdated": "Paskutinį kartą atnaujinta: {{data}}",
+    "sections": {
+      "acceptance": {
+        "title": "Sąlygų priėmimas",
+        "content": "Prisijungdami prie mūsų paslaugos ir naudodamiesi ja sutinkate ir sutinkate laikytis šios sutarties sąlygų ir nuostatų."
+      },
+      "license": {
+        "title": "Naudokite licenciją",
+        "content": "Suteikiamas leidimas laikinai naudotis mūsų paslauga tik asmeniniam, nekomerciniam laikinam žiūrėjimui."
+      },
+      "conduct": {
+        "title": "Vartotojo elgesys",
+        "content": "Jūs sutinkate naudotis mūsų paslauga laikydamiesi visų galiojančių įstatymų ir taisyklių bei šių sąlygų."
+      },
+      "liability": {
+        "title": "Atsakomybės apribojimas",
+        "content": "Mūsų įmonė ar jos tiekėjai jokiu būdu nėra atsakingi už žalą, atsiradusią dėl naudojimosi ar negalėjimo naudotis mūsų paslauga."
+      },
+      "contact": {
+        "title": "Kontaktinė informacija",
+        "content": "Jei turite klausimų dėl šių paslaugų teikimo sąlygų, susisiekite su mumis šiuo adresu:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Prieinamumo pareiškimas",
+    "subtitle": "Esame įsipareigoję, kad mūsų platforma būtų prieinama visiems, nepaisant galimybių ar technologijų.",
+    "backToHome": "Grįžti į pagrindinį puslapį",
+    "commitment": {
+      "title": "Mūsų įsipareigojimas",
+      "content": "Manome, kad technologijos turi būti prieinamos visiems. Mūsų platforma sukurta atsižvelgiant į senjorus ir apima funkcijas, kurios palengvina ir palengvina mokymosi technologijas visų gebėjimų naudotojams."
+    },
+    "features": {
+      "title": "Prieinamumo funkcijos",
+      "visual": {
+        "title": "Vaizdinis prieinamumas",
+        "items": [
+          "Didelio kontrasto spalvų schemos",
+          "Dideli, įskaitomi šriftai",
+          "Suderinamumas su ekrano skaitytuvu",
+          "Klaviatūros navigacijos palaikymas",
+          "Alternatyvus tekstas vaizdams"
+        ]
+      },
+      "audio": {
+        "title": "Garso prieinamumas",
+        "items": [
+          "Vaizdo įrašų subtitrai",
+          "Garso aprašymai",
+          "Garsumo valdikliai",
+          "Vaizdiniai garso signalų indikatoriai",
+          "Teksto alternatyvos garso turiniui"
+        ]
+      },
+      "motor": {
+        "title": "Prieinamumas varikliui",
+        "items": [
+          "Didelės spustelėjamos sritys",
+          "Naršymas tik klaviatūra",
+          "Reguliuojami laiko limitai",
+          "Balso valdymo suderinamumas",
+          "Supaprastinta sąveika"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognityvinis prieinamumas",
+        "items": [
+          "Paprasta, aiški kalba",
+          "Nuosekli navigacija",
+          "Sumažintos judesio parinktys",
+          "Aiškios instrukcijos",
+          "Klaidų prevencija ir atkūrimas"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Standartų laikymasis",
+      "content": "Mūsų platforma siekia atitikti Web Content Accessibility Guidelines (WCAG) 2.1 lygio AA standartus. Reguliariai testuojame savo platformą naudodami pagalbines technologijas ir atliekame prieinamumo auditą."
+    },
+    "feedback": {
+      "title": "Atsiliepimai ir palaikymas",
+      "content": "Nuolat stengiamės pagerinti pasiekiamumą. Jei susiduriate su kokiomis nors kliūtimis arba turite pasiūlymų, kaip patobulinti, nedvejodami susisiekite su mumis.",
+      "emailLabel": "El. paštas",
+      "subjectLabel": "Tema",
+      "subjectValue": "Atsiliepimai apie pritaikymą neįgaliesiems"
+    },
+    "assistive": {
+      "title": "Pagalbinės technologijos",
+      "content": "Mūsų platforma sukurta dirbti su įprastomis pagalbinėmis technologijomis, įskaitant:",
+      "items": [
+        "Ekrano skaitytuvai (JAWS, NVDA, VoiceOver)",
+        "Balso atpažinimo programinė įranga",
+        "Ekrano didinimo įrankiai",
+        "Alternatyvios klaviatūros",
+        "Perjungti navigacijos įrenginius",
+        "Akių sekimo sistemos"
+      ]
+    },
+    "help": {
+      "title": "Reikia pagalbos?",
+      "content": "Jei jums reikia pagalbos naudojant mūsų platformą arba turite su pritaikymu neįgaliesiems susijusių klausimų, mes pasiruošę padėti.",
+      "contact": "Susisiekite su palaikymo tarnyba"
+    },
+    "lastUpdated": "Paskutinį kartą atnaujinta: {{data}}"
   }
 }

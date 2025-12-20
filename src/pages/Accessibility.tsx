@@ -1,0 +1,172 @@
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Eye, Ear, Hand, Brain, Heart, Settings } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
+
+const Accessibility: React.FC = () => {
+  const { t } = useTranslation();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
+          <Link
+            to="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            {t('accessibilityPage.backToHome')}
+          </Link>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Heart className="w-8 h-8 text-blue-600" />
+            </div>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('accessibilityPage.title')}</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('accessibilityPage.subtitle')}
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm p-8 space-y-8">
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <Settings className="w-6 h-6 mr-3 text-blue-600" />
+                {t('accessibilityPage.commitment.title')}
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('accessibilityPage.commitment.content')}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                <Eye className="w-6 h-6 mr-3 text-green-600" />
+                {t('accessibilityPage.features.title')}
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-blue-50 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <Eye className="w-5 h-5 text-blue-600 mr-2" />
+                    <h3 className="font-semibold text-blue-900">{t('accessibilityPage.features.visual.title')}</h3>
+                  </div>
+                  <ul className="space-y-2 text-blue-800 text-sm">
+                    {(t('accessibilityPage.features.visual.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <Ear className="w-5 h-5 text-green-600 mr-2" />
+                    <h3 className="font-semibold text-green-900">{t('accessibilityPage.features.audio.title')}</h3>
+                  </div>
+                  <ul className="space-y-2 text-green-800 text-sm">
+                    {(t('accessibilityPage.features.audio.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-purple-50 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <Hand className="w-5 h-5 text-purple-600 mr-2" />
+                    <h3 className="font-semibold text-purple-900">{t('accessibilityPage.features.motor.title')}</h3>
+                  </div>
+                  <ul className="space-y-2 text-purple-800 text-sm">
+                    {(t('accessibilityPage.features.motor.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-orange-50 rounded-lg p-6">
+                  <div className="flex items-center mb-3">
+                    <Brain className="w-5 h-5 text-orange-600 mr-2" />
+                    <h3 className="font-semibold text-orange-900">{t('accessibilityPage.features.cognitive.title')}</h3>
+                  </div>
+                  <ul className="space-y-2 text-orange-800 text-sm">
+                    {(t('accessibilityPage.features.cognitive.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                      <li key={idx}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.standards.title')}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('accessibilityPage.standards.content')}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.feedback.title')}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('accessibilityPage.feedback.content')}
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 mb-2">
+                  <strong>{t('accessibilityPage.feedback.emailLabel')}:</strong> taksh.nahata37@gmail.com
+                </p>
+                <p className="text-gray-700">
+                  <strong>{t('accessibilityPage.feedback.subjectLabel')}:</strong> {t('accessibilityPage.feedback.subjectValue')}
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{t('accessibilityPage.assistive.title')}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('accessibilityPage.assistive.content')}
+              </p>
+              <ul className="grid md:grid-cols-2 gap-2 text-gray-700">
+                {(t('accessibilityPage.assistive.items', { returnObjects: true }) as unknown as string[]).map((item, idx) => (
+                  <li key={idx}>• {item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h3 className="font-semibold text-blue-900 mb-2">{t('accessibilityPage.help.title')}</h3>
+                <p className="text-blue-800 mb-4">
+                  {t('accessibilityPage.help.content')}
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  {t('accessibilityPage.help.contact')}
+                  <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
+                </Link>
+              </div>
+            </section>
+
+            <section>
+              <p className="text-sm text-gray-500">
+                {t('accessibilityPage.lastUpdated', { date: new Date().toLocaleDateString() })}
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Accessibility;

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
@@ -6,21 +6,53 @@ import OnboardingPage from './pages/OnboardingPage';
 import DashboardPage from './pages/DashboardPage';
 import SettingsPage from './pages/SettingsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfService from './pages/TermsOfService';
+import ContactUs from './pages/ContactUs';
+import Accessibility from './pages/Accessibility';
+import Community from './pages/Community';
 import LearningCenterPage from './pages/LearningCenterPage';
-import ProtectedRoute from './components/ProtectedRoute';
-import PublicRoute from './components/PublicRoute';
+import ChatDashboard from './pages/ChatDashboard';
+
+
+import ProtectedRoute from './components/routing/ProtectedRoute';
+import PublicRoute from './components/routing/PublicRoute';
+import { PWAProvider } from './components/pwa/PWAProvider';
+// Main App component
 import { CookieManager } from './utils/cookieManager';
+// import { errorLogger } from './utils/errors/errorLogger';
+import { performanceMonitor } from './utils/performanceMonitor';
 import { useTranslationAnimation } from './contexts/TranslationAnimationContext';
 import { useUser } from './contexts/UserContext';
-import i18n from './i18n'; // Import i18n instance
+import { useAuth } from './contexts/AuthContext';
+import { usePerformanceOptimization } from './hooks/usePerformanceOptimization';
+import { ErrorRecoveryProvider, ErrorRecoveryBoundary } from './components/error-recovery';
+import { AccessibilityProvider } from './contexts/AccessibilityContext';
+import { KeyboardNavigationManager, AccessibilityAnnouncer } from './components/accessibility';
+import i18n from './i18n';
 import './styles/globals.css';
 
 function App() {
   const { setIsTranslating } = useTranslationAnimation();
-  // Get onboarding status from user context
+  // Get authentication and user status
+  const { user, loading: authLoading } = useAuth();
   const { hasCompletedOnboarding, loading: userLoading } = useUser();
 
+  // Initialize performance optimizations
+  usePerformanceOptimization({
+    enableImageLazyLoading: true,
+    enableResourceHints: true,
+    enableServiceWorker: true,
+    criticalResourceTimeout: 1500
+  });
+
   useEffect(() => {
+    // Initialize performance monitoring
+    performanceMonitor.measureLandingPageLoad();
+
+    // Clear any console errors from development
+    // Temporarily disabled to fix React hooks issue
+    // errorLogger.clearConsoleErrors();
+
     // Apply saved preferences on app load
     const preferences = CookieManager.getPreferences();
     if (preferences) {
@@ -36,6 +68,7 @@ function App() {
           })
           .catch((registrationError) => {
             console.log('SW registration failed: ', registrationError);
+            console.error('Service worker registration failed:', registrationError);
           });
       });
     }
@@ -44,7 +77,7 @@ function App() {
       // Delay hiding the animation to allow it to complete its fade-out
       setTimeout(() => {
         setIsTranslating(false);
-      }, 300); // This should match or exceed the fade-out duration in TranslationAnimationOverlay
+      }, 300);
     };
 
     i18n.on('languageChanged', handleLanguageChanged);
@@ -55,57 +88,95 @@ function App() {
   }, [setIsTranslating]);
 
   return (
-    <Router>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
-        {/* TranslationAnimationOverlay will be rendered here */}
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route 
-            path="/auth" 
-            element={
-              <PublicRoute>
-                <AuthPage />
-              </PublicRoute>
-            } 
-          />
-          <Route 
-            path="/onboarding" 
-            element={
-              <ProtectedRoute requiresOnboarding={false}>
-                {/* If onboarding is already completed, redirect to dashboard */}
-                {userLoading ? null : hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <OnboardingPage />}
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute>
-                <DashboardPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/settings" 
-            element={
-              <ProtectedRoute>
-                <SettingsPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/learning" 
-            element={
-              <ProtectedRoute>
-                <LearningCenterPage />
-              </ProtectedRoute>
-            } 
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-    </Router>
+    <PWAProvider>
+      <AccessibilityProvider>
+        <ErrorRecoveryProvider
+          enableNotifications={true}
+          enableSessionRestore={false}
+          enableNetworkMonitor={true}
+          maxNotifications={3}
+        >
+          <ErrorRecoveryBoundary
+            onError={(error, errorInfo) => console.error('React Error:', error, errorInfo)}
+          >
+            <KeyboardNavigationManager>
+              <Router>
+                <AccessibilityAnnouncer />
+                <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+                  <Routes>
+                    <Route path="/" element={
+                      (authLoading || userLoading) ? <div className="min-h-screen flex items-center justify-center">
+                        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
+                      </div> :
+                        user && hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> :
+                          user && !hasCompletedOnboarding ? <Navigate to="/onboarding" replace /> :
+                            <LandingPage />
+                    } />
+                    <Route
+                      path="/auth"
+                      element={
+                        <PublicRoute>
+                          <AuthPage />
+                        </PublicRoute>
+                      }
+                    />
+                    <Route
+                      path="/onboarding"
+                      element={
+                        <ProtectedRoute requiresOnboarding={false}>
+                          {userLoading ? null : hasCompletedOnboarding ? <Navigate to="/dashboard" replace /> : <OnboardingPage />}
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/dashboard"
+                      element={
+                        <ProtectedRoute>
+                          <DashboardPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/settings"
+                      element={
+                        <ProtectedRoute>
+                          <SettingsPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/learning"
+                      element={
+                        <ProtectedRoute>
+                          <LearningCenterPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/chat"
+                      element={
+                        <ProtectedRoute>
+                          <ChatDashboard />
+                        </ProtectedRoute>
+                      }
+                    />
+
+
+
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/terms-of-service" element={<TermsOfService />} />
+                    <Route path="/contact" element={<ContactUs />} />
+                    <Route path="/accessibility" element={<Accessibility />} />
+                    <Route path="/community" element={<Community />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                  </Routes>
+                </div>
+              </Router>
+            </KeyboardNavigationManager>
+          </ErrorRecoveryBoundary>
+        </ErrorRecoveryProvider>
+      </AccessibilityProvider>
+    </PWAProvider>
   );
 }
 

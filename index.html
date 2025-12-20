@@ -18,16 +18,41 @@
     <meta property="og:url" content="https://www.techstep.com/">
     <meta property="og:title" content="TechStep - Technology made simple, one step at a time">
     <meta property="og:description" content="Empowering seniors with step-by-step tech guidance. Master technology with confidence through personalized, easy-to-follow instructions and live support.">
-    {/* <meta property="og:image" content="https://www.techstep.com/og-image.png"> */}
+    <!-- <meta property="og:image" content="https://www.techstep.com/og-image.png"> -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.techstep.com/">
     <meta property="twitter:title" content="TechStep - Technology made simple, one step at a time">
     <meta property="twitter:description" content="Empowering seniors with step-by-step tech guidance. Master technology with confidence through personalized, easy-to-follow instructions and live support.">
-    {/* <meta property="twitter:image" content="https://www.techstep.com/twitter-image.png"> */}
+    <!-- <meta property="twitter:image" content="https://www.techstep.com/twitter-image.png"> -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//lottie.host">
+    <link rel="dns-prefetch" href="//client.crisp.chat">
+    
+    <!-- Critical CSS inline (will be added by build process) -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+      #root { min-height: 100vh; }
+      .loading-fallback { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh; 
+        background: linear-gradient(135deg, #f9fafb 0%, #e0e7ff 100%);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

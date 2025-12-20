@@ -118,7 +118,10 @@
       ],
       "copyright": "© 2025 TechStep. Her yerdeki yaşlılar için ❤️ ile yapılmıştır.",
       "trustedBy": "Güvenenler",
-      "trustedByCount": "50.000+ yaşlı"
+      "trustedByCount": "50.000+ yaşlı",
+      "communityTitle": "Toplum",
+      "legalTitle": "Yasal ve Destek",
+      "contactEmail": "İletişim: E-posta: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -203,48 +206,169 @@
       "title": "Bilgisayar ve Cihaz Temelleri",
       "description": "Teknolojiye başlamanız için temel bilgiler.",
       "modules": {
-        "turnOnDevice": { "title": "Bir Cihazı Açma", "description": "Bilgisayarları ve akıllı telefonları açmayı öğrenin." },
-        "mouseTouchscreen": { "title": "Fare/Dokunmatik Ekran Kullanımı", "description": "İşaretleme, tıklama ve dokunma konusunda ustalaşın." },
-        "keyboardTyping": { "title": "Klavye/Yazma Temelleri", "description": "Yazmanın temelleriyle rahat olun." },
-        "filesFolders": { "title": "Dosya ve Klasörleri Anlama", "description": "Dijital bilgilerin nasıl organize edildiğini öğrenin." }
+        "turnOnDevice": {
+          "title": "Bir Cihazı Açma",
+          "description": "Bilgisayarları ve akıllı telefonları açmayı öğrenin."
+        },
+        "mouseTouchscreen": {
+          "title": "Fare/Dokunmatik Ekran Kullanımı",
+          "description": "İşaretleme, tıklama ve dokunma konusunda ustalaşın.",
+          "duration": "15 dakika",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Haydi Oynayalım: Fare ve Dokunmatik Ekranla İlgili Temel Bilgiler</h3><p>Keşfetmeye hazır mısınız? Fareniz ve dokunmatik ekranınız dijital dünyadaki sihirli değneklerinizdir!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Fare Eğlencesi:</h4><ul class=\"space-y-2\"><li>• <b>İşaretleme</b>: Fareyi hareket ettirin ve okun sizi takip etmesini izleyin!</li><li>• <b>Tıklama</b>: Seçmek için sol düğmeye basın şeyler. Aşağıdaki düğmelerden birini tıklamayı deneyin!</li><li>• <b>Çift Tıklama</b>: Dosyaları veya programları açmak için hızlıca iki kez basın.</li><li>• <b>Sağ Tıklama</b>: Gizli bir menü için sağ düğmeye basın.</li><li>• <b>Kaydırma</b>: Bir sayfada yukarı ve aşağı gitmek için tekerleği döndürün.</li></ul></div><div class=\"bg-blue-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Dokunmatik Ekran Püf Noktaları:</h4><ul class=\"space-y-2\"><li>• <b>Dokunma</b>: Seçmek için ekrana hafifçe dokunun.</li><li>• <b>Kaydırma</b>: Ekranları kaydırmak veya ekranlar arasında geçiş yapmak için parmağınızı kaydırın.</li><li>• <b>Kıstırma</b>: Yakınlaştırmak ve uzaklaştırmak için iki parmağınızı birbirine veya birbirinden ayırın.</li><li>• <b>Uzun Basın</b>: Daha fazla seçenek için parmağınızı basılı tutun (sağ tıklama gibi!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Deneyin!</h4><ul class=\"space-y-2\"><li>• Farenizi hareket ettirin ve ekranda nelerin değiştiğini görün.</li><li>• Cihazınıza dokunup kaydırın. keşfedin.</li></ul></div></div>",
+          "keyPoints": [
+            "Fare işaretçisi elinizi takip eder!",
+            "Sol tıklama ana eyleminizdir.",
+            "Dokunmatik ekranlar dokunmanıza, kaydırmanıza ve yakınlaştırmanıza olanak tanır!"
+          ],
+          "practiceExercise": "Masaüstünüze tıklamayı, çift tıklamayı ve sağ tıklamayı deneyin. Dokunmatik ekranda, ekranlar arasında geçiş yapmak için dokunun ve kaydırın.",
+          "animationDesc": "Dokunmatik ekranda nasıl tıklanacağını, çift tıklatılacağını ve kaydırılacağını izleyin."
+        },
+        "keyboardTyping": {
+          "title": "Klavye/Yazma Temelleri",
+          "description": "Yazmanın temelleriyle rahat olun."
+        },
+        "filesFolders": {
+          "title": "Dosya ve Klasörleri Anlama",
+          "description": "Dijital bilgilerin nasıl organize edildiğini öğrenin."
+        }
       }
     },
     "onlineWorld": {
       "title": "Çevrimiçi Dünya",
       "description": "Bağlanmak ve interneti güvenli bir şekilde keşfetmek.",
       "modules": {
-        "webBrowsers": { "title": "Web Tarayıcılarını Anlama", "description": "Chrome, Edge veya Safari ile internette gezinin." },
-        "searchEffectively": { "title": "Etkili Arama Nasıl Yapılır", "description": "Arama motorlarını kullanarak çevrimiçi olarak ihtiyacınız olanı bulun." },
-        "introEmail": { "title": "E-postaya Giriş", "description": "Elektronik posta göndermeyi ve almayı öğrenin." },
-        "virusSafety": { "title": "Virüslerden Güvende Kalma", "description": "Cihazınızı zararlı yazılımlardan koruyun." }
+        "webBrowsers": {
+          "title": "Web Tarayıcılarını Anlama",
+          "description": "Chrome, Edge veya Safari ile internette gezinin."
+        },
+        "searchEffectively": {
+          "title": "Etkili Arama Nasıl Yapılır",
+          "description": "Arama motorlarını kullanarak çevrimiçi olarak ihtiyacınız olanı bulun."
+        },
+        "introEmail": {
+          "title": "E-postaya Giriş",
+          "description": "Elektronik posta göndermeyi ve almayı öğrenin."
+        },
+        "virusSafety": {
+          "title": "Virüslerden Güvende Kalma",
+          "description": "Cihazınızı zararlı yazılımlardan koruyun."
+        }
       }
     },
     "digitalLife": {
       "title": "Günlük Dijital Yaşam",
       "description": "Dijital varlığınızı iletişim kurun, paylaşın ve yönetin.",
       "modules": {
-        "masteringEmail": { "title": "E-postada Ustalaşma", "description": "Ekler, klasörler ve e-posta görgü kuralları." },
-        "videoCalling": { "title": "Aile ve Arkadaşlarla Görüntülü Arama", "description": "Sevdiklerinizle yüz yüze bağlantı kurun." },
-        "introSocialMedia": { "title": "Sosyal Medyaya Giriş", "description": "Facebook gibi platformları anlama." },
-        "sharingPhotos": { "title": "Fotoğrafları Güvenli Bir Şekilde Paylaşma", "description": "Gizliliğinizden ödün vermeden anılarınızı paylaşın." }
+        "masteringEmail": {
+          "title": "E-postada Ustalaşma",
+          "description": "Ekler, klasörler ve e-posta görgü kuralları."
+        },
+        "videoCalling": {
+          "title": "Aile ve Arkadaşlarla Görüntülü Arama",
+          "description": "Sevdiklerinizle yüz yüze bağlantı kurun."
+        },
+        "introSocialMedia": {
+          "title": "Sosyal Medyaya Giriş",
+          "description": "Facebook gibi platformları anlama."
+        },
+        "sharingPhotos": {
+          "title": "Fotoğrafları Güvenli Bir Şekilde Paylaşma",
+          "description": "Gizliliğinizden ödün vermeden anılarınızı paylaşın."
+        }
       }
     },
     "advancedSkills": {
       "title": "İleri ve Yaratıcı Beceriler",
       "description": "Temellerin ötesinde: teknolojinin sunduğu daha fazlasını keşfedin.",
       "modules": {
-        "onlineShopping": { "title": "Çevrimiçi Alışverişe Giriş", "description": "Çevrimiçi olarak güvenli ve rahat bir şekilde alışveriş yapın." },
-        "onlineMaps": { "title": "Çevrimiçi Harita ve Navigasyon Kullanımı", "description": "Dijital haritalarla yolunuzu bulun." },
-        "photoEditing": { "title": "Temel Fotoğraf Düzenleme", "description": "Dijital fotoğraflarınızı geliştirin." },
-        "productivityTools": { "title": "Üretkenlik Araçlarına Giriş", "description": "Google Dokümanlar veya Microsoft Word temelleri gibi araçları kullanma." }
+        "onlineShopping": {
+          "title": "Çevrimiçi Alışverişe Giriş",
+          "description": "Çevrimiçi olarak güvenli ve rahat bir şekilde alışveriş yapın."
+        },
+        "onlineMaps": {
+          "title": "Çevrimiçi Harita ve Navigasyon Kullanımı",
+          "description": "Dijital haritalarla yolunuzu bulun."
+        },
+        "photoEditing": {
+          "title": "Temel Fotoğraf Düzenleme",
+          "description": "Dijital fotoğraflarınızı geliştirin."
+        },
+        "productivityTools": {
+          "title": "Üretkenlik Araçlarına Giriş",
+          "description": "Google Dokümanlar veya Microsoft Word temelleri gibi araçları kullanma."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Erişilebilirlik ve Kullanım Kolaylığı",
+      "description": "Cihazınızın görülmesini, duyulmasını ve kontrol edilmesini kolaylaştırın.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Ekran Büyüteci Kullanma",
+          "description": "Ekranınızdaki metin ve resimleri büyütün."
+        },
+        "voiceCommands": {
+          "title": "Sesli Komutlar ve Dikte",
+          "description": "Cihazınızı kontrol edin ve sesinizle yazın."
+        },
+        "highContrast": {
+          "title": "Yüksek Kontrast ve Renk Ayarları",
+          "description": "Daha iyi görünürlük için renkleri ayarlayın."
+        },
+        "assistiveTouch": {
+          "title": "Yardımcı Dokunuş ve Kısayollar",
+          "description": "Daha kolay gezinmek için ekrandaki araçları kullanın."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Sağlık, Güvenlik ve Gizlilik",
+      "description": "Teknolojiyi kullanırken güvende, sağlıklı ve gizli kalın.",
+      "modules": {
+        "privacySettings": {
+          "title": "Gizlilik Ayarları",
+          "description": "Kişisel bilgilerinizi çevrimiçi ortamda koruyun."
+        },
+        "scamAwareness": {
+          "title": "Dolandırıcılık Farkındalığı",
+          "description": "Yaygın çevrimiçi dolandırıcılıkları tespit edin ve bunlardan kaçının."
+        },
+        "healthApps": {
+          "title": "Sağlık Uygulamalarını Kullanma",
+          "description": "Uygulamalarla sağlığınızı ve sağlıklı yaşamınızı takip edin."
+        },
+        "emergencyContacts": {
+          "title": "Acil Durum Kişilerini Ayarlama",
+          "description": "Acil durumda iletişime geçilecek kişileri cihazınıza ekleyin."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Teknolojiye Başlayan", "description": "Bilgisayar ve Cihaz Temelleri tamamlandı." },
-    "onlineWorld": { "name": "Çevrimiçi Kaşif", "description": "Çevrimiçi Dünya yolu tamamlandı." },
-    "digitalLife": { "name": "Dijital İletişimci", "description": "Günlük Dijital Yaşam yolu tamamlandı." },
-    "advancedSkills": { "name": "Teknoloji Virtüözü", "description": "İleri ve Yaratıcı Beceriler yolu tamamlandı." }
+    "fundamentals": {
+      "name": "Teknolojiye Başlayan",
+      "description": "Bilgisayar ve Cihaz Temelleri tamamlandı."
+    },
+    "onlineWorld": {
+      "name": "Çevrimiçi Kaşif",
+      "description": "Çevrimiçi Dünya yolu tamamlandı."
+    },
+    "digitalLife": {
+      "name": "Dijital İletişimci",
+      "description": "Günlük Dijital Yaşam yolu tamamlandı."
+    },
+    "advancedSkills": {
+      "name": "Teknoloji Virtüözü",
+      "description": "İleri ve Yaratıcı Beceriler yolu tamamlandı."
+    },
+    "accessibility": {
+      "name": "Erişilebilirlik Şampiyonu",
+      "description": "Erişilebilirlik ve Kullanım Kolaylığı yolu tamamlandı."
+    },
+    "healthAndSafety": {
+      "name": "Güvenlik Görevlisi",
+      "description": "Sağlık, Güvenlik ve Gizlilik yolu tamamlandı."
+    }
   },
   "skillAssessmentModal": {
     "title": "Hızlı Beceri Kontrolü",
@@ -490,16 +614,31 @@
   },
   "settings": {
     "customizePrefs": "Tercihlerinizi özelleştirin",
-    "personalInfo": "Kişisel Bilgiler",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "age": "Age",
+      "techExperience": "Tech Experience Level",
+      "techExperienceBeginner": "Beginner - I'm new to technology",
+      "techExperienceSome": "Some Experience - I know the basics",
+      "techExperienceComfortable": "Comfortable - I'm pretty good with tech"
+    },
     "firstName": "Ad",
     "firstNamePlaceholder": "Adınız",
     "primaryDevice": "Birincil Cihaz",
     "devices": {
-      "windowsComputer": "Windows Bilgisayar",
-      "macComputer": "Mac (Apple Bilgisayar)",
+      "title": "Primary Device(s)",
+      "description": "Select all devices you use regularly",
+      "windowsComputer": "Windows Computer",
+      "macComputer": "Mac Computer",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android Telefon veya Tablet"
+      "androidPhone": "Android Phone",
+      "androidTablet": "Android Tablet",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Erişilebilirlik",
     "textToSpeech": "Metin Okuma",
@@ -530,9 +669,9 @@
     "signOut": "Çıkış Yap",
     "signOutDesc": "Hesabınızdan çıkış yapın",
     "cancel": "İptal",
-    "saving": "Kaydediliyor...",
-    "saved": "Kaydedildi!",
-    "saveChanges": "Değişiklikleri Kaydet",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "saveChanges": "Save Changes",
     "errorSaving": "Ayarlar kaydedilemedi. Lütfen tekrar deneyin.",
     "lastName": "Soyadı",
     "lastNamePlaceholder": "Soyadınız",
@@ -567,12 +706,114 @@
     },
     "highContrast": "Yüksek Kontrast Modu",
     "highContrastDesc": "Daha iyi görünürlük için metin ve öğe kontrastını artırın",
-    "learningPreferences": "Öğrenme ve İçerik Tercihleri"
+    "learningPreferences": "Öğrenme ve İçerik Tercihleri",
+    "title": "Settings",
+    "audio": {
+      "title": "Audio & Speech",
+      "autoTTS": "Auto Text-to-Speech",
+      "autoTTSDesc": "Automatically read AI messages aloud"
+    },
+    "display": {
+      "title": "Display Settings",
+      "textSize": "Text Size",
+      "textSizeNormal": "Normal",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Extra Large",
+      "theme": "Color Theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeHighContrast": "High Contrast"
+    },
+    "language": {
+      "title": "Language Preference",
+      "interfaceLanguage": "Interface Language",
+      "description": "This affects the interface language and voice for text-to-speech"
+    },
+    "pwa": {
+      "install": {
+        "title": "TechStep'i yükleyin",
+        "description": "Öğrenme ilerlemenize hızlı erişim sağlayın ve TechStep'i çevrimdışı kullanın.",
+        "button": "Uygulamayı Yükle"
+      },
+      "update": {
+        "title": "Güncelleme Mevcut",
+        "description": "İyileştirmeler ve hata düzeltmeleri içeren yeni bir TechStep sürümü mevcut.",
+        "button": "Şimdi Güncelle"
+      },
+      "status": {
+        "online": "Çevrimiçi",
+        "offline": "Çevrimdışı - Bağlantı kurulduğunda değişiklikler senkronize edilecek",
+        "syncing": "Senkronize ediliyor..."
+      },
+      "notifications": {
+        "title": "Öğrenme Hatırlatıcıları",
+        "description": "Öğrenme yolculuğunuzda doğru yolda kalmanıza yardımcı olacak hafif hatırlatıcılar alın.",
+        "learning_reminders": "Öğrenme Hatırlatıcıları",
+        "learning_reminders_desc": "Derslerinize devam etmek için hafif dürtmeler",
+        "progress_updates": "İlerleme Güncellemeleri",
+        "progress_updates_desc": "Başarılarınızı kutlayın",
+        "support_messages": "Destek Mesajları",
+        "support_messages_desc": "Yararlı ipuçları ve yardım",
+        "frequency": "Sıklık",
+        "enable": "Bildirimleri Etkinleştir",
+        "subscribing": "Kurulum...",
+        "blocked": {
+          "title": "Bildirimler Engellendi",
+          "description": "Bildirimler şu anda engellendi. Bunları etkinleştirmek için lütfen tarayıcı ayarlarınızda bildirimlere izin verin.",
+          "instructions": "Adres çubuğunuzdaki bildirim simgesini arayın veya tarayıcınızın site ayarlarını kontrol edin."
+        },
+        "success": {
+          "title": "Bildirimler Etkinleştirildi!",
+          "description": "Tercihlerinize göre yararlı hatırlatıcılar ve güncellemeler alacaksınız."
+        }
+      }
+    },
+    "offline": {
+      "error": "Senkronizasyon Hatası",
+      "offline": "Çevrimdışı",
+      "online": "Çevrimiçi",
+      "syncing": "Senkronize ediliyor...",
+      "offline_desc": "Bağlantı kurulduğunda değişiklikler senkronize edilecek",
+      "syncing_desc": "Verileriniz güncelleniyor",
+      "online_desc": "Tüm değişiklikler kaydedildi",
+      "pending_operations": "{{count}} bekleyen değişiklik",
+      "last_sync": "Son senkronizasyon: {{time}}",
+      "content_manager": {
+        "title": "Çevrimdışı İçerik",
+        "description": "Çevrimdışıyken erişmek için içeriği indirin",
+        "online": "Bağlı - Yeni içerik indirebilirsiniz",
+        "offline": "Çevrimdışı - Yalnızca indirilen içeriği kullanma",
+        "no_content": "Çevrimdışı İçerik Yok",
+        "no_content_desc": "Çevrimdışı erişmek için kursları ve dersleri indirin",
+        "downloaded": "İndirildi",
+        "available_offline": "Çevrimdışı kullanılabilir",
+        "remove": "Çevrimdışı depolama alanından kaldır",
+        "suggestions": "Önerilen İndirmeler",
+        "suggestion_1": "Bilgisayar Temelleri Kursu",
+        "suggestion_1_desc": "Teknolojiye başlamak için temel beceriler",
+        "popular": "Popüler",
+        "download": "İndirmek",
+        "type": {
+          "course": "Kurs",
+          "lesson": "Ders",
+          "tutorial": "öğretici",
+          "media": "Medya"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Azletmek"
+    },
+    "dataPortability": "Veri ve Gizlilik Hakları",
+    "dataRights": "Veri Haklarınız",
+    "dataRightsDesc": "Kişisel verileriniz üzerinde tam kontrol sizdedir. Verilerinizi istediğiniz zaman dışa aktarın, paylaşım tercihlerini yönetin veya silin."
   },
   "common": {
     "settings": "Ayarlar",
     "signOut": "Çıkış Yap",
-    "close": "Kapat"
+    "close": "Kapat",
+    "friend": "friend",
+    "comingSoon": "Yakında gelecek"
   },
   "tips": {
     "connectWifi": "Wi-Fi'ye Bağlan",
@@ -662,7 +903,8 @@
       "firstNamePlaceholder": "Adınız",
       "lastName": "Soyadı",
       "lastNamePlaceholder": "Soyadınız",
-      "age": "Yaş (açıklamalarımı ayarlamama yardımcı olur)"
+      "age": "Yaş (açıklamalarımı ayarlamama yardımcı olur)",
+      "tooltip": "Öğrenme deneyiminizi kişiselleştirebilmemiz için bize biraz kendinizden bahsedin."
     },
     "step2": {
       "title": "Tercih ettiğiniz dilleri seçin",
@@ -679,7 +921,8 @@
       "selected_plural": "Seçili: {{count}} dil",
       "noLanguagesFound": "\"{{search}}\" ile eşleşen dil bulunamadı",
       "languageRequired": "Dil Seçimi Gerekli",
-      "languageRequiredDesc": "Devam etmek için lütfen en az bir dil seçin. Bu, ses girişi ve metin etkileşimleri için en iyi deneyimi sağlar."
+      "languageRequiredDesc": "Devam etmek için lütfen en az bir dil seçin. Bu, ses girişi ve metin etkileşimleri için en iyi deneyimi sağlar.",
+      "tooltip": "Ses girişi ve metin etkileşimleri için rahat ettiğiniz dilleri seçin."
     },
     "step3": {
       "title": "En çok hangi cihazı kullanıyorsunuz?",
@@ -692,7 +935,8 @@
         "androidphoneortablet": "Android Telefon veya Tablet",
         "smarttv": "Akıllı TV",
         "multipledevices": "Birden fazla cihaz"
-      }
+      },
+      "tooltip": "Birincil cihazınızı bilmek, daha alakalı talimatlar sunmamıza yardımcı olur."
     },
     "step4": {
       "title": "Teknolojiyle ne kadar rahatsınız?",
@@ -702,7 +946,8 @@
       "some": "Biraz Deneyim",
       "someDesc": "Temel görevleri yapabilirim ama yeni şeylerde yardıma ihtiyacım var",
       "comfortable": "Rahat",
-      "comfortableDesc": "Çoğu şeyi çözebilirim ama bazen rehberliğe ihtiyacım olur"
+      "comfortableDesc": "Çoğu şeyi çözebilirim ama bazen rehberliğe ihtiyacım olur",
+      "tooltip": "Konfor seviyeniz konusunda dürüst olun; bu, olayları doğru hızda açıklamamıza yardımcı olur."
     },
     "step5": {
       "title": "Hangi teknoloji konuları sizi en çok endişelendiriyor?",
@@ -720,7 +965,8 @@
         "deviceSettings": "Cihaz Ayarları",
         "onlineShopping": "Çevrimiçi Alışveriş",
         "healthApps": "Sağlık Uygulamaları ve Portalları"
-      }
+      },
+      "tooltip": "Sizi en çok endişelendiren konuları seçin, böylece bu alanlardaki yardıma öncelik verebiliriz."
     },
     "step6": {
       "title": "Herhangi bir erişilebilirlik özelliğine ihtiyacınız var mı?",
@@ -733,7 +979,8 @@
         "slowerExplanations": "Daha yavaş açıklamalar",
         "visualSteps": "Görsel adım göstergeleri",
         "noneNeeded": "Gerekli değil"
-      }
+      },
+      "tooltip": "Rahat bir deneyim için ihtiyacınız olan erişilebilirlik özelliklerini bize bildirin."
     },
     "step7": {
       "title": "Nasıl öğrenmeyi tercih edersiniz?",
@@ -743,7 +990,8 @@
       "detailed": "Ayrıntılı Açıklamalar",
       "detailedDesc": "Her adımı neden yaptığımı açıklayın",
       "visual": "Görsel Öğrenme",
-      "visualDesc": "Mümkün olduğunda bana resim ve video gösterin"
+      "visualDesc": "Mümkün olduğunda bana resim ve video gösterin",
+      "tooltip": "Nasıl öğrenmeyi tercih ettiğinizi seçin, böylece öğretme tarzımızı ayarlayabiliriz."
     },
     "step8": {
       "title": "Son dokunuşlar",
@@ -757,17 +1005,110 @@
       "textSize": "Metin Boyutu Tercihi",
       "textSizeNormal": "Normal",
       "textSizeLarge": "Büyük",
-      "textSizeExtraLarge": "Ekstra Büyük"
+      "textSizeExtraLarge": "Ekstra Büyük",
+      "tooltip": "Bu son tercihlerle mükemmel öğrenme ortamınızı oluşturun.",
+      "privacy": {
+        "title": "Gizliliğiniz Bizim Önceliğimizdir",
+        "items": [
+          "Kişisel verilerinizi ASLA satmayacağız",
+          "Tüm veriler şifrelenmiş ve güvende kalır",
+          "Bu ayarları istediğiniz zaman değiştirebilirsiniz",
+          "Verilerinizi istediğiniz zaman silebilirsiniz"
+        ]
+      },
+      "personalization": {
+        "title": "Kişiselleştirilmiş Deneyim",
+        "description": "İhtiyaçlarınıza göre daha iyi, daha alakalı yardım ve öneriler sunmak için etkileşim verilerinizi kullanmamıza izin verin.",
+        "note": "Bu, en çok hangi konularla ilgilendiğinizi anlamamıza ve daha alakalı eğitimler sunmamıza yardımcı olur."
+      },
+      "history": {
+        "title": "Konuşma Geçmişini Kullan",
+        "description": "Daha iyi bir bağlam sağlamak ve zaten bildiğiniz bilgilerin tekrarlanmasını önlemek için önceki konuşmalarımızı hatırlayın.",
+        "note": "Bu, daha önce tartıştığımız şeyleri hatırlamama ve önceki konuşmaların üzerine ekleme yapmama yardımcı oluyor."
+      },
+      "learningPrefs": {
+        "title": "Öğrenim Tercihlerini Kullan",
+        "description": "Tutarlı deneyimler sağlamak için tercih ettiğiniz öğrenme stilini, iletişim tercihlerinizi ve erişilebilirlik ihtiyaçlarınızı unutmayın.",
+        "note": "Buna tercih ettiğiniz açıklama stili, dil ayarları ve erişilebilirlik tercihleriniz dahildir."
+      },
+      "noSelection": {
+        "title": "Kişiselleştirme Seçilmedi",
+        "success": "Harika! Daha iyi bir deneyim sağlamak için seçtiğiniz verileri kullanacağız.",
+        "default": "Bu gayet iyi! Kişiselleştirilmiş öneriler olmadan tüm özelliklere tam erişime sahip olmaya devam edeceksiniz."
+      }
     },
     "back": "Geri",
     "next": "İleri",
     "settingUp": "Kuruluyor...",
     "completeSetup": "Kurulumu Tamamla",
-    "errorSaving": "Tercihleriniz kaydedilemedi. Lütfen tekrar deneyin."
+    "errorSaving": "Tercihleriniz kaydedilemedi. Lütfen tekrar deneyin.",
+    "buttons": {
+      "previous": "Öncesi",
+      "next": "Sonraki",
+      "skip": "Atlamak",
+      "complete": "Tamamlamak",
+      "processing": "İşleme...",
+      "gotIt": "Anladım!",
+      "skipAll": "Tümünü Atla",
+      "cancel": "İptal etmek"
+    },
+    "progress": {
+      "label": "İlk Katılım İlerlemesi: Adım {{current}} / {{total}}",
+      "stepOf": "{{current}}. adım / {{total}}",
+      "step": "Adım",
+      "stepCompleted": "{{adım}} - Tamamlandı",
+      "stepCurrent": "{{step}} - Geçerli adım",
+      "stepUpcoming": "{{adım}} - Yaklaşan"
+    },
+    "tooltip": {
+      "helpfulTip": "Yararlı İpucu"
+    },
+    "flow": {
+      "title": "Hoş geldin! Haydi Başlayalım"
+    },
+    "accessibility": {
+      "helpfulTip": "Yararlı ipucu",
+      "tooltipAppeared": "Araç ipucu içerikle birlikte göründü: {{content}}",
+      "skippingStep": "Geçerli adım atlanıyor",
+      "movingToNextStep": "Bir sonraki adıma geçiyoruz",
+      "movingToPreviousStep": "Önceki adıma geçme",
+      "completingOnboarding": "İlk katılım sürecini tamamlama",
+      "stepChanged": "Şimdi {{total}} adımının {{step}}. adımında: {{title}}",
+      "skippingOnboarding": "Tüm katılım sürecinin atlanması",
+      "cancellingOnboarding": "İlk katılım sürecinin iptal edilmesi",
+      "errorCompleting": "İlk katılım tamamlanırken hata oluştu. Lütfen tekrar deneyin.",
+      "goToPreviousStep": "Önceki adıma git",
+      "skipThisStep": "Bu adımı atla",
+      "completeOnboarding": "İlk katılım işlemini tamamlayın",
+      "continueToNextStep": "Sonraki adıma geçin",
+      "closeTooltip": "İpucunu kapat",
+      "skipTooltip": "Bu ipucunu atla",
+      "continueFromTooltip": "Araç ipucundan devam et",
+      "skipEntireOnboarding": "İlk katılımın tamamını atla",
+      "cancelOnboarding": "İlk katılımı iptal et",
+      "keyboardInstructions": "Gezinmek için Sekme'yi, seçmek için Enter'ı ve iletişim kutularını kapatmak için Escape'i kullanın"
+    },
+    "validation": {
+      "firstNameRequired": "Ad gerekli",
+      "lastNameRequired": "Soyadı gerekli",
+      "validAgeRequired": "Lütfen 18 ile 120 arasında geçerli bir yaş girin",
+      "languageRequired": "Lütfen en az bir dil seçin",
+      "deviceRequired": "Lütfen birincil cihazınızı seçin",
+      "experienceRequired": "Lütfen teknik deneyim düzeyinizi seçin",
+      "concernsOptional": "Deneyiminizi kişiselleştirmemize yardımcı olacak endişeleri seçebilirsiniz",
+      "assistiveNeedsRequired": "Lütfen erişilebilirlik ihtiyaçlarınızı seçin veya 'Gereksiz'i seçin",
+      "communicationStyleRequired": "Lütfen tercih ettiğiniz iletişim tarzını seçin"
+    },
+    "restart": {
+      "confirmMessage": "Katılım sürecini yeniden başlatmak istediğinizden emin misiniz? Bu, tüm tercihlerinizi sıfırlayacaktır."
+    }
   },
   "error": {
     "askQuestionFirst": "Lütfen önce bir soru sorun",
-    "couldntGetAnswer": "Üzgünüm, şu anda bir cevap alamadım. Lütfen tekrar deneyin."
+    "couldntGetAnswer": "Üzgünüm, şu anda bir cevap alamadım. Lütfen tekrar deneyin.",
+    "notifications": {
+      "dismiss": "Azletmek"
+    }
   },
   "learningPage": {
     "headerTitle": "Öğrenme Merkezi",
@@ -802,7 +1143,11 @@
     "moduleListTitle": "{{pathTitle}} yolu için modüller",
     "moduleContentTitle": "{{moduleTitle}} modülü için içerik buraya gelecek.",
     "loadingCenter": "Öğrenme Merkezi Yükleniyor...",
-    "moduleTimeLabel": "Süre: "
+    "moduleTimeLabel": "Süre: ",
+    "startOrContinueCourse": "Kursu Başlatın veya Devam Edin",
+    "lessonsHeader": "Dersler",
+    "lessonContentPlaceholder": "{{lessonTitle}} için henüz içerik mevcut değil.",
+    "noLessonAvailable": "Ders mevcut değil."
   },
   "languageSelector": {
     "choosePrompt": "Arayüz için tercih ettiğiniz dili seçin",
@@ -821,7 +1166,13 @@
     "reviewLesson": "Gözden Geçir",
     "congratulations": "Tebrikler!",
     "courseComplete": "{{courseTitle}} kursunu tamamladınız!",
-    "downloadCertificate": "Sertifikayı İndir"
+    "downloadCertificate": "Sertifikayı İndir",
+    "previousLesson": "Önceki Ders",
+    "nextLesson": "Sonraki Ders",
+    "markAsComplete": "Tamamlandı Olarak İşaretle",
+    "completed": "Tamamlanmış",
+    "removeBookmark": "Yer İşaretini Kaldır",
+    "addBookmark": "Yer İşareti Ekle"
   },
   "lessonView": {
     "readAloud": "Dersi yüksek sesle oku",
@@ -939,5 +1290,461 @@
       "thankYou": "Bilgilerinizi TechStep'e emanet ettiğiniz için teşekkür ederiz. Onu güvende tutmaya ve sadece teknolojiyle başarılı olmanıza yardımcı olmak için kullanmaya kararlıyız.",
       "backToHome": "Ana Sayfaya Dön"
     }
+  },
+  "avatar": {
+    "enable": "AI Avatar'ı etkinleştir",
+    "disable": "Avatarı devre dışı bırak",
+    "loading": "Avatar yükleniyor...",
+    "mute": "Avatarı sessize al",
+    "unmute": "Avatarın sesini aç",
+    "settings": "Avatar Ayarları",
+    "fullscreen": "Tam ekran",
+    "exitFullscreen": "Tam Ekrandan Çık",
+    "performance": {
+      "high": "Yüksek Kalite",
+      "medium": "Orta Kalite",
+      "low": "Düşük Kalite",
+      "off": "Avatar Kapalı"
+    },
+    "error": {
+      "loadFailed": "Avatar yüklenemedi. Lütfen tekrar deneyin.",
+      "noWebGL": "Cihazınız 3D grafikleri desteklemiyor.",
+      "audioFailed": "Dudak senkronizasyonu için mikrofona erişilemedi."
+    },
+    "status": {
+      "initializing": "Avatar başlatılıyor...",
+      "ready": "Yardım etmeye hazır",
+      "thinking": "Düşünüyorum...",
+      "speaking": "Konuşuyorum...",
+      "listening": "Dinleme...",
+      "celebrating": "Yardım etmekten heyecan duyuyorum!",
+      "error": "Bir şeyler ters gitti",
+      "processing": "Ses işleniyor...",
+      "lipSyncActive": "Dudak senkronizasyonu etkin",
+      "lipSyncInactive": "Dudak senkronizasyonu etkin değil"
+    },
+    "greeting": {
+      "morning": "Günaydın {{name}}! Bugün yeni bir şeyler öğrenmeye hazır mısınız?",
+      "afternoon": "İyi günler {{name}}! Bugün sana nasıl yardımcı olabilirim?",
+      "evening": "İyi akşamlar {{name}}! Neyi keşfetmek istersiniz?"
+    },
+    "companion": {
+      "title": "Yapay Zeka Yardımcınız",
+      "ready": "Teknoloji konusunda size yardımcı olmak için buradayım!"
+    },
+    "actions": {
+      "chat": "Sohbet",
+      "voice": "Ses",
+      "camera": "Kamera",
+      "help": "Yardım"
+    },
+    "suggestions": {
+      "title": "Hızlı Sorular"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "WiFi'ye nasıl bağlanırım?",
+    "makeTextBigger": "Ekranımdaki metni nasıl büyütebilirim?",
+    "takeScreenshot": "Ekran görüntüsünü nasıl alırım?",
+    "videoCall": "Nasıl görüntülü arama yaparım?",
+    "iphoneSettings": "iPhone ayarlarını nasıl değiştiririm?",
+    "androidSettings": "Android ayarlarını nasıl değiştiririm?",
+    "windowsSettings": "Windows ayarlarını nasıl değiştiririm?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Bugün sana nasıl yardımcı olabilirim?",
+      "subtitle": "Teknolojiyle ilgili her şeyi bana sor!"
+    },
+    "input": {
+      "placeholder": "Yapay zeka asistanına mesaj gönder...",
+      "helper": "Göndermek için Enter'a, yeni satır için Shift+Enter'a basın"
+    },
+    "greeting": {
+      "morning": "Günaydın",
+      "afternoon": "Tünaydın",
+      "evening": "İyi akşamlar"
+    },
+    "error": {
+      "general": "Üzgünüm, şu anda sorun yaşıyorum. Lütfen kısa bir süre sonra tekrar deneyin."
+    }
+  },
+  "flashcards": {
+    "title": "Adım Adım Kılavuz",
+    "progress": "{{current}}. adım / {{total}}",
+    "instructions": "Talimatlar:",
+    "markCompleted": "Tamamlandı Olarak İşaretle"
+  },
+  "dataPortability": {
+    "title": "Veri Taşınabilirliği ve Kullanıcı Hakları",
+    "tabs": {
+      "overview": "Genel Bakış",
+      "sharing": "Veri Paylaşımı",
+      "export": "Verileri Dışa Aktar",
+      "delete": "Verileri Sil",
+      "ai": "Yapay Zeka Şeffaflığı"
+    },
+    "overview": {
+      "title": "Veri Haklarınız",
+      "description": "Kişisel verileriniz üzerinde tam kontrol sizdedir. Bilgilerinizi 30 gün içinde istediğiniz zaman görüntüleyebilir, dışa aktarabilir, düzeltebilir veya silebilirsiniz.",
+      "dataWeCollect": "Topladığımız Veriler",
+      "profileInfo": "Profil bilgileri (isim, e-posta, tercihler)",
+      "learningProgress": "Öğrenme ilerlemesi ve başarılar",
+      "aiHistory": "AI konuşma geçmişi",
+      "analytics": "Kullanım analitiği (anonimleştirilmiş)",
+      "howWeUse": "Verilerinizi Nasıl Kullanıyoruz?",
+      "personalized": "Kişiselleştirilmiş öğrenme deneyimi sağlayın",
+      "improveAI": "Yapay zeka asistanının yanıtlarını iyileştirin",
+      "trackProgress": "İlerlemenizi ve başarılarınızı takip edin",
+      "security": "Platform güvenliğini ve performansını sağlayın",
+      "rightsTitle": "GDPR ve CCPA Kapsamındaki Haklarınız",
+      "rightAccess": "Erişim Hakkı:",
+      "accessDesc": "Tüm kişisel verilerinizi görüntüleyin",
+      "rightPortability": "Taşınabilirlik Hakkı:",
+      "portabilityDesc": "Verilerinizi dışa aktarın",
+      "rightRectification": "Düzeltme Hakkı:",
+      "rectificationDesc": "Yanlış verileri düzeltin",
+      "rightErasure": "Silme Hakkı:",
+      "erasureDesc": "Kişisel verilerinizi silin"
+    },
+    "sharing": {
+      "title": "Veri Paylaşımı Tercihleri",
+      "description": "Verilerinizin nasıl paylaşıldığını ve kullanıldığını kontrol edin. Tüm paylaşımlar isteğe bağlıdır ve istenildiği zaman değiştirilebilir.",
+      "dataTypes": "Veri Türü Paylaşımı",
+      "thirdParty": "Üçüncü Taraf Paylaşımı",
+      "special": "Özel Kategoriler",
+      "analytics": "Analitik Paylaşımı",
+      "analyticsDesc": "Platformu geliştirmek için anonimleştirilmiş kullanım verilerini paylaşın",
+      "research": "Araştırma Paylaşımı",
+      "researchDesc": "Üst düzey öğrenim araştırmalarına anonimleştirilmiş verilerle katkıda bulunun"
+    },
+    "export": {
+      "title": "Verilerinizi Dışa Aktarın",
+      "description": "Tüm kişisel verilerinizin bir kopyasını indirin. Verilerinizi hazırlayıp size 30 gün içinde bir indirme bağlantısı göndereceğiz.",
+      "chooseFormat": "Dışa Aktarma Formatını Seçin",
+      "included": "Neler Dahil:",
+      "profile": "Profil bilgileri ve tercihler",
+      "progress": "Öğrenme ilerlemesi ve başarılar",
+      "conversations": "AI konuşma geçmişi",
+      "support": "Destek bileti geçmişi",
+      "consent": "İzin ve gizlilik ayarları",
+      "request": "Veri Dışa Aktarma Talebi",
+      "requesting": "İhracat isteniyor...",
+      "requests": "İhracat Talepleri",
+      "requested": "İstendi",
+      "download": "İndirmek"
+    },
+    "delete": {
+      "title": "Verilerinizi Silin",
+      "description": "Tüm kişisel verilerinizi kalıcı olarak silin. Bu işlem geri alınamaz ve hesabınız 30 gün içinde kapatılacaktır.",
+      "whatDeleted": "Neler Silinecek:",
+      "profile": "Profiliniz ve hesap bilgileriniz",
+      "progress": "Tüm öğrenme ilerlemeleri ve başarılar",
+      "conversations": "AI konuşma geçmişi",
+      "preferences": "Tercihler ve ayarlar",
+      "analytics": "Hesabınıza bağlı kullanım analizleri",
+      "important": "Önemli Notlar:",
+      "legal": "Bazı veriler yasal uyumluluk amacıyla saklanabilir (destek biletleri, fatura kayıtları)",
+      "research": "Araştırma için kullanılan anonimleştirilmiş veriler saklanabilir",
+      "verification": "Silmeden önce e-posta doğrulaması alacaksınız",
+      "timeframe": "Silme işlemi 30 gün içinde tamamlanacak",
+      "request": "Veri Silinmesini Talep Et",
+      "confirm": "Tüm verilerinizi silmek istediğinizden emin misiniz?",
+      "type": "Bu işlemi onaylamak için \"VERİLERİMİ SİL\" yazın:",
+      "placeholder": "VERİLERİMİ SİL yazın",
+      "confirmButton": "Silmeyi Onayla",
+      "processing": "İşleme...",
+      "cancel": "İptal etmek",
+      "requests": "Silme İstekleri",
+      "complete": "Veri Silme İşlemini Tamamla",
+      "requested": "İstendi",
+      "scheduled": "planlanmış",
+      "awaitingVerification": "Doğrulama bekleniyor"
+    },
+    "ai": {
+      "title": "Yapay Zeka Veri Kullanımı Şeffaflığı",
+      "description": "Verilerinizin yapay zeka asistanımız tarafından tam olarak nasıl kullanıldığını görün ve yapay zeka veri tercihlerinizi kontrol edin.",
+      "stats": "AI Veri Kullanım İstatistikleri",
+      "conversationsAnalyzed": "Analiz Edilen Konuşmalar:",
+      "dataPoints": "Kullanılan Veri Noktaları:",
+      "trainingContribution": "Eğitim Katkısı:",
+      "lastProcessed": "Son İşlenen:",
+      "optOut": "AI Devre Dışı Bırakma Seçenekleri",
+      "stopTraining": "Yapay Zeka Eğitimini Durdurun",
+      "stopTrainingDesc": "Verilerinizin yapay zeka yanıtlarını iyileştirmesini önleyin",
+      "deleteHistory": "Konuşma Geçmişini Sil",
+      "deleteHistoryDesc": "Saklanan tüm AI konuşmalarını kaldır",
+      "anonymize": "Verilerimi Anonimleştir",
+      "anonymizeDesc": "Verileri anonim forma dönüştürün"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Nasıl iletişim kuracağınızı seçin",
+    "tabs": {
+      "chat": "Sohbet",
+      "voice": "Ses",
+      "image": "Resim",
+      "chatAria": "Metin sohbeti girişi",
+      "voiceAria": "Ses girişi",
+      "imageAria": "Görüntü girişi"
+    },
+    "chat": {
+      "placeholder": "Sorunuzu buraya yazın... Göndermek için Enter'a basın",
+      "ariaLabel": "Sorunuzu yazın",
+      "sendButton": "Mesaj gönder",
+      "send": "Göndermek"
+    },
+    "voice": {
+      "recording": "Kaydediliyor... Durdurmak için dokunun",
+      "processing": "Sesiniz işleniyor...",
+      "instructions": "Kaydı başlatmak için mikrofona dokunun",
+      "startRecording": "Kaydı başlat",
+      "stopRecording": "Kaydı durdur"
+    },
+    "image": {
+      "takePhoto": "Fotoğraf çek",
+      "camera": "Fotoğraf Çek",
+      "upload": "Resim Yükle",
+      "uploadAria": "Resim dosyasını seçin",
+      "instructions": "Bir fotoğraf paylaşın, gördüklerinizi açıklamaya yardımcı olacağım",
+      "formats": "JPG, PNG, GIF'i destekler (maks. 10 MB)",
+      "previewAlt": "Seçilen görselin önizlemesi",
+      "remove": "Resmi kaldır",
+      "contextLabel": "Bu görsel hakkında ne bilmek istersiniz?",
+      "contextPlaceholder": "İsteğe bağlı: Resim hakkında belirli bir soru sorun",
+      "cancel": "İptal etmek",
+      "submit": "Resim gönder",
+      "send": "Göndermek",
+      "invalidType": "Lütfen geçerli bir resim dosyası seçin.",
+      "tooLarge": "Resim dosyası çok büyük. Lütfen 10 MB'ın altında bir dosya seçin.",
+      "cameraError": "Kameraya erişilemedi. Lütfen izinleri kontrol edin."
+    }
+  },
+  "ai": {
+    "title": "Yapay Zeka Yardımcısı",
+    "subtitle": "Öğrenmenize yardımcı olmak için buradayım",
+    "emergency": "Acil Durum Desteği",
+    "emergencyAria": "Acil destek alın",
+    "expand": "Genişletmek",
+    "minimize": "Küçült",
+    "close": "AI Asistanını Kapat",
+    "thinking": "Yapay zeka düşünüyor...",
+    "escalated": "Artık destek ekibimize bağlısınız",
+    "callSupport": "Destek Çağrısı: 1-800-KIDEMLİ-YARDIM",
+    "minimized": "Yapay Zeka Yardımcısı",
+    "welcome": {
+      "tutorial": "Merhaba! \"{{tutorial}}\" üzerinde çalıştığını görüyorum. Her türlü sorunuzda size yardımcı olmak için buradayım. Sizin için en rahat olanı yazabilir, konuşabilir veya bana resimler gösterebilirsiniz!",
+      "general": "Merhaba! Ben sizin yapay zeka asistanınızım, teknolojiyi adım adım öğrenmenize yardımcı olmak için buradayım. Bana yazarak, konuşarak veya görseller göstererek soru sorabilirsiniz. Ne bilmek istersiniz?"
+    },
+    "error": {
+      "general": "Üzgünüm, şu anda sorun yaşıyorum. Size hemen yardımcı olabilecek destek ekibimizle bağlantı kurmanıza izin verin."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Topluluk Forumu",
+      "subtitle": "Diğer öğrencilerle bağlantı kurun, sorular sorun ve deneyimlerinizi paylaşın",
+      "backToHome": "Ana Sayfaya Geri Dön",
+      "newPost": "Yeni Gönderi"
+    },
+    "sidebar": {
+      "categories": "Kategoriler",
+      "topics": {
+        "all": "Tüm Konular",
+        "general": "Genel Yardım",
+        "mobile": "Mobil Cihazlar",
+        "computer": "Bilgisayarlar",
+        "apps": "Uygulamalar ve Yazılım",
+        "internet": "İnternet ve E-posta",
+        "safety": "Çevrimiçi Güvenlik"
+      },
+      "guidelines": {
+        "title": "Topluluk Kuralları",
+        "items": [
+          "Saygılı ve nazik olun",
+          "Spam veya uygunsuz içerik yok",
+          "Yapabildiğiniz zaman başkalarına yardım edin",
+          "Konunun üzerinde kalın",
+          "Sorunları bildirin"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Gönderilerde ara..."
+    },
+    "createPost": {
+      "title": "Yeni Gönderi Oluştur",
+      "categoryLabel": "Kategori",
+      "titleLabel": "Başlık",
+      "contentLabel": "İçerik",
+      "titlePlaceholder": "Sorunuz veya konunuz nedir?",
+      "contentPlaceholder": "Sorunuzu açıklayın veya düşüncelerinizi paylaşın...",
+      "submit": "Postalamak",
+      "cancel": "İptal etmek",
+      "profanityAlert": "Gönderiniz uygunsuz içerik barındırıyor. Lütfen gözden geçirip tekrar deneyin."
+    },
+    "posts": {
+      "empty": "Hiçbir gönderi bulunamadı. Konuşmayı ilk başlatan siz olun!",
+      "replies": "{{count}} yanıt",
+      "timeAgo": {
+        "justNow": "Şu anda",
+        "oneHour": "1 saat önce",
+        "hours": "{{count}} saat önce",
+        "oneDay": "1 gün önce",
+        "days": "{{count}} gün önce"
+      }
+    }
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Sizden haber almayı çok isteriz! Bize bir mesaj gönderin; mümkün olan en kısa sürede yanıt vereceğiz.",
+    "backToHome": "Ana Sayfaya Geri Dön",
+    "form": {
+      "fasterResponse": "📧 Bu forma diğer iletişim yöntemlerine göre daha hızlı yanıt verilecektir!",
+      "name": "Ad Soyad *",
+      "namePlaceholder": "Tam adınızı girin",
+      "email": "E-posta Adresi *",
+      "emailPlaceholder": "E-posta adresinizi girin",
+      "subject": "Ders *",
+      "subjectPlaceholder": "Bir konu seçin",
+      "subjects": {
+        "general": "Genel Sorgulama",
+        "techSupport": "Teknik Destek",
+        "account": "Hesap Yardımı",
+        "feature": "Özellik İsteği",
+        "bug": "Hata Raporu",
+        "feedback": "Geri bildirim",
+        "other": "Diğer"
+      },
+      "message": "Mesaj *",
+      "messagePlaceholder": "Lütfen sorunuzu ayrıntılı olarak açıklayın...",
+      "submit": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "E-posta istemcinizin açılmış olması gerekir. Değilse, lütfen bilgileri kopyalayın ve doğrudan bize e-posta gönderin.",
+      "error": "Bir hata oluştu. Lütfen bize doğrudan taksh.nahata37@gmail.com adresinden e-posta gönderin."
+    },
+    "info": {
+      "title": "İletişime Geçin",
+      "emailLabel": "E-posta",
+      "responseData": "Genellikle 24 saat içinde yanıt veririz"
+    },
+    "reasons": {
+      "title": "Neden Bize Ulaşmalısınız?",
+      "items": [
+        "Teknik sorunlarla ilgili yardım alın",
+        "Yeni özellikler isteyin",
+        "Geri bildirim ve önerileri paylaşın",
+        "Hataları veya sorunları bildirin",
+        "Genel sorular"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Hizmet Şartları",
+    "backToHome": "Ana Sayfaya Geri Dön",
+    "lastUpdated": "Son güncelleme: {{tarih}}",
+    "sections": {
+      "acceptance": {
+        "title": "Şartların Kabulü",
+        "content": "Hizmetimize erişerek ve hizmetimizi kullanarak, bu sözleşmenin şartlarına ve hükümlerine bağlı kalmayı kabul ve taahhüt edersiniz."
+      },
+      "license": {
+        "title": "Lisansı Kullan",
+        "content": "Hizmetimizin yalnızca kişisel, ticari olmayan geçici görüntüleme amacıyla geçici olarak kullanılmasına izin verilmektedir."
+      },
+      "conduct": {
+        "title": "Kullanıcı Davranışı",
+        "content": "Hizmetimizi yürürlükteki tüm yasa ve düzenlemelere uygun ve bu şartlara uygun bir şekilde kullanmayı kabul edersiniz."
+      },
+      "liability": {
+        "title": "Sorumluluğun Sınırlandırılması",
+        "content": "Hizmetimizin kullanılmasından veya kullanılamamasından kaynaklanan hiçbir zarardan şirketimiz veya tedarikçileri hiçbir durumda sorumlu tutulamaz."
+      },
+      "contact": {
+        "title": "İletişim Bilgileri",
+        "content": "Bu Hizmet Şartları hakkında herhangi bir sorunuz varsa lütfen bizimle şu adresten iletişime geçin:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Erişilebilirlik Beyanı",
+    "subtitle": "Yetenek veya teknoloji ne olursa olsun, platformumuzu herkes için erişilebilir hale getirmeye kararlıyız.",
+    "backToHome": "Ana Sayfaya Geri Dön",
+    "commitment": {
+      "title": "Taahhüdümüz",
+      "content": "Teknolojinin herkes için erişilebilir olması gerektiğine inanıyoruz. Platformumuz, yaşlılar düşünülerek tasarlanmış olup, öğrenme teknolojisini tüm yeteneklere sahip kullanıcılar için daha kolay ve daha rahat hale getiren özellikler içermektedir."
+    },
+    "features": {
+      "title": "Erişilebilirlik Özellikleri",
+      "visual": {
+        "title": "Görsel Erişilebilirlik",
+        "items": [
+          "Yüksek kontrastlı renk şemaları",
+          "Büyük, okunabilir yazı tipleri",
+          "Ekran okuyucu uyumluluğu",
+          "Klavye navigasyon desteği",
+          "Görseller için alternatif metin"
+        ]
+      },
+      "audio": {
+        "title": "Ses Erişilebilirliği",
+        "items": [
+          "Videolar için kapalı altyazılar",
+          "Sesli açıklamalar",
+          "Ses seviyesi kontrolleri",
+          "Sesli ipuçları için görsel göstergeler",
+          "Ses içeriğine alternatif metinler"
+        ]
+      },
+      "motor": {
+        "title": "Motorlu Erişilebilirlik",
+        "items": [
+          "Büyük tıklanabilir alanlar",
+          "Yalnızca klavyeyle gezinme",
+          "Ayarlanabilir zaman sınırları",
+          "Ses kontrolü uyumluluğu",
+          "Basitleştirilmiş etkileşimler"
+        ]
+      },
+      "cognitive": {
+        "title": "Bilişsel Erişilebilirlik",
+        "items": [
+          "Basit, anlaşılır bir dil",
+          "Tutarlı gezinme",
+          "Azaltılmış hareket seçenekleri",
+          "Talimatları temizle",
+          "Hata önleme ve kurtarma"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Standartlara Uygunluk",
+      "content": "Platformumuz, Web İçeriği Erişilebilirlik Yönergeleri (WCAG) 2.1 Düzey AA standartlarına uymayı amaçlamaktadır. Platformumuzu düzenli olarak yardımcı teknolojilerle test ediyor ve erişilebilirlik denetimleri gerçekleştiriyoruz."
+    },
+    "feedback": {
+      "title": "Geri Bildirim ve Destek",
+      "content": "Erişilebilirliği geliştirmek için sürekli çalışıyoruz. Herhangi bir engelle karşılaşırsanız veya iyileştirme önerileriniz varsa lütfen bizimle iletişime geçmekten çekinmeyin.",
+      "emailLabel": "E-posta",
+      "subjectLabel": "Ders",
+      "subjectValue": "Erişilebilirlik Geri Bildirimi"
+    },
+    "assistive": {
+      "title": "Yardımcı Teknolojiler",
+      "content": "Platformumuz aşağıdakiler dahil ortak yardımcı teknolojilerle çalışacak şekilde tasarlanmıştır:",
+      "items": [
+        "Ekran okuyucular (JAWS, NVDA, VoiceOver)",
+        "Ses tanıma yazılımı",
+        "Ekran büyütme araçları",
+        "Alternatif klavyeler",
+        "Navigasyon cihazlarını değiştir",
+        "Göz takip sistemleri"
+      ]
+    },
+    "help": {
+      "title": "Yardıma mı ihtiyacınız var?",
+      "content": "Platformumuzu kullanırken yardıma ihtiyacınız varsa veya erişilebilirlikle ilgili sorularınız varsa yardım etmek için buradayız.",
+      "contact": "Destek Ekibiyle İletişime Geçin"
+    },
+    "lastUpdated": "Son güncelleme: {{tarih}}"
   }
 }

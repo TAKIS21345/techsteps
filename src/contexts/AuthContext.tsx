@@ -1,25 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { initializeApp } from 'firebase/app';
-import { 
-  getAuth, 
-  setPersistence, 
-  browserLocalPersistence, 
-  onAuthStateChanged, 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
+import { auth } from '../services/firebase';
+import {
+  setPersistence,
+  browserLocalPersistence,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signOut,
   User
 } from 'firebase/auth';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB3nEO9iegcJZC3aqHVh9Th6P8n8uN0QuQ",
-  authDomain: "senior-tech-help.firebaseapp.com",
-  projectId: "senior-tech-help",
-  storageBucket: "senior-tech-help.firebasestorage.app",
-  messagingSenderId: "907395120217",
-  appId: "1:907395120217:web:b4a9a131f389a346034548",
-  measurementId: "G-3TVV3JHXPH"
-};
 
 interface AuthContextType {
   user: User | null;
@@ -44,9 +33,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
     setPersistence(auth, browserLocalPersistence).then(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         setUser(user);
@@ -58,17 +44,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const auth = getAuth();
     await signInWithEmailAndPassword(auth, email, password);
   };
 
   const signUp = async (email: string, password: string) => {
-    const auth = getAuth();
     await createUserWithEmailAndPassword(auth, email, password);
   };
 
   const logout = async () => {
-    const auth = getAuth();
     await signOut(auth);
   };
 

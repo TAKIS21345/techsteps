@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useTranslation } from 'react-i18next';
-import Logo from '../components/Logo';
+import Logo from '../components/layout/Logo';
 
 const AuthPage: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -50,8 +50,8 @@ const AuthPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         {/* Back to home link */}
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -67,7 +67,7 @@ const AuthPage: React.FC = () => {
               {isSignUp ? t('auth.createAccount') : t('auth.welcomeBack')}
             </h1>
             <p className="text-sm sm:text-base text-gray-600">
-              {isSignUp 
+              {isSignUp
                 ? t('auth.joinFamily')
                 : t('auth.welcomeBackDesc')
               }
@@ -166,7 +166,7 @@ const AuthPage: React.FC = () => {
                 }}
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
-                {isSignUp 
+                {isSignUp
                   ? t('auth.alreadyHaveAccount')
                   : t('auth.dontHaveAccount')
                 }

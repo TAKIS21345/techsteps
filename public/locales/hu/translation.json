@@ -8,7 +8,8 @@
       "firstNamePlaceholder": "Az Ön keresztneve",
       "lastName": "Vezetéknév",
       "lastNamePlaceholder": "Az Ön vezetékneve",
-      "age": "Életkor (segít a magyarázatok testreszabásában)"
+      "age": "Életkor (segít a magyarázatok testreszabásában)",
+      "tooltip": "Meséljen egy kicsit magáról, hogy személyre szabhassuk tanulási élményét."
     },
     "step2": {
       "title": "Válassza ki a preferált nyelveket",
@@ -25,7 +26,8 @@
       "selected_plural": "{{count}} nyelv kiválasztva",
       "noLanguagesFound": "Nincs a keresésnek megfelelő nyelv: \"{{search}}\"",
       "languageRequired": "Nyelvválasztás szükséges",
-      "languageRequiredDesc": "Kérjük, válasszon legalább egy nyelvet a folytatáshoz. Ez biztosítja a legjobb élményt a hangbevitel és a szöveges interakciók során."
+      "languageRequiredDesc": "Kérjük, válasszon legalább egy nyelvet a folytatáshoz. Ez biztosítja a legjobb élményt a hangbevitel és a szöveges interakciók során.",
+      "tooltip": "Válassza ki az Önnek megfelelő nyelvet a hangbevitelhez és a szöveges interakciókhoz."
     },
     "step3": {
       "title": "Milyen eszközt használ a leggyakrabban?",
@@ -38,7 +40,8 @@
         "androidphoneortablet": "Android telefon vagy táblagép",
         "smarttv": "Okostelevízió",
         "multipledevices": "Több eszköz"
-      }
+      },
+      "tooltip": "Az elsődleges eszköz ismerete segít nekünk relevánsabb utasításokat adni."
     },
     "step4": {
       "title": "Mennyire érzi magát otthon a technológiában?",
@@ -48,7 +51,8 @@
       "some": "Némi tapasztalat",
       "someDesc": "Az alapvető feladatokat el tudom végezni, de az új dolgokhoz segítség kell",
       "comfortable": "Magabiztos",
-      "comfortableDesc": "A legtöbb dolgot magamtól is kitalálom, de néha szükségem van útmutatásra"
+      "comfortableDesc": "A legtöbb dolgot magamtól is kitalálom, de néha szükségem van útmutatásra",
+      "tooltip": "Legyen őszinte a kényelmi szintjével kapcsolatban – ez segít nekünk a megfelelő ütemben elmagyarázni a dolgokat."
     },
     "step5": {
       "title": "Mely technológiai témák aggasztják a leginkább?",
@@ -66,7 +70,8 @@
         "deviceSettings": "Eszközbeállítások",
         "onlineShopping": "Online vásárlás",
         "healthApps": "Egészségügyi alkalmazások és portálok"
-      }
+      },
+      "tooltip": "Válassza ki azokat a témákat, amelyek a leginkább aggasztják Önt, hogy ezeken a területeken előnyben részesíthessük a segítséget."
     },
     "step6": {
       "title": "Szüksége van valamilyen kisegítő lehetőségre?",
@@ -79,7 +84,8 @@
         "slowerExplanations": "Lassabb magyarázatok",
         "visualSteps": "Vizuális lépésjelzők",
         "noneNeeded": "Nincs szükségem rá"
-      }
+      },
+      "tooltip": "Tudassa velünk a kisegítő lehetőségeket, amelyekre szüksége van a kényelmes élményhez."
     },
     "step7": {
       "title": "Hogyan szeret a leginkább tanulni?",
@@ -89,7 +95,8 @@
       "detailed": "Részletes magyarázatok",
       "detailedDesc": "Magyarázza el, miért csinálom az egyes lépéseket",
       "visual": "Vizuális tanulás",
-      "visualDesc": "Mutasson képeket és videókat, amikor csak lehetséges"
+      "visualDesc": "Mutasson képeket és videókat, amikor csak lehetséges",
+      "tooltip": "Válassza ki, hogyan szeretne tanulni, hogy módosíthassuk tanítási stílusunkat."
     },
     "step8": {
       "title": "Utolsó simítások",
@@ -103,13 +110,103 @@
       "textSize": "Preferált betűméret",
       "textSizeNormal": "Normál",
       "textSizeLarge": "Nagy",
-      "textSizeExtraLarge": "Extra nagy"
+      "textSizeExtraLarge": "Extra nagy",
+      "tooltip": "Állítsa be tökéletes tanulási környezetét ezekkel a végső beállításokkal.",
+      "privacy": {
+        "title": "Az Ön adatainak védelme a mi prioritásunk",
+        "items": [
+          "SOHA nem adjuk el az Ön személyes adatait",
+          "Minden adat titkosított és biztonságos marad",
+          "Ezeket a beállításokat bármikor módosíthatja",
+          "Adatait bármikor törölheti"
+        ]
+      },
+      "personalization": {
+        "title": "Személyre szabott élmény",
+        "description": "Engedje meg, hogy interakciós adatait felhasználva jobb, relevánsabb segítséget és az Ön igényeihez szabott javaslatokat biztosítsunk.",
+        "note": "Ez segít nekünk megérteni, hogy mely témák érdeklik leginkább, és relevánsabb oktatóanyagokat biztosítunk."
+      },
+      "history": {
+        "title": "Használja a Beszélgetési előzményeket",
+        "description": "Emlékezzen korábbi beszélgetéseinkre, hogy jobb kontextust biztosítson, és elkerülje a már ismert információk megismétlését.",
+        "note": "Ez segít emlékeznem arra, amit korábban megbeszéltünk, és a korábbi beszélgetésekre építhetek."
+      },
+      "learningPrefs": {
+        "title": "Használja a Tanulási beállításokat",
+        "description": "Ne feledje, milyen tanulási stílust, kommunikációs preferenciákat és akadálymentesítést igényel, hogy egységes élményt nyújtson.",
+        "note": "Ez magában foglalja az előnyben részesített magyarázati stílust, a nyelvi beállításokat és a kisegítő lehetőségeket."
+      },
+      "noSelection": {
+        "title": "Nincs kiválasztva személyre szabás",
+        "success": "Nagy! A kiválasztott adatokat a jobb élmény érdekében használjuk fel.",
+        "default": "Ez teljesen rendben van! Továbbra is teljes hozzáférést kap az összes funkcióhoz, személyre szabott ajánlások nélkül."
+      }
     },
     "back": "Vissza",
     "next": "Tovább",
     "settingUp": "Beállítás...",
     "completeSetup": "Beállítás befejezése",
-    "errorSaving": "Nem sikerült menteni a beállításait. Kérjük, próbálja újra."
+    "errorSaving": "Nem sikerült menteni a beállításait. Kérjük, próbálja újra.",
+    "buttons": {
+      "previous": "Előző",
+      "next": "Következő",
+      "skip": "Kihagyás",
+      "complete": "Teljes",
+      "processing": "Feldolgozás...",
+      "gotIt": "Megvan!",
+      "skipAll": "Mindent kihagy",
+      "cancel": "Mégse"
+    },
+    "progress": {
+      "label": "Belépés folyamata: {{total}}/{{current}}. lépés",
+      "stepOf": "{{total}}/{{current}}. lépés",
+      "step": "Lépés",
+      "stepCompleted": "{{lépés}} – Befejezve",
+      "stepCurrent": "{{step}} – Jelenlegi lépés",
+      "stepUpcoming": "{{step}} – Közelgő"
+    },
+    "tooltip": {
+      "helpfulTip": "Hasznos tipp"
+    },
+    "flow": {
+      "title": "Üdvözöljük! Kezdjük"
+    },
+    "accessibility": {
+      "helpfulTip": "Hasznos tipp",
+      "tooltipAppeared": "Elemleírás megjelent a következő tartalommal: {{content}}",
+      "skippingStep": "Az aktuális lépés kihagyása",
+      "movingToNextStep": "Továbblépés a következő lépésre",
+      "movingToPreviousStep": "Ugrás az előző lépésre",
+      "completingOnboarding": "Belépési folyamat befejezése",
+      "stepChanged": "Most a {{total}}/{{step}}. lépésnél: {{title}}",
+      "skippingOnboarding": "A teljes felvételi folyamat kihagyása",
+      "cancellingOnboarding": "A felvételi folyamat megszakítása",
+      "errorCompleting": "Hiba a bejelentkezés befejezésekor. Kérjük, próbálja újra.",
+      "goToPreviousStep": "Ugrás az előző lépésre",
+      "skipThisStep": "Hagyja ki ezt a lépést",
+      "completeOnboarding": "Teljes beépítés",
+      "continueToNextStep": "Folytassa a következő lépéssel",
+      "closeTooltip": "Eszköztipp bezárása",
+      "skipTooltip": "Hagyja ki ezt a tippet",
+      "continueFromTooltip": "Folytatás az eszköztipptől",
+      "skipEntireOnboarding": "Kihagyja a teljes felvételt",
+      "cancelOnboarding": "Belépés visszavonása",
+      "keyboardInstructions": "Használja a Tab billentyűt a navigáláshoz, az Enter billentyűt a kiválasztáshoz és az Escape billentyűt a párbeszédpanelek bezárásához"
+    },
+    "validation": {
+      "firstNameRequired": "A keresztnév megadása kötelező",
+      "lastNameRequired": "A vezetéknév megadása kötelező",
+      "validAgeRequired": "Kérjük, érvényes életkort adjon meg 18 és 120 év között",
+      "languageRequired": "Kérjük, válasszon legalább egy nyelvet",
+      "deviceRequired": "Kérjük, válassza ki elsődleges eszközét",
+      "experienceRequired": "Kérjük, válassza ki műszaki tapasztalatának szintjét",
+      "concernsOptional": "Kiválaszthat aggályokat, amelyek segítségével személyre szabhatjuk tapasztalatait",
+      "assistiveNeedsRequired": "Kérjük, válassza ki a kisegítő lehetőségeket, vagy válassza a „Nincs szükség” lehetőséget",
+      "communicationStyleRequired": "Kérjük, válassza ki a kívánt kommunikációs stílust"
+    },
+    "restart": {
+      "confirmMessage": "Biztos benne, hogy újra akarja indítani a belépési folyamatot? Ezzel visszaállítja az összes beállítást."
+    }
   },
   "nav": {
     "features": "Funkciók",
@@ -230,7 +327,10 @@
       ],
       "copyright": "© 2025 TechStep. ❤️-el készült szenioroknak mindenhol.",
       "trustedBy": "Bíznak bennünk:",
-      "trustedByCount": "50 000+ szenior"
+      "trustedByCount": "50 000+ szenior",
+      "communityTitle": "Közösség",
+      "legalTitle": "Jogi és támogatás",
+      "contactEmail": "Elérhetőség: E-mail: taksh.nahata37@gmail.com"
     }
   },
   "dashboard": {
@@ -315,48 +415,169 @@
       "title": "Számítógép és eszköz alapok",
       "description": "A legalapvetőbb ismeretek a technológia világába való belépéshez.",
       "modules": {
-        "turnOnDevice": { "title": "Eszköz bekapcsolása", "description": "Tanulja meg bekapcsolni a számítógépeket és okostelefonokat." },
-        "mouseTouchscreen": { "title": "Egér/Érintőképernyő használata", "description": "Sajátítsa el a mutogatást, kattintást és koppintást." },
-        "keyboardTyping": { "title": "Billentyűzet/Gépelés alapjai", "description": "Ismerkedjen meg a gépelés alapjaival." },
-        "filesFolders": { "title": "Fájlok és mappák megértése", "description": "Ismerje meg, hogyan szerveződnek a digitális információk." }
+        "turnOnDevice": {
+          "title": "Eszköz bekapcsolása",
+          "description": "Tanulja meg bekapcsolni a számítógépeket és okostelefonokat."
+        },
+        "mouseTouchscreen": {
+          "title": "Egér/Érintőképernyő használata",
+          "description": "Sajátítsa el a mutogatást, kattintást és koppintást.",
+          "duration": "15 perc",
+          "content": "<div class=\"space-y-6\"><h3 class=\"text-xl font-semibold\">Játsszunk: Az egér és az érintőképernyő alapjai</h3><p>Készen áll a felfedezésre? Az egered és az érintőképernyő a varázspálcád a digitális világban!</p><div class=\"bg-yellow-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Egérmóka:</h4><ul class=\"space-y-2\"><li>• <b>Pont</b>: Mozgasd az egeret, és kövesd a nyilat, és nézd meg a <blic:</blic></bli>C: a bal gombbal kiválaszthatja a dolgokat. Próbáljon meg egy lenti gombra kattintani!</li><li>• <b>Dupla kattintás</b>: Gyorsan nyomja meg kétszer a fájlok vagy programok megnyitásához.</li><li>• <b>Jobb kattintás</b>: Nyomja meg a jobb gombot a titkos menü eléréséhez.</li><li>• <b>Görgetés</b>: görgessen a kerékkel felfelé és lefelé egy oldalon. rounded-lg\"><h4 class=\"font-medium mb-2\">Érintőképernyős trükkök:</h4><ul class=\"space-y-2\"><li>• <b>Érintése</b>: Óvatosan érintse meg a képernyőt a kiválasztáshoz.</li><li>• <b>Csúsztatás</b>: Csúsztassa az ujját a görgetéshez vagy a képernyők egymáshoz való váltásához.</li>><li>• két ujj mozgatása vagy nagyítása.</li>P be és ki.</li><li>• <b>Hosszú megnyomás</b>: tartsa lenyomva az ujját a további lehetőségekért (például jobb kattintásért!).</li></ul></div><div class=\"bg-green-50 p-4 rounded-lg\"><h4 class=\"font-medium mb-2\">Próbáld ki!</h4><ul class=\"space-y-2\" a mo képernyőn.</li><li>• A felfedezéshez koppintson, és csúsztassa az ujját az eszközön.</li></ul></div></div>",
+          "keyPoints": [
+            "Az egérmutató követi a kezét!",
+            "A bal kattintás a fő művelet.",
+            "Az érintőképernyők lehetővé teszik a koppintást, az ellopást és a nagyítást!"
+          ],
+          "practiceExercise": "Próbáljon meg kattintani, duplán kattintani és jobb gombbal az asztalon. Érintőképernyőn érintse meg és csúsztassa az ujját a képernyők közötti váltáshoz.",
+          "animationDesc": "Nézze meg, hogyan kell kattintani, duplán kattintani és csúsztatni az érintőképernyőn."
+        },
+        "keyboardTyping": {
+          "title": "Billentyűzet/Gépelés alapjai",
+          "description": "Ismerkedjen meg a gépelés alapjaival."
+        },
+        "filesFolders": {
+          "title": "Fájlok és mappák megértése",
+          "description": "Ismerje meg, hogyan szerveződnek a digitális információk."
+        }
       }
     },
     "onlineWorld": {
       "title": "Az online világ",
       "description": "Csatlakozás és az internet biztonságos felfedezése.",
       "modules": {
-        "webBrowsers": { "title": "Webböngészők megértése", "description": "Navigáljon az interneten a Chrome, Edge vagy Safari segítségével." },
-        "searchEffectively": { "title": "Hogyan keressünk hatékonyan", "description": "Találja meg, amire szüksége van online a keresőmotorok segítségével." },
-        "introEmail": { "title": "Bevezetés az e-mailbe", "description": "Tanuljon meg elektronikus levelet küldeni és fogadni." },
-        "virusSafety": { "title": "Vírusok elleni védekezés", "description": "Védje meg eszközét a káros szoftverektől." }
+        "webBrowsers": {
+          "title": "Webböngészők megértése",
+          "description": "Navigáljon az interneten a Chrome, Edge vagy Safari segítségével."
+        },
+        "searchEffectively": {
+          "title": "Hogyan keressünk hatékonyan",
+          "description": "Találja meg, amire szüksége van online a keresőmotorok segítségével."
+        },
+        "introEmail": {
+          "title": "Bevezetés az e-mailbe",
+          "description": "Tanuljon meg elektronikus levelet küldeni és fogadni."
+        },
+        "virusSafety": {
+          "title": "Vírusok elleni védekezés",
+          "description": "Védje meg eszközét a káros szoftverektől."
+        }
       }
     },
     "digitalLife": {
       "title": "Mindennapi digitális élet",
       "description": "Kommunikáljon, osszon meg és kezelje digitális jelenlétét.",
       "modules": {
-        "masteringEmail": { "title": "E-mail mesterfogások", "description": "Csatolmányok, mappák és e-mail etikett." },
-        "videoCalling": { "title": "Videóhívás a családdal és barátokkal", "description": "Lépjen kapcsolatba szemtől szemben szeretteivel." },
-        "introSocialMedia": { "title": "Bevezetés a közösségi médiába", "description": "A Facebookhoz hasonló platformok megértése." },
-        "sharingPhotos": { "title": "Fényképek biztonságos megosztása", "description": "Ossza meg emlékeit a magánélet veszélyeztetése nélkül." }
+        "masteringEmail": {
+          "title": "E-mail mesterfogások",
+          "description": "Csatolmányok, mappák és e-mail etikett."
+        },
+        "videoCalling": {
+          "title": "Videóhívás a családdal és barátokkal",
+          "description": "Lépjen kapcsolatba szemtől szemben szeretteivel."
+        },
+        "introSocialMedia": {
+          "title": "Bevezetés a közösségi médiába",
+          "description": "A Facebookhoz hasonló platformok megértése."
+        },
+        "sharingPhotos": {
+          "title": "Fényképek biztonságos megosztása",
+          "description": "Ossza meg emlékeit a magánélet veszélyeztetése nélkül."
+        }
       }
     },
     "advancedSkills": {
       "title": "Haladó és kreatív készségek",
       "description": "Az alapokon túl: fedezze fel, mit kínál még a technológia.",
       "modules": {
-        "onlineShopping": { "title": "Bevezetés az online vásárlásba", "description": "Vásároljon biztonságosan és kényelmesen online." },
-        "onlineMaps": { "title": "Online térképek és navigáció használata", "description": "Találja meg az utat digitális térképekkel." },
-        "photoEditing": { "title": "Alapvető képszerkesztés", "description": "Javítsa digitális fényképeit." },
-        "productivityTools": { "title": "Bevezetés a hatékonyságnövelő eszközökbe", "description": "Olyan eszközök használata, mint a Google Docs vagy a Microsoft Word alapjai." }
+        "onlineShopping": {
+          "title": "Bevezetés az online vásárlásba",
+          "description": "Vásároljon biztonságosan és kényelmesen online."
+        },
+        "onlineMaps": {
+          "title": "Online térképek és navigáció használata",
+          "description": "Találja meg az utat digitális térképekkel."
+        },
+        "photoEditing": {
+          "title": "Alapvető képszerkesztés",
+          "description": "Javítsa digitális fényképeit."
+        },
+        "productivityTools": {
+          "title": "Bevezetés a hatékonyságnövelő eszközökbe",
+          "description": "Olyan eszközök használata, mint a Google Docs vagy a Microsoft Word alapjai."
+        }
+      }
+    },
+    "accessibility": {
+      "title": "Hozzáférhetőség és könnyű használat",
+      "description": "Tedd eszközöd könnyebben láthatóvá, hallhatóvá és irányíthatóvá.",
+      "modules": {
+        "screenMagnifier": {
+          "title": "Képernyőnagyító használata",
+          "description": "Nagyítsa ki a szöveget és a képeket a képernyőn."
+        },
+        "voiceCommands": {
+          "title": "Hangutasítások és diktálás",
+          "description": "Irányítsd eszközödet, és írj a hangoddal."
+        },
+        "highContrast": {
+          "title": "Magas kontraszt és színbeállítások",
+          "description": "Állítsa be a színeket a jobb láthatóság érdekében."
+        },
+        "assistiveTouch": {
+          "title": "Segéd érintés és gyorsbillentyűk",
+          "description": "Használja a képernyőn megjelenő eszközöket a könnyebb navigáció érdekében."
+        }
+      }
+    },
+    "healthAndSafety": {
+      "title": "Egészség, biztonság és adatvédelem",
+      "description": "Maradjon biztonságban, egészségesen és magánéletben a technológia használata közben.",
+      "modules": {
+        "privacySettings": {
+          "title": "Adatvédelmi beállítások",
+          "description": "Védje személyes adatait online."
+        },
+        "scamAwareness": {
+          "title": "Átverés tudatosság",
+          "description": "Találja meg és kerülje el a gyakori online csalásokat."
+        },
+        "healthApps": {
+          "title": "Egészségügyi alkalmazások használata",
+          "description": "Kövesse nyomon egészségét és jólétét alkalmazásokkal."
+        },
+        "emergencyContacts": {
+          "title": "Vészhelyzeti kapcsolatok beállítása",
+          "description": "Adjon hozzá vészhelyzeti kapcsolatokat az eszközhöz."
+        }
       }
     }
   },
   "badges": {
-    "fundamentals": { "name": "Technikai Kezdő", "description": "Befejezte a Számítógép és eszköz alapok tanösvényt." },
-    "onlineWorld": { "name": "Online Felfedező", "description": "Befejezte Az online világ tanösvényt." },
-    "digitalLife": { "name": "Digitális Kommunikátor", "description": "Befejezte a Mindennapi digitális élet tanösvényt." },
-    "advancedSkills": { "name": "Technikai Virtuóz", "description": "Befejezte a Haladó és kreatív készségek tanösvényt." }
+    "fundamentals": {
+      "name": "Technikai Kezdő",
+      "description": "Befejezte a Számítógép és eszköz alapok tanösvényt."
+    },
+    "onlineWorld": {
+      "name": "Online Felfedező",
+      "description": "Befejezte Az online világ tanösvényt."
+    },
+    "digitalLife": {
+      "name": "Digitális Kommunikátor",
+      "description": "Befejezte a Mindennapi digitális élet tanösvényt."
+    },
+    "advancedSkills": {
+      "name": "Technikai Virtuóz",
+      "description": "Befejezte a Haladó és kreatív készségek tanösvényt."
+    },
+    "accessibility": {
+      "name": "Kisegítő lehetőségek bajnoka",
+      "description": "Elkészült a kisegítő lehetőségek és a könnyű használat útvonala."
+    },
+    "healthAndSafety": {
+      "name": "Biztonsági Őr",
+      "description": "Befejezett egészségügyi, biztonsági és adatvédelmi útvonal."
+    }
   },
   "skillAssessmentModal": {
     "title": "Gyors képességfelmérés",
@@ -602,16 +823,31 @@
   },
   "settings": {
     "customizePrefs": "Személyes beállítások testreszabása",
-    "personalInfo": "Személyes adatok",
+    "personalInfo": {
+      "title": "Személyes adatok",
+      "firstName": "Keresztnév",
+      "firstNamePlaceholder": "Írja be a keresztnevét",
+      "lastName": "Vezetéknév",
+      "lastNamePlaceholder": "Írja be vezetéknevét",
+      "age": "Age",
+      "techExperience": "Műszaki tapasztalati szint",
+      "techExperienceBeginner": "Kezdő – Új vagyok a technológiában",
+      "techExperienceSome": "Némi tapasztalat – ismerem az alapokat",
+      "techExperienceComfortable": "Kényelmes – elég jól értek a technikához"
+    },
     "firstName": "Keresztnév",
     "firstNamePlaceholder": "Az Ön keresztneve",
     "primaryDevice": "Elsődleges eszköz",
     "devices": {
+      "title": "Elsődleges eszköz(ek)",
+      "description": "Válassza ki az összes rendszeresen használt eszközt",
       "windowsComputer": "Windows számítógép",
-      "macComputer": "Mac (Apple számítógép)",
+      "macComputer": "Mac számítógép",
       "iphone": "iPhone",
       "ipad": "iPad",
-      "androidDevice": "Android telefon vagy táblagép"
+      "androidPhone": "Android telefon",
+      "androidTablet": "Android táblagép",
+      "chromebook": "Chromebook"
     },
     "accessibility": "Kisegítő lehetőségek",
     "textToSpeech": "Szövegfelolvasás",
@@ -642,9 +878,9 @@
     "signOut": "Kijelentkezés",
     "signOutDesc": "Kijelentkezés a fiókjából",
     "cancel": "Mégse",
-    "saving": "Mentés...",
-    "saved": "Mentve!",
-    "saveChanges": "Változtatások mentése",
+    "saving": "Megtakarítás...",
+    "saved": "Mentve",
+    "saveChanges": "Módosítások mentése",
     "errorSaving": "Nem sikerült menteni a beállításokat. Kérjük, próbálja újra.",
     "lastName": "Vezetéknév",
     "lastNamePlaceholder": "Az Ön vezetékneve",
@@ -679,12 +915,114 @@
     },
     "highContrast": "Nagy kontrasztú mód",
     "highContrastDesc": "A szöveg és az elemek kontrasztjának növelése a jobb láthatóság érdekében",
-    "learningPreferences": "Tanulási és tartalmi preferenciák"
+    "learningPreferences": "Tanulási és tartalmi preferenciák",
+    "title": "Beállítások elemre",
+    "audio": {
+      "title": "Hang és beszéd",
+      "autoTTS": "Automatikus szövegfelolvasó",
+      "autoTTSDesc": "Automatikusan felolvassa az AI-üzeneteket"
+    },
+    "display": {
+      "title": "Megjelenítési beállítások",
+      "textSize": "Szöveg mérete",
+      "textSizeNormal": "Normál",
+      "textSizeLarge": "Nagy",
+      "textSizeExtraLarge": "Extra nagy",
+      "theme": "Színes téma",
+      "themeLight": "Fény",
+      "themeDark": "Dark",
+      "themeHighContrast": "Magas kontraszt"
+    },
+    "language": {
+      "title": "Nyelvi beállítások",
+      "interfaceLanguage": "Interfész nyelve",
+      "description": "Ez hatással van a szövegfelolvasó felület nyelvére és hangjára"
+    },
+    "pwa": {
+      "install": {
+        "title": "Telepítse a TechStep programot",
+        "description": "Gyorsan hozzáférhet tanulási folyamataihoz, és offline módban használhatja a TechStep szolgáltatást.",
+        "button": "Alkalmazás telepítése"
+      },
+      "update": {
+        "title": "Frissítés elérhető",
+        "description": "Megjelent a TechStep új verziója fejlesztésekkel és hibajavításokkal.",
+        "button": "Frissítés most"
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline – A módosítások szinkronizálódnak a csatlakozáskor",
+        "syncing": "Szinkronizálás..."
+      },
+      "notifications": {
+        "title": "Tanulási emlékeztetők",
+        "description": "Gyengéd emlékeztetőket kaphat, amelyek segítenek követni a tanulási utat.",
+        "learning_reminders": "Tanulási emlékeztetők",
+        "learning_reminders_desc": "Gyengéd bökések a leckék folytatásához",
+        "progress_updates": "Haladás frissítések",
+        "progress_updates_desc": "Ünnepelje az elért eredményeit",
+        "support_messages": "Támogatási üzenetek",
+        "support_messages_desc": "Hasznos tippek és segítség",
+        "frequency": "Frekvencia",
+        "enable": "Értesítések engedélyezése",
+        "subscribing": "Beállítás...",
+        "blocked": {
+          "title": "Értesítések blokkolva",
+          "description": "Az értesítések jelenleg le vannak tiltva. Engedélyezéséhez engedélyezze az értesítéseket a böngésző beállításaiban.",
+          "instructions": "Keresse meg az értesítési ikont a címsorában, vagy ellenőrizze böngészője webhelybeállításait."
+        },
+        "success": {
+          "title": "Értesítések engedélyezve!",
+          "description": "A preferenciái alapján hasznos emlékeztetőket és frissítéseket fog kapni."
+        }
+      }
+    },
+    "offline": {
+      "error": "Szinkronizálási hiba",
+      "offline": "Offline",
+      "online": "Online",
+      "syncing": "Szinkronizálás...",
+      "offline_desc": "A módosítások szinkronizálódnak a csatlakozáskor",
+      "syncing_desc": "Az adatok frissítése",
+      "online_desc": "Minden változtatás mentésre kerül",
+      "pending_operations": "{{count}} függőben lévő módosítás",
+      "last_sync": "Utolsó szinkronizálás: {{time}}",
+      "content_manager": {
+        "title": "Offline tartalom",
+        "description": "Töltse le a tartalmat, hogy offline állapotban is hozzáférjen",
+        "online": "Csatlakozva – Új tartalmat tölthet le",
+        "offline": "Offline – Csak letöltött tartalom használata",
+        "no_content": "Nincs offline tartalom",
+        "no_content_desc": "Töltsön le tanfolyamokat és leckéket, hogy offline is elérhesse őket",
+        "downloaded": "Letöltve",
+        "available_offline": "Offline elérhető",
+        "remove": "Eltávolítás az offline tárhelyről",
+        "suggestions": "Ajánlott letöltések",
+        "suggestion_1": "Számítástechnikai alaptanfolyam",
+        "suggestion_1_desc": "Alapvető készségek a technológia használatához",
+        "popular": "Népszerű",
+        "download": "Letöltés",
+        "type": {
+          "course": "Pálya",
+          "lesson": "Lecke",
+          "tutorial": "Oktatóanyag",
+          "media": "Média"
+        }
+      }
+    },
+    "common": {
+      "dismiss": "Elvetés"
+    },
+    "dataPortability": "Adatok és adatvédelmi jogok",
+    "dataRights": "Az Ön adatjogai",
+    "dataRightsDesc": "Személyes adatai felett teljes mértékben Ön rendelkezik. Bármikor exportálhatja, kezelheti a megosztási beállításokat, vagy törölheti adatait."
   },
   "common": {
     "settings": "Beállítások",
     "signOut": "Kijelentkezés",
-    "close": "Bezárás"
+    "close": "Bezárás",
+    "friend": "barátja",
+    "comingSoon": "Hamarosan"
   },
   "tips": {
     "connectWifi": "Csatlakozás Wi-Fi-hez",
@@ -768,7 +1106,10 @@
   },
   "error": {
     "askQuestionFirst": "Kérjük, először tegyen fel egy kérdést",
-    "couldntGetAnswer": "Sajnáljuk, jelenleg nem sikerült választ kapni. Kérjük, próbálja újra."
+    "couldntGetAnswer": "Sajnáljuk, jelenleg nem sikerült választ kapni. Kérjük, próbálja újra.",
+    "notifications": {
+      "dismiss": "Elvetés"
+    }
   },
   "learningPage": {
     "headerTitle": "Tanulási Központ",
@@ -803,7 +1144,11 @@
     "moduleListTitle": "Modulok az útvonalhoz: {{pathTitle}}",
     "moduleContentTitle": "Tartalom a modulhoz: {{moduleTitle}} ide kerül.",
     "loadingCenter": "Tanulási Központ betöltése...",
-    "moduleTimeLabel": "Idő: "
+    "moduleTimeLabel": "Idő: ",
+    "startOrContinueCourse": "Tanfolyam indítása vagy folytatása",
+    "lessonsHeader": "Leckék",
+    "lessonContentPlaceholder": "Még nem érhető el tartalom a következőhöz: {{lessonTitle}}.",
+    "noLessonAvailable": "Nincs elérhető lecke."
   },
   "languageSelector": {
     "choosePrompt": "Válassza ki a felület preferált nyelvét",
@@ -822,7 +1167,13 @@
     "reviewLesson": "Áttekintés",
     "congratulations": "Gratulálunk!",
     "courseComplete": "Befejezte a(z) {{courseTitle}} kurzust!",
-    "downloadCertificate": "Tanúsítvány letöltése"
+    "downloadCertificate": "Tanúsítvány letöltése",
+    "previousLesson": "Előző lecke",
+    "nextLesson": "Következő lecke",
+    "markAsComplete": "Megjelölés készként",
+    "completed": "Befejezve",
+    "removeBookmark": "Könyvjelző eltávolítása",
+    "addBookmark": "Könyvjelző hozzáadása"
   },
   "lessonView": {
     "readAloud": "Lecke felolvasása",
@@ -940,5 +1291,461 @@
       "thankYou": "Köszönjük, hogy a TechStep-re bízta adatait. Elkötelezettek vagyunk azok biztonságos tárolása és kizárólag a technológiával való sikerének elősegítése érdekében történő felhasználása mellett.",
       "backToHome": "Vissza a főoldalra"
     }
+  },
+  "avatar": {
+    "enable": "AI Avatar engedélyezése",
+    "disable": "Az Avatar letiltása",
+    "loading": "Avatar betöltése...",
+    "mute": "Mute Avatar",
+    "unmute": "Az Avatar némításának feloldása",
+    "settings": "Avatar beállítások",
+    "fullscreen": "Teljes képernyő",
+    "exitFullscreen": "Kilépés a teljes képernyőről",
+    "performance": {
+      "high": "Kiváló minőség",
+      "medium": "Közepes minőség",
+      "low": "Alacsony minőség",
+      "off": "Avatar kikapcsolva"
+    },
+    "error": {
+      "loadFailed": "Nem sikerült betölteni az avatárt. Kérjük, próbálja újra.",
+      "noWebGL": "Eszköze nem támogatja a 3D grafikát.",
+      "audioFailed": "Nem sikerült hozzáférni a mikrofonhoz az ajak szinkronizálásához."
+    },
+    "status": {
+      "initializing": "Avatar indítása...",
+      "ready": "Készen áll a segítségre",
+      "thinking": "Gondolkodás...",
+      "speaking": "Beszélő...",
+      "listening": "Hallgat...",
+      "celebrating": "Örömmel segítünk!",
+      "error": "Valami elromlott",
+      "processing": "Hang feldolgozása...",
+      "lipSyncActive": "Az ajakszinkron aktív",
+      "lipSyncInactive": "Az ajakszinkronizálás inaktív"
+    },
+    "greeting": {
+      "morning": "Jó reggelt, {{name}}! Készen állsz valami új tanulásra ma?",
+      "afternoon": "Jó napot, {{name}}! Hogyan segíthetek ma?",
+      "evening": "Jó estét, {{name}}! Mit szeretnél felfedezni?"
+    },
+    "companion": {
+      "title": "Az Ön mesterséges intelligencia segítője",
+      "ready": "Azért vagyok itt, hogy segítsek a technológiában!"
+    },
+    "actions": {
+      "chat": "Csevegés",
+      "voice": "Hang",
+      "camera": "Kamera",
+      "help": "Segítség"
+    },
+    "suggestions": {
+      "title": "Gyors kérdések"
+    }
+  },
+  "suggestions": {
+    "connectWifi": "Hogyan csatlakozhatok WiFi-hez?",
+    "makeTextBigger": "Hogyan tudom nagyítani a szöveget a képernyőn?",
+    "takeScreenshot": "Hogyan készítsek képernyőképet?",
+    "videoCall": "Hogyan kezdeményezhetek videohívást?",
+    "iphoneSettings": "Hogyan módosíthatom az iPhone beállításait?",
+    "androidSettings": "Hogyan módosíthatom az Android beállításait?",
+    "windowsSettings": "Hogyan módosíthatom a Windows beállításait?"
+  },
+  "chat": {
+    "welcome": {
+      "title": "Hogyan segíthetek ma?",
+      "subtitle": "Kérdezz bármit a technológiáról!"
+    },
+    "input": {
+      "placeholder": "Üzenet az AI asszisztensnek...",
+      "helper": "Nyomja meg az Entert a küldéshez, a Shift+Entert az új sorhoz"
+    },
+    "greeting": {
+      "morning": "Jó reggelt",
+      "afternoon": "Jó napot",
+      "evening": "Jó estét"
+    },
+    "error": {
+      "general": "Sajnálom, most gondom van. Kérjük, próbálja újra egy pillanat múlva."
+    }
+  },
+  "flashcards": {
+    "title": "Útmutató lépésről lépésre",
+    "progress": "{{total}}/{{current}}. lépés",
+    "instructions": "Utasítás:",
+    "markCompleted": "Megjelölés befejezettként"
+  },
+  "dataPortability": {
+    "title": "Adathordozhatóság és felhasználói jogok",
+    "tabs": {
+      "overview": "Áttekintés",
+      "sharing": "Adatmegosztás",
+      "export": "Adatok exportálása",
+      "delete": "Adatok törlése",
+      "ai": "AI átlátszóság"
+    },
+    "overview": {
+      "title": "Az Ön adatjogai",
+      "description": "Személyes adatai felett teljes mértékben Ön rendelkezik. Adatait 30 napon belül bármikor megtekintheti, exportálhatja, javíthatja vagy törölheti.",
+      "dataWeCollect": "Az általunk gyűjtött adatok",
+      "profileInfo": "Profiladatok (név, e-mail cím, beállítások)",
+      "learningProgress": "Tanulási haladás és eredmények",
+      "aiHistory": "AI beszélgetési előzmények",
+      "analytics": "Használati elemzés (anonim)",
+      "howWeUse": "Hogyan használjuk fel az Ön adatait",
+      "personalized": "Személyre szabott tanulási élmény biztosítása",
+      "improveAI": "Az AI-asszisztens válaszainak javítása",
+      "trackProgress": "Kövesse nyomon fejlődését és eredményeit",
+      "security": "Biztosítsa a platform biztonságát és teljesítményét",
+      "rightsTitle": "Az Ön jogai a GDPR és a CCPA értelmében",
+      "rightAccess": "Hozzáférés joga:",
+      "accessDesc": "Tekintse meg az összes személyes adatát",
+      "rightPortability": "Hordozhatósághoz való jog:",
+      "portabilityDesc": "Exportálja adatait",
+      "rightRectification": "Helyesbítéshez való jog:",
+      "rectificationDesc": "Pontatlan adatok helyesbítése",
+      "rightErasure": "Törlési jog:",
+      "erasureDesc": "Törölje személyes adatait"
+    },
+    "sharing": {
+      "title": "Adatmegosztási beállítások",
+      "description": "Az adatok megosztásának és felhasználásának szabályozása. Minden megosztás nem kötelező, és bármikor módosítható.",
+      "dataTypes": "Adattípus megosztása",
+      "thirdParty": "Harmadik fél általi megosztás",
+      "special": "Különleges kategóriák",
+      "analytics": "Analytics megosztása",
+      "analyticsDesc": "Oszd meg a névtelen használati adatokat a platform fejlesztése érdekében",
+      "research": "Kutatások megosztása",
+      "researchDesc": "Hozzájáruljon anonimizált adatokhoz a felsőoktatási kutatásokhoz"
+    },
+    "export": {
+      "title": "Exportálja adatait",
+      "description": "Töltse le az összes személyes adatának másolatát. 30 napon belül elkészítjük adatait, és letöltési linket küldünk.",
+      "chooseFormat": "Válassza az Exportálási formátum lehetőséget",
+      "included": "Amit tartalmaz:",
+      "profile": "Profiladatok és beállítások",
+      "progress": "Tanulási haladás és eredmények",
+      "conversations": "AI beszélgetési előzmények",
+      "support": "Támogatás jegyelőzmények",
+      "consent": "Hozzájárulási és adatvédelmi beállítások",
+      "request": "Adatexportálás kérése",
+      "requesting": "Exportálás kérése...",
+      "requests": "Exportálási kérések",
+      "requested": "Kért",
+      "download": "Letöltés"
+    },
+    "delete": {
+      "title": "Törölje adatait",
+      "description": "Véglegesen törölje az összes személyes adatát. Ez a művelet nem vonható vissza, és fiókja 30 napon belül megszűnik.",
+      "whatDeleted": "Amit törölni fognak:",
+      "profile": "Az Ön profilja és fiókadatai",
+      "progress": "Minden tanulási haladás és eredmény",
+      "conversations": "AI beszélgetési előzmények",
+      "preferences": "Preferenciák és beállítások",
+      "analytics": "A fiókjához kapcsolt használati elemzés",
+      "important": "Fontos megjegyzések:",
+      "legal": "Előfordulhat, hogy bizonyos adatokat megőrzünk a jogi megfelelés érdekében (támogatási jegyek, számlázási nyilvántartások)",
+      "research": "A kutatáshoz felhasznált anonim adatok megőrizhetők",
+      "verification": "A törlés előtt e-mailben kapsz visszaigazolást",
+      "timeframe": "A törlés 30 napon belül megtörténik",
+      "request": "Adattörlés kérése",
+      "confirm": "Biztosan törli az összes adatát?",
+      "type": "A művelet megerősítéséhez írja be az „ADATAIM TÖRLÉSE” parancsot:",
+      "placeholder": "Írja be az ADATAIM TÖRLÉSE",
+      "confirmButton": "Erősítse meg a törlést",
+      "processing": "Feldolgozás...",
+      "cancel": "Mégse",
+      "requests": "Törlési kérelmek",
+      "complete": "Teljes adattörlés",
+      "requested": "Kért",
+      "scheduled": "Ütemezett",
+      "awaitingVerification": "Ellenőrzésre vár"
+    },
+    "ai": {
+      "title": "AI adathasználat átláthatósága",
+      "description": "Tekintse meg, hogy AI-asszisztensünk pontosan hogyan használja fel adatait, és szabályozhatja az AI-adatbeállításokat.",
+      "stats": "AI adathasználati statisztika",
+      "conversationsAnalyzed": "Az elemzett beszélgetések:",
+      "dataPoints": "Felhasznált adatpontok:",
+      "trainingContribution": "Képzési hozzájárulás:",
+      "lastProcessed": "Utolsó feldolgozás:",
+      "optOut": "AI Opt-Out Options",
+      "stopTraining": "Állítsa le az AI-képzést",
+      "stopTrainingDesc": "Akadályozza meg, hogy adatai javítsák az AI-válaszokat",
+      "deleteHistory": "Beszélgetési előzmények törlése",
+      "deleteHistoryDesc": "Távolítsa el az összes tárolt AI-beszélgetést",
+      "anonymize": "Adataim anonimizálása",
+      "anonymizeDesc": "Konvertálja az adatokat anonim űrlapra"
+    }
+  },
+  "multimodal": {
+    "tabsLabel": "Válassza ki a kommunikáció módját",
+    "tabs": {
+      "chat": "Csevegés",
+      "voice": "Hang",
+      "image": "Kép",
+      "chatAria": "Szöveges chat bevitel",
+      "voiceAria": "Hangbemenet",
+      "imageAria": "Képbevitel"
+    },
+    "chat": {
+      "placeholder": "Írja be ide kérdését... Nyomja meg az Enter billentyűt a küldéshez",
+      "ariaLabel": "Írja be kérdését",
+      "sendButton": "Üzenet küldése",
+      "send": "Elküld"
+    },
+    "voice": {
+      "recording": "Felvétel... Érintse meg a leállításhoz",
+      "processing": "A hangod feldolgozása...",
+      "instructions": "Érintse meg a mikrofont a felvétel elindításához",
+      "startRecording": "Indítsa el a felvételt",
+      "stopRecording": "Állítsa le a felvételt"
+    },
+    "image": {
+      "takePhoto": "Készítsen fényképet",
+      "camera": "Fotó készítése",
+      "upload": "Kép feltöltése",
+      "uploadAria": "Válassza ki a képfájlt",
+      "instructions": "Oszd meg a fényképet, és segítek elmagyarázni, amit látsz",
+      "formats": "Támogatja a JPG-t, PNG-t, GIF-et (max 10 MB)",
+      "previewAlt": "Kiválasztott kép előnézete",
+      "remove": "Kép eltávolítása",
+      "contextLabel": "Mit szeretnél tudni erről a képről?",
+      "contextPlaceholder": "Nem kötelező: Tegyen fel egy konkrét kérdést a képpel kapcsolatban",
+      "cancel": "Mégse",
+      "submit": "Kép elküldése",
+      "send": "Elküld",
+      "invalidType": "Kérjük, válasszon érvényes képfájlt.",
+      "tooLarge": "A képfájl túl nagy. Kérjük, válasszon egy 10 MB-nál kisebb fájlt.",
+      "cameraError": "Nem sikerült elérni a kamerát. Kérjük, ellenőrizze az engedélyeket."
+    }
+  },
+  "ai": {
+    "title": "AI Helper",
+    "subtitle": "Itt segít a tanulásban",
+    "emergency": "Sürgősségi támogatás",
+    "emergencyAria": "Kérjen sürgősségi támogatást",
+    "expand": "Bontsa ki",
+    "minimize": "Minimalizálja",
+    "close": "Zárja be az AI-asszisztenst",
+    "thinking": "Az AI gondolkodik...",
+    "escalated": "Most már csatlakozott ügyfélszolgálati csapatunkhoz",
+    "callSupport": "Hívja a támogatást: 1-800-SENIOR-HELP",
+    "minimized": "AI Helper",
+    "welcome": {
+      "tutorial": "Helló! Látom, a következőn dolgozik: \"{{oktatóanyag}}\". Azért vagyok itt, hogy segítsek bármilyen kérdésben. Gépelhet, beszélhet, vagy képeket mutathat – bármit, ami a legkényelmesebb az Ön számára!",
+      "general": "Helló! Én vagyok a mesterséges intelligencia asszisztense, és segítek lépésről lépésre megtanulni a technológiát. Kérdéseket tehet fel nekem gépeléssel, beszéddel vagy képek megjelenítésével. Mit szeretne tudni?"
+    },
+    "error": {
+      "general": "Sajnálom, most gondom van. Engedd meg, hogy kapcsolatba léphessünk ügyfélszolgálati csapatunkkal, akik azonnal segíthetnek."
+    }
+  },
+  "community": {
+    "header": {
+      "title": "Közösségi Fórum",
+      "subtitle": "Lépjen kapcsolatba más tanulókkal, tegyen fel kérdéseket, és ossza meg tapasztalatait",
+      "backToHome": "Vissza a Kezdőlapra",
+      "newPost": "Új bejegyzés"
+    },
+    "sidebar": {
+      "categories": "Kategóriák",
+      "topics": {
+        "all": "Minden téma",
+        "general": "Általános segítség",
+        "mobile": "Mobil eszközök",
+        "computer": "Számítógépek",
+        "apps": "Alkalmazások és szoftverek",
+        "internet": "Internet és e-mail",
+        "safety": "Online biztonság"
+      },
+      "guidelines": {
+        "title": "közösségi irányelvek",
+        "items": [
+          "Légy tisztelettudó és kedves",
+          "Nincs spam vagy nem megfelelő tartalom",
+          "Segíts másoknak, amikor csak tudsz",
+          "Maradj a témánál",
+          "Jelentse az esetleges problémákat"
+        ]
+      }
+    },
+    "search": {
+      "placeholder": "Keresés a bejegyzésekben..."
+    },
+    "createPost": {
+      "title": "Új bejegyzés létrehozása",
+      "categoryLabel": "Kategória",
+      "titleLabel": "Cím",
+      "contentLabel": "Tartalom",
+      "titlePlaceholder": "Mi a kérdésed vagy a témád?",
+      "contentPlaceholder": "Írja le kérdését, vagy ossza meg gondolatait...",
+      "submit": "Hozzászólás",
+      "cancel": "Mégse",
+      "profanityAlert": "Bejegyzése nem megfelelő tartalmat tartalmaz. Kérjük, vizsgálja felül, és próbálja újra."
+    },
+    "posts": {
+      "empty": "Nem található bejegyzés. Legyen Ön az első, aki beszélgetést kezdeményez!",
+      "replies": "{{count}} válasz",
+      "timeAgo": {
+        "justNow": "Éppen most",
+        "oneHour": "1 órája",
+        "hours": "{{count}} órája",
+        "oneDay": "1 napja",
+        "days": "{{count}} napja"
+      }
+    }
+  },
+  "contact": {
+    "title": "Lépjen kapcsolatba velünk",
+    "subtitle": "Szeretnénk hallani rólad! Küldjön üzenetet, és a lehető leghamarabb válaszolunk.",
+    "backToHome": "Vissza a Kezdőlapra",
+    "form": {
+      "fasterResponse": "📧 Ezt az űrlapot gyorsabban megválaszoljuk, mint más kapcsolatfelvételi módokon!",
+      "name": "Teljes név *",
+      "namePlaceholder": "Írja be a teljes nevét",
+      "email": "E-mail cím *",
+      "emailPlaceholder": "Adja meg e-mail címét",
+      "subject": "Tárgy *",
+      "subjectPlaceholder": "Válasszon egy tárgyat",
+      "subjects": {
+        "general": "Általános Érdeklődés",
+        "techSupport": "Műszaki támogatás",
+        "account": "Fiók súgója",
+        "feature": "Funkciókérés",
+        "bug": "Hibajelentés",
+        "feedback": "Visszacsatolás",
+        "other": "Más"
+      },
+      "message": "Üzenet*",
+      "messagePlaceholder": "Kérjük, írja le részletesen érdeklődését...",
+      "submit": "Üzenet küldése",
+      "sending": "Küldés...",
+      "success": "Az e-mail kliensének meg kellett volna nyílnia. Ha nem, kérjük, másolja ki az adatokat, és küldjön nekünk e-mailt közvetlenül.",
+      "error": "Hiba történt. Kérjük, írjon nekünk közvetlenül a taksh.nahata37@gmail.com címre"
+    },
+    "info": {
+      "title": "Vegye fel a kapcsolatot",
+      "emailLabel": "Email",
+      "responseData": "Általában 24 órán belül válaszolunk"
+    },
+    "reasons": {
+      "title": "Miért vegye fel velünk a kapcsolatot?",
+      "items": [
+        "Kérjen segítséget műszaki problémákkal kapcsolatban",
+        "Kérjen új funkciókat",
+        "Ossza meg visszajelzéseit és javaslatait",
+        "Hibák vagy problémák bejelentése",
+        "Általános kérdések"
+      ]
+    }
+  },
+  "terms": {
+    "title": "Szolgáltatási feltételek",
+    "backToHome": "Vissza a Kezdőlapra",
+    "lastUpdated": "Utolsó frissítés: {{dátum}}",
+    "sections": {
+      "acceptance": {
+        "title": "Feltételek elfogadása",
+        "content": "Szolgáltatásunk igénybevételével Ön elfogadja és magára nézve kötelezőnek ismeri el jelen szerződés feltételeit és rendelkezéseit."
+      },
+      "license": {
+        "title": "Licenc használata",
+        "content": "Engedélyt adunk, hogy szolgáltatásunkat ideiglenesen csak személyes, nem kereskedelmi célú, átmeneti megtekintésre használjuk."
+      },
+      "conduct": {
+        "title": "Felhasználói magatartás",
+        "content": "Ön beleegyezik abba, hogy szolgáltatásunkat az összes vonatkozó törvénynek és előírásnak megfelelő módon, valamint a jelen feltételekkel összhangban használja."
+      },
+      "liability": {
+        "title": "A felelősség korlátozása",
+        "content": "Cégünk vagy beszállítói semmilyen esetben sem vállalnak felelősséget a szolgáltatásunk használatából vagy használatának képtelenségéből eredő károkért."
+      },
+      "contact": {
+        "title": "Elérhetőségi adatok",
+        "content": "Ha bármilyen kérdése van a jelen Általános Szerződési Feltételekkel kapcsolatban, forduljon hozzánk a következő címen:"
+      }
+    }
+  },
+  "accessibilityPage": {
+    "title": "Hozzáférhetőségi nyilatkozat",
+    "subtitle": "Elkötelezettek vagyunk amellett, hogy platformunkat mindenki számára elérhetővé tegyük, képességektől és technológiától függetlenül.",
+    "backToHome": "Vissza a Kezdőlapra",
+    "commitment": {
+      "title": "Elkötelezettségünk",
+      "content": "Hiszünk abban, hogy a technológiának mindenki számára elérhetőnek kell lennie. Platformunk az idősekre való tekintettel készült, és olyan funkciókat tartalmaz, amelyek megkönnyítik és kényelmesebbé teszik a tanulási technológiát minden képességű felhasználó számára."
+    },
+    "features": {
+      "title": "Kisegítő lehetőségek",
+      "visual": {
+        "title": "Vizuális hozzáférhetőség",
+        "items": [
+          "Nagy kontrasztú színsémák",
+          "Nagy, olvasható betűtípusok",
+          "Képernyőolvasó kompatibilitás",
+          "Billentyűzet navigációs támogatás",
+          "Alternatív szöveg a képekhez"
+        ]
+      },
+      "audio": {
+        "title": "Hang hozzáférhetősége",
+        "items": [
+          "Feliratok videókhoz",
+          "Hangos leírások",
+          "Hangerőszabályzók",
+          "Vizuális jelzők hangjelzésekhez",
+          "A hangtartalom szöveges alternatívái"
+        ]
+      },
+      "motor": {
+        "title": "Motoros akadálymentesítés",
+        "items": [
+          "Nagy kattintható területek",
+          "Csak billentyűzettel történő navigáció",
+          "Állítható időkorlátok",
+          "Hangvezérlés kompatibilitás",
+          "Egyszerűsített interakciók"
+        ]
+      },
+      "cognitive": {
+        "title": "Kognitív hozzáférhetőség",
+        "items": [
+          "Egyszerű, tiszta nyelv",
+          "Következetes navigáció",
+          "Csökkentett mozgási lehetőségek",
+          "Világos utasítások",
+          "Hibamegelőzés és helyreállítás"
+        ]
+      }
+    },
+    "standards": {
+      "title": "Szabványoknak való megfelelés",
+      "content": "Platformunk célja, hogy megfeleljen a Web Content Accessibility Guidelines (WCAG) 2.1 AA szintű szabványainak. Rendszeresen teszteljük platformunkat kisegítő technológiákkal, és akadálymentesítési auditokat végzünk."
+    },
+    "feedback": {
+      "title": "Visszajelzés és támogatás",
+      "content": "Folyamatosan dolgozunk az elérhetőség javításán. Ha bármilyen akadályba ütközik, vagy fejlesztési javaslatai vannak, ne habozzon kapcsolatba lépni velünk.",
+      "emailLabel": "Email",
+      "subjectLabel": "Téma",
+      "subjectValue": "Visszajelzés a kisegítő lehetőségekről"
+    },
+    "assistive": {
+      "title": "Segítő technológiák",
+      "content": "Platformunkat úgy alakítottuk ki, hogy az általános kisegítő technológiákkal működjön együtt, beleértve:",
+      "items": [
+        "Képernyőolvasók (JAWS, NVDA, VoiceOver)",
+        "Hangfelismerő szoftver",
+        "Képernyőnagyító eszközök",
+        "Alternatív billentyűzetek",
+        "Navigációs eszközök váltása",
+        "Szemkövető rendszerek"
+      ]
+    },
+    "help": {
+      "title": "Segítségre van szüksége?",
+      "content": "Ha segítségre van szüksége platformunk használatával kapcsolatban, vagy a kisegítő lehetőségekhez kapcsolódó kérdései vannak, szívesen segítünk.",
+      "contact": "Lépjen kapcsolatba az ügyfélszolgálattal"
+    },
+    "lastUpdated": "Utolsó frissítés: {{dátum}}"
   }
 }
