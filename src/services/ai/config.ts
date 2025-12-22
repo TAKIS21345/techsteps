@@ -14,7 +14,7 @@ export interface GeminiConfig {
 
 export const DEFAULT_GEMINI_CONFIG: GeminiConfig = {
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-  model: 'gemini-2.0-flash-exp',
+  model: 'gemini-1.5-flash',
   maxTokens: 1000,
   temperature: 0.7,
   topK: 40,
@@ -66,19 +66,19 @@ export const DEFAULT_QUALITY_CONFIG: QualityConfig = {
 // Fallback responses for common scenarios
 export const FALLBACK_RESPONSES = {
   GENERAL_ERROR: "I apologize, but I'm having trouble right now. Let me connect you with one of our helpful team members who can assist you better.",
-  
+
   NETWORK_ERROR: "It seems there's a connection issue. Please check your internet connection and try again, or I can help you contact our support team.",
-  
+
   TIMEOUT_ERROR: "I'm taking longer than usual to respond. Let me try again, or would you prefer to speak with a human helper?",
-  
+
   UNCLEAR_QUESTION: "I want to make sure I understand your question correctly. Could you please rephrase it, or would you like me to connect you with someone who can help?",
-  
+
   COMPLEX_TECHNICAL: "This seems like a technical question that would be better handled by our support team. They have specialized knowledge to help you with this.",
-  
+
   PRIVACY_CONCERN: "I understand you have privacy concerns. Let me connect you with our support team who can address your specific privacy questions.",
-  
+
   ACCESSIBILITY_HELP: "For accessibility assistance, our support team has specialized training to help you. Would you like me to connect you with them?",
-  
+
   EMERGENCY_SUPPORT: "It sounds like you need immediate assistance. Let me connect you with our support team right away."
 };
 
@@ -92,7 +92,7 @@ export const HELP_TEMPLATES = {
       { label: "Learn More", type: "tutorial", target: "getting-started" }
     ]
   },
-  
+
   TUTORIAL_PAGE: {
     title: "Tutorial Help",
     content: "You're doing great! Take your time with each step. If something isn't clear, don't hesitate to ask questions or use the 'Previous' button to review earlier steps.",
@@ -101,7 +101,7 @@ export const HELP_TEMPLATES = {
       { label: "Contact Support", type: "contact", target: "support" }
     ]
   },
-  
+
   PROFILE_PAGE: {
     title: "Your Profile Settings",
     content: "Here you can update your personal information, change your preferences, and adjust accessibility settings to make your learning experience more comfortable.",
