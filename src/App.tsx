@@ -16,6 +16,7 @@ import ChatDashboard from './pages/ChatDashboard';
 
 import ProtectedRoute from './components/routing/ProtectedRoute';
 import PublicRoute from './components/routing/PublicRoute';
+import TileWaveLoader from './components/layout/TileWaveLoader'; // Import Loader
 import { PWAProvider } from './components/pwa/PWAProvider';
 // Main App component
 import { CookieManager } from './utils/cookieManager';
@@ -33,9 +34,16 @@ import './styles/globals.css';
 
 function App() {
   const { setIsTranslating } = useTranslationAnimation();
+  const [showSplash, setShowSplash] = React.useState(true);
+
   // Get authentication and user status
   const { user, loading: authLoading } = useAuth();
   const { hasCompletedOnboarding, loading: userLoading } = useUser();
+
+  // TileWaveLoader handles its own timing, just hide when it signals complete
+  const handleSplashComplete = React.useCallback(() => {
+    setShowSplash(false);
+  }, []);
 
   // Initialize performance optimizations
   usePerformanceOptimization({
@@ -100,6 +108,7 @@ function App() {
             onError={(error, errorInfo) => console.error('React Error:', error, errorInfo)}
           >
             <KeyboardNavigationManager>
+              {showSplash && <TileWaveLoader onComplete={handleSplashComplete} />}
               <Router>
                 <AccessibilityAnnouncer />
                 <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">

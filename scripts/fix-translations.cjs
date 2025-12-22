@@ -78,17 +78,23 @@ async function fixTranslations() {
 
         const keysToFix = [];
 
-        // Identify keys that need fixing (same as English and length > 4)
+        // Identify keys that need fixing (same as English or missing)
         for (const key in sourceFlat) {
             const sourceVal = sourceFlat[key];
             const targetVal = targetFlat[key];
 
             if (Array.isArray(sourceVal)) {
-                if (JSON.stringify(sourceVal) === JSON.stringify(targetVal)) {
+                // For arrays, deeper check or just overwrite if missing
+                if (!targetVal || !Array.isArray(targetVal)) {
                     keysToFix.push({ key, value: sourceVal, isArray: true });
+                } else {
+                    // Check elements if they are identical to source
+                    if (JSON.stringify(sourceVal) === JSON.stringify(targetVal)) {
+                        keysToFix.push({ key, value: sourceVal, isArray: true });
+                    }
                 }
             } else if (typeof sourceVal === 'string') {
-                if (sourceVal === targetVal && !['TechStep', 'Email', 'Zoom', 'Google', 'WhatsApp'].includes(sourceVal)) {
+                if (!targetVal || (sourceVal === targetVal && !['TechStep', 'Email', 'Zoom', 'Google', 'WhatsApp'].includes(sourceVal))) {
                     keysToFix.push({ key, value: sourceVal, isArray: false });
                 }
             }

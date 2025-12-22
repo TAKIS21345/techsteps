@@ -48,8 +48,8 @@
       ]
     },
     "popularQuestionsSection": {
-      "title": "Popular Questions We Help With",
-      "subtitle": "See what other seniors are asking about",
+      "title": "Questions courantes pour lesquelles nous aidons",
+      "subtitle": "Découvrez ce que les autres personnes âgées demandent",
       "askYourQuestionButton": "Posez votre question maintenant"
     },
     "testimonialsSection": {
@@ -85,16 +85,16 @@
           "avatar": "F"
         }
       ],
-      "ageLabel": "Age {{age}}"
+      "ageLabel": "Âge {{âge}}"
     },
     "ctaSection": {
-      "title": "Ready to Master Technology?",
-      "subtitle": "Join our community of empowered seniors who've made technology simple and approachable. Start getting clear, helpful answers today - completely free!",
-      "getStartedButton": "Get Started Free Today",
-      "setupInMinutes": "Setup in 2 minutes"
+      "title": "Prêt à maîtriser la technologie ?",
+      "subtitle": "Rejoignez notre communauté de seniors autonomes qui ont rendu la technologie simple et accessible. Commencez à obtenir des réponses claires et utiles dès aujourd’hui – entièrement gratuitement !",
+      "getStartedButton": "Commencez gratuitement dès aujourd'hui",
+      "setupInMinutes": "Installation en 2 minutes"
     },
     "footer": {
-      "description": "Making technology accessible and understandable for seniors everywhere.",
+      "description": "Rendre la technologie accessible et compréhensible pour les seniors du monde entier.",
       "featuresTitle": "Caractéristiques",
       "featuresItems": [
         "Step-by-Step Help",
@@ -375,7 +375,7 @@
       "firstNamePlaceholder": "Entrez votre prénom",
       "lastName": "Nom de famille",
       "lastNamePlaceholder": "Entrez votre nom de famille",
-      "age": "Age",
+      "age": "Âge",
       "techExperience": "Niveau d'expérience technique",
       "techExperienceBeginner": "Débutant – Je suis nouveau en technologie",
       "techExperienceSome": "Une certaine expérience - je connais les bases",
@@ -405,7 +405,7 @@
       "textSizeExtraLarge": "Très grand",
       "theme": "Thème de couleur",
       "themeLight": "Lumière",
-      "themeDark": "Dark",
+      "themeDark": "Sombre",
       "themeHighContrast": "Contraste élevé"
     },
     "language": {
@@ -1177,7 +1177,8 @@
     },
     "input": {
       "placeholder": "Assistant IA de messages...",
-      "helper": "Appuyez sur Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne"
+      "helper": "Appuyez sur Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne",
+      "listening": "Écoute... Cliquez à nouveau sur l'avatar pour arrêter"
     },
     "greeting": {
       "morning": "Bonjour",
@@ -1185,8 +1186,12 @@
       "evening": "Bonne soirée"
     },
     "error": {
-      "general": "Je suis désolé, j'ai des problèmes en ce moment. Veuillez réessayer dans un instant."
-    }
+      "general": "Je suis désolé, j'ai des problèmes en ce moment. Veuillez réessayer dans un instant.",
+      "understanding": "Je suis désolé, je ne comprenais pas ça.",
+      "connection": "J'ai du mal à me connecter en ce moment. Veuillez réessayer."
+    },
+    "welcomeMessage": "Bonjour {{name}} ! Je suis là pour vous aider.",
+    "navigating": "Navigation vers {{target}}..."
   },
   "flashcards": {
     "title": "Guide étape par étape",

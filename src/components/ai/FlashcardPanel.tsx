@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Volume2, X, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, X, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { FlashcardStep } from '../../types/services';
-import MarkdownRenderer from './MarkdownRenderer';
-import MethodSelector from './MethodSelector';
-import EnhancedAvatarCompanion from './EnhancedAvatarCompanion';
+import FlashcardCard from './FlashcardCard';
 
 interface FlashcardPanelProps {
   steps: FlashcardStep[];
@@ -22,278 +21,273 @@ export const FlashcardPanel: React.FC<FlashcardPanelProps> = ({
   const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
-  const [selectedMethod, setSelectedMethod] = useState<number | null>(null);
-  const [showMethodSelector, setShowMethodSelector] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [audioLevel, setAudioLevel] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const panelRef = useRef<HTMLDivElement>(null);
 
-  // Group steps by method
-  const methodGroups = React.useMemo(() => {
-    const groups: { [key: string]: FlashcardStep[] } = {};
+  // Check for reduced motion
+  const prefersReducedMotion = typeof window !== 'undefined'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    steps.forEach(step => {
-      const methodKey = step.methodGroup || 'default';
-      if (!groups[methodKey]) {
-        groups[methodKey] = [];
-      }
-      groups[methodKey].push(step);
-    });
-
-    return Object.entries(groups).map(([title, steps]) => ({
-      title: title === 'default' ? 'Step-by-Step Guide' : title,
-      steps,
-      difficulty: steps[0]?.methodGroup?.includes('easy') ? 'easy' :
-        steps[0]?.methodGroup?.includes('medium') ? 'medium' :
-          steps[0]?.methodGroup?.includes('hard') ? 'hard' : undefined
-    }));
-  }, [steps]);
-
-  const hasMultipleMethods = methodGroups.length > 1;
-  const currentSteps = selectedMethod !== null ? methodGroups[selectedMethod]?.steps || [] : steps;
+  const totalSteps = steps.length;
 
   // Reset when new steps arrive
   useEffect(() => {
     if (steps.length > 0) {
       setActiveStep(0);
       setCompletedSteps(new Set());
-      setSelectedMethod(hasMultipleMethods ? null : 0);
-      setShowMethodSelector(hasMultipleMethods);
+      setDirection(0);
     }
-  }, [steps, hasMultipleMethods]);
+  }, [steps]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isVisible) return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        goToNextStep();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToPreviousStep();
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isVisible, activeStep, totalSteps, onClose]);
 
   if (!isVisible || steps.length === 0) return null;
 
-  // Show method selector if we have multiple methods and none is selected
-  if (showMethodSelector && selectedMethod === null) {
-    return (
-      <div className={`h-full bg-gray-50 flex flex-col ${className}`}>
-        {/* Close button */}
-        <div className="absolute top-4 right-4 z-10">
-          <button
-            onClick={onClose}
-            className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
-            aria-label={t('common.close', 'Close')}
-          >
-            <X className="w-5 h-5 text-gray-600" />
-          </button>
-        </div>
-
-        <MethodSelector
-          methods={methodGroups}
-          onMethodSelect={(methodIndex) => {
-            setSelectedMethod(methodIndex);
-            setShowMethodSelector(false);
-            setActiveStep(0);
-            setCompletedSteps(new Set());
-          }}
-          className="flex-1 flex flex-col justify-center"
-        />
-      </div>
-    );
-  }
-
-  const currentStepData = currentSteps[activeStep];
-  const totalSteps = currentSteps.length;
-  const isFirstStep = activeStep === 0;
-  const isLastStep = activeStep === totalSteps - 1;
-
   // Navigation handlers
   const goToNextStep = useCallback(() => {
-    if (!isLastStep) {
-      const newStep = activeStep + 1;
-      setActiveStep(newStep);
-
-      // Mark current step as completed
+    if (activeStep < totalSteps - 1) {
+      setDirection(1);
       setCompletedSteps(prev => new Set([...prev, activeStep]));
-    } else {
+      setActiveStep(prev => prev + 1);
+    } else if (activeStep === totalSteps - 1) {
       // Mark final step as completed
       setCompletedSteps(prev => new Set([...prev, activeStep]));
     }
-  }, [activeStep, isLastStep]);
+  }, [activeStep, totalSteps]);
 
   const goToPreviousStep = useCallback(() => {
-    if (!isFirstStep) {
-      const newStep = activeStep - 1;
-      setActiveStep(newStep);
+    if (activeStep > 0) {
+      setDirection(-1);
+      setActiveStep(prev => prev - 1);
     }
-  }, [activeStep, isFirstStep]);
+  }, [activeStep]);
 
   const goToStep = useCallback((stepIndex: number) => {
     if (stepIndex >= 0 && stepIndex < totalSteps) {
+      setDirection(stepIndex > activeStep ? 1 : -1);
       setActiveStep(stepIndex);
     }
-  }, [totalSteps]);
+  }, [totalSteps, activeStep]);
 
-  // Text-to-speech function with audio sync
-  const speakText = () => {
+  // Text-to-speech
+  const speakText = useCallback((text: string) => {
     if ('speechSynthesis' in window) {
-      // Cancel any ongoing speech
       window.speechSynthesis.cancel();
-      setIsSpeaking(false);
 
-      // Create new utterance
-      const text = currentStepData.content.replace(/<[^>]*>/g, ''); // Remove HTML tags
+      if (isSpeaking) {
+        setIsSpeaking(false);
+        return;
+      }
+
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.8; // Slightly slower for seniors
+      utterance.rate = 0.8;
       utterance.pitch = 1;
       utterance.volume = 1;
 
-      // Audio sync animation
-      utterance.onstart = () => {
-        setIsSpeaking(true);
-        // Simulate audio levels for mouth animation
-        const audioInterval = setInterval(() => {
-          setAudioLevel(Math.random() * 0.8 + 0.2); // Random audio level between 0.2-1.0
-        }, 100);
+      utterance.onstart = () => setIsSpeaking(true);
+      utterance.onend = () => setIsSpeaking(false);
+      utterance.onerror = () => setIsSpeaking(false);
 
-        utterance.onend = () => {
-          setIsSpeaking(false);
-          setAudioLevel(0);
-          clearInterval(audioInterval);
-        };
-
-        utterance.onerror = () => {
-          setIsSpeaking(false);
-          setAudioLevel(0);
-          clearInterval(audioInterval);
-        };
-      };
-
-      // Speak the text
       window.speechSynthesis.speak(utterance);
     }
-  };
+  }, [isSpeaking]);
+
+  const currentStepData = steps[activeStep];
+  const isFirstStep = activeStep === 0;
+  const isLastStep = activeStep === totalSteps - 1;
+  const progress = ((activeStep + 1) / totalSteps) * 100;
+  const isAllCompleted = completedSteps.size === totalSteps;
 
   return (
-    <div className={`h-full bg-gray-50 flex flex-col ${className}`}>
-      {/* Close button */}
-      <div className="absolute top-4 right-4 z-10">
-        <button
+    <motion.div
+      ref={panelRef}
+      initial={{ opacity: 0, x: 50, scale: 0.95 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      exit={{ opacity: 0, x: 50, scale: 0.95 }}
+      transition={{ duration: prefersReducedMotion ? 0.15 : 0.5, ease: "easeOut" }}
+      className={`h-full flex flex-col relative overflow-hidden ${className}`}
+      style={{
+        background: 'linear-gradient(135deg, rgba(249,250,251,0.95) 0%, rgba(243,244,246,0.95) 100%)',
+        backdropFilter: 'blur(20px)',
+      }}
+      role="region"
+      aria-label="Flashcard Guide"
+    >
+      {/* Decorative Background Elements */}
+      {!prefersReducedMotion && (
+        <>
+          <motion.div
+            className="absolute top-[-20%] right-[-10%] w-64 h-64 rounded-full bg-indigo-200/30 blur-3xl pointer-events-none"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute bottom-[-10%] left-[-10%] w-48 h-48 rounded-full bg-purple-200/30 blur-3xl pointer-events-none"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.5, 0.3, 0.5],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </>
+      )}
+
+      {/* Header */}
+      <div className="relative z-10 p-4 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-5 h-5 text-indigo-500" />
+          <span className="font-semibold text-gray-700">
+            {t('flashcards.stepByStepGuide', 'Step-by-Step Guide')}
+          </span>
+        </div>
+
+        {/* Close button */}
+        <motion.button
           onClick={onClose}
-          className="p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+          className="p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all"
+          whileHover={{ scale: 1.1, rotate: 90 }}
+          whileTap={{ scale: 0.9 }}
           aria-label={t('common.close', 'Close')}
         >
           <X className="w-5 h-5 text-gray-600" />
-        </button>
+        </motion.button>
       </div>
 
-      <div className="flex-1 flex flex-col justify-center items-center p-6 w-full h-full relative">
-        {/* Method title and back button */}
-        {hasMultipleMethods && selectedMethod !== null && (
-          <div className="w-full mb-4">
-            <button
-              onClick={() => {
-                setShowMethodSelector(true);
-                setSelectedMethod(null);
-              }}
-              className="flex items-center text-blue-600 hover:text-blue-700 transition-colors mb-2"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to methods
-            </button>
-            <h3 className="text-lg font-medium text-gray-900">
-              {methodGroups[selectedMethod]?.title}
-            </h3>
-          </div>
-        )}
-
-        {/* Progress dots */}
-        <div className="flex space-x-2 mb-6">
-          {currentSteps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToStep(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${index === activeStep
-                ? 'bg-blue-600 scale-125'
+      {/* Progress Dots */}
+      <div className="relative z-10 flex justify-center gap-2 px-4 py-2">
+        {steps.map((_, index) => (
+          <motion.button
+            key={index}
+            onClick={() => goToStep(index)}
+            className={`relative rounded-full transition-all ${index === activeStep
+                ? 'w-8 h-3 bg-gradient-to-r from-indigo-500 to-purple-500'
                 : completedSteps.has(index)
-                  ? 'bg-green-500'
-                  : 'bg-gray-300'
-                }`}
-              aria-label={`Go to step ${index + 1}`}
-            />
-          ))}
+                  ? 'w-3 h-3 bg-green-400'
+                  : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+              }`}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label={`Go to step ${index + 1}`}
+            aria-current={index === activeStep ? 'step' : undefined}
+          >
+            {completedSteps.has(index) && index !== activeStep && (
+              <motion.span
+                className="absolute inset-0 flex items-center justify-center text-white text-xs"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+              >
+                ✓
+              </motion.span>
+            )}
+          </motion.button>
+        ))}
+      </div>
+
+      {/* Card Container */}
+      <div className="relative flex-1 overflow-hidden">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <FlashcardCard
+            key={activeStep}
+            step={currentStepData}
+            stepNumber={activeStep + 1}
+            totalSteps={totalSteps}
+            direction={direction}
+            onNext={goToNextStep}
+            onPrevious={goToPreviousStep}
+            isCompleted={completedSteps.has(activeStep)}
+            onSpeak={speakText}
+            isSpeaking={isSpeaking}
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Navigation Footer */}
+      <div className="relative z-10 p-4">
+        {/* Progress Bar */}
+        <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mb-4">
+          <motion.div
+            className="h-full rounded-full"
+            style={{
+              background: 'linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%)',
+            }}
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: prefersReducedMotion ? 0.1 : 0.5, ease: "easeOut" }}
+          />
         </div>
 
-        {/* Main flashcard - Quizlet style */}
-        <div className="relative w-full flex-1 flex flex-col min-h-0">
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 flex-1 flex flex-col justify-center relative overflow-hidden">
-
-            {/* Step Content Container */}
-            <div className="overflow-y-auto custom-scrollbar flex-1 flex flex-col justify-center items-center">
-
-              {/* Step number badge */}
-              <div className="absolute top-6 left-6 px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                Step {activeStep + 1} of {totalSteps}
-              </div>
-
-              {/* Content */}
-              <div className="w-full max-w-3xl mx-auto space-y-8">
-                <div className="text-3xl md:text-4xl font-medium leading-tight text-gray-900 text-center">
-                  <MarkdownRenderer
-                    content={currentStepData.content.replace(/<[^>]*>/g, '')}
-                    className="text-center prose prose-lg prose-indigo mx-auto"
-                  />
-                </div>
-
-                {/* Instructions if any */}
-                {currentStepData.instructions && currentStepData.instructions.length > 0 && (
-                  <div className="mt-8 p-6 bg-blue-50/50 rounded-2xl border border-blue-100/50">
-                    <ol className="list-decimal list-inside space-y-3 text-gray-700 text-lg">
-                      {currentStepData.instructions.map((instruction, index) => (
-                        <li key={index}>
-                          {instruction}
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Audio Control */}
-            <button
-              onClick={speakText}
-              className={`absolute top-6 right-6 p-3 rounded-full transition-all duration-200 ${isSpeaking
-                ? 'bg-indigo-100 text-indigo-600 ring-2 ring-indigo-400 animate-pulse'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
-              aria-label={isSpeaking ? "Stop speaking" : "Read aloud"}
-            >
-              {isSpeaking ? <X className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <div className="flex items-center justify-between w-full mt-6 px-4">
-          <button
+        {/* Navigation Buttons */}
+        <div className="flex items-center justify-between gap-4">
+          <motion.button
             onClick={goToPreviousStep}
             disabled={isFirstStep}
-            className="flex items-center px-6 py-4 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed text-gray-700 font-medium rounded-2xl transition-all shadow-sm"
+            className={`flex items-center gap-2 px-5 py-3 rounded-2xl font-medium transition-all ${isFirstStep
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                : 'bg-white text-gray-700 shadow-lg hover:shadow-xl border border-gray-200 hover:border-gray-300'
+              }`}
+            whileHover={isFirstStep ? {} : { x: -3 }}
+            whileTap={isFirstStep ? {} : { scale: 0.98 }}
           >
-            <ChevronLeft className="w-5 h-5 mr-2" />
-            Previous
-          </button>
+            <ChevronLeft className="w-5 h-5" />
+            {t('common.previous', 'Previous')}
+          </motion.button>
 
-          <div className="flex-1 mx-8">
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-              <div
-                className="bg-indigo-600 h-full rounded-full transition-all duration-500 ease-out"
-                style={{ width: `${((activeStep + 1) / totalSteps) * 100}%` }}
-              />
-            </div>
-          </div>
-
-          <button
+          <motion.button
             onClick={goToNextStep}
-            className="flex items-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-2xl transition-all shadow-md hover:shadow-lg hover:translate-y-[-1px]"
+            className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-white shadow-lg hover:shadow-xl transition-all"
+            style={{
+              background: isLastStep && isAllCompleted
+                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                : 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+            }}
+            whileHover={{ x: 3, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {isLastStep ? 'Finish' : 'Next'}
-            {!isLastStep && <ChevronRight className="w-5 h-5 ml-2" />}
-          </button>
+            {isLastStep
+              ? (isAllCompleted ? t('common.done', 'Done!') : t('common.finish', 'Finish'))
+              : t('common.next', 'Next')
+            }
+            {!isLastStep && <ChevronRight className="w-5 h-5" />}
+            {isLastStep && isAllCompleted && (
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring' }}
+              >
+                🎉
+              </motion.span>
+            )}
+          </motion.button>
         </div>
       </div>
-    </div>
+
+      {/* Screen Reader Announcements */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {`Step ${activeStep + 1} of ${totalSteps}: ${currentStepData?.content?.replace(/<[^>]*>/g, '')}`}
+      </div>
+    </motion.div>
   );
 };
 

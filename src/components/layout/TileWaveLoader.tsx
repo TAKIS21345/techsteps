@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const TileWaveLoader: React.FC = () => {
+interface TileWaveLoaderProps {
+    onComplete?: () => void; // Callback when animation finishes
+}
+
+const TileWaveLoader: React.FC<TileWaveLoaderProps> = ({ onComplete }) => {
     const [columns, setColumns] = useState(0);
     const [rows, setRows] = useState(0);
+    const [isExiting, setIsExiting] = useState(false);
 
     useEffect(() => {
         const calculateGrid = () => {
-            const tileSize = 64; // Approx tile size in px
+            const tileSize = 64;
             const cols = Math.ceil(window.innerWidth / tileSize);
             const rows = Math.ceil(window.innerHeight / tileSize);
             setColumns(cols);
@@ -19,9 +24,25 @@ const TileWaveLoader: React.FC = () => {
         return () => window.removeEventListener('resize', calculateGrid);
     }, []);
 
+    // Trigger exit animation after 2 seconds
+    useEffect(() => {
+        const exitTimer = setTimeout(() => {
+            setIsExiting(true);
+        }, 2000);
+
+        // Call onComplete after fade out finishes (1 second later)
+        const completeTimer = setTimeout(() => {
+            onComplete?.();
+        }, 3000); // 2s visible + 1s fade
+
+        return () => {
+            clearTimeout(exitTimer);
+            clearTimeout(completeTimer);
+        };
+    }, [onComplete]);
+
     if (columns === 0) return null;
 
-    // Create grid array
     const tiles = Array.from({ length: rows * columns }).map((_, i) => {
         const row = Math.floor(i / columns);
         const col = i % columns;
@@ -29,7 +50,12 @@ const TileWaveLoader: React.FC = () => {
     });
 
     return (
-        <div className="fixed inset-0 z-50 flex flex-wrap bg-gray-50 overflow-hidden">
+        <motion.div
+            className="fixed inset-0 z-50 flex flex-wrap overflow-hidden"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isExiting ? 0 : 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+        >
             {tiles.map((tile) => (
                 <Tile
                     key={tile.id}
@@ -44,8 +70,8 @@ const TileWaveLoader: React.FC = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.8 }}
+                    animate={{ opacity: isExiting ? 0 : 1, y: 0 }}
+                    transition={{ delay: isExiting ? 0 : 0.8, duration: 0.5 }}
                     className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl flex flex-col items-center"
                 >
                     <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4" />
@@ -54,41 +80,35 @@ const TileWaveLoader: React.FC = () => {
                     </h2>
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 const Tile: React.FC<{ row: number; col: number; totalRows: number; totalCols: number }> = ({ row, col, totalRows, totalCols }) => {
-    // Distance from top-left (0,0) logic for stagger
     const distance = row + col;
-    const maxDistance = totalRows + totalCols;
-    const normalizedDistance = distance / maxDistance;
 
-    // Animation variants
     const variants = {
         hidden: {
             opacity: 0,
             scale: 0.2,
-            // backgroundColor: '#f3f4f6' // gray-100
         },
         visible: {
             opacity: 1,
             scale: 1,
-            // backgroundColor: '#e0e7ff', // indigo-100
             transition: {
                 duration: 0.5,
-                delay: distance * 0.05, // Stagger placement
-                ease: "easeOut"
+                delay: distance * 0.05,
+                ease: "easeOut" as const
             }
         },
         wave: {
             scale: [1, 0.9, 1],
-            backgroundColor: ['#e0e7ff', '#c7d2fe', '#e0e7ff'], // Pulse color
+            backgroundColor: ['#e0e7ff', '#c7d2fe', '#e0e7ff'],
             transition: {
                 duration: 2,
                 repeat: Infinity,
-                delay: distance * 0.1, // Wave flow delay
-                ease: "easeInOut"
+                delay: distance * 0.1,
+                ease: "easeInOut" as const
             }
         }
     };

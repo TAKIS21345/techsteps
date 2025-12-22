@@ -58,7 +58,7 @@ class ErrorMessageTranslator {
 
     // Authentication errors
     this.registerPattern({
-      pattern: /401|unauthorized|authentication|login|token/i,
+      pattern: /401|unauthorized|auth.*failed|auth.*error|authentication required|session expired|please sign in|login required/i,
       severity: 'medium',
       title: 'Sign-In Required',
       message: 'You need to sign in again to continue. This happens for security reasons after some time.',
@@ -199,7 +199,7 @@ class ErrorMessageTranslator {
       actions: this.createActions(matchedPattern.actions, context),
       icon: matchedPattern.icon,
       supportContact: matchedPattern.supportContact,
-      technicalDetails: process.env.NODE_ENV === 'development' ? 
+      technicalDetails: process.env.NODE_ENV === 'development' ?
         `${errorMessage}\n${errorStack || ''}` : undefined
     };
   }
@@ -312,7 +312,7 @@ class ErrorMessageTranslator {
         action: () => {
           const userAgent = navigator.userAgent;
           let updateUrl = 'https://browsehappy.com/';
-          
+
           if (userAgent.includes('Chrome')) {
             updateUrl = 'chrome://settings/help';
           } else if (userAgent.includes('Firefox')) {
@@ -320,7 +320,7 @@ class ErrorMessageTranslator {
           } else if (userAgent.includes('Safari')) {
             updateUrl = 'https://support.apple.com/en-us/HT204416';
           }
-          
+
           window.open(updateUrl, '_blank');
         },
         icon: 'Download'
@@ -379,7 +379,7 @@ class ErrorMessageTranslator {
       ],
       icon: 'AlertTriangle',
       supportContact: true,
-      technicalDetails: process.env.NODE_ENV === 'development' ? 
+      technicalDetails: process.env.NODE_ENV === 'development' ?
         `${message}\n${stack || ''}` : undefined
     };
   }
@@ -387,12 +387,12 @@ class ErrorMessageTranslator {
   private openSupportContact(urgent: boolean = false): void {
     // This would integrate with your support system
     // For now, we'll show a simple contact method
-    const supportMessage = urgent ? 
+    const supportMessage = urgent ?
       'For immediate help, please call our support line at 1-800-HELP-NOW or email urgent@support.com' :
       'For help, please email support@platform.com or use the help button in the bottom right corner.';
-    
+
     alert(supportMessage);
-    
+
     // In a real implementation, this might:
     // - Open a chat widget
     // - Show a contact form

@@ -131,7 +131,7 @@ const SettingsPage: React.FC = () => {
               onClick={handleSave}
               disabled={loading}
               className={`
-                flex items-center px-6 py-2 rounded-xl font-bold transition-all duration-200 shadow-md
+                flex items-center px-4 md:px-6 py-2 rounded-xl font-bold transition-all duration-200 shadow-md
                 ${saved
                   ? 'bg-green-100 text-green-700 border border-green-300'
                   : 'bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg hover:-translate-y-0.5'
@@ -141,13 +141,13 @@ const SettingsPage: React.FC = () => {
             >
               {saved ? (
                 <>
-                  <Check className="w-4 h-4 mr-2" />
-                  {t('settings.saved', 'Saved')}
+                  <Check className="w-4 h-4 mr-1 md:mr-2" />
+                  <span className="text-sm md:text-base">{t('settings.saved', 'Saved')}</span>
                 </>
               ) : (
                 <>
-                  <Save className="w-4 h-4 mr-2" />
-                  {loading ? t('settings.saving', 'Saving...') : t('settings.saveChanges', 'Save Changes')}
+                  <Save className="w-4 h-4 mr-1 md:mr-2" />
+                  <span className="text-sm md:text-base">{loading ? t('settings.saving', 'Saving...') : t('settings.saveChanges', 'Save')}</span>
                 </>
               )}
             </button>
@@ -159,7 +159,7 @@ const SettingsPage: React.FC = () => {
         <div className="space-y-8">
 
           {/* Personal Information */}
-          <div className="glass-panel p-8 rounded-3xl">
+          <div className="glass-panel p-4 md:p-8 rounded-3xl">
             <div className="flex items-center mb-6">
               <div className="p-3 bg-indigo-100 rounded-xl mr-4">
                 <User className="w-6 h-6 text-indigo-600" />
@@ -212,26 +212,21 @@ const SettingsPage: React.FC = () => {
                 <label className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                   {t('settings.personalInfo.techExperience', 'Tech Experience Level')}
                 </label>
-                <div className="relative">
-                  <select
-                    value={formData.techExperience}
-                    onChange={(e) => setFormData(prev => ({ ...prev, techExperience: e.target.value as 'beginner' | 'some' | 'comfortable' }))}
-                    className="w-full px-4 py-3 glass-input rounded-xl focus:outline-none appearance-none"
-                  >
-                    <option value="beginner">{t('settings.personalInfo.techExperienceBeginner', "Beginner - I'm new to technology")}</option>
-                    <option value="some">{t('settings.personalInfo.techExperienceSome', 'Some Experience - I know the basics')}</option>
-                    <option value="comfortable">{t('settings.personalInfo.techExperienceComfortable', "Comfortable - I'm pretty good with tech")}</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                  </div>
-                </div>
+                <select
+                  value={formData.techExperience}
+                  onChange={(e) => setFormData(prev => ({ ...prev, techExperience: e.target.value as 'beginner' | 'some' | 'comfortable' }))}
+                  className="w-full px-4 py-3 glass-input rounded-xl focus:outline-none"
+                >
+                  <option value="beginner">{t('settings.personalInfo.techExperienceBeginner', "Beginner - I'm new to technology")}</option>
+                  <option value="some">{t('settings.personalInfo.techExperienceSome', 'Some Experience - I know the basics')}</option>
+                  <option value="comfortable">{t('settings.personalInfo.techExperienceComfortable', "Comfortable - I'm pretty good with tech")}</option>
+                </select>
               </div>
             </div>
           </div>
 
           {/* Primary Devices */}
-          <div className="glass-panel p-8 rounded-3xl">
+          <div className="glass-panel p-4 md:p-8 rounded-3xl">
             <h2 className="text-xl font-bold text-indigo-900 mb-2">{t('settings.devices.title', 'Primary Device(s)')}</h2>
             <p className="text-gray-600 mb-6">{t('settings.devices.description', 'Select all devices you use regularly')}</p>
 
@@ -255,7 +250,7 @@ const SettingsPage: React.FC = () => {
           </div>
 
           {/* Audio & Speech Settings */}
-          <div className="glass-panel p-8 rounded-3xl">
+          <div className="glass-panel p-4 md:p-8 rounded-3xl">
             <div className="flex items-center mb-6">
               <div className="p-3 bg-purple-100 rounded-xl mr-4">
                 <Volume2 className="w-6 h-6 text-purple-600" />
@@ -290,7 +285,7 @@ const SettingsPage: React.FC = () => {
           </div>
 
           {/* Display Settings */}
-          <div className="glass-panel p-8 rounded-3xl">
+          <div className="glass-panel p-4 md:p-8 rounded-3xl">
             <div className="flex items-center mb-6">
               <div className="p-3 bg-pink-100 rounded-xl mr-4">
                 <Palette className="w-6 h-6 text-pink-600" />
@@ -409,7 +404,7 @@ const SettingsPage: React.FC = () => {
           </div>
 
           {/* Language Settings */}
-          <div className="glass-panel p-8 rounded-3xl">
+          <div className="glass-panel p-4 md:p-8 rounded-3xl">
             <div className="flex items-center mb-6">
               <div className="p-3 bg-teal-100 rounded-xl mr-4">
                 <Globe className="w-6 h-6 text-teal-600" />

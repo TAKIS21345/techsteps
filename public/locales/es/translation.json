@@ -48,12 +48,12 @@
       ]
     },
     "popularQuestionsSection": {
-      "title": "Popular Questions We Help With",
-      "subtitle": "See what other seniors are asking about",
-      "askYourQuestionButton": "Ask Your Question Now"
+      "title": "Preguntas populares con las que ayudamos",
+      "subtitle": "Vea lo que preguntan otras personas mayores",
+      "askYourQuestionButton": "Haga su pregunta ahora"
     },
     "testimonialsSection": {
-      "title": "What Our Community Says",
+      "title": "Lo que dice nuestra comunidad",
       "subtitle": "Únase a miles de personas mayores que han descubierto que la ayuda técnica es sencilla",
       "testimonialContent": [
         {
@@ -679,7 +679,8 @@
     },
     "input": {
       "placeholder": "Asistente de IA de mensajes...",
-      "helper": "Presione Enter para enviar, Shift+Enter para una nueva línea"
+      "helper": "Presione Enter para enviar, Shift+Enter para una nueva línea",
+      "listening": "Escuchando... Haz clic en Avatar nuevamente para detenerlo."
     },
     "greeting": {
       "morning": "Buen día",
@@ -687,8 +688,12 @@
       "evening": "Buenas noches"
     },
     "error": {
-      "general": "Lo siento, estoy teniendo problemas en este momento. Inténtelo de nuevo en un momento."
-    }
+      "general": "Lo siento, estoy teniendo problemas en este momento. Inténtelo de nuevo en un momento.",
+      "understanding": "Lo siento, no pude entender eso.",
+      "connection": "Tengo problemas para conectarme en este momento. Por favor inténtalo de nuevo."
+    },
+    "welcomeMessage": "¡Hola {{nombre}}! Estoy aquí para ayudar.",
+    "navigating": "Navegando a {{destino}}...."
   },
   "flashcards": {
     "title": "Guía paso a paso",

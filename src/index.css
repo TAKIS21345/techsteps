@@ -8,8 +8,8 @@
 /* Senior-friendly base styles */
 @layer base {
   html {
-    /* Default browser font size (usually 16px) */
-    /* font-size: 18px; REMOVED: Now controlled by SettingsPage via inline styles */
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Senior Mode Overrides */
@@ -165,6 +165,41 @@
 
   .glass-input {
     @apply bg-white/50 focus:bg-white/80 backdrop-blur-md border border-white/40 transition-all duration-300 focus:ring-2 focus:ring-indigo-400/50 shadow-inner;
+  }
+
+  /* Custom Select Dropdown Styling */
+  .glass-select,
+  select.glass-input {
+    @apply bg-white/50 focus:bg-white/80 backdrop-blur-md border border-white/40 transition-all duration-300 focus:ring-2 focus:ring-indigo-400/50 shadow-inner cursor-pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236366f1' d='M2.5 4.5L6 8l3.5-3.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+  }
+
+  .glass-select:hover,
+  select.glass-input:hover {
+    @apply bg-white/70 border-indigo-200;
+  }
+
+  .glass-select option,
+  select.glass-input option {
+    @apply bg-white text-gray-900 py-2;
+  }
+
+  .glass-select option:checked,
+  select.glass-input option:checked {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    color: #4338ca;
+  }
+
+  .glass-select option:hover,
+  select.glass-input option:hover {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
   }
 
   /* Text Rendering Optimization */

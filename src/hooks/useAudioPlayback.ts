@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { geminiTTSService, TTSOptions, AudioPlaybackCallbacks } from '../services/ai/GeminiTTSService';
+import { ttsService, TTSOptions } from '../services/TextToSpeechService';
 
 export interface UseAudioPlaybackOptions {
   autoPlay?: boolean;
@@ -33,7 +33,7 @@ export interface AudioPlaybackHook {
 export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPlaybackHook => {
   const {
     autoPlay = false,
-    defaultSpeed = 0.8, // Slower for seniors
+    defaultSpeed = 0.9, // Natural pace for seniors
     defaultVolume = 1.0,
     onPlayStart,
     onPlayEnd,
@@ -54,37 +54,26 @@ export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPl
   const currentTextRef = useRef<string>('');
   const currentOptionsRef = useRef<TTSOptions>({});
 
-  // Audio callbacks
-  const audioCallbacks: AudioPlaybackCallbacks = {
-    onStart: () => {
-      setIsLoading(false);
-      setIsPlaying(true);
-      setError(null);
-      setCurrentTime(0);
-      onPlayStart?.();
-    },
-    onEnd: () => {
-      setIsPlaying(false);
-      setCurrentTime(0);
-      setDuration(0);
-      onPlayEnd?.();
-    },
-    onError: (errorMessage: string) => {
-      setError(errorMessage);
-      setIsLoading(false);
-      setIsPlaying(false);
-      setCurrentTime(0);
-      setDuration(0);
-      onError?.(errorMessage);
-    },
-    onProgress: (current: number, total: number) => {
-      setCurrentTime(current);
-      setDuration(total);
-    },
-    onSpeedChange: (newSpeed: number) => {
-      setSpeedState(newSpeed);
-    }
-  };
+  // Set up TTS callbacks on mount
+  useEffect(() => {
+    ttsService.setCallbacks({
+      onSpeakStart: () => {
+        setIsLoading(false);
+        setIsPlaying(true);
+        setError(null);
+        onPlayStart?.();
+      },
+      onSpeakEnd: () => {
+        setIsPlaying(false);
+        setCurrentTime(0);
+        setDuration(0);
+        onPlayEnd?.();
+      },
+      onAudioLevel: () => {
+        // Audio level for visualization (optional)
+      }
+    });
+  }, [onPlayStart, onPlayEnd]);
 
   // Play function
   const play = useCallback(async (text: string, playOptions: TTSOptions = {}) => {
@@ -96,17 +85,17 @@ export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPl
     try {
       setIsLoading(true);
       setError(null);
-      
+
       // Store current text and options for restart functionality
       currentTextRef.current = text;
       currentOptionsRef.current = {
-        speed,
+        rate: speed,
         volume: isMuted ? 0 : volume,
-        language: 'en-US',
+        lang: 'en-US',
         ...playOptions
       };
 
-      await geminiTTSService.speak(text, currentOptionsRef.current, audioCallbacks);
+      await ttsService.speak(text, currentOptionsRef.current);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to play audio';
       setError(errorMessage);
@@ -114,23 +103,24 @@ export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPl
       setIsPlaying(false);
       onError?.(errorMessage);
     }
-  }, [speed, volume, isMuted, audioCallbacks, onError]);
+  }, [speed, volume, isMuted, onError]);
 
-  // Pause function
+  // Pause function - stops for now (TTS doesn't have true pause)
   const pause = useCallback(() => {
-    geminiTTSService.pause();
+    ttsService.stop();
     setIsPlaying(false);
   }, []);
 
-  // Resume function
+  // Resume function - restarts from beginning
   const resume = useCallback(() => {
-    geminiTTSService.resume();
-    setIsPlaying(true);
-  }, []);
+    if (currentTextRef.current) {
+      play(currentTextRef.current, currentOptionsRef.current);
+    }
+  }, [play]);
 
   // Stop function
   const stop = useCallback(() => {
-    geminiTTSService.stop();
+    ttsService.stop();
     setIsPlaying(false);
     setIsLoading(false);
     setCurrentTime(0);
@@ -152,27 +142,25 @@ export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPl
   const setSpeed = useCallback((newSpeed: number) => {
     const clampedSpeed = Math.max(0.5, Math.min(2.0, newSpeed));
     setSpeedState(clampedSpeed);
-    geminiTTSService.setSpeed(clampedSpeed);
   }, []);
 
   // Volume control
   const setVolume = useCallback((newVolume: number) => {
     const clampedVolume = Math.max(0, Math.min(1, newVolume));
     setVolumeState(clampedVolume);
-    geminiTTSService.setVolume(clampedVolume);
     setIsMuted(clampedVolume === 0);
   }, []);
 
   // Mute toggle
   const toggleMute = useCallback(() => {
     if (isMuted) {
-      setVolume(1.0);
+      setVolumeState(1.0);
       setIsMuted(false);
     } else {
-      setVolume(0);
+      setVolumeState(0);
       setIsMuted(true);
     }
-  }, [isMuted, setVolume]);
+  }, [isMuted]);
 
   // Clear error
   const clearError = useCallback(() => {
@@ -189,7 +177,7 @@ export const useAudioPlayback = (options: UseAudioPlaybackOptions = {}): AudioPl
   // Cleanup on unmount
   useEffect(() => {
     return () => {
-      geminiTTSService.stop();
+      ttsService.stop();
     };
   }, []);
 
