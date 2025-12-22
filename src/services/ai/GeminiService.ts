@@ -82,6 +82,12 @@ Always prioritize the user's comfort and confidence. If a question is too comple
           topP: DEFAULT_GEMINI_CONFIG.topP,
           maxOutputTokens: DEFAULT_GEMINI_CONFIG.maxTokens,
         },
+        tools: [
+          {
+            // @ts-ignore - Some versions might have different typing for googleSearch
+            googleSearch: {},
+          },
+        ] as any,
       });
 
       // Build the prompt with context and history
@@ -454,6 +460,8 @@ IMPORTANT GUIDELINES:
     // Check for API key related errors
     if (errorMessage.includes('API_KEY_INVALID') || errorMessage.includes('403') || errorMessage.includes('401')) {
       content = "I'm having trouble connecting to my AI service due to an API key issue. Please check that your Gemini API key is properly configured in the .env file.";
+    } else if (errorMessage.includes('429') || errorMessage.toLowerCase().includes('too many requests')) {
+      content = "I'm a bit busy right now because too many people are asking questions! Please wait just a moment and try asking me again. I'm sorry for the wait!";
     } else if (shouldEscalate) {
       content = "I'm sorry, I'm having trouble right now. Let me connect you with our support team who can help you immediately.";
       this.escalateToHuman(conversationId, `Gemini service error after ${failures} failures: ${error.message}`);

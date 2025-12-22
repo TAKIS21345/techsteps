@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 import { useTranslation } from 'react-i18next';
 import { useUser } from '../contexts/UserContext';
 import { useAuth } from '../contexts/AuthContext';
@@ -14,6 +15,7 @@ import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
 import { StorageService } from '../services/StorageService';
+import { DEFAULT_GEMINI_CONFIG } from '../services/ai/config';
 
 const ChatDashboardContent: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -30,6 +32,12 @@ const ChatDashboardContent: React.FC = () => {
   const [currentTranscript, setCurrentTranscript] = useState('');
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+  // Initialize Gemini SDK
+  const genAI = useMemo(() => {
+    if (!GEMINI_API_KEY) return null;
+    return new GoogleGenerativeAI(GEMINI_API_KEY);
+  }, [GEMINI_API_KEY]);
 
   // Sync TTS events with Avatar Context
   useEffect(() => {
@@ -212,19 +220,23 @@ const ChatDashboardContent: React.FC = () => {
        KEEP "spoken_text" SHORT. User complains about long talking.
        `;
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: systemPrompt }] }],
-          tools: [{ google_search: {} }]
-        })
+      if (!genAI) throw new Error("AI Service not initialized");
+
+      const model = genAI.getGenerativeModel({
+        model: DEFAULT_GEMINI_CONFIG.model,
+        tools: [{ googleSearch: {} }] as any,
+        safetySettings: [
+          { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+        ]
       });
 
-      if (!response.ok) throw new Error("API Request Failed");
+      const result = await model.generateContent(systemPrompt);
+      const responseText = result.response.text();
 
-      const data = await response.json();
-      const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
+      const rawText = responseText || "{}";
 
       let displayText = t('chat.error.understanding', "I'm sorry, I couldn't understand that.");
       let spokenText = t('chat.error.understanding', "I'm sorry, I couldn't understand that.");
@@ -276,10 +288,17 @@ const ChatDashboardContent: React.FC = () => {
       // Speak the OPTIMIZED spoken text
       ttsService.speak(spokenText || "", { lang: i18n.language });
 
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       setEmotion('concerned');
-      setMessages(prev => [...prev, { id: 'err-' + Date.now(), content: t('chat.error.connection', "I'm having trouble connecting right now. Please try again."), sender: 'ai', timestamp: new Date() }]);
+
+      let errorMsg = t('chat.error.connection', "I'm having trouble connecting right now. Please try again.");
+
+      if (e.message?.includes('429') || e.message?.toLowerCase().includes('too many requests')) {
+        errorMsg = "I'm a bit busy right now because too many people are asking questions! Please wait just a moment and try asking me again.";
+      }
+
+      setMessages(prev => [...prev, { id: 'err-' + Date.now(), content: errorMsg, sender: 'ai', timestamp: new Date() }]);
     } finally {
       setIsLoading(false);
       setThinking(false);
