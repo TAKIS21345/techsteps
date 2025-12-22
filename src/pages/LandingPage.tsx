@@ -69,7 +69,7 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="w-full sticky top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100" dir={direction}>
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className={`flex items-center justify-between h-16 ${isRTL ? 'flex-row-reverse' : ''}`}>
             {/* Logo */}
             <div className="flex items-center h-full">
@@ -224,15 +224,21 @@ const LandingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className={`flex flex-wrap justify-center lg:justify-start items-center text-sm text-gray-500 mb-8 ${isRTL ? 'space-x-reverse space-x-2 sm:space-x-4' : 'space-x-2 sm:space-x-4'}`}>
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span>{t('landing.hero.freeForever')}</span>
-                  <span className="mx-2">•</span>
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span>{t('landing.hero.noCreditCard')}</span>
-                  <span className="mx-2">•</span>
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span>{t('landing.hero.available247')}</span>
+                <div className={`flex flex-wrap justify-center lg:justify-start items-center text-xs sm:text-sm text-gray-500 mb-8 gap-y-2 ${isRTL ? 'space-x-reverse space-x-2 sm:space-x-4' : 'space-x-2 sm:space-x-4'}`}>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2" />
+                    <span>{t('landing.hero.freeForever')}</span>
+                  </div>
+                  <span className="hidden sm:inline mx-2 text-gray-300">•</span>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2" />
+                    <span>{t('landing.hero.noCreditCard')}</span>
+                  </div>
+                  <span className="hidden sm:inline mx-2 text-gray-300">•</span>
+                  <div className="flex items-center">
+                    <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2" />
+                    <span>{t('landing.hero.available247')}</span>
+                  </div>
                 </div>
               </div>
 

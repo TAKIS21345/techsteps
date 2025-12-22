@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useUser } from '../contexts/UserContext';
+import { useAuth } from '../contexts/AuthContext';
 import { FlashcardStep } from '../types/services';
 import { Settings } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import EnhancedAvatarCompanion from '../components/ai/EnhancedAvatarCompanion';
 import ChatInterface from '../components/ai/ChatInterface';
 import FlashcardPanel from '../components/ai/FlashcardPanel';
+import FlashcardLoader from '../components/ai/FlashcardLoader';
 import { ttsService } from '../services/TextToSpeechService';
 import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
+import { StorageService } from '../services/StorageService';
 
 const ChatDashboardContent: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { userData } = useUser();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const { state: avatarState, setEmotion, setListening, setSpeaking, setThinking } = useAvatar();
 
@@ -22,6 +26,7 @@ const ChatDashboardContent: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [flashcardSteps, setFlashcardSteps] = useState<FlashcardStep[]>([]);
   const [showFlashcards, setShowFlashcards] = useState(false);
+  const [isGeneratingFlashcards, setIsGeneratingFlashcards] = useState(false);
   const [currentTranscript, setCurrentTranscript] = useState('');
 
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -38,7 +43,7 @@ const ChatDashboardContent: React.FC = () => {
   // Load History & Facts
   useEffect(() => {
     const loadData = async () => {
-      const userId = userData?.id || 'guest';
+      const userId = user?.uid || 'guest';
 
       // Load Chat History
       const history = await MemoryService.getHistory(userId);
@@ -46,7 +51,7 @@ const ChatDashboardContent: React.FC = () => {
         setMessages(history);
       } else {
         // Welcome Message if no history
-        const welcomeText = t('chat.welcome', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
+        const welcomeText = t('chat.welcomeMessage', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
         const welcomeMessage: Message = { id: 'welcome', content: welcomeText, sender: 'ai', timestamp: new Date() };
         setMessages([welcomeMessage]);
         await MemoryService.saveMessage(userId, welcomeMessage);
@@ -54,7 +59,7 @@ const ChatDashboardContent: React.FC = () => {
     };
 
     loadData();
-  }, [userData?.id]);
+  }, [user?.uid]);
 
   const handleAvatarClick = () => {
     if (avatarState.isListening) {
@@ -91,8 +96,8 @@ const ChatDashboardContent: React.FC = () => {
     setListening(false);
   };
 
-  const handleSendMessage = async (messageContent: string) => {
-    const userId = userData?.id || 'guest';
+  const handleSendMessage = async (messageContent: string, attachments: File[] = []) => {
+    const userId = user?.uid || 'guest';
 
     // 1. Check for system commands
     const command = parseCommand(messageContent);
@@ -121,25 +126,42 @@ const ChatDashboardContent: React.FC = () => {
       }
     }
 
-    // 2. Add user message
-    const userMessage: Message = {
-      id: 'user-' + Date.now(),
-      content: messageContent,
-      sender: 'user',
-      timestamp: new Date()
-    };
-
-    // Optimistic update
-    const updatedMessages = [...messages, userMessage];
-    setMessages(updatedMessages);
-
-    // Save User Message
-    await MemoryService.saveMessage(userId, userMessage);
-
-    setIsLoading(true);
-    setThinking(true);
 
     try {
+      // Upload attachments if any
+      const uploadedAttachments: { type: 'image' | 'video' | 'file'; url: string; name: string }[] = [];
+
+      if (attachments.length > 0) {
+        for (const file of attachments) {
+          try {
+            const url = await StorageService.uploadFile(file, `users/${userId}/uploads`);
+            uploadedAttachments.push({
+              type: file.type.startsWith('image/') ? 'image' : file.type.startsWith('video/') ? 'video' : 'file',
+              url,
+              name: file.name
+            });
+          } catch (err) {
+            console.error("Failed to upload file:", file.name, err);
+            // Continue with other files or show error? For now continuing.
+          }
+        }
+      }
+
+      // 2. Add user message
+      const userMessage: Message = {
+        id: 'user-' + Date.now(),
+        content: messageContent,
+        sender: 'user',
+        timestamp: new Date(),
+        attachments: uploadedAttachments
+      };
+
+      // Optimistic update
+      const updatedMessages = [...messages, userMessage];
+      setMessages(updatedMessages);
+
+      // Save User Message
+      await MemoryService.saveMessage(userId, userMessage);
       // Fetch Known Facts
       const knownFacts = await MemoryService.getFacts(userId);
       const factsContext = knownFacts.length > 0
@@ -152,7 +174,12 @@ const ChatDashboardContent: React.FC = () => {
       ).join('\n');
 
       // Enhanced System Prompt
-      const systemPrompt = `You are TechSteps, a helpful assistant for seniors.
+      const systemPrompt = `You are TechSteps Expert, a world-class technology specialist who is also exceptionally patient and warm with seniors.
+       
+       YOUR MISSION:
+       1. Be the ultimate technical problem solver. You understand all devices (iOS, Android, Windows, Mac), apps, hardware, and software issues deeply.
+       2. Translate complex tech problems into simple, manageable, and encouraging steps for a senior learner.
+       3. Use your deep technical knowledge and perform a Google Search if you need up-to-date or specific information to solve the user's problem.
        
        ${factsContext}
        
@@ -160,24 +187,28 @@ const ChatDashboardContent: React.FC = () => {
        ${historyContext}
        
        INSTRUCTIONS:
-       1. Answer the User's latest question based on the history and Known User Facts.
+       1. Answer the User's latest question with absolute technical accuracy but simplified language.
        2. If the user mentions a new important detail about themselves (e.g., "I have an iPad", "I am 70 years old", "I like cooking"), extract it as a "new_fact".
-       3. IMPORTANT: YOU MUST RESPOND IN THE LANGUAGE: "${i18n.language}" (e.g. if 'es', Spanish; if 'fr', French). Translate your entire response including "display_text", "spoken_text", and "flashcards" content to this language.
+       3. IMPORTANT: YOU MUST RESPOND IN THE LANGUAGE: "${i18n.language}". Translate EVERYTHING.
        4. OUTPUT FORMAT: You MUST return a JSON object. Do not return plain text.
        
        JSON Structure:
        {
-         "display_text": "The full, rich text to show on screen. Use formatting if needed.",
-         "spoken_text": "A simple, concise summary for text-to-speech. NO markdown, NO lists, just natural speech sentences.",
+         "display_text": "The full, rich text to show on screen. Use clear formatting.",
+         "spoken_text": "A simple, concise summary for audio. NO markdown.",
          "new_facts": ["User has an iPad"], 
          "flashcards": {  
             "type": "guide",
-            "summary": "Brief summary",
+            "summary": "Brief summary of the actions",
             "steps": [ { "title": "Step 1", "content": "..." } ]
          }
        }
        
-       If you need clarification, set "display_text" to the question and "spoken_text" to the same question.
+       FLASHCARD RULES:
+       - ONLY include the "flashcards" object if you are providing specific, actionable steps to solve a problem or perform a task.
+       - If you are just chatting, explaining a concept WITHOUT steps, or asking a question, YOU MUST OMIT the "flashcards" property or set it to null.
+       - Do not make up steps for random things; only for actual technical instructions.
+       
        KEEP "spoken_text" SHORT. User complains about long talking.
        `;
 
@@ -185,7 +216,8 @@ const ChatDashboardContent: React.FC = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: systemPrompt }] }]
+          contents: [{ parts: [{ text: systemPrompt }] }],
+          tools: [{ google_search: {} }]
         })
       });
 
@@ -215,10 +247,15 @@ const ChatDashboardContent: React.FC = () => {
             }
           }
 
-          // Handle Flashcards
+          // Handle Flashcards - show loading state first
           if (parsed.flashcards && parsed.flashcards.type === 'guide' && parsed.flashcards.steps) {
-            setFlashcardSteps(parsed.flashcards.steps);
-            setShowFlashcards(true);
+            setIsGeneratingFlashcards(true);
+            // Short delay to show loading animation
+            setTimeout(() => {
+              setFlashcardSteps(parsed.flashcards.steps);
+              setIsGeneratingFlashcards(false);
+              setShowFlashcards(true);
+            }, 1200); // Show loader for 1.2 seconds minimum
           }
         } else {
           // Fallback if model refuses JSON
@@ -261,13 +298,14 @@ const ChatDashboardContent: React.FC = () => {
       </div>
 
       {/* Avatar (Fixed position) */}
-      <div className="fixed bottom-4 left-4 z-50">
+      <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 transform md:scale-100 scale-75 origin-bottom-left">
         <EnhancedAvatarCompanion onAvatarClick={handleAvatarClick} />
       </div>
 
       {/* Chat Area */}
-      <div className="h-full pt-20 pb-4 px-4 w-full max-w-5xl mx-auto flex gap-4">
-        <div className={`flex-1 glass-panel rounded-3xl overflow-hidden transition-all duration-500 ease-in-out ${showFlashcards ? 'w-1/2' : 'w-full'}`}>
+      {/* Reduced padding to bring chat closer to avatar, responsive side padding */}
+      <div className="h-full pt-20 pb-4 px-4 pl-4 md:pl-24 w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-4">
+        <div className={`flex-1 glass-panel rounded-3xl overflow-hidden transition-all duration-500 ease-in-out ${showFlashcards ? 'md:w-1/2' : 'w-full'}`}>
           <ChatInterface
             messages={messages}
             onSendMessage={handleSendMessage}
@@ -277,9 +315,16 @@ const ChatDashboardContent: React.FC = () => {
           />
         </div>
 
-        {/* Flashcards Panel (Conditional) */}
-        {showFlashcards && (
-          <div className="w-1/2 glass-panel rounded-3xl p-4 animate-in slide-in-from-right duration-500">
+        {/* Flashcard Loader (When generating) */}
+        {isGeneratingFlashcards && (
+          <div className="w-full md:w-1/2 glass-panel rounded-3xl flex items-center justify-center min-h-[300px]">
+            <FlashcardLoader isVisible={true} message="Generating your guide..." />
+          </div>
+        )}
+
+        {/* Flashcards Panel (When ready) */}
+        {showFlashcards && !isGeneratingFlashcards && (
+          <div className="w-full md:w-1/2 glass-panel rounded-3xl p-4 animate-in slide-in-from-right duration-500 min-h-[300px]">
             <FlashcardPanel steps={flashcardSteps} isVisible={true} onClose={() => setShowFlashcards(false)} />
           </div>
         )}

@@ -12,9 +12,14 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
     let currentIndex = 0;
     let elementKey = 0;
 
+    // Safety check
+    if (!text || typeof text !== 'string') {
+      return [];
+    }
+
     // Split text by lines to handle different formatting
     const lines = text.split('\n');
-    
+
     for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
       let line = lines[lineIndex];
       const lineElements: React.ReactNode[] = [];
@@ -25,7 +30,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
         const level = line.match(/^#+/)?.[0].length || 1;
         const headerText = line.replace(/^#+\s+/, '');
         const HeaderTag = `h${Math.min(level + 2, 6)}` as keyof JSX.IntrinsicElements; // h3, h4, h5, h6
-        
+
         elements.push(
           <HeaderTag key={elementKey++} className="font-semibold text-gray-900 mt-4 mb-2 first:mt-0">
             {parseInlineFormatting(headerText)}
@@ -51,7 +56,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
         const numberMatch = line.match(/^\s*(\d+)\.\s+/);
         const number = numberMatch?.[1] || '1';
         const listText = line.replace(/^\s*\d+\.\s+/, '');
-        
+
         elements.push(
           <div key={elementKey++} className="flex items-start mb-1">
             <span className="text-gray-600 mr-2 mt-1 font-medium">{number}.</span>
@@ -75,7 +80,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
               </code>
             );
           });
-          
+
           // Process the rest of the line
           const parts = processedLine.split(/(__CODE_BLOCK_\d+__)/);
           parts.forEach((part, index) => {

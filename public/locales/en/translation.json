@@ -677,9 +677,12 @@
       "title": "How can I help you today?",
       "subtitle": "Ask me anything about technology!"
     },
+    "welcomeMessage": "Hello {{name}}! I'm here to help.",
+    "navigating": "Navigating to {{target}}...",
     "input": {
       "placeholder": "Message AI assistant...",
-      "helper": "Press Enter to send, Shift+Enter for new line"
+      "helper": "Press Enter to send, Shift+Enter for new line",
+      "listening": "Listening... Click avatar again to stop"
     },
     "greeting": {
       "morning": "Good morning",
@@ -687,7 +690,9 @@
       "evening": "Good evening"
     },
     "error": {
-      "general": "I'm sorry, I'm having trouble right now. Please try again in a moment."
+      "general": "I'm sorry, I'm having trouble right now. Please try again in a moment.",
+      "understanding": "I'm sorry, I couldn't understand that.",
+      "connection": "I'm having trouble connecting right now. Please try again."
     }
   },
   "flashcards": {

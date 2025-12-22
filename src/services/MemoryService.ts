@@ -20,6 +20,11 @@ export interface Message {
     content: string;
     sender: 'user' | 'ai';
     timestamp: Date;
+    attachments?: {
+        type: 'image' | 'video' | 'file';
+        url: string;
+        name: string;
+    }[];
 }
 
 export const MemoryService = {
@@ -27,12 +32,15 @@ export const MemoryService = {
      * Save a chat message to Firestore
      */
     saveMessage: async (userId: string, message: Message) => {
+        if (userId === 'guest') return; // Skip persistence for guests
+
         try {
             const messagesRef = collection(db, 'users', userId, 'chats');
             await addDoc(messagesRef, {
                 content: message.content,
                 sender: message.sender,
-                timestamp: Timestamp.fromDate(message.timestamp)
+                timestamp: Timestamp.fromDate(message.timestamp),
+                attachments: message.attachments || []
             });
         } catch (error) {
             console.error("Error saving message:", error);
@@ -43,6 +51,8 @@ export const MemoryService = {
      * Get recent chat history (last 50 messages)
      */
     getHistory: async (userId: string): Promise<Message[]> => {
+        if (userId === 'guest') return []; // No history for guests
+
         try {
             const messagesRef = collection(db, 'users', userId, 'chats');
             const q = query(
@@ -58,7 +68,8 @@ export const MemoryService = {
                     id: doc.id,
                     content: data.content,
                     sender: data.sender,
-                    timestamp: data.timestamp.toDate()
+                    timestamp: data.timestamp.toDate(),
+                    attachments: data.attachments || []
                 };
             });
         } catch (error) {
@@ -71,6 +82,8 @@ export const MemoryService = {
      * Save a new fact about the user
      */
     saveFact: async (userId: string, fact: string) => {
+        if (userId === 'guest') return;
+
         try {
             const userRef = doc(db, 'users', userId);
             // Use setDoc with merge to ensure document exists
@@ -87,6 +100,8 @@ export const MemoryService = {
      * Get all known facts about the user
      */
     getFacts: async (userId: string): Promise<string[]> => {
+        if (userId === 'guest') return [];
+
         try {
             const userRef = doc(db, 'users', userId);
             const userDoc = await getDoc(userRef);
