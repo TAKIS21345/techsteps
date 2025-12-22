@@ -15,9 +15,9 @@ export class GroqService implements AIService {
     private model: string;
     private conversationHistory: Map<string, AIMessage[]> = new Map();
 
-    constructor(apiKey?: string) {
+    constructor(apiKey?: string, model?: string) {
         this.apiKey = apiKey || FALLBACK_CONFIG.groqKey;
-        this.model = FALLBACK_CONFIG.groqModel;
+        this.model = model || FALLBACK_CONFIG.groqModel;
     }
 
     async sendMessage(message: string, context: ConversationContext): Promise<AIResponse> {

@@ -34,88 +34,74 @@ export class GeminiService implements AIService {
     const startTime = Date.now();
     const conversationId = this.getConversationId(context);
 
-    try {
-      const model = this.genAI.getGenerativeModel({
-        model: DEFAULT_GEMINI_CONFIG.model,
-        safetySettings: [
-          {
-            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+    // Try primary, then try stable if primary fails with 429
+    const modelsToTry = [DEFAULT_GEMINI_CONFIG.primaryModel, DEFAULT_GEMINI_CONFIG.stableModel];
+    let lastError: any = null;
+
+    for (const modelName of modelsToTry) {
+      try {
+        console.log(`📡 Gemini: Attempting with ${modelName}...`);
+        const model = this.genAI.getGenerativeModel({
+          model: modelName,
+          safetySettings: [
+            { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+            { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+            { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+            { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+          ],
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 2048,
           },
-          {
-            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-        ],
-        generationConfig: {
-          temperature: DEFAULT_GEMINI_CONFIG.temperature,
-          topK: DEFAULT_GEMINI_CONFIG.topK,
-          topP: DEFAULT_GEMINI_CONFIG.topP,
-          maxOutputTokens: DEFAULT_GEMINI_CONFIG.maxTokens,
-        },
-        tools: [
-          {
-            // @ts-ignore
-            googleSearch: {},
-          },
-        ] as any,
-      });
+        });
 
-      // Build facts context
-      const factsPrefix = context.knownFacts && context.knownFacts.length > 0
-        ? `KNOWN USER FACTS:\n${context.knownFacts.map(f => `- ${f}`).join('\n')}\n\n`
-        : "";
+        const factsPrefix = context.knownFacts && context.knownFacts.length > 0
+          ? `KNOWN USER FACTS:\n${context.knownFacts.map(f => `- ${f}`).join('\n')}\n\n`
+          : "";
 
-      // Build the prompt
-      const fullPrompt = GLOBAL_SYSTEM_PROMPT + '\n' + factsPrefix + this.buildFullPrompt(message, context);
+        const fullPrompt = GLOBAL_SYSTEM_PROMPT + '\n' + factsPrefix + this.buildFullPrompt(message, context);
+        const result = await model.generateContent(fullPrompt);
+        const responseText = result.response.text();
 
-      const result = await model.generateContent(fullPrompt);
-      const responseText = result.response.text();
+        const parsed = parseAIJSONResponse(responseText);
+        const processingTime = Date.now() - startTime;
+        this.updateConversationHistory(conversationId, message, parsed.display_text);
+        this.failureCount.set(conversationId, 0);
 
-      // Parse JSON response using unified parser
-      const parsed = parseAIJSONResponse(responseText);
+        return {
+          content: parsed.display_text,
+          confidence: 0.9,
+          suggestedActions: this.generateSuggestedActions(parsed.display_text, context),
+          requiresHumanEscalation: this.shouldEscalate(parsed.display_text, context, conversationId),
+          extractedFacts: parsed.new_facts,
+          spokenText: parsed.spoken_text,
+          flashcards: parsed.flashcards,
+          metadata: {
+            processingTime,
+            model: modelName,
+            tokens: 0,
+            sources: [`Gemini (${modelName})`]
+          }
+        };
+      } catch (error: any) {
+        lastError = error;
+        const isRateLimit = error.message?.includes('429') ||
+          error.message?.toLowerCase().includes('too many requests') ||
+          error.status === 429;
 
-      const processingTime = Date.now() - startTime;
-      this.updateConversationHistory(conversationId, message, parsed.display_text);
-      this.failureCount.set(conversationId, 0);
-
-      return {
-        content: parsed.display_text,
-        confidence: 0.9,
-        suggestedActions: this.generateSuggestedActions(parsed.display_text, context),
-        requiresHumanEscalation: this.shouldEscalate(parsed.display_text, context, conversationId),
-        extractedFacts: parsed.new_facts,
-        spokenText: parsed.spoken_text,
-        metadata: {
-          processingTime,
-          model: DEFAULT_GEMINI_CONFIG.model,
-          tokens: 0,
-          sources: []
+        if (isRateLimit && modelName === DEFAULT_GEMINI_CONFIG.primaryModel) {
+          console.warn(`⚠️ Gemini Primary (${modelName}) rate limited. Trying stable model...`);
+          continue; // Try next model in loop
         }
-      };
 
-    } catch (error: any) {
-      console.error('Gemini Service Error:', error);
-
-      const isRateLimit = error.message?.includes('429') ||
-        error.message?.toLowerCase().includes('too many requests') ||
-        error.status === 429;
-
-      if (isRateLimit) {
-        throw error; // Let FallbackAIService handle it
+        // If not a rate limit, or we already tried the stable model, break and let fallback system handle it
+        break;
       }
-
-      this.incrementFailureCount(conversationId);
-      return this.getFallbackResponse(error, context, conversationId);
     }
+
+    // If we reach here, it means all Gemini attempts failed
+    console.error('Gemini Service exhausted all model attempts:', lastError);
+    throw lastError;
   }
 
   private incrementFailureCount(conversationId: string) {
