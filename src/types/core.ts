@@ -259,6 +259,7 @@ export interface AIResponse {
   metadata: ResponseMetadata;
   extractedFacts?: string[]; // Add this
   spokenText?: string;     // Add this for TTS optimization
+  flashcards?: any[] | null;
 }
 
 export interface ResponseMetadata {

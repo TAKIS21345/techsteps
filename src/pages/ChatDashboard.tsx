@@ -122,7 +122,14 @@ const ChatDashboardContent: React.FC = () => {
         }
       }
 
-      // 5. Speak (use optimized spokenText if available)
+      // 5. Handle Flashcards (NEW)
+      if (response.flashcards && response.flashcards.length > 0) {
+        console.log('Displaying generated flashcards:', response.flashcards);
+        setFlashcardSteps(response.flashcards as FlashcardStep[]);
+        setShowFlashcards(true);
+      }
+
+      // 6. Speak (use optimized spokenText if available)
       const textToSpeak = response.spokenText || response.content;
       ttsService.speak(textToSpeak, { lang: i18n.language });
 
