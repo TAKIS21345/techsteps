@@ -15,27 +15,40 @@ class FallbackAIService implements AIService {
 
   async sendMessage(message: string, context: ConversationContext): Promise<AIResponse> {
     try {
-      console.log('Attempting Primary Service (Gemini 2.0)...');
+      console.log('🤖 Central AI: Attempting Primary (Gemini 2.0)...');
       return await this.primary.sendMessage(message, context);
     } catch (error: any) {
-      const isRateLimit = error.message?.includes('429') ||
-        error.message?.toLowerCase().includes('rate limit') ||
-        error.status === 429;
+      const errorMessage = (error.message || '').toLowerCase();
+      const isRateLimit = errorMessage.includes('429') ||
+        errorMessage.includes('too many requests') ||
+        errorMessage.includes('rate_limit') ||
+        error.status === 429 ||
+        error.status === 403;
 
-      if (isRateLimit && this.fallbacks.length > 0) {
-        console.warn('Primary AI hit rate limit. Switching to Fallback...');
+      console.warn(`⚠️ Primary AI failed (${isRateLimit ? 'Rate Limit' : 'Unexpected Error'}). Error:`, errorMessage);
 
-        for (const fallback of this.fallbacks) {
+      if (this.fallbacks.length > 0) {
+        console.log(`🔄 Attempting to recover using ${this.fallbacks.length} available backup provider(s)...`);
+
+        for (const [index, fallback] of this.fallbacks.entries()) {
           try {
             const providerName = fallback instanceof GroqService ? 'Groq' : 'Mistral';
-            console.log(`Attempting Fallback Service (${providerName})...`);
-            return await fallback.sendMessage(message, context);
-          } catch (fallbackError) {
-            console.error('Fallback Service failed, trying next...', fallbackError);
+            console.log(`🔌 Trying Backup ${index + 1}: ${providerName}...`);
+            const response = await fallback.sendMessage(message, context);
+
+            if (response.metadata) {
+              response.metadata.sources = [...(response.metadata.sources || []), `Recovered via ${providerName}`];
+            }
+
+            console.log(`✅ Recovery Successful! Answered by ${providerName}.`);
+            return response;
+          } catch (fallbackError: any) {
+            console.error(`❌ Backup ${index + 1} (${fallback instanceof GroqService ? 'Groq' : 'Mistral'}) also failed:`, (fallbackError as Error).message);
           }
         }
       }
 
+      console.error('🛑 Critical Failure: All AI providers (Primary + Backups) are unavailable.');
       throw error;
     }
   }

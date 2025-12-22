@@ -104,6 +104,15 @@ export class GeminiService implements AIService {
 
     } catch (error: any) {
       console.error('Gemini Service Error:', error);
+
+      const isRateLimit = error.message?.includes('429') ||
+        error.message?.toLowerCase().includes('too many requests') ||
+        error.status === 429;
+
+      if (isRateLimit) {
+        throw error; // Let FallbackAIService handle it
+      }
+
       this.incrementFailureCount(conversationId);
       return this.getFallbackResponse(error, context, conversationId);
     }

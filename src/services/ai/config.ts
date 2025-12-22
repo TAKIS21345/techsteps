@@ -35,7 +35,7 @@ export interface FallbackConfig {
 export const FALLBACK_CONFIG: FallbackConfig = {
   groqKey: import.meta.env.VITE_GROQ_API_KEY || '',
   groqModel: 'gemma2-9b-it',
-  mistralKey: import.meta.env.MISTRAL_API_KEY || '',
+  mistralKey: import.meta.env.VITE_MISTRAL_API_KEY || '',
   mistralModel: 'mistral-small-latest' // or another preferred model
 };
 
