@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Telefon nebo tablet s Androidem",
         "smarttv": "Chytrá televize",
-        "multipledevices": "Více zařízení"
+        "multipledevices": "Více zařízení",
+        "title": "Hlavní zařízení"
       },
-      "tooltip": "Znalost vašeho primárního zařízení nám pomáhá poskytovat relevantnější pokyny."
+      "tooltip": "Znalost vašeho primárního zařízení nám pomáhá poskytovat relevantnější pokyny.",
+      "experienceLevel": "Úroveň zkušeností",
+      "beginner": "Učení základů",
+      "beginnerDesc": "Obvykle potřebuji někoho, kdo mi ukáže, jak na to.",
+      "some": "Poněkud pohodlné",
+      "someDesc": "Základy umím, ale občas se zaseknu.",
+      "comfortable": "Sebevědomý",
+      "comfortableDesc": "Baví mě objevovat nové funkce."
     },
     "step4": {
       "title": "Jak se cítíte s technologiemi?",
@@ -52,7 +60,14 @@
       "someDesc": "Zvládnu základní úkoly, ale potřebuji pomoc s novými věcmi",
       "comfortable": "Cítím se pohodlně",
       "comfortableDesc": "Většinu věcí zvládnu sám, ale občas potřebuji radu",
-      "tooltip": "Buďte upřímní ohledně své úrovně pohodlí – to nám pomáhá vysvětlit věci správným tempem."
+      "tooltip": "Buďte upřímní ohledně své úrovně pohodlí – to nám pomáhá vysvětlit věci správným tempem.",
+      "textToSpeech": "Čtěte zprávy nahlas",
+      "voiceInput": "K pokládání otázek použijte můj hlas",
+      "textSize": "Velikost textu",
+      "textSizeNormal": "Norma",
+      "textSizeLarge": "Velký",
+      "textSizeExtraLarge": "Velmi velké",
+      "highContrast": "Vysoce kontrastní barvy"
     },
     "step5": {
       "title": "Jaká technická témata vás nejvíce znepokojují?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Online nakupování",
         "healthApps": "Zdravotní aplikace a portály"
       },
-      "tooltip": "Vyberte témata, která vás nejvíce znepokojují, abychom mohli upřednostnit pomoc v těchto oblastech."
+      "tooltip": "Vyberte témata, která vás nejvíce znepokojují, abychom mohli upřednostnit pomoc v těchto oblastech.",
+      "privacy": {
+        "title": "Personalizace",
+        "description": "Umožněte TechStep pamatovat si vaše preference a historii, aby vám pomohl lépe.",
+        "note": "Vaše data jsou v bezpečí a nikdy se neprodávají."
+      }
     },
     "step6": {
       "title": "Potřebujete nějaké funkce usnadnění?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Asistent AI zpráv...",
-      "helper": "Stiskněte Enter pro odeslání, Shift+Enter pro nový řádek"
+      "helper": "Stiskněte Enter pro odeslání, Shift+Enter pro nový řádek",
+      "listening": "Poslouchám... Opětovným kliknutím na avatar zastavíte"
     },
     "greeting": {
       "morning": "Dobré ráno",
@@ -1367,8 +1388,12 @@
       "evening": "Dobrý večer"
     },
     "error": {
-      "general": "Omlouvám se, mám teď potíže. Zkuste to prosím znovu za chvíli."
-    }
+      "general": "Omlouvám se, mám teď potíže. Zkuste to prosím znovu za chvíli.",
+      "understanding": "Omlouvám se, nemohl jsem to pochopit.",
+      "connection": "Právě teď mám potíže s připojením. Zkuste to prosím znovu."
+    },
+    "welcomeMessage": "Dobrý den, {{name}}! Jsem tady, abych vám pomohl.",
+    "navigating": "Naviguji na {{target}}..."
   },
   "flashcards": {
     "title": "Průvodce krok za krokem",

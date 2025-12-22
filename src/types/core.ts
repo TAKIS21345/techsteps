@@ -248,6 +248,7 @@ export interface ConversationContext {
   userSkillLevel?: string;
   previousQuestions?: string[];
   failureCount: number;
+  knownFacts?: string[]; // Add this
 }
 
 export interface AIResponse {
@@ -256,6 +257,8 @@ export interface AIResponse {
   suggestedActions?: Action[];
   requiresHumanEscalation: boolean;
   metadata: ResponseMetadata;
+  extractedFacts?: string[]; // Add this
+  spokenText?: string;     // Add this for TTS optimization
 }
 
 export interface ResponseMetadata {

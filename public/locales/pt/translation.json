@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Celular ou Tablet Android",
         "smarttv": "Smart TV",
-        "multipledevices": "Vários dispositivos"
+        "multipledevices": "Vários dispositivos",
+        "title": "Dispositivo principal"
       },
-      "tooltip": "Conhecer seu dispositivo principal nos ajuda a fornecer instruções mais relevantes."
+      "tooltip": "Conhecer seu dispositivo principal nos ajuda a fornecer instruções mais relevantes.",
+      "experienceLevel": "Nível de experiência",
+      "beginner": "Aprendendo o básico",
+      "beginnerDesc": "Geralmente preciso de alguém que me mostre como.",
+      "some": "Um pouco confortável",
+      "someDesc": "Posso fazer o básico, mas às vezes fico preso.",
+      "comfortable": "Confiante",
+      "comfortableDesc": "Gosto de explorar novos recursos."
     },
     "step4": {
       "title": "Quão confortável você se sente com a tecnologia?",
@@ -52,7 +60,14 @@
       "someDesc": "Consigo fazer tarefas básicas, mas preciso de ajuda com coisas novas",
       "comfortable": "Confortável",
       "comfortableDesc": "Consigo entender a maioria das coisas, mas às vezes preciso de orientação",
-      "tooltip": "Seja honesto sobre o seu nível de conforto – isso nos ajuda a explicar as coisas no ritmo certo."
+      "tooltip": "Seja honesto sobre o seu nível de conforto – isso nos ajuda a explicar as coisas no ritmo certo.",
+      "textToSpeech": "Leia mensagens em voz alta",
+      "voiceInput": "Use minha voz para fazer perguntas",
+      "textSize": "Tamanho do texto",
+      "textSizeNormal": "Padrão",
+      "textSizeLarge": "Grande",
+      "textSizeExtraLarge": "Muito Grande",
+      "highContrast": "Cores de alto contraste"
     },
     "step5": {
       "title": "Quais tópicos de tecnologia mais te preocupam?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Compras Online",
         "healthApps": "Aplicativos e Portais de Saúde"
       },
-      "tooltip": "Selecione os tópicos que mais preocupam você para que possamos priorizar a ajuda nessas áreas."
+      "tooltip": "Selecione os tópicos que mais preocupam você para que possamos priorizar a ajuda nessas áreas.",
+      "privacy": {
+        "title": "Personalização",
+        "description": "Permita que o TechStep lembre suas preferências e histórico para ajudá-lo melhor.",
+        "note": "Seus dados estão seguros e nunca são vendidos."
+      }
     },
     "step6": {
       "title": "Você precisa de algum recurso de acessibilidade?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Assistente de IA de mensagens...",
-      "helper": "Pressione Enter para enviar, Shift+Enter para nova linha"
+      "helper": "Pressione Enter para enviar, Shift+Enter para nova linha",
+      "listening": "Ouvindo... Clique no avatar novamente para parar"
     },
     "greeting": {
       "morning": "Bom dia",
@@ -1367,8 +1388,12 @@
       "evening": "Boa noite"
     },
     "error": {
-      "general": "Sinto muito, estou tendo problemas agora. Por favor, tente novamente em alguns instantes."
-    }
+      "general": "Sinto muito, estou tendo problemas agora. Por favor, tente novamente em alguns instantes.",
+      "understanding": "Me desculpe, não consegui entender isso.",
+      "connection": "Estou tendo problemas para me conectar agora. Por favor, tente novamente."
+    },
+    "welcomeMessage": "Olá {{nome}}! Estou aqui para ajudar.",
+    "navigating": "Navegando para {{target}}..."
   },
   "flashcards": {
     "title": "Guia passo a passo",

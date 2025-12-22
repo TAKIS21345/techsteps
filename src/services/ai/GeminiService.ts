@@ -7,29 +7,14 @@ import {
   HelpContent,
   AIMessage
 } from '../../types/services';
-import { DEFAULT_GEMINI_CONFIG } from './config';
+import { DEFAULT_GEMINI_CONFIG, GLOBAL_SYSTEM_PROMPT } from './config';
+import { parseAIJSONResponse } from './responseParser';
 
 export class GeminiService implements AIService {
   private genAI: GoogleGenerativeAI;
   private conversationHistory: Map<string, AIMessage[]> = new Map();
   private failureCount: Map<string, number> = new Map();
   private readonly MAX_FAILURES = DEFAULT_GEMINI_CONFIG.escalationThreshold;
-
-  private readonly SENIOR_SYSTEM_PROMPT = `You are a patient, warm, and encouraging AI assistant designed specifically for senior learners who are learning technology. Your responses should be:
-
-1. Written in simple, clear language without technical jargon
-2. Warm and supportive in tone, like a helpful friend or family member
-3. Patient and understanding of the challenges seniors face with technology
-4. Broken down into small, manageable steps when giving instructions
-5. Encouraging and positive, celebrating small wins
-6. Respectful of the user's experience and wisdom
-7. Clear about when you cannot help and need to escalate to human support
-8. Formatted as numbered steps when providing instructions
-9. Using encouraging phrases like "You're doing great!" and "Take your time"
-
-IMPORTANT: When providing step-by-step solutions, format your response as clear, numbered steps that can be easily converted to flashcards. Each step should be concise and actionable.
-
-Always prioritize the user's comfort and confidence. If a question is too complex or you're unsure, acknowledge your limitations and offer to connect them with human support.`;
 
   constructor(apiKey?: string) {
     const key = apiKey || DEFAULT_GEMINI_CONFIG.apiKey;
@@ -48,14 +33,8 @@ Always prioritize the user's comfort and confidence. If a question is too comple
   async sendMessage(message: string, context: ConversationContext): Promise<AIResponse> {
     const startTime = Date.now();
     const conversationId = this.getConversationId(context);
-    const interactionId = `${conversationId}-${Date.now()}`;
 
     try {
-      // Use the message directly (simplified for now)
-      const sanitizedMessage = message;
-      const anonymizedContext = context;
-
-      // Get the generative model with safety settings
       const model = this.genAI.getGenerativeModel({
         model: DEFAULT_GEMINI_CONFIG.model,
         safetySettings: [
@@ -84,65 +63,55 @@ Always prioritize the user's comfort and confidence. If a question is too comple
         },
         tools: [
           {
-            // @ts-ignore - Some versions might have different typing for googleSearch
+            // @ts-ignore
             googleSearch: {},
           },
         ] as any,
       });
 
-      // Build the prompt with context and history
-      const fullPrompt = this.buildFullPrompt(sanitizedMessage, anonymizedContext);
+      // Build facts context
+      const factsPrefix = context.knownFacts && context.knownFacts.length > 0
+        ? `KNOWN USER FACTS:\n${context.knownFacts.map(f => `- ${f}`).join('\n')}\n\n`
+        : "";
 
-      // Generate response
+      // Build the prompt
+      const fullPrompt = GLOBAL_SYSTEM_PROMPT + '\n' + factsPrefix + this.buildFullPrompt(message, context);
+
       const result = await model.generateContent(fullPrompt);
-      const response = result.response;
-      const responseText = response.text();
+      const responseText = result.response.text();
+
+      // Parse JSON response using unified parser
+      const parsed = parseAIJSONResponse(responseText);
 
       const processingTime = Date.now() - startTime;
-
-      // Simple confidence calculation
-      const confidence = responseText.length > 50 ? 0.8 : 0.6;
-
-      // Update conversation history
-      this.updateConversationHistory(conversationId, message, responseText);
-
-      // Reset failure count on success
+      this.updateConversationHistory(conversationId, message, parsed.display_text);
       this.failureCount.set(conversationId, 0);
 
-      // Check if escalation is needed
-      const requiresEscalation = this.shouldEscalate(responseText, context, conversationId);
-
       return {
-        content: responseText,
-        confidence,
-        suggestedActions: this.generateSuggestedActions(responseText, context),
-        requiresHumanEscalation: requiresEscalation,
+        content: parsed.display_text,
+        confidence: 0.9,
+        suggestedActions: this.generateSuggestedActions(parsed.display_text, context),
+        requiresHumanEscalation: this.shouldEscalate(parsed.display_text, context, conversationId),
+        extractedFacts: parsed.new_facts,
+        spokenText: parsed.spoken_text,
         metadata: {
           processingTime,
           model: DEFAULT_GEMINI_CONFIG.model,
-          tokens: this.estimateTokens(responseText),
+          tokens: 0,
           sources: []
         }
       };
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Gemini Service Error:', error);
-
-      // Check for API key related errors
-      const errorMessage = (error as Error).message;
-      if (errorMessage.includes('API_KEY_INVALID') || errorMessage.includes('403') || errorMessage.includes('401')) {
-        console.error('Invalid Gemini API key detected. Please check your VITE_GEMINI_API_KEY in the .env file.');
-      }
-
-      // Increment failure count
-      const currentFailures = this.failureCount.get(conversationId) || 0;
-      this.failureCount.set(conversationId, currentFailures + 1);
-
-      const processingTime = Date.now() - startTime;
-
-      // Return fallback response
-      return this.getFallbackResponse(error as Error, context, conversationId);
+      this.incrementFailureCount(conversationId);
+      return this.getFallbackResponse(error, context, conversationId);
     }
+  }
+
+  private incrementFailureCount(conversationId: string) {
+    const currentFailures = this.failureCount.get(conversationId) || 0;
+    this.failureCount.set(conversationId, currentFailures + 1);
   }
 
   async sendVoiceMessage(audioBlob: Blob, context: ConversationContext): Promise<AIResponse> {
@@ -361,10 +330,9 @@ IMPORTANT GUIDELINES:
 
   // Private helper methods
   private buildFullPrompt(message: string, context: ConversationContext): string {
-    const systemPrompt = this.buildSystemPrompt(context);
     const history = this.conversationHistory.get(this.getConversationId(context)) || [];
 
-    let prompt = systemPrompt + '\n\n';
+    let prompt = "";
 
     // Add recent conversation history
     if (history.length > 0) {

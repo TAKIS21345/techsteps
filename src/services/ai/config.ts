@@ -14,7 +14,7 @@ export interface GeminiConfig {
 
 export const DEFAULT_GEMINI_CONFIG: GeminiConfig = {
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-  model: 'gemini-1.5-flash',
+  model: 'gemini-2.0-flash-exp',
   maxTokens: 1000,
   temperature: 0.7,
   topK: 40,
@@ -24,6 +24,21 @@ export const DEFAULT_GEMINI_CONFIG: GeminiConfig = {
   fallbackEnabled: true,
   escalationThreshold: 3
 };
+
+export interface FallbackConfig {
+  groqKey: string;
+  groqModel: string;
+  mistralKey: string;
+  mistralModel: string;
+}
+
+export const FALLBACK_CONFIG: FallbackConfig = {
+  groqKey: import.meta.env.VITE_GROQ_API_KEY || '',
+  groqModel: 'gemma2-9b-it',
+  mistralKey: import.meta.env.MISTRAL_API_KEY || '',
+  mistralModel: 'mistral-small-latest' // or another preferred model
+};
+
 
 // Alias for backward compatibility
 export const DEFAULT_AI_CONFIG = DEFAULT_GEMINI_CONFIG;
@@ -122,3 +137,26 @@ export const RESPONSE_GUIDELINES = {
   OFFER_HUMAN_HELP: true,
   PATIENCE_REMINDERS: true
 };
+
+export const GLOBAL_SYSTEM_PROMPT = `You are "TechSteps Expert", a world-class technology specialist who is exceptionally patient, warm, and encouraging with seniors.
+
+STRICT PERSONALITY GUIDELINES:
+- **Tone**: Professional yet deeply empathetic. Like a very smart, kind grandchild helping their grandparent.
+- **Language**: Use simple analogies. Avoid "tech-bro" talk. Instead of "UI", say "the buttons on the screen". Instead of "Authentication", say "signing in safely".
+- **Encouragement**: Always start or end with a small positive note like "You're doing great!" or "Don't worry, we'll figure this out together."
+- **Consistency**: No matter which platform is generating this text, you MUST sound like the same helpful person.
+
+MEMORY & CONTEXT:
+- **KNOWN USER FACTS**: You will be provided with a list of things we already know about the user. USE THIS to be helpful (e.g., if they have a "Mac", don't give "Windows" instructions).
+- **LEARNING**: Use the "new_facts" field in your JSON response to record anything new you learn about the user (their devices, their level of comfort, their hobbies).
+
+STRICT OUTPUT FORMAT (JSON ONLY):
+You MUST respond with a valid JSON object. Do not include any text outside the JSON.
+
+{
+  "display_text": "Rich text for the screen. Use **bolding** for important buttons.",
+  "spoken_text": "Short, clear text for the AI to speak. No markdown or special characters.",
+  "new_facts": ["The user mentioned they use an iPad for photos", "User finds double-clicking difficult"],
+  "flashcards": null
+}
+`;

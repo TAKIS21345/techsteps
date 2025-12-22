@@ -1,850 +1,564 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
-import { ChevronLeft, ChevronRight, Search, Globe, Check, AlertTriangle } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  Search,
+  Globe,
+  Check,
+  User,
+  Smartphone,
+  Monitor,
+  Type,
+  ShieldCheck,
+  Heart,
+  Sparkles,
+  Volume2,
+  Mic,
+  MonitorCheck
+} from 'lucide-react';
 import Logo from '../components/layout/Logo';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 import Cookies from 'js-cookie';
 
 const OnboardingPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [languageSearch, setLanguageSearch] = useState('');
-  const [showLanguageWarning, setShowLanguageWarning] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const { t, i18n } = useTranslation();
+  const { userData, updateUserData } = useUser();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
     age: 65,
-    os: 'Windows Computer',
+    os: 'windowscomputer',
     techExperience: 'beginner' as const,
     primaryConcerns: [] as string[],
-    assistiveNeeds: [] as string[],
-    communicationStyle: 'simple' as const,
     selectedLanguages: [i18n.language] as string[],
     preferences: {
       textToSpeech: true,
-      voiceInput: true,
+      voiceInput: false,
       theme: 'light' as const,
       fontSize: 'normal' as const,
       highContrast: false,
-      videoRecommendations: true,
-      speechLanguages: [i18n.language] as string[]
-    },
-    dataPersonalization: {
-      allowPersonalization: false,
-      useConversationHistory: false,
-      usePreferences: false
+      allowPersonalization: true
     }
   });
-  const [loading, setLoading] = useState(false);
 
-  const { userData, updateUserData } = useUser();
-  const navigate = useNavigate();
-
-  // Redirect to dashboard if onboarding is already completed
+  // Redirect if already completed
   useEffect(() => {
-    if (userData && userData.onboardingCompleted) {
+    if (userData?.onboardingCompleted) {
       navigate('/dashboard', { replace: true });
     }
   }, [userData, navigate]);
 
-  // Comprehensive language list with native names including Hindi
-  const allLanguages = [
-    { code: 'en', name: 'English', nativeName: 'English', region: 'Global' },
-    { code: 'es', name: 'Spanish', nativeName: 'Español', region: 'Spain/Latin America' },
-    { code: 'fr', name: 'French', nativeName: 'Français', region: 'France/Canada' },
-    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', region: 'India' },
-    { code: 'de', name: 'German', nativeName: 'Deutsch', region: 'Germany/Austria' },
-    { code: 'it', name: 'Italian', nativeName: 'Italiano', region: 'Italy' },
-    { code: 'pt', name: 'Portuguese', nativeName: 'Português', region: 'Brazil/Portugal' },
-    { code: 'zh', name: 'Chinese', nativeName: '中文', region: 'China/Taiwan' },
-    { code: 'ja', name: 'Japanese', nativeName: '日本語', region: 'Japan' },
-    { code: 'ko', name: 'Korean', nativeName: '한국어', region: 'Korea' },
-    { code: 'ar', name: 'Arabic', nativeName: 'العربية', region: 'Middle East/North Africa' },
-    { code: 'ru', name: 'Russian', nativeName: 'Русский', region: 'Russia/Eastern Europe' },
-    { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', region: 'Netherlands/Belgium' },
-    { code: 'sv', name: 'Swedish', nativeName: 'Svenska', region: 'Sweden' },
-    { code: 'no', name: 'Norwegian', nativeName: 'Norsk', region: 'Norway' },
-    { code: 'da', name: 'Danish', nativeName: 'Dansk', region: 'Denmark' },
-    { code: 'fi', name: 'Finnish', nativeName: 'Suomi', region: 'Finland' },
-    { code: 'pl', name: 'Polish', nativeName: 'Polski', region: 'Poland' },
-    { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', region: 'Turkey' },
-    { code: 'he', name: 'Hebrew', nativeName: 'עברית', region: 'Israel' },
-    { code: 'th', name: 'Thai', nativeName: 'ไทย', region: 'Thailand' },
-    { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', region: 'Vietnam' },
-    { code: 'uk', name: 'Ukrainian', nativeName: 'Українська', region: 'Ukraine' },
-    { code: 'cs', name: 'Czech', nativeName: 'Čeština', region: 'Czech Republic' },
-    { code: 'hu', name: 'Hungarian', nativeName: 'Magyar', region: 'Hungary' },
-    { code: 'ro', name: 'Romanian', nativeName: 'Română', region: 'Romania' },
-    { code: 'bg', name: 'Bulgarian', nativeName: 'Български', region: 'Bulgaria' },
-    { code: 'hr', name: 'Croatian', nativeName: 'Hrvatski', region: 'Croatia' },
-    { code: 'sk', name: 'Slovak', nativeName: 'Slovenčina', region: 'Slovakia' },
-    { code: 'sl', name: 'Slovenian', nativeName: 'Slovenščina', region: 'Slovenia' },
-    { code: 'et', name: 'Estonian', nativeName: 'Eesti', region: 'Estonia' },
-    { code: 'lv', name: 'Latvian', nativeName: 'Latviešu', region: 'Latvia' },
-    { code: 'lt', name: 'Lithuanian', nativeName: 'Lietuvių', region: 'Lithuania' }
-  ];
+  const allLanguages = useMemo(() => [
+    { code: 'en', name: 'English', nativeName: 'English' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español' },
+    { code: 'fr', name: 'French', nativeName: 'Français' },
+    { code: 'de', name: 'German', nativeName: 'Deutsch' },
+    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
+    { code: 'zh', name: 'Chinese', nativeName: '中文' },
+    { code: 'ja', name: 'Japanese', nativeName: '日本語' },
+    { code: 'ko', name: 'Korean', nativeName: '한국어' },
+    { code: 'it', name: 'Italian', nativeName: 'Italiano' },
+    { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
+    { code: 'ru', name: 'Russian', nativeName: 'Русский' },
+    { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+    { code: 'tr', name: 'Turkish', nativeName: 'Türkçe' },
+    { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt' }
+  ], []);
 
-  // Filter languages based on search
   const filteredLanguages = allLanguages.filter(lang =>
     lang.name.toLowerCase().includes(languageSearch.toLowerCase()) ||
-    lang.nativeName.toLowerCase().includes(languageSearch.toLowerCase()) ||
-    lang.region.toLowerCase().includes(languageSearch.toLowerCase())
+    lang.nativeName.toLowerCase().includes(languageSearch.toLowerCase())
   );
 
-  const handleLanguageToggle = (languageCode: string) => {
-    setFormData(prev => {
-      const currentLanguages = prev.selectedLanguages;
-      let newLanguages: string[];
-
-      if (currentLanguages.includes(languageCode)) {
-        // Don't allow removing the last language
-        if (currentLanguages.length === 1) {
-          return prev;
-        }
-        newLanguages = currentLanguages.filter(code => code !== languageCode);
-      } else {
-        newLanguages = [...currentLanguages, languageCode];
-      }
-
-      return {
-        ...prev,
-        selectedLanguages: newLanguages,
-        preferences: {
-          ...prev.preferences,
-          speechLanguages: newLanguages
-        }
-      };
-    });
-    setShowLanguageWarning(false);
-  };
-
-  const handleSelectAllLanguages = () => {
-    const allCodes = allLanguages.map(lang => lang.code);
-    setFormData(prev => ({
-      ...prev,
-      selectedLanguages: allCodes,
-      preferences: {
-        ...prev.preferences,
-        speechLanguages: allCodes
-      }
-    }));
-    setShowLanguageWarning(false);
-  };
-
-  const handleDeselectAllLanguages = () => {
-    setFormData(prev => ({
-      ...prev,
-      selectedLanguages: [i18n.language], // Always keep current language as minimum
-      preferences: {
-        ...prev.preferences,
-        speechLanguages: [i18n.language]
-      }
-    }));
-  };
-
-  const steps = [
-    {
-      title: t('onboarding.step1.title'),
-      subtitle: t('onboarding.step1.subtitle'),
-      content: (
-        <div className="space-y-6">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-              {t('onboarding.step1.firstName')}
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              value={formData.firstName}
-              onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-              placeholder={t('onboarding.step1.firstNamePlaceholder')}
-              className="input-field text-lg"
-              autoFocus
-            />
-          </div>
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-              {t('onboarding.step1.lastName')}
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              value={formData.lastName}
-              onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-              placeholder={t('onboarding.step1.lastNamePlaceholder')}
-              className="input-field text-lg"
-            />
-          </div>
-          <div>
-            <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
-              {t('onboarding.step1.age')}
-            </label>
-            <input
-              type="number"
-              id="age"
-              min="50"
-              max="100"
-              value={formData.age}
-              onChange={(e) => setFormData(prev => ({ ...prev, age: parseInt(e.target.value) || 65 }))}
-              className="input-field text-lg"
-            />
-          </div>
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step2.title'),
-      subtitle: t('onboarding.step2.subtitle'),
-      content: (
-        <div className="space-y-6">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4">
-            <div className="flex items-start space-x-2 sm:space-x-3">
-              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mt-0.5" />
-              <div>
-                <h2 className="font-medium text-blue-800 mb-1 text-base sm:text-lg">{t('onboarding.step2.languageSelection')}</h2>
-                <p className="text-xs sm:text-sm text-blue-700">
-                  {t('onboarding.step2.languageDescription')}
-                </p>
-                <ul className="text-xs sm:text-sm text-blue-700 mt-1 sm:mt-2 space-y-0.5 sm:space-y-1">
-                  <li>• {t('onboarding.step2.speechToText')}</li>
-                  <li>• {t('onboarding.step2.textInteractions')}</li>
-                  <li>• {t('onboarding.step2.interfaceOptions')}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Search and Controls */}
-          <div className="space-y-3 sm:space-y-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                value={languageSearch}
-                onChange={(e) => setLanguageSearch(e.target.value)}
-                placeholder={t('onboarding.step2.searchLanguages')}
-                className="input-field pl-10 text-sm sm:text-base"
-              />
-            </div>
-
-            <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
-              <button
-                type="button"
-                onClick={handleSelectAllLanguages}
-                className="btn-secondary text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 w-full sm:w-auto"
-              >
-                {t('onboarding.step2.selectAll')}
-              </button>
-              <button
-                type="button"
-                onClick={handleDeselectAllLanguages}
-                className="btn-secondary text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 w-full sm:w-auto"
-              >
-                {t('onboarding.step2.deselectAll')}
-              </button>
-            </div>
-
-            <div className="text-xs sm:text-sm text-gray-600">
-              {t('onboarding.step2.selected', { count: formData.selectedLanguages.length })}
-            </div>
-          </div>
-
-          {/* Language Grid */}
-          <div className="max-h-52 sm:max-h-64 overflow-y-auto border border-gray-200 rounded-xl">
-            <div className="grid grid-cols-1 gap-0">
-              {filteredLanguages.map((lang) => (
-                <button
-                  key={lang.code}
-                  type="button"
-                  onClick={() => handleLanguageToggle(lang.code)}
-                  className={`p-3 sm:p-4 text-left border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors ${formData.selectedLanguages.includes(lang.code)
-                    ? 'bg-blue-50 border-l-4 border-l-blue-500'
-                    : ''
-                    }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-2 md:space-x-3">
-                        <div className="font-medium text-gray-800 text-sm sm:text-base">
-                          {lang.nativeName}
-                        </div>
-                        <div className="text-xs sm:text-sm text-gray-500">
-                          {lang.name}
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-400 mt-0.5 sm:mt-1">
-                        {lang.region}
-                      </div>
-                    </div>
-                    {formData.selectedLanguages.includes(lang.code) && (
-                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
-                    )}
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {filteredLanguages.length === 0 && (
-            <div className="text-center py-6 sm:py-8 text-gray-500">
-              <Globe className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 text-gray-300" />
-              <p className="text-sm sm:text-base">{t('onboarding.step2.noLanguagesFound', { search: languageSearch })}</p>
-            </div>
-          )}
-
-          {showLanguageWarning && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4">
-              <div className="flex items-start space-x-2 sm:space-x-3">
-                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 mt-0.5" />
-                <div>
-                  <h4 className="font-medium text-amber-800 mb-1 text-sm sm:text-base">{t('onboarding.step2.languageRequired')}</h4>
-                  <p className="text-xs sm:text-sm text-amber-700">
-                    {t('onboarding.step2.languageRequiredDesc')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step3.title'),
-      subtitle: t('onboarding.step3.subtitle'),
-      content: (
-        <div className="space-y-3">
-          {[
-            'windowscomputer',
-            'macapplecomputer',
-            'iphone',
-            'ipad',
-            'androidphoneortablet',
-            'smarttv',
-            'multipledevices'
-          ].map((deviceKey) => (
-            <button
-              key={deviceKey}
-              onClick={() => setFormData(prev => ({ ...prev, os: t(`onboarding.step3.devices.${deviceKey}`) }))}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${formData.os === t(`onboarding.step3.devices.${deviceKey}`)
-                ? 'border-blue-500 bg-blue-50 text-blue-700'
-                : 'border-gray-200 hover:border-gray-300'
-                }`}
-            >
-              {t(`onboarding.step3.devices.${deviceKey}`)}
-            </button>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step4.title'),
-      subtitle: t('onboarding.step4.subtitle'),
-      content: (
-        <div className="space-y-3">
-          {[
-            { value: 'beginner', label: t('onboarding.step4.beginner'), desc: t('onboarding.step4.beginnerDesc') },
-            { value: 'some', label: t('onboarding.step4.some'), desc: t('onboarding.step4.someDesc') },
-            { value: 'comfortable', label: t('onboarding.step4.comfortable'), desc: t('onboarding.step4.comfortableDesc') }
-          ].map((level) => (
-            <button
-              key={level.value}
-              onClick={() => setFormData(prev => ({ ...prev, techExperience: level.value as any }))}
-              className={`w-full p-4 rounded-xl border-2 transition-all text-left ${formData.techExperience === level.value
-                ? 'border-blue-500 bg-blue-50 text-blue-700'
-                : 'border-gray-200 hover:border-gray-300'
-                }`}
-            >
-              <div className="font-medium">{level.label}</div>
-              <div className="text-sm text-gray-600 mt-1">{level.desc}</div>
-            </button>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step5.title'),
-      subtitle: t('onboarding.step5.subtitle'),
-      content: (
-        <div className="grid grid-cols-1 gap-3">
-          {[
-            'onlineSafety',
-            'passwordManagement',
-            'videoCalling',
-            'socialMedia',
-            'onlineBanking',
-            'emailMessaging',
-            'photoStorage',
-            'appDownloads',
-            'wifiInternet',
-            'deviceSettings',
-            'onlineShopping',
-            'healthApps'
-          ].map((concern) => (
-            <button
-              key={concern}
-              onClick={() => {
-                setFormData(prev => {
-                  const concernKey = `onboarding.step5.concerns.${concern}`; // Store the key
-                  return {
-                    ...prev,
-                    primaryConcerns: prev.primaryConcerns.includes(concernKey)
-                      ? prev.primaryConcerns.filter(c => c !== concernKey)
-                      : [...prev.primaryConcerns, concernKey]
-                  };
-                });
-              }}
-              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${formData.primaryConcerns.includes(`onboarding.step5.concerns.${concern}`) // Check against the key
-                ? 'border-blue-500 bg-blue-50 text-blue-700'
-                : 'border-gray-200 hover:border-gray-300'
-                }`}
-            >
-              {t(`onboarding.step5.concerns.${concern}`)} {/* Display translated text */}
-            </button>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step6.title'),
-      subtitle: t('onboarding.step6.subtitle'),
-      content: (
-        <div className="space-y-3 sm:space-y-4">
-          <div className="grid grid-cols-1 gap-3">
-            {[
-              'largerText',
-              'highContrast',
-              'voiceCommands',
-              'screenReader',
-              'slowerExplanations',
-              'visualSteps',
-              'noneNeeded'
-            ].map((need) => (
-              <button
-                key={need}
-                onClick={() => {
-                  const needKey = `onboarding.step6.needs.${need}`; // Store the key
-                  const noneNeededKey = `onboarding.step6.needs.noneNeeded`;
-                  setFormData(prev => {
-                    let newNeeds = [...prev.assistiveNeeds];
-                    if (needKey === noneNeededKey) {
-                      newNeeds = newNeeds.includes(needKey) ? [] : [needKey];
-                    } else {
-                      if (newNeeds.includes(needKey)) {
-                        newNeeds = newNeeds.filter(n => n !== needKey);
-                      } else {
-                        newNeeds = [...newNeeds.filter(n => n !== noneNeededKey), needKey];
-                      }
-                    }
-                    return { ...prev, assistiveNeeds: newNeeds };
-                  });
-                }}
-                className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left text-sm sm:text-base ${formData.assistiveNeeds.includes(`onboarding.step6.needs.${need}`) // Check against the key
-                  ? 'border-blue-500 bg-blue-50 text-blue-700'
-                  : 'border-gray-200 hover:border-gray-300'
-                  }`}
-              >
-                {t(`onboarding.step6.needs.${need}`)} {/* Display translated text */}
-              </button>
-            ))}
-          </div>
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step7.title'),
-      subtitle: t('onboarding.step7.subtitle'),
-      content: (
-        <div className="space-y-3">
-          {[
-            { value: 'simple', label: t('onboarding.step7.simple'), desc: t('onboarding.step7.simpleDesc') },
-            { value: 'detailed', label: t('onboarding.step7.detailed'), desc: t('onboarding.step7.detailedDesc') },
-            { value: 'visual', label: t('onboarding.step7.visual'), desc: t('onboarding.step7.visualDesc') }
-          ].map((style) => (
-            <button
-              key={style.value}
-              onClick={() => setFormData(prev => ({ ...prev, communicationStyle: style.value as any }))}
-              className={`w-full p-3 sm:p-4 rounded-xl border-2 transition-all text-left ${formData.communicationStyle === style.value
-                ? 'border-blue-500 bg-blue-50 text-blue-700'
-                : 'border-gray-200 hover:border-gray-300'
-                }`}
-            >
-              <div className="font-medium text-sm sm:text-base">{style.label}</div>
-              <div className="text-xs sm:text-sm text-gray-600 mt-1">{style.desc}</div>
-            </button>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step8.title', 'Data Personalization'),
-      subtitle: t('onboarding.step8.subtitle', 'Help us personalize your experience while keeping your privacy secure'),
-      content: (
-        <div className="space-y-6">
-          <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-            <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-green-600" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-green-800 mb-2">{t('onboarding.step8.privacy.title')}</h3>
-                <ul className="text-sm text-green-700 space-y-1">
-                  {(t('onboarding.step8.privacy.items', { returnObjects: true }) as string[]).map((item, idx) => (
-                    <li key={idx}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="border border-gray-200 rounded-xl p-4">
-              <div className="flex items-start justify-between">
-                <div className="flex-1 pr-4">
-                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.personalization.title')}</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {t('onboarding.step8.personalization.description')}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {t('onboarding.step8.personalization.note')}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setFormData(prev => ({
-                    ...prev,
-                    dataPersonalization: {
-                      ...prev.dataPersonalization,
-                      allowPersonalization: !prev.dataPersonalization.allowPersonalization
-                    }
-                  }))}
-                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.allowPersonalization ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.allowPersonalization ? 'translate-x-7' : 'translate-x-0.5'
-                    }`} />
-                </button>
-              </div>
-            </div>
-
-            <div className="border border-gray-200 rounded-xl p-4">
-              <div className="flex items-start justify-between">
-                <div className="flex-1 pr-4">
-                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.history.title')}</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {t('onboarding.step8.history.description')}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {t('onboarding.step8.history.note')}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setFormData(prev => ({
-                    ...prev,
-                    dataPersonalization: {
-                      ...prev.dataPersonalization,
-                      useConversationHistory: !prev.dataPersonalization.useConversationHistory
-                    }
-                  }))}
-                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.useConversationHistory ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.useConversationHistory ? 'translate-x-7' : 'translate-x-0.5'
-                    }`} />
-                </button>
-              </div>
-            </div>
-
-            <div className="border border-gray-200 rounded-xl p-4">
-              <div className="flex items-start justify-between">
-                <div className="flex-1 pr-4">
-                  <h3 className="font-medium text-gray-800 mb-2">{t('onboarding.step8.learningPrefs.title')}</h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {t('onboarding.step8.learningPrefs.description')}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {t('onboarding.step8.learningPrefs.note')}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setFormData(prev => ({
-                    ...prev,
-                    dataPersonalization: {
-                      ...prev.dataPersonalization,
-                      usePreferences: !prev.dataPersonalization.usePreferences
-                    }
-                  }))}
-                  className={`w-12 h-6 rounded-full transition-colors flex-shrink-0 ${formData.dataPersonalization.usePreferences ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.dataPersonalization.usePreferences ? 'translate-x-7' : 'translate-x-0.5'
-                    }`} />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-            <div className="flex items-start space-x-3">
-              <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <AlertTriangle className="w-4 h-4 text-blue-600" />
-              </div>
-              <div>
-                <h4 className="font-medium text-blue-800 mb-1">{t('onboarding.step8.noSelection.title')}</h4>
-                <p className="text-sm text-blue-700">
-                  {formData.dataPersonalization.allowPersonalization ||
-                    formData.dataPersonalization.useConversationHistory ||
-                    formData.dataPersonalization.usePreferences
-                    ? t('onboarding.step8.noSelection.success')
-                    : t('onboarding.step8.noSelection.default')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: t('onboarding.step9.title'),
-      subtitle: t('onboarding.step9.subtitle'),
-      content: (
-        <div className="space-y-4 sm:space-y-6">
-          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
-            <div>
-              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.textToSpeech')}</h2>
-              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.textToSpeechDesc')}</p>
-            </div>
-            <button
-              onClick={() => setFormData(prev => ({
-                ...prev,
-                preferences: { ...prev.preferences, textToSpeech: !prev.preferences.textToSpeech }
-              }))}
-              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.textToSpeech ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-            >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.textToSpeech ? 'translate-x-7' : 'translate-x-0.5'
-                }`} />
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
-            <div>
-              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.voiceInput')}</h2>
-              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.voiceInputDesc')}</p>
-            </div>
-            <button
-              onClick={() => setFormData(prev => ({
-                ...prev,
-                preferences: { ...prev.preferences, voiceInput: !prev.preferences.voiceInput }
-              }))}
-              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.voiceInput ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-            >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.voiceInput ? 'translate-x-7' : 'translate-x-0.5'
-                }`} />
-            </button>
-          </div>
-
-          <div className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl">
-            <div>
-              <h2 className="font-medium text-base sm:text-lg">{t('onboarding.step8.videoRecommendations')}</h2>
-              <p className="text-xs sm:text-sm text-gray-600">{t('onboarding.step8.videoRecommendationsDesc')}</p>
-            </div>
-            <button
-              onClick={() => setFormData(prev => ({
-                ...prev,
-                preferences: { ...prev.preferences, videoRecommendations: !prev.preferences.videoRecommendations }
-              }))}
-              className={`w-12 h-6 rounded-full transition-colors ${formData.preferences.videoRecommendations ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-            >
-              <div className={`w-5 h-5 bg-white rounded-full transition-transform ${formData.preferences.videoRecommendations ? 'translate-x-7' : 'translate-x-0.5'
-                }`} />
-            </button>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('onboarding.step8.textSize')}
-            </label>
-            <select
-              value={formData.preferences.fontSize}
-              onChange={(e) => setFormData(prev => ({
-                ...prev,
-                preferences: { ...prev.preferences, fontSize: e.target.value as any }
-              }))}
-              className="input-field"
-            >
-              <option value="normal">{t('onboarding.step8.textSizeNormal')}</option>
-              <option value="large">{t('onboarding.step8.textSizeLarge')}</option>
-              <option value="extra-large">{t('onboarding.step8.textSizeExtraLarge')}</option>
-            </select>
-          </div>
-        </div>
-      )
-    }
-  ];
-
-  const canProceed = () => {
-    switch (currentStep) {
-      case 0:
-        return formData.firstName.trim().length > 0 && formData.lastName.trim().length > 0;
-      case 1:
-        return formData.selectedLanguages.length > 0;
-      case 2:
-        return formData.os.length > 0;
-      case 3:
-        return formData.techExperience.length > 0;
-      case 4:
-        return true; // Step 5 (primary concerns) is now optional
-      case 5:
-        return formData.assistiveNeeds.length > 0;
-      case 6:
-        return formData.communicationStyle.length > 0;
-      case 7:
-        return true; // Data personalization step is optional
-      case 8:
-        return true;
-      default:
-        return false;
-    }
-  };
-
   const handleNext = () => {
-    // Check for language selection warning on language step
-    if (currentStep === 1 && formData.selectedLanguages.length === 0) {
-      setShowLanguageWarning(true);
-      return;
-    }
-
-    setShowLanguageWarning(false);
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
+    if (currentStep < 4) {
+      setCurrentStep(s => s + 1);
     } else {
       handleComplete();
     }
   };
 
+  const handleBack = () => {
+    if (currentStep > 0) {
+      setCurrentStep(s => s - 1);
+    }
+  };
+
   const handleComplete = async () => {
-    if (!formData.firstName.trim()) return;
-
     setLoading(true);
-
     try {
-      // Save user preferences to cookies for offline access
-      Cookies.set('userPreferences', JSON.stringify(formData.preferences), { expires: 365 });
-      Cookies.set('userName', formData.firstName, { expires: 365 });
-      // Apply preferences immediately
-      if (typeof window !== 'undefined') {
-        applyPreferencesToDOM(formData.preferences);
-      }
       const finalData = {
-        ...formData,
-        preferences: {
-          autoTextToSpeech: formData.preferences.textToSpeech,
-          textSize: (formData.preferences.fontSize === 'normal' ? 'normal' : 'large') as 'normal' | 'large' | 'extra-large' | 'small',
-          theme: formData.preferences.theme as 'light' | 'high-contrast' | 'dark',
-          language: 'en'
+        ...userData,
+        profile: {
+          ...userData?.profile,
+          firstName: formData.firstName,
+          age: formData.age,
         },
-        onboardingCompleted: true
+        preferences: {
+          ...userData?.preferences,
+          language: formData.selectedLanguages[0] || 'en',
+          theme: formData.preferences.highContrast ? 'high-contrast' : 'light',
+          autoTextToSpeech: formData.preferences.textToSpeech,
+          textSize: formData.preferences.fontSize as any,
+          voiceInput: formData.preferences.voiceInput,
+        },
+        onboardingCompleted: true,
+        techExperience: formData.techExperience,
+        primaryDevice: formData.os,
+        primaryConcerns: formData.primaryConcerns,
       };
+
       await updateUserData(finalData);
-      sessionStorage.setItem('onboardingJustCompleted', 'true'); // Keep this to prevent immediate assessment modal
+      Cookies.set('onboarding_done', 'true', { expires: 365 });
       navigate('/dashboard');
     } catch (error) {
-      console.error('Error saving onboarding data:', error);
-      alert(t('onboarding.errorSaving'));
     } finally {
       setLoading(false);
     }
   };
 
-  // Helper to apply preferences to DOM
-  function applyPreferencesToDOM(preferences) {
-    const body = document.body;
-    // Font size
-    body.classList.remove('font-normal', 'font-large', 'font-extralarge');
-    if (preferences.fontSize === 'large') body.classList.add('font-large');
-    else if (preferences.fontSize === 'extra-large') body.classList.add('font-extralarge');
-    else body.classList.add('font-normal');
-    // High contrast
-    if (preferences.highContrast) body.classList.add('high-contrast');
-    else body.classList.remove('high-contrast');
-  }
+  const canProceed = () => {
+    if (currentStep === 0) return formData.firstName.trim().length >= 2;
+    if (currentStep === 1) return formData.selectedLanguages.length > 0;
+    return true;
+  };
 
-  // On mount, apply preferences if available
-  useEffect(() => {
-    if (userData && userData.preferences) {
-      applyPreferencesToDOM(userData.preferences);
+  const stepVariants = {
+    initial: { opacity: 0, x: 20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 }
+  };
+
+  const renderStep = () => {
+    switch (currentStep) {
+      case 0:
+        return (
+          <motion.div
+            key="step0"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="space-y-6"
+          >
+            <div className="flex flex-col space-y-4">
+              <div className="relative">
+                <label className="text-sm font-semibold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">
+                  {t('onboarding.step1.firstName')}
+                </label>
+                <div className="relative group">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-500 group-focus-within:text-blue-600 transition-colors" />
+                  <input
+                    type="text"
+                    value={formData.firstName}
+                    onChange={e => setFormData(f => ({ ...f, firstName: e.target.value }))}
+                    placeholder={t('onboarding.step1.firstNamePlaceholder')}
+                    className="w-full bg-white/50 backdrop-blur-sm border-2 border-blue-100 rounded-2xl py-4 pl-12 pr-4 text-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                    autoFocus
+                  />
+                </div>
+              </div>
+
+              <div className="relative">
+                <label className="text-sm font-semibold text-gray-500 ml-1 mb-2 block uppercase tracking-wider">
+                  {t('onboarding.step1.age')}
+                </label>
+                <div className="flex items-center space-x-6">
+                  <input
+                    type="range"
+                    min="50"
+                    max="100"
+                    value={formData.age}
+                    onChange={e => setFormData(f => ({ ...f, age: parseInt(e.target.value) }))}
+                    className="flex-1 accent-blue-600 h-2 bg-blue-100 rounded-lg appearance-none cursor-pointer"
+                  />
+                  <span className="text-3xl font-bold text-blue-600 tabular-nums w-12">{formData.age}</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        );
+
+      case 1:
+        return (
+          <motion.div
+            key="step1"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="space-y-4"
+          >
+            <div className="relative group mb-4">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+              <input
+                type="text"
+                placeholder={t('onboarding.step2.searchLanguages')}
+                value={languageSearch}
+                onChange={e => setLanguageSearch(e.target.value)}
+                className="w-full bg-white/50 border-2 border-gray-100 rounded-2xl py-3 pl-12 pr-4 outline-none focus:border-blue-500 transition-all"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+              {filteredLanguages.map(lang => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    const selected = formData.selectedLanguages.includes(lang.code)
+                      ? formData.selectedLanguages.filter(c => c !== lang.code)
+                      : [...formData.selectedLanguages, lang.code];
+                    if (selected.length === 0) return; // Must have one
+                    setFormData(f => ({ ...f, selectedLanguages: selected }));
+                  }}
+                  className={`flex items-center justify-between p-4 rounded-2xl border-2 transition-all ${formData.selectedLanguages.includes(lang.code)
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-white bg-white/40 hover:border-blue-200'
+                    }`}
+                >
+                  <div className="text-left">
+                    <div className="font-bold">{lang.nativeName}</div>
+                    <div className="text-xs opacity-60">{lang.name}</div>
+                  </div>
+                  {formData.selectedLanguages.includes(lang.code) && <Check className="w-5 h-5" />}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        );
+
+      case 2:
+        return (
+          <motion.div
+            key="step2"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="space-y-6"
+          >
+            <div className="space-y-3">
+              <label className="text-sm font-semibold text-gray-500 uppercase tracking-wider ml-1">
+                {t('onboarding.step3.experienceLevel')}
+              </label>
+              <div className="grid gap-3">
+                {[
+                  { id: 'beginner', title: t('onboarding.step3.beginner'), desc: t('onboarding.step3.beginnerDesc'), icon: Heart },
+                  { id: 'some', title: t('onboarding.step3.some'), desc: t('onboarding.step3.someDesc'), icon: Sparkles },
+                  { id: 'comfortable', title: t('onboarding.step3.comfortable'), desc: t('onboarding.step3.comfortableDesc'), icon: MonitorCheck },
+                ].map(level => (
+                  <button
+                    key={level.id}
+                    onClick={() => setFormData(f => ({ ...f, techExperience: level.id as any }))}
+                    className={`flex items-start space-x-4 p-4 rounded-3xl border-2 transition-all text-left ${formData.techExperience === level.id
+                      ? 'border-blue-500 bg-blue-50 ring-4 ring-blue-500/10'
+                      : 'border-white bg-white/40 hover:border-blue-200'
+                      }`}
+                  >
+                    <div className={`p-3 rounded-2xl ${formData.techExperience === level.id ? 'bg-blue-500 text-white' : 'bg-blue-100 text-blue-600'}`}>
+                      <level.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-lg">{level.title}</div>
+                      <div className="text-sm text-gray-500 leading-relaxed">{level.desc}</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <label className="text-sm font-semibold text-gray-500 uppercase tracking-wider ml-1">
+                {t('onboarding.step3.devices.title')}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { id: 'windowscomputer', label: t('onboarding.step3.devices.windowscomputer'), icon: Monitor },
+                  { id: 'macapplecomputer', label: t('onboarding.step3.devices.macapplecomputer'), icon: Monitor },
+                  { id: 'iphone', label: t('onboarding.step3.devices.iphone'), icon: Smartphone },
+                  { id: 'ipad', label: t('onboarding.step3.devices.ipad'), icon: Smartphone },
+                  { id: 'androidphoneortablet', label: t('onboarding.step3.devices.androidphoneortablet'), icon: Smartphone },
+                  { id: 'multipledevices', label: t('onboarding.step3.devices.multipledevices'), icon: Globe },
+                ].map(dev => (
+                  <button
+                    key={dev.id}
+                    onClick={() => setFormData(f => ({ ...f, os: dev.id }))}
+                    className={`flex items-center space-x-2 px-4 py-3 rounded-full border-2 transition-all font-medium ${formData.os === dev.id
+                      ? 'border-blue-500 bg-blue-600 text-white shadow-lg shadow-blue-500/30'
+                      : 'border-white bg-white/50 text-gray-700 hover:border-blue-200'
+                      }`}
+                  >
+                    <dev.icon className="w-4 h-4" />
+                    <span>{dev.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        );
+
+      case 3:
+        return (
+          <motion.div
+            key="step3"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="space-y-8"
+          >
+            <div className="flex items-center justify-between p-6 bg-white/40 border border-white rounded-[2rem] shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center space-x-5">
+                <div className="p-3 bg-purple-100 rounded-2xl text-purple-600">
+                  <Volume2 className="w-8 h-8" />
+                </div>
+                <div>
+                  <div className="font-bold text-xl">{t('onboarding.step4.textToSpeech')}</div>
+                  <div className="text-sm text-gray-500">Listen to AI explainers</div>
+                </div>
+              </div>
+              <button
+                onClick={() => setFormData(f => ({ ...f, preferences: { ...f.preferences, textToSpeech: !f.preferences.textToSpeech } }))}
+                className={`w-16 h-8 rounded-full transition-all relative ${formData.preferences.textToSpeech ? 'bg-green-500' : 'bg-gray-300'}`}
+              >
+                <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all ${formData.preferences.textToSpeech ? 'right-1' : 'left-1 shadow-sm'}`} />
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between p-6 bg-white/40 border border-white rounded-[2rem] shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center space-x-5">
+                <div className="p-3 bg-blue-100 rounded-2xl text-blue-600">
+                  <Mic className="w-8 h-8" />
+                </div>
+                <div>
+                  <div className="font-bold text-xl">{t('onboarding.step4.voiceInput')}</div>
+                  <div className="text-sm text-gray-500">Ask questions with your voice</div>
+                </div>
+              </div>
+              <button
+                onClick={() => setFormData(f => ({ ...f, preferences: { ...f.preferences, voiceInput: !f.preferences.voiceInput } }))}
+                className={`w-16 h-8 rounded-full transition-all relative ${formData.preferences.voiceInput ? 'bg-green-500' : 'bg-gray-300'}`}
+              >
+                <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all ${formData.preferences.voiceInput ? 'right-1' : 'left-1 shadow-sm'}`} />
+              </button>
+            </div>
+
+            <div className="space-y-4 pt-4">
+              <div className="flex items-center space-x-3 text-sm font-semibold text-gray-500 uppercase tracking-widest ml-2">
+                <Type className="w-4 h-4" />
+                <span>{t('onboarding.step4.textSize')}</span>
+              </div>
+              <div className="flex bg-white/50 p-2 rounded-2xl border border-white gap-1">
+                {[
+                  { id: 'normal', label: t('onboarding.step4.textSizeNormal') },
+                  { id: 'large', label: t('onboarding.step4.textSizeLarge') },
+                  { id: 'extra-large', label: t('onboarding.step4.textSizeExtraLarge') },
+                ].map(opt => (
+                  <button
+                    key={opt.id}
+                    onClick={() => setFormData(f => ({ ...f, preferences: { ...f.preferences, fontSize: opt.id as any } }))}
+                    className={`flex-1 py-3 rounded-xl font-bold transition-all ${formData.preferences.fontSize === opt.id
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'text-gray-600 hover:bg-white'
+                      }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        );
+
+      case 4:
+        return (
+          <motion.div
+            key="step4"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="space-y-6"
+          >
+            <div className="space-y-3">
+              <label className="text-sm font-semibold text-gray-500 uppercase tracking-wider ml-1">
+                {t('onboarding.step5.subtitle')}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'onlineSafety', 'passwordManagement', 'videoCalling',
+                  'onlineBanking', 'emailMessaging', 'wifiInternet', 'deviceSettings'
+                ].map(key => (
+                  <button
+                    key={key}
+                    onClick={() => {
+                      const concerns = formData.primaryConcerns.includes(key)
+                        ? formData.primaryConcerns.filter(c => c !== key)
+                        : [...formData.primaryConcerns, key];
+                      setFormData(f => ({ ...f, primaryConcerns: concerns }));
+                    }}
+                    className={`px-5 py-3 rounded-[1.5rem] border-2 transition-all font-semibold ${formData.primaryConcerns.includes(key)
+                      ? 'border-blue-500 bg-blue-600 text-white shadow-lg'
+                      : 'border-white bg-white/50 text-gray-700 hover:border-blue-200'
+                      }`}
+                  >
+                    {t(`onboarding.step5.concerns.${key}`)}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-blue-100">
+              <div className="flex items-start justify-between p-6 bg-blue-600/5 border border-blue-100 rounded-[2.5rem]">
+                <div className="flex-1 pr-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <ShieldCheck className="w-5 h-5 text-green-600" />
+                    <h3 className="font-bold text-lg text-blue-900">{t('onboarding.step5.privacy.title')}</h3>
+                  </div>
+                  <p className="text-sm text-blue-800/70 leading-relaxed">
+                    {t('onboarding.step5.privacy.description')}
+                  </p>
+                  <p className="text-xs text-blue-600 font-medium mt-3 italic">
+                    {t('onboarding.step5.privacy.note')}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setFormData(f => ({ ...f, preferences: { ...f.preferences, allowPersonalization: !f.preferences.allowPersonalization } }))}
+                  className={`w-16 h-8 rounded-full transition-all relative mt-1 ${formData.preferences.allowPersonalization ? 'bg-green-500' : 'bg-gray-300'}`}
+                >
+                  <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all ${formData.preferences.allowPersonalization ? 'right-1' : 'left-1 shadow-sm'}`} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        );
+
+      default:
+        return null;
     }
-  }, [userData]);
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-8 sm:py-12 px-4">
-      <div className="w-full max-w-2xl">
-        <div className="card p-6 sm:p-8 animate-slide-up">
-          <div className="text-center mb-6 sm:mb-8">
-            <div className="flex justify-center mb-4 sm:mb-6">
-              <Logo size="lg" showText={false} /> {/* Logo size might need responsive variants if it's too big */}
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
-              {steps[currentStep].title}
+    <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center p-4">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-96 h-96 bg-blue-200 rounded-full blur-[100px]"
+        />
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -bottom-40 -right-40 w-[30rem] h-[30rem] bg-purple-200 rounded-full blur-[120px]"
+        />
+      </div>
+
+      <div className="w-full max-w-2xl relative">
+        {/* Header Section */}
+        <div className="text-center mb-8 relative z-10">
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="inline-flex items-center justify-center p-4 bg-white/60 backdrop-blur-xl rounded-[2rem] border border-white shadow-xl shadow-blue-500/5 mb-8"
+          >
+            <Logo size="lg" showText />
+          </motion.div>
+
+          <motion.div
+            key={`title-${currentStep}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-2"
+          >
+            <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight">
+              {t(`onboarding.step${currentStep + 1}.title`)}
             </h1>
-            <p className="text-sm sm:text-base text-gray-600">
-              {steps[currentStep].subtitle}
+            <p className="text-lg text-gray-500 font-medium">
+              {t(`onboarding.step${currentStep + 1}.subtitle`)}
             </p>
-          </div>
+          </motion.div>
+        </div>
 
-          <div className="mb-6 sm:mb-8 max-h-[60vh] sm:max-h-96 overflow-y-auto pr-2"> {/* Added pr-2 for scrollbar space */}
-            {steps[currentStep].content}
-          </div>
+        {/* Card Section */}
+        <div className="relative">
+          {/* Decorative glass elements */}
+          <div className="absolute -inset-4 bg-white/20 backdrop-blur-3xl rounded-[3rem] -z-10 border border-white/50" />
 
-          {/* Progress indicators */}
-          <div className="flex justify-center space-x-2 mb-8">
-            {steps.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${index === currentStep
-                  ? 'bg-blue-600'
-                  : index < currentStep
-                    ? 'bg-green-500'
-                    : 'bg-gray-300'
-                  }`}
-              />
-            ))}
-          </div>
+          <div className="bg-white/80 backdrop-blur-2xl border border-white/80 rounded-[2.5rem] shadow-2xl p-8 sm:p-12 relative overflow-hidden min-h-[480px] flex flex-col justify-between">
+            {/* Progress dots */}
+            <div className="flex justify-center space-x-3 mb-10">
+              {[0, 1, 2, 3, 4].map(idx => (
+                <div
+                  key={idx}
+                  className={`h-2 transition-all duration-500 rounded-full ${idx === currentStep ? 'w-10 bg-blue-600 shadow-lg shadow-blue-500/20' :
+                    idx < currentStep ? 'w-2 bg-green-500' : 'w-2 bg-gray-200'
+                    }`}
+                />
+              ))}
+            </div>
 
-          <div className="flex space-x-4">
-            {currentStep > 0 && (
-              <button
-                onClick={() => setCurrentStep(currentStep - 1)}
-                className="btn-secondary flex-1 flex items-center justify-center"
-                disabled={loading}
-              >
-                <ChevronLeft className="w-4 h-4 mr-2" />
-                {t('onboarding.back')}
-              </button>
-            )}
-            <button
-              onClick={handleNext}
-              disabled={!canProceed() || loading}
-              className="btn-primary flex-1 flex items-center justify-center"
-            >
-              {loading ? (
-                <div className="flex items-center justify-center">
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                  {t('onboarding.settingUp')}
-                </div>
-              ) : currentStep === steps.length - 1 ? (
-                t('onboarding.completeSetup')
-              ) : (
-                <>
-                  {t('onboarding.next')}
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </>
+            {/* Content Area */}
+            <AnimatePresence mode="wait">
+              {renderStep()}
+            </AnimatePresence>
+
+            {/* Navigation Controls */}
+            <div className="flex items-center space-x-4 mt-12 pt-8 border-t border-gray-50">
+              {currentStep > 0 && (
+                <button
+                  onClick={handleBack}
+                  disabled={loading}
+                  className="flex items-center justify-center p-4 rounded-3xl bg-gray-100 text-gray-500 hover:bg-gray-200 transition-all active:scale-95 disabled:opacity-50"
+                  aria-label="Go back"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
               )}
-            </button>
+
+              <button
+                onClick={handleNext}
+                disabled={!canProceed() || loading || isAnimating}
+                className={`flex-1 flex items-center justify-center py-5 rounded-[2rem] text-xl font-bold transition-all shadow-xl active:scale-[0.98] ${!canProceed()
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-blue-500/30 hover:shadow-blue-500/50 hover:translate-y-[-2px]'
+                  }`}
+              >
+                {loading ? (
+                  <div className="flex items-center space-x-3">
+                    <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>{t('onboarding.settingUp')}</span>
+                  </div>
+                ) : (
+                  <>
+                    <span className="mr-2">
+                      {currentStep === 4 ? t('onboarding.completeSetup') : t('onboarding.next')}
+                    </span>
+                    {currentStep < 4 && <ChevronRight className="w-6 h-6" />}
+                    {currentStep === 4 && <Check className="w-6 h-6" />}
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Footer help text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          className="text-center mt-12 text-sm font-medium text-gray-500"
+        >
+          Need help? Just wave at the companion in the corner!
+        </motion.p>
       </div>
     </div>
   );

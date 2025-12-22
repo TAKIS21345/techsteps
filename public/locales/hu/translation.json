@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android telefon vagy táblagép",
         "smarttv": "Okostelevízió",
-        "multipledevices": "Több eszköz"
+        "multipledevices": "Több eszköz",
+        "title": "Fő eszköz"
       },
-      "tooltip": "Az elsődleges eszköz ismerete segít nekünk relevánsabb utasításokat adni."
+      "tooltip": "Az elsődleges eszköz ismerete segít nekünk relevánsabb utasításokat adni.",
+      "experienceLevel": "Tapasztalati szint",
+      "beginner": "Az alapok elsajátítása",
+      "beginnerDesc": "Általában szükségem van valakire, aki megmutatja, hogyan kell.",
+      "some": "Kicsit kényelmes",
+      "someDesc": "Meg tudom csinálni az alapokat, de néha elakadok.",
+      "comfortable": "Magabiztos",
+      "comfortableDesc": "Szeretek új funkciókat felfedezni."
     },
     "step4": {
       "title": "Mennyire érzi magát otthon a technológiában?",
@@ -52,7 +60,14 @@
       "someDesc": "Az alapvető feladatokat el tudom végezni, de az új dolgokhoz segítség kell",
       "comfortable": "Magabiztos",
       "comfortableDesc": "A legtöbb dolgot magamtól is kitalálom, de néha szükségem van útmutatásra",
-      "tooltip": "Legyen őszinte a kényelmi szintjével kapcsolatban – ez segít nekünk a megfelelő ütemben elmagyarázni a dolgokat."
+      "tooltip": "Legyen őszinte a kényelmi szintjével kapcsolatban – ez segít nekünk a megfelelő ütemben elmagyarázni a dolgokat.",
+      "textToSpeech": "Olvassa fel az üzeneteket hangosan",
+      "voiceInput": "Használd a hangomat kérdések feltevésére",
+      "textSize": "Szöveg mérete",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Nagy",
+      "textSizeExtraLarge": "Nagyon nagy",
+      "highContrast": "Nagy kontrasztú színek"
     },
     "step5": {
       "title": "Mely technológiai témák aggasztják a leginkább?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Online vásárlás",
         "healthApps": "Egészségügyi alkalmazások és portálok"
       },
-      "tooltip": "Válassza ki azokat a témákat, amelyek a leginkább aggasztják Önt, hogy ezeken a területeken előnyben részesíthessük a segítséget."
+      "tooltip": "Válassza ki azokat a témákat, amelyek a leginkább aggasztják Önt, hogy ezeken a területeken előnyben részesíthessük a segítséget.",
+      "privacy": {
+        "title": "Személyre szabás",
+        "description": "Engedje meg, hogy a TechStep megjegyezze beállításait és előzményeit, hogy jobban segítsen.",
+        "note": "Adatai biztonságban vannak, és soha nem adják el."
+      }
     },
     "step6": {
       "title": "Szüksége van valamilyen kisegítő lehetőségre?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Üzenet az AI asszisztensnek...",
-      "helper": "Nyomja meg az Entert a küldéshez, a Shift+Entert az új sorhoz"
+      "helper": "Nyomja meg az Entert a küldéshez, a Shift+Entert az új sorhoz",
+      "listening": "Hallgatás... Kattintson ismét az avatarra a leállításhoz"
     },
     "greeting": {
       "morning": "Jó reggelt",
@@ -1367,8 +1388,12 @@
       "evening": "Jó estét"
     },
     "error": {
-      "general": "Sajnálom, most gondom van. Kérjük, próbálja újra egy pillanat múlva."
-    }
+      "general": "Sajnálom, most gondom van. Kérjük, próbálja újra egy pillanat múlva.",
+      "understanding": "Elnézést, ezt nem tudtam megérteni.",
+      "connection": "Jelenleg gondom van a csatlakozással. Kérjük, próbálja újra."
+    },
+    "welcomeMessage": "Szia {{name}}! Azért vagyok itt, hogy segítsek.",
+    "navigating": "Navigálás ide: {{target}}..."
   },
   "flashcards": {
     "title": "Útmutató lépésről lépésre",

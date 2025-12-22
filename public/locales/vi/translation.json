@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Điện thoại hoặc máy tính bảng Android",
         "smarttv": "TV thông minh",
-        "multipledevices": "Nhiều thiết bị"
+        "multipledevices": "Nhiều thiết bị",
+        "title": "Thiết bị chính"
       },
-      "tooltip": "Việc biết thiết bị chính của bạn sẽ giúp chúng tôi cung cấp hướng dẫn phù hợp hơn."
+      "tooltip": "Việc biết thiết bị chính của bạn sẽ giúp chúng tôi cung cấp hướng dẫn phù hợp hơn.",
+      "experienceLevel": "Cấp độ kinh nghiệm",
+      "beginner": "Học những điều cơ bản",
+      "beginnerDesc": "Tôi thường cần ai đó chỉ cho tôi cách thực hiện.",
+      "some": "Hơi thoải mái",
+      "someDesc": "Tôi có thể làm những điều cơ bản nhưng đôi khi gặp khó khăn.",
+      "comfortable": "Tự tin",
+      "comfortableDesc": "Tôi thích khám phá các tính năng mới."
     },
     "step4": {
       "title": "Bạn cảm thấy thoải mái với công nghệ như thế nào?",
@@ -947,7 +955,14 @@
       "someDesc": "Tôi có thể thực hiện các tác vụ cơ bản nhưng cần trợ giúp với những điều mới",
       "comfortable": "Thoải mái",
       "comfortableDesc": "Tôi có thể tự tìm hiểu hầu hết mọi thứ nhưng đôi khi cần hướng dẫn",
-      "tooltip": "Hãy trung thực về mức độ thoải mái của bạn - điều này giúp chúng tôi giải thích mọi thứ theo đúng tiến độ."
+      "tooltip": "Hãy trung thực về mức độ thoải mái của bạn - điều này giúp chúng tôi giải thích mọi thứ theo đúng tiến độ.",
+      "textToSpeech": "Đọc to tin nhắn",
+      "voiceInput": "Sử dụng giọng nói của tôi để đặt câu hỏi",
+      "textSize": "Kích thước văn bản",
+      "textSizeNormal": "Tiêu chuẩn",
+      "textSizeLarge": "Lớn",
+      "textSizeExtraLarge": "Rất lớn",
+      "highContrast": "Màu sắc tương phản cao"
     },
     "step5": {
       "title": "Chủ đề công nghệ nào khiến bạn lo lắng nhất?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Mua sắm trực tuyến",
         "healthApps": "Ứng dụng & Cổng thông tin sức khỏe"
       },
-      "tooltip": "Chọn những chủ đề khiến bạn lo lắng nhất để chúng tôi có thể ưu tiên trợ giúp trong những lĩnh vực này."
+      "tooltip": "Chọn những chủ đề khiến bạn lo lắng nhất để chúng tôi có thể ưu tiên trợ giúp trong những lĩnh vực này.",
+      "privacy": {
+        "title": "Cá nhân hóa",
+        "description": "Cho phép TechStep ghi nhớ các tùy chọn và lịch sử của bạn để trợ giúp bạn tốt hơn.",
+        "note": "Dữ liệu của bạn được bảo mật và không bao giờ được bán."
+      }
     },
     "step6": {
       "title": "Bạn có cần bất kỳ tính năng trợ năng nào không?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Trợ lý AI nhắn tin...",
-      "helper": "Nhấn Enter để gửi, Shift+Enter để gửi dòng mới"
+      "helper": "Nhấn Enter để gửi, Shift+Enter để gửi dòng mới",
+      "listening": "Đang nghe... Bấm vào avatar lần nữa để dừng"
     },
     "greeting": {
       "morning": "Chào buổi sáng",
@@ -1366,8 +1387,12 @@
       "evening": "Buổi tối vui vẻ"
     },
     "error": {
-      "general": "Tôi xin lỗi, hiện tại tôi đang gặp rắc rối. Vui lòng thử lại sau giây lát."
-    }
+      "general": "Tôi xin lỗi, hiện tại tôi đang gặp rắc rối. Vui lòng thử lại sau giây lát.",
+      "understanding": "Tôi xin lỗi, tôi không thể hiểu điều đó.",
+      "connection": "Hiện tại tôi đang gặp sự cố khi kết nối. Vui lòng thử lại."
+    },
+    "welcomeMessage": "Xin chào {{name}}! Tôi ở đây để giúp đỡ.",
+    "navigating": "Đang điều hướng đến {{target}}..."
   },
   "flashcards": {
     "title": "Hướng dẫn từng bước",

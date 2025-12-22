@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android-telefon eller -nettbrett",
         "smarttv": "Smart-TV",
-        "multipledevices": "Flere enheter"
+        "multipledevices": "Flere enheter",
+        "title": "Hovedenhet"
       },
-      "tooltip": "Å kjenne til den primære enheten din hjelper oss med å gi mer relevante instruksjoner."
+      "tooltip": "Å kjenne til den primære enheten din hjelper oss med å gi mer relevante instruksjoner.",
+      "experienceLevel": "Erfaringsnivå",
+      "beginner": "Lære det grunnleggende",
+      "beginnerDesc": "Jeg trenger vanligvis noen som viser meg hvordan.",
+      "some": "Noe behagelig",
+      "someDesc": "Jeg kan gjøre det grunnleggende, men blir sittende fast noen ganger.",
+      "comfortable": "Sikker på",
+      "comfortableDesc": "Jeg liker å utforske nye funksjoner."
     },
     "step4": {
       "title": "Hvor komfortabel er du med teknologi?",
@@ -947,7 +955,14 @@
       "someDesc": "Jeg kan utføre grunnleggende oppgaver, men trenger hjelp med nye ting",
       "comfortable": "Komfortabel",
       "comfortableDesc": "Jeg kan finne ut av de fleste ting, men trenger noen ganger veiledning",
-      "tooltip": "Vær ærlig om komfortnivået ditt – dette hjelper oss å forklare ting i riktig tempo."
+      "tooltip": "Vær ærlig om komfortnivået ditt – dette hjelper oss å forklare ting i riktig tempo.",
+      "textToSpeech": "Les meldinger høyt",
+      "voiceInput": "Bruk stemmen min til å stille spørsmål",
+      "textSize": "Tekststørrelse",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Stor",
+      "textSizeExtraLarge": "Veldig stor",
+      "highContrast": "Farger med høy kontrast"
     },
     "step5": {
       "title": "Hvilke tekniske emner bekymrer deg mest?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Netthandel",
         "healthApps": "Helseapper og -portaler"
       },
-      "tooltip": "Velg emner som bekymrer deg mest, slik at vi kan prioritere hjelp på disse områdene."
+      "tooltip": "Velg emner som bekymrer deg mest, slik at vi kan prioritere hjelp på disse områdene.",
+      "privacy": {
+        "title": "Personalisering",
+        "description": "La TechStep huske preferansene og historikken for å hjelpe deg bedre.",
+        "note": "Dataene dine er sikre og selges aldri."
+      }
     },
     "step6": {
       "title": "Trenger du noen tilgjengelighetsfunksjoner?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Send melding til AI-assistent...",
-      "helper": "Trykk Enter for å sende, Shift+Enter for ny linje"
+      "helper": "Trykk Enter for å sende, Shift+Enter for ny linje",
+      "listening": "Lytter... Klikk avatar igjen for å stoppe"
     },
     "greeting": {
       "morning": "God morgen",
@@ -1366,8 +1387,12 @@
       "evening": "God kveld"
     },
     "error": {
-      "general": "Beklager, jeg har problemer akkurat nå. Prøv igjen om et øyeblikk."
-    }
+      "general": "Beklager, jeg har problemer akkurat nå. Prøv igjen om et øyeblikk.",
+      "understanding": "Beklager, jeg kunne ikke forstå det.",
+      "connection": "Jeg har problemer med å koble til akkurat nå. Vennligst prøv igjen."
+    },
+    "welcomeMessage": "Hei {{name}}! Jeg er her for å hjelpe.",
+    "navigating": "Navigerer til {{target}}..."
   },
   "flashcards": {
     "title": "Trinn-for-trinn guide",

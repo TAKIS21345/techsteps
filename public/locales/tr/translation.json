@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android Telefon veya Tablet",
         "smarttv": "Akıllı TV",
-        "multipledevices": "Birden fazla cihaz"
+        "multipledevices": "Birden fazla cihaz",
+        "title": "Ana Cihaz"
       },
-      "tooltip": "Birincil cihazınızı bilmek, daha alakalı talimatlar sunmamıza yardımcı olur."
+      "tooltip": "Birincil cihazınızı bilmek, daha alakalı talimatlar sunmamıza yardımcı olur.",
+      "experienceLevel": "Deneyim Seviyesi",
+      "beginner": "Temelleri Öğrenmek",
+      "beginnerDesc": "Genelde bana nasıl yapılacağını gösterecek birine ihtiyaç duyarım.",
+      "some": "Biraz Rahat",
+      "someDesc": "Temelleri yapabiliyorum ama bazen takılıp kalıyorum.",
+      "comfortable": "Kendinden emin",
+      "comfortableDesc": "Yeni özellikleri keşfetmekten keyif alıyorum."
     },
     "step4": {
       "title": "Teknolojiyle ne kadar rahatsınız?",
@@ -947,7 +955,14 @@
       "someDesc": "Temel görevleri yapabilirim ama yeni şeylerde yardıma ihtiyacım var",
       "comfortable": "Rahat",
       "comfortableDesc": "Çoğu şeyi çözebilirim ama bazen rehberliğe ihtiyacım olur",
-      "tooltip": "Konfor seviyeniz konusunda dürüst olun; bu, olayları doğru hızda açıklamamıza yardımcı olur."
+      "tooltip": "Konfor seviyeniz konusunda dürüst olun; bu, olayları doğru hızda açıklamamıza yardımcı olur.",
+      "textToSpeech": "Mesajları yüksek sesle oku",
+      "voiceInput": "Soru sormak için sesimi kullan",
+      "textSize": "Metin Boyutu",
+      "textSizeNormal": "Standart",
+      "textSizeLarge": "Büyük",
+      "textSizeExtraLarge": "Çok Büyük",
+      "highContrast": "Yüksek Kontrastlı Renkler"
     },
     "step5": {
       "title": "Hangi teknoloji konuları sizi en çok endişelendiriyor?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Çevrimiçi Alışveriş",
         "healthApps": "Sağlık Uygulamaları ve Portalları"
       },
-      "tooltip": "Sizi en çok endişelendiren konuları seçin, böylece bu alanlardaki yardıma öncelik verebiliriz."
+      "tooltip": "Sizi en çok endişelendiren konuları seçin, böylece bu alanlardaki yardıma öncelik verebiliriz.",
+      "privacy": {
+        "title": "Kişiselleştirme",
+        "description": "Size daha iyi yardımcı olmak için TechStep'in tercihlerinizi ve geçmişinizi hatırlamasına izin verin.",
+        "note": "Verileriniz güvendedir ve asla satılmaz."
+      }
     },
     "step6": {
       "title": "Herhangi bir erişilebilirlik özelliğine ihtiyacınız var mı?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Yapay zeka asistanına mesaj gönder...",
-      "helper": "Göndermek için Enter'a, yeni satır için Shift+Enter'a basın"
+      "helper": "Göndermek için Enter'a, yeni satır için Shift+Enter'a basın",
+      "listening": "Dinleniyor... Durdurmak için avatara tekrar tıklayın"
     },
     "greeting": {
       "morning": "Günaydın",
@@ -1366,8 +1387,12 @@
       "evening": "İyi akşamlar"
     },
     "error": {
-      "general": "Üzgünüm, şu anda sorun yaşıyorum. Lütfen kısa bir süre sonra tekrar deneyin."
-    }
+      "general": "Üzgünüm, şu anda sorun yaşıyorum. Lütfen kısa bir süre sonra tekrar deneyin.",
+      "understanding": "Kusura bakmayın, bunu anlayamadım.",
+      "connection": "Şu anda bağlanmada sorun yaşıyorum. Lütfen tekrar deneyin."
+    },
+    "welcomeMessage": "Merhaba {{name}}! Yardım etmek için buradayım.",
+    "navigating": "{{target}} konumuna gidiliyor..."
   },
   "flashcards": {
     "title": "Adım Adım Kılavuz",

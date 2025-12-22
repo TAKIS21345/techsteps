@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "安卓手机或平板",
         "smarttv": "智能电视",
-        "multipledevices": "多个设备"
+        "multipledevices": "多个设备",
+        "title": "Main Device"
       },
-      "tooltip": "Knowing your primary device helps us provide more relevant instructions."
+      "tooltip": "Knowing your primary device helps us provide more relevant instructions.",
+      "experienceLevel": "Experience Level",
+      "beginner": "Learning the Basics",
+      "beginnerDesc": "I usually need someone to show me how.",
+      "some": "Somewhat Comfortable",
+      "someDesc": "I can do the basics but get stuck sometimes.",
+      "comfortable": "Confident",
+      "comfortableDesc": "I enjoy exploring new features."
     },
     "step4": {
       "title": "您对技术的熟悉程度如何？",
@@ -947,7 +955,14 @@
       "someDesc": "我能做基本任务，但对新事物需要帮助",
       "comfortable": "熟悉",
       "comfortableDesc": "我能自己解决大多数问题，但有时需要指导",
-      "tooltip": "Be honest about your comfort level - this helps us explain things at the right pace."
+      "tooltip": "Be honest about your comfort level - this helps us explain things at the right pace.",
+      "textToSpeech": "Read messages aloud",
+      "voiceInput": "Use my voice to ask questions",
+      "textSize": "Text Size",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Very Large",
+      "highContrast": "High Contrast Colors"
     },
     "step5": {
       "title": "哪些技术主题最让您担心？",
@@ -966,7 +981,12 @@
         "onlineShopping": "网上购物",
         "healthApps": "健康应用与门户"
       },
-      "tooltip": "Select topics that worry you most so we can prioritize help in these areas."
+      "tooltip": "Select topics that worry you most so we can prioritize help in these areas.",
+      "privacy": {
+        "title": "Personalization",
+        "description": "Allow TechStep to remember your preferences and history to help you better.",
+        "note": "Your data is secure and never sold."
+      }
     },
     "step6": {
       "title": "您需要任何无障碍功能吗？",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Message AI assistant...",
-      "helper": "Press Enter to send, Shift+Enter for new line"
+      "helper": "Press Enter to send, Shift+Enter for new line",
+      "listening": "Listening... Click avatar again to stop"
     },
     "greeting": {
       "morning": "Good morning",
@@ -1366,8 +1387,12 @@
       "evening": "Good evening"
     },
     "error": {
-      "general": "I'm sorry, I'm having trouble right now. Please try again in a moment."
-    }
+      "general": "I'm sorry, I'm having trouble right now. Please try again in a moment.",
+      "understanding": "I'm sorry, I couldn't understand that.",
+      "connection": "I'm having trouble connecting right now. Please try again."
+    },
+    "welcomeMessage": "Hello {{name}}! I'm here to help.",
+    "navigating": "Navigating to {{target}}..."
   },
   "flashcards": {
     "title": "Step-by-Step Guide",

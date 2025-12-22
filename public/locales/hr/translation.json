@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android telefon ili tablet",
         "smarttv": "Pametni TV",
-        "multipledevices": "Više uređaja"
+        "multipledevices": "Više uređaja",
+        "title": "Glavni uređaj"
       },
-      "tooltip": "Poznavanje vašeg primarnog uređaja pomaže nam u pružanju relevantnijih uputa."
+      "tooltip": "Poznavanje vašeg primarnog uređaja pomaže nam u pružanju relevantnijih uputa.",
+      "experienceLevel": "Razina iskustva",
+      "beginner": "Učenje osnova",
+      "beginnerDesc": "Obično trebam nekoga da mi pokaže kako.",
+      "some": "Donekle ugodno",
+      "someDesc": "Mogu raditi osnove, ali ponekad zapnem.",
+      "comfortable": "Uvjeren",
+      "comfortableDesc": "Uživam istraživati ​​nove značajke."
     },
     "step4": {
       "title": "Koliko ste vješti s tehnologijom?",
@@ -947,7 +955,14 @@
       "someDesc": "Mogu obaviti osnovne zadatke, ali trebam pomoć za nove stvari",
       "comfortable": "Ugodno",
       "comfortableDesc": "Većinu stvari mogu sam, ali ponekad trebam vodstvo",
-      "tooltip": "Budite iskreni o svojoj razini udobnosti - to nam pomaže da stvari objasnimo pravim tempom."
+      "tooltip": "Budite iskreni o svojoj razini udobnosti - to nam pomaže da stvari objasnimo pravim tempom.",
+      "textToSpeech": "Čitajte poruke naglas",
+      "voiceInput": "Koristi moj glas za postavljanje pitanja",
+      "textSize": "Veličina teksta",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "velika",
+      "textSizeExtraLarge": "Vrlo velik",
+      "highContrast": "Boje visokog kontrasta"
     },
     "step5": {
       "title": "Koje Vas tehničke teme najviše brinu?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Online kupovina",
         "healthApps": "Zdravstvene aplikacije i portali"
       },
-      "tooltip": "Odaberite teme koje vas najviše brinu kako bismo mogli dati prioritet pomoći u tim područjima."
+      "tooltip": "Odaberite teme koje vas najviše brinu kako bismo mogli dati prioritet pomoći u tim područjima.",
+      "privacy": {
+        "title": "Personalizacija",
+        "description": "Dopustite TechStepu da zapamti vaše postavke i povijest kako bi vam bolje pomogao.",
+        "note": "Vaši podaci su sigurni i nikad se ne prodaju."
+      }
     },
     "step6": {
       "title": "Trebate li značajke pristupačnosti?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "AI pomoćnik za poruke...",
-      "helper": "Pritisnite Enter za slanje, Shift+Enter za novi red"
+      "helper": "Pritisnite Enter za slanje, Shift+Enter za novi red",
+      "listening": "Slušam... Ponovno kliknite avatar za prekid"
     },
     "greeting": {
       "morning": "Dobro jutro",
@@ -1366,8 +1387,12 @@
       "evening": "Dobra večer"
     },
     "error": {
-      "general": "Žao mi je, trenutno imam problema. Pokušajte ponovno za koji trenutak."
-    }
+      "general": "Žao mi je, trenutno imam problema. Pokušajte ponovno za koji trenutak.",
+      "understanding": "Žao mi je, nisam to mogao razumjeti.",
+      "connection": "Trenutno imam problema s povezivanjem. Molimo pokušajte ponovo."
+    },
+    "welcomeMessage": "Pozdrav {{name}}! Ovdje sam da pomognem.",
+    "navigating": "Navigacija do {{target}}..."
   },
   "flashcards": {
     "title": "Vodič korak po korak",

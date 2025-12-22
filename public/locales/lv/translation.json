@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android tālrunis vai planšetdators",
         "smarttv": "Viedais TV",
-        "multipledevices": "Vairākas ierīces"
+        "multipledevices": "Vairākas ierīces",
+        "title": "Galvenā ierīce"
       },
-      "tooltip": "Zinot savu galveno ierīci, mēs varam sniegt atbilstošākus norādījumus."
+      "tooltip": "Zinot savu galveno ierīci, mēs varam sniegt atbilstošākus norādījumus.",
+      "experienceLevel": "Pieredzes līmenis",
+      "beginner": "Pamatu apgūšana",
+      "beginnerDesc": "Man parasti ir vajadzīgs kāds, kas man parāda, kā.",
+      "some": "Nedaudz ērts",
+      "someDesc": "Es varu izdarīt pamatus, bet dažreiz iestrēgstu.",
+      "comfortable": "Pārliecināts",
+      "comfortableDesc": "Man patīk izpētīt jaunas funkcijas."
     },
     "step4": {
       "title": "Cik ērti jūs jūtaties ar tehnoloģijām?",
@@ -947,7 +955,14 @@
       "someDesc": "Varu veikt pamata uzdevumus, bet nepieciešama palīdzība ar jaunām lietām",
       "comfortable": "Ērti",
       "comfortableDesc": "Varu izdomāt lielāko daļu lietu, bet dažreiz nepieciešami norādījumi",
-      "tooltip": "Esiet godīgs par savu komforta līmeni — tas mums palīdz izskaidrot lietas pareizajā tempā."
+      "tooltip": "Esiet godīgs par savu komforta līmeni — tas mums palīdz izskaidrot lietas pareizajā tempā.",
+      "textToSpeech": "Lasīt ziņojumus skaļi",
+      "voiceInput": "Izmantojiet manu balsi, lai uzdotu jautājumus",
+      "textSize": "Teksta lielums",
+      "textSizeNormal": "Standarta",
+      "textSizeLarge": "Liels",
+      "textSizeExtraLarge": "Ļoti liels",
+      "highContrast": "Augsta kontrasta krāsas"
     },
     "step5": {
       "title": "Kuras tehnoloģiju tēmas jūs visvairāk uztrauc?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Iepirkšanās tiešsaistē",
         "healthApps": "Veselības lietotnes un portāli"
       },
-      "tooltip": "Atlasiet tēmas, kas jūs visvairāk uztrauc, lai mēs varētu noteikt palīdzības prioritāti šajās jomās."
+      "tooltip": "Atlasiet tēmas, kas jūs visvairāk uztrauc, lai mēs varētu noteikt palīdzības prioritāti šajās jomās.",
+      "privacy": {
+        "title": "Personalizēšana",
+        "description": "Ļaujiet pakalpojumam TechStep atcerēties jūsu preferences un vēsturi, lai palīdzētu jums labāk.",
+        "note": "Jūsu dati ir drošībā un nekad netiek pārdoti."
+      }
     },
     "step6": {
       "title": "Vai jums nepieciešamas kādas pieejamības funkcijas?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Ziņojums AI palīgam...",
-      "helper": "Nospiediet Enter, lai nosūtītu, vai Shift+Enter, lai skatītu jaunu rindiņu"
+      "helper": "Nospiediet Enter, lai nosūtītu, vai Shift+Enter, lai skatītu jaunu rindiņu",
+      "listening": "Notiek klausīšanās... Lai apturētu, vēlreiz noklikšķiniet uz iemiesojuma"
     },
     "greeting": {
       "morning": "Labrīt",
@@ -1366,8 +1387,12 @@
       "evening": "Labvakar"
     },
     "error": {
-      "general": "Atvainojiet, šobrīd man ir problēmas. Lūdzu, pēc brīža mēģiniet vēlreiz."
-    }
+      "general": "Atvainojiet, šobrīd man ir problēmas. Lūdzu, pēc brīža mēģiniet vēlreiz.",
+      "understanding": "Piedod, es to nevarēju saprast.",
+      "connection": "Man pašlaik ir problēmas ar savienojuma izveidi. Lūdzu, mēģiniet vēlreiz."
+    },
+    "welcomeMessage": "Sveiki, {{name}}! Esmu šeit, lai palīdzētu.",
+    "navigating": "Notiek navigācija uz {{target}}..."
   },
   "flashcards": {
     "title": "Soli pa solim ceļvedis",
