@@ -679,7 +679,8 @@
     },
     "input": {
       "placeholder": "Meddela AI-assistent...",
-      "helper": "Tryck på Enter för att skicka, Skift+Enter för ny rad"
+      "helper": "Tryck på Enter för att skicka, Skift+Enter för ny rad",
+      "listening": "Lyssnar... Klicka på avatar igen för att stoppa"
     },
     "greeting": {
       "morning": "God morgon",
@@ -687,8 +688,12 @@
       "evening": "God afton"
     },
     "error": {
-      "general": "Jag är ledsen, jag har problem just nu. Försök igen om ett ögonblick."
-    }
+      "general": "Jag är ledsen, jag har problem just nu. Försök igen om ett ögonblick.",
+      "understanding": "Jag är ledsen, jag kunde inte förstå det.",
+      "connection": "Jag har problem med att ansluta just nu. Försök igen."
+    },
+    "welcomeMessage": "Hej {{name}}! Jag är här för att hjälpa till.",
+    "navigating": "Navigerar till {{target}}..."
   },
   "flashcards": {
     "title": "Steg-för-steg-guide",
@@ -1084,19 +1089,79 @@
   },
   "onboarding": {
     "step1": {
-      "tooltip": "Berätta lite om dig själv så att vi kan anpassa din inlärningsupplevelse."
+      "tooltip": "Berätta lite om dig själv så att vi kan anpassa din inlärningsupplevelse.",
+      "title": "Välkomna! Låt oss börja",
+      "subtitle": "Berätta lite om dig själv för att anpassa TechStep för dig.",
+      "firstName": "Ditt förnamn",
+      "firstNamePlaceholder": "t.ex. Martha",
+      "age": "Din ålder"
     },
     "step2": {
-      "tooltip": "Välj de språk du är bekväm med för röstinmatning och textinteraktioner."
+      "tooltip": "Välj de språk du är bekväm med för röstinmatning och textinteraktioner.",
+      "title": "Språkinställningar",
+      "subtitle": "Välj de språk du är bekväm med.",
+      "languageSelection": "Föredragna språk",
+      "speechToText": "Röstinmatning",
+      "textInteractions": "Läsa & skriva",
+      "searchLanguages": "Sök efter språk...",
+      "selectAll": "Välj Alla",
+      "deselectAll": "Avmarkera alla",
+      "selected": "{{count}} har valts",
+      "languageRequired": "Språk krävs",
+      "languageRequiredDesc": "Välj minst ett språk.",
+      "noLanguagesFound": "Inga språk hittades för \"{{search}}\""
     },
     "step3": {
-      "tooltip": "Att känna till din primära enhet hjälper oss att ge mer relevanta instruktioner."
+      "tooltip": "Att känna till din primära enhet hjälper oss att ge mer relevanta instruktioner.",
+      "title": "Din tekniska miljö",
+      "subtitle": "Vad använder du och hur bekväm känner du dig?",
+      "experienceLevel": "Erfarenhetsnivå",
+      "beginner": "Att lära sig grunderna",
+      "beginnerDesc": "Jag behöver oftast någon som visar mig hur.",
+      "some": "Något bekvämt",
+      "someDesc": "Jag kan göra grunderna men fastnar ibland.",
+      "comfortable": "Säker",
+      "comfortableDesc": "Jag tycker om att utforska nya funktioner.",
+      "devices": {
+        "title": "Huvudenhet",
+        "windowscomputer": "Windows PC",
+        "macapplecomputer": "Mac (Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android",
+        "multipledevices": "Flera enheter"
+      }
     },
     "step4": {
-      "tooltip": "Var ärlig om din komfortnivå - det här hjälper oss att förklara saker i rätt takt."
+      "tooltip": "Var ärlig om din komfortnivå - det här hjälper oss att förklara saker i rätt takt.",
+      "title": "Tillgänglighet och användarvänlighet",
+      "subtitle": "Låt oss göra saker lättare att se och höra.",
+      "textToSpeech": "Läs meddelanden högt",
+      "voiceInput": "Använd min röst för att ställa frågor",
+      "textSize": "Textstorlek",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Stor",
+      "textSizeExtraLarge": "Mycket stor",
+      "highContrast": "Färger med hög kontrast"
     },
     "step5": {
-      "tooltip": "Välj ämnen som oroar dig mest så att vi kan prioritera hjälp inom dessa områden."
+      "tooltip": "Välj ämnen som oroar dig mest så att vi kan prioritera hjälp inom dessa områden.",
+      "title": "Intressen och integritet",
+      "subtitle": "Sista steget! Vad vill du lära dig först?",
+      "concerns": {
+        "onlineSafety": "Säkerhet online",
+        "passwordManagement": "Lösenord",
+        "videoCalling": "Videosamtal",
+        "onlineBanking": "Bankverksamhet",
+        "emailMessaging": "E-post",
+        "wifiInternet": "Wi-Fi & Internet",
+        "deviceSettings": "Inställningar"
+      },
+      "privacy": {
+        "title": "Personalisering",
+        "description": "Tillåt TechStep att komma ihåg dina preferenser och historik för att hjälpa dig bättre.",
+        "note": "Dina data är säkra och säljs aldrig."
+      }
     },
     "step6": {
       "tooltip": "Berätta för oss om alla tillgänglighetsfunktioner du behöver för en bekväm upplevelse."

@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Telefon sau tabletă Android",
         "smarttv": "Smart TV",
-        "multipledevices": "Mai multe dispozitive"
+        "multipledevices": "Mai multe dispozitive",
+        "title": "Dispozitivul principal"
       },
-      "tooltip": "Cunoașterea dispozitivului dvs. principal ne ajută să oferim instrucțiuni mai relevante."
+      "tooltip": "Cunoașterea dispozitivului dvs. principal ne ajută să oferim instrucțiuni mai relevante.",
+      "experienceLevel": "Nivelul de experiență",
+      "beginner": "Învățarea elementelor de bază",
+      "beginnerDesc": "De obicei am nevoie de cineva care să-mi arate cum.",
+      "some": "Oarecum Confortabil",
+      "someDesc": "Pot să fac elementele de bază, dar uneori mă blochez.",
+      "comfortable": "Încrezător",
+      "comfortableDesc": "Îmi place să explorez noi funcții."
     },
     "step4": {
       "title": "Cât de confortabil vă simțiți cu tehnologia?",
@@ -52,7 +60,14 @@
       "someDesc": "Pot face sarcini de bază, dar am nevoie de ajutor cu lucruri noi",
       "comfortable": "Confortabil",
       "comfortableDesc": "Mă descurc cu majoritatea lucrurilor, dar uneori am nevoie de îndrumare",
-      "tooltip": "Fii sincer cu privire la nivelul tău de confort - asta ne ajută să explicăm lucrurile în ritmul potrivit."
+      "tooltip": "Fii sincer cu privire la nivelul tău de confort - asta ne ajută să explicăm lucrurile în ritmul potrivit.",
+      "textToSpeech": "Citiți mesajele cu voce tare",
+      "voiceInput": "Folosește-mi vocea pentru a pune întrebări",
+      "textSize": "Dimensiunea textului",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Mare",
+      "textSizeExtraLarge": "Foarte mare",
+      "highContrast": "Culori cu contrast ridicat"
     },
     "step5": {
       "title": "Ce subiecte tehnologice vă îngrijorează cel mai mult?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Cumpărături online",
         "healthApps": "Aplicații și portaluri de sănătate"
       },
-      "tooltip": "Selectați subiectele care vă îngrijorează cel mai mult, astfel încât să putem acorda prioritate ajutorului în aceste domenii."
+      "tooltip": "Selectați subiectele care vă îngrijorează cel mai mult, astfel încât să putem acorda prioritate ajutorului în aceste domenii.",
+      "privacy": {
+        "title": "Personalizare",
+        "description": "Permiteți lui TechStep să vă amintiți preferințele și istoricul pentru a vă ajuta mai bine.",
+        "note": "Datele dvs. sunt securizate și nu sunt vândute niciodată."
+      }
     },
     "step6": {
       "title": "Aveți nevoie de funcții de accesibilitate?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Mesaj asistent AI...",
-      "helper": "Apăsați Enter pentru a trimite, Shift+Enter pentru linia nouă"
+      "helper": "Apăsați Enter pentru a trimite, Shift+Enter pentru linia nouă",
+      "listening": "Ascult... Faceți clic din nou pe avatar pentru a opri"
     },
     "greeting": {
       "morning": "Bună dimineaţa",
@@ -1367,8 +1388,12 @@
       "evening": "Bună seara"
     },
     "error": {
-      "general": "Îmi pare rău, am probleme acum. Vă rugăm să încercați din nou peste un moment."
-    }
+      "general": "Îmi pare rău, am probleme acum. Vă rugăm să încercați din nou peste un moment.",
+      "understanding": "Îmi pare rău, nu am putut înțelege asta.",
+      "connection": "Am probleme cu conectarea acum. Vă rugăm să încercați din nou."
+    },
+    "welcomeMessage": "Bună, {{name}}! Sunt aici să ajut.",
+    "navigating": "Se navighează la {{target}}..."
   },
   "flashcards": {
     "title": "Ghid pas cu pas",

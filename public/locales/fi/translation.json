@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android-puhelin tai -tabletti",
         "smarttv": "Älytelevisio",
-        "multipledevices": "Useita laitteita"
+        "multipledevices": "Useita laitteita",
+        "title": "Päälaite"
       },
-      "tooltip": "Ensisijaisen laitteesi tunteminen auttaa meitä tarjoamaan osuvampia ohjeita."
+      "tooltip": "Ensisijaisen laitteesi tunteminen auttaa meitä tarjoamaan osuvampia ohjeita.",
+      "experienceLevel": "Kokemustaso",
+      "beginner": "Perusasioiden oppiminen",
+      "beginnerDesc": "Tarvitsen yleensä jonkun, joka näyttää minulle kuinka.",
+      "some": "Melko mukava",
+      "someDesc": "Osaan tehdä perusasiat, mutta joskus jään jumiin.",
+      "comfortable": "Itsevarma",
+      "comfortableDesc": "Nautin uusien ominaisuuksien tutkimisesta."
     },
     "step4": {
       "title": "Kuinka mukavaksi koet teknologian käytön?",
@@ -52,7 +60,14 @@
       "someDesc": "Osaan tehdä perustehtäviä, mutta tarvitsen apua uusissa asioissa",
       "comfortable": "Kokenut",
       "comfortableDesc": "Saan selvää useimmista asioista, mutta tarvitsen joskus ohjausta",
-      "tooltip": "Ole rehellinen mukavuustasosi suhteen – tämä auttaa meitä selittämään asiat oikeaan tahtiin."
+      "tooltip": "Ole rehellinen mukavuustasosi suhteen – tämä auttaa meitä selittämään asiat oikeaan tahtiin.",
+      "textToSpeech": "Lue viestit ääneen",
+      "voiceInput": "Käytä ääntäni kysyäksesi kysymyksiä",
+      "textSize": "Tekstin koko",
+      "textSizeNormal": "Vakio",
+      "textSizeLarge": "Suuri",
+      "textSizeExtraLarge": "Erittäin suuri",
+      "highContrast": "Korkean kontrastin värit"
     },
     "step5": {
       "title": "Mitkä teknologia-aiheet huolestuttavat sinua eniten?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Verkko-ostokset",
         "healthApps": "Terveyssovellukset ja -portaalit"
       },
-      "tooltip": "Valitse sinua eniten huolestuttavat aiheet, jotta voimme priorisoida apua näillä alueilla."
+      "tooltip": "Valitse sinua eniten huolestuttavat aiheet, jotta voimme priorisoida apua näillä alueilla.",
+      "privacy": {
+        "title": "Personointi",
+        "description": "Anna TechStepin muistaa valintasi ja historiasi auttaaksesi sinua paremmin.",
+        "note": "Tietosi ovat turvassa, eikä niitä koskaan myydä."
+      }
     },
     "step6": {
       "title": "Tarvitsetko saavutettavuusominaisuuksia?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Viesti AI-avustaja...",
-      "helper": "Paina Enter lähettääksesi ja Shift+Enter uuden rivin luomiseksi"
+      "helper": "Paina Enter lähettääksesi ja Shift+Enter uuden rivin luomiseksi",
+      "listening": "Kuuntelee... Lopeta napsauttamalla avataria uudelleen"
     },
     "greeting": {
       "morning": "Hyvää huomenta",
@@ -1367,8 +1388,12 @@
       "evening": "Hyvää iltaa"
     },
     "error": {
-      "general": "Olen pahoillani, minulla on nyt ongelmia. Yritä hetken kuluttua uudelleen."
-    }
+      "general": "Olen pahoillani, minulla on nyt ongelmia. Yritä hetken kuluttua uudelleen.",
+      "understanding": "Anteeksi, en voinut ymmärtää sitä.",
+      "connection": "Minulla on nyt ongelmia yhteyden muodostamisessa. Yritä uudelleen."
+    },
+    "welcomeMessage": "Hei {{name}}! Olen täällä auttamassa.",
+    "navigating": "Navigoidaan kohteeseen {{target}}..."
   },
   "flashcards": {
     "title": "Vaiheittainen opas",

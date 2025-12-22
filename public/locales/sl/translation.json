@@ -2,19 +2,79 @@
   "welcome": "Dobrodošli!",
   "onboarding": {
     "step1": {
-      "tooltip": "Povejte nam nekaj o sebi, da bomo lahko prilagodili vašo učno izkušnjo."
+      "tooltip": "Povejte nam nekaj o sebi, da bomo lahko prilagodili vašo učno izkušnjo.",
+      "title": "Dobrodošli! Pa začnimo",
+      "subtitle": "Povejte nam nekaj o sebi, da prilagodimo TechStep za vas.",
+      "firstName": "Vaše ime",
+      "firstNamePlaceholder": "npr. Marta",
+      "age": "Vaša starost"
     },
     "step2": {
-      "tooltip": "Izberite jezike, ki vam ustrezajo za glasovni vnos in interakcijo z besedilom."
+      "tooltip": "Izberite jezike, ki vam ustrezajo za glasovni vnos in interakcijo z besedilom.",
+      "title": "Jezikovne nastavitve",
+      "subtitle": "Izberite jezike, ki vam ustrezajo.",
+      "languageSelection": "Prednostni jeziki",
+      "speechToText": "Glasovni vnos",
+      "textInteractions": "Branje in pisanje",
+      "searchLanguages": "Iskanje jezikov ...",
+      "selectAll": "Izberite Vse",
+      "deselectAll": "Prekliči izbiro vseh",
+      "selected": "{{count}} izbrano",
+      "languageRequired": "Zahtevan jezik",
+      "languageRequiredDesc": "Izberite vsaj en jezik.",
+      "noLanguagesFound": "Ni jezikov za \"{{search}}\""
     },
     "step3": {
-      "tooltip": "Poznavanje vaše primarne naprave nam pomaga zagotoviti ustreznejša navodila."
+      "tooltip": "Poznavanje vaše primarne naprave nam pomaga zagotoviti ustreznejša navodila.",
+      "title": "Vaše tehnično okolje",
+      "subtitle": "Kaj uporabljate in kako udobno se počutite?",
+      "experienceLevel": "Raven izkušenj",
+      "beginner": "Učenje osnov",
+      "beginnerDesc": "Ponavadi potrebujem nekoga, da mi pokaže, kako.",
+      "some": "Nekoliko udobno",
+      "someDesc": "Lahko naredim osnove, vendar se včasih zataknem.",
+      "comfortable": "Samozavesten",
+      "comfortableDesc": "Uživam v raziskovanju novih funkcij.",
+      "devices": {
+        "title": "Glavna naprava",
+        "windowscomputer": "Windows PC",
+        "macapplecomputer": "Mac (Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android",
+        "multipledevices": "Več naprav"
+      }
     },
     "step4": {
-      "tooltip": "Bodite iskreni glede ravni udobja – to nam pomaga razložiti stvari v pravem tempu."
+      "tooltip": "Bodite iskreni glede ravni udobja – to nam pomaga razložiti stvari v pravem tempu.",
+      "title": "Dostopnost in enostavna uporaba",
+      "subtitle": "Naj bodo stvari lažje videti in slišati.",
+      "textToSpeech": "Preberite sporočila na glas",
+      "voiceInput": "Uporabi moj glas za postavljanje vprašanj",
+      "textSize": "Velikost besedila",
+      "textSizeNormal": "Standardno",
+      "textSizeLarge": "Velik",
+      "textSizeExtraLarge": "Zelo velik",
+      "highContrast": "Visoko kontrastne barve"
     },
     "step5": {
-      "tooltip": "Izberite teme, ki vas najbolj skrbijo, da bomo lahko dali prednost pomoči na teh področjih."
+      "tooltip": "Izberite teme, ki vas najbolj skrbijo, da bomo lahko dali prednost pomoči na teh področjih.",
+      "title": "Zanimanja in zasebnost",
+      "subtitle": "Zadnji korak! Kaj se želiš najprej naučiti?",
+      "concerns": {
+        "onlineSafety": "Varnost na spletu",
+        "passwordManagement": "Gesla",
+        "videoCalling": "Video klicanje",
+        "onlineBanking": "Bančništvo",
+        "emailMessaging": "E-pošta",
+        "wifiInternet": "Wi-Fi in internet",
+        "deviceSettings": "nastavitve"
+      },
+      "privacy": {
+        "title": "Personalizacija",
+        "description": "Dovolite, da si TechStep zapomni vaše nastavitve in zgodovino, da vam bo bolje pomagal.",
+        "note": "Vaši podatki so varni in nikoli prodani."
+      }
     },
     "step6": {
       "tooltip": "Sporočite nam vse funkcije dostopnosti, ki jih potrebujete za udobno izkušnjo."
@@ -1000,7 +1060,8 @@
     },
     "input": {
       "placeholder": "Pomočnik za sporočila AI ...",
-      "helper": "Pritisnite Enter za pošiljanje, Shift+Enter za novo vrstico"
+      "helper": "Pritisnite Enter za pošiljanje, Shift+Enter za novo vrstico",
+      "listening": "Poslušanje ... Znova kliknite avatar za konec"
     },
     "greeting": {
       "morning": "dobro jutro",
@@ -1008,8 +1069,12 @@
       "evening": "dober večer"
     },
     "error": {
-      "general": "Oprostite, trenutno imam težave. Poskusite znova čez trenutek."
-    }
+      "general": "Oprostite, trenutno imam težave. Poskusite znova čez trenutek.",
+      "understanding": "Oprosti, tega nisem razumel.",
+      "connection": "Trenutno imam težave pri povezovanju. prosim poskusite ponovno"
+    },
+    "welcomeMessage": "Pozdravljeni {{name}}! Tukaj sem, da pomagam.",
+    "navigating": "Navigacija do {{target}} ..."
   },
   "flashcards": {
     "title": "Vodnik po korakih",

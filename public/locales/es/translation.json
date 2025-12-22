@@ -1089,19 +1089,79 @@
   },
   "onboarding": {
     "step1": {
-      "tooltip": "Cuéntanos un poco sobre ti para que podamos personalizar tu experiencia de aprendizaje."
+      "tooltip": "Cuéntanos un poco sobre ti para que podamos personalizar tu experiencia de aprendizaje.",
+      "title": "¡Bienvenido! Empecemos",
+      "subtitle": "Cuéntanos un poco sobre ti para personalizar TechStep para ti.",
+      "firstName": "Tu nombre",
+      "firstNamePlaceholder": "por ejemplo, marta",
+      "age": "Su edad"
     },
     "step2": {
-      "tooltip": "Elija los idiomas con los que se sienta cómodo para la entrada de voz y las interacciones de texto."
+      "tooltip": "Elija los idiomas con los que se sienta cómodo para la entrada de voz y las interacciones de texto.",
+      "title": "Configuración de idioma",
+      "subtitle": "Elija los idiomas con los que se sienta cómodo.",
+      "languageSelection": "Idiomas preferidos",
+      "speechToText": "Entrada de voz",
+      "textInteractions": "Lectura y escritura",
+      "searchLanguages": "Buscar idiomas...",
+      "selectAll": "Seleccionar todo",
+      "deselectAll": "Deseleccionar todo",
+      "selected": "{{count}} seleccionado",
+      "languageRequired": "Idioma requerido",
+      "languageRequiredDesc": "Por favor seleccione al menos un idioma.",
+      "noLanguagesFound": "No se encontraron idiomas para \"{{search}}\""
     },
     "step3": {
-      "tooltip": "Conocer su dispositivo principal nos ayuda a brindarle instrucciones más relevantes."
+      "tooltip": "Conocer su dispositivo principal nos ayuda a brindarle instrucciones más relevantes.",
+      "title": "Su entorno tecnológico",
+      "subtitle": "¿Qué usas y qué tan cómodo te sientes?",
+      "experienceLevel": "Nivel de experiencia",
+      "beginner": "Aprendiendo los conceptos básicos",
+      "beginnerDesc": "Normalmente necesito que alguien me muestre cómo hacerlo.",
+      "some": "Algo cómodo",
+      "someDesc": "Puedo hacer lo básico pero a veces me quedo atascado.",
+      "comfortable": "Segura",
+      "comfortableDesc": "Disfruto explorando nuevas funciones.",
+      "devices": {
+        "title": "Dispositivo principal",
+        "windowscomputer": "PC con Windows",
+        "macapplecomputer": "Mac (manzana)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Androide",
+        "multipledevices": "Múltiples dispositivos"
+      }
     },
     "step4": {
-      "tooltip": "Sea honesto acerca de su nivel de comodidad: esto nos ayuda a explicarle las cosas al ritmo correcto."
+      "tooltip": "Sea honesto acerca de su nivel de comodidad: esto nos ayuda a explicarle las cosas al ritmo correcto.",
+      "title": "Accesibilidad y facilidad de uso",
+      "subtitle": "Hagamos que las cosas sean más fáciles de ver y oír.",
+      "textToSpeech": "Leer mensajes en voz alta",
+      "voiceInput": "Usa mi voz para hacer preguntas",
+      "textSize": "Tamaño del texto",
+      "textSizeNormal": "Estándar",
+      "textSizeLarge": "Grande",
+      "textSizeExtraLarge": "muy grande",
+      "highContrast": "Colores de alto contraste"
     },
     "step5": {
-      "tooltip": "Seleccione los temas que más le preocupan para que podamos priorizar la ayuda en estas áreas."
+      "tooltip": "Seleccione los temas que más le preocupan para que podamos priorizar la ayuda en estas áreas.",
+      "title": "Intereses y privacidad",
+      "subtitle": "¡Último paso! ¿Qué quieres aprender primero?",
+      "concerns": {
+        "onlineSafety": "Seguridad en línea",
+        "passwordManagement": "Contraseñas",
+        "videoCalling": "Videollamada",
+        "onlineBanking": "Bancaria",
+        "emailMessaging": "Correo electrónico",
+        "wifiInternet": "Wi-Fi e Internet",
+        "deviceSettings": "Ajustes"
+      },
+      "privacy": {
+        "title": "Personalización",
+        "description": "Permita que TechStep recuerde sus preferencias e historial para ayudarlo mejor.",
+        "note": "Sus datos están seguros y nunca se venden."
+      }
     },
     "step6": {
       "tooltip": "Háganos saber acerca de las funciones de accesibilidad que necesita para una experiencia cómoda."

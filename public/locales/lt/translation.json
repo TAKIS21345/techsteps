@@ -39,9 +39,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android telefonas ar planšetė",
         "smarttv": "Išmanusis televizorius",
-        "multipledevices": "Keli įrenginiai"
+        "multipledevices": "Keli įrenginiai",
+        "title": "Pagrindinis įrenginys"
       },
-      "tooltip": "Žinodami pagrindinį įrenginį galime pateikti tinkamesnes instrukcijas."
+      "tooltip": "Žinodami pagrindinį įrenginį galime pateikti tinkamesnes instrukcijas.",
+      "experienceLevel": "Patirties lygis",
+      "beginner": "Pagrindinių dalykų mokymasis",
+      "beginnerDesc": "Paprastai man reikia, kad kas nors parodytų, kaip tai padaryti.",
+      "some": "Šiek tiek patogus",
+      "someDesc": "Galiu atlikti pagrindinius dalykus, bet kartais užstringu.",
+      "comfortable": "Pasitikintys",
+      "comfortableDesc": "Man patinka tyrinėti naujas funkcijas."
     },
     "step4": {
       "title": "Kaip patogiai jaučiatės su technologijomis?",
@@ -52,7 +60,14 @@
       "someDesc": "Galiu atlikti pagrindines užduotis, bet reikia pagalbos su naujais dalykais",
       "comfortable": "Patogiai",
       "comfortableDesc": "Daugumą dalykų galiu išsiaiškinti pats, bet kartais reikia patarimo",
-      "tooltip": "Būkite sąžiningi dėl savo komforto lygio – tai padeda mums paaiškinti dalykus tinkamu tempu."
+      "tooltip": "Būkite sąžiningi dėl savo komforto lygio – tai padeda mums paaiškinti dalykus tinkamu tempu.",
+      "textToSpeech": "Skaitykite pranešimus garsiai",
+      "voiceInput": "Naudokite mano balsą klausimams užduoti",
+      "textSize": "Teksto dydis",
+      "textSizeNormal": "Standartinis",
+      "textSizeLarge": "Didelis",
+      "textSizeExtraLarge": "Labai didelis",
+      "highContrast": "Didelio kontrasto spalvos"
     },
     "step5": {
       "title": "Kokios technologijų temos Jums kelia daugiausiai nerimo?",
@@ -71,7 +86,12 @@
         "onlineShopping": "Apsipirkimas internetu",
         "healthApps": "Sveikatos programėlės ir portalai"
       },
-      "tooltip": "Pasirinkite temas, kurios jums rūpi labiausiai, kad galėtume teikti pirmenybę pagalbai šiose srityse."
+      "tooltip": "Pasirinkite temas, kurios jums rūpi labiausiai, kad galėtume teikti pirmenybę pagalbai šiose srityse.",
+      "privacy": {
+        "title": "Personalizavimas",
+        "description": "Leiskite „TechStep“ atsiminti jūsų nuostatas ir istoriją, kad padėtų jums geriau.",
+        "note": "Jūsų duomenys yra saugūs ir niekada neparduodami."
+      }
     },
     "step6": {
       "title": "Ar Jums reikalingos prieinamumo funkcijos?",
@@ -1359,7 +1379,8 @@
     },
     "input": {
       "placeholder": "Pranešimas AI asistentui...",
-      "helper": "Norėdami išsiųsti, paspauskite Enter, o naujai eilutei – Shift+Enter"
+      "helper": "Norėdami išsiųsti, paspauskite Enter, o naujai eilutei – Shift+Enter",
+      "listening": "Klausoma... Norėdami sustabdyti, dar kartą spustelėkite avatarą"
     },
     "greeting": {
       "morning": "Labas rytas",
@@ -1367,8 +1388,12 @@
       "evening": "Labas vakaras"
     },
     "error": {
-      "general": "Atsiprašau, dabar turiu problemų. Po akimirkos bandykite dar kartą."
-    }
+      "general": "Atsiprašau, dabar turiu problemų. Po akimirkos bandykite dar kartą.",
+      "understanding": "Atsiprašau, aš negalėjau to suprasti.",
+      "connection": "Šiuo metu man kyla problemų prisijungiant. Bandykite dar kartą."
+    },
+    "welcomeMessage": "Sveiki, {{name}}! Aš čia, kad padėčiau.",
+    "navigating": "Naršoma į {{target}}..."
   },
   "flashcards": {
     "title": "Žingsnis po žingsnio vadovas",

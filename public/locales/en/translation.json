@@ -1640,5 +1640,82 @@
     "questionProgress": "Question {{current}} of {{total}}",
     "skipAssessment": "Skip Assessment",
     "chooseBestOption": "Choose the option that best describes you"
+  },
+  "onboarding": {
+    "back": "Back",
+    "next": "Next",
+    "settingUp": "Setting up...",
+    "completeSetup": "Complete Setup",
+    "errorSaving": "Sorry, there was an error saving your preferences. Please try again.",
+    "step1": {
+      "title": "Welcome! Let's get started",
+      "subtitle": "Tell us a bit about yourself to personalize TechStep for you.",
+      "firstName": "Your First Name",
+      "firstNamePlaceholder": "e.g., Martha",
+      "age": "Your Age"
+    },
+    "step2": {
+      "title": "Language Settings",
+      "subtitle": "Choose the languages you're comfortable with.",
+      "languageSelection": "Preferred Languages",
+      "speechToText": "Voice input",
+      "textInteractions": "Reading & writing",
+      "searchLanguages": "Search languages...",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "selected": "{{count}} selected",
+      "languageRequired": "Language Required",
+      "languageRequiredDesc": "Please select at least one language.",
+      "noLanguagesFound": "No languages found for \"{{search}}\""
+    },
+    "step3": {
+      "title": "Your Tech Environment",
+      "subtitle": "What do you use and how comfortable do you feel?",
+      "experienceLevel": "Experience Level",
+      "beginner": "Learning the Basics",
+      "beginnerDesc": "I usually need someone to show me how.",
+      "some": "Somewhat Comfortable",
+      "someDesc": "I can do the basics but get stuck sometimes.",
+      "comfortable": "Confident",
+      "comfortableDesc": "I enjoy exploring new features.",
+      "devices": {
+        "title": "Main Device",
+        "windowscomputer": "Windows PC",
+        "macapplecomputer": "Mac (Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android",
+        "multipledevices": "Multiple Devices"
+      }
+    },
+    "step4": {
+      "title": "Accessibility & Ease of Use",
+      "subtitle": "Let's make things easier to see and hear.",
+      "textToSpeech": "Read messages aloud",
+      "voiceInput": "Use my voice to ask questions",
+      "textSize": "Text Size",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Large",
+      "textSizeExtraLarge": "Very Large",
+      "highContrast": "High Contrast Colors"
+    },
+    "step5": {
+      "title": "Interests & Privacy",
+      "subtitle": "Final step! What do you want to learn first?",
+      "concerns": {
+        "onlineSafety": "Safety Online",
+        "passwordManagement": "Passwords",
+        "videoCalling": "Video Calling",
+        "onlineBanking": "Banking",
+        "emailMessaging": "Email",
+        "wifiInternet": "Wi-Fi & Internet",
+        "deviceSettings": "Settings"
+      },
+      "privacy": {
+        "title": "Personalization",
+        "description": "Allow TechStep to remember your preferences and history to help you better.",
+        "note": "Your data is secure and never sold."
+      }
+    }
   }
 }

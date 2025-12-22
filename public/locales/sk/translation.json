@@ -2,19 +2,79 @@
   "welcome": "Vitajte!",
   "onboarding": {
     "step1": {
-      "tooltip": "Povedzte nám niečo o sebe, aby sme vám mohli prispôsobiť vaše učenie."
+      "tooltip": "Povedzte nám niečo o sebe, aby sme vám mohli prispôsobiť vaše učenie.",
+      "title": "Vitajte! Začnime",
+      "subtitle": "Povedzte nám niečo o sebe, aby sme vám mohli prispôsobiť TechStep.",
+      "firstName": "Vaše krstné meno",
+      "firstNamePlaceholder": "napr.Martha",
+      "age": "Váš vek"
     },
     "step2": {
-      "tooltip": "Vyberte si jazyky, ktoré vám vyhovuje hlasový vstup a textové interakcie."
+      "tooltip": "Vyberte si jazyky, ktoré vám vyhovuje hlasový vstup a textové interakcie.",
+      "title": "Nastavenia jazyka",
+      "subtitle": "Vyberte si jazyky, ktoré vám budú vyhovovať.",
+      "languageSelection": "Preferované jazyky",
+      "speechToText": "Hlasový vstup",
+      "textInteractions": "Čítanie a písanie",
+      "searchLanguages": "Hľadať jazyky...",
+      "selectAll": "Vyberte možnosť Všetky",
+      "deselectAll": "Zrušte výber všetkých",
+      "selected": "Vybraté: {{count}}",
+      "languageRequired": "Vyžaduje sa jazyk",
+      "languageRequiredDesc": "Vyberte aspoň jeden jazyk.",
+      "noLanguagesFound": "Pre výraz „{{search}}“ sa nenašli žiadne jazyky"
     },
     "step3": {
-      "tooltip": "Poznanie vášho primárneho zariadenia nám pomáha poskytovať relevantnejšie pokyny."
+      "tooltip": "Poznanie vášho primárneho zariadenia nám pomáha poskytovať relevantnejšie pokyny.",
+      "title": "Vaše technické prostredie",
+      "subtitle": "Čo používate a ako pohodlne sa cítite?",
+      "experienceLevel": "Úroveň skúseností",
+      "beginner": "Učenie sa základov",
+      "beginnerDesc": "Zvyčajne potrebujem niekoho, kto mi ukáže ako.",
+      "some": "Trochu pohodlné",
+      "someDesc": "Dokážem urobiť základy, ale niekedy sa zaseknem.",
+      "comfortable": "Sebavedomý",
+      "comfortableDesc": "Baví ma objavovať nové funkcie.",
+      "devices": {
+        "title": "Hlavné zariadenie",
+        "windowscomputer": "Windows PC",
+        "macapplecomputer": "Mac (Apple)",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "Android",
+        "multipledevices": "Viaceré zariadenia"
+      }
     },
     "step4": {
-      "tooltip": "Buďte úprimní, pokiaľ ide o úroveň vášho pohodlia – pomáha nám to vysvetliť veci správnym tempom."
+      "tooltip": "Buďte úprimní, pokiaľ ide o úroveň vášho pohodlia – pomáha nám to vysvetliť veci správnym tempom.",
+      "title": "Dostupnosť a jednoduché použitie",
+      "subtitle": "Urobme veci tak, aby ich bolo vidieť a počuť.",
+      "textToSpeech": "Čítajte správy nahlas",
+      "voiceInput": "Použite môj hlas na kladenie otázok",
+      "textSize": "Veľkosť textu",
+      "textSizeNormal": "Štandardné",
+      "textSizeLarge": "Veľký",
+      "textSizeExtraLarge": "Veľmi veľké",
+      "highContrast": "Vysoko kontrastné farby"
     },
     "step5": {
-      "tooltip": "Vyberte témy, ktoré vás najviac znepokojujú, aby sme mohli uprednostniť pomoc v týchto oblastiach."
+      "tooltip": "Vyberte témy, ktoré vás najviac znepokojujú, aby sme mohli uprednostniť pomoc v týchto oblastiach.",
+      "title": "Záujmy a súkromie",
+      "subtitle": "Posledný krok! Čo sa chceš naučiť ako prvé?",
+      "concerns": {
+        "onlineSafety": "Bezpečnosť online",
+        "passwordManagement": "Heslá",
+        "videoCalling": "Videohovory",
+        "onlineBanking": "bankovníctvo",
+        "emailMessaging": "Email",
+        "wifiInternet": "Wi-Fi a internet",
+        "deviceSettings": "Nastavenia"
+      },
+      "privacy": {
+        "title": "Personalizácia",
+        "description": "Umožnite spoločnosti TechStep zapamätať si vaše preferencie a históriu, aby vám pomohla lepšie.",
+        "note": "Vaše údaje sú v bezpečí a nikdy sa nepredávajú."
+      }
     },
     "step6": {
       "tooltip": "Dajte nám vedieť o akýchkoľvek funkciách dostupnosti, ktoré potrebujete na pohodlné používanie."
@@ -1000,7 +1060,8 @@
     },
     "input": {
       "placeholder": "Asistent AI správ...",
-      "helper": "Stlačte Enter na odoslanie, Shift+Enter na nový riadok"
+      "helper": "Stlačte Enter na odoslanie, Shift+Enter na nový riadok",
+      "listening": "Počúvam... Opätovným kliknutím na avatar zastavíte"
     },
     "greeting": {
       "morning": "Dobré ráno",
@@ -1008,8 +1069,12 @@
       "evening": "Dobrý večer"
     },
     "error": {
-      "general": "Prepáčte, práve teraz mám problémy. Skúste to znova o chvíľu."
-    }
+      "general": "Prepáčte, práve teraz mám problémy. Skúste to znova o chvíľu.",
+      "understanding": "Prepáč, nedokázal som to pochopiť.",
+      "connection": "Momentálne mám problém s pripojením. Skúste to znova."
+    },
+    "welcomeMessage": "Dobrý deň, {{name}}! Som tu, aby som vám pomohol.",
+    "navigating": "Navigácia na {{target}}..."
   },
   "flashcards": {
     "title": "Sprievodca krok za krokom",

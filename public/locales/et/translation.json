@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android-telefon või -tahvelarvuti",
         "smarttv": "Nutiteler",
-        "multipledevices": "Mitu seadet"
+        "multipledevices": "Mitu seadet",
+        "title": "Põhiseade"
       },
-      "tooltip": "Peamise seadme tundmine aitab meil pakkuda asjakohasemaid juhiseid."
+      "tooltip": "Peamise seadme tundmine aitab meil pakkuda asjakohasemaid juhiseid.",
+      "experienceLevel": "Kogemuste tase",
+      "beginner": "Põhitõdede õppimine",
+      "beginnerDesc": "Tavaliselt on mul vaja kedagi, kes mulle näitaks, kuidas.",
+      "some": "Mõnevõrra mugav",
+      "someDesc": "Ma saan teha põhitõdesid, kuid mõnikord jään jänni.",
+      "comfortable": "Enesekindel",
+      "comfortableDesc": "Naudin uute funktsioonide avastamist."
     },
     "step4": {
       "title": "Kui mugavalt sa end tehnoloogiaga tunned?",
@@ -947,7 +955,14 @@
       "someDesc": "Saan hakkama põhiülesannetega, kuid vajan abi uute asjadega",
       "comfortable": "Mugav",
       "comfortableDesc": "Saan enamiku asjadega ise hakkama, kuid vajan mõnikord juhendamist",
-      "tooltip": "Olge oma mugavuse taseme osas aus – see aitab meil asju õiges tempos selgitada."
+      "tooltip": "Olge oma mugavuse taseme osas aus – see aitab meil asju õiges tempos selgitada.",
+      "textToSpeech": "Lugege sõnumeid valjusti",
+      "voiceInput": "Kasutage küsimuste esitamiseks minu häält",
+      "textSize": "Teksti suurus",
+      "textSizeNormal": "Standardne",
+      "textSizeLarge": "Suur",
+      "textSizeExtraLarge": "Väga suur",
+      "highContrast": "Suure kontrastsusega värvid"
     },
     "step5": {
       "title": "Millised tehnoloogiateemad teevad sulle kõige rohkem muret?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Veebipoodlemine",
         "healthApps": "Terviserakendused ja -portaalid"
       },
-      "tooltip": "Valige teemad, mis teid kõige rohkem murettekitavad, et saaksime nendes valdkondades abi eelistada."
+      "tooltip": "Valige teemad, mis teid kõige rohkem murettekitavad, et saaksime nendes valdkondades abi eelistada.",
+      "privacy": {
+        "title": "Isikupärastamine",
+        "description": "Lubage TechStepil teie eelistused ja ajalugu meeles pidada, et teid paremini aidata.",
+        "note": "Teie andmed on turvalised ja neid ei müüda kunagi."
+      }
     },
     "step6": {
       "title": "Kas vajad ligipääsetavusfunktsioone?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Sõnum AI assistendile...",
-      "helper": "Saatmiseks vajutage sisestusklahvi, uue rea jaoks tõstuklahvi + sisestusklahvi"
+      "helper": "Saatmiseks vajutage sisestusklahvi, uue rea jaoks tõstuklahvi + sisestusklahvi",
+      "listening": "Kuulan... Peatamiseks klõpsake uuesti avataril"
     },
     "greeting": {
       "morning": "Tere hommikust",
@@ -1366,8 +1387,12 @@
       "evening": "Tere õhtust"
     },
     "error": {
-      "general": "Vabandust, mul on praegu probleeme. Proovige hetke pärast uuesti."
-    }
+      "general": "Vabandust, mul on praegu probleeme. Proovige hetke pärast uuesti.",
+      "understanding": "Vabandust, ma ei saanud sellest aru.",
+      "connection": "Mul on praegu probleeme ühenduse loomisega. Palun proovi uuesti."
+    },
+    "welcomeMessage": "Tere, {{name}}! Olen siin, et aidata.",
+    "navigating": "Navigeerimine sihtkohta {{target}}..."
   },
   "flashcards": {
     "title": "Üksikasjalik juhend",

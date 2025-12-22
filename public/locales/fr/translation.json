@@ -683,9 +683,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Téléphone ou Tablette Android",
         "smarttv": "Smart TV",
-        "multipledevices": "Plusieurs appareils"
+        "multipledevices": "Plusieurs appareils",
+        "title": "Appareil principal"
       },
-      "tooltip": "Connaître votre appareil principal nous aide à fournir des instructions plus pertinentes."
+      "tooltip": "Connaître votre appareil principal nous aide à fournir des instructions plus pertinentes.",
+      "experienceLevel": "Niveau d'expérience",
+      "beginner": "Apprendre les bases",
+      "beginnerDesc": "J'ai généralement besoin que quelqu'un me montre comment.",
+      "some": "Un peu confortable",
+      "someDesc": "Je peux faire les bases mais je reste parfois bloqué.",
+      "comfortable": "Confiante",
+      "comfortableDesc": "J'aime explorer de nouvelles fonctionnalités."
     },
     "step4": {
       "title": "À quel point êtes-vous à l'aise avec la technologie ?",
@@ -696,7 +704,14 @@
       "someDesc": "Je peux faire des tâches de base mais j'ai besoin d'aide pour les nouvelles choses",
       "comfortable": "À l'aise",
       "comfortableDesc": "Je peux comprendre la plupart des choses mais j'ai parfois besoin de conseils",
-      "tooltip": "Soyez honnête quant à votre niveau de confort : cela nous aide à expliquer les choses au bon rythme."
+      "tooltip": "Soyez honnête quant à votre niveau de confort : cela nous aide à expliquer les choses au bon rythme.",
+      "textToSpeech": "Lire les messages à haute voix",
+      "voiceInput": "Utiliser ma voix pour poser des questions",
+      "textSize": "Taille du texte",
+      "textSizeNormal": "Standard",
+      "textSizeLarge": "Grande",
+      "textSizeExtraLarge": "Très grand",
+      "highContrast": "Couleurs à contraste élevé"
     },
     "step5": {
       "title": "Quels sujets technologiques vous inquiètent le plus ?",
@@ -715,7 +730,12 @@
         "onlineShopping": "Achats en Ligne",
         "healthApps": "Applications et Portails de Santé"
       },
-      "tooltip": "Sélectionnez les sujets qui vous inquiètent le plus afin que nous puissions donner la priorité à l'aide dans ces domaines."
+      "tooltip": "Sélectionnez les sujets qui vous inquiètent le plus afin que nous puissions donner la priorité à l'aide dans ces domaines.",
+      "privacy": {
+        "title": "Personnalisation",
+        "description": "Autorisez TechStep à mémoriser vos préférences et votre historique pour mieux vous aider.",
+        "note": "Vos données sont sécurisées et jamais vendues."
+      }
     },
     "step6": {
       "title": "Avez-vous besoin de fonctionnalités d'accessibilité ?",

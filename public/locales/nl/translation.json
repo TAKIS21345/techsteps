@@ -934,9 +934,17 @@
         "ipad": "iPad",
         "androidphoneortablet": "Android-telefoon of -tablet",
         "smarttv": "Smart TV",
-        "multipledevices": "Meerdere apparaten"
+        "multipledevices": "Meerdere apparaten",
+        "title": "Hoofdapparaat"
       },
-      "tooltip": "Als we weten wat uw primaire apparaat is, kunnen we relevantere instructies geven."
+      "tooltip": "Als we weten wat uw primaire apparaat is, kunnen we relevantere instructies geven.",
+      "experienceLevel": "Ervaringsniveau",
+      "beginner": "De basis leren",
+      "beginnerDesc": "Meestal heb ik iemand nodig die me laat zien hoe.",
+      "some": "Enigszins comfortabel",
+      "someDesc": "Ik kan de basis wel doen, maar loop soms vast.",
+      "comfortable": "Vol vertrouwen",
+      "comfortableDesc": "Ik vind het leuk om nieuwe functies te ontdekken."
     },
     "step4": {
       "title": "Hoe comfortabel bent u met technologie?",
@@ -947,7 +955,14 @@
       "someDesc": "Ik kan basistaken uitvoeren, maar heb hulp nodig bij nieuwe dingen",
       "comfortable": "Comfortabel",
       "comfortableDesc": "Ik kan de meeste dingen zelf uitzoeken, maar heb soms begeleiding nodig",
-      "tooltip": "Wees eerlijk over uw comfortniveau. Dit helpt ons de zaken in het juiste tempo uit te leggen."
+      "tooltip": "Wees eerlijk over uw comfortniveau. Dit helpt ons de zaken in het juiste tempo uit te leggen.",
+      "textToSpeech": "Lees berichten hardop",
+      "voiceInput": "Gebruik mijn stem om vragen te stellen",
+      "textSize": "Tekstgrootte",
+      "textSizeNormal": "Standaard",
+      "textSizeLarge": "Groot",
+      "textSizeExtraLarge": "Zeer groot",
+      "highContrast": "Hoogcontrastkleuren"
     },
     "step5": {
       "title": "Welke technische onderwerpen maken u het meest zorgen?",
@@ -966,7 +981,12 @@
         "onlineShopping": "Online winkelen",
         "healthApps": "Gezondheidsapps en -portalen"
       },
-      "tooltip": "Selecteer onderwerpen waar u zich het meeste zorgen over maakt, zodat we voorrang kunnen geven aan hulp op deze gebieden."
+      "tooltip": "Selecteer onderwerpen waar u zich het meeste zorgen over maakt, zodat we voorrang kunnen geven aan hulp op deze gebieden.",
+      "privacy": {
+        "title": "Personalisatie",
+        "description": "Laat TechStep uw voorkeuren en geschiedenis onthouden om u beter te kunnen helpen.",
+        "note": "Uw gegevens zijn veilig en worden nooit verkocht."
+      }
     },
     "step6": {
       "title": "Heeft u toegankelijkheidsfuncties nodig?",
@@ -1358,7 +1378,8 @@
     },
     "input": {
       "placeholder": "Bericht AI-assistent...",
-      "helper": "Druk op Enter om te verzenden, Shift+Enter voor een nieuwe regel"
+      "helper": "Druk op Enter om te verzenden, Shift+Enter voor een nieuwe regel",
+      "listening": "Luisteren... Klik nogmaals op avatar om te stoppen"
     },
     "greeting": {
       "morning": "Goedemorgen",
@@ -1366,8 +1387,12 @@
       "evening": "Goedeavond"
     },
     "error": {
-      "general": "Het spijt me, ik heb momenteel problemen. Probeer het over enkele ogenblikken opnieuw."
-    }
+      "general": "Het spijt me, ik heb momenteel problemen. Probeer het over enkele ogenblikken opnieuw.",
+      "understanding": "Het spijt me, dat kon ik niet begrijpen.",
+      "connection": "Ik heb momenteel problemen met verbinden. Probeer het opnieuw."
+    },
+    "welcomeMessage": "Hallo {{naam}}! Ik ben hier om te helpen.",
+    "navigating": "Navigeren naar {{target}}..."
   },
   "flashcards": {
     "title": "Stapsgewijze handleiding",

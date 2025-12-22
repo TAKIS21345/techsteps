@@ -211,11 +211,16 @@
     },
     "input": {
       "placeholder": "メッセージAIアシスタント...",
-      "helper": "Enter を押して送信し、Shift+Enter を押して改行します"
+      "helper": "Enter を押して送信し、Shift+Enter を押して改行します",
+      "listening": "聞いています...停止するにはアバターをもう一度クリックします"
     },
     "error": {
-      "general": "申し訳ありませんが、現在問題が発生しています。 しばらくしてからもう一度お試しください。"
-    }
+      "general": "申し訳ありませんが、現在問題が発生しています。 しばらくしてからもう一度お試しください。",
+      "understanding": "申し訳ありませんが、それは理解できませんでした。",
+      "connection": "現在接続に問題があります。 もう一度試してください。"
+    },
+    "welcomeMessage": "こんにちは、{{名前}}! 私は手伝うためにここにいます。",
+    "navigating": "{{target}} に移動しています..."
   },
   "error": {
     "notifications": {
@@ -1091,19 +1096,79 @@
   },
   "onboarding": {
     "step1": {
-      "tooltip": "あなたの学習体験をカスタマイズできるように、あなた自身について少し教えてください。"
+      "tooltip": "あなたの学習体験をカスタマイズできるように、あなた自身について少し教えてください。",
+      "title": "いらっしゃいませ！ 始めましょう",
+      "subtitle": "TechStep をあなたに合わせてカスタマイズするために、あなた自身について少し教えてください。",
+      "firstName": "あなたの名",
+      "firstNamePlaceholder": "例: マーサ",
+      "age": "あなたの年齢"
     },
     "step2": {
-      "tooltip": "音声入力とテキストの対話に使いやすい言語を選択してください。"
+      "tooltip": "音声入力とテキストの対話に使いやすい言語を選択してください。",
+      "title": "言語設定",
+      "subtitle": "使いやすい言語を選択してください。",
+      "languageSelection": "優先言語",
+      "speechToText": "音声入力",
+      "textInteractions": "読み書き",
+      "searchLanguages": "言語を検索...",
+      "selectAll": "すべて選択",
+      "deselectAll": "すべての選択を解除",
+      "selected": "{{count}} 個が選択されました",
+      "languageRequired": "必要な言語",
+      "languageRequiredDesc": "少なくとも 1 つの言語を選択してください。",
+      "noLanguagesFound": "「{{search}}」に対応する言語が見つかりませんでした"
     },
     "step3": {
-      "tooltip": "プライマリ デバイスを把握していれば、より関連性の高い手順を提供できるようになります。"
+      "tooltip": "プライマリ デバイスを把握していれば、より関連性の高い手順を提供できるようになります。",
+      "title": "あなたの技術環境",
+      "subtitle": "何を使っていますか？どのくらい快適ですか？",
+      "experienceLevel": "経験レベル",
+      "beginner": "基本を学ぶ",
+      "beginnerDesc": "通常、誰かに方法を教えてもらう必要があります。",
+      "some": "やや快適",
+      "someDesc": "基本的なことはできますが、時々行き詰まってしまいます。",
+      "comfortable": "自信を持って",
+      "comfortableDesc": "新しい機能を探索するのが楽しいです。",
+      "devices": {
+        "title": "メインデバイス",
+        "windowscomputer": "Windowsパソコン",
+        "macapplecomputer": "マック（アップル）",
+        "iphone": "iPhone",
+        "ipad": "iPad",
+        "androidphoneortablet": "アンドロイド",
+        "multipledevices": "複数のデバイス"
+      }
     },
     "step4": {
-      "tooltip": "自分の快適さのレベルについて正直に言ってください。そうすることで、適切なペースで説明することができます。"
+      "tooltip": "自分の快適さのレベルについて正直に言ってください。そうすることで、適切なペースで説明することができます。",
+      "title": "アクセシビリティと使いやすさ",
+      "subtitle": "見やすく聞きやすくしましょう。",
+      "textToSpeech": "メッセージを読み上げる",
+      "voiceInput": "私の声を使って質問してください",
+      "textSize": "文字サイズ",
+      "textSizeNormal": "標準",
+      "textSizeLarge": "大きい",
+      "textSizeExtraLarge": "非常に大きい",
+      "highContrast": "ハイコントラストカラー"
     },
     "step5": {
-      "tooltip": "最も心配なトピックを選択して、これらの分野のサポートを優先できるようにします。"
+      "tooltip": "最も心配なトピックを選択して、これらの分野のサポートを優先できるようにします。",
+      "title": "興味とプライバシー",
+      "subtitle": "最後のステップ！ まず何を学びたいですか？",
+      "concerns": {
+        "onlineSafety": "セーフティオンライン",
+        "passwordManagement": "パスワード",
+        "videoCalling": "ビデオ通話",
+        "onlineBanking": "銀行業",
+        "emailMessaging": "電子メール",
+        "wifiInternet": "Wi-Fiとインターネット",
+        "deviceSettings": "設定"
+      },
+      "privacy": {
+        "title": "パーソナライゼーション",
+        "description": "TechStep があなたの設定と履歴を記憶し、より良いサポートを提供できるようにします。",
+        "note": "あなたのデータは安全に保管され、販売されることはありません。"
+      }
     },
     "step6": {
       "tooltip": "快適な体験のために必要なアクセシビリティ機能についてお知らせください。"
