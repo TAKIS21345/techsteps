@@ -1,40 +1,27 @@
-// Google Gemini AI Service Configuration
-export interface GeminiConfig {
+// AI Configuration
+export interface AIConfig {
   apiKey: string;
   model: string;
   maxTokens: number;
   temperature: number;
   topK: number;
   topP: number;
-  maxRetries: number;
-  timeoutMs: number;
-  fallbackEnabled: boolean;
-  escalationThreshold: number;
 }
 
-export const DEFAULT_GEMINI_CONFIG: GeminiConfig = {
+export const DEFAULT_GEMINI_CONFIG = {
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-  model: 'gemini-2.0-flash-exp',
-  maxTokens: 1000,
+  primaryModel: 'gemini-2.0-flash-exp',
+  stableModel: 'gemini-1.5-flash', // Use this when experimental hits limits
+  maxTokens: 2048,
   temperature: 0.7,
   topK: 40,
   topP: 0.95,
-  maxRetries: 3,
-  timeoutMs: 30000,
-  fallbackEnabled: true,
   escalationThreshold: 3
 };
 
-export interface FallbackConfig {
-  groqKey: string;
-  groqModel: string;
-  mistralKey: string;
-  mistralModel: string;
-}
-
-export const FALLBACK_CONFIG: FallbackConfig = {
+export const FALLBACK_CONFIG = {
   groqKey: import.meta.env.VITE_GROQ_API_KEY || '',
-  groqModel: 'gemma2-9b-it',
+  groqModel: 'llama-3.1-8b-instant', // Llama supports JSON mode perfectly
   mistralKey: import.meta.env.VITE_MISTRAL_API_KEY || '',
   mistralModel: 'mistral-small-latest'
 };
@@ -43,12 +30,8 @@ export const GLOBAL_SYSTEM_PROMPT = `You are "TechSteps Expert", a world-class t
 
 STRICT PERSONALITY GUIDELINES:
 - **Tone**: Professional yet deeply empathetic. Like a very smart, kind grandchild helping their grandparent.
-- **Language**: Use simple analogies. Avoid "tech-bro" talk. Instead of "UI", say "the buttons on the screen". Instead of "Authentication", say "signing in safely".
-- **Encouragement**: Always start or end with a small positive note like "You're doing great!" or "Don't worry, we'll figure this out together."
-
-MEMORY & CONTEXT:
-- **KNOWN USER FACTS**: Use the provided facts to be helpful (e.g., if they have a "Mac", don't give "Windows" instructions).
-- **LEARNING**: Use the "new_facts" field to record anything new you learn about the user.
+- **Language**: Use simple analogies. Avoid "tech-bro" talk.
+- **Encouragement**: Always start or end with a small positive note like "You're doing great!".
 
 STRICT OUTPUT FORMAT (JSON ONLY):
 You MUST respond with a valid JSON object. 
@@ -71,7 +54,6 @@ You MUST respond with a valid JSON object.
 }
 
 FLASHCARD RULES:
-- If your response contains "how-to" steps or instructions, you MUST generate the "flashcards" array.
-- Each flashcard should have a clear "title", "content", and an array of 1-3 simple "instructions".
-- If no steps are needed, set "flashcards": null.
+- If your response contains steps or instructions, you MUST generate the "flashcards" array.
+- Each flashcard MUST have: id, stepNumber, title, content, instructions (array), audioScript, and estimatedDuration (number).
 `;

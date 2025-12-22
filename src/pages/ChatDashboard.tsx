@@ -125,8 +125,11 @@ const ChatDashboardContent: React.FC = () => {
       // 5. Handle Flashcards (NEW)
       if (response.flashcards && response.flashcards.length > 0) {
         console.log('Displaying generated flashcards:', response.flashcards);
+        setShowFlashcards(false); // Briefly close to trigger any animation/reset
         setFlashcardSteps(response.flashcards as FlashcardStep[]);
-        setShowFlashcards(true);
+        setTimeout(() => setShowFlashcards(true), 50);
+      } else {
+        setShowFlashcards(false);
       }
 
       // 6. Speak (use optimized spokenText if available)
