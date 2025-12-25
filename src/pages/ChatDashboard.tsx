@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { FlashcardStep, ConversationContext } from '../types/services';
 import { Settings } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { LogOut } from 'lucide-react';
 import EnhancedAvatarCompanion from '../components/ai/EnhancedAvatarCompanion';
 import ChatInterface from '../components/ai/ChatInterface';
 import FlashcardPanel from '../components/ai/FlashcardPanel';
@@ -13,13 +14,19 @@ import { ttsService } from '../services/TextToSpeechService';
 import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
-import { StorageService } from '../services/StorageService';
+import { LocalStorageService } from '../services/LocalStorageService';
 import { getAIService } from '../services/ai';
+
+declare global {
+  interface Window {
+    $crisp: any;
+  }
+}
 
 const ChatDashboardContent: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { userData } = useUser();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const { state: avatarState, setEmotion, setListening, setSpeaking, setThinking } = useAvatar();
 
@@ -43,18 +50,30 @@ const ChatDashboardContent: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       const userId = user?.uid || 'guest';
-      const history = await MemoryService.getHistory(userId);
-      if (history.length > 0) {
-        setMessages(history);
+      const localHistory = LocalStorageService.getChatHistory(userId);
+      if (localHistory) {
+        setMessages(localHistory);
       } else {
-        const welcomeText = t('chat.welcomeMessage', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
-        const welcomeMessage: Message = { id: 'welcome', content: welcomeText, sender: 'ai', timestamp: new Date() };
-        setMessages([welcomeMessage]);
-        await MemoryService.saveMessage(userId, welcomeMessage);
+        const history = await MemoryService.getHistory(userId);
+        if (history.length > 0) {
+          setMessages(history);
+        } else {
+          const welcomeText = t('chat.welcomeMessage', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
+          const welcomeMessage: Message = { id: 'welcome', content: welcomeText, sender: 'ai', timestamp: new Date() };
+          setMessages([welcomeMessage]);
+          await MemoryService.saveMessage(userId, welcomeMessage);
+        }
       }
     };
     loadData();
-  }, [user?.uid, userData?.firstName, t]);
+  }, [user, userData, t]);
+
+  // Save messages to local storage
+  useEffect(() => {
+    if (user?.uid) {
+      LocalStorageService.saveChatHistory(user.uid, messages);
+    }
+  }, [messages, user?.uid]);
 
   const handleSendMessage = async (messageContent: string, attachments: File[] = []) => {
     const userId = user?.uid || 'guest';
@@ -91,15 +110,17 @@ const ChatDashboardContent: React.FC = () => {
       // 3. Call Central AI Service
       const aiService = getAIService();
 
-      // Fetch known facts for memory focus
+      // Fetch known facts and user data for memory focus
       const knownFacts = await MemoryService.getFacts(userId);
+      const customUserData = await MemoryService.getUserData(userId);
 
       const context: ConversationContext = {
         userId,
         currentPage: 'chat',
         userSkillLevel: userData?.skillLevel || 'beginner',
         failureCount: 0,
-        knownFacts: knownFacts
+        knownFacts: knownFacts,
+        userData: customUserData || {}
       };
 
       const response = await aiService.sendMessage(messageContent, context);
@@ -114,34 +135,54 @@ const ChatDashboardContent: React.FC = () => {
       setMessages(prev => [...prev, aiMessage]);
       await MemoryService.saveMessage(userId, aiMessage);
 
-      // 4. Save any extracted facts to the database
+      // 4. Save any extracted facts and user data to the database
       if (response.extractedFacts && response.extractedFacts.length > 0) {
         console.log('Saving learned facts:', response.extractedFacts);
         for (const fact of response.extractedFacts) {
           await MemoryService.saveFact(userId, fact);
         }
       }
+      if (response.userData) {
+        console.log('Saving user data:', response.userData);
+        await MemoryService.saveUserData(userId, response.userData);
+      }
 
       // 5. Handle Flashcards (NEW)
       if (response.flashcards && response.flashcards.length > 0) {
         console.log('Displaying generated flashcards:', response.flashcards);
-        setShowFlashcards(false); // Briefly close to trigger any animation/reset
         setFlashcardSteps(response.flashcards as FlashcardStep[]);
-        setTimeout(() => setShowFlashcards(true), 50);
+        setShowFlashcards(true);
       } else {
         setShowFlashcards(false);
       }
 
       // 6. Speak (use optimized spokenText if available)
       const textToSpeak = response.spokenText || response.content;
-      ttsService.speak(textToSpeak, { lang: i18n.language });
+      if (textToSpeak) {
+        ttsService.speak(textToSpeak, { lang: i18n.language });
+      }
 
     } catch (e: any) {
       console.error('Chat Error:', e);
       setEmotion('concerned');
+      const encouragement = t('encouragement', { returnObjects: true }) as string[];
+      const randomEncouragement = encouragement[Math.floor(Math.random() * encouragement.length)];
       const errorMsg = e.message?.includes('429')
         ? "I'm a bit overwhelmed right now! Please try again in a few seconds."
-        : "I'm having a little trouble connecting. Could you try that again?";
+        : randomEncouragement;
+
+      // Send error to Crisp
+      if (window.$crisp) {
+        const lastMessages = messages.slice(-3).map(m => `${m.sender}: ${m.content}`).join('\\n');
+        window.$crisp.push([
+          "do",
+          "message:send",
+          [
+            "text",
+            `User ${user?.uid} encountered an error: ${e.message}.\\n\\nRecent messages:\\n${lastMessages}`
+          ]
+        ]);
+      }
 
       setMessages(prev => [...prev, { id: 'err-' + Date.now(), content: errorMsg, sender: 'ai', timestamp: new Date() }]);
     } finally {
@@ -180,10 +221,17 @@ const ChatDashboardContent: React.FC = () => {
     <div className="h-screen w-full relative overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-fuchsia-50">
       <div className="absolute top-0 w-full z-40 p-4 flex justify-between items-center">
         <div className="glass-panel px-4 py-2 rounded-xl font-bold text-indigo-900">TechSteps AI</div>
-        <Link to="/settings" className="p-2 bg-white/50 rounded-full"><Settings className="w-6 h-6 text-gray-700" /></Link>
+        <div className="flex items-center gap-2">
+          <Link to="/settings" className="p-2 bg-white/50 rounded-full">
+            <Settings className="w-6 h-6 text-gray-700" />
+          </Link>
+          <button onClick={logout} className="p-2 bg-white/50 rounded-full">
+            <LogOut className="w-6 h-6 text-gray-700" />
+          </button>
+        </div>
       </div>
 
-      <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 transform md:scale-100 scale-75 origin-bottom-left">
+      <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 transform md:scale-100 scale-75 origin-bottom-left" title="Click me to use speech-to-text">
         <EnhancedAvatarCompanion onAvatarClick={handleAvatarClick} />
       </div>
 
