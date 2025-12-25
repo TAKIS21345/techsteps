@@ -15,9 +15,11 @@ import { ttsService } from '../services/TextToSpeechService';
 import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
-import { LocalStorageService } from '../services/LocalStorageService';
+import { LocalStorageService, Conversation } from '../services/LocalStorageService';
 import { StorageService } from '../services/StorageService';
 import { MistralService } from '../services/ai';
+import { GoogleSpeechToTextService } from '../services/GoogleSpeechToTextService';
+import ChatHistory from '../components/ai/ChatHistory';
 
 declare global {
   interface Window {
@@ -39,6 +41,11 @@ const ChatDashboardContent: React.FC = () => {
   const [isGeneratingFlashcards, setIsGeneratingFlashcards] = useState(false);
   const [currentTranscript, setCurrentTranscript] = useState('');
   const [lastUserMessage, setLastUserMessage] = useState('');
+
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [showHistory, setShowHistory] = useState(false);
+  const [translationMap, setTranslationMap] = useState<Record<string, string>>({});
+  const [isTranslating, setIsTranslating] = useState(false);
 
   // Sync TTS events with Avatar Context
   useEffect(() => {
@@ -70,6 +77,9 @@ const ChatDashboardContent: React.FC = () => {
             await MemoryService.saveMessage(userId, welcomeMessage);
           }
         }
+        // load saved conversations
+        const convs = LocalStorageService.getConversations(userId);
+        setConversations(convs || []);
       } catch (error) {
         console.error('Error loading chat history:', error);
         // Don't throw error, just continue with empty state
@@ -84,6 +94,75 @@ const ChatDashboardContent: React.FC = () => {
       LocalStorageService.saveChatHistory(user.uid, messages);
     }
   }, [messages, user?.uid]);
+
+  // Translate entire conversation when language changes
+  useEffect(() => {
+    if (!messages || messages.length === 0) {
+      setTranslationMap({});
+      return;
+    }
+
+    const doTranslate = async () => {
+      setIsTranslating(true);
+      try {
+        const mistralService = new MistralService();
+        const texts = messages.map(m => m.content);
+        const translated = await mistralService.translateTexts(texts, i18n.language);
+        const map: Record<string, string> = {};
+        for (let i = 0; i < messages.length; i++) {
+          map[messages[i].id] = translated[i] || messages[i].content;
+        }
+        setTranslationMap(map);
+      } catch (e) {
+        console.warn('Conversation translation failed:', e);
+        setTranslationMap({});
+      } finally {
+        setIsTranslating(false);
+      }
+    };
+
+    // Debounce small delays to avoid spam calls
+    const timer = setTimeout(() => {
+      doTranslate();
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [i18n.language, messages]);
+
+  const handleNewChat = async () => {
+    const userId = user?.uid || 'guest';
+    try {
+      if (messages && messages.length > 0) {
+        const first = messages.find(m => m.sender === 'user') || messages[0];
+        const title = first ? (first.content.slice(0, 80) || new Date().toLocaleString()) : new Date().toLocaleString();
+        const conv: Conversation = {
+          id: `conv-${Date.now()}`,
+          title,
+          messages,
+          createdAt: new Date().toISOString()
+        };
+        LocalStorageService.saveConversation(userId, conv);
+        setConversations(prev => [conv, ...prev]);
+      }
+      setMessages([]);
+    } catch (e) {
+      console.error('handleNewChat error:', e);
+    }
+  };
+
+  const openHistory = () => setShowHistory(true);
+  const closeHistory = () => setShowHistory(false);
+
+  const loadConversation = (conv: Conversation) => {
+    setMessages(conv.messages.map(m => ({ ...m, timestamp: new Date(m.timestamp) })));
+    setShowHistory(false);
+  };
+
+  const deleteConversation = (id: string) => {
+    const userId = user?.uid || 'guest';
+    const filtered = conversations.filter(c => c.id !== id);
+    setConversations(filtered);
+    LocalStorageService.saveConversations(userId, filtered);
+  };
 
   const handleSendMessage = async (messageContent: string, attachments: File[] = []) => {
     const userId = user?.uid || 'guest';
@@ -108,6 +187,21 @@ const ChatDashboardContent: React.FC = () => {
     }
 
     try {
+      // Topic detection: ask Mistral whether this is a new topic
+      try {
+        const mistralService = new MistralService();
+        const prevContents = messages.map(m => m.content);
+        const topicChanged = await mistralService.detectTopicChange(prevContents, messageContent);
+        if (topicChanged) {
+          const proceed = window.confirm(t('chat.moveTopicPrompt', 'This looks like a new topic. Start a new chat?'));
+          if (proceed) {
+            await handleNewChat();
+          }
+        }
+      } catch (e) {
+        console.warn('Topic detection failed, continuing:', e);
+      }
+
       // 2. Add user message
       const userMessage: Message = {
         id: 'user-' + Date.now(),
@@ -231,11 +325,21 @@ const ChatDashboardContent: React.FC = () => {
     }
   };
 
-  const startListening = () => {
+  const startListening = async () => {
+    // Prefer browser SpeechRecognition when available
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
       const recognition = new SpeechRecognition();
-      recognition.lang = i18n.language === 'en' ? 'en-US' : (i18n.language === 'es' ? 'es-ES' : 'fr-FR');
+      // Map i18n language to recognition.lang (simple mapping, extend as needed)
+      const langMap: Record<string, string> = {
+        en: 'en-US',
+        es: 'es-ES',
+        fr: 'fr-FR',
+        de: 'de-DE',
+        it: 'it-IT',
+        pt: 'pt-PT'
+      };
+      recognition.lang = langMap[i18n.language] || `${i18n.language}-US`;
       recognition.onstart = () => {
         setListening(true);
         setCurrentTranscript('');
@@ -248,7 +352,54 @@ const ChatDashboardContent: React.FC = () => {
         }
       };
       recognition.onend = () => setListening(false);
+      recognition.onerror = (e: any) => {
+        console.warn('Speech recognition error', e);
+        setListening(false);
+      };
       recognition.start();
+      return;
+    }
+
+    // Fallback: record 4 seconds and send to Google STT
+    try {
+      setCurrentTranscript(t('chat.speechRecording', 'Recording...'));
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      const chunks: BlobPart[] = [];
+      mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+      mediaRecorder.start();
+
+      setListening(true);
+      await new Promise(resolve => setTimeout(resolve, 4000));
+      mediaRecorder.stop();
+
+      const stopped = new Promise<void>(resolve => {
+        mediaRecorder.onstop = () => resolve();
+      });
+      await stopped;
+
+      const blob = new Blob(chunks, { type: chunks[0] ? (chunks[0] as Blob).type : 'audio/webm' });
+      stream.getTracks().forEach(t => t.stop());
+      setCurrentTranscript('');
+      setListening(false);
+
+      const langMap: Record<string, string> = {
+        en: 'en-US',
+        es: 'es-ES',
+        fr: 'fr-FR',
+        de: 'de-DE',
+        it: 'it-IT',
+        pt: 'pt-PT'
+      };
+      const languageCode = langMap[i18n.language] || `${i18n.language}-US`;
+      const transcript = await GoogleSpeechToTextService.transcribeAudio(blob, languageCode);
+      if (transcript) {
+        handleSendMessage(transcript);
+      }
+    } catch (e) {
+      console.warn('Fallback STT failed:', e);
+      setListening(false);
+      setCurrentTranscript('');
     }
   };
 
@@ -279,6 +430,10 @@ const ChatDashboardContent: React.FC = () => {
               isLoading={isLoading}
               isListening={avatarState.isListening}
               currentTranscript={currentTranscript}
+              onNewChat={handleNewChat}
+              onOpenHistory={openHistory}
+              translationMap={translationMap}
+              isTranslating={isTranslating}
             />
             {!isLoading && messages.length > 0 && (
               <div className="px-4 pb-4">

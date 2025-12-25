@@ -170,6 +170,64 @@ export class MistralService implements AIService {
         }
     }
 
+    // New: detect whether a new incoming message changes topic compared to previous messages.
+    async detectTopicChange(prevMessages: string[], newMessage: string): Promise<boolean> {
+        try {
+            const prompt = `
+You are a topic-detection assistant. Given the previous conversation messages and a new user message, answer ONLY "YES" or "NO" (uppercase) indicating whether the new message starts a new topic or thread compared to the previous messages.
+
+Previous messages:
+${prevMessages.map((m, i) => `${i + 1}. ${m}`).join('\n')}
+
+New message:
+${newMessage}
+
+Answer with a single word: YES or NO.
+`;
+            const raw = await this.sendRawMessage(prompt, GLOBAL_SYSTEM_PROMPT, { maxTokens: 30 });
+            if (!raw) return false;
+            const normalized = raw.trim().toUpperCase();
+            if (normalized.startsWith('YES')) return true;
+            if (normalized.startsWith('NO')) return false;
+            if (/YES/i.test(raw)) return true;
+            if (/NO/i.test(raw)) return false;
+            return false;
+        } catch (e) {
+            console.warn('detectTopicChange failed defensively:', e);
+            return false;
+        }
+    }
+
+    // New: translate array of texts to target language and return array of translated strings.
+    async translateTexts(texts: string[], targetLang: string): Promise<string[]> {
+        try {
+            const instruction = `
+Translate the following JSON array of strings into ${targetLang}. Respond with a JSON array of translated strings only (no extra commentary).
+
+Input:
+${JSON.stringify(texts)}
+`;
+            const raw = await this.sendRawMessage(instruction, GLOBAL_SYSTEM_PROMPT, { maxTokens: 1000 });
+            const jsonStart = raw.indexOf('[');
+            const jsonEnd = raw.lastIndexOf(']');
+            if (jsonStart >= 0 && jsonEnd >= 0 && jsonEnd > jsonStart) {
+                const candidate = raw.slice(jsonStart, jsonEnd + 1);
+                try {
+                    const parsed = JSON.parse(candidate);
+                    if (Array.isArray(parsed)) return parsed.map(String);
+                } catch (e) {
+                    // fallthrough
+                }
+            }
+            const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+            if (lines.length === texts.length) return lines;
+            return texts;
+        } catch (e) {
+            console.warn('translateTexts error:', e);
+            return texts;
+        }
+    }
+
     private getHistoryForMistral(context: ConversationContext): any[] {
         const history = this.conversationHistory.get(this.getConversationId(context)) || [];
         return history.slice(-4).map(msg => ({
