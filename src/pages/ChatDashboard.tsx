@@ -48,24 +48,26 @@ const ChatDashboardContent: React.FC = () => {
 
   // Load History
   useEffect(() => {
-    const loadData = async () => {
-      const userId = user?.uid || 'guest';
-      const localHistory = LocalStorageService.getChatHistory(userId);
-      if (localHistory) {
-        setMessages(localHistory);
-      } else {
-        const history = await MemoryService.getHistory(userId);
-        if (history.length > 0) {
-          setMessages(history);
+    if (user) {
+      const loadData = async () => {
+        const userId = user.uid;
+        const localHistory = LocalStorageService.getChatHistory(userId);
+        if (localHistory) {
+          setMessages(localHistory);
         } else {
-          const welcomeText = t('chat.welcomeMessage', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
-          const welcomeMessage: Message = { id: 'welcome', content: welcomeText, sender: 'ai', timestamp: new Date() };
-          setMessages([welcomeMessage]);
-          await MemoryService.saveMessage(userId, welcomeMessage);
+          const history = await MemoryService.getHistory(userId);
+          if (history.length > 0) {
+            setMessages(history);
+          } else {
+            const welcomeText = t('chat.welcomeMessage', 'Hello {{name}}! I\'m here to help.', { name: userData?.firstName || 'friend' });
+            const welcomeMessage: Message = { id: 'welcome', content: welcomeText, sender: 'ai', timestamp: new Date() };
+            setMessages([welcomeMessage]);
+            await MemoryService.saveMessage(userId, welcomeMessage);
+          }
         }
-      }
-    };
-    loadData();
+      };
+      loadData();
+    }
   }, [user, userData, t]);
 
   // Save messages to local storage
