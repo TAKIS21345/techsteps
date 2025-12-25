@@ -68,6 +68,7 @@ export class MistralService implements AIService {
                 requiresHumanEscalation: false,
                 extractedFacts: parsed.new_facts,
                 spokenText: parsed.spoken_text,
+                flashcards: parsed.flashcards,
                 metadata: {
                     processingTime,
                     model: this.model,
