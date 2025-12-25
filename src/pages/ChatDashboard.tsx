@@ -16,7 +16,7 @@ import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
 import { LocalStorageService } from '../services/LocalStorageService';
 import { StorageService } from '../services/StorageService';
-import { GeminiService, MistralService } from '../services/ai';
+import { MistralService } from '../services/ai';
 
 declare global {
   interface Window {
@@ -122,9 +122,8 @@ const ChatDashboardContent: React.FC = () => {
       setMessages(prev => [...prev, userMessage]);
       await MemoryService.saveMessage(userId, userMessage);
 
-      // 3. Call AI Services (Mistral for content, Gemini for summary)
+      // 3. Call AI Service (Mistral only)
       const mistralService = new MistralService();
-      const geminiService = new GeminiService();
 
       // Fetch known facts and user data for memory focus
       const knownFacts = await MemoryService.getFacts(userId);
@@ -141,18 +140,6 @@ const ChatDashboardContent: React.FC = () => {
 
       // Call Mistral for the main response
       const mistralResponse = await mistralService.sendMessage(messageContent, context);
-
-      // Call Gemini for a spoken-word summary
-      const summarizationPrompt = `Please provide a short, spoken-word summary of the following text. Only return the summary, nothing else. The text is: "${mistralResponse.content}"`;
-      const geminiContext: ConversationContext = {
-        userId,
-        currentPage: 'summarizer', // Use a separate context to avoid polluting history
-        userSkillLevel: 'n/a',
-        failureCount: 0,
-        knownFacts: [],
-        userData: {}
-      };
-      const geminiResponse = await geminiService.sendMessage(summarizationPrompt, geminiContext);
 
       const aiMessage: Message = {
         id: 'ai-' + Date.now(),
@@ -185,8 +172,8 @@ const ChatDashboardContent: React.FC = () => {
         setShowFlashcards(false);
       }
 
-      // 6. Speak the summary from Gemini
-      const textToSpeak = geminiResponse.spokenText || geminiResponse.content;
+      // 6. Speak the summary from Mistral
+      const textToSpeak = mistralResponse.spokenText || mistralResponse.content;
       if (textToSpeak) {
         ttsService.speak(textToSpeak, { lang: i18n.language });
       }
