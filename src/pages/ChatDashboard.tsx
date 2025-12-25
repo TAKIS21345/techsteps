@@ -51,8 +51,10 @@ const ChatDashboardContent: React.FC = () => {
 
   // Load History
   useEffect(() => {
-    if (user) {
-      const loadData = async () => {
+    if (!user) return; // Guard against null user during logout
+    
+    const loadData = async () => {
+      try {
         const userId = user.uid;
         const localHistory = LocalStorageService.getChatHistory(userId);
         if (localHistory) {
@@ -68,9 +70,12 @@ const ChatDashboardContent: React.FC = () => {
             await MemoryService.saveMessage(userId, welcomeMessage);
           }
         }
-      };
-      loadData();
-    }
+      } catch (error) {
+        console.error('Error loading chat history:', error);
+        // Don't throw error, just continue with empty state
+      }
+    };
+    loadData();
   }, [user, userData, t]);
 
   // Save messages to local storage
@@ -215,6 +220,17 @@ const ChatDashboardContent: React.FC = () => {
     else startListening();
   };
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      // Navigation happens automatically via ProtectedRoute when user becomes null
+    } catch (error) {
+      console.error('Logout error:', error);
+      // Even if logout fails, redirect to home
+      window.location.href = '/';
+    }
+  };
+
   const startListening = () => {
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
@@ -244,7 +260,7 @@ const ChatDashboardContent: React.FC = () => {
           <Link to="/settings" className="p-2 bg-white/50 rounded-full">
             <Settings className="w-6 h-6 text-gray-700" />
           </Link>
-          <button onClick={logout} className="p-2 bg-white/50 rounded-full">
+          <button onClick={handleLogout} className="p-2 bg-white/50 rounded-full hover:bg-white transition-colors">
             <LogOut className="w-6 h-6 text-gray-700" />
           </button>
         </div>
