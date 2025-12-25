@@ -1,5 +1,4 @@
 import React from 'react';
-import EnhancedAvatarCompanion from '../ai/EnhancedAvatarCompanion';
 
 // Logo component
 
@@ -9,6 +8,12 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ size = 'md', showText = true }) => {
+  const sizeClasses = {
+    sm: 'w-8 h-8',
+    md: 'w-10 h-10',
+    lg: 'w-12 h-12'
+  };
+
   const textSizeClasses = {
     sm: 'text-lg',
     md: 'text-xl',
@@ -17,12 +22,12 @@ const Logo: React.FC<LogoProps> = ({ size = 'md', showText = true }) => {
 
   return (
     <div className="flex items-center space-x-3">
-      <div>
-        <EnhancedAvatarCompanion size={size} />
+      <div className={`${sizeClasses[size]} rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg`}>
+        <span className="text-white font-bold text-lg">T</span>
       </div>
       {showText && (
-        <span className={`font-bold text-gray-800 ${textSizeClasses[size]}`}>
-          TechStep
+        <span className={`font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent ${textSizeClasses[size]}`}>
+          TechSteps
         </span>
       )}
     </div>
