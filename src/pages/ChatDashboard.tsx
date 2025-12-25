@@ -122,9 +122,9 @@ const ChatDashboardContent: React.FC = () => {
       setMessages(prev => [...prev, userMessage]);
       await MemoryService.saveMessage(userId, userMessage);
 
-      // 3. Call AI Services
-      const geminiService = new GeminiService();
+      // 3. Call AI Services (Mistral for content, Gemini for summary)
       const mistralService = new MistralService();
+      const geminiService = new GeminiService();
 
       // Fetch known facts and user data for memory focus
       const knownFacts = await MemoryService.getFacts(userId);
@@ -139,14 +139,24 @@ const ChatDashboardContent: React.FC = () => {
         userData: customUserData || {}
       };
 
-      const geminiResponse = await geminiService.sendMessage(messageContent, context);
+      // Call Mistral for the main response
+      const mistralResponse = await mistralService.sendMessage(messageContent, context);
 
-      const mistralContext = { ...context, knownFacts: [geminiResponse.content] };
-      const mistralResponse = await mistralService.sendMessage("Please provide a short, spoken-word summary of the following text:", mistralContext);
+      // Call Gemini for a spoken-word summary
+      const summarizationPrompt = `Please provide a short, spoken-word summary of the following text. Only return the summary, nothing else. The text is: "${mistralResponse.content}"`;
+      const geminiContext: ConversationContext = {
+        userId,
+        currentPage: 'summarizer', // Use a separate context to avoid polluting history
+        userSkillLevel: 'n/a',
+        failureCount: 0,
+        knownFacts: [],
+        userData: {}
+      };
+      const geminiResponse = await geminiService.sendMessage(summarizationPrompt, geminiContext);
 
       const aiMessage: Message = {
         id: 'ai-' + Date.now(),
-        content: geminiResponse.content,
+        content: mistralResponse.content,
         sender: 'ai',
         timestamp: new Date()
       };
@@ -154,29 +164,29 @@ const ChatDashboardContent: React.FC = () => {
       setMessages(prev => [...prev, aiMessage]);
       await MemoryService.saveMessage(userId, aiMessage);
 
-      // 4. Save any extracted facts and user data to the database
-      if (geminiResponse.extractedFacts && geminiResponse.extractedFacts.length > 0) {
-        console.log('Saving learned facts:', geminiResponse.extractedFacts);
-        for (const fact of geminiResponse.extractedFacts) {
+      // 4. Save any extracted facts and user data from Mistral's response
+      if (mistralResponse.extractedFacts && mistralResponse.extractedFacts.length > 0) {
+        console.log('Saving learned facts:', mistralResponse.extractedFacts);
+        for (const fact of mistralResponse.extractedFacts) {
           await MemoryService.saveFact(userId, fact);
         }
       }
-      if (geminiResponse.userData) {
-        console.log('Saving user data:', geminiResponse.userData);
-        await MemoryService.saveUserData(userId, geminiResponse.userData);
+      if (mistralResponse.userData) {
+        console.log('Saving user data:', mistralResponse.userData);
+        await MemoryService.saveUserData(userId, mistralResponse.userData);
       }
 
-      // 5. Handle Flashcards (NEW)
-      if (geminiResponse.flashcards && geminiResponse.flashcards.length > 0) {
-        console.log('Displaying generated flashcards:', geminiResponse.flashcards);
-        setFlashcardSteps(geminiResponse.flashcards as FlashcardStep[]);
+      // 5. Handle Flashcards from Mistral's response
+      if (mistralResponse.flashcards && mistralResponse.flashcards.length > 0) {
+        console.log('Displaying generated flashcards:', mistralResponse.flashcards);
+        setFlashcardSteps(mistralResponse.flashcards as FlashcardStep[]);
         setShowFlashcards(true);
       } else {
         setShowFlashcards(false);
       }
 
-      // 6. Speak (use optimized spokenText if available)
-      const textToSpeak = mistralResponse.spokenText || mistralResponse.content;
+      // 6. Speak the summary from Gemini
+      const textToSpeak = geminiResponse.spokenText || geminiResponse.content;
       if (textToSpeak) {
         ttsService.speak(textToSpeak, { lang: i18n.language });
       }

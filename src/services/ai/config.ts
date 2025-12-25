@@ -11,7 +11,7 @@ export interface AIConfig {
 export const DEFAULT_GEMINI_CONFIG = {
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
   primaryModel: 'gemini-2.0-flash-exp',
-  stableModel: 'gemini-1.5-flash', // Use this when experimental hits limits
+  stableModel: 'gemini-2.0-flash-exp', // Use this when experimental hits limits
   maxTokens: 2048,
   temperature: 0.7,
   topK: 40,
