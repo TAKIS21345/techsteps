@@ -117,6 +117,40 @@ export const MemoryService = {
     },
 
     /**
+     * Save user-specific data
+     */
+    saveUserData: async (userId: string, data: Record<string, any>) => {
+        if (userId === 'guest') return;
+
+        try {
+            const userRef = doc(db, 'users', userId);
+            await setDoc(userRef, { userData: data }, { merge: true });
+        } catch (error) {
+            console.error("Error saving user data:", error);
+        }
+    },
+
+    /**
+     * Get user-specific data
+     */
+    getUserData: async (userId: string): Promise<Record<string, any> | null> => {
+        if (userId === 'guest') return null;
+
+        try {
+            const userRef = doc(db, 'users', userId);
+            const userDoc = await getDoc(userRef);
+
+            if (userDoc.exists() && userDoc.data().userData) {
+                return userDoc.data().userData;
+            }
+            return null;
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+            return null;
+        }
+    },
+
+    /**
      * Cleanup old messages (older than 7 days)
      * Note: Firestore requires composite index for this query.
      * We will implement client-side filtering for MVP if index issues arise,

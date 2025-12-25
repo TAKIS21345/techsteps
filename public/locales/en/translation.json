@@ -1641,6 +1641,18 @@
     "skipAssessment": "Skip Assessment",
     "chooseBestOption": "Choose the option that best describes you"
   },
+  "encouragement": [
+    "You're doing great!",
+    "Keep up the excellent work!",
+    "That's a fantastic question!",
+    "I'm impressed with your progress!",
+    "You're a natural at this!",
+    "That's the way to do it!",
+    "You've got this!",
+    "Wonderful! What's next?",
+    "That's a great observation.",
+    "You're learning so quickly!"
+  ],
   "onboarding": {
     "back": "Back",
     "next": "Next",
