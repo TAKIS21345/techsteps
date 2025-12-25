@@ -15,7 +15,8 @@ import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
 import { LocalStorageService } from '../services/LocalStorageService';
-import { getAIService } from '../services/ai';
+import { StorageService } from '../services/StorageService';
+import { GeminiService, MistralService } from '../services/ai';
 
 declare global {
   interface Window {
@@ -104,13 +105,26 @@ const ChatDashboardContent: React.FC = () => {
         id: 'user-' + Date.now(),
         content: messageContent,
         sender: 'user',
-        timestamp: new Date()
+        timestamp: new Date(),
+        attachments: [],
       };
+
+      if (attachments.length > 0) {
+        const uploadPromises = attachments.map(file => StorageService.uploadFile(file, `users/${userId}/uploads`));
+        const fileUrls = await Promise.all(uploadPromises);
+        userMessage.attachments = fileUrls.map((url, index) => ({
+          type: attachments[index].type.startsWith('image/') ? 'image' : 'file',
+          url,
+          name: attachments[index].name,
+        }));
+      }
+
       setMessages(prev => [...prev, userMessage]);
       await MemoryService.saveMessage(userId, userMessage);
 
-      // 3. Call Central AI Service
-      const aiService = getAIService();
+      // 3. Call AI Services
+      const geminiService = new GeminiService();
+      const mistralService = new MistralService();
 
       // Fetch known facts and user data for memory focus
       const knownFacts = await MemoryService.getFacts(userId);
@@ -125,11 +139,14 @@ const ChatDashboardContent: React.FC = () => {
         userData: customUserData || {}
       };
 
-      const response = await aiService.sendMessage(messageContent, context);
+      const geminiResponse = await geminiService.sendMessage(messageContent, context);
+
+      const mistralContext = { ...context, knownFacts: [geminiResponse.content] };
+      const mistralResponse = await mistralService.sendMessage("Please provide a short, spoken-word summary of the following text:", mistralContext);
 
       const aiMessage: Message = {
         id: 'ai-' + Date.now(),
-        content: response.content,
+        content: geminiResponse.content,
         sender: 'ai',
         timestamp: new Date()
       };
@@ -138,28 +155,28 @@ const ChatDashboardContent: React.FC = () => {
       await MemoryService.saveMessage(userId, aiMessage);
 
       // 4. Save any extracted facts and user data to the database
-      if (response.extractedFacts && response.extractedFacts.length > 0) {
-        console.log('Saving learned facts:', response.extractedFacts);
-        for (const fact of response.extractedFacts) {
+      if (geminiResponse.extractedFacts && geminiResponse.extractedFacts.length > 0) {
+        console.log('Saving learned facts:', geminiResponse.extractedFacts);
+        for (const fact of geminiResponse.extractedFacts) {
           await MemoryService.saveFact(userId, fact);
         }
       }
-      if (response.userData) {
-        console.log('Saving user data:', response.userData);
-        await MemoryService.saveUserData(userId, response.userData);
+      if (geminiResponse.userData) {
+        console.log('Saving user data:', geminiResponse.userData);
+        await MemoryService.saveUserData(userId, geminiResponse.userData);
       }
 
       // 5. Handle Flashcards (NEW)
-      if (response.flashcards && response.flashcards.length > 0) {
-        console.log('Displaying generated flashcards:', response.flashcards);
-        setFlashcardSteps(response.flashcards as FlashcardStep[]);
+      if (geminiResponse.flashcards && geminiResponse.flashcards.length > 0) {
+        console.log('Displaying generated flashcards:', geminiResponse.flashcards);
+        setFlashcardSteps(geminiResponse.flashcards as FlashcardStep[]);
         setShowFlashcards(true);
       } else {
         setShowFlashcards(false);
       }
 
       // 6. Speak (use optimized spokenText if available)
-      const textToSpeak = response.spokenText || response.content;
+      const textToSpeak = mistralResponse.spokenText || mistralResponse.content;
       if (textToSpeak) {
         ttsService.speak(textToSpeak, { lang: i18n.language });
       }
