@@ -107,7 +107,7 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
 
     return (
         <motion.div
-            className="absolute inset-0 flex items-center justify-center p-4"
+            className="h-full w-full flex items-center justify-center p-4"
             custom={direction}
             variants={cardVariants}
             initial="enter"
@@ -120,10 +120,13 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
             onDragEnd={handleDragEnd}
             style={{ perspective: 1000 }}
         >
-            {/* 3D Flip Container */}
+            {/* 3D Flip Container - Fixed Aspect Ratio */}
             <motion.div
-                className="relative w-full max-w-2xl cursor-pointer"
-                style={{ transformStyle: 'preserve-3d' }}
+                className="relative cursor-pointer w-full max-w-2xl"
+                style={{ 
+                    transformStyle: 'preserve-3d',
+                    aspectRatio: '4 / 3'
+                }}
                 animate={isFlipped ? 'back' : 'front'}
                 variants={flipVariants}
                 onClick={hasInstructions ? handleFlip : undefined}
@@ -132,12 +135,13 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
             >
                 {/* Front Face */}
                 <motion.div
-                    className="relative rounded-3xl overflow-hidden"
+                    className="absolute inset-0 rounded-3xl overflow-hidden"
                     style={{
                         backfaceVisibility: 'hidden',
                         background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
                         backdropFilter: 'blur(20px)',
-                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255,255,255,0.5) inset',
+                        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255,255,255,0.8)',
+                        border: '1px solid rgba(255,255,255,0.5)',
                     }}
                 >
                     {/* Gradient Border Effect */}
@@ -152,17 +156,18 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                         }}
                     />
 
-                    {/* Card Content */}
-                    <div className="p-8 min-h-[300px] flex flex-col">
+                    {/* Card Content - Fills Container */}
+                    <div className="h-full w-full flex flex-col p-8 gap-4">
                         {/* Header */}
-                        <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center justify-between gap-3 flex-shrink-0 flex-wrap">
                             {/* Step Badge */}
                             <motion.div
-                                className="px-4 py-2 rounded-full text-sm font-bold"
+                                className="px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap"
                                 style={{
                                     background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
                                     color: 'white',
                                     boxShadow: '0 4px 12px rgba(99, 102, 241, 0.4)',
+                                    fontSize: '0.9em'
                                 }}
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
@@ -174,7 +179,8 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                             {/* Completed Badge */}
                             {isCompleted && (
                                 <motion.div
-                                    className="flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                                    className="flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium"
+                                    style={{ fontSize: '0.85em' }}
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
                                     transition={{ type: 'spring' }}
@@ -187,7 +193,7 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                             {/* Audio Button */}
                             <motion.button
                                 onClick={handleSpeak}
-                                className={`p-3 rounded-full transition-all ${isSpeaking
+                                className={`p-2 rounded-full transition-all flex-shrink-0 ${isSpeaking
                                         ? 'bg-indigo-100 text-indigo-600 ring-2 ring-indigo-400'
                                         : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                                     }`}
@@ -208,12 +214,12 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                             </motion.button>
                         </div>
 
-                        {/* Main Content */}
-                        <div className="flex-1 flex items-center justify-center">
-                            <div className="text-2xl md:text-3xl font-medium leading-relaxed text-gray-800 text-center">
+                        {/* Main Content - Flexible Height */}
+                        <div className="flex-1 flex items-center justify-center min-h-0">
+                            <div className="text-2xl font-medium leading-snug text-gray-800 text-center overflow-y-auto">
                                 <MarkdownRenderer
                                     content={step.content.replace(/<[^>]*>/g, '')}
-                                    className="prose prose-lg prose-indigo max-w-none"
+                                    className="prose prose-sm md:prose-base prose-indigo max-w-none"
                                 />
                             </div>
                         </div>
@@ -221,7 +227,7 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                         {/* Flip Hint */}
                         {hasInstructions && (
                             <motion.p
-                                className="text-center text-gray-400 text-sm mt-4"
+                                className="text-center text-gray-400 text-sm flex-shrink-0"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.5 }}
@@ -241,19 +247,20 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                             transform: 'rotateY(180deg)',
                             background: 'linear-gradient(135deg, rgba(99,102,241,0.95) 0%, rgba(139,92,246,0.95) 100%)',
                             backdropFilter: 'blur(20px)',
-                            boxShadow: '0 25px 50px -12px rgba(99, 102, 241, 0.3)',
+                            boxShadow: '0 25px 50px -12px rgba(99, 102, 241, 0.3), inset 0 0 0 1px rgba(255,255,255,0.2)',
+                            border: '1px solid rgba(255,255,255,0.3)',
                         }}
                     >
-                        <div className="p-8 h-full flex flex-col text-white">
+                        <div className="h-full w-full flex flex-col text-white p-8 gap-4">
                             {/* Back Header */}
-                            <div className="flex items-center justify-between mb-6">
+                            <div className="flex items-center justify-between flex-shrink-0">
                                 <h3 className="text-xl font-bold">Instructions</h3>
-                                <span className="text-white/60 text-sm">Tap to flip back</span>
+                                <span className="text-white/60 text-xs">Tap to flip back</span>
                             </div>
 
                             {/* Instructions List */}
-                            <div className="flex-1 overflow-y-auto custom-scrollbar">
-                                <ol className="space-y-4">
+                            <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-0">
+                                <ol className="space-y-3">
                                     {step.instructions?.map((instruction, index) => (
                                         <motion.li
                                             key={index}
@@ -262,10 +269,10 @@ const FlashcardCard: React.FC<FlashcardCardProps> = ({
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: index * 0.1 }}
                                         >
-                                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
+                                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold">
                                                 {index + 1}
                                             </span>
-                                            <span className="text-lg leading-relaxed">{instruction}</span>
+                                            <span className="text-lg leading-snug pt-0.5">{instruction}</span>
                                         </motion.li>
                                     ))}
                                 </ol>

@@ -16,7 +16,12 @@ export const LocalStorageService = {
       if (serializedMessages === null) {
         return null;
       }
-      return JSON.parse(serializedMessages);
+      const parsed = JSON.parse(serializedMessages) as Message[];
+      // Convert timestamp strings back to Date objects
+      return parsed.map(m => ({
+        ...m,
+        timestamp: m.timestamp ? new Date(m.timestamp as any) : new Date()
+      }));
     } catch (error) {
       console.error('Error getting chat history from local storage:', error);
       return null;

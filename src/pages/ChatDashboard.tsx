@@ -10,13 +10,14 @@ import EnhancedAvatarCompanion from '../components/ai/EnhancedAvatarCompanion';
 import ChatInterface from '../components/ai/ChatInterface';
 import FlashcardPanel from '../components/ai/FlashcardPanel';
 import FlashcardLoader from '../components/ai/FlashcardLoader';
+import FollowUpQuestions from '../components/ai/FollowUpQuestions';
 import { ttsService } from '../services/TextToSpeechService';
 import { AvatarProvider, useAvatar } from '../contexts/AvatarContext';
 import { parseCommand } from '../utils/CommandParser';
 import { MemoryService, Message } from '../services/MemoryService';
 import { LocalStorageService } from '../services/LocalStorageService';
 import { StorageService } from '../services/StorageService';
-import { GeminiService, MistralService } from '../services/ai';
+import { MistralService } from '../services/ai';
 
 declare global {
   interface Window {
@@ -37,6 +38,7 @@ const ChatDashboardContent: React.FC = () => {
   const [showFlashcards, setShowFlashcards] = useState(false);
   const [isGeneratingFlashcards, setIsGeneratingFlashcards] = useState(false);
   const [currentTranscript, setCurrentTranscript] = useState('');
+  const [lastUserMessage, setLastUserMessage] = useState('');
 
   // Sync TTS events with Avatar Context
   useEffect(() => {
@@ -82,6 +84,7 @@ const ChatDashboardContent: React.FC = () => {
     const userId = user?.uid || 'guest';
     setIsLoading(true);
     setThinking(true);
+    setLastUserMessage(messageContent); // Track the user's message for follow-up suggestions
 
     // 1. Check for system commands
     const command = parseCommand(messageContent);
@@ -122,8 +125,7 @@ const ChatDashboardContent: React.FC = () => {
       setMessages(prev => [...prev, userMessage]);
       await MemoryService.saveMessage(userId, userMessage);
 
-      // 3. Call AI Services
-      const geminiService = new GeminiService();
+      // 3. Call Mistral for all AI tasks (primary response, flashcards, summaries, and facts)
       const mistralService = new MistralService();
 
       // Fetch known facts and user data for memory focus
@@ -139,14 +141,12 @@ const ChatDashboardContent: React.FC = () => {
         userData: customUserData || {}
       };
 
-      const geminiResponse = await geminiService.sendMessage(messageContent, context);
-
-      const mistralContext = { ...context, knownFacts: [geminiResponse.content] };
-      const mistralResponse = await mistralService.sendMessage("Please provide a short, spoken-word summary of the following text:", mistralContext);
+      // Primary content generation
+      const mistralResponse = await mistralService.sendMessage(messageContent, context);
 
       const aiMessage: Message = {
         id: 'ai-' + Date.now(),
-        content: geminiResponse.content,
+        content: mistralResponse.content,
         sender: 'ai',
         timestamp: new Date()
       };
@@ -155,21 +155,21 @@ const ChatDashboardContent: React.FC = () => {
       await MemoryService.saveMessage(userId, aiMessage);
 
       // 4. Save any extracted facts and user data to the database
-      if (geminiResponse.extractedFacts && geminiResponse.extractedFacts.length > 0) {
-        console.log('Saving learned facts:', geminiResponse.extractedFacts);
-        for (const fact of geminiResponse.extractedFacts) {
+      if (mistralResponse.extractedFacts && mistralResponse.extractedFacts.length > 0) {
+        console.log('Saving learned facts:', mistralResponse.extractedFacts);
+        for (const fact of mistralResponse.extractedFacts) {
           await MemoryService.saveFact(userId, fact);
         }
       }
-      if (geminiResponse.userData) {
-        console.log('Saving user data:', geminiResponse.userData);
-        await MemoryService.saveUserData(userId, geminiResponse.userData);
+      if ((mistralResponse as any).userData) {
+        console.log('Saving user data:', (mistralResponse as any).userData);
+        await MemoryService.saveUserData(userId, (mistralResponse as any).userData);
       }
 
-      // 5. Handle Flashcards (NEW)
-      if (geminiResponse.flashcards && geminiResponse.flashcards.length > 0) {
-        console.log('Displaying generated flashcards:', geminiResponse.flashcards);
-        setFlashcardSteps(geminiResponse.flashcards as FlashcardStep[]);
+      // 5. Handle Flashcards
+      if (mistralResponse.flashcards && mistralResponse.flashcards.length > 0) {
+        console.log('Displaying generated flashcards:', mistralResponse.flashcards);
+        setFlashcardSteps(mistralResponse.flashcards as FlashcardStep[]);
         setShowFlashcards(true);
       } else {
         setShowFlashcards(false);
@@ -256,13 +256,24 @@ const ChatDashboardContent: React.FC = () => {
 
       <div className="h-full pt-20 pb-4 px-4 pl-4 md:pl-24 w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-4">
         <div className={`flex-1 glass-panel rounded-3xl overflow-hidden transition-all duration-500 ease-in-out ${showFlashcards ? 'md:w-1/2' : 'w-full'}`}>
-          <ChatInterface
-            messages={messages}
-            onSendMessage={handleSendMessage}
-            isLoading={isLoading}
-            isListening={avatarState.isListening}
-            currentTranscript={currentTranscript}
-          />
+          <div className="flex flex-col h-full">
+            <ChatInterface
+              messages={messages}
+              onSendMessage={handleSendMessage}
+              isLoading={isLoading}
+              isListening={avatarState.isListening}
+              currentTranscript={currentTranscript}
+            />
+            {!isLoading && messages.length > 0 && (
+              <div className="px-4 pb-4">
+                <FollowUpQuestions
+                  lastUserMessage={lastUserMessage}
+                  onQuestionClick={(question) => handleSendMessage(question)}
+                  isLoading={isLoading}
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {isGeneratingFlashcards && (
